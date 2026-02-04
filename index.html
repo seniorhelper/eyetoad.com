@@ -27,19 +27,25 @@
 
   <style>
     :root{
-      --bg:#070A12;
-      --panel:#0C1020;
-      --panel2:#0E1631;
-      --ink:#EAF0FF;
-      --muted:#B7C2E2;
-      --muted2:#8FA1D3;
-      --line:rgba(255,255,255,.10);
-      --brand:#7CE7D1; /* teal */
-      --brand2:#FFD36E; /* warm accent */
-      --brand3:#9FB7FF; /* soft blue */
-      --danger:#FF6B6B;
-      --ok:#7CFFB2;
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
+      /* LIGHT THEME + HIGH CONTRAST */
+      --bg:#ffffff;
+      --panel:#ffffff;
+      --panel2:#f6f8fc;
+      --ink:#0b1220;
+      --muted:#344256;
+      --muted2:#52627c;
+      --line:rgba(15,23,42,.10);
+
+      --brand:#0ea5a4; /* teal */
+      --brand2:#f59e0b; /* warm accent */
+      --brand3:#4f46e5; /* soft indigo */
+
+      --danger:#dc2626;
+      --ok:#16a34a;
+
+      --shadow: 0 18px 55px rgba(15,23,42,.10);
+      --shadow2: 0 10px 28px rgba(15,23,42,.10);
+
       --radius: 18px;
       --radius2: 26px;
       --max: 1180px;
@@ -47,18 +53,27 @@
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1400px 800px at 18% -10%, rgba(124,231,209,.16), transparent 55%),
-                                   radial-gradient(1200px 700px at 85% 0%, rgba(159,183,255,.14), transparent 55%),
-                                   radial-gradient(1000px 700px at 65% 90%, rgba(255,211,110,.10), transparent 60%),
-                                   var(--bg);
-              color:var(--ink); font-family:var(--font); line-height:1.55;}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1400px 800px at 18% -10%, rgba(14,165,164,.12), transparent 55%),
+        radial-gradient(1200px 700px at 85% 0%, rgba(79,70,229,.10), transparent 55%),
+        radial-gradient(1000px 700px at 65% 90%, rgba(245,158,11,.10), transparent 60%),
+        var(--bg);
+      color:var(--ink);
+      font-family:var(--font);
+      line-height:1.55;
+    }
+
     a{color:var(--brand); text-decoration:none}
     a:hover{text-decoration:underline}
+
     .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+
     .topbar{
       position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(to bottom, rgba(7,10,18,.92), rgba(7,10,18,.70));
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(255,255,255,.92), rgba(255,255,255,.74));
       border-bottom:1px solid var(--line);
     }
     .topbar-inner{
@@ -70,11 +85,11 @@
     }
     .brand-badge{
       width:40px; height:40px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(124,231,209,.25), rgba(159,183,255,.18));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      background: linear-gradient(135deg, rgba(14,165,164,.18), rgba(79,70,229,.10));
+      border:1px solid rgba(15,23,42,.12);
+      box-shadow: var(--shadow2);
       display:flex; align-items:center; justify-content:center;
-      font-weight:800; letter-spacing:.5px;
+      font-weight:900; letter-spacing:.5px;
       color:var(--ink);
     }
     .brand-name{
@@ -90,16 +105,20 @@
       padding:8px 10px; border-radius:12px;
       border:1px solid transparent;
     }
-    .nav a:hover{border-color:rgba(255,255,255,.12); background:rgba(255,255,255,.04); text-decoration:none}
+    .nav a:hover{
+      border-color:rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
+      text-decoration:none
+    }
     .callbox{
       display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;
     }
     .call-pill{
       display:flex; align-items:center; gap:10px;
       padding:10px 12px; border-radius:999px;
-      background: rgba(124,231,209,.10);
-      border:1px solid rgba(124,231,209,.30);
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      background: rgba(14,165,164,.08);
+      border:1px solid rgba(14,165,164,.22);
+      box-shadow: var(--shadow2);
       white-space:nowrap;
     }
     .call-pill small{display:block; color:var(--muted2); font-size:11px; line-height:1.1}
@@ -107,22 +126,20 @@
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 14px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.85);
       color:var(--ink);
-      font-weight:700;
+      font-weight:800;
       text-decoration:none !important;
-      box-shadow: 0 14px 40px rgba(0,0,0,.30);
+      box-shadow: var(--shadow2);
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.07)}
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.95)}
     .btn-primary{
-      background: linear-gradient(135deg, rgba(124,231,209,.20), rgba(159,183,255,.12));
-      border-color: rgba(124,231,209,.35);
+      background: linear-gradient(135deg, rgba(14,165,164,.16), rgba(79,70,229,.10));
+      border-color: rgba(14,165,164,.26);
     }
 
-    .hero{
-      padding:48px 0 22px;
-    }
+    .hero{ padding:48px 0 22px; }
     .hero-grid{
       display:grid; grid-template-columns: 1.3fr .9fr; gap:22px;
       align-items:stretch;
@@ -133,20 +150,23 @@
       .callbox{justify-content:flex-start}
       .nav{justify-content:flex-start}
     }
+
     .card{
-      background: linear-gradient(180deg, rgba(12,16,32,.92), rgba(12,16,32,.78));
-      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(246,248,252,.88));
+      border:1px solid rgba(15,23,42,.10);
       border-radius: var(--radius2);
       box-shadow: var(--shadow);
       overflow:hidden;
     }
     .card-pad{padding:26px;}
+
     .hero h1{
       margin:0 0 10px;
       font-size:44px; line-height:1.08;
       letter-spacing:-.7px;
     }
     @media (max-width: 560px){ .hero h1{font-size:36px;} }
+
     .lead{
       font-size:16px; color:var(--muted);
       margin:0 0 16px;
@@ -160,8 +180,8 @@
     .pill{
       padding:12px 14px;
       border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(15,23,42,.02);
     }
     .pill strong{display:block; font-size:13px; margin-bottom:3px}
     .pill span{display:block; color:var(--muted2); font-size:12px}
@@ -181,25 +201,25 @@
       display:flex; align-items:center; gap:10px;
       padding:10px 12px;
       border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.70);
       color:var(--muted);
       font-size:12px;
+      box-shadow: 0 10px 22px rgba(15,23,42,.06);
     }
     .dot{width:10px;height:10px;border-radius:50%}
     .dot.teal{background:var(--brand)}
     .dot.gold{background:var(--brand2)}
     .dot.blue{background:var(--brand3)}
 
-    .hero-side{
-      display:flex; flex-direction:column; gap:14px;
-      height:100%;
-    }
+    .hero-side{ display:flex; flex-direction:column; gap:14px; height:100%; }
+
     .scorecard{
       padding:18px;
       border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(14,22,49,.78), rgba(14,22,49,.56));
+      border:1px solid rgba(15,23,42,.10);
+      background: linear-gradient(180deg, rgba(246,248,252,.92), rgba(255,255,255,.88));
+      box-shadow: var(--shadow);
     }
     .scorecard h2{
       margin:0 0 8px; font-size:16px; letter-spacing:.2px;
@@ -213,15 +233,15 @@
       font-size:12px; color:var(--muted);
     }
     .track{
-      height:10px; border-radius:999px; background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.08);
+      height:10px; border-radius:999px; background:rgba(15,23,42,.08);
+      border:1px solid rgba(15,23,42,.08);
       overflow:hidden;
     }
-    .fill{height:100%; border-radius:999px; background: linear-gradient(90deg, rgba(124,231,209,.85), rgba(159,183,255,.70));}
-    .fill.gold{background: linear-gradient(90deg, rgba(255,211,110,.90), rgba(124,231,209,.70));}
-    .fill.blue{background: linear-gradient(90deg, rgba(159,183,255,.85), rgba(124,231,209,.65));}
+    .fill{height:100%; border-radius:999px; background: linear-gradient(90deg, rgba(14,165,164,.90), rgba(79,70,229,.70));}
+    .fill.gold{background: linear-gradient(90deg, rgba(245,158,11,.90), rgba(14,165,164,.70));}
+    .fill.blue{background: linear-gradient(90deg, rgba(79,70,229,.90), rgba(14,165,164,.65));}
     .metric{
-      text-align:right; color:var(--ink); font-weight:800; letter-spacing:.25px;
+      text-align:right; color:var(--ink); font-weight:900; letter-spacing:.25px;
     }
 
     .section{padding:26px 0;}
@@ -230,34 +250,39 @@
       letter-spacing:-.35px;
     }
     .section p{color:var(--muted); margin:0 0 12px; max-width: 78ch;}
+
     .grid-3{
       display:grid; grid-template-columns: repeat(3,1fr);
       gap:14px;
     }
     @media (max-width: 980px){ .grid-3{grid-template-columns:1fr;} }
+
     .panel{
-      background: rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.90);
+      border:1px solid rgba(15,23,42,.10);
       border-radius: var(--radius);
       padding:18px;
+      box-shadow: 0 12px 26px rgba(15,23,42,.07);
     }
     .panel h3{margin:0 0 6px; font-size:15px}
     .panel ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:13px}
     .panel li{margin:6px 0}
+
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
       font-size:12px; color:var(--muted2);
       padding:8px 10px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.75);
       margin-bottom:10px;
+      box-shadow: 0 10px 22px rgba(15,23,42,.06);
     }
     .kicker b{color:var(--ink)}
 
     .big-contrast{
-      background: linear-gradient(135deg, rgba(124,231,209,.12), rgba(255,211,110,.10));
-      border:1px solid rgba(124,231,209,.18);
+      background: linear-gradient(135deg, rgba(14,165,164,.10), rgba(245,158,11,.10));
+      border:1px solid rgba(15,23,42,.10);
       border-radius: var(--radius2);
       padding:22px;
       box-shadow: var(--shadow);
@@ -267,14 +292,37 @@
       display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:14px;
     }
     @media (max-width: 860px){ .big-contrast .points{grid-template-columns:1fr;} }
+
     .point{
       padding:14px;
       border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(7,10,18,.35);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.80);
+      box-shadow: 0 12px 26px rgba(15,23,42,.07);
     }
     .point strong{display:block; margin-bottom:6px}
     .point span{display:block; color:var(--muted); font-size:13px}
+
+    /* HTML color boxes for depth + emphasis */
+    .callout-row{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    @media (max-width: 980px){ .callout-row{grid-template-columns:1fr;} }
+    .callout{
+      border-radius: 16px;
+      padding:14px;
+      border:1px solid rgba(15,23,42,.10);
+      box-shadow: 0 12px 26px rgba(15,23,42,.07);
+      background: rgba(255,255,255,.85);
+    }
+    .callout.teal{background: linear-gradient(180deg, rgba(14,165,164,.10), rgba(255,255,255,.92));}
+    .callout.gold{background: linear-gradient(180deg, rgba(245,158,11,.12), rgba(255,255,255,.92));}
+    .callout.blue{background: linear-gradient(180deg, rgba(79,70,229,.10), rgba(255,255,255,.92));}
+    .callout strong{display:block; margin-bottom:6px}
+    .callout span{display:block; color:var(--muted); font-size:13px}
 
     table{
       width:100%;
@@ -282,43 +330,47 @@
       border-spacing:0;
       overflow:hidden;
       border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.90);
+      box-shadow: 0 12px 26px rgba(15,23,42,.07);
       margin-top:10px;
     }
     th,td{
       padding:12px 12px;
-      border-bottom:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(15,23,42,.08);
       font-size:13px; vertical-align:top;
     }
-    th{color:var(--ink); text-align:left; background: rgba(255,255,255,.04)}
+    th{color:var(--ink); text-align:left; background: rgba(15,23,42,.03)}
     td{color:var(--muted)}
     tr:last-child td{border-bottom:none}
+
     .tag{
       display:inline-flex; align-items:center; gap:8px;
       padding:7px 10px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.80);
       color:var(--muted);
       font-size:12px;
       white-space:nowrap;
+      box-shadow: 0 10px 22px rgba(15,23,42,.06);
     }
     .tag .mini{width:9px;height:9px;border-radius:50%}
     .mini.ok{background:var(--ok)}
     .mini.no{background:var(--danger)}
 
     details{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.88);
       border-radius: 16px;
       padding:12px 14px;
+      box-shadow: 0 12px 26px rgba(15,23,42,.06);
     }
     details + details{margin-top:10px}
     summary{
       cursor:pointer;
       list-style:none;
       display:flex; align-items:flex-start; justify-content:space-between; gap:14px;
-      font-weight:800;
+      font-weight:900;
       color:var(--ink);
       font-size:14px;
     }
@@ -327,8 +379,9 @@
 
     .footer{
       padding:26px 0 40px;
-      border-top:1px solid rgba(255,255,255,.10);
+      border-top:1px solid rgba(15,23,42,.10);
       margin-top:20px;
+      background: rgba(255,255,255,.70);
     }
     .footer-grid{
       display:grid; grid-template-columns: 1.3fr .7fr;
@@ -344,10 +397,11 @@
       font-size:12px; color:var(--muted);
       padding:8px 10px;
       border-radius: 12px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.85);
+      box-shadow: 0 10px 22px rgba(15,23,42,.06);
     }
-    .links a:hover{color:var(--ink); text-decoration:none; background: rgba(255,255,255,.05)}
+    .links a:hover{color:var(--ink); text-decoration:none; background: rgba(255,255,255,.95)}
     .sr-only{
       position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
       clip:rect(0,0,0,0); white-space:nowrap; border:0;
@@ -601,6 +655,28 @@
             </div>
           </div>
 
+          <!-- Added: color callouts (depth + persuasion, no content removed) -->
+          <div class="callout-row" aria-label="Conversion-first SEO callouts">
+            <div class="callout teal">
+              <strong>What you should feel in week one</strong>
+              <span>
+                Clear priorities. Clear pages to build. Clear measurement. So you stop guessing and start executing.
+              </span>
+            </div>
+            <div class="callout gold">
+              <strong>What we won’t sell you</strong>
+              <span>
+                “More traffic” without buyer intent. “More blogs” without a conversion path. “More reports” without ROI.
+              </span>
+            </div>
+            <div class="callout blue">
+              <strong>What we will build</strong>
+              <span>
+                A Denver SEO system that earns trust fast. Then it converts clicks into calls. Then it compounds.
+              </span>
+            </div>
+          </div>
+
           <div class="hero-cta" style="margin-top:16px;">
             <a class="btn btn-primary" href="tel:18004818638">Call now: 1-800-481-8638</a>
             <a class="btn" href="#faq">Read the FAQ</a>
@@ -703,6 +779,66 @@
             <a href="https://smallbusinessmajority.org/partners/denver-metro-small-business-development-center" target="_blank" rel="noopener noreferrer">Denver Metro SBDC resources</a>.
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ADDED SECTION: +500+ optimized words, conversion psychology, no removals -->
+    <section class="section" id="roi-system">
+      <div class="wrap">
+        <div class="kicker"><b>ROI system</b> for Denver SEO that actually sells</div>
+        <h2>How we turn Denver SEO into a predictable sales system</h2>
+        <p>
+          If your phone is not ringing, the issue is rarely “SEO” as a single lever. Instead, it is usually a chain.
+          A buyer searches. They click. They skim. Then they decide in seconds whether they trust you.
+          So we build the chain on purpose. We do not rely on luck, vague authority, or generic blog traffic.
+          We build a conversion-first system that earns attention, earns trust, and earns action.
+        </p>
+        <p>
+          First, we focus on buyer intent. That means keywords like <b>Denver SEO</b>, <b>Denver SEO company</b>, and <b>Denver SEO services</b> that signal purchase intent.
+          Then we match each keyword to a page that answers the buyer’s real questions. What do you do? Who is it for?
+          Why should I trust you? What is the next step? Because if a page cannot answer those fast, the buyer bounces.
+          Meanwhile, the agency will still send a report. Yet a report does not pay your bills.
+        </p>
+        <p>
+          Next, we use conversion psychology the ethical way. We don’t manipulate. We clarify.
+          We remove confusion. We make the offer obvious. We tighten the story.
+          We add proof and process so the buyer feels safe moving forward. Also, we create a strong call-first path.
+          A Denver SEO campaign should not feel like a lottery ticket. It should feel like a disciplined growth engine.
+          So we build pages that guide the buyer from question to confidence. Then we measure if the message worked.
+        </p>
+        <p>
+          After that, we compound authority. However, we do it carefully.
+          We prioritize technical foundations, internal linking, and credible references.
+          We avoid spammy shortcuts because they often create short-term noise and long-term pain.
+          Instead, we build a site structure that makes it easy for search engines to understand what you do, where you serve, and why you are relevant.
+          That clarity helps organic rankings, and it also helps modern AI-driven discovery.
+          When your content is structured, your entity signals are stronger. So you show up more consistently in the places buyers are searching.
+        </p>
+
+        <div class="callout-row" aria-label="ROI system callouts">
+          <div class="callout teal">
+            <strong>Clarity beats clever</strong>
+            <span>Short sentences. Strong headlines. Clear proof. Then buyers act faster.</span>
+          </div>
+          <div class="callout gold">
+            <strong>Intent beats volume</strong>
+            <span>More traffic is not the goal. More qualified calls is the goal.</span>
+          </div>
+          <div class="callout blue">
+            <strong>Systems beat surprises</strong>
+            <span>We build a process you can audit, not a mystery you have to trust.</span>
+          </div>
+        </div>
+
+        <div class="hero-cta" style="margin-top:14px;">
+          <a class="btn btn-primary" href="tel:18004818638">Talk to a strategist: 1-800-481-8638</a>
+          <span class="fine">Prefer local: <a href="tel:17202496588">720-249-6588</a></span>
+        </div>
+
+        <p class="micro" style="margin-top:12px;">
+          If you have been burned before, you are not alone. Many Denver businesses have paid for “SEO” that looked busy but didn’t create revenue.
+          So we keep it simple: we align keywords, pages, proof, and calls. Then we measure what matters.
+        </p>
       </div>
     </section>
 
@@ -944,12 +1080,13 @@
             <a href="#process">Process</a>
             <a href="#services">Services</a>
             <a href="#faq">FAQ</a>
+            <a href="/terms.html">Terms</a>
             <a href="/sitemap.xml">XML Sitemap</a>
             <a href="/robots.txt">Robots</a>
           </div>
 
           <p class="fine" style="margin-top:12px;">
-            Offsite references: 
+            Offsite references:
             <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">Google SEO Starter Guide</a>
             ·
             <a href="https://smallbusinessmajority.org/partners/denver-metro-small-business-development-center" target="_blank" rel="noopener noreferrer">Denver Metro SBDC</a>
@@ -972,9 +1109,6 @@
               <b><a href="tel:17202496588" style="color:var(--ink); text-decoration:none;">720-249-6588</a></b>
             </div>
           </div>
-
-          <p class="fine" style="margin-top:10px;">
-          </p>
 
           <a class="btn btn-primary" style="width:100%; margin-top:10px;" href="tel:18004818638">Call Now</a>
         </div>
