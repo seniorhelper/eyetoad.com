@@ -1,1119 +1,1658 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Denver SEO Company | Eye To Ad Media | Conversion-First SEO Services</title>
-  <meta name="description" content="Eye To Ad Media is a Denver SEO company focused on ROI, not vanity metrics. We build intent-led SEO + landing pages that turn searches into calls. Toll Free 1-800-481-8638" />
-  <meta name="keywords" content="Denver SEO, Denver SEO company, Denver SEO services, SEO Denver, local SEO Denver, technical SEO Denver, conversion rate optimization Denver, Denver SEO consultant, Denver search engine optimization" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://www.eyetoad.com/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denver SEO Company | Eye To Ad Media — Rankings, Visibility & Leads</title>
+  <meta name="description" content="Eye To Ad Media delivers Denver SEO strategies built for modern search — Google, AI Overviews, maps, and conversion. Get real rankings and more leads. Call 1-800-481-8638.">
+  <link rel="canonical" href="https://www.eyetoad.com/">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Denver SEO (ROI-First) | Eye To Ad Media" />
-  <meta property="og:description" content="We build conversion-first SEO campaigns based on intent. More qualified calls. Better close rates. Real ROI." />
-  <meta property="og:url" content="https://www.eyetoad.com/" />
-  <meta property="og:site_name" content="Eye To Ad Media" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Denver SEO Company | Eye To Ad Media">
+  <meta property="og:description" content="Denver SEO services built for rankings, local visibility, and qualified leads. SEO + AIO + GEO + Conversion Optimization. Call 1-800-481-8638.">
+  <meta property="og:url" content="https://www.eyetoad.com/">
+  <meta property="og:site_name" content="Eye To Ad Media">
+  <meta property="og:image" content="https://www.eyetoad.com/images/denver-seo-services-hero.png">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Denver SEO (ROI-First) | Eye To Ad Media" />
-  <meta name="twitter:description" content="Conversion-first Denver SEO services built around intent and ROI." />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Denver SEO Company | Eye To Ad Media">
+  <meta name="twitter:description" content="Denver SEO built for modern search — AI Overviews, Google Maps, and conversion. Call 1-800-481-8638.">
+  <meta name="twitter:image" content="https://www.eyetoad.com/images/denver-seo-services-hero.png">
 
-  <!-- Favicons (add later) -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0f1e'/><text y='.9em' font-size='72' x='50%' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' fill='%2300c2b2' font-weight='bold'>E</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      /* LIGHT THEME + HIGH CONTRAST */
-      --bg:#ffffff;
-      --panel:#ffffff;
-      --panel2:#f6f8fc;
-      --ink:#0b1220;
-      --muted:#344256;
-      --muted2:#52627c;
-      --line:rgba(15,23,42,.10);
-
-      --brand:#0ea5a4; /* teal */
-      --brand2:#f59e0b; /* warm accent */
-      --brand3:#4f46e5; /* soft indigo */
-
-      --danger:#dc2626;
-      --ok:#16a34a;
-
-      --shadow: 0 18px 55px rgba(15,23,42,.10);
-      --shadow2: 0 10px 28px rgba(15,23,42,.10);
-
-      --radius: 18px;
-      --radius2: 26px;
-      --max: 1180px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    /* ── CSS Variables ── */
+    :root {
+      --navy:    #0a0f1e;
+      --navy2:   #0f1729;
+      --navy3:   #151f38;
+      --teal:    #00c2b2;
+      --teal2:   #00a99d;
+      --gold:    #f5a623;
+      --white:   #ffffff;
+      --offwhite:#f4f6f9;
+      --gray:    #8a94a6;
+      --lgray:   #e8ecf2;
+      --text:    #1a2035;
+      --radius:  10px;
+      --shadow:  0 8px 32px rgba(0,0,0,0.14);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.18);
     }
 
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;padding:0;
-      background:
-        radial-gradient(1400px 800px at 18% -10%, rgba(14,165,164,.12), transparent 55%),
-        radial-gradient(1200px 700px at 85% 0%, rgba(79,70,229,.10), transparent 55%),
-        radial-gradient(1000px 700px at 65% 90%, rgba(245,158,11,.10), transparent 60%),
-        var(--bg);
-      color:var(--ink);
-      font-family:var(--font);
-      line-height:1.55;
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── Typography ── */
+    h1,h2,h3,h4 { font-family: 'Syne', sans-serif; font-weight: 800; line-height: 1.15; }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
+    p  { font-size: 1.05rem; color: #3a4460; }
+
+    .teal  { color: var(--teal); }
+    .gold  { color: var(--gold); }
+    .white { color: var(--white); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1rem;
+      cursor: pointer; border: none; transition: all .25s ease;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--teal); color: var(--navy);
+      box-shadow: 0 4px 20px rgba(0,194,178,.35);
+    }
+    .btn-primary:hover { background: #00d9c7; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,194,178,.45); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+    .btn-dark {
+      background: var(--navy); color: var(--white);
+      border: 2px solid var(--navy);
+    }
+    .btn-dark:hover { background: var(--navy2); }
+    .btn-gold {
+      background: var(--gold); color: var(--navy);
+      box-shadow: 0 4px 20px rgba(245,166,35,.3);
+    }
+    .btn-gold:hover { background: #f7b84a; transform: translateY(-2px); }
+
+    /* ── Section helpers ── */
+    .section { padding: 80px 0; }
+    .section-sm { padding: 50px 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      display: inline-block;
+      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--teal);
+      background: rgba(0,194,178,.1); border: 1px solid rgba(0,194,178,.25);
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
+    }
+    .section-label-gold {
+      color: var(--gold);
+      background: rgba(245,166,35,.1); border-color: rgba(245,166,35,.25);
+    }
+    .text-center { text-align: center; }
+    .mt-4  { margin-top: 16px; }
+    .mt-8  { margin-top: 32px; }
+    .mt-12 { margin-top: 48px; }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(10,15,30,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      transition: box-shadow .3s;
+    }
+    .site-header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.4); }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo-wrap { display: flex; align-items: center; flex-shrink: 0; }
+    .logo-wrap img { height: 50px; width: auto; }
+
+    /* Desktop Nav */
+    .desktop-nav { display: flex; align-items: center; gap: 6px; }
+    .nav-link {
+      font-size: .92rem; font-weight: 500; color: rgba(255,255,255,.8);
+      padding: 8px 14px; border-radius: 6px;
+      transition: all .2s; position: relative;
+    }
+    .nav-link:hover { color: var(--white); background: rgba(255,255,255,.07); }
+
+    /* Dropdown */
+    .nav-item { position: relative; }
+    .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--navy2);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px; padding: 8px;
+      min-width: 220px;
+      opacity: 0; visibility: hidden;
+      transform: translateY(-8px);
+      transition: all .2s ease;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+      z-index: 200;
+    }
+    .dropdown a {
+      display: block; padding: 9px 14px; border-radius: 5px;
+      font-size: .88rem; color: rgba(255,255,255,.75);
+      transition: all .15s;
+    }
+    .dropdown a:hover { background: rgba(0,194,178,.12); color: var(--teal); }
+
+    .header-cta { display: flex; align-items: center; gap: 12px; }
+    .call-link {
+      font-size: .95rem; font-weight: 700; color: var(--teal);
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: 6px;
+      border: 1.5px solid rgba(0,194,178,.4);
+      transition: all .2s;
+    }
+    .call-link:hover { background: rgba(0,194,178,.1); border-color: var(--teal); }
+    .call-icon { font-size: 1rem; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .hamburger span {
+      display: block; height: 2px; width: 100%;
+      background: var(--white); border-radius: 2px;
+      transition: all .3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0;
+      background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.1);
+      padding: 24px; z-index: 999;
+      max-height: calc(100vh - 72px); overflow-y: auto;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block; color: rgba(255,255,255,.85); font-size: 1rem;
+      padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.07);
+      font-weight: 500;
+    }
+    .mobile-menu a:hover { color: var(--teal); }
+    .mobile-menu .mob-section-label {
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--teal); margin-top: 16px; margin-bottom: 4px;
+    }
+    .mobile-call-btn {
+      display: block; margin-top: 20px;
+      background: var(--teal); color: var(--navy) !important;
+      text-align: center; padding: 14px !important; border-radius: 6px;
+      font-weight: 700 !important; font-size: 1.05rem !important;
+      border-bottom: none !important;
     }
 
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
+    /* ── AIO BANNER ── */
+    .aio-banner {
+      background: linear-gradient(90deg, var(--navy3), #1a2545);
+      border-bottom: 1px solid rgba(0,194,178,.2);
+      padding: 10px 0;
+      margin-top: 72px;
+    }
+    .aio-banner-inner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; flex-wrap: wrap;
+      font-size: .82rem; color: rgba(255,255,255,.7);
+    }
+    .aio-badge {
+      background: rgba(0,194,178,.15); border: 1px solid rgba(0,194,178,.3);
+      color: var(--teal); padding: 3px 10px; border-radius: 12px;
+      font-size: .75rem; font-weight: 600; letter-spacing: .04em;
+      white-space: nowrap;
+    }
+    .aio-divider { color: rgba(255,255,255,.2); }
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
-
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(255,255,255,.92), rgba(255,255,255,.74));
-      border-bottom:1px solid var(--line);
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 92vh;
+      display: flex; align-items: center;
+      background: var(--navy);
+      overflow: hidden;
     }
-    .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      padding:14px 0;
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('/images/denver-seo-services-hero.png');
+      background-size: cover; background-position: center;
+      opacity: .28;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width:240px;
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(110deg,
+        rgba(10,15,30,.97) 0%,
+        rgba(10,15,30,.88) 50%,
+        rgba(10,15,30,.55) 100%);
     }
-    .brand-badge{
-      width:40px; height:40px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(14,165,164,.18), rgba(79,70,229,.10));
-      border:1px solid rgba(15,23,42,.12);
-      box-shadow: var(--shadow2);
-      display:flex; align-items:center; justify-content:center;
-      font-weight:900; letter-spacing:.5px;
-      color:var(--ink);
+    .hero-grid-pattern {
+      position: absolute; inset: 0; opacity: .04;
+      background-image:
+        linear-gradient(rgba(0,194,178,.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,194,178,.6) 1px, transparent 1px);
+      background-size: 48px 48px;
     }
-    .brand-name{
-      display:flex; flex-direction:column; gap:2px;
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 760px;
+      padding: 60px 24px;
+      margin-left: max(24px, calc((100vw - 1200px)/2));
+      animation: heroFadeUp .8s ease both;
     }
-    .brand-name strong{font-size:14px; letter-spacing:.35px}
-    .brand-name span{font-size:12px; color:var(--muted2)}
-    .nav{
-      display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+    @keyframes heroFadeUp {
+      from { opacity:0; transform: translateY(24px); }
+      to   { opacity:1; transform: translateY(0); }
     }
-    .nav a{
-      font-size:13px; color:var(--muted);
-      padding:8px 10px; border-radius:12px;
-      border:1px solid transparent;
+    .hero-eyebrow {
+      font-size: .78rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--teal);
+      margin-bottom: 18px;
+      display: flex; align-items: center; gap: 8px;
     }
-    .nav a:hover{
-      border-color:rgba(15,23,42,.10);
-      background:rgba(15,23,42,.03);
-      text-decoration:none
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 32px; height: 2px;
+      background: var(--teal);
     }
-    .callbox{
-      display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    .hero h1 { color: var(--white); margin-bottom: 22px; }
+    .hero h1 span { color: var(--teal); }
+    .hero-sub {
+      font-size: 1.15rem; color: rgba(255,255,255,.72);
+      max-width: 580px; margin-bottom: 38px; line-height: 1.75;
     }
-    .call-pill{
-      display:flex; align-items:center; gap:10px;
-      padding:10px 12px; border-radius:999px;
-      background: rgba(14,165,164,.08);
-      border:1px solid rgba(14,165,164,.22);
-      box-shadow: var(--shadow2);
-      white-space:nowrap;
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    .hero-trust {
+      display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
     }
-    .call-pill small{display:block; color:var(--muted2); font-size:11px; line-height:1.1}
-    .call-pill strong{display:block; font-size:14px; letter-spacing:.3px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px; border-radius:14px;
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.85);
-      color:var(--ink);
-      font-weight:800;
-      text-decoration:none !important;
-      box-shadow: var(--shadow2);
+    .hero-trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .85rem; color: rgba(255,255,255,.55);
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.95)}
-    .btn-primary{
-      background: linear-gradient(135deg, rgba(14,165,164,.16), rgba(79,70,229,.10));
-      border-color: rgba(14,165,164,.26);
+    .hero-trust-item .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--teal); flex-shrink: 0;
     }
 
-    .hero{ padding:48px 0 22px; }
-    .hero-grid{
-      display:grid; grid-template-columns: 1.3fr .9fr; gap:22px;
-      align-items:stretch;
+    /* Floating stats card */
+    .hero-stats-card {
+      position: absolute; right: max(24px, calc((100vw - 1200px)/2));
+      top: 50%; transform: translateY(-50%);
+      background: rgba(15,23,41,.9);
+      border: 1px solid rgba(0,194,178,.2);
+      border-radius: 12px; padding: 28px 24px;
+      min-width: 220px;
+      backdrop-filter: blur(12px);
+      z-index: 3;
+      animation: heroFadeUp .8s .3s ease both;
     }
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr; }
-      .brand{min-width:auto}
-      .callbox{justify-content:flex-start}
-      .nav{justify-content:flex-start}
+    .stat-item { margin-bottom: 22px; }
+    .stat-item:last-child { margin-bottom: 0; }
+    .stat-num {
+      font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
+      color: var(--teal); line-height: 1;
     }
+    .stat-label { font-size: .82rem; color: rgba(255,255,255,.5); margin-top: 4px; }
+    .stat-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 18px 0; }
 
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(246,248,252,.88));
-      border:1px solid rgba(15,23,42,.10);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--navy2);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding: 18px 0;
     }
-    .card-pad{padding:26px;}
+    .trust-bar-inner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .88rem; color: rgba(255,255,255,.6);
+      font-weight: 500;
+    }
+    .trust-item .icon { font-size: 1.2rem; }
+    .trust-item strong { color: var(--white); }
 
-    .hero h1{
-      margin:0 0 10px;
-      font-size:44px; line-height:1.08;
-      letter-spacing:-.7px;
+    /* ── INTRO / SYSTEMS ── */
+    .intro-section { background: var(--white); }
+    .intro-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
     }
-    @media (max-width: 560px){ .hero h1{font-size:36px;} }
+    .intro-text h2 { margin-bottom: 18px; }
+    .intro-text p { margin-bottom: 16px; }
+    .intro-text p:last-of-type { margin-bottom: 24px; }
 
-    .lead{
-      font-size:16px; color:var(--muted);
-      margin:0 0 16px;
-      max-width: 60ch;
+    .system-pillars {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
     }
-    .big-points{
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap:10px; margin:18px 0 0;
-    }
-    @media (max-width: 860px){ .big-points{grid-template-columns:1fr; } }
-    .pill{
-      padding:12px 14px;
-      border-radius: 16px;
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(15,23,42,.02);
-    }
-    .pill strong{display:block; font-size:13px; margin-bottom:3px}
-    .pill span{display:block; color:var(--muted2); font-size:12px}
-
-    .hero-cta{
-      display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;
-      align-items:center;
-    }
-    .micro{
-      color:var(--muted2); font-size:12px;
-      margin-top:10px;
-    }
-    .trust-row{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;
-    }
-    .trust-badge{
-      display:flex; align-items:center; gap:10px;
-      padding:10px 12px;
-      border-radius: 16px;
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.70);
-      color:var(--muted);
-      font-size:12px;
-      box-shadow: 0 10px 22px rgba(15,23,42,.06);
-    }
-    .dot{width:10px;height:10px;border-radius:50%}
-    .dot.teal{background:var(--brand)}
-    .dot.gold{background:var(--brand2)}
-    .dot.blue{background:var(--brand3)}
-
-    .hero-side{ display:flex; flex-direction:column; gap:14px; height:100%; }
-
-    .scorecard{
-      padding:18px;
+    .pillar-card {
+      background: var(--offwhite);
+      border: 1px solid var(--lgray);
       border-radius: var(--radius);
-      border:1px solid rgba(15,23,42,.10);
-      background: linear-gradient(180deg, rgba(246,248,252,.92), rgba(255,255,255,.88));
-      box-shadow: var(--shadow);
+      padding: 22px 18px;
+      transition: all .25s ease;
+      position: relative; overflow: hidden;
     }
-    .scorecard h2{
-      margin:0 0 8px; font-size:16px; letter-spacing:.2px;
+    .pillar-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--teal);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s ease;
     }
-    .scorecard p{
-      margin:0 0 12px; color:var(--muted2); font-size:12px;
-    }
-    .bars{display:grid; gap:10px; margin-top:10px}
-    .bar{
-      display:grid; grid-template-columns: 120px 1fr 52px; gap:10px; align-items:center;
-      font-size:12px; color:var(--muted);
-    }
-    .track{
-      height:10px; border-radius:999px; background:rgba(15,23,42,.08);
-      border:1px solid rgba(15,23,42,.08);
-      overflow:hidden;
-    }
-    .fill{height:100%; border-radius:999px; background: linear-gradient(90deg, rgba(14,165,164,.90), rgba(79,70,229,.70));}
-    .fill.gold{background: linear-gradient(90deg, rgba(245,158,11,.90), rgba(14,165,164,.70));}
-    .fill.blue{background: linear-gradient(90deg, rgba(79,70,229,.90), rgba(14,165,164,.65));}
-    .metric{
-      text-align:right; color:var(--ink); font-weight:900; letter-spacing:.25px;
-    }
+    .pillar-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .pillar-card:hover::before { transform: scaleX(1); }
+    .pillar-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .pillar-card h4 { font-size: 1rem; margin-bottom: 6px; color: var(--navy); }
+    .pillar-card p { font-size: .88rem; color: var(--gray); line-height: 1.5; }
 
-    .section{padding:26px 0;}
-    .section h2{
-      font-size:26px; margin:0 0 10px;
-      letter-spacing:-.35px;
+    /* ── SLANT SECTION ── */
+    .slant-section {
+      position: relative; background: var(--navy);
+      padding: 90px 0 110px;
+      clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
     }
-    .section p{color:var(--muted); margin:0 0 12px; max-width: 78ch;}
+    .slant-section .container { position: relative; z-index: 2; }
 
-    .grid-3{
-      display:grid; grid-template-columns: repeat(3,1fr);
-      gap:14px;
+    /* ── DOMINATION MAP ── */
+    .domination-section { background: var(--navy); padding: 80px 0; }
+    .domination-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
     }
-    @media (max-width: 980px){ .grid-3{grid-template-columns:1fr;} }
-
-    .panel{
-      background: rgba(255,255,255,.90);
-      border:1px solid rgba(15,23,42,.10);
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: 0 12px 26px rgba(15,23,42,.07);
+    .domination-image-wrap {
+      position: relative;
     }
-    .panel h3{margin:0 0 6px; font-size:15px}
-    .panel ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:13px}
-    .panel li{margin:6px 0}
-
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      font-size:12px; color:var(--muted2);
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.75);
-      margin-bottom:10px;
-      box-shadow: 0 10px 22px rgba(15,23,42,.06);
-    }
-    .kicker b{color:var(--ink)}
-
-    .big-contrast{
-      background: linear-gradient(135deg, rgba(14,165,164,.10), rgba(245,158,11,.10));
-      border:1px solid rgba(15,23,42,.10);
-      border-radius: var(--radius2);
-      padding:22px;
-      box-shadow: var(--shadow);
-    }
-    .big-contrast h2{margin:0 0 8px}
-    .big-contrast .points{
-      display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:14px;
-    }
-    @media (max-width: 860px){ .big-contrast .points{grid-template-columns:1fr;} }
-
-    .point{
-      padding:14px;
-      border-radius: 16px;
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.80);
-      box-shadow: 0 12px 26px rgba(15,23,42,.07);
-    }
-    .point strong{display:block; margin-bottom:6px}
-    .point span{display:block; color:var(--muted); font-size:13px}
-
-    /* HTML color boxes for depth + emphasis */
-    .callout-row{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
-      margin-top:14px;
-    }
-    @media (max-width: 980px){ .callout-row{grid-template-columns:1fr;} }
-    .callout{
-      border-radius: 16px;
-      padding:14px;
-      border:1px solid rgba(15,23,42,.10);
-      box-shadow: 0 12px 26px rgba(15,23,42,.07);
-      background: rgba(255,255,255,.85);
-    }
-    .callout.teal{background: linear-gradient(180deg, rgba(14,165,164,.10), rgba(255,255,255,.92));}
-    .callout.gold{background: linear-gradient(180deg, rgba(245,158,11,.12), rgba(255,255,255,.92));}
-    .callout.blue{background: linear-gradient(180deg, rgba(79,70,229,.10), rgba(255,255,255,.92));}
-    .callout strong{display:block; margin-bottom:6px}
-    .callout span{display:block; color:var(--muted); font-size:13px}
-
-    table{
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0;
-      overflow:hidden;
-      border-radius: var(--radius);
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.90);
-      box-shadow: 0 12px 26px rgba(15,23,42,.07);
-      margin-top:10px;
-    }
-    th,td{
-      padding:12px 12px;
-      border-bottom:1px solid rgba(15,23,42,.08);
-      font-size:13px; vertical-align:top;
-    }
-    th{color:var(--ink); text-align:left; background: rgba(15,23,42,.03)}
-    td{color:var(--muted)}
-    tr:last-child td{border-bottom:none}
-
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px; border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.80);
-      color:var(--muted);
-      font-size:12px;
-      white-space:nowrap;
-      box-shadow: 0 10px 22px rgba(15,23,42,.06);
-    }
-    .tag .mini{width:9px;height:9px;border-radius:50%}
-    .mini.ok{background:var(--ok)}
-    .mini.no{background:var(--danger)}
-
-    details{
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.88);
-      border-radius: 16px;
-      padding:12px 14px;
-      box-shadow: 0 12px 26px rgba(15,23,42,.06);
-    }
-    details + details{margin-top:10px}
-    summary{
-      cursor:pointer;
-      list-style:none;
-      display:flex; align-items:flex-start; justify-content:space-between; gap:14px;
-      font-weight:900;
-      color:var(--ink);
-      font-size:14px;
-    }
-    summary::-webkit-details-marker{display:none}
-    details p{margin:10px 0 0; color:var(--muted); font-size:13px}
-
-    .footer{
-      padding:26px 0 40px;
-      border-top:1px solid rgba(15,23,42,.10);
-      margin-top:20px;
-      background: rgba(255,255,255,.70);
-    }
-    .footer-grid{
-      display:grid; grid-template-columns: 1.3fr .7fr;
-      gap:16px;
-      align-items:start;
-    }
-    @media (max-width: 900px){ .footer-grid{grid-template-columns:1fr;} }
-    .fine{color:var(--muted2); font-size:12px}
-    .links{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;
-    }
-    .links a{
-      font-size:12px; color:var(--muted);
-      padding:8px 10px;
+    .domination-image-wrap img {
       border-radius: 12px;
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.85);
-      box-shadow: 0 10px 22px rgba(15,23,42,.06);
+      box-shadow: 0 24px 80px rgba(0,0,0,.5);
+      border: 1px solid rgba(0,194,178,.2);
     }
-    .links a:hover{color:var(--ink); text-decoration:none; background: rgba(255,255,255,.95)}
-    .sr-only{
-      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
-      clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    .domination-badge {
+      position: absolute; bottom: -18px; right: -18px;
+      background: var(--teal); color: var(--navy);
+      border-radius: 10px; padding: 14px 18px;
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: .9rem; line-height: 1.3;
+      box-shadow: 0 8px 24px rgba(0,194,178,.4);
+    }
+    .domination-text h2 { color: var(--white); margin-bottom: 18px; }
+    .domination-text p  { color: rgba(255,255,255,.68); margin-bottom: 16px; }
+
+    .location-chips {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px;
+    }
+    .chip {
+      padding: 6px 14px; border-radius: 20px;
+      font-size: .82rem; font-weight: 600;
+      background: rgba(0,194,178,.12);
+      border: 1px solid rgba(0,194,178,.25);
+      color: var(--teal);
+    }
+
+    /* ── INDUSTRIES ── */
+    .industries-section { background: var(--offwhite); }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px; margin-top: 40px;
+    }
+    .industry-card {
+      background: var(--white);
+      border: 1px solid var(--lgray);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      transition: all .25s ease;
+      display: flex; align-items: flex-start; gap: 14px;
+      text-decoration: none;
+    }
+    .industry-card:hover {
+      border-color: var(--teal); box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+    .industry-icon {
+      width: 46px; height: 46px; border-radius: 10px;
+      background: rgba(0,194,178,.1); border: 1px solid rgba(0,194,178,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .industry-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
+    .industry-card p  { font-size: .83rem; color: var(--gray); line-height: 1.45; }
+    .industry-card .arrow {
+      margin-left: auto; color: var(--teal); font-size: 1.1rem;
+      opacity: 0; transition: opacity .2s;
+      align-self: center; flex-shrink: 0;
+    }
+    .industry-card:hover .arrow { opacity: 1; }
+
+    /* ── PROCESS / HOW IT WORKS ── */
+    .process-section { background: var(--white); }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin-top: 48px;
+      position: relative;
+    }
+    .process-steps::before {
+      content: ''; position: absolute;
+      top: 36px; left: 12%; right: 12%; height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--teal2));
+      z-index: 0;
+    }
+    .process-step {
+      text-align: center; padding: 0 16px;
+      position: relative; z-index: 1;
+    }
+    .step-num {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--navy); color: var(--teal);
+      font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      border: 3px solid var(--teal);
+      box-shadow: 0 0 0 6px var(--white), 0 0 0 7px rgba(0,194,178,.15);
+    }
+    .process-step h4 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; }
+    .process-step p  { font-size: .86rem; color: var(--gray); line-height: 1.55; }
+
+    /* ── SERVICES GRID ── */
+    .services-section { background: var(--offwhite); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 40px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--lgray);
+      border-radius: var(--radius);
+      padding: 32px 26px;
+      transition: all .25s ease;
+    }
+    .service-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .service-card-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: var(--navy); border: 1px solid rgba(0,194,178,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 18px;
+    }
+    .service-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 10px; }
+    .service-card p  { font-size: .92rem; color: var(--gray); line-height: 1.6; margin-bottom: 20px; }
+    .service-link {
+      font-size: .88rem; font-weight: 600; color: var(--teal);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .service-link:hover { gap: 10px; }
+
+    /* ── PROOF / REVIEWS ── */
+    .reviews-section {
+      background: var(--navy);
+      padding: 80px 0;
+    }
+    .reviews-header { text-align: center; margin-bottom: 48px; }
+    .reviews-header h2 { color: var(--white); margin-bottom: 12px; }
+    .stars-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 4px; margin-bottom: 8px;
+    }
+    .star { color: var(--gold); font-size: 1.2rem; }
+    .reviews-meta { font-size: .9rem; color: rgba(255,255,255,.5); }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .review-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: all .25s;
+    }
+    .review-card:hover { background: rgba(0,194,178,.07); border-color: rgba(0,194,178,.25); }
+    .review-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+    .review-stars span { color: var(--gold); font-size: 1rem; }
+    .review-text {
+      font-size: .95rem; color: rgba(255,255,255,.75);
+      line-height: 1.7; margin-bottom: 18px;
+      font-style: italic;
+    }
+    .review-author { display: flex; align-items: center; gap: 10px; }
+    .reviewer-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--teal); color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: .9rem;
+      flex-shrink: 0;
+    }
+    .reviewer-name { font-weight: 600; color: var(--white); font-size: .92rem; }
+    .reviewer-sub  { font-size: .78rem; color: rgba(255,255,255,.4); }
+    .reviews-cta { text-align: center; margin-top: 40px; }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      background: var(--offwhite);
+      padding: 70px 0;
+    }
+    .about-strip-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .about-strip img {
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-strip h2 { margin-bottom: 18px; }
+    .about-strip p  { margin-bottom: 16px; color: #3a4460; }
+    .trust-badges {
+      display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px;
+    }
+    .trust-badge {
+      background: var(--white); border: 1px solid var(--lgray);
+      border-radius: 8px; padding: 12px 18px;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .trust-badge .badge-icon { font-size: 1.3rem; }
+    .trust-badge .badge-text { font-size: .82rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+    .trust-badge .badge-sub  { font-size: .72rem; color: var(--gray); }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--white); padding: 80px 0; }
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 40px;
+    }
+    .faq-item {
+      border: 1px solid var(--lgray); border-radius: var(--radius);
+      overflow: hidden; transition: box-shadow .2s;
+    }
+    .faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,.08); }
+    .faq-q {
+      width: 100%; text-align: left; background: none;
+      border: none; padding: 20px 22px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+      color: var(--navy); line-height: 1.45;
+    }
+    .faq-q .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--offwhite); border: 1px solid var(--lgray);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0; transition: all .25s;
+      color: var(--teal);
+    }
+    .faq-item.open .faq-icon { background: var(--teal); color: var(--white); transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      padding: 0 22px;
+    }
+    .faq-item.open .faq-a {
+      max-height: 500px; padding: 0 22px 20px;
+    }
+    .faq-a p { font-size: .95rem; color: #4a5470; line-height: 1.7; }
+    .faq-a a { color: var(--teal); text-decoration: underline; }
+
+    /* ── OUTBOUND CALLOUT ── */
+    .credibility-bar {
+      background: var(--navy3);
+      border-top: 1px solid rgba(0,194,178,.15);
+      border-bottom: 1px solid rgba(0,194,178,.15);
+      padding: 22px 0;
+    }
+    .credibility-inner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; flex-wrap: wrap;
+      font-size: .88rem; color: rgba(255,255,255,.55);
+      text-align: center;
+    }
+    .credibility-inner a {
+      color: var(--teal); text-decoration: underline;
+      font-weight: 600;
+    }
+    .credibility-inner a:hover { color: #00d9c7; }
+
+    /* ── FINAL CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy3) 100%);
+      padding: 90px 0;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,194,178,.12), transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+    }
+    .cta-inner {
+      position: relative; z-index: 2;
+      text-align: center; max-width: 680px; margin: 0 auto;
+    }
+    .cta-inner h2 { color: var(--white); margin-bottom: 16px; }
+    .cta-inner p  { color: rgba(255,255,255,.65); font-size: 1.1rem; margin-bottom: 36px; }
+    .cta-buttons  { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .cta-note { margin-top: 18px; font-size: .83rem; color: rgba(255,255,255,.35); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #060b16;
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 64px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px; padding-bottom: 48px;
+    }
+    .footer-brand img { height: 44px; width: auto; margin-bottom: 16px; }
+    .footer-brand p { font-size: .88rem; color: rgba(255,255,255,.45); line-height: 1.7; max-width: 280px; }
+    .footer-nap { margin-top: 20px; }
+    .footer-nap address {
+      font-style: normal; font-size: .85rem;
+      color: rgba(255,255,255,.45); line-height: 1.9;
+    }
+    .footer-nap a { color: var(--teal); }
+    .footer-nap a:hover { text-decoration: underline; }
+    .footer-col h4 {
+      font-size: .82rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block; font-size: .88rem;
+      color: rgba(255,255,255,.5); padding: 5px 0;
+      transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--teal); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 20px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: .8rem; color: rgba(255,255,255,.25); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: .8rem; color: rgba(255,255,255,.25); }
+    .footer-bottom-links a:hover { color: var(--teal); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-stats-card { display: none; }
+      .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+      .domination-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-strip-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .header-cta .btn { display: none; }
+      .industries-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-steps::before { display: none; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .system-pillars { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .industries-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .system-pillars { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .trust-bar-inner { gap: 20px; }
     }
   </style>
 
-  <!-- LocalBusiness + ProfessionalService Schema -->
+  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":["LocalBusiness","ProfessionalService"],
-    "name":"Eye To Ad Media",
-    "url":"https://www.eyetoad.com/",
-    "telephone":"+1-800-481-8638",
-    "areaServed":[
-      {"@type":"City","name":"Denver"},
-      {"@type":"AdministrativeArea","name":"Colorado"}
-    ],
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Denver",
-      "addressRegion":"CO",
-      "addressCountry":"US"
-    },
-    "description":"Denver SEO services focused on ROI: intent-led SEO + conversion optimization to turn searches into qualified calls.",
-    "sameAs":[
-      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
-    ]
-  }
-  </script>
-
-  <!-- WebSite Schema (helps with brand entity) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Eye To Ad Media",
-    "url":"https://www.eyetoad.com/",
-    "inLanguage":"en-US",
-    "potentialAction":{
-      "@type":"SearchAction",
-      "target":"https://www.eyetoad.com/?q={search_term_string}",
-      "query-input":"required name=search_term_string"
-    }
-  }
-  </script>
-
-  <!-- FAQ Schema (20 Qs) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"What makes Eye To Ad Media different from other Denver SEO agencies?","acceptedAnswer":{"@type":"Answer","text":"Most agencies report rankings, impressions, and “traffic.” We focus on calls, booked appointments, and revenue. So we build around intent, offers, and conversion paths. Then we track outcomes end-to-end."}},
-      {"@type":"Question","name":"Do you only do SEO, or do you also improve conversions?","acceptedAnswer":{"@type":"Answer","text":"We do both. SEO without conversion is expensive content. So we pair technical SEO + content with landing page upgrades, stronger CTAs, call tracking, and funnel fixes."}},
-      {"@type":"Question","name":"How long does Denver SEO take to work?","acceptedAnswer":{"@type":"Answer","text":"It depends on competition, site history, and execution. Many businesses see early movement in 4–8 weeks. Meaningful lead flow often builds over 3–6+ months when we compound content, links, and conversion improvements."}},
-      {"@type":"Question","name":"Can you help a Google Business Profile rank higher in Denver?","acceptedAnswer":{"@type":"Answer","text":"Yes. We align the website, service pages, and on-site location signals to support relevance. We also tighten category and content alignment so your GBP and your site reinforce each other."}},
-      {"@type":"Question","name":"What keywords do you target for Denver SEO services?","acceptedAnswer":{"@type":"Answer","text":"We start with buyer-intent keywords like “Denver SEO,” “Denver SEO company,” and service + city combinations. Then we add supporting topics that earn trust and links."}},
-      {"@type":"Question","name":"Do you guarantee #1 rankings?","acceptedAnswer":{"@type":"Answer","text":"No. Nobody credible can guarantee that. Instead, we guarantee a real process, clear priorities, and transparent reporting tied to qualified leads and conversion improvements."}},
-      {"@type":"Question","name":"What’s included in a typical SEO campaign?","acceptedAnswer":{"@type":"Answer","text":"A typical campaign includes technical SEO, content strategy, on-page optimization, internal linking, local SEO support, and conversion optimization. We also implement measurement so you can see ROI."}},
-      {"@type":"Question","name":"Do you work with small businesses in Denver?","acceptedAnswer":{"@type":"Answer","text":"Yes. In fact, our approach is built for small and mid-sized companies that need results, not busywork."}},
-      {"@type":"Question","name":"Will you redesign my website?","acceptedAnswer":{"@type":"Answer","text":"If needed, yes. However, we often get wins with focused upgrades: landing pages, CTAs, speed, clarity, and trust signals."}},
-      {"@type":"Question","name":"How do you measure SEO success?","acceptedAnswer":{"@type":"Answer","text":"We measure qualified calls, form leads, booked appointments, and close-rate trends. Rankings matter, yet revenue is the real scoreboard."}},
-      {"@type":"Question","name":"Do you do technical SEO audits?","acceptedAnswer":{"@type":"Answer","text":"Yes. We diagnose crawl/index issues, site architecture, internal linking, page templates, performance, and schema. Then we prioritize fixes by impact."}},
-      {"@type":"Question","name":"Do you build backlinks?","acceptedAnswer":{"@type":"Answer","text":"Yes, but we do it carefully. We focus on relevance, trust, and long-term safety. We avoid spammy link blasts."}},
-      {"@type":"Question","name":"Can you help with GEO and AI search visibility?","acceptedAnswer":{"@type":"Answer","text":"Yes. We structure pages with clear entities, concise answers, strong headings, FAQs, and schema. That helps both traditional SEO and AI-driven discovery."}},
-      {"@type":"Question","name":"Do you manage PPC too?","acceptedAnswer":{"@type":"Answer","text":"We can. However, this site focuses on Denver SEO services. If you want PPC, we treat it as a conversion system, not just clicks."}},
-      {"@type":"Question","name":"What industries do you work with?","acceptedAnswer":{"@type":"Answer","text":"We work across service businesses, local businesses, and lead-gen brands. The common thread is simple: you need leads that convert."}},
-      {"@type":"Question","name":"What does Denver SEO cost?","acceptedAnswer":{"@type":"Answer","text":"Costs vary by competition and scope. Many campaigns fall into a monthly range based on how aggressive you need to be. We keep it transparent and tied to priorities."}},
-      {"@type":"Question","name":"Will I own the content you create?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your website content stays on your site. We build your long-term asset."}},
-      {"@type":"Question","name":"How do we start?","acceptedAnswer":{"@type":"Answer","text":"Call us. We’ll ask a few questions, review your current visibility, and map the shortest path to more qualified calls."}},
-      {"@type":"Question","name":"Do you work across all of Denver?","acceptedAnswer":{"@type":"Answer","text":"Yes. We serve businesses across Denver proper and nearby areas like Lakewood, Aurora, Littleton, Centennial, and Englewood."}},
-      {"@type":"Question","name":"What if I’ve been burned by an SEO agency before?","acceptedAnswer":{"@type":"Answer","text":"Then we’ll speak your language: priorities, timelines, tradeoffs, and proof. We build a plan you can audit. Also, we report on outcomes you actually care about."}}
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.eyetoad.com/#organization",
+        "name": "Eye To Ad Media",
+        "url": "https://www.eyetoad.com",
+        "logo": "https://www.eyetoad.com/images/eye-to-ad-media-logo-denver-seo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-800-481-8638",
+          "contactType": "customer service",
+          "areaServed": "US"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1001 Bannock St #660",
+          "addressLocality": "Denver",
+          "addressRegion": "CO",
+          "postalCode": "80204",
+          "addressCountry": "US"
+        },
+        "sameAs": []
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.eyetoad.com/#localbusiness",
+        "name": "Eye To Ad Media",
+        "description": "Denver SEO company specializing in SEO, AIO, GEO, local SEO, and conversion optimization for businesses across Colorado.",
+        "url": "https://www.eyetoad.com",
+        "telephone": "+1-800-481-8638",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1001 Bannock St #660",
+          "addressLocality": "Denver",
+          "addressRegion": "CO",
+          "postalCode": "80204",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.7317",
+          "longitude": "-104.9965"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "4"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.eyetoad.com/#website",
+        "url": "https://www.eyetoad.com",
+        "name": "Eye To Ad Media",
+        "publisher": { "@id": "https://www.eyetoad.com/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does a Denver SEO company actually do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Denver SEO company researches the keywords your ideal customers are typing into Google, optimizes your website's technical health, builds authoritative content around those topics, and earns links and citations that signal trust to search engines. The goal is to move your business to the top of Google search results and Google Maps so more local customers find you first."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does Denver SEO take to show results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most businesses see meaningful movement in rankings within 3 to 6 months. Highly competitive keywords in saturated markets can take 6 to 12 months. The timeline depends on your current website authority, competition level, and how aggressively we build content and links. Local SEO in Google Maps often shows results faster — sometimes within 30 to 60 days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is AIO SEO and how is it different from traditional SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AIO stands for AI Optimization. Traditional SEO focuses on ranking in Google's blue links. AIO SEO means your content is also optimized to appear inside Google's AI Overviews, ChatGPT answers, Perplexity results, and other AI-powered search responses. As more people use AI to find businesses, being visible in those results requires a different content strategy than classic SEO alone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you only work with Denver businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our home base is Denver, Colorado, and we specialize in helping local Denver businesses dominate search in their market. We also serve businesses in Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Broomfield, and Castle Rock. For national SEO clients, we work remotely with businesses across the country."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What industries does Eye To Ad Media serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We work with contractors, dentists, law firms, med spas, fitness businesses, real estate professionals, chiropractors, roofing companies, and HVAC companies. Each industry has unique search behavior and competitive dynamics, so we build industry-specific SEO strategies rather than applying a generic template."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does Denver SEO cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Denver SEO pricing varies based on competition level, the number of target keywords, how many pages need optimization, and whether local, national, or AIO SEO is the focus. Most local SEO campaigns range from a few hundred to a few thousand dollars per month. We offer a free consultation to assess your specific situation and provide a transparent quote with no pressure."
+            }
+          }
+        ]
+      }
     ]
   }
   </script>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="wrap">
-      <div class="topbar-inner">
-        <div class="brand" aria-label="Eye To Ad Media">
-          <div class="brand-badge" aria-hidden="true">E2A</div>
-          <div class="brand-name">
-            <strong>Eye To Ad Media</strong>
-            <span>Denver SEO services focused on ROI</span>
+
+  <!-- ═══════ HEADER ═══════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="/" class="logo-wrap" aria-label="Eye To Ad Media — Home">
+        <img src="/images/eye-to-ad-media-logo-denver-seo.png"
+             alt="Eye To Ad Media logo"
+             width="180" height="50"
+             loading="eager">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <div class="nav-item">
+          <a href="/denver-seo-services/" class="nav-link">Services ▾</a>
+          <div class="dropdown">
+            <a href="/denver-seo-services/">Denver SEO Services</a>
+            <a href="/local-seo-denver/">Local SEO Denver</a>
+            <a href="/seo-systems/">SEO Systems</a>
+            <a href="/aio-seo-system/">AIO SEO System</a>
+            <a href="/generative-engine-optimization-system/">GEO System</a>
+            <a href="/conversion-optimization/">Conversion Optimization</a>
           </div>
         </div>
-
-        <nav class="nav" aria-label="Primary">
-          <a href="#denver-seo">Denver SEO</a>
-          <a href="#process">Process</a>
-          <a href="#proof">Proof</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-
-        <div class="callbox" aria-label="Calls to action">
-          <div class="call-pill" aria-label="Toll free phone number">
-            <div>
-              <small>Toll Free</small>
-              <strong><a href="tel:18004818638" style="color:inherit;text-decoration:none;">1-800-481-8638</a></strong>
-            </div>
+        <div class="nav-item">
+          <a href="/industries/" class="nav-link">Industries ▾</a>
+          <div class="dropdown">
+            <a href="/dentist-seo-denver/">Dentist SEO</a>
+            <a href="/contractor-seo-denver/">Contractor SEO</a>
+            <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+            <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+            <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+            <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+            <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+            <a href="/roofing-seo-denver/">Roofing SEO</a>
+            <a href="/hvac-seo-denver/">HVAC SEO</a>
           </div>
-          <a class="btn btn-primary" href="tel:18004818638" aria-label="Call now">Call Now</a>
         </div>
+        <a href="/locations/" class="nav-link">Locations</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/contact/" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:18004818638" class="call-link" aria-label="Call Eye To Ad Media">
+          <span class="call-icon">📞</span> 1-800-481-8638
+        </a>
+        <a href="/contact/" class="btn btn-primary" style="padding:10px 20px;font-size:.88rem;">Get a Free Audit</a>
       </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="denver-seo">
-      <div class="wrap">
-        <div class="hero-grid">
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <div class="mob-section-label">Services</div>
+    <a href="/denver-seo-services/">Denver SEO Services</a>
+    <a href="/local-seo-denver/">Local SEO Denver</a>
+    <a href="/seo-systems/">SEO Systems</a>
+    <a href="/aio-seo-system/">AIO SEO System</a>
+    <a href="/generative-engine-optimization-system/">GEO System</a>
+    <a href="/conversion-optimization/">Conversion Optimization</a>
+    <div class="mob-section-label">Industries</div>
+    <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
+    <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
+    <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
+    <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
+    <a href="/fitness-marketing-denver/">Fitness Marketing Denver</a>
+    <a href="/real-estate-marketing-denver/">Real Estate Marketing Denver</a>
+    <a href="/chiropractor-seo-denver/">Chiropractor SEO Denver</a>
+    <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
+    <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
+    <div class="mob-section-label">Company</div>
+    <a href="/locations/">Locations</a>
+    <a href="/blog/">Blog</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="tel:18004818638" class="mobile-call-btn">📞 Call 1-800-481-8638</a>
+  </nav>
 
-          <div class="card">
-            <div class="card-pad">
-              <div class="kicker"><b>Denver SEO</b> that is built to create calls, not just charts</div>
+  <!-- ═══════ AIO BANNER ═══════ -->
+  <div class="aio-banner">
+    <div class="aio-banner-inner">
+      <span class="aio-badge">NEW</span>
+      <span>Now optimizing for</span>
+      <span class="aio-badge">Google AI Overviews</span>
+      <span class="aio-divider">·</span>
+      <span class="aio-badge">ChatGPT Search</span>
+      <span class="aio-divider">·</span>
+      <span class="aio-badge">Perplexity</span>
+      <span class="aio-divider">·</span>
+      <span>not just traditional search</span>
+    </div>
+  </div>
 
-              <h1>Denver SEO that turns searches into <span style="color:var(--brand);">qualified calls</span>.</h1>
+  <main id="main-content">
 
-              <p class="lead">
-                Most SEO agencies sell activity. So they sell reports. Meanwhile, your phone stays quiet.
-                We do the opposite. First, we map buyer intent. Then we build pages and content that convert.
-                Finally, we track outcomes so you can see what actually worked.
-              </p>
+    <!-- ═══════ HERO ═══════ -->
+    <section class="hero" aria-label="Hero section">
+      <div class="hero-bg" role="img" aria-label="Denver SEO services strategy consultation helping local businesses grow online"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid-pattern"></div>
 
-              <div class="hero-cta">
-                <a class="btn btn-primary" href="tel:18004818638">Talk to a strategist: 1-800-481-8638</a>
-                <a class="btn" href="#process">See the process</a>
-              </div>
-
-              <div class="micro">
-                Serving Denver, Colorado and nearby cities. Also supporting businesses targeting Denver buyers from outside the area.
-                <span class="sr-only">Denver SEO company and Denver SEO services landing page.</span>
-              </div>
-
-              <div class="trust-row" aria-label="Trust indicators">
-                <div class="trust-badge"><span class="dot teal" aria-hidden="true"></span> Intent-led keyword strategy</div>
-                <div class="trust-badge"><span class="dot blue" aria-hidden="true"></span> Conversion-focused page upgrades</div>
-                <div class="trust-badge"><span class="dot gold" aria-hidden="true"></span> Measurement tied to calls & revenue</div>
-              </div>
-
-              <div class="big-points" aria-label="Key value points">
-                <div class="pill">
-                  <strong>Less fluff</strong>
-                  <span>We prioritize what moves leads.</span>
-                </div>
-                <div class="pill">
-                  <strong>More clarity</strong>
-                  <span>You always know what we’re doing.</span>
-                </div>
-                <div class="pill">
-                  <strong>Better ROI</strong>
-                  <span>Traffic is useless without conversion.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-side">
-            <div class="scorecard">
-              <h2>ROI Scorecard (what we optimize for)</h2>
-              <p>SEO is a system. So we score it like a system. Higher scores mean more leads and better close rates.</p>
-
-              <div class="bars" role="img" aria-label="Bar chart showing SEO system scoring categories">
-                <div class="bar">
-                  <div>Buyer Intent</div>
-                  <div class="track"><div class="fill" style="width:88%"></div></div>
-                  <div class="metric">88</div>
-                </div>
-                <div class="bar">
-                  <div>Landing Pages</div>
-                  <div class="track"><div class="fill blue" style="width:84%"></div></div>
-                  <div class="metric">84</div>
-                </div>
-                <div class="bar">
-                  <div>Local Relevance</div>
-                  <div class="track"><div class="fill" style="width:78%"></div></div>
-                  <div class="metric">78</div>
-                </div>
-                <div class="bar">
-                  <div>Trust Signals</div>
-                  <div class="track"><div class="fill gold" style="width:80%"></div></div>
-                  <div class="metric">80</div>
-                </div>
-                <div class="bar">
-                  <div>Tracking</div>
-                  <div class="track"><div class="fill blue" style="width:92%"></div></div>
-                  <div class="metric">92</div>
-                </div>
-              </div>
-
-              <p class="micro" style="margin-top:12px;">
-                Want a fast gut-check? Call and we’ll tell you the three fixes that can create the quickest lift.
-              </p>
-              <a class="btn btn-primary" style="width:100%; margin-top:10px;" href="tel:18004818638">Call Toll Free Now</a>
-            </div>
-
-            <div class="panel">
-              <h3>Short promise. Strong stance.</h3>
-              <ul>
-                <li>We don’t sell “SEO.” We sell <b>reliable lead flow</b>.</li>
-                <li>We don’t chase vanity metrics. We chase <b>business outcomes</b>.</li>
-                <li>We don’t hide behind dashboards. We build <b>systems that convert</b>.</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="proof">
-      <div class="wrap">
-        <div class="big-contrast">
-          <h2>Why most Denver SEO fails (and why your phone stops ringing)</h2>
-          <p>
-            Many agencies can make a graph go up. Yet that doesn’t mean you made more money.
-            So we design the campaign around one question: <b>What would make a real buyer call you?</b>
-          </p>
-
-          <div class="points">
-            <div class="point">
-              <strong>Problem: SEO without a conversion path</strong>
-              <span>
-                You can rank and still lose. Because the page doesn’t explain value, handle objections, or create urgency.
-                So visitors bounce. Then leads disappear.
-              </span>
-            </div>
-            <div class="point">
-              <strong>Fix: Intent + offer + friction removal</strong>
-              <span>
-                We match pages to buyer intent. We tighten the message. We add proof. We improve CTAs.
-                Also, we remove confusion that kills calls.
-              </span>
-            </div>
-            <div class="point">
-              <strong>Problem: “Traffic” that is not a buyer</strong>
-              <span>
-                Broad blog traffic looks impressive. However, it often attracts people who will never buy.
-                So the agency looks busy while you stay stuck.
-              </span>
-            </div>
-            <div class="point">
-              <strong>Fix: Buyer keywords + supporting trust content</strong>
-              <span>
-                We target Denver SEO buyer terms first. Then we build supporting content that earns links and authority.
-                That’s how you rise and stay there.
-              </span>
-            </div>
-          </div>
-
-          <!-- Added: color callouts (depth + persuasion, no content removed) -->
-          <div class="callout-row" aria-label="Conversion-first SEO callouts">
-            <div class="callout teal">
-              <strong>What you should feel in week one</strong>
-              <span>
-                Clear priorities. Clear pages to build. Clear measurement. So you stop guessing and start executing.
-              </span>
-            </div>
-            <div class="callout gold">
-              <strong>What we won’t sell you</strong>
-              <span>
-                “More traffic” without buyer intent. “More blogs” without a conversion path. “More reports” without ROI.
-              </span>
-            </div>
-            <div class="callout blue">
-              <strong>What we will build</strong>
-              <span>
-                A Denver SEO system that earns trust fast. Then it converts clicks into calls. Then it compounds.
-              </span>
-            </div>
-          </div>
-
-          <div class="hero-cta" style="margin-top:16px;">
-            <a class="btn btn-primary" href="tel:18004818638">Call now: 1-800-481-8638</a>
-            <a class="btn" href="#faq">Read the FAQ</a>
-          </div>
-
-          <p class="micro" style="margin-top:14px;">
-            If you want to cross-check fundamentals, Google’s SEO Starter Guide is the baseline we build on:
-            <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">Google Search Central SEO Starter Guide</a>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="process">
-      <div class="wrap">
-        <div class="kicker"><b>Process</b> built for outcomes, not busywork</div>
-        <h2>Our Denver SEO process (simple, yet ruthless)</h2>
-        <p>
-          We keep it clear. Then we keep it accountable. Also, we keep it focused.
-          Because every month should move the needle.
+      <div class="hero-content">
+        <div class="hero-eyebrow">Denver SEO Company</div>
+        <h1>
+          Denver SEO Services Built for<br>
+          <span>Rankings, Visibility,</span><br>
+          and More Qualified Leads
+        </h1>
+        <p class="hero-sub">
+          Eye To Ad Media builds SEO systems that perform across Google search, Google Maps, AI Overviews, and conversion paths. We don't just chase rankings — we build the infrastructure that turns search visibility into real business growth.
         </p>
+        <div class="hero-ctas">
+          <a href="tel:18004818638" class="btn btn-primary" style="font-size:1.05rem;padding:16px 32px;">
+            📞 Call 1-800-481-8638
+          </a>
+          <a href="/contact/" class="btn btn-outline" style="font-size:1.05rem;padding:16px 32px;">
+            Get a Free SEO Audit
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item"><span class="dot"></span> 5-Star Google Rating</div>
+          <div class="hero-trust-item"><span class="dot"></span> A+ BBB Accredited</div>
+          <div class="hero-trust-item"><span class="dot"></span> Denver-Based</div>
+          <div class="hero-trust-item"><span class="dot"></span> Serving Colorado Statewide</div>
+        </div>
+      </div>
 
-        <div class="grid-3" aria-label="Process steps">
-          <div class="panel">
-            <h3>1) Intent Map</h3>
-            <p style="margin:0; color:var(--muted); font-size:13px;">
-              We separate buyers from browsers. Then we pick keywords that drive calls.
-              Finally, we map content to each stage of the decision.
+      <!-- Floating Stats -->
+      <div class="hero-stats-card">
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years in SEO & Digital Marketing</div>
+        </div>
+        <hr class="stat-divider">
+        <div class="stat-item">
+          <div class="stat-num">5★</div>
+          <div class="stat-label">Google Business Profile Rating</div>
+        </div>
+        <hr class="stat-divider">
+        <div class="stat-item">
+          <div class="stat-num">A+</div>
+          <div class="stat-label">BBB Accredited Business</div>
+        </div>
+        <hr class="stat-divider">
+        <div class="stat-item">
+          <div class="stat-num">9</div>
+          <div class="stat-label">Industries We Specialize In</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ TRUST BAR ═══════ -->
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-bar-inner">
+          <div class="trust-item">
+            <span class="icon">⭐</span>
+            <span><strong>5-Star</strong> Google Rating</span>
+          </div>
+          <div class="trust-item">
+            <span class="icon">🏆</span>
+            <span><strong>A+</strong> BBB Accredited</span>
+          </div>
+          <div class="trust-item">
+            <span class="icon">📍</span>
+            <span>Based in <strong>Denver, CO</strong></span>
+          </div>
+          <div class="trust-item">
+            <span class="icon">🤖</span>
+            <span>SEO <strong>+</strong> AIO <strong>+</strong> GEO Ready</span>
+          </div>
+          <div class="trust-item">
+            <span class="icon">🎯</span>
+            <span>Conversion-<strong>Focused</strong> Strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════ INTRO / SYSTEMS ═══════ -->
+    <section class="section intro-section" aria-labelledby="intro-heading">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="intro-text">
+            <div class="section-label">Why Eye To Ad Media</div>
+            <h2 id="intro-heading">Most Denver SEO Agencies Are Stuck in 2019</h2>
+            <p>
+              Search has changed. Google now answers questions directly inside its results. ChatGPT and Perplexity pull from trusted sources to answer buyer questions. AI Overviews appear above traditional blue links on competitive searches.
             </p>
-            <ul>
-              <li>“Denver SEO” buyer-intent targeting</li>
-              <li>Service + city + pain-point clusters</li>
-              <li>Offer alignment (what makes them call)</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <h3>2) Conversion Pages</h3>
-            <p style="margin:0; color:var(--muted); font-size:13px;">
-              We turn pages into sales assets. So the site explains value fast.
-              Also, it handles objections before they bounce.
+            <p>
+              Meanwhile, most agencies are still running the same playbook: keyword stuffing, generic blog posts, and link schemes that Google has already figured out. That approach isn't going to get you found anymore — not by Google, and certainly not by AI search tools.
             </p>
-            <ul>
-              <li>Message clarity + trust sections</li>
-              <li>Stronger CTAs and “next step” flow</li>
-              <li>Call-first design for lead-gen services</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <h3>3) Authority + Compounding</h3>
-            <p style="margin:0; color:var(--muted); font-size:13px;">
-              We compound results by stacking technical SEO, internal linking, and credible mentions.
-              Then your rankings become harder to displace.
+            <p>
+              Eye To Ad Media builds SEO systems designed for the way search actually works today. That means optimizing for traditional Google rankings, local map pack visibility, AI-generated answers, and the conversion path — all together, in one integrated strategy.
             </p>
-            <ul>
-              <li>Technical SEO + site structure</li>
-              <li>Internal links that push priority pages</li>
-              <li>Careful outreach and citation hygiene</li>
-            </ul>
+            <a href="/denver-seo-services/" class="btn btn-dark" style="margin-top:8px;">See How We're Different →</a>
           </div>
-        </div>
-
-        <div class="panel" style="margin-top:14px;">
-          <h3>What we track (so you can trust the work)</h3>
-          <p style="margin:0; color:var(--muted); font-size:13px;">
-            Rankings matter. Yet they are not the end goal. So we track what the business feels:
-            calls, booked meetings, close-rate trends, and lead quality.
-          </p>
-
-          <table aria-label="Tracking table comparing vanity metrics and business metrics">
-            <thead>
-              <tr>
-                <th>Vanity Metric (looks good)</th>
-                <th>Business Metric (pays bills)</th>
-                <th>What we do with it</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Impressions</td>
-                <td>Qualified calls</td>
-                <td>We map queries to pages and refine messaging.</td>
-              </tr>
-              <tr>
-                <td>Traffic</td>
-                <td>Booked appointments</td>
-                <td>We improve conversion paths and add intent CTAs.</td>
-              </tr>
-              <tr>
-                <td>Average position</td>
-                <td>Close rate trend</td>
-                <td>We focus on lead quality, not just volume.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="micro" style="margin-top:10px;">
-            Want local business resources too? Denver Metro SBDC is a credible local reference:
-            <a href="https://smallbusinessmajority.org/partners/denver-metro-small-business-development-center" target="_blank" rel="noopener noreferrer">Denver Metro SBDC resources</a>.
+          <div>
+            <div class="system-pillars">
+              <div class="pillar-card">
+                <div class="pillar-icon">🔍</div>
+                <h4>Traditional SEO</h4>
+                <p>On-page optimization, technical SEO, content strategy, and authority building that moves you up in Google.</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon">🤖</div>
+                <h4>AIO Optimization</h4>
+                <p>Content structured to appear in Google AI Overviews, ChatGPT, and Perplexity — the next wave of search.</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon">📍</div>
+                <h4>Local SEO & Maps</h4>
+                <p>Google Business Profile optimization, map pack rankings, and local citation authority for Denver and beyond.</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon">📈</div>
+                <h4>Conversion Optimization</h4>
+                <p>Traffic without conversions is just noise. We build pages and paths that turn visitors into calls and leads.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ADDED SECTION: +500+ optimized words, conversion psychology, no removals -->
-    <section class="section" id="roi-system">
-      <div class="wrap">
-        <div class="kicker"><b>ROI system</b> for Denver SEO that actually sells</div>
-        <h2>How we turn Denver SEO into a predictable sales system</h2>
-        <p>
-          If your phone is not ringing, the issue is rarely “SEO” as a single lever. Instead, it is usually a chain.
-          A buyer searches. They click. They skim. Then they decide in seconds whether they trust you.
-          So we build the chain on purpose. We do not rely on luck, vague authority, or generic blog traffic.
-          We build a conversion-first system that earns attention, earns trust, and earns action.
-        </p>
-        <p>
-          First, we focus on buyer intent. That means keywords like <b>Denver SEO</b>, <b>Denver SEO company</b>, and <b>Denver SEO services</b> that signal purchase intent.
-          Then we match each keyword to a page that answers the buyer’s real questions. What do you do? Who is it for?
-          Why should I trust you? What is the next step? Because if a page cannot answer those fast, the buyer bounces.
-          Meanwhile, the agency will still send a report. Yet a report does not pay your bills.
-        </p>
-        <p>
-          Next, we use conversion psychology the ethical way. We don’t manipulate. We clarify.
-          We remove confusion. We make the offer obvious. We tighten the story.
-          We add proof and process so the buyer feels safe moving forward. Also, we create a strong call-first path.
-          A Denver SEO campaign should not feel like a lottery ticket. It should feel like a disciplined growth engine.
-          So we build pages that guide the buyer from question to confidence. Then we measure if the message worked.
-        </p>
-        <p>
-          After that, we compound authority. However, we do it carefully.
-          We prioritize technical foundations, internal linking, and credible references.
-          We avoid spammy shortcuts because they often create short-term noise and long-term pain.
-          Instead, we build a site structure that makes it easy for search engines to understand what you do, where you serve, and why you are relevant.
-          That clarity helps organic rankings, and it also helps modern AI-driven discovery.
-          When your content is structured, your entity signals are stronger. So you show up more consistently in the places buyers are searching.
-        </p>
-
-        <div class="callout-row" aria-label="ROI system callouts">
-          <div class="callout teal">
-            <strong>Clarity beats clever</strong>
-            <span>Short sentences. Strong headlines. Clear proof. Then buyers act faster.</span>
+    <!-- ═══════ DOMINATION MAP ═══════ -->
+    <section class="domination-section" aria-labelledby="domination-heading">
+      <div class="container">
+        <div class="domination-grid">
+          <div class="domination-image-wrap">
+            <img src="/images/denver-local-seo-domination-map.png"
+                 alt="Denver local SEO map showing strong search visibility across surrounding service areas"
+                 width="580" height="420"
+                 loading="lazy">
+            <div class="domination-badge">Local SEO<br>Dominance</div>
           </div>
-          <div class="callout gold">
-            <strong>Intent beats volume</strong>
-            <span>More traffic is not the goal. More qualified calls is the goal.</span>
-          </div>
-          <div class="callout blue">
-            <strong>Systems beat surprises</strong>
-            <span>We build a process you can audit, not a mystery you have to trust.</span>
+          <div class="domination-text">
+            <div class="section-label">Local SEO Denver</div>
+            <h2 id="domination-heading">Ranking Across Denver and Every Surrounding Market</h2>
+            <p>
+              Local search is about proximity, authority, and relevance. When someone in Lakewood searches "HVAC company near me" or a homeowner in Arvada needs a contractor, your business needs to show up — not your competitor who spent more money on a billboard.
+            </p>
+            <p>
+              We build local SEO strategies that cover Google Maps rankings, neighborhood-level search visibility, and location-specific landing pages. The result is consistent visibility across Denver and the surrounding communities that matter to your business.
+            </p>
+            <div class="location-chips">
+              <span class="chip">Denver</span>
+              <span class="chip">Arvada</span>
+              <span class="chip">Lakewood</span>
+              <span class="chip">Aurora</span>
+              <span class="chip">Littleton</span>
+              <span class="chip">Wheat Ridge</span>
+              <span class="chip">Broomfield</span>
+              <span class="chip">Castle Rock</span>
+            </div>
+            <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
+              <a href="/local-seo-denver/" class="btn btn-primary">Local SEO Strategy →</a>
+              <a href="/locations/" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7);">View All Locations</a>
+            </div>
           </div>
         </div>
-
-        <div class="hero-cta" style="margin-top:14px;">
-          <a class="btn btn-primary" href="tel:18004818638">Talk to a strategist: 1-800-481-8638</a>
-          <span class="fine">Prefer local: <a href="tel:17202496588">720-249-6588</a></span>
-        </div>
-
-        <p class="micro" style="margin-top:12px;">
-          If you have been burned before, you are not alone. Many Denver businesses have paid for “SEO” that looked busy but didn’t create revenue.
-          So we keep it simple: we align keywords, pages, proof, and calls. Then we measure what matters.
-        </p>
       </div>
     </section>
 
-    <section class="section" id="services">
-      <div class="wrap">
-        <div class="kicker"><b>Services</b> for Denver companies that need leads now</div>
-        <h2>Denver SEO services we deliver</h2>
-        <p>
-          This is not a menu. It’s a system. So we choose what matters first.
-          Then we build from there.
-        </p>
+    <!-- ═══════ HOW IT WORKS ═══════ -->
+    <section class="section process-section" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label">Our Process</div>
+          <h2 id="process-heading">SEO That Follows a System, Not a Guess</h2>
+          <p style="max-width:580px;margin:12px auto 0;">Every campaign follows a proven four-phase process. Each phase builds on the last, so your results compound over time instead of stalling.</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <h4>Research & Audit</h4>
+            <p>We analyze your site, competition, keyword landscape, and local search environment. No guessing — every decision is backed by data.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <h4>Strategy & Architecture</h4>
+            <p>We build a keyword-to-page map, content hierarchy, and technical SEO plan tailored to your specific market and goals.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <h4>Execution & Optimization</h4>
+            <p>We build content, fix technical issues, optimize your Google Business Profile, and earn authoritative links that move rankings.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <h4>Measure & Refine</h4>
+            <p>We track rankings, traffic, calls, and conversions. Then we adjust the strategy monthly to keep momentum building.</p>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:48px;">
+          <a href="/seo-systems/" class="btn btn-dark">See the Full SEO System →</a>
+        </div>
+      </div>
+    </section>
 
-        <div class="grid-3">
-          <div class="panel">
-            <h3>Local SEO (Denver)</h3>
-            <ul>
-              <li>Denver relevance signals on-site</li>
-              <li>Service pages built for intent</li>
-              <li>Internal linking and topical clusters</li>
-              <li>GBP + website alignment support</li>
-            </ul>
+    <!-- ═══════ SERVICES ═══════ -->
+    <section class="section services-section" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label">Core Services</div>
+          <h2 id="services-heading">Built for Modern Search. Focused on Results.</h2>
+          <p style="max-width:540px;margin:12px auto 0;">Every service we offer is designed to work together. SEO without conversion is wasted traffic. Conversions without SEO are unsustainable. We build the whole system.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-icon">🔍</div>
+            <h3>Denver SEO Services</h3>
+            <p>Full-service search engine optimization for Denver businesses. We cover technical SEO, on-page optimization, content strategy, and link building — all tied to real ranking outcomes.</p>
+            <a href="/denver-seo-services/" class="service-link">View Denver SEO Services →</a>
           </div>
-          <div class="panel">
-            <h3>Technical SEO</h3>
-            <ul>
-              <li>Indexing and crawl efficiency</li>
-              <li>Template and structure cleanup</li>
-              <li>Schema implementation (LocalBusiness + FAQ)</li>
-              <li>Performance and UX hygiene</li>
-            </ul>
+          <div class="service-card">
+            <div class="service-card-icon">📍</div>
+            <h3>Local SEO Denver</h3>
+            <p>Get found in Google Maps, the local pack, and neighborhood-specific searches. We optimize your Google Business Profile, build local citations, and develop location-based content that ranks.</p>
+            <a href="/local-seo-denver/" class="service-link">View Local SEO →</a>
           </div>
-          <div class="panel">
+          <div class="service-card">
+            <div class="service-card-icon">🤖</div>
+            <h3>AIO SEO System</h3>
+            <p>Search is moving to AI-generated answers. We optimize your content to appear in Google's AI Overviews, ChatGPT responses, and Perplexity — so your business gets found everywhere buyers are looking.</p>
+            <a href="/aio-seo-system/" class="service-link">View AIO SEO System →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-card-icon">🌐</div>
+            <h3>Generative Engine Optimization</h3>
+            <p>GEO goes beyond keywords. We build entity clarity, structured content, and authority signals that make your business the answer AI systems trust and cite when generating responses.</p>
+            <a href="/generative-engine-optimization-system/" class="service-link">View GEO System →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-card-icon">📈</div>
             <h3>Conversion Optimization</h3>
-            <ul>
-              <li>Message clarity upgrades</li>
-              <li>Stronger CTAs and “next step” design</li>
-              <li>Trust stacking (proof, process, objections)</li>
-              <li>Tracking so you can see ROI</li>
-            </ul>
+            <p>Rankings that don't produce calls or leads are a waste of budget. We optimize your pages for conversion — clear CTAs, trust signals, page speed, mobile usability, and messaging that closes.</p>
+            <a href="/conversion-optimization/" class="service-link">View Conversion Optimization →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-card-icon">⚙️</div>
+            <h3>SEO Systems</h3>
+            <p>One-time fixes don't compound. We build an ongoing SEO system — content, links, technical health, local signals — that grows your authority month after month in a competitive market like Denver.</p>
+            <a href="/seo-systems/" class="service-link">View SEO Systems →</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="panel" style="margin-top:14px;">
-          <h3>Denver focus areas (GEO signals without spam)</h3>
-          <p style="margin:0; color:var(--muted); font-size:13px;">
-            We serve businesses across Denver and nearby cities. We write like humans.
-            Also, we keep it clean. So it reads well and still supports local relevance.
+    <!-- ═══════ INDUSTRIES ═══════ -->
+    <section class="section" style="background:var(--navy);padding:80px 0;" aria-labelledby="industries-heading">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label">Industry Specialization</div>
+          <h2 id="industries-heading" style="color:var(--white);">Industries We Help Grow in Denver</h2>
+          <p style="color:rgba(255,255,255,.6);max-width:560px;margin:12px auto 0;">
+            Generic SEO doesn't work in specialized markets. We build industry-specific strategies because a dentist's SEO is not the same as a contractor's, and both are nothing like a law firm's.
           </p>
-          <div class="trust-row" style="margin-top:12px;">
-            <span class="tag"><span class="mini ok"></span> Downtown Denver</span>
-            <span class="tag"><span class="mini ok"></span> Cherry Creek</span>
-            <span class="tag"><span class="mini ok"></span> Capitol Hill</span>
-            <span class="tag"><span class="mini ok"></span> Highlands</span>
-            <span class="tag"><span class="mini ok"></span> RiNo</span>
-            <span class="tag"><span class="mini ok"></span> Lakewood</span>
-            <span class="tag"><span class="mini ok"></span> Aurora</span>
-            <span class="tag"><span class="mini ok"></span> Littleton</span>
-            <span class="tag"><span class="mini ok"></span> Centennial</span>
-            <span class="tag"><span class="mini ok"></span> Englewood</span>
+        </div>
+        <div class="industries-grid" style="margin-top:40px;">
+          <a href="/contractor-seo-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">🔨</div>
+            <div>
+              <h4 style="color:var(--white);">Contractor SEO</h4>
+              <p style="color:rgba(255,255,255,.5);">More local leads for home service businesses across Denver metro.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+          <a href="/dentist-seo-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">🦷</div>
+            <div>
+              <h4 style="color:var(--white);">Dentist SEO</h4>
+              <p style="color:rgba(255,255,255,.5);">High-intent patient leads for dental practices in competitive Denver zip codes.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+          <a href="/law-firm-seo-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">⚖️</div>
+            <div>
+              <h4 style="color:var(--white);">Law Firm SEO</h4>
+              <p style="color:rgba(255,255,255,.5);">Visibility for attorneys and legal practices competing in Denver's tough legal market.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+          <a href="/med-spa-seo-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">💆</div>
+            <div>
+              <h4 style="color:var(--white);">Med Spa SEO</h4>
+              <p style="color:rgba(255,255,255,.5);">Local visibility and booking-focused SEO for med spas and aesthetic practices.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+          <a href="/fitness-marketing-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">💪</div>
+            <div>
+              <h4 style="color:var(--white);">Fitness Marketing</h4>
+              <p style="color:rgba(255,255,255,.5);">Membership growth and lead flow strategies for gyms and personal trainers.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+          <a href="/real-estate-marketing-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">🏡</div>
+            <div>
+              <h4 style="color:var(--white);">Real Estate Marketing</h4>
+              <p style="color:rgba(255,255,255,.5);">Search visibility and lead generation for agents and brokerages in the Denver market.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+          <a href="/chiropractor-seo-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">🦴</div>
+            <div>
+              <h4 style="color:var(--white);">Chiropractor SEO</h4>
+              <p style="color:rgba(255,255,255,.5);">Local SEO for chiropractic practices building patient pipelines in Denver.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+          <a href="/roofing-seo-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">🏗️</div>
+            <div>
+              <h4 style="color:var(--white);">Roofing SEO</h4>
+              <p style="color:rgba(255,255,255,.5);">Competitive search strategies for roofing companies in a crowded Denver market.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+          <a href="/hvac-seo-denver/" class="industry-card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);">
+            <div class="industry-icon">❄️</div>
+            <div>
+              <h4 style="color:var(--white);">HVAC SEO</h4>
+              <p style="color:rgba(255,255,255,.5);">Higher-intent service calls and seasonal lead flow for HVAC companies.</p>
+            </div>
+            <span class="arrow" style="color:var(--teal);">→</span>
+          </a>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+          <a href="/industries/" class="btn btn-primary">Browse All Industries →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ REVIEWS ═══════ -->
+    <section class="reviews-section" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="reviews-header">
+          <div class="section-label section-label-gold">Real Client Reviews</div>
+          <h2 id="reviews-heading">What Denver Business Owners Say</h2>
+          <div class="stars-row">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="reviews-meta">5.0 average · Google Business Profile · Verified Reviews</p>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="review-text">
+              "Working with Eye To Ad Media has been very helpful for my business. Zach is knowledgeable about SEO and digital marketing, has significantly improved our online visibility, and helped us attract the right clients. Zach takes the time to understand our business, our brand, and our goals, and he tailors his strategies specifically to us."
+            </p>
+            <div class="review-author">
+              <div class="reviewer-avatar">CB</div>
+              <div>
+                <div class="reviewer-name">Christina Burke</div>
+                <div class="reviewer-sub">Google Review ★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="review-text">
+              "As a result of their efforts, my website's visibility and traffic have increased significantly, and I have seen a corresponding increase in leads and sales. I would highly recommend Eye To Ad Media to any business looking to improve their online presence."
+            </p>
+            <div class="review-author">
+              <div class="reviewer-avatar">JL</div>
+              <div>
+                <div class="reviewer-name">James Lathrop</div>
+                <div class="reviewer-sub">Google Review · Denver ★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="review-text">
+              "This isn't the first Denver SEO company we have worked with — it is however the first and only agency to get us multiple first page rankings. I've been so pleased with the results I decided to have them create a brand new website, which was an amazing upgrade from our previous provider."
+            </p>
+            <div class="review-author">
+              <div class="reviewer-avatar">MO</div>
+              <div>
+                <div class="reviewer-name">Matthew Oliver</div>
+                <div class="reviewer-sub">Google Review ★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card" style="grid-column: 1 / -1; max-width: 640px; margin: 0 auto; width: 100%;">
+            <div class="review-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="review-text">
+              "If you want to grow your business, call this company! Zach has made me feel very comfortable about investing in online marketing. Proof is in the pudding — check out the site he built for us. This experience has been one good experience."
+            </p>
+            <div class="review-author">
+              <div class="reviewer-avatar">CA</div>
+              <div>
+                <div class="reviewer-name">Colorado Auto Glass</div>
+                <div class="reviewer-sub">Google Review ★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-cta">
+          <a href="/contact/" class="btn btn-primary" style="font-size:1.05rem;padding:16px 36px;">
+            Get Results Like These → Free Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ ABOUT STRIP ═══════ -->
+    <section class="about-strip" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-strip-grid">
+          <div>
+            <img src="/images/denver-seo-strategy-meeting.png"
+                 alt="Denver SEO strategy meeting focused on rankings, content, and technical improvements"
+                 width="560" height="380"
+                 loading="lazy">
+          </div>
+          <div>
+            <div class="section-label">About Eye To Ad Media</div>
+            <h2 id="about-heading">A Denver SEO Company That Treats Your Business Like Its Own</h2>
+            <p>
+              Eye To Ad Media was built on one principle: your success is our success. We're not a faceless agency running templates. We're a Denver-based SEO company where Zach — the owner — personally understands your business, your market, and your growth goals before building a single strategy.
+            </p>
+            <p>
+              We've earned multiple first-page rankings for clients who had already tried other agencies and gotten nowhere. The difference is that we don't just run a generic checklist. We understand what makes Denver businesses rank, what makes local customers call, and what makes them convert.
+            </p>
+            <div class="trust-badges">
+              <div class="trust-badge">
+                <span class="badge-icon">⭐</span>
+                <div>
+                  <div class="badge-text">5-Star Rated</div>
+                  <div class="badge-sub">Google Business Profile</div>
+                </div>
+              </div>
+              <div class="trust-badge">
+                <span class="badge-icon">🏆</span>
+                <div>
+                  <div class="badge-text">A+ Rating</div>
+                  <div class="badge-sub">BBB Accredited Business</div>
+                </div>
+              </div>
+              <div class="trust-badge">
+                <span class="badge-icon">📍</span>
+                <div>
+                  <div class="badge-text">Denver-Based</div>
+                  <div class="badge-sub">1001 Bannock St, Denver CO</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:28px;">
+              <a href="/about/" class="btn btn-dark">Meet the Team →</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="comparison">
-      <div class="wrap">
-        <div class="kicker"><b>Reality check</b> the differences that matter</div>
-        <h2>What you should demand from a Denver SEO company</h2>
-        <p>
-          If an agency cannot answer these clearly, you should pause.
-          Because clarity now prevents disappointment later.
-        </p>
+    <!-- ═══════ CREDIBILITY BAR ═══════ -->
+    <div class="credibility-bar">
+      <div class="container">
+        <div class="credibility-inner">
+          <span>Our approach aligns with guidelines from</span>
+          <a href="https://developers.google.com/search/docs" target="_blank" rel="noopener noreferrer">Google Search Central</a>
+          <span>and structured data standards from</span>
+          <a href="https://schema.org" target="_blank" rel="noopener noreferrer">Schema.org</a>
+          <span>— because sustainable rankings are built on solid foundations, not shortcuts.</span>
+        </div>
+      </div>
+    </div>
 
-        <table aria-label="Comparison table of ROI-first SEO vs vanity SEO">
-          <thead>
-            <tr>
-              <th>What you want</th>
-              <th>ROI-First SEO (our standard)</th>
-              <th>Vanity SEO (common)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Buyer keyword focus</td>
-              <td>Start with buyer intent, then expand</td>
-              <td>Start with blog traffic for “volume”</td>
-            </tr>
-            <tr>
-              <td>Conversion path</td>
-              <td>CTAs, trust, objections, next steps</td>
-              <td>“Traffic will convert eventually”</td>
-            </tr>
-            <tr>
-              <td>Reporting</td>
-              <td>Calls, booked appointments, lead quality</td>
-              <td>Impressions, ranks, generic dashboards</td>
-            </tr>
-            <tr>
-              <td>Accountability</td>
-              <td>Prioritized roadmap tied to outcomes</td>
-              <td>Monthly “tasks” without business logic</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="hero-cta" style="margin-top:14px;">
-          <a class="btn btn-primary" href="tel:18004818638">Call Toll Free 1-800-481-8638</a>
-          <span class="fine">If you prefer local: <a href="tel:17202496588">720-249-6588</a></span>
+    <!-- ═══════ FAQ ═══════ -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label">Common Questions</div>
+          <h2 id="faq-heading">Denver SEO Questions We Hear Every Day</h2>
+          <p style="max-width:520px;margin:12px auto 0;">Honest answers to the questions Denver business owners ask us before getting started.</p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What does a Denver SEO company actually do?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>A Denver SEO company researches the keywords your ideal customers are typing into Google, then optimizes your website's technical health, content, and authority to rank for those terms. Beyond rankings, we also optimize for Google Maps visibility and — increasingly — AI-generated search results. The end goal is more high-quality visitors finding your business first.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How long does Denver SEO take to show results?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Most businesses see meaningful ranking movement within 3 to 6 months. Highly competitive keywords in saturated markets can take 6 to 12 months. Local SEO in Google Maps often moves faster — sometimes within 30 to 60 days. The timeline depends on your current site authority, the competition level, and how aggressively we build content and links.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What is AIO SEO and why does it matter?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>AIO stands for AI Optimization. Traditional SEO targets Google's blue links. AIO SEO means your content is also built to appear in Google's AI Overviews, ChatGPT answers, and Perplexity responses. As more people use AI to find businesses and services, being visible in those results requires structuring content differently than classic SEO alone. We build both into every strategy. Learn more about how <a href="/aio-seo-system/">our AIO SEO System</a> works.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Do you only work with Denver businesses?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Our home base is Denver and we specialize in helping local Colorado businesses dominate their market. We serve Denver plus Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Broomfield, and Castle Rock. For the right national SEO clients, we also work remotely across the U.S. View our <a href="/locations/">full service area here</a>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What industries do you specialize in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>We specialize in contractors, dentists, law firms, med spas, fitness businesses, real estate professionals, chiropractors, roofing companies, and HVAC companies. Each industry has unique search behavior and buyer intent, so we build industry-specific strategies rather than applying a generic template. See our <a href="/industries/">industries page</a> for details.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How much does Denver SEO cost?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Denver SEO pricing varies based on competition level, the number of target keywords, site complexity, and whether local, national, or AIO SEO is the focus. Most local SEO campaigns range from a few hundred to a few thousand dollars per month. We offer a free consultation to assess your specific situation and provide a transparent, no-pressure quote. <a href="/contact/">Contact us to get started</a>.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
-      <div class="wrap">
-        <div class="kicker"><b>FAQ</b> quick answers, clear expectations</div>
-        <h2>Denver SEO FAQ (20 questions)</h2>
-        <p>
-          These are the questions serious buyers ask.
-          So we answer them directly. Then we earn trust faster.
-        </p>
-
-        <div class="grid-3" style="grid-template-columns:1fr; gap:10px;">
-          <details>
-            <summary>1) What makes Eye To Ad Media different from other Denver SEO agencies?</summary>
-            <p>We are conversion-first. We focus on calls, booked appointments, and revenue outcomes. Then we build SEO around intent, offers, and conversion paths. So results feel real, not theoretical.</p>
-          </details>
-
-          <details>
-            <summary>2) Do you only do SEO, or do you also improve conversions?</summary>
-            <p>We do both. SEO without conversion is expensive content. So we upgrade the message, CTAs, trust signals, and funnel flow while we build rankings.</p>
-          </details>
-
-          <details>
-            <summary>3) How long does Denver SEO take to work?</summary>
-            <p>Early movement can happen in 4–8 weeks. However, compounding lead flow often builds over 3–6+ months. It depends on competition, site authority, and execution quality.</p>
-          </details>
-
-          <details>
-            <summary>4) Can you help a Google Business Profile rank higher in Denver?</summary>
-            <p>Yes. We align the website with local relevance signals, service pages, and intent-driven content. Then the website and GBP support each other instead of conflicting.</p>
-          </details>
-
-          <details>
-            <summary>5) What keywords do you target for Denver SEO services?</summary>
-            <p>We start with buyer terms like “Denver SEO,” “Denver SEO company,” and service + city phrases. Then we build supporting clusters that earn trust and links.</p>
-          </details>
-
-          <details>
-            <summary>6) Do you guarantee #1 rankings?</summary>
-            <p>No. Guarantees are usually a red flag. Instead, we guarantee a clear process, transparent priorities, and reporting tied to qualified leads and conversion improvements.</p>
-          </details>
-
-          <details>
-            <summary>7) What’s included in a typical SEO campaign?</summary>
-            <p>Technical SEO, content strategy, on-page improvements, internal linking, local SEO support, and conversion optimization. Also, measurement so you can see ROI.</p>
-          </details>
-
-          <details>
-            <summary>8) Do you work with small businesses in Denver?</summary>
-            <p>Yes. Our system is built for small and mid-sized companies that need outcomes, not busywork.</p>
-          </details>
-
-          <details>
-            <summary>9) Will you redesign my website?</summary>
-            <p>If needed, yes. Yet we often win with focused upgrades: landing pages, clarity, speed, trust, and calls-to-action.</p>
-          </details>
-
-          <details>
-            <summary>10) How do you measure SEO success?</summary>
-            <p>Qualified calls, booked appointments, close-rate trends, and lead quality. Rankings matter, yet revenue is the scoreboard.</p>
-          </details>
-
-          <details>
-            <summary>11) Do you do technical SEO audits?</summary>
-            <p>Yes. We review crawl/index issues, internal linking, architecture, templates, performance, and schema. Then we prioritize by impact.</p>
-          </details>
-
-          <details>
-            <summary>12) Do you build backlinks?</summary>
-            <p>Yes, carefully. We focus on relevance and trust. Also, we avoid spammy link blasts that can harm long-term stability.</p>
-          </details>
-
-          <details>
-            <summary>13) Can you help with GEO and AI search visibility?</summary>
-            <p>Yes. We use clear headings, concise answers, strong entities, FAQs, and schema. So you show up in both traditional search and AI-driven discovery.</p>
-          </details>
-
-          <details>
-            <summary>14) Do you manage PPC too?</summary>
-            <p>We can. However, this site focuses on Denver SEO services. If you want PPC, we treat it as a conversion system, not just clicks.</p>
-          </details>
-
-          <details>
-            <summary>15) What industries do you work with?</summary>
-            <p>Lead-gen businesses, local services, and brands that need calls. The common thread is simple: you want lead quality and ROI.</p>
-          </details>
-
-          <details>
-            <summary>16) What does Denver SEO cost?</summary>
-            <p>It depends on competition and scope. We keep it transparent and tied to priorities that drive leads. Then you can scale when the ROI is proven.</p>
-          </details>
-
-          <details>
-            <summary>17) Will I own the content you create?</summary>
-            <p>Yes. Your content stays on your site. So your SEO becomes an asset you own.</p>
-          </details>
-
-          <details>
-            <summary>18) How do we start?</summary>
-            <p>Call us. We’ll ask a few questions, review your current visibility, and map the shortest path to more qualified calls.</p>
-          </details>
-
-          <details>
-            <summary>19) Do you work across all of Denver?</summary>
-            <p>Yes. Denver proper plus nearby areas like Lakewood, Aurora, Littleton, Centennial, and Englewood.</p>
-          </details>
-
-          <details>
-            <summary>20) What if I’ve been burned by an SEO agency before?</summary>
-            <p>We keep it measurable. We speak in priorities, tradeoffs, and proof. Also, we report on outcomes you actually care about, not just dashboards.</p>
-          </details>
+    <!-- ═══════ FINAL CTA ═══════ -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="section-label" style="margin-bottom:20px;">Ready to Rank?</div>
+          <h2 id="cta-heading">Let's Build Your Denver SEO Strategy</h2>
+          <p>
+            Stop watching competitors rank above you. Get a free SEO audit and a straight-talking conversation about what it will actually take to move your business to the top of Denver search results.
+          </p>
+          <div class="cta-buttons">
+            <a href="tel:18004818638" class="btn btn-primary" style="font-size:1.1rem;padding:18px 40px;">
+              📞 Call 1-800-481-8638
+            </a>
+            <a href="/contact/" class="btn btn-outline" style="font-size:1.1rem;padding:18px 40px;">
+              Get a Free SEO Audit
+            </a>
+          </div>
+          <p class="cta-note">No contracts required to start. No pressure. Just a real conversation about your goals.</p>
         </div>
-
       </div>
     </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
       <div class="footer-grid">
-        <div>
-          <strong>Eye To Ad Media</strong>
-          <p class="fine" style="margin:6px 0 0;">
-            Denver SEO services focused on conversion outcomes. We build intent-led SEO systems that turn searches into calls.
-          </p>
-
-          <div class="links" aria-label="Footer links">
-            <a href="#denver-seo">Denver SEO</a>
-            <a href="#process">Process</a>
-            <a href="#services">Services</a>
-            <a href="#faq">FAQ</a>
-            <a href="/terms.html">Terms</a>
-            <a href="/sitemap.xml">XML Sitemap</a>
-            <a href="/robots.txt">Robots</a>
+        <div class="footer-brand">
+          <img src="/images/eye-to-ad-media-logo-denver-seo.png"
+               alt="Eye To Ad Media logo"
+               width="160" height="44"
+               loading="lazy">
+          <p>Denver's SEO authority for modern search — built for Google, AI Overviews, local maps, and conversion. Serving Denver and the surrounding Colorado market.</p>
+          <div class="footer-nap">
+            <address>
+              Eye To Ad Media<br>
+              1001 Bannock St #660<br>
+              Denver, CO 80204<br>
+              <a href="tel:17202496588">(720) 249-6588</a><br>
+              <a href="tel:18004818638">1-800-481-8638</a><br>
+              <a href="https://www.eyetoad.com">www.eyetoad.com</a>
+            </address>
           </div>
-
-          <p class="fine" style="margin-top:12px;">
-            Offsite references:
-            <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">Google SEO Starter Guide</a>
-            ·
-            <a href="https://smallbusinessmajority.org/partners/denver-metro-small-business-development-center" target="_blank" rel="noopener noreferrer">Denver Metro SBDC</a>
-          </p>
-
-          <p class="fine" style="margin-top:10px;">
-            © 2026 Eye To Ad Media. All rights reserved.
-          </p>
         </div>
-
-        <div class="panel">
-          <h3 style="margin:0 0 8px;">Call us</h3>
-          <div class="trust-row" style="margin-top:10px;">
-            <div class="trust-badge" style="width:100%; justify-content:space-between;">
-              <span>Toll Free</span>
-              <b><a href="tel:18004818638" style="color:var(--ink); text-decoration:none;">1-800-481-8638</a></b>
-            </div>
-            <div class="trust-badge" style="width:100%; justify-content:space-between;">
-              <span>Local (Denver)</span>
-              <b><a href="tel:17202496588" style="color:var(--ink); text-decoration:none;">720-249-6588</a></b>
-            </div>
-          </div>
-
-          <a class="btn btn-primary" style="width:100%; margin-top:10px;" href="tel:18004818638">Call Now</a>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/denver-seo-services/">Denver SEO Services</a>
+          <a href="/local-seo-denver/">Local SEO Denver</a>
+          <a href="/seo-systems/">SEO Systems</a>
+          <a href="/aio-seo-system/">AIO SEO System</a>
+          <a href="/generative-engine-optimization-system/">GEO System</a>
+          <a href="/conversion-optimization/">Conversion Optimization</a>
+        </div>
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <a href="/contractor-seo-denver/">Contractor SEO</a>
+          <a href="/dentist-seo-denver/">Dentist SEO</a>
+          <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+          <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+          <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+          <a href="/roofing-seo-denver/">Roofing SEO</a>
+          <a href="/hvac-seo-denver/">HVAC SEO</a>
+          <a href="/industries/">All Industries →</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about/">About</a>
+          <a href="/case-studies/">Case Studies</a>
+          <a href="/blog/">Blog</a>
+          <a href="/contact/">Contact</a>
+          <a href="/locations/">Locations</a>
+          <h4 style="margin-top:20px;">Legal</h4>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+          <a href="/accessibility/">Accessibility</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Eye To Ad Media. All rights reserved. Denver, CO.</p>
+        <div class="footer-bottom-links">
+          <a href="/privacy-policy/">Privacy</a>
+          <a href="/terms.html">Terms</a>
+          <a href="/accessibility/">Accessibility</a>
+          <a href="/sitemap.xml">Sitemap</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq-q').setAttribute('aria-expanded', false);
+        });
+        // Toggle clicked
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', true);
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
