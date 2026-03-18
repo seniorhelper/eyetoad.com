@@ -92,11 +92,11 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 /* ===== HEADER ===== */
 .hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
 .hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
-.hdr-inner{display:flex;align-items:center;justify-content:space-between;height:120px;gap:16px}
-@media(max-width:768px){.hdr-inner{height:90px}}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;height:180px;gap:16px}
+@media(max-width:768px){.hdr-inner{height:130px}}
 .logo{display:flex;align-items:center;flex-shrink:0}
-.logo img{height:110px;width:auto;display:block}
-@media(max-width:768px){.logo img{height:80px}}
+.logo img{height:160px;width:auto;display:block}
+@media(max-width:768px){.logo img{height:110px}}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.9rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 13px;border-radius:var(--r8);transition:all .18s}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
@@ -114,8 +114,8 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mob-nav{display:none;position:fixed;top:120px;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:20px}
-@media(max-width:768px){.mob-nav{top:90px}}
+.mob-nav{display:none;position:fixed;top:180px;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:20px}
+@media(max-width:768px){.mob-nav{top:130px}}
 .mob-nav.open{display:block}
 .mob-sec{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:16px 0 6px}
 .mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -493,8 +493,6 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <div class="hero-grad"></div>
   <div class="hero-dots" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
-  <!-- Click-to-call overlay on hero image -->
-  <a href="tel:18004818638" style="position:absolute;top:18px;right:24px;z-index:10;display:flex;align-items:center;gap:9px;background:var(--orange);color:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:1rem;padding:13px 22px;border-radius:40px;box-shadow:0 6px 24px rgba(249,115,22,.5);text-decoration:none;white-space:nowrap;transition:all .2s;" onmouseover="this.style.background='#EA580C'" onmouseout="this.style.background='var(--orange)'">📞 Call 1-800-481-8638</a>
   <div class="hero-body">
     <div class="wrap">
       <div class="hero-layout">
@@ -834,7 +832,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       </div>
     </div>
     <div class="footer-bot">
-      <p>© 2025 Eye To Ad Media. All rights reserved. Denver, CO.</p>
+      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO.</p>
       <div class="footer-links">
         <a href="/privacy-policy/">Privacy</a>
         <a href="/terms.html">Terms</a>
