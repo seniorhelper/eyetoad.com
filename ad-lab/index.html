@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grow My Business Game | Eye To Ad Media – Interactive Marketing Tools Denver</title>
+<meta name="description" content="Play the Grow My Business snake game — built by Eye To Ad Media to demonstrate the psychology of interactive brand advertising. Denver SEO & AIO agency."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Nunito:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --bg: #080c14;
+  --surface: #0f1520;
+  --border: rgba(255,255,255,0.08);
+  --gold: #f5c518;
+  --orange: #ff6b35;
+  --green: #00e676;
+  --cyan: #00e5ff;
+  --pink: #ff4081;
+  --purple: #bb86fc;
+  --text: #e8eaf0;
+  --muted: #7986a0;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-kids: 'Nunito', sans-serif;
+  --font-retro: 'Press Start 2P', monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── HERO SECTION ── */
+.hero {
+  position: relative;
+  padding: 80px 24px 60px;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(0,229,255,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse 80% 60% at 80% 50%, rgba(245,197,24,0.05) 0%, transparent 50%),
+              var(--bg);
+}
+
+.hero::before {
+  content:'';
+  position:absolute;inset:0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px),
+              repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px);
+  pointer-events:none;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  border: 1px solid rgba(0,229,255,0.3);
+  padding: 6px 16px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero-sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 2.8rem);
+  color: var(--orange);
+  letter-spacing: 3px;
+  margin-bottom: 32px;
+}
+
+/* ── PSYCHOLOGY COPY ── */
+.psych-section {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  padding: 0 24px;
+}
+
+.psych-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+@media(min-width:700px){.psych-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.psych-grid{grid-template-columns:repeat(3,1fr);}}
+
+.psych-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  padding: 24px 20px;
+  position: relative;
+}
+
+.psych-card .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+.psych-card h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; }
+.psych-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+.psych-lead {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.psych-lead strong { color: var(--cyan); }
+
+.psych-stat {
+  display: inline-block;
+  background: rgba(245,197,24,0.08);
+  border: 1px solid rgba(245,197,24,0.25);
+  padding: 16px 24px;
+  margin: 8px 4px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  border-radius: 2px;
+}
+.psych-stat small { display: block; font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 1px; margin-top: 4px; }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* ── GAME WRAPPER ── */
+.game-area {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px 80px;
+}
+
+/* ── SKIN SELECTOR ── */
+.skin-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.skin-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.skin-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.skin-btn.active { background: var(--cyan); color: #000; border-color: var(--cyan); font-weight: 700; }
+
+/* ── GAME CONSOLE OUTER SHELL ── */
+.console-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+/* ── NOKIA SKIN ── */
+.console-shell.skin-nokia {
+  background: linear-gradient(160deg, #2a2d35 0%, #1a1d22 40%, #22252e 100%);
+  border-radius: 18px 18px 40px 40px;
+  padding: 16px 20px 32px;
+  max-width: 360px;
+  margin: 0 auto;
+  box-shadow: 0 0 0 2px #3a3d45, 0 20px 60px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.1);
+  width: 100%;
+}
+.skin-nokia .nokia-top {
+  width: 60px; height: 60px;
+  background: radial-gradient(circle, #3a3d45, #1a1d22);
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  border: 2px solid #444;
+  position: relative;
+}
+.skin-nokia .nokia-top::after {
+  content: '●'; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%); color: #555; font-size: 20px;
+}
+.skin-nokia .nokia-brand {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #999;
+  margin-bottom: 8px;
+}
+.skin-nokia .game-screen-wrap {
+  background: #4a5240;
+  border-radius: 6px;
+  padding: 10px;
+  border: 3px solid #222;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+}
+.skin-nokia #gameCanvas {
+  image-rendering: pixelated;
+  border-radius: 2px;
+}
+
+/* ── GAMEBOY SKIN ── */
+.console-shell.skin-gameboy {
+  background: linear-gradient(160deg, #c8c0b8 0%, #a8a098 50%, #b0a8a0 100%);
+  border-radius: 12px 12px 60px 12px;
+  padding: 20px 24px 40px;
+  max-width: 420px;
+  margin: 0 auto;
+  box-shadow: 0 0 0 3px #888, 0 20px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.5);
+  width: 100%;
+}
+.skin-gameboy .gb-brand {
+  font-family: Arial Black, sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #666;
+  margin-bottom: 8px;
+  text-align: right;
+}
+.skin-gameboy .game-screen-wrap {
+  background: #1a1a2e;
+  border-radius: 8px;
+  padding: 12px;
+  border: 4px solid #555;
+  box-shadow: inset 0 3px 12px rgba(0,0,0,0.8);
+  margin-bottom: 16px;
+}
+
+/* ── NEON SKIN ── */
+.console-shell.skin-neon {
+  background: #0a0010;
+  border: 1px solid rgba(255,0,255,0.3);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 560px;
+  margin: 0 auto;
+  box-shadow: 0 0 30px rgba(187,134,252,0.2), 0 0 60px rgba(0,229,255,0.1), inset 0 0 30px rgba(0,0,0,0.5);
+  width: 100%;
+}
+.skin-neon .game-screen-wrap {
+  border: 1px solid rgba(0,229,255,0.4);
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 0 20px rgba(0,229,255,0.15), inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ── KIDS SKIN ── */
+.console-shell.skin-kids {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 30%, #a8edea 60%, #ffd89b 100%);
+  border-radius: 30px;
+  padding: 20px;
+  max-width: 520px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(255,100,100,0.3);
+  border: 4px solid #fff;
+  width: 100%;
+}
+.skin-kids .game-screen-wrap {
+  background: #1a0a2e;
+  border-radius: 16px;
+  padding: 8px;
+  border: 4px solid #fff;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ── DEFAULT / MODERN SKIN ── */
+.console-shell.skin-modern {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  width: 100%;
+}
+.skin-modern .game-screen-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* ── CANVAS ── */
+#gameCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── HUD ── */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skin-nokia .hud { color: #556; font-size: 10px; }
+.skin-kids .hud { font-family: var(--font-kids); font-weight: 700; color: #333; }
+
+.hud-score { color: var(--gold); font-weight: 700; }
+.hud-level { color: var(--cyan); }
+.hud-lives { color: var(--pink); }
+
+/* ── MODE CONTROLS ── */
+.mode-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+}
+.mode-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+.mode-btn:hover { border-color: var(--orange); color: var(--orange); }
+.mode-btn.active { background: var(--orange); color: #000; border-color: var(--orange); }
+
+/* ── DIFF BAR ── */
+.diff-bar {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.diff-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+.diff-btn:hover { border-color: var(--purple); color: var(--purple); }
+.diff-btn.active { background: var(--purple); color: #000; border-color: var(--purple); }
+
+/* ── KIDS SUBJECT BAR ── */
+.kids-bar {
+  display: none;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.kids-bar.show { display: flex; }
+.kids-btn {
+  font-family: var(--font-kids);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border: 2px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.15s;
+}
+.kids-btn.active { background: var(--pink); color: #fff; border-color: var(--pink); }
+
+/* ── GAME BUTTONS ── */
+.game-btns {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 12px 0;
+}
+.gbtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 8px 20px;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.12s;
+  letter-spacing: 1px;
+}
+.gbtn-start { background: var(--green); color: #000; border-color: var(--green); }
+.gbtn-start:hover { box-shadow: 0 0 12px rgba(0,230,118,0.5); }
+.gbtn-pause { background: transparent; color: var(--gold); border-color: var(--gold); }
+.gbtn-pause:hover { background: var(--gold); color: #000; }
+.gbtn-reset { background: transparent; color: var(--pink); border-color: var(--pink); }
+.gbtn-reset:hover { background: var(--pink); color: #fff; }
+
+/* ── D-PAD ── */
+.dpad-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 16px auto;
+  flex-shrink: 0;
+}
+.dpad-btn {
+  position: absolute;
+  background: #1e2535;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.dpad-btn:active, .dpad-btn.pressed { background: var(--cyan); color: #000; }
+.dpad-up    { top:0; left:50%; transform:translateX(-50%); width:44px; height:44px; }
+.dpad-down  { bottom:0; left:50%; transform:translateX(-50%); width:44px; height:44px; }
+.dpad-left  { left:0; top:50%; transform:translateY(-50%); width:44px; height:44px; }
+.dpad-right { right:0; top:50%; transform:translateY(-50%); width:44px; height:44px; }
+.dpad-center { top:50%; left:50%; transform:translate(-50%,-50%); width:40px; height:40px; border-radius:50%; background:#222; font-size:12px; }
+
+.skin-nokia .dpad-btn { background: #3a3d45; border-color: #555; color: #aaa; border-radius: 2px; }
+.skin-gameboy .dpad-btn { background: #444; border-color: #333; color: #999; }
+.skin-kids .dpad-btn { background: rgba(255,255,255,0.8); color: #333; border: 2px solid #fff; border-radius: 50%; font-size: 20px; }
+
+/* ── CTRL STYLE SELECTOR ── */
+.ctrl-bar {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.ctrl-btn {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s;
+  letter-spacing: 0.5px;
+}
+.ctrl-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.ctrl-btn.active { background: var(--cyan); color: #000; }
+
+/* ── REWARD TOAST ── */
+.reward-toast {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 16px 20px;
+  max-width: 300px;
+  z-index: 9000;
+  transform: translateX(350px);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(245,197,24,0.2);
+}
+.reward-toast.show { transform: translateX(0); }
+.reward-toast .reward-icon { font-size: 2rem; text-align: center; margin-bottom: 8px; }
+.reward-toast h4 { font-family: var(--font-display); font-size: 1.4rem; color: var(--gold); margin-bottom: 4px; letter-spacing: 1px; }
+.reward-toast p { font-size: 12px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+.reward-code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--cyan);
+  background: rgba(0,229,255,0.08);
+  border: 1px solid rgba(0,229,255,0.3);
+  padding: 8px 12px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  transition: background 0.15s;
+}
+.reward-code:hover { background: rgba(0,229,255,0.15); }
+.reward-code.copied { background: rgba(0,230,118,0.15); color: var(--green); border-color: var(--green); }
+.reward-dismiss { font-size: 10px; color: var(--muted); cursor: pointer; text-align: center; display: block; text-decoration: underline; }
+
+/* ── STARS ROW ── */
+.stars-row {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  padding: 8px 0;
+  flex-wrap: wrap;
+}
+.star {
+  font-size: 20px;
+  color: #333;
+  transition: all 0.3s;
+  filter: grayscale(1);
+}
+.star.lit {
+  color: var(--gold);
+  filter: none;
+  animation: starPop 0.4s ease;
+  text-shadow: 0 0 10px rgba(245,197,24,0.6);
+}
+@keyframes starPop {
+  0%{transform:scale(0.5);opacity:0;}
+  60%{transform:scale(1.4);}
+  100%{transform:scale(1);opacity:1;}
+}
+
+/* ── WORD DISPLAY (kids) ── */
+.word-display {
+  display: none;
+  text-align: center;
+  font-family: var(--font-kids);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--gold);
+  padding: 6px 0;
+  min-height: 32px;
+  letter-spacing: 3px;
+}
+.word-display.show { display: block; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal-overlay.show { opacity: 1; pointer-events: all; }
+.modal-box {
+  background: linear-gradient(135deg, #0f1520, #080c14);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transform: scale(0.85);
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 0 60px rgba(245,197,24,0.15);
+}
+.modal-overlay.show .modal-box { transform: scale(1); }
+.modal-icon { font-size: 3rem; margin-bottom: 12px; }
+.modal-box h2 { font-family: var(--font-display); font-size: 2.2rem; color: var(--gold); margin-bottom: 12px; letter-spacing: 2px; }
+.modal-box p { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+.modal-box .big-code {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--cyan);
+  background: rgba(0,229,255,0.06);
+  border: 1px solid rgba(0,229,255,0.3);
+  padding: 12px;
+  border-radius: 6px;
+  margin: 12px 0;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition: background 0.15s;
+}
+.modal-box .big-code:hover { background: rgba(0,229,255,0.12); }
+.modal-cta-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+.mbtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 1px;
+  transition: all 0.15s;
+}
+.mbtn-primary { background: var(--orange); color: #000; border-color: var(--orange); }
+.mbtn-primary:hover { box-shadow: 0 0 16px rgba(255,107,53,0.4); }
+.mbtn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+.mbtn-ghost:hover { border-color: var(--text); }
+.modal-close-x {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none; border: none;
+  color: var(--muted); font-size: 20px;
+  cursor: pointer;
+}
+
+/* ── SPEECH BUBBLE ── */
+.speech-bubble {
+  position: absolute;
+  background: rgba(245,197,24,0.9);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 100;
+  font-weight: 700;
+  max-width: 90%;
+  text-align: center;
+}
+.speech-bubble.show { opacity: 1; }
+
+/* ── BELOW GAME CTA ── */
+.below-cta {
+  background: linear-gradient(135deg, rgba(245,197,24,0.06), rgba(255,107,53,0.04));
+  border: 1px solid rgba(245,197,24,0.2);
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  margin-top: 48px;
+}
+.below-cta h2 { font-family: var(--font-display); font-size: clamp(2rem,5vw,3.5rem); color: var(--gold); margin-bottom: 12px; letter-spacing: 2px; }
+.below-cta p { color: var(--muted); font-size: 14px; max-width: 640px; margin: 0 auto 24px; line-height: 1.8; }
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.cta-a {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono); font-size: 12px;
+  padding: 12px 24px; border-radius: 4px;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid; transition: all 0.15s;
+  letter-spacing: 1px;
+}
+.cta-main { background: var(--orange); color: #000; border-color: var(--orange); }
+.cta-main:hover { box-shadow: 0 0 20px rgba(255,107,53,0.4); }
+.cta-sec { background: transparent; color: var(--cyan); border-color: var(--cyan); }
+.cta-sec:hover { background: rgba(0,229,255,0.08); }
+
+/* ── SCORE TICKER ── */
+.score-ticker {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--gold);
+  text-align: center;
+  letter-spacing: 4px;
+  padding: 4px 0 0;
+  text-shadow: 0 0 20px rgba(245,197,24,0.4);
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .hero h1 { font-size: 3rem; }
+  .modal-box { padding: 24px 20px; }
+  .below-cta { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">⚡ Eye To Ad Media · Interactive Marketing Technology</div>
+  <h1>UNLIMITED<br/><span>MARKETING</span><br/>POSSIBILITIES</h1>
+  <div class="hero-sub">Interactive Games That Make Your Brand Unforgettable</div>
+</section>
+
+<!-- ═══════════════════════════ PSYCHOLOGY COPY ═══════════════════════════ -->
+<section class="psych-section">
+  <span class="section-label">// The Science Behind The Game</span>
+  <p class="psych-lead">
+    What you're about to play isn't just a game. It's a <strong>proof of concept</strong> — a live demonstration of one of the most powerful and underused forces in modern marketing: <strong>interactive conditioning</strong>.
+  </p>
+  <p class="psych-lead">
+    While your competitors are running the same banner ads, boosted posts, and "check out our services" campaigns on repeat — you could be <strong>burning your brand into your customer's memory</strong> through play.
+  </p>
+
+  <div style="text-align:center;margin:32px 0;">
+    <div class="psych-stat">65%<small>BRAND RECALL INCREASE<br/>WITH INTERACTIVE CONTENT</small></div>
+    <div class="psych-stat">2x<small>TIME ON PAGE<br/>VS STATIC CONTENT</small></div>
+    <div class="psych-stat">4x<small>MORE LIKELY TO SHARE<br/>INTERACTIVE EXPERIENCES</small></div>
+  </div>
+
+  <p class="psych-lead">
+    The human brain is hardwired to respond to games. <strong>Dopamine</strong> — the neurochemical of motivation, reward, and learning — fires every time a player scores a point, levels up, or beats a challenge. When your brand is the vehicle for that dopamine rush, <strong>your business becomes associated with positive emotion</strong>. That's not a theory. That's behavioral neuroscience.
+  </p>
+
+  <div class="psych-grid">
+    <div class="psych-card">
+      <span class="icon">🧠</span>
+      <h3>Operant Conditioning</h3>
+      <p>B.F. Skinner proved it in 1938. Variable rewards — getting a prize "sometimes" — are more psychologically compelling than guaranteed ones. Modern slot machines use it. So do viral apps. Now your brand can too. Every time someone eats a "Google Ranking" in your game, their brain links your company to winning.</p>
+    </div>
+    <div class="psych-card">
+      <span class="icon">⏱️</span>
+      <h3>The Waiting Room Problem</h3>
+      <p>The average American waits 121 minutes per week in waiting rooms. Doctor offices. Auto shops. Hair salons. That's dead time — and right now, your competitors aren't touching it. A branded game on a tablet or QR code = captive audience, zero distraction, 100% your message.</p>
+    </div>
+    <div class="psych-card">
+      <span class="icon">🔁</span>
+      <h3>Pattern Interruption</h3>
+      <p>Neuroscientists call it "attentional capture" — when something unexpected breaks our autopilot. Interactive branded games snap people out of scroll-zombie mode. Once you have genuine attention, persuasion becomes exponentially easier. You're not interrupting their day. You ARE their day.</p>
+    </div>
+    <div class="psych-card">
+      <span class="icon">🏆</span>
+      <h3>Achievement Psychology</h3>
+      <p>Milestone rewards trigger the brain's nucleus accumbens — the same region activated by social approval and financial gain. When players unlock real discounts and promo codes inside your game, the value feels earned. Earned value has 3–5x higher redemption rates than passive coupons.</p>
+    </div>
+    <div class="psych-card">
+      <span class="icon">👶</span>
+      <h3>Multi-Generation Reach</h3>
+      <p>From phonics games for 5-year-olds to retro nostalgia for 45-year-olds who remember playing Snake on their Nokia, interactive experiences cross demographic lines that no single ad format can. One experience, every age, one brand impression.</p>
+    </div>
+    <div class="psych-card">
+      <span class="icon">📈</span>
+      <h3>The Snake Metaphor</h3>
+      <p>We didn't pick Snake by accident. A business that doesn't grow, dies — just like the snake. Every client you land, every ranking you earn, every review you collect is another segment. Stop running ads that disappear in 24 hours. Start building something that compounds.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:32px; padding:24px; background:rgba(0,229,255,0.04); border:1px solid rgba(0,229,255,0.15); border-radius:8px;">
+    <p class="psych-lead" style="margin:0;">
+      <strong style="color:var(--gold);">The bottom line:</strong> This game is a small example of what's possible. We build custom interactive brand experiences — games, quizzes, calculators, simulators — for businesses across every industry. Deployed on your website, in your waiting room, in your email campaigns. <strong>For less money than you think.</strong> Scroll down and see the CTA after you play.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ GAME AREA ═══════════════════════════ -->
+<div class="game-area">
+
+  <!-- Skin Selector -->
+  <div class="skin-bar">
+    <span style="font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-right:4px;">SKIN:</span>
+    <button class="skin-btn" data-skin="modern">🎮 Modern</button>
+    <button class="skin-btn active" data-skin="nokia">📱 Nokia OG</button>
+    <button class="skin-btn" data-skin="gameboy">🕹️ Handheld</button>
+    <button class="skin-btn" data-skin="neon">✨ Neon</button>
+    <button class="skin-btn" data-skin="kids">🌈 Kids</button>
+  </div>
+
+  <!-- Mode Bar -->
+  <div class="mode-bar">
+    <button class="mode-btn active" data-mode="marketing">📈 Marketing</button>
+    <button class="mode-btn" data-mode="classic">🐍 Classic</button>
+    <button class="mode-btn" data-mode="neon">🌀 Disco</button>
+    <button class="mode-btn" data-mode="kids">🎨 Kids</button>
+  </div>
+
+  <!-- Difficulty -->
+  <div class="diff-bar">
+    <button class="diff-btn" data-diff="easy">Easy</button>
+    <button class="diff-btn active" data-diff="medium">Medium</button>
+    <button class="diff-btn" data-diff="hard">Hard</button>
+    <button class="diff-btn" data-diff="expert">Expert</button>
+  </div>
+
+  <!-- Kids subject bar -->
+  <div class="kids-bar" id="kidsBar">
+    <button class="kids-btn active" data-subject="letters">🔤 Letters</button>
+    <button class="kids-btn" data-subject="words">📚 Words</button>
+    <button class="kids-btn" data-subject="math">🔢 Math</button>
+    <button class="kids-btn" data-subject="phonics">🔊 Phonics</button>
+    <button class="kids-btn" data-subject="animals">🐾 Animals</button>
+  </div>
+
+  <!-- Console Shell -->
+  <div class="console-shell skin-nokia" id="consoleShell">
+
+    <!-- Nokia top -->
+    <div class="nokia-top" id="nokiaTop"></div>
+    <div class="nokia-brand" id="nokiaBrand">NOKIA</div>
+    <div class="gb-brand" id="gbBrand" style="display:none">GAME PAL COLOR ™</div>
+
+    <!-- Screen -->
+    <div class="game-screen-wrap">
+      <div style="position:relative;">
+        <div class="speech-bubble" id="speechBubble">🎉 +1 Lead!</div>
+        <div class="hud">
+          <span>SCR: <span class="hud-score" id="scoreVal">0</span></span>
+          <span>LVL: <span class="hud-level" id="levelVal">1</span></span>
+          <span>❤️ <span class="hud-lives" id="livesVal">3</span></span>
+        </div>
+        <canvas id="gameCanvas" width="480" height="480"></canvas>
+        <div class="word-display" id="wordDisplay"></div>
+        <div class="stars-row" id="starsRow">
+          <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span>
+          <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span>
+          <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game buttons -->
+    <div class="game-btns" style="margin-top:12px;">
+      <button class="gbtn gbtn-start" id="startBtn">▶ START</button>
+      <button class="gbtn gbtn-pause" id="pauseBtn">⏸ PAUSE</button>
+      <button class="gbtn gbtn-reset" id="resetBtn">↺ RESET</button>
+    </div>
+
+    <!-- Controller style selector -->
+    <div class="ctrl-bar" id="ctrlBar">
+      <button class="ctrl-btn active" data-ctrl="dpad">D-PAD</button>
+      <button class="ctrl-btn" data-ctrl="arrows">ARROWS ONLY</button>
+      <button class="ctrl-btn" data-ctrl="swipe">SWIPE</button>
+    </div>
+
+    <!-- D-Pad -->
+    <div class="dpad-wrap" id="dpadWrap">
+      <button class="dpad-btn dpad-up" data-dir="up">▲</button>
+      <button class="dpad-btn dpad-left" data-dir="left">◀</button>
+      <button class="dpad-btn dpad-center" id="centerBtn">●</button>
+      <button class="dpad-btn dpad-right" data-dir="right">▶</button>
+      <button class="dpad-btn dpad-down" data-dir="down">▼</button>
+    </div>
+
+  </div><!-- /console-shell -->
+
+  <!-- Below Game CTA -->
+  <div class="below-cta">
+    <h2>YOUR BRAND DESERVES THIS</h2>
+    <p>
+      What you just played is a fraction of what we can build for your business. Imagine your logo, your colors, your offers, your products — wrapped in an interactive experience that customers actually <em>want</em> to engage with. We create custom branded games and interactive tools for local businesses, medical offices, auto shops, retail stores, and more.
+    </p>
+    <p style="color:var(--text);font-size:13px;margin-bottom:20px;">
+      📍 Denver-based · Serving businesses nationwide · Less cost than you think
+    </p>
+    <div class="cta-row">
+      <a href="tel:17202496588" class="cta-a cta-main">📞 Call (720) 249-6588</a>
+      <a href="https://www.eyetoad.com" target="_blank" class="cta-a cta-sec">🌐 eyetoad.com</a>
+    </div>
+  </div>
+
+</div><!-- /game-area -->
+
+<!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+
+<!-- Loss / Consultation Modal -->
+<div class="modal-overlay" id="lossModal">
+  <div class="modal-box">
+    <button class="modal-close-x" id="closeLoss">✕</button>
+    <div class="modal-icon">💼</div>
+    <h2>GAME OVER</h2>
+    <p>Even the best businesses hit walls. The difference is having a system that helps you grow through them.</p>
+    <p style="color:var(--text);margin:12px 0;">Ready to build a marketing engine that doesn't quit?</p>
+    <div class="modal-cta-row">
+      <a href="tel:17202496588" class="mbtn mbtn-primary">📞 FREE CONSULTATION</a>
+      <button class="mbtn mbtn-ghost" id="tryAgainBtn">↺ Try Again</button>
+    </div>
+    <p style="font-size:11px;margin-top:16px;color:var(--muted);">Eye To Ad Media · (720) 249-6588 · eyetoad.com</p>
+  </div>
+</div>
+
+<!-- Reward Modal -->
+<div class="modal-overlay" id="rewardModal">
+  <div class="modal-box">
+    <button class="modal-close-x" id="closeReward">✕</button>
+    <div class="modal-icon" id="rewardModalIcon">🏆</div>
+    <h2 id="rewardModalTitle">LEVEL UP!</h2>
+    <p id="rewardModalDesc">You unlocked an exclusive offer.</p>
+    <div class="big-code" id="rewardModalCode" title="Click to copy">EYETOAD-100</div>
+    <p style="font-size:11px;color:var(--muted);">Click the code to copy · Mention when calling to redeem</p>
+    <div class="modal-cta-row">
+      <a href="tel:17202496588" class="mbtn mbtn-primary">📞 Redeem Now</a>
+      <button class="mbtn mbtn-ghost" id="keepPlayingBtn">Keep Playing ▶</button>
+    </div>
+  </div>
+</div>
+
+<!-- Kids Win Modal -->
+<div class="modal-overlay" id="kidsWinModal">
+  <div class="modal-box" style="background:linear-gradient(135deg,#1a0a2e,#0a1a3e);border-color:var(--pink);">
+    <div class="modal-icon">🎉</div>
+    <h2 style="color:var(--pink);font-family:var(--font-kids);">Amazing Job!</h2>
+    <p id="kidsWinMsg" style="font-family:var(--font-kids);font-size:1rem;color:var(--text);">You spelled the word!</p>
+    <div class="modal-cta-row">
+      <button class="mbtn mbtn-primary" id="kidsNextBtn" style="font-family:var(--font-kids);">⭐ Next Word!</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ REWARD TOAST ═══════════════════════════ -->
+<div class="reward-toast" id="rewardToast">
+  <div class="reward-icon" id="toastIcon">🎁</div>
+  <h4 id="toastTitle">REWARD UNLOCKED</h4>
+  <p id="toastDesc">You earned an exclusive offer!</p>
+  <div class="reward-code" id="toastCode">EYETOAD-CODE</div>
+  <span class="reward-dismiss" id="toastDismiss">dismiss</span>
+</div>
+
+<!-- ═══════════════════════════ GAME SCRIPT ═══════════════════════════ -->
+<script>
+(function(){
+'use strict';
+
+// ── CONFIG ──────────────────────────────────────────────────────────────
+const COLS = 20, ROWS = 20;
+const CELL = 480 / COLS; // 24px per cell
+
+// ── REWARDS BY LEVEL ────────────────────────────────────────────────────
+const REWARDS = {
+  3:  { icon:'💰', title:'LEVEL 3 REWARD', desc:'$100 OFF your first SEO/AIO campaign', code:'SNAKE100OFF' },
+  5:  { icon:'🚀', title:'LEVEL 5 REWARD', desc:'50% OFF a full SEO campaign setup', code:'SNAKE50PCT' },
+  7:  { icon:'🎨', title:'LEVEL 7 REWARD', desc:'$100 Logo Design package', code:'SNAKELOGO100' },
+  9:  { icon:'📣', title:'LEVEL 9 REWARD', desc:'1 Month FREE Group Advertising in private marketplace', code:'SNAKEMKTFREE' },
+  10: { icon:'🖼️', title:'LEVEL 10 REWARD', desc:'FREE Group Cover Photo in private marketplace', code:'SNAKECOVERFREE' },
+  12: { icon:'👑', title:'GRAND PRIZE', desc:'Half off 2 months SEO (over $500 value!)', code:'SNAKEGRANDPRIZE' }
+};
+
+// ── GAME ITEMS BY MODE ───────────────────────────────────────────────────
+const MARKETING_ITEMS = [
+  { sym:'📈', label:'Google Ranking!', pts:3 },
+  { sym:'💰', label:'New Lead!', pts:2 },
+  { sym:'🤖', label:'Found on AI!', pts:4 },
+  { sym:'⭐', label:'5-Star Review!', pts:2 },
+  { sym:'📧', label:'Email Opened!', pts:1 },
+  { sym:'🔗', label:'Backlink Earned!', pts:3 },
+  { sym:'🏆', label:'Top Ranking!', pts:5 },
+  { sym:'📍', label:'GBP Optimized!', pts:2 },
+  { sym:'💼', label:'Deal Closed!', pts:4 },
+];
+
+const MARKETING_OBSTACLES = [
+  { sym:'🚧', label:'Algorithm Change!', effect:'slow' },
+  { sym:'🦠', label:'Bad Review!', effect:'shrink' },
+  { sym:'😈', label:'Competitor!', effect:'wall' },
+];
+
+const DISCO_ITEMS = [
+  { sym:'🪩', label:'Disco Ball!', pts:3 },
+  { sym:'💫', label:'Star Power!', pts:2 },
+  { sym:'🎶', label:'Beat Drop!', pts:4 },
+  { sym:'🕺', label:'Groove!', pts:2 },
+  { sym:'💃', label:'Dance!', pts:3 },
+  { sym:'🌈', label:'Rainbow!', pts:5 },
+  { sym:'⚡', label:'Electric!', pts:2 },
+];
+
+const CLASSIC_ITEMS = [
+  { sym:'●', label:'+1', pts:1 },
+];
+
+// Kids data by subject
+const KIDS_DATA = {
+  letters: { items: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(l=>({sym:l,label:l,pts:1})), mode:'letters' },
+  words: {
+    items: ['CAT','DOG','SUN','FUN','RUN','HOP','JOY','RED','BIG','TOP'].map(w=>({sym:w,label:w,pts:w.length})),
+    mode:'words'
+  },
+  math: {
+    items: ['1+1','2+2','3+1','4+0','5-2','2×2','6÷2','3+3'].map(e=>({sym:e,label:e,pts:2})),
+    mode:'math'
+  },
+  phonics: {
+    items: [
+      {sym:'Aa',label:'A says "ah"',pts:1},{sym:'Bb',label:'B says "buh"',pts:1},
+      {sym:'Cc',label:'C says "kuh"',pts:1},{sym:'Dd',label:'D says "duh"',pts:1},
+      {sym:'Ee',label:'E says "eh"',pts:1},{sym:'Ff',label:'F says "fff"',pts:1},
+      {sym:'Gg',label:'G says "guh"',pts:1},{sym:'Hh',label:'H says "huh"',pts:1},
+      {sym:'Ii',label:'I says "ih"',pts:1},{sym:'Jj',label:'J says "juh"',pts:1},
+    ],
+    mode:'phonics'
+  },
+  animals: {
+    items: [
+      {sym:'🐶',label:'Dog!',pts:2},{sym:'🐱',label:'Cat!',pts:2},{sym:'🐭',label:'Mouse!',pts:2},
+      {sym:'🐸',label:'Frog!',pts:3},{sym:'🦊',label:'Fox!',pts:3},{sym:'🐼',label:'Panda!',pts:4},
+      {sym:'🦁',label:'Lion!',pts:4},{sym:'🐘',label:'Elephant!',pts:3},{sym:'🦋',label:'Butterfly!',pts:5},
+      {sym:'🐬',label:'Dolphin!',pts:5},
+    ],
+    mode:'animals'
+  }
+};
+
+const KIDS_OBSTACLES = [
+  { sym:'⛈️', effect:'slow' },
+  { sym:'🌊', effect:'slow' },
+];
+
+// ── STATE ────────────────────────────────────────────────────────────────
+let gameMode = 'marketing';
+let difficulty = 'medium';
+let skin = 'nokia';
+let kidsSubject = 'letters';
+let ctrlMode = 'dpad';
+
+let snake = [];
+let direction = {x:1,y:0};
+let nextDir = {x:1,y:0};
+let foods = [];
+let obstacles = [];
+let score = 0;
+let level = 1;
+let lives = 3;
+let running = false;
+let paused = false;
+let loopId = null;
+let rewardedLevels = new Set();
+
+// Kids word tracking
+let kidsCurrentWord = '';
+let kidsLettersEaten = [];
+let kidsWordIndex = 0;
+
+// Swipe tracking
+let touchStartX = 0, touchStartY = 0;
+
+// ── ELEMENTS ─────────────────────────────────────────────────────────────
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const scoreEl = document.getElementById('scoreVal');
+const levelEl = document.getElementById('levelVal');
+const livesEl = document.getElementById('livesVal');
+const starsRow = document.getElementById('starsRow');
+const stars = starsRow.querySelectorAll('.star');
+const speechBubble = document.getElementById('speechBubble');
+const wordDisplay = document.getElementById('wordDisplay');
+const kidsBar = document.getElementById('kidsBar');
+const consoleShell = document.getElementById('consoleShell');
+const nokiaTop = document.getElementById('nokiaTop');
+const nokiaBrand = document.getElementById('nokiaBrand');
+const gbBrand = document.getElementById('gbBrand');
+const dpadWrap = document.getElementById('dpadWrap');
+
+const lossModal = document.getElementById('lossModal');
+const rewardModal = document.getElementById('rewardModal');
+const kidsWinModal = document.getElementById('kidsWinModal');
+const rewardToast = document.getElementById('rewardToast');
+
+// ── AUDIO ─────────────────────────────────────────────────────────────────
+function beep(freq, dur, type='square', vol=0.04){
+  try{
+    const ac = new (window.AudioContext||window.webkitAudioContext)();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type=type; osc.frequency.value=freq;
+    g.gain.value=vol;
+    osc.connect(g); g.connect(ac.destination);
+    osc.start(); osc.stop(ac.currentTime + dur/1000);
+  }catch(e){}
+}
+function eatSound(){ beep(880,80,'square',0.05); }
+function dieSound(){ beep(200,300,'sawtooth',0.08); beep(150,300,'sawtooth',0.06); }
+function levelSound(){ beep(660,100,'square',0.05); setTimeout(()=>beep(880,150,'square',0.05),120); }
+
+// ── SPEECH BUBBLE ─────────────────────────────────────────────────────────
+let speechTimer=null;
+function showSpeech(txt, ms=1400){
+  speechBubble.textContent=txt;
+  speechBubble.classList.add('show');
+  clearTimeout(speechTimer);
+  speechTimer=setTimeout(()=>speechBubble.classList.remove('show'), ms);
+}
+
+// ── UPDATE UI ─────────────────────────────────────────────────────────────
+function updateHUD(){
+  scoreEl.textContent = score;
+  levelEl.textContent = level;
+  livesEl.textContent = lives;
+  // stars: light one per 2 score points (max 10)
+  const lit = Math.min(10, Math.floor(score/2));
+  stars.forEach((s,i)=>{ s.classList.toggle('lit', i<lit); });
+}
+
+// ── SKIN APPLY ────────────────────────────────────────────────────────────
+function applySkin(s){
+  skin = s;
+  consoleShell.className = 'console-shell skin-'+s;
+  nokiaTop.style.display = (s==='nokia')?'block':'none';
+  nokiaBrand.style.display = (s==='nokia')?'block':'none';
+  gbBrand.style.display = (s==='gameboy')?'block':'none';
+  // canvas size
+  canvas.width = canvas.height = (s==='nokia') ? 320 : 480;
+}
+
+// ── SPEED BY DIFFICULTY ───────────────────────────────────────────────────
+function getSpeed(){
+  const base = {easy:220,medium:150,hard:100,expert:65};
+  const spd = base[difficulty] || 150;
+  return Math.max(50, spd - (level-1)*8);
+}
+
+// ── INIT SNAKE ────────────────────────────────────────────────────────────
+function initSnake(){
+  const cx = Math.floor(COLS/2), cy = Math.floor(ROWS/2);
+  snake = [{x:cx,y:cy},{x:cx-1,y:cy},{x:cx-2,y:cy}];
+  direction = {x:1,y:0};
+  nextDir = {x:1,y:0};
+  foods = [];
+  obstacles = [];
+  kidsLettersEaten = [];
+  if(gameMode==='kids') pickKidsWord();
+  spawnFood();
+  if(gameMode!=='classic' && gameMode!=='nokia') spawnObstacles();
+}
+
+// ── KIDS WORD ─────────────────────────────────────────────────────────────
+function pickKidsWord(){
+  const data = KIDS_DATA[kidsSubject];
+  const shuffled = [...data.items].sort(()=>Math.random()-0.5);
+  const word = shuffled[kidsWordIndex % shuffled.length];
+  kidsWordIndex++;
+  kidsCurrentWord = word.sym;
+  kidsLettersEaten = [];
+  if(kidsSubject==='words'){
+    wordDisplay.textContent = word.sym.split('').map((_,i)=>'_').join(' ');
+    wordDisplay.classList.add('show');
+  } else {
+    wordDisplay.classList.remove('show');
+  }
+}
+
+// ── SPAWN FOOD ────────────────────────────────────────────────────────────
+function getItems(){
+  if(gameMode==='marketing') return MARKETING_ITEMS;
+  if(gameMode==='neon') return DISCO_ITEMS;
+  if(gameMode==='kids'){
+    return KIDS_DATA[kidsSubject].items;
+  }
+  return CLASSIC_ITEMS;
+}
+
+function spawnFood(count=1){
+  const items = getItems();
+  for(let i=0;i<count;i++){
+    let pos = randomEmpty();
+    if(!pos) return;
+    const item = items[Math.floor(Math.random()*items.length)];
+    // Color for kids
+    const colors = ['#ff4081','#00e676','#00e5ff','#f5c518','#bb86fc','#ff6b35'];
+    foods.push({
+      ...pos,
+      sym: item.sym,
+      label: item.label,
+      pts: item.pts||1,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      isKidsTarget: gameMode==='kids' && kidsSubject==='words' && item.sym===kidsCurrentWord[kidsLettersEaten.length]
+    });
+  }
+}
+
+function spawnObstacles(){
+  const n = level + 1;
+  const src = (gameMode==='marketing') ? MARKETING_OBSTACLES : KIDS_OBSTACLES;
+  for(let i=0;i<n;i++){
+    const pos = randomEmpty();
+    if(!pos) continue;
+    const obs = src[Math.floor(Math.random()*src.length)];
+    obstacles.push({...pos, sym:obs.sym, effect:obs.effect});
+  }
+}
+
+function randomEmpty(){
+  let tries=0;
+  while(tries++<200){
+    const x=Math.floor(Math.random()*COLS), y=Math.floor(Math.random()*ROWS);
+    if(!snake.some(s=>s.x===x&&s.y===y) &&
+       !foods.some(f=>f.x===x&&f.y===y) &&
+       !obstacles.some(o=>o.x===x&&o.y===y))
+      return {x,y};
+  }
+  return null;
+}
+
+// ── DRAW ──────────────────────────────────────────────────────────────────
+function draw(){
+  const W = canvas.width, H = canvas.height;
+  const cell = W/COLS;
+  ctx.clearRect(0,0,W,H);
+
+  // Background
+  if(skin==='nokia' || gameMode==='classic'){
+    ctx.fillStyle = '#9bac6a';
+    ctx.fillRect(0,0,W,H);
+    // pixel grid
+    ctx.strokeStyle='rgba(0,0,0,0.08)';
+    ctx.lineWidth=0.5;
+    for(let i=0;i<=COLS;i++){ctx.beginPath();ctx.moveTo(i*cell,0);ctx.lineTo(i*cell,H);ctx.stroke();}
+    for(let j=0;j<=ROWS;j++){ctx.beginPath();ctx.moveTo(0,j*cell);ctx.lineTo(W,j*cell);ctx.stroke();}
+  } else if(skin==='neon' || gameMode==='neon'){
+    ctx.fillStyle='#0a0010';
+    ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle='rgba(187,134,252,0.07)';
+    ctx.lineWidth=1;
+    for(let i=0;i<=COLS;i++){ctx.beginPath();ctx.moveTo(i*cell,0);ctx.lineTo(i*cell,H);ctx.stroke();}
+    for(let j=0;j<=ROWS;j++){ctx.beginPath();ctx.moveTo(0,j*cell);ctx.lineTo(W,j*cell);ctx.stroke();}
+  } else if(skin==='kids' || gameMode==='kids'){
+    // Gradient background
+    const grd = ctx.createLinearGradient(0,0,W,H);
+    grd.addColorStop(0,'#1a0a3e');
+    grd.addColorStop(1,'#0a1a3e');
+    ctx.fillStyle=grd;
+    ctx.fillRect(0,0,W,H);
+    // Stars in bg
+    ctx.fillStyle='rgba(255,255,255,0.3)';
+    for(let i=0;i<20;i++){
+      const sx=(i*73+11)%W, sy=(i*97+7)%H;
+      ctx.fillRect(sx,sy,1,1);
+    }
+  } else {
+    ctx.fillStyle='#080c14';
+    ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle='rgba(255,255,255,0.03)';
+    ctx.lineWidth=1;
+    for(let i=0;i<=COLS;i++){ctx.beginPath();ctx.moveTo(i*cell,0);ctx.lineTo(i*cell,H);ctx.stroke();}
+    for(let j=0;j<=ROWS;j++){ctx.beginPath();ctx.moveTo(0,j*cell);ctx.lineTo(W,j*cell);ctx.stroke();}
+  }
+
+  // Obstacles
+  ctx.font = Math.floor(cell*0.7)+'px serif';
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  obstacles.forEach(o=>{
+    if(skin==='nokia'||gameMode==='classic'){
+      ctx.fillStyle='#4a3a2a';
+      ctx.fillRect(o.x*cell+1,o.y*cell+1,cell-2,cell-2);
+    } else {
+      ctx.fillText(o.sym, o.x*cell+cell/2, o.y*cell+cell/2);
+    }
+  });
+
+  // Food
+  foods.forEach(f=>{
+    if(skin==='nokia'||gameMode==='classic'){
+      ctx.fillStyle='#1a1a1a';
+      ctx.fillRect(f.x*cell+cell*0.3, f.y*cell+cell*0.3, cell*0.4, cell*0.4);
+    } else if(gameMode==='kids'){
+      // Colorful kids food
+      ctx.save();
+      ctx.fillStyle = f.color;
+      ctx.shadowColor = f.color;
+      ctx.shadowBlur = 12;
+      // Bubble background
+      ctx.beginPath();
+      ctx.arc(f.x*cell+cell/2, f.y*cell+cell/2, cell*0.42, 0, Math.PI*2);
+      ctx.fill();
+      ctx.restore();
+      ctx.save();
+      ctx.fillStyle='#fff';
+      ctx.font = `bold ${Math.floor(cell*0.45)}px Nunito, sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(f.sym, f.x*cell+cell/2, f.y*cell+cell/2);
+      ctx.restore();
+    } else if(skin==='neon'||gameMode==='neon'){
+      ctx.save();
+      ctx.shadowColor=f.color||'#ff4081';
+      ctx.shadowBlur=20;
+      ctx.font=Math.floor(cell*0.7)+'px serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(f.sym, f.x*cell+cell/2, f.y*cell+cell/2);
+      ctx.restore();
+    } else {
+      // Marketing / modern
+      ctx.font=Math.floor(cell*0.72)+'px serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(f.sym, f.x*cell+cell/2, f.y*cell+cell/2);
+    }
+  });
+
+  // Snake
+  snake.forEach((seg,i)=>{
+    const x=seg.x*cell, y=seg.y*cell;
+    if(skin==='nokia'||gameMode==='classic'){
+      ctx.fillStyle = i===0 ? '#1a1a1a' : '#2a2a2a';
+      ctx.fillRect(x+1,y+1,cell-2,cell-2);
+    } else if(skin==='neon'||gameMode==='neon'){
+      const colors=['#ff4081','#bb86fc','#00e5ff','#f5c518'];
+      const c=colors[i%colors.length];
+      ctx.save();
+      ctx.shadowColor=c; ctx.shadowBlur=18;
+      ctx.fillStyle=c;
+      ctx.beginPath();
+      ctx.roundRect(x+2,y+2,cell-4,cell-4,[4]);
+      ctx.fill();
+      ctx.restore();
+    } else if(skin==='kids'||gameMode==='kids'){
+      const kidColors=['#ff4081','#00e676','#00e5ff','#f5c518','#bb86fc','#ff6b35'];
+      ctx.fillStyle = i===0 ? '#00e676' : kidColors[(i)%kidColors.length];
+      ctx.save();
+      ctx.shadowColor=ctx.fillStyle; ctx.shadowBlur=8;
+      ctx.beginPath();
+      ctx.roundRect(x+1,y+1,cell-2,cell-2,[cell/3]);
+      ctx.fill();
+      ctx.restore();
+    } else {
+      // Marketing/modern — gradient body
+      const t = i/snake.length;
+      const r=Math.round(0+t*34), g=Math.round(230-t*100), b=Math.round(118-t*80);
+      ctx.fillStyle = i===0 ? '#00e676' : `rgb(${r},${g},${b})`;
+      ctx.save();
+      ctx.shadowColor='#00e676'; ctx.shadowBlur= i===0?20:4;
+      ctx.beginPath();
+      ctx.roundRect(x+1,y+1,cell-2,cell-2,[3]);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // Head details (eyes + tongue) for non-nokia
+    if(i===0 && skin!=='nokia' && gameMode!=='classic'){
+      const eyeSize=cell*0.12;
+      const ex=cell*0.25, ey=cell*0.25;
+      let e1x=x+ex, e1y=y+ey, e2x=x+cell-ex, e2y=y+ey;
+      // Rotate eye positions based on direction
+      if(direction.x===1){ e1x=x+cell-ex; e1y=y+ey; e2x=x+cell-ex; e2y=y+cell-ey; }
+      else if(direction.x===-1){ e1x=x+ex; e1y=y+ey; e2x=x+ex; e2y=y+cell-ey; }
+      else if(direction.y===1){ e1x=x+ex; e1y=y+cell-ey; e2x=x+cell-ex; e2y=y+cell-ey; }
+      else{ e1x=x+ex; e1y=y+ey; e2x=x+cell-ex; e2y=y+ey; }
+
+      ctx.fillStyle='#000';
+      ctx.beginPath(); ctx.arc(e1x,e1y,eyeSize,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(e2x,e2y,eyeSize,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#fff';
+      ctx.beginPath(); ctx.arc(e1x-1,e1y-1,eyeSize*0.4,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(e2x-1,e2y-1,eyeSize*0.4,0,Math.PI*2); ctx.fill();
+
+      // Tongue
+      if(running && !paused){
+        ctx.strokeStyle='#ff4081'; ctx.lineWidth=1.5;
+        ctx.beginPath();
+        let tx=x+cell/2, ty=y+cell/2;
+        let tdx=direction.x*cell*0.7, tdy=direction.y*cell*0.7;
+        ctx.moveTo(tx,ty);
+        ctx.lineTo(tx+tdx, ty+tdy);
+        ctx.lineTo(tx+tdx+direction.y*3, ty+tdy+direction.x*3);
+        ctx.moveTo(tx+tdx, ty+tdy);
+        ctx.lineTo(tx+tdx-direction.y*3, ty+tdy-direction.x*3);
+        ctx.stroke();
+      }
+    }
+  });
+
+  // Paused overlay
+  if(paused){
+    ctx.fillStyle='rgba(0,0,0,0.55)';
+    ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='#f5c518';
+    ctx.font=`bold ${cell*1.2}px 'Space Mono',monospace`;
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('PAUSED',W/2,H/2);
+  }
+
+  // Start screen
+  if(!running && !paused){
+    ctx.fillStyle='rgba(0,0,0,0.6)';
+    ctx.fillRect(0,0,W,H);
+    if(skin==='nokia'||gameMode==='classic'){
+      ctx.fillStyle='#1a1a1a';
+      ctx.font=`bold ${cell*0.7}px monospace`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('PRESS START',W/2,H/2);
+    } else {
+      ctx.fillStyle='#f5c518';
+      ctx.font=`bold ${cell*0.9}px 'Bebas Neue',sans-serif`;
+      ctx.letterSpacing='4px';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('PRESS START',W/2,H/2-cell*0.5);
+      ctx.fillStyle='rgba(255,255,255,0.4)';
+      ctx.font=`${cell*0.45}px 'Space Mono',monospace`;
+      ctx.fillText('Arrow keys or D-Pad',W/2,H/2+cell*0.3);
+    }
+  }
+}
+
+// ── GAME LOOP ─────────────────────────────────────────────────────────────
+function gameLoop(){
+  if(!running||paused) return;
+  step();
+  draw();
+  loopId = setTimeout(gameLoop, getSpeed());
+}
+
+function step(){
+  direction = {...nextDir};
+  const head = {x:snake[0].x+direction.x, y:snake[0].y+direction.y};
+
+  // Wall collision
+  if(head.x<0||head.x>=COLS||head.y<0||head.y>=ROWS){
+    loseLife(); return;
+  }
+  // Self collision
+  if(snake.some(s=>s.x===head.x&&s.y===head.y)){
+    loseLife(); return;
+  }
+  // Obstacle collision
+  const hitObs = obstacles.findIndex(o=>o.x===head.x&&o.y===head.y);
+  if(hitObs>=0){
+    const obs = obstacles[hitObs];
+    obstacles.splice(hitObs,1);
+    if(obs.effect==='wall'){ loseLife(); return; }
+    showSpeech('⚠️ '+obs.sym);
+    // 'slow' and 'shrink' just show warning
+    if(obs.effect==='shrink' && snake.length>3) snake.pop();
+  }
+
+  snake.unshift(head);
+
+  // Food check
+  const fi = foods.findIndex(f=>f.x===head.x&&f.y===head.y);
+  if(fi>=0){
+    const food = foods[fi];
+    foods.splice(fi,1);
+    score += food.pts;
+    eatSound();
+    showSpeech((skin==='nokia'||gameMode==='classic') ? '+'+food.pts : food.label);
+
+    // Kids word mode
+    if(gameMode==='kids' && kidsSubject==='words'){
+      kidsLettersEaten.push(food.sym);
+      updateKidsWordDisplay();
+      if(kidsLettersEaten.join('')===kidsCurrentWord){
+        score += 5;
+        document.getElementById('kidsWinMsg').textContent = '🎉 You spelled "'+kidsCurrentWord+'"!';
+        openModal(kidsWinModal);
+      }
+    }
+
+    // Grow — don't pop tail
+    // Level up every 5 points
+    const newLevel = Math.floor(score/5)+1;
+    if(newLevel>level){
+      level=newLevel;
+      levelSound();
+      showSpeech('⭐ Level '+level+'!');
+      checkReward(level);
+      obstacles=[]; spawnObstacles();
+    }
+
+    spawnFood(1);
+    updateHUD();
+    return; // don't pop tail = grow
+  }
+
+  // No food eaten — pop tail (normal move)
+  snake.pop();
+  updateHUD();
+}
+
+function updateKidsWordDisplay(){
+  const target = kidsCurrentWord;
+  let display = '';
+  for(let i=0;i<target.length;i++){
+    display += (kidsLettersEaten[i]||'_')+' ';
+  }
+  wordDisplay.textContent = display.trim();
+}
+
+// ── LOSE LIFE ─────────────────────────────────────────────────────────────
+function loseLife(){
+  dieSound();
+  clearTimeout(loopId);
+  lives--;
+  updateHUD();
+  if(lives<=0){
+    running=false;
+    draw(); // draw final state
+    setTimeout(()=>{
+      if(gameMode==='marketing' || gameMode==='neon' || gameMode==='classic'){
+        openModal(lossModal);
+      } else {
+        openModal(lossModal);
+      }
+    }, 400);
+  } else {
+    showSpeech('❤️ '+lives+' left!');
+    // Respawn
+    const cx=Math.floor(COLS/2), cy=Math.floor(ROWS/2);
+    snake=[{x:cx,y:cy},{x:cx-1,y:cy},{x:cx-2,y:cy}];
+    direction={x:1,y:0}; nextDir={x:1,y:0};
+    setTimeout(()=>{ if(running){ draw(); gameLoop(); }}, 500);
+  }
+}
+
+// ── REWARDS ───────────────────────────────────────────────────────────────
+function checkReward(lv){
+  if(rewardedLevels.has(lv)) return;
+  const r = REWARDS[lv];
+  if(!r) return;
+  rewardedLevels.add(lv);
+
+  // Show toast (non-intrusive) — full modal after short delay
+  showToast(r);
+}
+
+function showToast(r){
+  document.getElementById('toastIcon').textContent=r.icon;
+  document.getElementById('toastTitle').textContent=r.title;
+  document.getElementById('toastDesc').textContent=r.desc;
+  const codeEl=document.getElementById('toastCode');
+  codeEl.textContent=r.code;
+  codeEl.onclick=()=>copyCode(r.code,codeEl);
+  rewardToast.classList.add('show');
+  document.getElementById('toastDismiss').onclick=()=>{
+    rewardToast.classList.remove('show');
+    // Pause and show full modal
+    paused=true; draw();
+    setTimeout(()=>{
+      openRewardModal(r);
+    },300);
+  };
+  // Auto-show full modal after 4s if not dismissed
+  setTimeout(()=>{
+    if(rewardToast.classList.contains('show')){
+      rewardToast.classList.remove('show');
+      paused=true; draw();
+      setTimeout(()=>openRewardModal(r),300);
+    }
+  }, 4000);
+}
+
+function openRewardModal(r){
+  document.getElementById('rewardModalIcon').textContent=r.icon;
+  document.getElementById('rewardModalTitle').textContent=r.title;
+  document.getElementById('rewardModalDesc').textContent=r.desc;
+  const codeEl=document.getElementById('rewardModalCode');
+  codeEl.textContent=r.code;
+  codeEl.onclick=()=>copyCode(r.code,codeEl);
+  openModal(rewardModal);
+}
+
+function copyCode(code, el){
+  navigator.clipboard.writeText(code).then(()=>{
+    el.textContent='✓ COPIED!';
+    el.classList.add('copied');
+    setTimeout(()=>{el.textContent=code;el.classList.remove('copied');},2000);
+  }).catch(()=>{
+    el.textContent='✓ COPIED!';
+    setTimeout(()=>el.textContent=code,2000);
+  });
+}
+
+// ── MODAL HELPERS ─────────────────────────────────────────────────────────
+function openModal(m){ m.classList.add('show'); }
+function closeModal(m){ m.classList.remove('show'); }
+
+// ── START / PAUSE / RESET ─────────────────────────────────────────────────
+function startGame(){
+  if(running&&!paused) return;
+  if(paused){ paused=false; gameLoop(); return; }
+  running=true; paused=false;
+  score=0; level=1; lives=3; rewardedLevels.clear();
+  updateHUD();
+  initSnake();
+  draw();
+  gameLoop();
+}
+
+function pauseGame(){
+  if(!running) return;
+  paused=!paused;
+  if(!paused) gameLoop();
+  else draw();
+}
+
+function resetGame(){
+  clearTimeout(loopId);
+  running=false; paused=false;
+  score=0; level=1; lives=3; rewardedLevels.clear();
+  snake=[]; foods=[]; obstacles=[];
+  updateHUD();
+  draw();
+}
+
+// ── INPUT ─────────────────────────────────────────────────────────────────
+const DIR_MAP = {
+  ArrowUp:{x:0,y:-1}, ArrowDown:{x:0,y:1},
+  ArrowLeft:{x:-1,y:0}, ArrowRight:{x:1,y:0},
+  w:{x:0,y:-1}, s:{x:0,y:1}, a:{x:-1,y:0}, d:{x:1,y:0},
+};
+
+document.addEventListener('keydown', e=>{
+  const d = DIR_MAP[e.key];
+  if(d && !(d.x===-direction.x && d.y===0) && !(d.y===-direction.y && d.x===0)){
+    nextDir=d;
+    e.preventDefault();
+  }
+  if(e.key===' '){ pauseGame(); e.preventDefault(); }
+});
+
+// D-pad
+document.querySelectorAll('.dpad-btn[data-dir]').forEach(btn=>{
+  const press = ()=>{
+    const dir = btn.dataset.dir;
+    const map = {up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}};
+    const d=map[dir];
+    if(!(d.x===-direction.x&&d.y===0)&&!(d.y===-direction.y&&d.x===0)) nextDir=d;
+    btn.classList.add('pressed');
+    setTimeout(()=>btn.classList.remove('pressed'),150);
+  };
+  btn.addEventListener('touchstart',e=>{e.preventDefault();press();},{passive:false});
+  btn.addEventListener('mousedown',press);
+});
+
+// Swipe
+canvas.addEventListener('touchstart',e=>{
+  touchStartX=e.touches[0].clientX;
+  touchStartY=e.touches[0].clientY;
+  e.preventDefault();
+},{passive:false});
+canvas.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-touchStartX;
+  const dy=e.changedTouches[0].clientY-touchStartY;
+  if(Math.abs(dx)>Math.abs(dy)){
+    if(dx>20&&direction.x===0) nextDir={x:1,y:0};
+    else if(dx<-20&&direction.x===0) nextDir={x:-1,y:0};
+  } else {
+    if(dy>20&&direction.y===0) nextDir={x:0,y:1};
+    else if(dy<-20&&direction.y===0) nextDir={x:0,y:-1};
+  }
+  e.preventDefault();
+},{passive:false});
+
+// ── CONTROL BAR ───────────────────────────────────────────────────────────
+document.querySelectorAll('.ctrl-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.ctrl-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    ctrlMode = btn.dataset.ctrl;
+    dpadWrap.style.display = (ctrlMode==='arrows') ? 'none' : 'block';
+  });
+});
+
+// ── MODE BUTTONS ──────────────────────────────────────────────────────────
+document.querySelectorAll('.mode-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    gameMode = btn.dataset.mode;
+    kidsBar.classList.toggle('show', gameMode==='kids');
+    wordDisplay.classList.toggle('show', gameMode==='kids'&&kidsSubject==='words');
+    resetGame();
+    draw();
+  });
+});
+
+// ── DIFFICULTY ────────────────────────────────────────────────────────────
+document.querySelectorAll('.diff-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.diff-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    difficulty = btn.dataset.diff;
+  });
+});
+
+// ── KIDS SUBJECT ─────────────────────────────────────────────────────────
+document.querySelectorAll('.kids-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.kids-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    kidsSubject = btn.dataset.subject;
+    kidsWordIndex=0;
+    wordDisplay.classList.toggle('show', kidsSubject==='words');
+    resetGame();
+    draw();
+  });
+});
+
+// ── SKIN BUTTONS ──────────────────────────────────────────────────────────
+document.querySelectorAll('.skin-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.skin-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    applySkin(btn.dataset.skin);
+    draw();
+  });
+});
+
+// ── GAME CONTROL BUTTONS ─────────────────────────────────────────────────
+document.getElementById('startBtn').addEventListener('click', startGame);
+document.getElementById('pauseBtn').addEventListener('click', pauseGame);
+document.getElementById('resetBtn').addEventListener('click', resetGame);
+
+// ── MODAL BUTTONS ─────────────────────────────────────────────────────────
+document.getElementById('closeLoss').addEventListener('click',()=>closeModal(lossModal));
+document.getElementById('tryAgainBtn').addEventListener('click',()=>{ closeModal(lossModal); resetGame(); startGame(); });
+document.getElementById('closeReward').addEventListener('click',()=>{ closeModal(rewardModal); paused=false; gameLoop(); });
+document.getElementById('keepPlayingBtn').addEventListener('click',()=>{ closeModal(rewardModal); paused=false; gameLoop(); });
+document.getElementById('kidsNextBtn').addEventListener('click',()=>{ closeModal(kidsWinModal); pickKidsWord(); spawnFood(1); });
+
+// Close modals on overlay click
+[lossModal,rewardModal,kidsWinModal].forEach(m=>{
+  m.addEventListener('click',e=>{ if(e.target===m) closeModal(m); });
+});
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+applySkin('nokia');
+// Set marketing mode active
+gameMode='marketing';
+document.querySelector('[data-mode="marketing"]').classList.add('active');
+document.querySelectorAll('.mode-btn').forEach(b=>{
+  if(b.dataset.mode!=='marketing') b.classList.remove('active');
+});
+updateHUD();
+draw();
+
+})();
+</script>
+</body>
+</html>
