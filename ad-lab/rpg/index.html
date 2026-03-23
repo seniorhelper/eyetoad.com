@@ -132,23 +132,23 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;touch-acti
 .modal-x:hover{color:#fff}
 
 /* ─── MOBILE CONTROLS ─── */
-.mob-zone{display:none;background:#020408;border-top:1px solid rgba(249,115,22,.12);padding:8px 12px;touch-action:none}
+.mob-zone{display:none;background:#010306;border-top:2px solid rgba(249,115,22,.4);padding:12px 16px 16px;touch-action:none}
 @media(max-width:860px){.mob-zone{display:block}}
-.mob-inner{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.mob-inner{display:flex;align-items:center;justify-content:space-between;gap:10px}
 /* Joystick */
-.joy-wrap{position:relative;width:100px;height:100px;flex-shrink:0}
-.joy-base{position:absolute;inset:0;border-radius:50%;background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.1)}
-.joy-knob{position:absolute;width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.25),rgba(249,115,22,.55));border:2px solid rgba(249,115,22,.6);box-shadow:0 0 12px rgba(249,115,22,.35);top:50%;left:50%;transform:translate(-50%,-50%)}
+.joy-wrap{position:relative;width:130px;height:130px;flex-shrink:0}
+.joy-base{position:absolute;inset:0;border-radius:50%;background:rgba(255,255,255,.07);border:3px solid rgba(249,115,22,.5);box-shadow:0 0 24px rgba(249,115,22,.2),inset 0 0 30px rgba(0,0,0,.4)}
+.joy-knob{position:absolute;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 38% 38%,rgba(255,210,120,.5),rgba(249,115,22,.9));border:3px solid var(--orange);box-shadow:0 0 20px rgba(249,115,22,.7),0 4px 12px rgba(0,0,0,.5);top:50%;left:50%;transform:translate(-50%,-50%)}
 /* Center info */
-.mob-info{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;text-align:center}
-.mob-info-lbl{font-family:'Press Start 2P',monospace;font-size:5px;color:rgba(255,255,255,.2);line-height:1.8}
+.mob-info{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;text-align:center}
+.mob-info-lbl{font-family:'Press Start 2P',monospace;font-size:5px;color:rgba(255,255,255,.3);line-height:1.9}
 /* Jump + action */
-.mob-actions{display:flex;flex-direction:column;gap:8px;align-items:center}
-.btn-jump{width:62px;height:62px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.2),rgba(0,229,255,.55));border:2px solid var(--cyan);color:#fff;font-size:11px;font-family:'Press Start 2P',monospace;display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(0,229,255,.3);user-select:none;touch-action:manipulation}
-.btn-jump:active{transform:scale(.88)}
-.btn-attack{width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.2),rgba(249,115,22,.6));border:2px solid var(--orange);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 14px rgba(249,115,22,.35);user-select:none;touch-action:manipulation}
-.btn-attack:active{transform:scale(.88)}
-.mob-pause{font-family:'Press Start 2P',monospace;font-size:5px;color:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.1);padding:4px 7px;border-radius:3px}
+.mob-actions{display:flex;flex-direction:column;gap:12px;align-items:center}
+.btn-jump{width:80px;height:80px;border-radius:50%;background:radial-gradient(circle at 38% 38%,rgba(150,255,255,.35),rgba(0,229,255,.75));border:3px solid var(--cyan);color:#fff;font-size:10px;font-family:'Press Start 2P',monospace;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;box-shadow:0 0 26px rgba(0,229,255,.6),0 4px 12px rgba(0,0,0,.5);user-select:none;touch-action:manipulation;line-height:1.2;letter-spacing:.5px}
+.btn-jump:active{transform:scale(.85);box-shadow:0 0 40px rgba(0,229,255,.9)}
+.btn-attack{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 38% 38%,rgba(255,210,120,.35),rgba(249,115,22,.8));border:3px solid var(--orange);color:#fff;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(249,115,22,.6),0 4px 12px rgba(0,0,0,.5);user-select:none;touch-action:manipulation}
+.btn-attack:active{transform:scale(.85);box-shadow:0 0 36px rgba(249,115,22,.9)}
+.mob-pause{font-family:'Press Start 2P',monospace;font-size:5px;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15);padding:5px 10px;border-radius:3px;background:rgba(255,255,255,.04)}
 
 /* ─── FLOATING TEXT ─── */
 .dmg-float{position:fixed;pointer-events:none;z-index:9000;font-family:'Press Start 2P',monospace;animation:dfloat 1.4s ease forwards;text-shadow:0 2px 6px rgba(0,0,0,.6)}
@@ -1490,36 +1490,40 @@ function drawPlatforms(z) {
     const sx=p.x-cam.x;
     if(sx>-p.w-10&&sx<W+10){
       if(p.type==='ground'){
-        // Ground: dark with texture
         cx.fillStyle=z.ground;
         cx.fillRect(sx,p.y,p.w,p.h);
-        // Ground edge highlight
-        cx.fillStyle=z.accent+'44';
+        // Bright accent top edge — critical readability
+        cx.shadowColor=z.accent; cx.shadowBlur=6;
+        cx.fillStyle=z.accent;
         cx.fillRect(sx,p.y,p.w,3);
-        // Ground texture lines
-        cx.strokeStyle='rgba(255,255,255,.04)';cx.lineWidth=1;
-        for(let tx=sx;tx<sx+p.w;tx+=TILE) cx.strokeRect(tx,p.y,TILE,p.h);
+        cx.shadowBlur=0;
+        // Tile grid lines
+        cx.strokeStyle='rgba(255,255,255,.07)';cx.lineWidth=1;
+        for(let tx=0;tx<p.w;tx+=TILE) cx.strokeRect(sx+tx,p.y,TILE,p.h);
       } else {
-        // Platform: distinct, glowing
+        // Floating platform — very visible
         cx.fillStyle=z.wall;
         cx.fillRect(sx,p.y,p.w,p.h);
-        // Top glow edge
-        cx.fillStyle=z.accent+'88';
-        cx.fillRect(sx,p.y,p.w,3);
-        // Side gradients
-        cx.fillStyle='rgba(0,0,0,.3)';
-        cx.fillRect(sx,p.y+3,3,p.h-3);
-        cx.fillRect(sx+p.w-3,p.y+3,3,p.h-3);
-        // Glow under platform
-        const gg=cx.createLinearGradient(sx,p.y+p.h,sx,p.y+p.h+12);
-        gg.addColorStop(0,z.accent+'22');
-        gg.addColorStop(1,'transparent');
-        cx.fillStyle=gg;
-        cx.fillRect(sx,p.y+p.h,p.w,12);
+        // Big glowing top
+        cx.shadowColor=z.accent; cx.shadowBlur=12;
+        cx.fillStyle=z.accent;
+        cx.fillRect(sx,p.y,p.w,4);
+        cx.shadowBlur=0;
+        // Light face
+        cx.fillStyle='rgba(255,255,255,.1)';
+        cx.fillRect(sx+2,p.y+4,p.w-4,p.h-5);
+        // Dark underside
+        cx.fillStyle='rgba(0,0,0,.6)';
+        cx.fillRect(sx,p.y+p.h-3,p.w,3);
+        // Glow drip
+        const gg=cx.createLinearGradient(0,p.y+p.h,0,p.y+p.h+20);
+        gg.addColorStop(0,z.accent+'55'); gg.addColorStop(1,'transparent');
+        cx.fillStyle=gg; cx.fillRect(sx,p.y+p.h,p.w,20);
       }
     }
   });
 }
+
 
 function drawPlayer() {
   const sx=P.x-cam.x;
@@ -2130,6 +2134,8 @@ function drawHUDCanvas() {
     cx.fillText(zoneHintMsg,W/2,H/2+4);
     cx.textAlign='left';cx.globalAlpha=1;
   }
+  // Enemy count
+  const aliveEn=enemies.filter(e=>e.alive&&!e.isBoss).length;
   if(aliveEn>0&&!bossSpawned){
     cx.fillStyle='rgba(255,71,87,.15)';cx.fillRect(progressX,progressY+16,100,11);
     cx.fillStyle='rgba(255,255,255,.6)';cx.font="6px 'Press Start 2P',monospace";
@@ -2319,18 +2325,18 @@ document.addEventListener('keyup',e=>{K[e.key]=false;});
 (function(){
   const wrap=document.getElementById('joyWrap');
   const knob=document.getElementById('joyKnob');
-  let touching=false,cx0=0,cy0=0;const R=42;
-  function start(cx,cy){touching=true;const r=wrap.getBoundingClientRect();cx0=r.left+r.width/2;cy0=r.top+r.height/2;move(cx,cy);}
-  function move(cx,cy){if(!touching) return;let dx=cx-cx0,dy=cy-cy0;const d=Math.hypot(dx,dy);if(d>R){dx=dx/d*R;dy=dy/d*R;}
+  let touching=false,jx0=0,jy0=0;const R=46;
+  function joyStart(tx,ty){touching=true;const r=wrap.getBoundingClientRect();jx0=r.left+r.width/2;jy0=r.top+r.height/2;joyMove(tx,ty);}
+  function joyMove(tx,ty){if(!touching) return;let dx=tx-jx0,dy=ty-jy0;const d=Math.hypot(dx,dy);if(d>R){dx=dx/d*R;dy=dy/d*R;}
     knob.style.transform=`translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
     mob.x=dx/R;mob.y=dy/R;}
-  function end(){touching=false;knob.style.transform='translate(-50%,-50%)';mob.x=0;mob.y=0;}
-  wrap.addEventListener('touchstart',e=>{e.preventDefault();start(e.touches[0].clientX,e.touches[0].clientY);},{passive:false});
-  wrap.addEventListener('touchmove',e=>{e.preventDefault();move(e.touches[0].clientX,e.touches[0].clientY);},{passive:false});
-  wrap.addEventListener('touchend',e=>{e.preventDefault();end();},{passive:false});
-  wrap.addEventListener('mousedown',e=>start(e.clientX,e.clientY));
-  document.addEventListener('mousemove',e=>{if(touching) move(e.clientX,e.clientY);});
-  document.addEventListener('mouseup',()=>{if(touching) end();});
+  function joyEnd(){touching=false;knob.style.transform='translate(-50%,-50%)';mob.x=0;mob.y=0;}
+  wrap.addEventListener('touchstart',e=>{e.preventDefault();joyStart(e.touches[0].clientX,e.touches[0].clientY);},{passive:false});
+  wrap.addEventListener('touchmove',e=>{e.preventDefault();joyMove(e.touches[0].clientX,e.touches[0].clientY);},{passive:false});
+  wrap.addEventListener('touchend',e=>{e.preventDefault();joyEnd();},{passive:false});
+  wrap.addEventListener('mousedown',e=>joyStart(e.clientX,e.clientY));
+  document.addEventListener('mousemove',e=>{if(touching) joyMove(e.clientX,e.clientY);});
+  document.addEventListener('mouseup',()=>{if(touching) joyEnd();});
 })();
 
 document.getElementById('mobJump').addEventListener('touchstart',e=>{e.preventDefault();mob.jump=true;jumpHeld=false;},{passive:false});
