@@ -422,6 +422,10 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   box-shadow:0 4px 8px rgba(0,0,0,.6),0 0 14px rgba(0,229,255,.5);
 }
 .knob.active-knob::after{background:#fff;box-shadow:0 0 6px #fff}
+.knob.knob-orange::after{background:#f97316;box-shadow:0 0 4px #f97316}
+.knob.knob-orange.active-knob{background:radial-gradient(circle at 33% 33%,#ff8c00,#c05000);box-shadow:0 4px 8px rgba(0,0,0,.6),0 0 14px rgba(249,115,22,.6)}
+.knob.knob-green::after{background:#00e676;box-shadow:0 0 4px #00e676}
+.knob.knob-green.active-knob{background:radial-gradient(circle at 33% 33%,#00e676,#007a30);box-shadow:0 4px 8px rgba(0,0,0,.6),0 0 14px rgba(0,230,118,.6)}
 
 /* Music player */
 .bb-music{
@@ -1293,6 +1297,14 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
                 <div class="knob-label">FLASH</div>
                 <div class="knob" id="flashKnob" title="Flash Mode"></div>
               </div>
+              <div class="knob-group">
+                <div class="knob-label">CTRL</div>
+                <div class="knob knob-orange" id="ctrlKnob" title="Cycle Control Pad"></div>
+              </div>
+              <div class="knob-group">
+                <div class="knob-label">VOICE</div>
+                <div class="knob knob-green" id="voiceKnob" title="ADBOT Voice"></div>
+              </div>
             </div>
           </div>
           <!-- Right Speaker -->
@@ -1902,44 +1914,48 @@ const STARS_BIG=['⭐','🌟','✨','💫'];
 
 function spawnParticles(gx,gy,color,count=14,emoji=''){
   if(!fxOn) return;
+  // Scale back: cap total particles for performance and visibility
+  const MAX_PARTICLES=60;
+  if(particles.length>MAX_PARTICLES) return;
   const cell=canvas.width/COLS;
   const pw=pCanvas.width,ph=pCanvas.height;
   const sx=(gx+.5)*cell*(pw/canvas.width);
   const sy=(gy+.5)*cell*(ph/canvas.height);
-  // Main colored burst
-  for(let i=0;i<count;i++){
-    const angle=(i/count)*Math.PI*2+Math.random()*.3;
-    const speed=Math.random()*6+2;
-    particles.push({
-      x:sx,y:sy,
-      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-3,
-      life:1,decay:.018+Math.random()*.015,
-      color,size:Math.random()*10+4,
-      emoji: Math.random()<.25?emoji:''
-    });
-  }
-  // Casino symbols
-  const numCasino=Math.min(4,Math.floor(count/3));
-  for(let i=0;i<numCasino;i++){
-    const angle=Math.random()*Math.PI*2;
+  // Main colored burst — reduced count
+  const actualCount=Math.min(count,6);
+  for(let i=0;i<actualCount;i++){
+    const angle=(i/actualCount)*Math.PI*2+Math.random()*.3;
     const speed=Math.random()*4+1.5;
     particles.push({
       x:sx,y:sy,
-      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-4,
-      life:1,decay:.012,
-      color,size:28+Math.random()*16,
+      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-2,
+      life:1,decay:.028+Math.random()*.02,
+      color,size:Math.random()*8+3,
+      emoji: Math.random()<.3?emoji:''
+    });
+  }
+  // 1-2 casino symbols max
+  const numCasino=Math.min(2,Math.floor(actualCount/3));
+  for(let i=0;i<numCasino;i++){
+    const angle=Math.random()*Math.PI*2;
+    const speed=Math.random()*3+1;
+    particles.push({
+      x:sx,y:sy,
+      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-3,
+      life:1,decay:.022,
+      color,size:32+Math.random()*12,
       emoji:CASINO_SYMBOLS[Math.floor(Math.random()*CASINO_SYMBOLS.length)],
       spin:Math.random()*0.3-0.15,
       rotation:Math.random()*Math.PI*2,
     });
   }
-  // Gold coins
-  for(let i=0;i<6;i++){
+  // 2 coins max
+  for(let i=0;i<2;i++){
     particles.push({
-      x:sx+Math.random()*20-10,y:sy,
-      vx:Math.random()*4-2,vy:-Math.random()*7-3,
-      life:1,decay:.014,
-      color:'#f5c518',size:20+Math.random()*10,
+      x:sx+Math.random()*10-5,y:sy,
+      vx:Math.random()*3-1.5,vy:-Math.random()*5-2,
+      life:1,decay:.022,
+      color:'#f5c518',size:22+Math.random()*8,
       emoji:'💰',isCoin:true,
       spin:Math.random()*0.4-0.2,
       rotation:0,
@@ -1949,55 +1965,57 @@ function spawnParticles(gx,gy,color,count=14,emoji=''){
 
 function spawnCasinoBurst(gx,gy){
   if(!fxOn) return;
+  const MAX_PARTICLES=80;
+  if(particles.length>MAX_PARTICLES) return;
   const cell=canvas.width/COLS;
   const pw=pCanvas.width,ph=pCanvas.height;
   const sx=(gx+.5)*cell*(pw/canvas.width);
   const sy=(gy+.5)*cell*(ph/canvas.height);
-  // MEGA spinning symbols — bigger and more of them
-  const bigSyms=['🌟','💎','🏆','💰','🎊','⭐','🎰','💥','🎲','🃏','⚡','💫'];
+  // 5 big spinning symbols (was 12)
+  const bigSyms=['🌟','💎','🏆','💰','🎊'];
   bigSyms.forEach((e,i)=>{
     const angle=(i/bigSyms.length)*Math.PI*2;
-    const spd=4+Math.random()*5;
+    const spd=3+Math.random()*3;
     particles.push({
       x:sx,y:sy,
-      vx:Math.cos(angle)*spd,vy:Math.sin(angle)*spd-5,
-      life:1,decay:.008+Math.random()*.006,color:'#f5c518',
-      size:44+Math.random()*20,
-      emoji:e,spin:0.18+Math.random()*.15,rotation:angle,
+      vx:Math.cos(angle)*spd,vy:Math.sin(angle)*spd-3,
+      life:1,decay:.016+Math.random()*.008,color:'#f5c518',
+      size:38+Math.random()*14,
+      emoji:e,spin:0.15+Math.random()*.1,rotation:angle,
     });
   });
-  // Money bags + coins burst
-  for(let i=0;i<8;i++){
+  // 3 money bags (was 8)
+  for(let i=0;i<3;i++){
     particles.push({
       x:sx,y:sy,
-      vx:Math.random()*12-6,vy:Math.random()*-14-4,
-      life:1,decay:.009,color:'#f5c518',size:32+Math.random()*16,
+      vx:Math.random()*8-4,vy:Math.random()*-10-2,
+      life:1,decay:.016,color:'#f5c518',size:28+Math.random()*12,
       emoji:['💰','🤑','💵','🪙'][Math.floor(Math.random()*4)],
       spin:Math.random()*.3-.15,rotation:Math.random()*Math.PI*2,
     });
   }
-  // Colorful confetti rectangles
-  for(let i=0;i<30;i++){
+  // 10 confetti (was 30)
+  for(let i=0;i<10;i++){
     const hue=Math.random()*360;
     particles.push({
-      x:sx+Math.random()*20-10,y:sy,
-      vx:Math.random()*18-9,vy:Math.random()*-15-3,
-      life:1,decay:.011,
-      color:`hsl(${hue},100%,65%)`,size:8+Math.random()*8,
+      x:sx+Math.random()*16-8,y:sy,
+      vx:Math.random()*12-6,vy:Math.random()*-10-2,
+      life:1,decay:.018,
+      color:`hsl(${hue},100%,65%)`,size:7+Math.random()*6,
       emoji:'',spin:Math.random()*.4,rotation:Math.random()*Math.PI*2,
       isRect:true,
     });
   }
-  // Glowing orbs
-  for(let i=0;i<16;i++){
+  // 5 orbs (was 16)
+  for(let i=0;i<5;i++){
     const angle=Math.random()*Math.PI*2;
-    const spd=3+Math.random()*8;
+    const spd=2+Math.random()*5;
     particles.push({
       x:sx,y:sy,
-      vx:Math.cos(angle)*spd,vy:Math.sin(angle)*spd-3,
-      life:1,decay:.014,
+      vx:Math.cos(angle)*spd,vy:Math.sin(angle)*spd-2,
+      life:1,decay:.02,
       color:`hsl(${Math.random()*360},100%,65%)`,
-      size:10+Math.random()*14,
+      size:8+Math.random()*10,
       emoji:'',
     });
   }
@@ -2005,18 +2023,19 @@ function spawnCasinoBurst(gx,gy){
 
 function spawnStarBurst(gx,gy){
   if(!fxOn) return;
+  if(particles.length>60) return;
   const cell=canvas.width/COLS;
   const pw=pCanvas.width,ph=pCanvas.height;
   const sx=(gx+.5)*cell*(pw/canvas.width);
   const sy=(gy+.5)*cell*(ph/canvas.height);
-  // Giant stars launching outward
-  ['⭐','🌟','✨','💫','🎆','🎇'].forEach((e,i)=>{
-    const angle=(i/6)*Math.PI*2;
+  // 4 big stars (was 6, and smaller)
+  ['⭐','🌟','✨','💫'].forEach((e,i)=>{
+    const angle=(i/4)*Math.PI*2;
     particles.push({
       x:sx,y:sy,
-      vx:Math.cos(angle)*8,vy:Math.sin(angle)*8-5,
-      life:1,decay:.008,color:'#f5c518',size:52+Math.random()*24,
-      emoji:e,spin:0.2,rotation:angle,
+      vx:Math.cos(angle)*6,vy:Math.sin(angle)*6-4,
+      life:1,decay:.014,color:'#f5c518',size:42+Math.random()*16,
+      emoji:e,spin:0.18,rotation:angle,
     });
   });
   spawnCasinoBurst(gx,gy);
@@ -2065,10 +2084,30 @@ function updateParticles(){
 
 // ── ROBOT / ADBOT ─────────────────────────────────────────────
 let robotMsgTimeout=null;
+let botVoiceOn=false; // bot voice toggle
+
+function robotSpeak(text){
+  if(!botVoiceOn||!soundOn) return;
+  try{
+    window.speechSynthesis.cancel();
+    const clean=text.replace(/<[^>]*>/g,'').replace(/[🚀🤖📈⭐💰🎯🏆🎁🔄✅❌💪🌟🔊🔇✨⚡]/g,'');
+    const u=new SpeechSynthesisUtterance(clean);
+    u.rate=1.0;u.pitch=0.7;u.volume=0.85;
+    // Try to use a robotic-sounding voice
+    const voices=window.speechSynthesis.getVoices();
+    const roboVoice=voices.find(v=>v.name.toLowerCase().includes('google uk english male')||
+      v.name.toLowerCase().includes('alex')||v.name.toLowerCase().includes('daniel'));
+    if(roboVoice) u.voice=roboVoice;
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+
 function robotSay(msg,ms=4000){
   // Update both mini and large robot
   if(robotTextMini) robotTextMini.innerHTML=msg;
   if(robotTextLarge) robotTextLarge.innerHTML=msg;
+  // Speak it
+  robotSpeak(msg);
   // Animate mouths
   [robotMouthMini,robotMouthLarge].forEach(mouth=>{
     if(!mouth) return;
@@ -3002,6 +3041,31 @@ document.getElementById('flashKnob').addEventListener('click',()=>{
   robotSay(flashMode?'⚡ FLASH MODE ON! The snake goes rainbow!':'Flash mode off.',2000);
 });
 
+// CTRL knob — cycle control modes
+const CTRL_MODES=['dpad','arrows','swipe'];
+let ctrlKnobIdx=0;
+document.getElementById('ctrlKnob').addEventListener('click',()=>{
+  ctrlKnobIdx=(ctrlKnobIdx+1)%CTRL_MODES.length;
+  ctrlMode=CTRL_MODES[ctrlKnobIdx];
+  document.querySelectorAll('.ctrl-btn').forEach(b=>b.classList.toggle('active',b.dataset.ctrl===ctrlMode));
+  dpadWrap.style.display=(ctrlMode==='arrows')?'none':'block';
+  document.getElementById('ctrlKnob').classList.toggle('active-knob',ctrlMode!=='arrows');
+  const labels={dpad:'🕹️ D-PAD mode!',arrows:'⌨️ Arrow Keys mode!',swipe:'👆 Swipe mode!'};
+  robotSay(labels[ctrlMode],2000);
+});
+
+// VOICE knob — toggle ADBOT voice
+document.getElementById('voiceKnob').addEventListener('click',()=>{
+  botVoiceOn=!botVoiceOn;
+  document.getElementById('voiceKnob').classList.toggle('active-knob',botVoiceOn);
+  if(botVoiceOn){
+    robotSay('🔊 ADBOT voice is ON! I will speak to you!',3000);
+  } else {
+    window.speechSynthesis&&window.speechSynthesis.cancel();
+    robotSay('🔇 ADBOT voice off.',1500);
+  }
+});
+
 // Robot clicks
 [document.getElementById('robotBodyMini'),document.getElementById('robotBodyLarge')].forEach(el=>{
   if(!el) return;
@@ -3074,9 +3138,10 @@ function makeDraggable(el,handle){
   if(!el||!handle) return;
   let startX,startY,origX,origY,dragging=false;
   handle.style.cursor='grab';
-  handle.addEventListener('mousedown',e=>{
+
+  function onStart(clientX,clientY){
     dragging=true;
-    startX=e.clientX;startY=e.clientY;
+    startX=clientX;startY=clientY;
     const r=el.getBoundingClientRect();
     origX=r.left;origY=r.top;
     handle.style.cursor='grabbing';
@@ -3084,15 +3149,37 @@ function makeDraggable(el,handle){
     el.style.zIndex='9500';
     el.style.left=origX+'px';el.style.top=origY+'px';
     el.style.margin='0';
-    e.preventDefault();
-  });
-  document.addEventListener('mousemove',e=>{
+    el.style.transition='none';
+  }
+  function onMove(clientX,clientY){
     if(!dragging) return;
-    const dx=e.clientX-startX,dy=e.clientY-startY;
+    const dx=clientX-startX,dy=clientY-startY;
     el.style.left=Math.max(0,Math.min(window.innerWidth-el.offsetWidth,origX+dx))+'px';
     el.style.top=Math.max(0,Math.min(window.innerHeight-el.offsetHeight,origY+dy))+'px';
-  });
-  document.addEventListener('mouseup',()=>{dragging=false;handle.style.cursor='grab'});
+  }
+  function onEnd(){
+    if(!dragging) return;
+    dragging=false;
+    handle.style.cursor='grab';
+  }
+
+  // Mouse
+  handle.addEventListener('mousedown',e=>{onStart(e.clientX,e.clientY);e.preventDefault()});
+  document.addEventListener('mousemove',e=>{onMove(e.clientX,e.clientY)});
+  document.addEventListener('mouseup',onEnd);
+
+  // Touch — only on handle element
+  handle.addEventListener('touchstart',e=>{
+    if(e.touches.length===1){onStart(e.touches[0].clientX,e.touches[0].clientY);}
+    // Don't preventDefault here so buttons still work, but track for drag
+  },{passive:true});
+  handle.addEventListener('touchmove',e=>{
+    if(!dragging) return;
+    e.preventDefault();
+    onMove(e.touches[0].clientX,e.touches[0].clientY);
+  },{passive:false});
+  handle.addEventListener('touchend',onEnd);
+  handle.addEventListener('touchcancel',onEnd);
 }
 
 // Make boombox and robot panel draggable by their top section
@@ -3103,8 +3190,21 @@ const robotHandleEl=document.querySelector('.adbot-card');
 makeDraggable(boomboxEl,boomboxHandle);
 makeDraggable(robotPanelEl,robotHandleEl);
 
+// Make controls-robot-row (dpad+bot) draggable — so player can move it during gameplay
+const ctrlRobotRow=document.querySelector('.controls-robot-row');
+if(ctrlRobotRow){
+  // Add a drag handle pill above it
+  const dragHandle=document.createElement('div');
+  dragHandle.id='ctrlDragHandle';
+  dragHandle.innerHTML='<span style="opacity:.4;font-size:9px;font-family:\'Press Start 2P\',monospace;letter-spacing:1px;">⠿ DRAG</span>';
+  dragHandle.style.cssText='display:flex;justify-content:center;align-items:center;height:22px;background:rgba(255,255,255,.06);border-radius:8px 8px 0 0;cursor:grab;margin:-8px -8px 6px;border-bottom:1px solid rgba(255,255,255,.08);';
+  ctrlRobotRow.style.cssText='position:relative;background:rgba(255,255,255,.03);border-radius:10px;padding:8px;border:1px solid rgba(255,255,255,.07);';
+  ctrlRobotRow.insertBefore(dragHandle,ctrlRobotRow.firstChild);
+  makeDraggable(ctrlRobotRow,dragHandle);
+}
+
 // Hint that elements are draggable
-setTimeout(()=>robotSay('👋 Welcome to the <strong>Ad Lab!</strong> Hit START to play! Tip: grab the boombox handle to drag it! 🎮',6000),800);
+setTimeout(()=>robotSay('👋 Welcome to the <strong>Ad Lab!</strong> Hit START to play! Drag the handle bar to reposition me! 🎮',6000),800);
 
 })();
 </script>
