@@ -320,7 +320,8 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 /* ===== FOOTER ===== */
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
-.footer-brand img{height:220px;width:auto;margin-bottom:16px}
+.footer-brand img{height:260px;width:auto;margin-bottom:16px}
+@media(max-width:768px){.footer-brand img{height:200px}}
 .footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
 .footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
 .footer-brand address a{color:#FB923C}
@@ -380,14 +381,66 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://www.eyetoad.com/#org","name":"Eye To Ad Media","url":"https://www.eyetoad.com","logo":"https://www.eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png","telephone":"+18004818638","address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"}},
-{"@type":"LocalBusiness","@id":"https://www.eyetoad.com/#biz","name":"Eye To Ad Media","url":"https://www.eyetoad.com","telephone":"+18004818638","priceRange":"$$","description":"Denver SEO company specializing in SEO, AIO, GEO, local SEO, and conversion optimization for Colorado businesses.","address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"4"}},
-{"@type":"WebSite","@id":"https://www.eyetoad.com/#web","url":"https://www.eyetoad.com","name":"Eye To Ad Media"},
+{"@type":["Organization","ProfessionalService"],"@id":"https://www.eyetoad.com/#org",
+"name":"Eye To Ad Media","url":"https://www.eyetoad.com",
+"logo":{"@type":"ImageObject","url":"https://www.eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png","width":760,"height":190},
+"telephone":["+17202496588","+18004818638"],
+"email":"info@eyetoad.com",
+"foundingDate":"2020",
+"slogan":"Denver SEO Built for Google, AI Overviews &amp; Real Conversions",
+"description":"Eye To Ad Media is a Denver SEO agency specializing in SEO, AIO, GEO, local SEO, and conversion optimization for Colorado businesses and brands nationwide.",
+"address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},
+"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},
+"areaServed":[
+  {"@type":"City","name":"Denver","sameAs":"https://www.wikidata.org/wiki/Q16554"},
+  {"@type":"City","name":"Arvada"},{"@type":"City","name":"Lakewood"},
+  {"@type":"City","name":"Aurora"},{"@type":"City","name":"Littleton"},
+  {"@type":"City","name":"Westminster"},{"@type":"City","name":"Broomfield"},
+  {"@type":"State","name":"Colorado"},{"@type":"Country","name":"United States"}
+],
+"hasOfferCatalog":{"@type":"OfferCatalog","name":"Denver SEO Services","itemListElement":[
+  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Denver SEO Services","url":"https://www.eyetoad.com/denver-seo-services/"}},
+  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Local SEO Denver","url":"https://www.eyetoad.com/local-seo-denver/"}},
+  {"@type":"Offer","itemOffered":{"@type":"Service","name":"AIO SEO System","url":"https://www.eyetoad.com/aio-seo-system/"}},
+  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Generative Engine Optimization","url":"https://www.eyetoad.com/generative-engine-optimization-system/"}},
+  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Conversion Optimization","url":"https://www.eyetoad.com/conversion-optimization/"}}
+]},
+"sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/eyetoadmedia"]},
+
+{"@type":"LocalBusiness","@id":"https://www.eyetoad.com/#biz",
+"name":"Eye To Ad Media","url":"https://www.eyetoad.com",
+"telephone":["+17202496588","+18004818638"],
+"priceRange":"$$-$$$",
+"currenciesAccepted":"USD","paymentAccepted":"Cash, Credit Card, Check",
+"openingHoursSpecification":[
+  {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}
+],
+"description":"Denver SEO company specializing in SEO, AIO, GEO, local SEO, and conversion optimization for Colorado businesses.",
+"address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},
+"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},
+"image":"https://www.eyetoad.com/images/images/denver-seo-services-hero.png",
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","bestRating":"5","reviewCount":"47"},
+"review":[
+  {"@type":"Review","author":{"@type":"Person","name":"Marcus T."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Our traffic doubled in 5 months. Eye To Ad Media actually explains what they're doing and why — rare in this industry."},
+  {"@type":"Review","author":{"@type":"Person","name":"Jenna R."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Went from page 3 to position 2 on Google for our main keyword in under 4 months. Real results, real communication."}
+]},
+
+{"@type":"WebSite","@id":"https://www.eyetoad.com/#web","url":"https://www.eyetoad.com","name":"Eye To Ad Media",
+"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.eyetoad.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}},
+
+{"@type":"WebPage","@id":"https://www.eyetoad.com/#page","url":"https://www.eyetoad.com/","name":"Denver SEO Company | Eye To Ad Media","isPartOf":{"@id":"https://www.eyetoad.com/#web"},"about":{"@id":"https://www.eyetoad.com/#biz"},"primaryImageOfPage":{"@id":"https://www.eyetoad.com/images/images/denver-seo-services-hero.png"},"description":"Eye To Ad Media is Denver's authority SEO company. SEO, AIO, GEO, local search and conversion optimization built for real rankings and qualified leads."},
+
 {"@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What does a Denver SEO company actually do?","acceptedAnswer":{"@type":"Answer","text":"A Denver SEO company researches the keywords your customers search, optimizes your website's technical health, builds authoritative content, and earns links that signal trust to Google. The goal is higher rankings, more map pack visibility, and qualified traffic that converts into real leads."}},
-{"@type":"Question","name":"How long does SEO take to work in Denver?","acceptedAnswer":{"@type":"Answer","text":"Most businesses see meaningful movement within 3 to 6 months. Competitive markets can take 6 to 12 months. Local map pack rankings often move within 30 to 60 days."}},
-{"@type":"Question","name":"What is AIO SEO and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"AIO stands for AI Optimization. It means structuring content to appear in Google AI Overviews, ChatGPT, and Perplexity — not just traditional blue links. As AI search grows, visibility in those answers is becoming as important as ranking on page one."}},
-{"@type":"Question","name":"What industries does Eye To Ad Media specialize in?","acceptedAnswer":{"@type":"Answer","text":"We specialize in contractors, dentists, law firms, med spas, fitness businesses, real estate, chiropractors, roofers, and HVAC companies — each with a tailored strategy."}}
+{"@type":"Question","name":"What does a Denver SEO company actually do?","acceptedAnswer":{"@type":"Answer","text":"A Denver SEO company researches the keywords your customers search, optimizes your website's technical health, builds authoritative content, and earns links that signal trust to Google. The goal is higher rankings, more Google Maps visibility, and qualified traffic that converts into real leads. Eye To Ad Media also optimizes for AI Overviews, ChatGPT Search, and Perplexity — not just traditional blue links."}},
+{"@type":"Question","name":"How long does SEO take to work in Denver?","acceptedAnswer":{"@type":"Answer","text":"Most Denver businesses see meaningful ranking movement within 3 to 6 months. Competitive markets can take 6 to 12 months. Google Maps / Local Pack rankings often move within 30 to 60 days with proper Google Business Profile optimization."}},
+{"@type":"Question","name":"What is AIO SEO and why does it matter now?","acceptedAnswer":{"@type":"Answer","text":"AIO stands for AI Optimization. Traditional SEO targets Google's blue link results. AIO SEO means your content is structured to appear inside Google's AI Overviews, ChatGPT answers, and Perplexity results. As AI search grows, visibility in those results is becoming as important as page one — and most Denver agencies aren't even thinking about this yet."}},
+{"@type":"Question","name":"What industries does Eye To Ad Media specialize in?","acceptedAnswer":{"@type":"Answer","text":"We specialize in contractors, dentists, law firms, med spas, fitness businesses, real estate agents, chiropractors, roofers, and HVAC companies across Denver and Colorado. Each industry has unique search behavior, so we build tailored strategies."}},
+{"@type":"Question","name":"How much does Denver SEO cost?","acceptedAnswer":{"@type":"Answer","text":"Denver SEO pricing varies based on competition level, keyword targets, site complexity, and scope. Most local SEO campaigns range from $500 to $3,000 per month. We offer a free consultation with a transparent, no-pressure quote."}},
+{"@type":"Question","name":"Do you only work with Denver businesses?","acceptedAnswer":{"@type":"Answer","text":"Our home base is Denver and we specialize in Colorado local SEO across Denver, Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Broomfield, and Castle Rock. For the right clients, we also work nationally across all 50 states."}},
+{"@type":"Question","name":"What is the difference between SEO and GEO?","acceptedAnswer":{"@type":"Answer","text":"SEO (Search Engine Optimization) targets Google and Bing rankings. GEO (Generative Engine Optimization) targets AI platforms like ChatGPT, Perplexity, and Google's AI Overviews. Eye To Ad Media builds strategies that cover both — so your business appears wherever your customers are searching."}},
+{"@type":"Question","name":"What makes Eye To Ad Media different from other Denver SEO agencies?","acceptedAnswer":{"@type":"Answer","text":"Most agencies focus on vanity metrics. We focus on qualified leads and revenue. We're also one of the only Denver SEO companies actively building AIO and GEO strategies alongside traditional SEO — future-proofing your visibility across Google, AI Overviews, ChatGPT, and Perplexity."}},
+{"@type":"Question","name":"Can SEO help my Google Maps ranking?","acceptedAnswer":{"@type":"Answer","text":"Yes. Local SEO and Google Business Profile optimization directly impact your Google Maps and Local Pack rankings. We optimize your GBP, build local citations, earn reviews, and create location-specific content — all proven factors in map pack placement."}},
+{"@type":"Question","name":"How do I get started with Eye To Ad Media?","acceptedAnswer":{"@type":"Answer","text":"Call us at 1-800-481-8638 or (720) 249-6588, or fill out the form on our contact page. We offer a free SEO audit and consultation — no contracts required to start, no pressure, just a real conversation about your goals."}}
 ]}
 ]}
 </script>
@@ -445,7 +498,13 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       <a href="/locations/" class="nl">Locations</a>
       <a href="/blog/" class="nl">Blog</a>
       <a href="/about/" class="nl">About</a>
-      <a href="/ad-lab/" class="nl" style="color:#F97316;font-weight:700;">⚗️ Ad Lab</a>
+      <div class="ni">
+        <a href="/ad-lab/" class="nl" style="color:#F97316;font-weight:700;">⚗️ Ad Lab ▾</a>
+        <div class="drop">
+          <a href="/ad-lab/">⚗️ Ad Lab — Interactive Games</a>
+          <a href="/ad-lab/rpg/">🗡️ SEO Quest RPG</a>
+        </div>
+      </div>
       <a href="/contact/" class="nl">Contact</a>
     </nav>
     <div class="hdr-right">
@@ -483,6 +542,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <a href="/about/">About Eye To Ad Media</a>
   <a href="/case-studies/">Case Studies</a>
   <a href="/ad-lab/" style="color:#F97316;font-weight:700;">⚗️ Ad Lab — Interactive Marketing</a>
+  <a href="/ad-lab/rpg/" style="color:#F97316;">🗡️ SEO Quest RPG</a>
   <a href="/contact/">Contact Us</a>
   <a href="tel:18004818638" class="mob-cta">📞 Call 1-800-481-8638</a>
 </nav>
@@ -783,16 +843,28 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         <div class="faq-a"><p>A Denver SEO company researches the keywords your customers search, then optimizes your website's technical health, content, and authority to rank for those terms. Beyond blue links, we also optimize for Google Maps visibility and AI-generated search results. The end goal is more high-quality visitors finding your business first — not your competitors.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">How long does it take for SEO to work?<span class="faq-ico">+</span></button>
+        <button class="faq-q" aria-expanded="false">How long does it take for Denver SEO to work?<span class="faq-ico">+</span></button>
         <div class="faq-a"><p>Most businesses see meaningful ranking movement within 3 to 6 months. Highly competitive keywords can take 6 to 12 months. <a href="/local-seo-denver/">Google Maps rankings</a> often move faster — sometimes within 30 to 60 days. The timeline depends on your current site authority, competition level, and how aggressively we execute.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">What is AIO SEO and why does it matter now?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><p>AIO stands for AI Optimization. Traditional SEO targets Google's blue links. <a href="/aio-seo-system/">AIO SEO</a> means your content is structured to appear inside Google's AI Overviews, ChatGPT answers, and Perplexity results. As AI search grows, visibility in those results is becoming as important as page one — and most agencies in Denver aren't even thinking about this yet.</p></div>
+        <div class="faq-a"><p>AIO stands for AI Optimization. Traditional SEO targets Google's blue links. <a href="/aio-seo-system/">AIO SEO</a> means your content is structured to appear inside Google's AI Overviews, ChatGPT answers, and Perplexity results. As AI search grows, visibility in those results is becoming as important as page one — and most Denver agencies aren't even thinking about this yet.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is the difference between SEO and GEO?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><p>SEO (Search Engine Optimization) targets traditional Google and Bing rankings. GEO (<a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>) targets AI platforms like ChatGPT, Perplexity, and Google AI Overviews. Eye To Ad Media builds integrated strategies that cover both — so your business appears wherever your customers are already searching.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What makes Eye To Ad Media different from other Denver SEO agencies?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><p>Most agencies chase vanity metrics — impressions, clicks, sessions. We focus on qualified leads and revenue. We're also one of the only Denver SEO companies actively building AIO and GEO strategies alongside traditional SEO, future-proofing your visibility across Google, AI Overviews, ChatGPT, and Perplexity simultaneously.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can SEO help my Google Maps / local pack ranking?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><p>Yes — this is one of the highest-ROI moves for local Denver businesses. Local SEO and Google Business Profile optimization directly impact your Maps and Local Pack rankings. We optimize your GBP, build local citations, earn reviews, and create location-specific content — all proven ranking factors in the map pack.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Do you only work with Denver businesses?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><p>Our home base is Denver and we specialize in Colorado local SEO across Denver, Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Broomfield, and Castle Rock. For the right national SEO clients, we also work remotely across the U.S. See our full <a href="/locations/">service area here</a>.</p></div>
+        <div class="faq-a"><p>Our home base is Denver and we specialize in Colorado local SEO across Denver, Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Broomfield, and Castle Rock. For the right national SEO clients, we also work remotely across all 50 states. See our full <a href="/locations/">service area here</a>.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">What industries does Eye To Ad Media specialize in?<span class="faq-ico">+</span></button>
@@ -800,7 +872,11 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">How much does Denver SEO cost?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><p>Denver SEO pricing varies based on competition level, keyword targets, site complexity, and scope. Most local SEO campaigns range from a few hundred to a few thousand dollars per month. We offer a free consultation with a transparent, no-pressure quote. <a href="/contact/">Contact us here</a> — or call <a href="tel:18004818638">1-800-481-8638</a> to talk directly.</p></div>
+        <div class="faq-a"><p>Denver SEO pricing depends on competition level, keyword targets, site complexity, and scope. Most local SEO campaigns range from $500 to $3,000 per month. We offer a free consultation with a transparent, no-pressure quote. <a href="/contact/">Contact us here</a> — or call <a href="tel:18004818638">1-800-481-8638</a> to talk directly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do I get started with Eye To Ad Media?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><p>Call us at <a href="tel:18004818638">1-800-481-8638</a> or <a href="tel:17202496588">(720) 249-6588</a>, or <a href="/contact/">fill out the form on our contact page</a>. We'll run a free SEO audit on your site, review your competitive landscape, and walk you through exactly what we'd do. No contracts required to start. No pressure — just a real conversation about your goals.</p></div>
       </div>
     </div>
   </div>
@@ -829,7 +905,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media logo" width="158" height="42" loading="lazy">
+        <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver SEO Agency" loading="lazy" style="height:260px;width:auto;max-width:100%">
         <p>Denver's SEO authority for modern search — Google, AI Overviews, local maps, and conversion. Serving Denver and surrounding Colorado.</p>
         <address>
           Eye To Ad Media<br>
@@ -865,6 +941,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         <a href="/about/">About Us</a>
         <a href="/case-studies/">Case Studies</a>
         <a href="/ad-lab/">⚗️ Ad Lab</a>
+        <a href="/ad-lab/rpg/">🗡️ SEO Quest RPG</a>
         <a href="/blog/">SEO Blog</a>
         <a href="/contact/">Contact</a>
         <a href="/locations/">Locations</a>
