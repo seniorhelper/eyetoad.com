@@ -1073,6 +1073,29 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .sudoku-btn:hover{background:rgba(255,255,255,.1);color:#fff}
 .sudoku-status{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--green);text-align:center;min-height:20px}
 
+/* Block Drop */
+.bd-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+#bdCanvas{border:2px solid rgba(0,229,255,.3);border-radius:4px;background:#000;display:block;image-rendering:pixelated}
+#bdNext{border:1px solid rgba(255,255,255,.15);border-radius:4px;background:#111;display:block}
+.bd-right{display:flex;flex-direction:column;gap:12px;min-width:110px}
+.bd-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px;text-align:center}
+.bd-label{font-family:'Press Start 2P',monospace;font-size:7px;color:rgba(255,255,255,.4);margin-bottom:6px;letter-spacing:1px}
+.bd-val{font-family:'Press Start 2P',monospace;font-size:14px;color:var(--cyan)}
+.bd-btns{display:flex;flex-direction:column;gap:6px}
+.bd-keys{font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.9}
+.bd-key{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:3px;padding:1px 5px;font-family:'Press Start 2P',monospace;font-size:6px;color:rgba(255,255,255,.6);margin-right:4px;vertical-align:middle}
+.bd-key-row{display:flex;align-items:center;gap:4px}
+.bd-touch{display:none}
+@media(max-width:600px){
+  .bd-touch{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+  .bd-touch-row{display:flex;gap:8px;justify-content:center}
+  .bd-tbtn{font-family:'Press Start 2P',monospace;font-size:10px;padding:10px 14px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);color:var(--cyan);border-radius:6px;cursor:pointer;flex:1;max-width:70px}
+  .bd-tbtn-wide{max-width:100%;width:100%}
+  .bd-tbtn:active{background:rgba(0,229,255,.25)}
+  .bd-keys{display:none}
+  #bdCanvas{width:200px;height:400px}
+}
+
 /* ═══════════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════════ */
@@ -1102,7 +1125,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 }
 @media(max-width:768px){
   .nav{display:none}.burger{display:flex}
-  .hdr-right{display:none}
+  .btn-hdr{display:none}
   .footer-grid{grid-template-columns:1fr 1fr}
   .bb-speaker{width:70px;height:70px}
   .arena-inner{gap:16px}
@@ -1765,6 +1788,56 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
           <button class="sudoku-btn" id="sudokuSolve">👁 SOLVE</button>
         </div>
       </div>
+    </div>
+
+    <!-- BLOCK DROP -->
+    <div class="bonus-card" style="grid-column:1/-1">
+      <h3>🟦 <span>Block Drop</span> <span style="font-family:'Press Start 2P',monospace;font-size:9px;color:var(--orange);margin-left:8px" id="bdLevelBadge">LVL 1</span></h3>
+      <div class="bd-layout">
+        <div class="bd-left">
+          <canvas id="bdCanvas" width="240" height="480"></canvas>
+        </div>
+        <div class="bd-right">
+          <div class="bd-panel">
+            <div class="bd-label">NEXT</div>
+            <canvas id="bdNext" width="100" height="100"></canvas>
+          </div>
+          <div class="bd-panel">
+            <div class="bd-label">SCORE</div>
+            <div class="bd-val" id="bdScore">0</div>
+          </div>
+          <div class="bd-panel">
+            <div class="bd-label">LEVEL</div>
+            <div class="bd-val" id="bdLevel">1</div>
+          </div>
+          <div class="bd-panel">
+            <div class="bd-label">LINES</div>
+            <div class="bd-val" id="bdLines">0</div>
+          </div>
+          <div class="bd-btns">
+            <button class="sudoku-btn" id="bdStart">▶ START</button>
+            <button class="sudoku-btn" id="bdPause">⏸ PAUSE</button>
+          </div>
+          <div class="bd-keys">
+            <div class="bd-key-row"><span class="bd-key">←→</span> Move</div>
+            <div class="bd-key-row"><span class="bd-key">↑</span> Rotate</div>
+            <div class="bd-key-row"><span class="bd-key">↓</span> Soft Drop</div>
+            <div class="bd-key-row"><span class="bd-key">SPC</span> Hard Drop</div>
+          </div>
+          <!-- Mobile controls -->
+          <div class="bd-touch">
+            <div class="bd-touch-row">
+              <button class="bd-tbtn" id="bdTLeft">◀</button>
+              <button class="bd-tbtn" id="bdTRotate">↻</button>
+              <button class="bd-tbtn" id="bdTRight">▶</button>
+            </div>
+            <div class="bd-touch-row">
+              <button class="bd-tbtn bd-tbtn-wide" id="bdTDrop">⬇ DROP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="bdStatus" style="font-family:'Press Start 2P',monospace;font-size:8px;color:var(--green);margin-top:10px;min-height:20px;text-align:center"></div>
     </div>
 
   </div>
@@ -3844,6 +3917,249 @@ document.getElementById('sudokuNew').addEventListener('click',()=>{
 document.getElementById('sudokuSolve').addEventListener('click',solveSudoku);
 
 loadPuzzle(0);
+
+})();
+</script>
+
+<!-- ═══ BLOCK DROP SCRIPT ═══ -->
+<script>
+(function(){
+'use strict';
+const canvas=document.getElementById('bdCanvas');
+const ctx=canvas.getContext('2d');
+const nextCanvas=document.getElementById('bdNext');
+const nctx=nextCanvas.getContext('2d');
+const scoreEl=document.getElementById('bdScore');
+const levelEl=document.getElementById('bdLevel');
+const linesEl=document.getElementById('bdLines');
+const statusEl=document.getElementById('bdStatus');
+const levelBadge=document.getElementById('bdLevelBadge');
+
+const COLS=10,ROWS=20,CELL=24;
+const COLORS=['','#00e5ff','#f5c518','#bb86fc','#00e676','#ff4081','#F97316','#ef4444'];
+// Pieces: I O T S Z L J
+const PIECES=[
+  [[1,1,1,1]],
+  [[2,2],[2,2]],
+  [[0,3,0],[3,3,3]],
+  [[0,4,4],[4,4,0]],
+  [[5,5,0],[0,5,5]],
+  [[6,0],[6,0],[6,6]],
+  [[0,7],[0,7],[7,7]]
+];
+
+// Marketing-themed level names
+const LEVEL_NAMES=['Startup','Local Biz','Page 2','Page 1','Maps Pack','AI Search','GEO Ranked','Authority','Dominator','SEO Legend'];
+
+let board,piece,pieceX,pieceY,nextPiece,score,lines,level,running,paused,raf,dropTimer,dropInterval;
+
+function emptyBoard(){return Array.from({length:ROWS},()=>Array(COLS).fill(0));}
+function randomPiece(){return PIECES[Math.floor(Math.random()*PIECES.length)];}
+
+function rotatePiece(p){
+  return p[0].map((_,i)=>p.map(r=>r[i]).reverse());
+}
+
+function valid(p,ox,oy){
+  for(let r=0;r<p.length;r++){
+    for(let c=0;c<p[r].length;c++){
+      if(!p[r][c]) continue;
+      const nx=ox+c, ny=oy+r;
+      if(nx<0||nx>=COLS||ny>=ROWS) return false;
+      if(ny>=0&&board[ny][nx]) return false;
+    }
+  }
+  return true;
+}
+
+function lockPiece(){
+  for(let r=0;r<piece.length;r++){
+    for(let c=0;c<piece[r].length;c++){
+      if(!piece[r][c]) continue;
+      const ny=pieceY+r;
+      if(ny<0){endGame();return;}
+      board[ny][pieceX+c]=piece[r][c];
+    }
+  }
+  clearLines();
+  spawnPiece();
+}
+
+function clearLines(){
+  let cleared=0;
+  for(let r=ROWS-1;r>=0;r--){
+    if(board[r].every(c=>c!==0)){
+      board.splice(r,1);
+      board.unshift(Array(COLS).fill(0));
+      cleared++;r++;
+    }
+  }
+  if(cleared){
+    const pts=[0,100,300,500,800];
+    score+=(pts[cleared]||800)*(level);
+    lines+=cleared;
+    const newLevel=Math.min(10,Math.floor(lines/10)+1);
+    if(newLevel>level){
+      level=newLevel;
+      dropInterval=Math.max(80,800-((level-1)*80));
+      levelEl.textContent=level;
+      levelBadge.textContent='LVL '+level;
+      statusEl.textContent='🎉 LEVEL '+level+' — '+LEVEL_NAMES[level-1].toUpperCase()+'!';
+      setTimeout(()=>{if(running&&!paused)statusEl.textContent='';},2000);
+    }
+    scoreEl.textContent=score;
+    linesEl.textContent=lines;
+  }
+}
+
+function spawnPiece(){
+  piece=nextPiece||randomPiece();
+  nextPiece=randomPiece();
+  pieceX=Math.floor((COLS-piece[0].length)/2);
+  pieceY=0;
+  if(!valid(piece,pieceX,pieceY)){endGame();return;}
+  drawNext();
+}
+
+function endGame(){
+  running=false;
+  cancelAnimationFrame(raf);
+  clearInterval(dropTimer);
+  statusEl.textContent='GAME OVER — Score: '+score+' | Hit START to play again';
+  drawBoard();
+}
+
+function drawCell(context,x,y,colorIdx,size){
+  if(!colorIdx){return;}
+  const s=size||CELL;
+  const col=COLORS[colorIdx];
+  context.fillStyle=col;
+  context.fillRect(x*s+1,y*s+1,s-2,s-2);
+  // highlight
+  context.fillStyle='rgba(255,255,255,0.25)';
+  context.fillRect(x*s+1,y*s+1,s-2,3);
+  context.fillRect(x*s+1,y*s+1,3,s-2);
+  // shadow
+  context.fillStyle='rgba(0,0,0,0.3)';
+  context.fillRect(x*s+s-3,y*s+1,2,s-2);
+  context.fillRect(x*s+1,y*s+s-3,s-2,2);
+}
+
+function drawGhost(){
+  let gy=pieceY;
+  while(valid(piece,pieceX,gy+1)) gy++;
+  if(gy===pieceY) return;
+  ctx.globalAlpha=0.18;
+  for(let r=0;r<piece.length;r++)
+    for(let c=0;c<piece[r].length;c++)
+      if(piece[r][c]) drawCell(ctx,pieceX+c,gy+r,piece[r][c]);
+  ctx.globalAlpha=1;
+}
+
+function drawBoard(){
+  ctx.fillStyle='#000';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  // grid lines
+  ctx.strokeStyle='rgba(255,255,255,0.04)';
+  ctx.lineWidth=1;
+  for(let r=0;r<ROWS;r++){ctx.beginPath();ctx.moveTo(0,r*CELL);ctx.lineTo(COLS*CELL,r*CELL);ctx.stroke();}
+  for(let c=0;c<COLS;c++){ctx.beginPath();ctx.moveTo(c*CELL,0);ctx.lineTo(c*CELL,ROWS*CELL);ctx.stroke();}
+  // board pieces
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) drawCell(ctx,c,r,board[r][c]);
+  // ghost + active piece
+  if(running&&!paused&&piece){
+    drawGhost();
+    for(let r=0;r<piece.length;r++)
+      for(let c=0;c<piece[r].length;c++)
+        if(piece[r][c]) drawCell(ctx,pieceX+c,pieceY+r,piece[r][c]);
+  }
+}
+
+function drawNext(){
+  nctx.fillStyle='#111';
+  nctx.fillRect(0,0,100,100);
+  if(!nextPiece) return;
+  const s=18;
+  const ox=Math.floor((100-nextPiece[0].length*s)/2);
+  const oy=Math.floor((100-nextPiece.length*s)/2);
+  for(let r=0;r<nextPiece.length;r++)
+    for(let c=0;c<nextPiece[r].length;c++)
+      if(nextPiece[r][c]){
+        nctx.fillStyle=COLORS[nextPiece[r][c]];
+        nctx.fillRect(ox+c*s+1,oy+r*s+1,s-2,s-2);
+        nctx.fillStyle='rgba(255,255,255,0.22)';
+        nctx.fillRect(ox+c*s+1,oy+r*s+1,s-2,3);
+      }
+}
+
+function startGame(){
+  board=emptyBoard();
+  score=0;lines=0;level=1;
+  dropInterval=800;
+  running=true;paused=false;
+  scoreEl.textContent='0';levelEl.textContent='1';linesEl.textContent='0';
+  levelBadge.textContent='LVL 1';
+  statusEl.textContent='';
+  nextPiece=randomPiece();
+  spawnPiece();
+  clearInterval(dropTimer);
+  dropTimer=setInterval(()=>{
+    if(!running||paused) return;
+    if(valid(piece,pieceX,pieceY+1)){pieceY++;}
+    else{lockPiece();}
+    drawBoard();
+  },dropInterval);
+  // also use rAF for smooth rendering
+  function loop(){if(running){drawBoard();raf=requestAnimationFrame(loop);}}
+  cancelAnimationFrame(raf);
+  loop();
+}
+
+// Drop interval needs to update dynamically
+function updateDropInterval(){
+  clearInterval(dropTimer);
+  dropTimer=setInterval(()=>{
+    if(!running||paused) return;
+    if(valid(piece,pieceX,pieceY+1)){pieceY++;}
+    else{lockPiece();}
+  },dropInterval);
+}
+
+// Patch clearLines to call updateDropInterval on level change
+const _origClearLines=clearLines;
+// (already handles level changes inline above)
+
+// Controls
+document.addEventListener('keydown',e=>{
+  if(!running||paused) return;
+  if(['ArrowLeft','ArrowRight','ArrowDown','ArrowUp',' '].includes(e.key)) e.preventDefault();
+  if(e.key==='ArrowLeft'&&valid(piece,pieceX-1,pieceY)) pieceX--;
+  else if(e.key==='ArrowRight'&&valid(piece,pieceX+1,pieceY)) pieceX++;
+  else if(e.key==='ArrowDown'){if(valid(piece,pieceX,pieceY+1))pieceY++;else lockPiece();}
+  else if(e.key==='ArrowUp'){const r=rotatePiece(piece);if(valid(r,pieceX,pieceY))piece=r;}
+  else if(e.key===' '){while(valid(piece,pieceX,pieceY+1))pieceY++;lockPiece();}
+  drawBoard();
+});
+
+// Touch controls
+document.getElementById('bdTLeft').addEventListener('click',()=>{if(!running||paused)return;if(valid(piece,pieceX-1,pieceY))pieceX--;drawBoard();});
+document.getElementById('bdTRight').addEventListener('click',()=>{if(!running||paused)return;if(valid(piece,pieceX+1,pieceY))pieceX++;drawBoard();});
+document.getElementById('bdTRotate').addEventListener('click',()=>{if(!running||paused)return;const r=rotatePiece(piece);if(valid(r,pieceX,pieceY))piece=r;drawBoard();});
+document.getElementById('bdTDrop').addEventListener('click',()=>{if(!running||paused)return;while(valid(piece,pieceX,pieceY+1))pieceY++;lockPiece();drawBoard();});
+
+document.getElementById('bdStart').addEventListener('click',()=>{startGame();});
+document.getElementById('bdPause').addEventListener('click',()=>{
+  if(!running) return;
+  paused=!paused;
+  document.getElementById('bdPause').textContent=paused?'▶ RESUME':'⏸ PAUSE';
+  statusEl.textContent=paused?'— PAUSED —':'';
+  if(!paused) drawBoard();
+});
+
+// Initial idle draw
+board=emptyBoard();
+drawBoard();
+statusEl.textContent='Press START to play!';
 
 })();
 </script>
