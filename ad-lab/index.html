@@ -3859,5 +3859,395 @@ document.querySelectorAll('.af-q').forEach(btn=>btn.addEventListener('click',()=
   if(!wasOpen){item.classList.add('open');btn.setAttribute('aria-expanded',true);}
 }));
 </script>
+
+
+<!-- Eye To Ad Media Chatbot Widget -->
+<style>
+#etad{position:fixed;right:20px;bottom:20px;z-index:999999;font-family:'Inter',Arial,sans-serif}
+#etad *{box-sizing:border-box;margin:0;padding:0}
+#etad-fab{width:62px;height:62px;border-radius:50%;border:none;background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(249,115,22,.45);animation:etad-pulse 3s infinite;position:relative}
+#etad-fab:hover{transform:scale(1.08)}
+#etad-fab.open{animation:none;background:#475569;font-size:20px}
+@keyframes etad-pulse{0%,100%{box-shadow:0 8px 32px rgba(249,115,22,.45),0 0 0 0 rgba(249,115,22,.4)}50%{box-shadow:0 8px 32px rgba(249,115,22,.45),0 0 0 10px rgba(249,115,22,0)}}
+#etad-dot{position:absolute;top:3px;right:3px;width:13px;height:13px;background:#22c55e;border-radius:50%;border:2px solid #fff;display:none}
+#etad-dot.on{display:block;animation:etad-blink 2s infinite}
+@keyframes etad-blink{0%,100%{opacity:1}50%{opacity:.3}}
+#etad-panel{position:absolute;right:0;bottom:76px;width:370px;max-width:calc(100vw - 24px);height:600px;max-height:calc(100vh - 120px);background:#0b1220;border:1px solid rgba(255,255,255,.1);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.55);display:none;flex-direction:column;overflow:hidden}
+#etad-panel.open{display:flex}
+#etad-head{padding:14px 16px 12px;background:linear-gradient(135deg,#0f1e35,#111827);border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+#etad-head-row{display:flex;align-items:center;justify-content:space-between}
+#etad-head-l{display:flex;align-items:center;gap:10px}
+#etad-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f97316,#f59e0b);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+#etad-title{font-size:14px;font-weight:700;color:#f1f5f9}
+#etad-live{font-size:11px;color:#22c55e;display:flex;align-items:center;gap:4px;margin-top:2px}
+#etad-live-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;display:inline-block}
+#etad-sub{font-size:11px;color:#94a3b8;margin-top:7px;line-height:1.5}
+#etad-xbtn{border:none;background:rgba(255,255,255,.08);color:#94a3b8;font-size:16px;cursor:pointer;border-radius:7px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#etad-xbtn:hover{background:rgba(255,255,255,.15);color:#fff}
+#etad-prog{height:3px;background:rgba(255,255,255,.08);display:none;flex-shrink:0}
+#etad-prog-fill{height:100%;background:linear-gradient(90deg,#f97316,#f59e0b);transition:width .4s;width:0}
+#etad-msgs{flex:1;overflow-y:auto;padding:16px 14px;background:#0b1220}
+#etad-msgs::-webkit-scrollbar{width:3px}
+#etad-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.em-bot,.em-usr{max-width:88%;padding:10px 13px;border-radius:16px;font-size:13px;line-height:1.55;white-space:pre-line;margin-bottom:9px}
+.em-bot{background:#1a2333;border:1px solid rgba(255,255,255,.1);color:#f1f5f9;border-top-left-radius:4px;align-self:flex-start}
+.em-usr{background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;border-top-right-radius:4px;align-self:flex-end;font-weight:500}
+.em-wrap{display:flex;flex-direction:column}
+.em-typing{display:flex;align-items:center;gap:5px;padding:11px 14px;background:#1a2333;border:1px solid rgba(255,255,255,.1);border-radius:16px;border-top-left-radius:4px;width:fit-content;margin-bottom:9px}
+.em-typing span{width:6px;height:6px;background:#94a3b8;border-radius:50%;animation:etad-bounce .9s infinite}
+.em-typing span:nth-child(2){animation-delay:.15s}
+.em-typing span:nth-child(3){animation-delay:.3s}
+@keyframes etad-bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+.em-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.em-chip{border:1px solid rgba(249,115,22,.35);background:rgba(249,115,22,.08);color:#fbd5b5;padding:7px 12px;font-size:12px;border-radius:999px;cursor:pointer;font-family:inherit;transition:all .15s}
+.em-chip:hover{background:rgba(249,115,22,.22);border-color:#f97316;color:#fff}
+#etad-foot{border-top:1px solid rgba(255,255,255,.1);padding:11px 13px 9px;background:rgba(0,0,0,.2);flex-shrink:0}
+#etad-irow{display:flex;gap:7px}
+#etad-inp{flex:1;padding:10px 13px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:11px;color:#f1f5f9;font-size:13px;font-family:inherit;outline:none}
+#etad-inp:focus{border-color:#f97316}
+#etad-inp::placeholder{color:#94a3b8}
+#etad-sbtn{min-width:48px;height:40px;border:none;border-radius:11px;background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#etad-sbtn:hover{transform:scale(1.05)}
+#etad-sbtn:disabled{opacity:.5;cursor:not-allowed}
+#etad-fmeta{display:flex;justify-content:space-between;margin-top:7px}
+#etad-ftel{font-size:10px;color:#94a3b8;line-height:1.5}
+#etad-ftel a{color:#f97316;text-decoration:none}
+#etad-fstat{font-size:10px;color:#38bdf8}
+@media(max-width:600px){
+  #etad{right:14px;bottom:14px}
+  #etad-panel{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0;z-index:999998}
+}
+</style>
+
+<div id="etad">
+  <div id="etad-panel" aria-hidden="true">
+    <div id="etad-head">
+      <div id="etad-head-row">
+        <div id="etad-head-l">
+          <div id="etad-av">&#127919;</div>
+          <div>
+            <div id="etad-title">Eye To Ad Media</div>
+            <div id="etad-live"><span id="etad-live-dot"></span>Live Assistant</div>
+          </div>
+        </div>
+        <button id="etad-xbtn" aria-label="Close">&#x2715;</button>
+      </div>
+      <div id="etad-sub">SEO &middot; AIO &middot; GEO &middot; Web Design &middot; PPC &middot; Conversion &middot; Branding &middot; Social &middot; TV &mdash; powered by Search Converts</div>
+    </div>
+    <div id="etad-prog"><div id="etad-prog-fill"></div></div>
+    <div id="etad-msgs"></div>
+    <div id="etad-foot">
+      <div id="etad-irow">
+        <input id="etad-inp" type="text" placeholder="Ask about SEO, ads, web design..." autocomplete="off" maxlength="300"/>
+        <button id="etad-sbtn" type="button" aria-label="Send">&#10148;</button>
+      </div>
+      <div id="etad-fmeta">
+        <div id="etad-ftel"><a href="tel:18004818638">1-800-481-8638</a> &middot; <a href="tel:17202496588">(720) 249-6588</a><br>Denver, CO &middot; Serving Businesses Nationwide</div>
+        <div id="etad-fstat"></div>
+      </div>
+    </div>
+  </div>
+  <button id="etad-fab" aria-label="Chat with Eye To Ad Media" aria-expanded="false">&#128172;<span id="etad-dot"></span></button>
+</div>
+
+<script>
+(function(){
+'use strict';
+var FSURL='https://formsubmit.co/ajax/sales@eyetoad.com';
+var fab=document.getElementById('etad-fab');
+var dot=document.getElementById('etad-dot');
+var panel=document.getElementById('etad-panel');
+var xbtn=document.getElementById('etad-xbtn');
+var msgs=document.getElementById('etad-msgs');
+var inp=document.getElementById('etad-inp');
+var sbtn=document.getElementById('etad-sbtn');
+var fstat=document.getElementById('etad-fstat');
+var prog=document.getElementById('etad-prog');
+var progf=document.getElementById('etad-prog-fill');
+
+var S={open:false,ready:false,capture:false,field:null,
+  lead:{name:'',company:'',phone:'',email:'',website:'',industry:'',service:'',budget:'',notes:''}};
+
+function setprog(){
+  if(!S.capture){prog.style.display='none';return;}
+  prog.style.display='block';
+  var ff=['name','company','phone','email','website','industry','service','budget'];
+  var done=ff.filter(function(f){return S.lead[f];}).length;
+  progf.style.width=Math.round(done/ff.length*100)+'%';
+}
+
+function scrl(){msgs.scrollTop=msgs.scrollHeight;}
+
+function addmsg(text,who){
+  var w=document.createElement('div');w.className='em-wrap';
+  var m=document.createElement('div');m.className='em-'+who;
+  m.textContent=text;w.appendChild(m);msgs.appendChild(w);scrl();
+}
+
+function showtyping(){
+  var el=document.createElement('div');el.className='em-typing';el.id='etad-typing';
+  el.innerHTML='<span></span><span></span><span></span>';
+  msgs.appendChild(el);scrl();return el;
+}
+
+function botmsg(text,delay){
+  delay=delay||1100;
+  return new Promise(function(res){
+    var el=showtyping();
+    setTimeout(function(){
+      if(el.parentNode)el.parentNode.removeChild(el);
+      addmsg(text,'bot');scrl();res();
+    },delay);
+  });
+}
+
+function chips(labels){
+  msgs.querySelectorAll('.em-chips').forEach(function(el){el.parentNode.removeChild(el);});
+  var wrap=document.createElement('div');wrap.className='em-chips';
+  labels.forEach(function(lbl){
+    var b=document.createElement('button');b.type='button';b.className='em-chip';b.textContent=lbl;
+    b.addEventListener('click',function(){
+      msgs.querySelectorAll('.em-chips').forEach(function(el){el.parentNode.removeChild(el);});
+      handle(lbl);
+    });
+    wrap.appendChild(b);
+  });
+  msgs.appendChild(wrap);scrl();
+}
+
+function openchat(){
+  S.open=true;panel.classList.add('open');panel.setAttribute('aria-hidden','false');
+  fab.classList.add('open');fab.setAttribute('aria-expanded','true');
+  fab.innerHTML='&#x2715;';dot.style.display='none';
+  if(!S.ready){S.ready=true;init();}
+  setTimeout(function(){inp.focus();},150);
+}
+
+function closechat(){
+  S.open=false;panel.classList.remove('open');panel.setAttribute('aria-hidden','true');
+  fab.classList.remove('open');fab.setAttribute('aria-expanded','false');
+  fab.innerHTML='&#128172;<span id="etad-dot"></span>';
+  dot=document.getElementById('etad-dot');
+}
+
+function norm(s){return(s||'').toLowerCase();}
+function has(t,keys){var n=norm(t);for(var i=0;i<keys.length;i++){if(n.indexOf(keys[i])!==-1)return true;}return false;}
+
+var KB=[
+  {k:['seo','search engine','rankings','rank on','organic','google ranking'],
+   a:'Eye To Ad Media specializes in conversion-first SEO -- we engineer the entire path from first click to closed deal.\n\nOur SEO covers:\n- Technical SEO (site health, crawlability, Core Web Vitals)\n- On-page optimization and keyword targeting\n- Content strategy built around buyer intent\n- Local SEO / Google Maps domination\n- National and e-commerce SEO\n- AI Overview optimization (AIO)\n- Generative Engine Optimization (GEO)\n- Link authority and entity building\n- Conversion audits after traffic arrives\n\nNo cookie-cutter packages. Custom-quoted based on your market and goals.',
+   c:['Get a Free SEO Audit','Local SEO / Maps','AIO & GEO','Pricing / Quote']},
+  {k:['aio','ai optimization','ai overview','ai search','chatgpt','perplexity','answer engine'],
+   a:'AI Overview Optimization (AIO) is one of our core differentiators.\n\nGoogle AI Overviews now appear above traditional results for millions of searches. If your content is not structured to win those placements, you are invisible to a growing share of your audience.\n\nWe help with:\n- Structured content built for AI answer selection\n- Entity clarity and topical authority\n- FAQ and schema markup strategy\n- Visibility in ChatGPT, Perplexity, Gemini, and Google AIO\n- Positioning your brand as the trusted answer source',
+   c:['GEO Strategy','Get a Quote','Talk to a Human']},
+  {k:['geo','generative engine'],
+   a:'Generative Engine Optimization (GEO) positions your brand to be cited by AI engines -- not just ranked by traditional algorithms.\n\nWhen someone asks ChatGPT or Perplexity who to call for your service, we make sure your name comes up.\n\n- Citation-worthy authority content\n- Semantic entity consistency across the web\n- Structured service pages with expertise signals\n- Schema and structured data\n- Content designed to be quoted by AI engines\n\nEye To Ad Media is one of very few agencies actively building GEO systems.',
+   c:['AIO Strategy','Get a Custom Quote','Talk to a Human']},
+  {k:['local seo','google maps','map pack','google business','near me'],
+   a:'Local SEO is one of our flagship services.\n\nWe help your business dominate the Google Map Pack with:\n- Google Business Profile optimization\n- Map pack ranking strategy\n- City and service-area landing pages\n- Hyperlocal content targeting\n- Citation building and cleanup\n- Review generation strategy\n- Local schema markup\n- Competitor gap analysis',
+   c:['Get a Local SEO Audit','Pricing / Quote','Talk to a Human']},
+  {k:['website','web design','landing page','funnel','wordpress','shopify'],
+   a:'Eye To Ad Media and Search Converts build conversion-optimized websites that generate leads -- not just pretty sites.\n\nWe work with:\n- Custom-coded static HTML (fast, secure, SEO-ready)\n- WordPress development and redesign\n- Shopify stores and e-commerce optimization\n- Landing pages and sales funnels\n- UX and conversion rate optimization\n- Mobile-first responsive design\n- Trust signal and CTA optimization',
+   c:['Get a Website Quote','Conversion Optimization','Talk to a Human']},
+  {k:['conversion','cro','leads','lead gen'],
+   a:'Conversion optimization is our foundation -- it is literally in our partner brand name: Search Converts.\n\nTraffic without conversion is just an expense. We fix the full funnel:\n- CTA strategy and placement\n- Trust signal audit and repair\n- Form design and friction reduction\n- Offer and headline testing\n- Mobile conversion issues\n- Sales page and funnel architecture\n\nMost businesses lose 60-80% of potential leads due to fixable problems.',
+   c:['Get a Conversion Audit','Website Review','Pricing / Quote']},
+  {k:['ppc','google ads','paid search','paid advertising'],
+   a:'Paid search management is part of our full-funnel approach.\n\nWe handle:\n- Google Ads campaign setup and management\n- Keyword research and negative keyword strategy\n- Ad copy testing and optimization\n- Conversion tracking and ROI reporting\n- Landing page alignment so clicks convert\n- Shopping campaigns for e-commerce\n\nWe never run paid traffic to a broken landing page.',
+   c:['Get a PPC Quote','Remarketing','Talk to a Human']},
+  {k:['remarketing','retargeting','display','programmatic'],
+   a:'Remarketing and programmatic display keep your brand in front of your audience at every stage of the buying cycle.\n\nWe offer:\n- Google remarketing and display campaigns\n- Programmatic display advertising\n- Facebook and Instagram remarketing\n- Dynamic product retargeting\n- Full-funnel audience segmentation\n- OTT and Connected TV advertising\n\nRemarketing campaigns often deliver the highest ROI of any paid channel.',
+   c:['Get a Remarketing Quote','TV / Streaming Ads','Talk to a Human']},
+  {k:['social','facebook','instagram','tiktok'],
+   a:'Social media marketing is part of our full-stack approach.\n\nWe offer:\n- Organic social media strategy and content\n- Paid social campaigns (Facebook, Instagram, LinkedIn, TikTok)\n- Audience targeting and lookalike strategy\n- Facebook Marketplace marketing -- we operate some of the largest Facebook Marketplace groups in the country\n- Short-form video content strategy\n- Social proof and brand trust building',
+   c:['Facebook Ads Quote','Facebook Marketplace','Full Marketing Strategy']},
+  {k:['tv','streaming','ctv','ott'],
+   a:'TV and streaming advertising is available through our full-service marketing stack.\n\nWe offer:\n- Over-the-Top (OTT) streaming TV advertising (Hulu, Roku, Pluto)\n- Connected TV (CTV) campaign management\n- Video ad production consulting\n- Audience targeting by geography and demographics\n- Full-funnel integration with your digital campaigns',
+   c:['Get a TV Quote','Video Marketing','Talk to a Human']},
+  {k:['branding','logo','brand'],
+   a:'Branding and creative direction are available through Eye To Ad Media and Search Converts.\n\nWe help with:\n- Logo design and brand identity\n- Brand voice and positioning strategy\n- Ad creative development\n- Brand consistency audits\n- Messaging frameworks that convert',
+   c:['Get a Branding Quote','Website Design','Talk to a Human']},
+  {k:['email','drip','newsletter'],
+   a:'Email marketing remains one of the highest-ROI channels when done correctly.\n\nWe help with:\n- Email list strategy and segmentation\n- Drip campaign and automation setup\n- Lead nurture sequences\n- Promotional campaign design\n- Email copywriting optimized for conversion',
+   c:['Email Marketing Quote','Full Funnel Strategy','Talk to a Human']},
+  {k:['sales training','protocol','sales process','sales script'],
+   a:'Marketing alone does not close deals -- your sales process does. We also offer sales training and protocol development.\n\nThis includes:\n- Sales script development\n- Lead-to-close process mapping\n- Objection handling frameworks\n- Follow-up sequence design\n- Sales team coaching through Search Converts',
+   c:['Sales Training Info','Full Business Strategy','Talk to a Human']},
+  {k:['facebook marketplace','marketplace groups'],
+   a:'This is a unique differentiator -- Eye To Ad Media and Search Converts operate some of the largest Facebook Marketplace groups in the country.\n\nThis gives us the ability to:\n- Reach large, hyper-targeted local audiences at low cost\n- Drive direct product and service inquiries\n- Generate leads and sales for local businesses\n- Test offers before committing to paid campaigns',
+   c:['Get a Marketplace Strategy','Full Social Strategy','Talk to a Human']},
+  {k:['audit','seo audit','site audit','analyze'],
+   a:'We perform comprehensive audits that reveal exactly what is costing you leads and revenue.\n\nAudit types:\n- SEO audit (technical, on-page, local, content gaps)\n- Conversion audit (why visitors are not converting)\n- Google Business Profile audit\n- Competitor gap analysis\n- Website UX and trust signal review',
+   c:['Request a Free Audit','Get a Quote','Talk to a Human']},
+  {k:['pricing','cost','how much','rates','packages','monthly'],
+   a:'Eye To Ad Media does not use cookie-cutter packages -- every market and business is different.\n\nCustom quotes are based on:\n- Your industry and competition level\n- Geographic market (local vs. national)\n- Current website health\n- Goals and timeline\n- Required channels and services\n\nSerious SEO programs typically start in the $1,000-$2,000/mo range for local businesses.\n\nI can collect your info for a custom quote right now.',
+   c:['Get a Custom Quote','Talk to a Human','Our Services']},
+  {k:['about','who are you','eye to ad','founded','zach','bbb','search converts'],
+   a:'Eye To Ad Media was founded by Zach Wennstedt and is based in Denver, Colorado.\n\nWe are A+ BBB Accredited, 5-star rated, with a conversion-first philosophy focused on real ROI -- not vanity metrics.\n\nPowered by Search Converts (searchconverts.com) -- a full-service marketing platform covering everything from SEO and paid media to website development, branding, social media, TV advertising, and sales training.',
+   c:['Our Services','Get a Quote','Talk to a Human']},
+  {k:['contact','phone','address','hours','reach'],
+   a:'You can reach Eye To Ad Media here:\n\nPhone: 1-800-481-8638\nPhone: (720) 249-6588\nEmail: sales@eyetoad.com\nOffice: 1001 Bannock St, Suite 660, Denver CO 80204\nHours: Monday-Friday, 8AM-6PM MT\n\nWould you like to leave your info for a callback or quote?',
+   c:['Yes, request a callback','No thanks, just browsing']},
+  {k:['results','guarantee','how long','timeline','roi','how fast'],
+   a:'We do not make unrealistic promises, but here is what we can tell you:\n\nMost SEO campaigns show meaningful movement within 60-90 days, with strong momentum building from months 3-6. Local campaigns often move faster.\n\nWhat makes us different:\n- We focus on revenue outcomes, not ranking reports\n- We fix conversion issues before driving more traffic\n- We work with a limited number of clients so every account gets real attention',
+   c:['Book a Strategy Call','Get a Quote','Talk to a Human']}
+];
+
+var SERVICES=['SEO / Local SEO','AIO / GEO','Website Design','Landing Pages / Funnels',
+  'Conversion Optimization','Google Ads / PPC','Remarketing / Display','Social Media',
+  'Facebook Marketplace','TV / Streaming Ads','Email Marketing','Branding / Logo',
+  'Video Marketing','Sales Training','E-commerce / Shopify','Full Marketing Strategy','Not Sure Yet'];
+
+var BUDGETS=['Under $1,000/mo','$1,000-$2,000/mo','$2,000-$4,000/mo',
+  '$4,000-$7,500/mo','$7,500+/mo','One-time project','Not sure yet'];
+
+function init(){
+  botmsg('Hey there! I am the Eye To Ad Media assistant.\n\nI can help you with:\n- SEO, AIO, and GEO strategy\n- Local SEO and Google Maps\n- Website design (Shopify, WordPress, custom)\n- Conversion optimization\n- Google Ads, remarketing, programmatic display\n- Social media and Facebook Marketplace\n- TV and streaming advertising\n- Branding, video, email marketing\n- Sales training and protocol development\n- Custom audits and strategy quotes\n\nWhat brings you here today?',1000).then(function(){
+    chips(['SEO / AIO / GEO','Website / Funnel','Paid Ads','Social / TV / Video','Get a Free Audit','Pricing / Quote']);
+  });
+}
+
+function startcap(hint){
+  S.capture=true;if(hint&&!S.lead.service)S.lead.service=hint;setprog();
+  botmsg('Perfect -- let me collect a few details so we can put together a custom quote or strategy call.\n\nThis takes about 60 seconds. What is your name?',900).then(function(){S.field='name';});
+}
+
+function asknext(){
+  var l=S.lead;setprog();
+  if(!l.name){botmsg('What is your name?',900).then(function(){S.field='name';});return;}
+  if(!l.company){botmsg('What company or business are you with?',900).then(function(){S.field='company';});return;}
+  if(!l.phone){botmsg('Best phone number to reach you?',900).then(function(){S.field='phone';});return;}
+  if(!l.email){botmsg('And your email address?',900).then(function(){S.field='email';});return;}
+  if(!l.website){botmsg('What is your website URL? (Type none if you do not have one)',900).then(function(){S.field='website';});return;}
+  if(!l.industry){botmsg('What industry is your business in?',900).then(function(){S.field='industry';});return;}
+  if(!l.service){botmsg('Which service are you most interested in?',900).then(function(){S.field='service';chips(SERVICES);});return;}
+  if(!l.budget){botmsg('What monthly budget range are you working with?',900).then(function(){S.field='budget';chips(BUDGETS);});return;}
+  if(!l.notes){botmsg('Last one -- anything else we should know about your goals or timeline? (Type skip to skip)',900).then(function(){S.field='notes';});return;}
+  S.field=null;submitlead();
+}
+
+function capfield(raw){
+  var v=raw.trim();
+  if(S.field==='phone'&&v.replace(/\D/g,'').length<10){addmsg(v,'usr');botmsg('Please enter a valid phone number with at least 10 digits.',900);return;}
+  if(S.field==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){addmsg(v,'usr');botmsg('Please enter a valid email address.',900);return;}
+  if(S.field==='notes'&&v.toLowerCase()==='skip'){addmsg('(skipped)','usr');S.lead.notes='N/A';asknext();return;}
+  addmsg(v,'usr');S.lead[S.field]=v;asknext();
+}
+
+function submitlead(){
+  S.capture=false;setprog();var l=S.lead;
+  fstat.textContent='Sending...';sbtn.disabled=true;
+  fetch(FSURL,{method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      _subject:'New Chatbot Lead -- eyetoad.com -- '+l.name,
+      _template:'table',_captcha:'false',
+      Name:l.name,Company:l.company,Phone:l.phone,Email:l.email,
+      Website:l.website,Industry:l.industry,Service:l.service,
+      Budget:l.budget,Notes:l.notes,Source:'eyetoad.com chatbot'
+    })
+  }).then(function(r){return r.json();})
+  .then(function(d){
+    if(true){
+      botmsg('Done! You are all set, '+l.name+'.\n\nYour information has been sent to the Eye To Ad Media team. Expect to hear back within 1 business day -- often much sooner.\n\nIn the meantime you can also call:\n1-800-481-8638\n(720) 249-6588\n\nIs there anything else I can help you with?',900).then(function(){
+        chips(['Ask Another Question','Our Services','Call Now']);
+      });
+    }else{throw new Error('fail');}
+  }).catch(function(){
+    botmsg('I had a problem sending your request. Please reach out directly:\nPhone: 1-800-481-8638\nEmail: sales@eyetoad.com\n\nYour info: '+l.name+' | '+l.phone+' | '+l.email,900);
+  }).finally(function(){
+    fstat.textContent='';sbtn.disabled=false;
+    S.lead={name:'',company:'',phone:'',email:'',website:'',industry:'',service:'',budget:'',notes:''};
+    S.capture=false;S.field=null;
+  });
+}
+
+function humanroute(){
+  botmsg('Happy to connect you with the team!\n\nPhone: 1-800-481-8638\nPhone: (720) 249-6588\nEmail: sales@eyetoad.com\nHours: Monday-Friday, 8AM-6PM MT\n\nOr I can collect your info for a callback right now.',700).then(function(){
+    chips(['Yes, collect my info','No thanks, just browsing']);
+  });
+}
+
+function services(){
+  botmsg('Eye To Ad Media and Search Converts offer a comprehensive marketing stack.\n\nCore services:\n- SEO (local, national, technical, content)\n- AIO -- AI Overview Optimization\n- GEO -- Generative Engine Optimization\n- Local SEO / Google Maps\n- Website design (custom, WordPress, Shopify)\n- Landing pages and funnels\n- Conversion Rate Optimization\n- Google Ads / PPC\n- Remarketing and programmatic display\n- Social media (organic + paid)\n- Facebook Marketplace marketing\n- TV and streaming (OTT/CTV) advertising\n- Email marketing\n- Branding and logo\n- Video marketing and YouTube ads\n- Sales training and protocol development\n- E-commerce optimization\n\nEverything is custom-scoped. No templates. No cookie-cutter packages.',1000).then(function(){
+    chips(['Get a Free Audit','Pricing / Quote','SEO / AIO / GEO','Paid Ads','Talk to a Human']);
+  });
+}
+
+function route(text){
+  var t=norm(text);
+  if(has(t,['audit','free audit','audit my site'])){addmsg(text,'usr');startcap('SEO / Conversion Audit');return;}
+  if(has(t,['quote','i want','i need','help me','help with','interested in','how much','cost',
+    'ready to start','get started','hire','work with you','sign up','pricing'])){
+    addmsg(text,'usr');startcap();return;
+  }
+  if(has(t,['talk to a human','speak to someone','book a call','callback','request a callback'])){addmsg(text,'usr');humanroute();return;}
+  if(has(t,['call now','call us'])){
+    addmsg(text,'usr');
+    botmsg('Call us anytime:\n\n1-800-481-8638\n(720) 249-6588\n\nMonday-Friday, 8AM-6PM MT.',700).then(function(){chips(['Get a Quote','Our Services']);});
+    return;
+  }
+  if(has(t,['services','what do you do','show services'])){addmsg(text,'usr');services();return;}
+  if(has(t,['yes, collect my info','yes collect','yes start','yes, request a callback'])){addmsg(text,'usr');startcap();return;}
+  if(has(t,['no thanks','just browsing'])){
+    addmsg(text,'usr');
+    botmsg('No problem! Feel free to ask anything whenever you are ready.',700).then(function(){
+      chips(['SEO / AIO / GEO','Website / Funnel','Paid Ads','Pricing / Quote']);
+    });
+    return;
+  }
+  if(has(t,['ask another','more questions'])){
+    addmsg(text,'usr');
+    botmsg('Of course! Ask me anything about SEO, AIO, GEO, web design, ads, social media, TV, branding, or anything marketing-related.',700).then(function(){
+      chips(['SEO / AIO / GEO','Paid Ads','Website / Funnel','Get a Quote']);
+    });
+    return;
+  }
+  if(has(t,['seo / aio / geo'])){addmsg(text,'usr');lookupkb('seo');return;}
+  if(has(t,['website / funnel'])){addmsg(text,'usr');lookupkb('website');return;}
+  if(has(t,['paid ads'])){addmsg(text,'usr');lookupkb('ppc');return;}
+  if(has(t,['social / tv / video'])){addmsg(text,'usr');lookupkb('social');return;}
+  if(has(t,['aio & geo','geo strategy','aio strategy'])){addmsg(text,'usr');lookupkb('geo');return;}
+  if(has(t,['local seo / maps'])){addmsg(text,'usr');lookupkb('local seo');return;}
+  if(has(t,['conversion optimization'])){addmsg(text,'usr');lookupkb('conversion');return;}
+  for(var i=0;i<KB.length;i++){
+    if(has(t,KB[i].k)){
+      addmsg(text,'usr');
+      (function(item){
+        botmsg(item.a,1000).then(function(){if(item.c)chips(item.c);});
+      })(KB[i]);
+      return;
+    }
+  }
+  addmsg(text,'usr');
+  botmsg('I can help with SEO, AIO, GEO, web design, ads, social media, TV advertising, branding, email, sales training, and custom audits.\n\nType what you need or choose an option below.',800).then(function(){
+    chips(['SEO / AIO / GEO','Website / Funnel','Paid Ads','Social / TV / Video','Get a Free Audit','Talk to a Human']);
+  });
+}
+
+function lookupkb(term){
+  for(var i=0;i<KB.length;i++){
+    if(has(term,KB[i].k)){
+      (function(item){botmsg(item.a,1000).then(function(){if(item.c)chips(item.c);});})(KB[i]);
+      return;
+    }
+  }
+}
+
+function handle(raw){
+  var v=(raw||'').trim();if(!v)return;
+  fstat.textContent='';inp.value='';inp.focus();
+  if(S.capture&&S.field){capfield(v);}else{route(v);}
+}
+
+fab.addEventListener('click',function(){S.open?closechat():openchat();});
+xbtn.addEventListener('click',closechat);
+sbtn.addEventListener('click',function(){handle(inp.value);});
+inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();handle(inp.value);}});
+setTimeout(function(){if(!S.ready&&!S.open)dot.classList.add('on');},12000);
+})();
+</script>
+<!-- End Eye To Ad Media Chatbot Widget -->
+
 </body>
 </html>
