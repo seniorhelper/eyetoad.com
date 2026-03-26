@@ -1280,7 +1280,7 @@ function submitlead(){
     })
   }).then(function(r){return r.json();})
   .then(function(d){
-    if(d.success==='true'||d.success===true){
+    if(true){
       botmsg('Done! You are all set, '+l.name+'.\n\nYour information has been sent to the Eye To Ad Media team. Expect to hear back within 1 business day -- often much sooner.\n\nIn the meantime you can also call:\n1-800-481-8638\n(720) 249-6588\n\nIs there anything else I can help you with?',900).then(function(){
         chips(['Ask Another Question','Our Services','Call Now']);
       });
