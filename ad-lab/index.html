@@ -1020,7 +1020,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .crossword-grid{display:inline-block}
 .cw-row{display:flex}
 .cw-cell{
-  width:32px;height:32px;border:1px solid rgba(255,255,255,.15);
+  width:36px;height:36px;border:1px solid rgba(255,255,255,.15);
   background:rgba(255,255,255,.07);
   display:flex;align-items:center;justify-content:center;
   position:relative;
@@ -1035,6 +1035,8 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 }
 .cw-cell.correct input{color:var(--green)}
 .cw-cell.wrong input{color:var(--pink)}
+.cw-cell.highlighted{background:rgba(0,229,255,.12);border-color:rgba(0,229,255,.4)}
+.cw-cell.highlighted input{color:#fff}
 .cw-num{position:absolute;top:1px;left:2px;font-size:7px;color:rgba(255,255,255,.4);font-family:'Inter',sans-serif;line-height:1;pointer-events:none}
 .cw-clues{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cw-clue-group h4{font-family:'Bebas Neue',sans-serif;color:var(--orange);font-size:.9rem;letter-spacing:1px;margin-bottom:6px}
@@ -1044,6 +1046,8 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .cw-btn{font-family:'Press Start 2P',monospace;font-size:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#ccc;cursor:pointer;border-radius:4px;transition:all .1s}
 .cw-btn:hover{background:rgba(255,255,255,.1);color:#fff}
 
+.cw-topic-btn,.cw-diff-btn{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;padding:6px 13px;border-radius:6px;cursor:pointer;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:rgba(255,255,255,.55);transition:all .12s}
+.cw-topic-btn.active,.cw-topic-btn:hover,.cw-diff-btn.active,.cw-diff-btn:hover{background:rgba(0,229,255,.14);border-color:var(--cyan);color:#fff}
 /* Sudoku */
 .sudoku-container{display:flex;flex-direction:column;align-items:center;gap:12px}
 .sudoku-grid{
@@ -1074,26 +1078,39 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .sudoku-status{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--green);text-align:center;min-height:20px}
 
 /* Block Drop */
-.bd-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
-#bdCanvas{border:2px solid rgba(0,229,255,.3);border-radius:4px;background:#000;display:block;image-rendering:pixelated}
-#bdNext{border:1px solid rgba(255,255,255,.15);border-radius:4px;background:#111;display:block}
-.bd-right{display:flex;flex-direction:column;gap:12px;min-width:110px}
-.bd-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px;text-align:center}
+.bd-wrap{display:flex;gap:24px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+.bd-main{display:flex;flex-direction:column;align-items:center;gap:0}
+#bdCanvas{border:2px solid rgba(0,229,255,.4);border-radius:6px;background:#000;display:block;image-rendering:pixelated;box-shadow:0 0 24px rgba(0,229,255,.15)}
+/* Controls panel sits directly below the canvas */
+.bd-controls-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-top:none;border-radius:0 0 10px 10px;padding:14px 16px;width:100%}
+.bd-ctrl-row1{display:flex;gap:8px;justify-content:center;margin-bottom:10px}
+.bd-ctrl-row2{display:flex;gap:8px;justify-content:center}
+.bd-cbtn{font-family:'Press Start 2P',monospace;font-size:14px;padding:14px 20px;background:rgba(0,229,255,.12);border:2px solid rgba(0,229,255,.4);color:var(--cyan);border-radius:8px;cursor:pointer;min-width:64px;min-height:56px;display:flex;align-items:center;justify-content:center;transition:all .12s;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.bd-cbtn:hover,.bd-cbtn:active{background:rgba(0,229,255,.28);border-color:var(--cyan);transform:scale(.95)}
+.bd-cbtn-drop{font-size:12px;padding:12px 28px;min-width:200px;background:rgba(249,115,22,.15);border-color:rgba(249,115,22,.5);color:var(--orange)}
+.bd-cbtn-drop:hover,.bd-cbtn-drop:active{background:rgba(249,115,22,.3);border-color:var(--orange)}
+/* Side panel */
+.bd-side{display:flex;flex-direction:column;gap:10px;min-width:130px}
+.bd-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 14px;text-align:center}
 .bd-label{font-family:'Press Start 2P',monospace;font-size:7px;color:rgba(255,255,255,.4);margin-bottom:6px;letter-spacing:1px}
-.bd-val{font-family:'Press Start 2P',monospace;font-size:14px;color:var(--cyan)}
-.bd-btns{display:flex;flex-direction:column;gap:6px}
-.bd-keys{font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.9}
+.bd-val{font-family:'Press Start 2P',monospace;font-size:16px;color:var(--cyan)}
+.bd-btns{display:flex;flex-direction:column;gap:8px}
+.bd-keys{font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.35);line-height:2;padding:0 4px}
 .bd-key{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:3px;padding:1px 5px;font-family:'Press Start 2P',monospace;font-size:6px;color:rgba(255,255,255,.6);margin-right:4px;vertical-align:middle}
-.bd-key-row{display:flex;align-items:center;gap:4px}
-.bd-touch{display:none}
-@media(max-width:600px){
-  .bd-touch{display:flex;flex-direction:column;gap:8px;margin-top:4px}
-  .bd-touch-row{display:flex;gap:8px;justify-content:center}
-  .bd-tbtn{font-family:'Press Start 2P',monospace;font-size:10px;padding:10px 14px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);color:var(--cyan);border-radius:6px;cursor:pointer;flex:1;max-width:70px}
-  .bd-tbtn-wide{max-width:100%;width:100%}
-  .bd-tbtn:active{background:rgba(0,229,255,.25)}
+.bd-key-row{display:flex;align-items:center;gap:4px;margin-bottom:2px}
+/* Level badge / theme */
+.bd-theme-bar{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;justify-content:center}
+.bd-theme-btn{font-family:'Press Start 2P',monospace;font-size:6px;padding:5px 8px;border-radius:4px;cursor:pointer;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);transition:all .1s}
+.bd-theme-btn.active,.bd-theme-btn:hover{color:#fff;background:rgba(0,229,255,.15);border-color:var(--cyan)}
+.bd-hold-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 14px;text-align:center}
+#bdHold{border:1px solid rgba(255,255,255,.12);border-radius:4px;background:#111;display:block}
+@media(max-width:700px){
+  .bd-wrap{flex-direction:column;align-items:center}
+  .bd-side{flex-direction:row;flex-wrap:wrap;justify-content:center;min-width:unset;width:100%}
+  .bd-side .bd-panel{flex:1;min-width:80px}
+  .bd-cbtn{font-size:18px;padding:16px 22px;min-width:70px;min-height:62px}
+  .bd-cbtn-drop{min-width:180px}
   .bd-keys{display:none}
-  #bdCanvas{width:200px;height:400px}
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1752,8 +1769,27 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <div class="bonus-grid">
 
     <!-- CROSSWORD -->
-    <div class="bonus-card">
-      <h3>📝 <span>Marketing Crossword</span></h3>
+    <div class="bonus-card" style="grid-column:1/-1">
+      <h3>📝 <span>Word Puzzles</span></h3>
+      <!-- Topic selector -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:center">
+        <span style="font-family:'Press Start 2P',monospace;font-size:7px;color:rgba(255,255,255,.4);margin-right:4px">TOPIC:</span>
+        <button class="cw-topic-btn active" data-cwtopic="marketing">📣 Marketing</button>
+        <button class="cw-topic-btn" data-cwtopic="seo">🔍 SEO &amp; Tech</button>
+        <button class="cw-topic-btn" data-cwtopic="science">🔬 Science</button>
+        <button class="cw-topic-btn" data-cwtopic="nature">🌿 Nature</button>
+        <button class="cw-topic-btn" data-cwtopic="life">❤️ Life &amp; Health</button>
+        <button class="cw-topic-btn" data-cwtopic="history">🏛️ History</button>
+        <button class="cw-topic-btn" data-cwtopic="space">🚀 Space</button>
+        <button class="cw-topic-btn" data-cwtopic="food">🍕 Food &amp; Cooking</button>
+      </div>
+      <!-- Difficulty selector -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;align-items:center">
+        <span style="font-family:'Press Start 2P',monospace;font-size:7px;color:rgba(255,255,255,.4);margin-right:4px">LEVEL:</span>
+        <button class="cw-diff-btn active" data-cwdiff="easy">🟢 Easy</button>
+        <button class="cw-diff-btn" data-cwdiff="medium">🟡 Medium</button>
+        <button class="cw-diff-btn" data-cwdiff="hard">🔴 Hard</button>
+      </div>
       <div style="overflow-x:auto">
         <div class="crossword-grid" id="cwGrid"></div>
       </div>
@@ -1771,8 +1807,10 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         <button class="cw-btn" id="cwCheck">✓ CHECK</button>
         <button class="cw-btn" id="cwReveal">💡 REVEAL</button>
         <button class="cw-btn" id="cwReset">↺ RESET</button>
+        <button class="cw-btn" id="cwNew">🔀 NEW PUZZLE</button>
       </div>
       <div id="cwStatus" style="font-family:'Press Start 2P',monospace;font-size:8px;color:var(--green);margin-top:10px;min-height:20px;text-align:center"></div>
+      <div id="cwTimer" style="font-family:'Press Start 2P',monospace;font-size:7px;color:rgba(255,255,255,.35);margin-top:4px;text-align:center"></div>
     </div>
 
     <!-- SUDOKU -->
@@ -1793,14 +1831,42 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
     <!-- BLOCK DROP -->
     <div class="bonus-card" style="grid-column:1/-1">
       <h3>🟦 <span>Block Drop</span> <span style="font-family:'Press Start 2P',monospace;font-size:9px;color:var(--orange);margin-left:8px" id="bdLevelBadge">LVL 1</span></h3>
-      <div class="bd-layout">
-        <div class="bd-left">
-          <canvas id="bdCanvas" width="240" height="480"></canvas>
+      <div class="bd-wrap">
+        <!-- Main canvas + controls stacked vertically -->
+        <div class="bd-main">
+          <canvas id="bdCanvas" width="300" height="600"></canvas>
+          <div class="bd-controls-panel">
+            <!-- Row 1: Left, Rotate, Right -->
+            <div class="bd-ctrl-row1">
+              <button class="bd-cbtn" id="bdTLeft" title="Move Left">◀</button>
+              <button class="bd-cbtn" id="bdTRotate" title="Rotate">↻</button>
+              <button class="bd-cbtn" id="bdTRight" title="Move Right">▶</button>
+              <button class="bd-cbtn" id="bdTDown" title="Soft Drop">▼</button>
+              <button class="bd-cbtn" id="bdTHold" title="Hold Piece">📦</button>
+            </div>
+            <!-- Row 2: Hard drop -->
+            <div class="bd-ctrl-row2">
+              <button class="bd-cbtn bd-cbtn-drop" id="bdTDrop">⬇ HARD DROP</button>
+            </div>
+          </div>
+          <!-- Theme selector -->
+          <div class="bd-theme-bar" style="margin-top:12px">
+            <span style="font-family:'Press Start 2P',monospace;font-size:6px;color:rgba(255,255,255,.35);margin-right:4px;line-height:2">SKIN:</span>
+            <button class="bd-theme-btn active" data-bdskin="neon">NEON</button>
+            <button class="bd-theme-btn" data-bdskin="classic">CLASSIC</button>
+            <button class="bd-theme-btn" data-bdskin="candy">CANDY</button>
+            <button class="bd-theme-btn" data-bdskin="matrix">MATRIX</button>
+          </div>
         </div>
-        <div class="bd-right">
+        <!-- Side panel: stats + next/hold + keyboard ref -->
+        <div class="bd-side">
           <div class="bd-panel">
             <div class="bd-label">NEXT</div>
             <canvas id="bdNext" width="100" height="100"></canvas>
+          </div>
+          <div class="bd-hold-panel">
+            <div class="bd-label">HOLD 📦</div>
+            <canvas id="bdHold" width="100" height="100"></canvas>
           </div>
           <div class="bd-panel">
             <div class="bd-label">SCORE</div>
@@ -1814,6 +1880,10 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
             <div class="bd-label">LINES</div>
             <div class="bd-val" id="bdLines">0</div>
           </div>
+          <div class="bd-panel">
+            <div class="bd-label">COMBO</div>
+            <div class="bd-val" id="bdCombo" style="color:var(--orange)">0</div>
+          </div>
           <div class="bd-btns">
             <button class="sudoku-btn" id="bdStart">▶ START</button>
             <button class="sudoku-btn" id="bdPause">⏸ PAUSE</button>
@@ -1823,17 +1893,8 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
             <div class="bd-key-row"><span class="bd-key">↑</span> Rotate</div>
             <div class="bd-key-row"><span class="bd-key">↓</span> Soft Drop</div>
             <div class="bd-key-row"><span class="bd-key">SPC</span> Hard Drop</div>
-          </div>
-          <!-- Mobile controls -->
-          <div class="bd-touch">
-            <div class="bd-touch-row">
-              <button class="bd-tbtn" id="bdTLeft">◀</button>
-              <button class="bd-tbtn" id="bdTRotate">↻</button>
-              <button class="bd-tbtn" id="bdTRight">▶</button>
-            </div>
-            <div class="bd-touch-row">
-              <button class="bd-tbtn bd-tbtn-wide" id="bdTDrop">⬇ DROP</button>
-            </div>
+            <div class="bd-key-row"><span class="bd-key">C</span> Hold</div>
+            <div class="bd-key-row"><span class="bd-key">Z</span> Rotate ↺</div>
           </div>
         </div>
       </div>
@@ -3526,131 +3587,679 @@ setTimeout(()=>robotSay('👋 Welcome to the <strong>Ad Lab!</strong> Hit START 
 <!-- ═══ BONUS GAMES SCRIPT ═══ -->
 <script>
 // ════════════════════════════════════════════
-// MARKETING CROSSWORD PUZZLE
+// CROSSWORD PUZZLE ENGINE
 // ════════════════════════════════════════════
 (function(){
 'use strict';
 
-// 10×10 grid crossword (0=black, 1=white)
-// ACROSS: 1.SEO, 2.LEADS, 3.RANK, 4.AIO, 5.FUNNEL, 6.GOOGLE, 7.BRAND, 8.CLICK, 9.ROI
-// DOWN: 1.SERP, 2.ENGAGE, 3.LOCAL, 4.ADBOT
-// Simple 8x8 grid
-const GRID_SIZE=8;
-const SOLUTION=[
-  [0,'S','E','O',0,0,0,0],
-  [0,'E',0,'N',0,0,0,0],
-  ['L','R',0,'G',0,'A',0,0],
-  ['E','P',0,'A',0,'I',0,0],
-  ['A',0,'F','G',0,'O',0,0],
-  ['D',0,'U','E',0,0,0,0],
-  ['S',0,'N',0,0,0,0,0],
-  [0,0,'N',0,0,0,0,0],
-  [0,0,'E',0,0,0,0,0],
-  [0,0,'L',0,0,0,0,0],
-];
+// ── PUZZLE BANK ──────────────────────────────
+// Each puzzle: rows, cols, sol (grid), across [], down []
+// sol: 0=black cell, letter=white cell
 
-// More structured crossword
-const CW={
-  rows:10, cols:10,
-  solution:[
-    [0,0,'S','E','O',0,0,0,0,0],
-    [0,0,'E',0,'N',0,0,0,0,0],
-    [0,'L','R',0,'G','A','I','O',0,0],
-    [0,'E','P',0,'A',0,0,0,0,0],
-    ['F','A',0,'R','G',0,0,0,0,0],
-    ['U','D',0,'A','E',0,0,0,0,0],
-    ['N','S',0,'N',0,0,0,0,0,0],
-    ['N',0,0,'K',0,0,0,0,0,0],
-    ['E',0,0,0,0,0,0,0,0,0],
-    ['L',0,0,0,0,0,0,0,0,0],
-  ],
-  clues:{
-    across:[
-      {num:1,row:0,col:2,len:3,clue:'Search engine optimization abbr.'},
-      {num:2,row:2,col:5,len:3,clue:'AI-powered SEO format'},
-      {num:3,row:4,col:0,len:2,clue:'Top of page = _____'},
-      {num:4,row:4,col:3,len:2,clue:'Google SERP position'},
-    ],
-    down:[
-      {num:1,row:0,col:2,len:10,clue:'Eye To Ad uses this engine to rank you'},
-      {num:5,row:2,col:1,len:5,clue:'Potential customers (plural)'},
-      {num:6,row:4,col:0,len:6,clue:'Sales ___ converts prospects'},
-      {num:7,row:0,col:4,len:4,clue:'Search ___: position in results'},
-    ]
+const PUZZLES = {
+
+  marketing: {
+    easy: {
+      rows:8,cols:10,
+      sol:[
+        [0,0,'B','R','A','N','D',0,0,0],
+        [0,0,'L',0,'D',0,'A',0,0,0],
+        ['F','U','N','N','E','L',0,0,0,0],
+        [0,0,'O',0,'S',0,0,0,0,0],
+        [0,'L','G',0,0,'C','L','I','C','K'],
+        [0,'E',0,0,0,'O',0,0,0,0],
+        ['S','A','L','E','S',0,0,0,0,0],
+        [0,'D',0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:2,len:5,clue:'Identity of a business — name, logo, voice'},
+        {num:3,row:2,col:0,len:6,clue:'Sales pipeline that converts prospects'},
+        {num:5,row:4,col:5,len:5,clue:'What you want visitors to do on your site'},
+        {num:6,row:6,col:0,len:5,clue:'The end goal: closing the deal'},
+      ],
+      down:[
+        {num:1,row:0,col:2,len:6,clue:'Your blog, videos, and social posts'},
+        {num:2,row:0,col:4,len:4,clue:'Paid promos on social or search'},
+        {num:4,row:3,col:1,len:5,clue:'Potential customers you attract'},
+        {num:7,row:0,col:6,len:6,clue:'Digital marketing analytics platform (abbr.)'},
+      ]
+    },
+    medium: {
+      rows:9,cols:11,
+      sol:[
+        [0,0,0,'S','E','R','P',0,0,0,0],
+        [0,0,0,'E',0,'O',0,0,0,0,0],
+        [0,'K','E','Y','W','O','R','D',0,0,0],
+        [0,'P',0,'S',0,'I',0,'A',0,0,0],
+        ['C','I',0,0,0,0,0,'T',0,0,0],
+        ['O',0,0,0,'L','E','A','D','S',0,0],
+        ['N',0,0,0,'O',0,0,0,'0',0,0],
+        ['V','I','R','A','L',0,0,0,'0',0,0],
+        ['E',0,0,0,'C',0,0,0,'0',0,0],
+      ],
+      across:[
+        {num:1,row:0,col:3,len:4,clue:'Search results page (abbr.)'},
+        {num:3,row:2,col:1,len:7,clue:'Word or phrase you want to rank for'},
+        {num:5,row:5,col:4,len:5,clue:'Potential customers in your pipeline'},
+        {num:6,row:7,col:0,len:5,clue:'Content that spreads rapidly online'},
+      ],
+      down:[
+        {num:1,row:0,col:3,len:8,clue:'Search engine optimization (abbr.)'},
+        {num:2,row:0,col:5,len:3,clue:'Return on investment (abbr.)'},
+        {num:4,row:2,col:1,len:6,clue:'Pay-per-click advertising (abbr.)'},
+        {num:7,row:2,col:7,len:4,clue:'Structured information for AI/search (abbr.)'},
+        {num:8,row:4,col:0,len:5,clue:'Rate that turns visitors to buyers (abbr. starts with C)'},
+        {num:9,row:5,col:4,len:4,clue:'Google Maps 3-pack is called this'},
+      ]
+    },
+    hard: {
+      rows:10,cols:12,
+      sol:[
+        [0,0,0,'A','U','T','H','O','R','I','T','Y'],
+        [0,0,0,'L',0,0,0,0,0,0,0,0],
+        ['G','E','O',0,0,0,0,'S','C','H','E','M','A'].slice(0,12),
+        [0,0,'R',0,'C','T','R',0,0,0,0,0],
+        [0,0,'G','A','L','G','O','R','I','T','H','M'],
+        [0,0,'A',0,'I',0,0,0,0,0,0,0],
+        [0,0,'N',0,'C',0,0,0,0,'A','I','O'],
+        [0,0,'I',0,'K',0,0,0,0,0,0,0],
+        [0,0,'C',0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:3,len:9,clue:'Domain trust level Google assigns your site'},
+        {num:3,row:2,col:0,len:3,clue:'Generative Engine Optimization (abbr.)'},
+        {num:4,row:3,col:4,len:3,clue:'Click-through rate (abbr.)'},
+        {num:5,row:4,col:2,len:10,clue:'Google's ranking logic: the _____'},
+        {num:6,row:6,col:9,len:3,clue:'AI-powered SEO optimization (abbr.)'},
+      ],
+      down:[
+        {num:2,row:0,col:3,len:6,clue:'Internal link structure (abbr.)'},
+        {num:7,row:2,col:7,len:2,clue:'Markup language helping search engines understand content'},
+        {num:8,row:2,col:2,len:7,clue:'Eye To Ad Media's process for ranking you'},
+        {num:9,row:3,col:4,len:4,clue:'Backlinks and internal links are this type'},
+      ]
+    }
+  },
+
+  seo: {
+    easy: {
+      rows:7,cols:9,
+      sol:[
+        ['S','E','O',0,0,0,0,0,0],
+        [0,'R',0,0,0,0,0,0,0],
+        [0,'P',0,'L','I','N','K',0,0],
+        [0,0,0,'O',0,0,0,0,0],
+        ['R','A','N','K',0,0,0,0,0],
+        [0,0,0,'A',0,0,0,0,0],
+        [0,0,0,'L',0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:0,len:3,clue:'Optimizing websites for search engines (abbr.)'},
+        {num:3,row:2,col:3,len:4,clue:'A URL pointing to your site'},
+        {num:4,row:4,col:0,len:4,clue:'Your position in search results'},
+      ],
+      down:[
+        {num:1,row:0,col:1,len:3,clue:'Search Engine Results Page (abbr.)'},
+        {num:2,row:2,col:3,len:5,clue:'Local search area targeting'},
+      ]
+    },
+    medium: {
+      rows:9,cols:10,
+      sol:[
+        [0,0,0,'I','N','D','E','X',0,0],
+        [0,0,0,'N',0,0,0,0,0,0],
+        [0,'C','R','A','W','L',0,0,0,0],
+        [0,'A',0,'N',0,0,0,0,0,0],
+        ['M','C','H','E','M','A',0,0,0,0],
+        [0,'H',0,0,0,0,0,0,0,0],
+        [0,'E',0,0,'S','I','T','E','M','A','P'].slice(0,10),
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:3,len:5,clue:'Google's catalog of web pages'},
+        {num:2,row:2,col:1,len:5,clue:'How Googlebot reads your site'},
+        {num:3,row:4,col:0,len:6,clue:'Structured data markup (drop first letter for SEO term)'},
+        {num:4,row:6,col:4,len:6,clue:'XML file that guides search crawlers'},
+      ],
+      down:[
+        {num:1,row:0,col:3,len:4,clue:'Links within your own site (internal _____)'},
+        {num:5,row:2,col:1,len:5,clue:'Abbreviated SEO metric for trust score'},
+        {num:6,row:4,col:5,len:3,clue:'HTML tag for page title used by Google'},
+      ]
+    },
+    hard: {
+      rows:9,cols:11,
+      sol:[
+        [0,'C','A','N','O','N','I','C','A','L',0],
+        [0,'O',0,0,0,0,0,'R',0,0,0],
+        [0,'R','O','B','O','T','S',0,0,0,0],
+        [0,'E',0,0,0,0,0,0,0,0,0],
+        ['H','R','E','F','L','A','N','G',0,0,0],
+        [0,'E',0,0,0,0,0,0,0,0,0],
+        [0,'D',0,0,'P','A','G','E','S','P','E'],
+        [0,'I',0,0,0,0,0,0,0,0,0],
+        [0,'R',0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:1,len:9,clue:'Tag that prevents duplicate content issues'},
+        {num:2,row:2,col:1,len:6,clue:'TXT file that controls crawling'},
+        {num:3,row:4,col:0,len:8,clue:'HTML attribute for multi-language targeting'},
+        {num:4,row:6,col:4,len:7,clue:'Core Web Vital: how fast content loads (abbr.)'},
+      ],
+      down:[
+        {num:5,row:0,col:1,len:9,clue:'Links from other sites to yours'},
+        {num:6,row:0,col:7,len:4,clue:'Structured data language used in JSON-LD'},
+      ]
+    }
+  },
+
+  science: {
+    easy: {
+      rows:7,cols:9,
+      sol:[
+        [0,'A','T','O','M',0,0,0,0],
+        [0,0,0,'X',0,0,0,0,0],
+        ['C','E','L','L',0,0,0,0,0],
+        [0,0,0,'Y',0,0,0,0,0],
+        [0,'L','A','G','E','N',0,0,0],
+        [0,0,0,'E',0,0,0,0,0],
+        [0,0,0,'N',0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:1,len:4,clue:'Smallest unit of matter'},
+        {num:2,row:2,col:0,len:4,clue:'Basic unit of all living things'},
+        {num:3,row:4,col:1,len:5,clue:'Set of instructions in DNA'},
+      ],
+      down:[
+        {num:4,row:0,col:3,len:7,clue:'Breathing gas: O₂ = ______'},
+        {num:5,row:4,col:1,len:3,clue:'Scientific test to prove a hypothesis'},
+      ]
+    },
+    medium: {
+      rows:9,cols:10,
+      sol:[
+        [0,0,'P','H','O','T','O','N',0,0],
+        [0,0,'H',0,0,0,0,0,0,0],
+        [0,0,'Y',0,0,0,0,0,0,0],
+        ['E','V','O','L','U','T','I','O','N',0],
+        [0,0,'S',0,0,0,0,0,0,0],
+        [0,0,'I',0,'G','R','A','V','I','T','Y'].slice(0,10),
+        [0,0,'S',0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:2,len:6,clue:'Particle of light energy'},
+        {num:2,row:3,col:0,len:9,clue:'Darwin's theory of natural selection'},
+        {num:3,row:5,col:4,len:6,clue:'Force that pulls objects together (Newton)'},
+      ],
+      down:[
+        {num:4,row:0,col:2,len:7,clue:'Process plants use to make food from light'},
+        {num:5,row:3,col:4,len:4,clue:'Basic substance that can't be broken down'},
+      ]
+    },
+    hard: {
+      rows:9,cols:11,
+      sol:[
+        [0,0,0,'M','I','T','O','S','I','S',0],
+        [0,0,0,'I',0,0,0,0,0,0,0],
+        [0,0,0,'T','H','E','R','M','O','S',0],
+        [0,0,0,'O',0,0,0,0,0,0,0],
+        ['N','E','U','R','O','N',0,0,0,0,0],
+        [0,0,0,'C',0,0,0,0,0,0,0],
+        [0,0,0,'H',0,'E','N','Z','Y','M','E'],
+        [0,0,0,'O',0,0,0,0,0,0,0],
+        [0,0,0,'N',0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:3,len:7,clue:'Cell division producing two identical cells'},
+        {num:2,row:2,col:3,len:7,clue:'Branch of physics dealing with heat (abbr. start)'},
+        {num:3,row:4,col:0,len:6,clue:'Brain cell that transmits signals'},
+        {num:4,row:6,col:5,len:6,clue:'Biological catalyst that speeds reactions'},
+      ],
+      down:[
+        {num:5,row:0,col:3,len:9,clue:'Cell's powerhouse organelle (abbr.)'},
+        {num:6,row:2,col:8,len:3,clue:'Chemical symbol for osmosis medium'},
+      ]
+    }
+  },
+
+  nature: {
+    easy: {
+      rows:7,cols:8,
+      sol:[
+        [0,'T','R','E','E',0,0,0],
+        [0,'I',0,0,0,0,0,0],
+        ['R','D','I','V','E','R',0,0],
+        [0,'E',0,0,0,0,0,0],
+        [0,0,'L','E','A','F',0,0],
+        [0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:1,len:4,clue:'Tall plant with trunk and branches'},
+        {num:2,row:2,col:0,len:6,clue:'Natural flowing waterway'},
+        {num:3,row:4,col:2,len:4,clue:'Green flat part of a plant'},
+      ],
+      down:[
+        {num:4,row:0,col:1,len:4,clue:'Water flows with the ___'},
+        {num:5,row:0,col:4,len:4,clue:'Edge of land where waves break'},
+      ]
+    },
+    medium: {
+      rows:9,cols:10,
+      sol:[
+        [0,0,0,'V','O','L','C','A','N','O'],
+        [0,0,0,0,0,0,'O',0,0,0],
+        [0,0,0,0,0,0,'R',0,0,0],
+        ['T','U','N','D','R','A',0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,'O','C','E','A','N',0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,'E','C','O','S','Y','S','T','E','M'],
+        [0,0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:3,len:7,clue:'Mountain that erupts lava'},
+        {num:2,row:3,col:0,len:6,clue:'Treeless Arctic biome'},
+        {num:3,row:5,col:1,len:5,clue:'Salt water covers 71% of Earth'},
+        {num:4,row:7,col:1,len:9,clue:'Community of organisms in their environment'},
+      ],
+      down:[
+        {num:5,row:0,col:6,len:4,clue:'Hard outer shell of crabs and turtles'},
+        {num:6,row:3,col:5,len:3,clue:'Sunlit zone at top of ocean'},
+      ]
+    },
+    hard: {
+      rows:9,cols:11,
+      sol:[
+        [0,0,0,'P','H','O','T','O','S','Y','N'],
+        [0,0,0,'H',0,0,0,0,0,0,'I'],
+        [0,0,0,'Y',0,0,0,0,0,0,'T'],
+        ['D','E','F','O','R','E','S','T',0,0,'R'],
+        [0,0,0,'T',0,0,0,0,0,0,'O'],
+        [0,0,0,'O',0,0,0,0,0,0,'G'],
+        [0,0,0,'S',0,'B','I','O','M','E',0],
+        [0,0,0,'Y',0,0,0,0,0,0,0],
+        [0,0,0,'N',0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:3,len:8,clue:'How plants convert sunlight to food (first 8 letters)'},
+        {num:2,row:3,col:0,len:8,clue:'Cutting down forests: _____ation'},
+        {num:3,row:6,col:5,len:5,clue:'Climate zone with distinct plant life'},
+      ],
+      down:[
+        {num:4,row:0,col:3,len:9,clue:'How plants convert sunlight to food'},
+        {num:5,row:0,col:10,len:6,clue:'Animal that eats only plants'},
+      ]
+    }
+  },
+
+  life: {
+    easy: {
+      rows:7,cols:8,
+      sol:[
+        [0,'S','L','E','E','P',0,0],
+        [0,0,0,0,0,0,0,0],
+        [0,'W','A','L','K',0,0,0],
+        [0,'A',0,0,0,0,0,0],
+        ['Y','T','E','R',0,0,0,0],
+        [0,'E',0,0,0,0,0,0],
+        [0,'R',0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:1,len:5,clue:'Rest your body needs every night'},
+        {num:2,row:2,col:1,len:4,clue:'Low-impact daily exercise'},
+        {num:3,row:4,col:0,len:4,clue:'Drink plenty of ___'},
+      ],
+      down:[
+        {num:4,row:0,col:5,len:3,clue:'Heart is a vital ___'},
+        {num:5,row:2,col:1,len:5,clue:'H₂O — good for you'},
+      ]
+    },
+    medium: {
+      rows:9,cols:10,
+      sol:[
+        [0,0,'M','I','N','D','F','U','L',0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        ['B','R','E','A','T','H','E',0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,'S','T','R','E','S','S',0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,'E','X','E','R','C','I','S','E',0],
+        [0,0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:2,len:8,clue:'Being present — ___ practice'},
+        {num:2,row:3,col:0,len:7,clue:'What meditation focuses on'},
+        {num:3,row:5,col:2,len:6,clue:'Too much of this raises cortisol'},
+        {num:4,row:7,col:1,len:8,clue:'Regular physical activity'},
+      ],
+      down:[
+        {num:5,row:0,col:2,len:5,clue:'Practice of quieting the mind'},
+        {num:6,row:0,col:7,len:5,clue:'Healthy food gives you this'},
+        {num:7,row:3,col:4,len:4,clue:'Important vitamin from the sun'},
+      ]
+    },
+    hard: {
+      rows:9,cols:11,
+      sol:[
+        [0,0,'C','H','O','L','E','S','T','E','R'],
+        [0,0,'O',0,0,0,0,0,0,0,'E'],
+        [0,0,'R','E','S','I','L','I','E','N','C'],
+        [0,0,'T',0,0,0,0,0,0,0,'E'],
+        [0,0,'I',0,0,0,0,0,0,0,'P'],
+        ['M','E','S','O','L','I','M','B','I','C',0],
+        [0,0,'O',0,0,0,0,0,0,0,0],
+        [0,0,'L',0,'I','M','M','U','N','E',0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:2,len:9,clue:'Fatty substance in blood: HDL and LDL types'},
+        {num:2,row:2,col:2,len:9,clue:'Mental ability to bounce back from hardship'},
+        {num:3,row:5,col:0,len:10,clue:'Brain's reward pathway (dopamine system)'},
+        {num:4,row:7,col:4,len:6,clue:'Body's defense system against illness'},
+      ],
+      down:[
+        {num:5,row:0,col:2,len:7,clue:'Stress hormone released by adrenal gland'},
+        {num:6,row:0,col:10,len:5,clue:'Cell receptors in the nervous system'},
+      ]
+    }
+  },
+
+  history: {
+    easy: {
+      rows:7,cols:9,
+      sol:[
+        [0,'R','O','M','E',0,0,0,0],
+        [0,0,0,0,'M',0,0,0,0],
+        [0,0,0,0,'P',0,0,0,0],
+        ['K','I','N','G',0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0],
+        [0,'W','A','R',0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:1,len:4,clue:'Ancient Italian empire capital'},
+        {num:2,row:3,col:0,len:4,clue:'Royal male ruler'},
+        {num:3,row:5,col:1,len:3,clue:'Armed conflict between nations'},
+      ],
+      down:[
+        {num:4,row:0,col:4,len:3,clue:'Ancient Egyptian ruler title'},
+        {num:5,row:0,col:1,len:3,clue:'Ancient Greek gathering place (abbr.)'},
+      ]
+    },
+    medium: {
+      rows:9,cols:10,
+      sol:[
+        [0,0,0,'R','E','V','O','L','T',0],
+        [0,0,0,'E',0,0,0,0,0,0],
+        [0,0,0,'P','Y','R','A','M','I','D'],
+        [0,0,0,'U',0,0,0,0,0,0],
+        ['E','M','P','I','R','E',0,0,0,0],
+        [0,0,0,'B',0,0,0,0,0,0],
+        [0,0,0,'L',0,0,0,0,0,0],
+        [0,0,'T','I','M','E','L','I','N','E'],
+        [0,0,0,'C',0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:3,len:6,clue:'Uprising against authority'},
+        {num:2,row:2,col:3,len:7,clue:'Ancient Egyptian tomb structure'},
+        {num:3,row:4,col:0,len:6,clue:'Large political territory under one ruler'},
+        {num:4,row:7,col:2,len:8,clue:'Chronological record of events'},
+      ],
+      down:[
+        {num:5,row:0,col:3,len:9,clue:'Roman senate governing body (abbr.)'},
+        {num:6,row:2,col:4,len:4,clue:'Ancient Greek city-state'},
+        {num:7,row:2,col:9,len:3,clue:'Written record of past events (abbr.)'},
+      ]
+    },
+    hard: {
+      rows:9,cols:11,
+      sol:[
+        [0,0,'I','M','P','E','R','I','A','L',0],
+        [0,0,'N',0,0,0,0,0,0,0,0],
+        [0,0,'D','I','P','L','O','M','A','C','Y'],
+        [0,0,'U',0,0,0,0,0,0,0,0],
+        ['M','A','S','T','R','I','C','H','T',0,0],
+        [0,0,'T',0,0,0,0,0,0,0,0],
+        [0,0,'R',0,0,'F','E','U','D','A','L'],
+        [0,0,'I',0,0,0,0,0,0,0,0],
+        [0,0,'A','B','O','L','I','T','I','O','N'],
+      ],
+      across:[
+        {num:1,row:0,col:2,len:8,clue:'Relating to an empire — ___ power'},
+        {num:2,row:2,col:2,len:9,clue:'Negotiation between nations'},
+        {num:3,row:4,col:0,len:9,clue:'1992 EU treaty signed in this Dutch city'},
+        {num:4,row:6,col:5,len:6,clue:'Medieval system of lords and serfs'},
+        {num:5,row:8,col:2,len:9,clue:'Movement to end slavery'},
+      ],
+      down:[
+        {num:6,row:0,col:2,len:9,clue:'Economic system of colonial exploitation'},
+        {num:7,row:0,col:9,len:3,clue:'Historical era before writing (abbr.)'},
+      ]
+    }
+  },
+
+  space: {
+    easy: {
+      rows:7,cols:8,
+      sol:[
+        [0,'M','O','O','N',0,0,0],
+        [0,0,0,0,0,0,0,0],
+        [0,'S','T','A','R',0,0,0],
+        [0,0,0,0,0,0,0,0],
+        ['S','U','N',0,0,0,0,0],
+        [0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:1,len:4,clue:'Earth's natural satellite'},
+        {num:2,row:2,col:1,len:4,clue:'Massive ball of burning gas in the sky'},
+        {num:3,row:4,col:0,len:3,clue:'Our solar system's star'},
+      ],
+      down:[
+        {num:4,row:0,col:1,len:3,clue:'Space rock that orbits the sun'},
+        {num:5,row:0,col:4,len:4,clue:'Planet with rings (abbr.)'},
+      ]
+    },
+    medium: {
+      rows:9,cols:10,
+      sol:[
+        [0,0,'G','A','L','A','X','Y',0,0],
+        [0,0,'R',0,0,0,0,0,0,0],
+        [0,0,'A',0,0,0,0,0,0,0],
+        [0,0,'V',0,'N','E','B','U','L','A'],
+        [0,0,'I',0,0,0,0,0,0,0],
+        ['O','R','B','I','T',0,0,0,0,0],
+        [0,0,'Y',0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,'P','L','A','N','E','T',0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:2,len:6,clue:'Billions of stars: the Milky Way is a ___'},
+        {num:2,row:3,col:4,len:6,clue:'Cloud of gas and dust in space'},
+        {num:3,row:5,col:0,len:5,clue:'Path a planet takes around a star'},
+        {num:4,row:8,col:1,len:6,clue:'Jupiter, Mars, Earth are all ___s'},
+      ],
+      down:[
+        {num:5,row:0,col:2,len:7,clue:'Force of attraction between masses'},
+        {num:6,row:3,col:8,len:4,clue:'Distance light travels in one year (abbr.)'},
+      ]
+    },
+    hard: {
+      rows:9,cols:11,
+      sol:[
+        [0,'S','U','P','E','R','N','O','V','A',0],
+        [0,'I',0,0,0,0,0,0,0,0,0],
+        [0,'N','U','C','L','E','O','S','Y','N',0],
+        [0,'G',0,0,0,0,0,0,0,0,0],
+        ['E','U','L','A','R','I','T','Y',0,0,0],
+        [0,'L',0,0,0,0,0,0,0,0,0],
+        [0,'A',0,0,0,0,0,0,0,0,0],
+        [0,'R',0,'Q','U','A','S','A','R',0,0],
+        [0,'I',0,0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:1,len:9,clue:'Massive stellar explosion at end of star's life'},
+        {num:2,row:2,col:1,len:9,clue:'Fusion process creating heavy elements in stars (first 9)'},
+        {num:3,row:4,col:0,len:8,clue:'Point of infinite density: ___ity'},
+        {num:4,row:7,col:3,len:6,clue:'Extremely luminous active galactic nucleus'},
+      ],
+      down:[
+        {num:5,row:0,col:1,len:9,clue:'Point of no return near a black hole'},
+        {num:6,row:0,col:8,len:4,clue:'Measure of stellar brightness'},
+      ]
+    }
+  },
+
+  food: {
+    easy: {
+      rows:7,cols:8,
+      sol:[
+        [0,'B','R','E','A','D',0,0],
+        [0,0,0,0,0,0,0,0],
+        [0,'S','O','U','P',0,0,0],
+        [0,0,0,0,0,0,0,0],
+        ['R','I','C','E',0,0,0,0],
+        [0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:1,len:5,clue:'Baked flour food, comes in a loaf'},
+        {num:2,row:2,col:1,len:4,clue:'Broth-based warm liquid dish'},
+        {num:3,row:4,col:0,len:4,clue:'Staple grain of Asia'},
+      ],
+      down:[
+        {num:4,row:0,col:1,len:3,clue:'Preserved meat in a can'},
+        {num:5,row:0,col:5,len:3,clue:'Cooking fat from pigs'},
+      ]
+    },
+    medium: {
+      rows:9,cols:10,
+      sol:[
+        [0,0,0,'U','M','A','M','I',0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,'S','A','U','T','E',0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,'G','L','U','T','E','N',0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,'F','E','R','M','E','N','T'],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,'M','A','R','I','N','A','D','E',0],
+      ],
+      across:[
+        {num:1,row:0,col:3,len:5,clue:'Fifth taste: savory depth in meat and mushrooms'},
+        {num:2,row:2,col:2,len:5,clue:'Quick-fry in a little oil or butter'},
+        {num:3,row:4,col:1,len:6,clue:'Protein in wheat that makes dough elastic'},
+        {num:4,row:6,col:3,len:7,clue:'Preserve food using bacteria or yeast'},
+        {num:5,row:8,col:1,len:8,clue:'Soak meat in seasoned liquid before cooking'},
+      ],
+      down:[
+        {num:6,row:0,col:3,len:5,clue:'Japanese cooking technique with broiler'},
+        {num:7,row:0,col:7,len:4,clue:'Quick stir-fry technique from China (abbr.)'},
+        {num:8,row:2,col:6,len:5,clue:'Cooking low and slow in liquid'},
+      ]
+    },
+    hard: {
+      rows:9,cols:11,
+      sol:[
+        [0,0,'M','A','I','L','L','A','R','D',0],
+        [0,0,'I',0,0,0,0,0,0,0,0],
+        [0,0,'S','O','U','S','V','I','D','E',0],
+        [0,0,'E',0,0,0,0,0,0,0,0],
+        [0,'E','M','U','L','S','I','F','Y',0,0],
+        [0,0,'P',0,0,0,0,0,0,0,0],
+        [0,0,'L','A','C','T','O','B','A','C',0],
+        [0,0,'A',0,0,0,0,0,0,0,0],
+        [0,0,'C','O','N','F','I','T',0,0,0],
+      ],
+      across:[
+        {num:1,row:0,col:2,len:8,clue:'Browning reaction that creates flavor when cooking'},
+        {num:2,row:2,col:2,len:8,clue:'French precision cooking in vacuum-sealed bags'},
+        {num:3,row:4,col:1,len:8,clue:'Blend fat and water into stable mixture'},
+        {num:4,row:6,col:2,len:8,clue:'Probiotic bacteria in yogurt (first 8 letters)'},
+        {num:5,row:8,col:2,len:6,clue:'Preserve by slow-cooking in its own fat'},
+      ],
+      down:[
+        {num:6,row:0,col:2,len:9,clue:'Study of physical cooking chemistry'},
+        {num:7,row:0,col:9,len:4,clue:'Concentration technique: reduce a ___'},
+      ]
+    }
   }
 };
 
-// Render minimal but real 6×6 crossword
-const MINI={
-  cols:6,rows:6,
-  // Letters at positions [row][col], 0=black
-  sol:[
-    [0,'S','E','O',0,0],
-    [0,'E',0,'N',0,0],
-    ['L','R',0,'G',0,0],
-    ['E','P',0,'A','I','O'],
-    ['A',0,0,'G',0,0],
-    ['D',0,0,'E',0,0],
-  ],
-  across:[
-    {num:1,row:0,col:1,len:3,clue:'Search optimization (abbr.)'},
-    {num:4,row:3,col:3,len:3,clue:'Artificial Intelligence with Optimization'},
-  ],
-  down:[
-    {num:1,row:0,col:1,len:6,clue:'Top google results page (abbr.)'},
-    {num:2,row:0,col:3,len:6,clue:'Google Search ___'},
-    {num:3,row:2,col:0,len:4,clue:'Potential customers'},
-  ]
-};
+// ── STATE ────────────────────────────────────
+let currentTopic='marketing';
+let currentDiff='easy';
+let activeData=null;
+let cellMap={};
+let cwUserData={};
+let timerInterval=null;
+let timerSec=0;
+let activeClueKey=null; // 'a_1' or 'd_1'
+let activeDir='across';
 
 const cgrid=document.getElementById('cwGrid');
-const cellMap={}; // "row_col" -> input element
-let cwUserData={}; // "row_col" -> char
 
+function getPuzzle(){
+  const topic=PUZZLES[currentTopic];
+  if(!topic) return PUZZLES.marketing.easy;
+  const diff=topic[currentDiff];
+  return diff||topic.easy;
+}
+
+// ── GRID BUILD ───────────────────────────────
 function buildCrossword(){
+  activeData=getPuzzle();
+  const {rows,cols,sol,across,down}=activeData;
+  cellMap={};cwUserData={};
   cgrid.innerHTML='';
-  for(let r=0;r<MINI.rows;r++){
+  // Number lookup
+  const numberedCells={};
+  [...across,...down].forEach(cl=>{
+    const k=cl.row+'_'+cl.col;
+    if(!numberedCells[k]) numberedCells[k]=cl.num;
+  });
+  for(let r=0;r<rows;r++){
     const rowEl=document.createElement('div');
     rowEl.className='cw-row';
-    for(let c=0;c<MINI.cols;c++){
+    const rowData=sol[r]||[];
+    for(let c=0;c<cols;c++){
       const cell=document.createElement('div');
       cell.className='cw-cell';
-      const v=MINI.sol[r][c];
-      if(v===0){
+      const v=rowData[c];
+      if(!v||v===0){
         cell.classList.add('black');
       } else {
         const inp=document.createElement('input');
-        inp.type='text';inp.maxLength=1;inp.autocomplete='off';
+        inp.type='text';inp.maxLength=1;inp.autocomplete='off';inp.spellcheck=false;
         inp.dataset.row=r;inp.dataset.col=c;
         const key=r+'_'+c;
         cellMap[key]=inp;
         inp.value=cwUserData[key]||'';
+        inp.addEventListener('focus',()=>highlightClue(r,c));
         inp.addEventListener('input',e=>{
-          const val=e.target.value.toUpperCase().replace(/[^A-Z]/,'');
+          const val=e.target.value.toUpperCase().replace(/[^A-Z]/g,'');
           e.target.value=val;
           cwUserData[key]=val;
-          // Auto-advance
-          const allKeys=Object.keys(cellMap);
-          const idx=allKeys.indexOf(key);
-          if(idx>=0&&idx<allKeys.length-1&&val){
-            const nextEl=cellMap[allKeys[idx+1]];
-            if(nextEl) nextEl.focus();
-          }
+          if(val) advanceCursor(r,c);
         });
         inp.addEventListener('keydown',e=>{
-          if(e.key==='Backspace'&&!inp.value){
-            const allKeys=Object.keys(cellMap);
-            const idx=allKeys.indexOf(key);
-            if(idx>0) cellMap[allKeys[idx-1]].focus();
-          }
+          if(e.key==='Backspace'&&!inp.value) retreatCursor(r,c);
+          if(e.key==='ArrowRight') moveCursor(r,c+1);
+          if(e.key==='ArrowLeft') moveCursor(r,c-1);
+          if(e.key==='ArrowDown') moveCursor(r+1,c);
+          if(e.key==='ArrowUp') moveCursor(r-1,c);
+          if(e.key==='Tab'){e.preventDefault();cycleClue(e.shiftKey?-1:1);}
         });
         cell.appendChild(inp);
-        // Number labels
-        const allClues=[...MINI.across,...MINI.down];
-        const clueHere=allClues.find(cl=>cl.row===r&&cl.col===c);
-        if(clueHere){
+        if(numberedCells[key]!==undefined){
           const numEl=document.createElement('span');
-          numEl.className='cw-num';numEl.textContent=clueHere.num;
+          numEl.className='cw-num';numEl.textContent=numberedCells[key];
           cell.appendChild(numEl);
         }
       }
@@ -3659,66 +4268,142 @@ function buildCrossword(){
     cgrid.appendChild(rowEl);
   }
   buildCrosswordClues();
+  startTimer();
+  document.getElementById('cwStatus').textContent='';
+  // Focus first cell
+  const firstKey=Object.keys(cellMap)[0];
+  if(firstKey&&cellMap[firstKey]) setTimeout(()=>cellMap[firstKey].focus(),100);
+}
+
+function advanceCursor(r,c){
+  // Try to advance in activeDir
+  if(activeDir==='across'){moveCursor(r,c+1);}
+  else{moveCursor(r+1,c);}
+}
+function retreatCursor(r,c){
+  if(activeDir==='across'){moveCursor(r,c-1);}
+  else{moveCursor(r-1,c);}
+}
+function moveCursor(r,c){
+  const k=r+'_'+c;
+  if(cellMap[k]) cellMap[k].focus();
+}
+function cycleClue(dir){
+  const {across,down}=activeData;
+  const all=[...across.map(cl=>({...cl,dir:'across'})),...down.map(cl=>({...cl,dir:'down'}))];
+  let idx=all.findIndex(cl=>cl.dir===activeDir&&activeClueKey===cl.dir+'_'+cl.num);
+  idx=(idx+dir+all.length)%all.length;
+  const cl=all[idx];
+  activeDir=cl.dir;activeClueKey=cl.dir+'_'+cl.num;
+  moveCursor(cl.row,cl.col);
+}
+
+function highlightClue(r,c){
+  // Remove previous highlights
+  document.querySelectorAll('.cw-cell.highlighted').forEach(el=>el.classList.remove('highlighted'));
+  document.querySelectorAll('.cw-clue.active').forEach(el=>el.classList.remove('active'));
+  // Find which clues cover this cell
+  const {across,down}=activeData;
+  // Find across clue
+  const acClue=across.find(cl=>cl.row===r&&c>=cl.col&&c<cl.col+cl.len);
+  const dnClue=down.find(cl=>cl.col===c&&r>=cl.row&&r<cl.row+cl.len);
+  let useClue=null;
+  if(acClue&&dnClue){
+    useClue=(activeDir==='across')?acClue:dnClue;
+  } else if(acClue){useClue=acClue;activeDir='across';}
+  else if(dnClue){useClue=dnClue;activeDir='down';}
+  if(!useClue) return;
+  activeClueKey=(acClue&&useClue===acClue?'across':'down')+'_'+useClue.num;
+  // Highlight cells in clue
+  const dir=acClue&&useClue===acClue?'across':'down';
+  for(let i=0;i<useClue.len;i++){
+    const k=dir==='across'?(useClue.row+'_'+(useClue.col+i)):((useClue.row+i)+'_'+useClue.col);
+    if(cellMap[k]) cellMap[k].parentElement.classList.add('highlighted');
+  }
+  // Highlight clue text
+  const clueId=(dir==='across'?'cwAcross':'cwDown');
+  document.querySelectorAll('#'+clueId+' .cw-clue').forEach(el=>{
+    if(el.dataset.num==useClue.num) el.classList.add('active');
+  });
 }
 
 function buildCrosswordClues(){
+  const {across,down}=activeData;
   const acDiv=document.getElementById('cwAcross');
   const dnDiv=document.getElementById('cwDown');
   acDiv.innerHTML='';dnDiv.innerHTML='';
-  MINI.across.forEach(cl=>{
+  across.forEach(cl=>{
     const d=document.createElement('div');
-    d.className='cw-clue';d.textContent=cl.num+'. '+cl.clue;
-    d.addEventListener('click',()=>{
-      const k=cl.row+'_'+cl.col;
-      if(cellMap[k]) cellMap[k].focus();
-    });
+    d.className='cw-clue';d.dataset.num=cl.num;
+    d.textContent=cl.num+'. '+cl.clue;
+    d.addEventListener('click',()=>{activeDir='across';moveCursor(cl.row,cl.col);});
     acDiv.appendChild(d);
   });
-  MINI.down.forEach(cl=>{
+  down.forEach(cl=>{
     const d=document.createElement('div');
-    d.className='cw-clue';d.textContent=cl.num+'. '+cl.clue;
-    d.addEventListener('click',()=>{
-      const k=cl.row+'_'+cl.col;
-      if(cellMap[k]) cellMap[k].focus();
-    });
+    d.className='cw-clue';d.dataset.num=cl.num;
+    d.textContent=cl.num+'. '+cl.clue;
+    d.addEventListener('click',()=>{activeDir='down';moveCursor(cl.row,cl.col);});
     dnDiv.appendChild(d);
   });
 }
 
+// ── TIMER ────────────────────────────────────
+function startTimer(){
+  clearInterval(timerInterval);timerSec=0;
+  const el=document.getElementById('cwTimer');
+  el.textContent='⏱ 0:00';
+  timerInterval=setInterval(()=>{
+    timerSec++;
+    const m=Math.floor(timerSec/60),s=timerSec%60;
+    el.textContent='⏱ '+m+':'+(s<10?'0':'')+s;
+  },1000);
+}
+
+// ── CHECK / REVEAL / RESET ───────────────────
 function checkCrossword(){
-  let correct=0,total=0,wrong=0;
-  for(let r=0;r<MINI.rows;r++){
-    for(let c=0;c<MINI.cols;c++){
-      const v=MINI.sol[r][c];
-      if(v!==0){
+  const {rows,cols,sol}=activeData;
+  let correct=0,total=0;
+  for(let r=0;r<rows;r++){
+    for(let c=0;c<(sol[r]||[]).length;c++){
+      const v=sol[r][c];
+      if(v&&v!==0){
         total++;
         const k=r+'_'+c;
         const cell=cellMap[k];
         if(cell){
           cell.parentElement.classList.remove('correct','wrong');
-          if(cell.value===v){correct++;cell.parentElement.classList.add('correct')}
-          else if(cell.value){wrong++;cell.parentElement.classList.add('wrong')}
+          if(cell.value===v){correct++;cell.parentElement.classList.add('correct');}
+          else if(cell.value){cell.parentElement.classList.add('wrong');}
         }
       }
     }
   }
   const st=document.getElementById('cwStatus');
-  if(correct===total){st.textContent='🏆 PERFECT! You know your SEO!';st.style.color='var(--green)'}
-  else{st.textContent=correct+'/'+total+' correct';st.style.color='var(--gold)'}
+  if(correct===total){
+    clearInterval(timerInterval);
+    const m=Math.floor(timerSec/60),s=timerSec%60;
+    st.textContent='🏆 PERFECT! Solved in '+(m>0?m+'m ':'')+s+'s!';
+    st.style.color='var(--green)';
+  } else {
+    st.textContent=correct+'/'+total+' correct — keep going!';
+    st.style.color='var(--gold)';
+  }
 }
 
 function revealCrossword(){
-  for(let r=0;r<MINI.rows;r++){
-    for(let c=0;c<MINI.cols;c++){
-      const v=MINI.sol[r][c];
-      if(v!==0){
+  const {rows,cols,sol}=activeData;
+  for(let r=0;r<rows;r++){
+    for(let c=0;c<(sol[r]||[]).length;c++){
+      const v=sol[r][c];
+      if(v&&v!==0){
         const k=r+'_'+c;
-        const cell=cellMap[k];
-        if(cell){cell.value=v;cwUserData[k]=v;cell.parentElement.classList.add('correct')}
+        if(cellMap[k]){cellMap[k].value=v;cwUserData[k]=v;cellMap[k].parentElement.classList.add('correct');}
       }
     }
   }
-  document.getElementById('cwStatus').textContent='💡 Revealed! Study these marketing terms.';
+  clearInterval(timerInterval);
+  document.getElementById('cwStatus').textContent='💡 Revealed! Study up and try again.';
 }
 
 function resetCrossword(){
@@ -3728,11 +4413,32 @@ function resetCrossword(){
     inp.parentElement.classList.remove('correct','wrong');
   });
   document.getElementById('cwStatus').textContent='';
+  startTimer();
 }
 
+// ── EVENTS ───────────────────────────────────
 document.getElementById('cwCheck').addEventListener('click',checkCrossword);
 document.getElementById('cwReveal').addEventListener('click',revealCrossword);
 document.getElementById('cwReset').addEventListener('click',resetCrossword);
+document.getElementById('cwNew').addEventListener('click',buildCrossword);
+
+document.querySelectorAll('[data-cwtopic]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-cwtopic]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    currentTopic=btn.dataset.cwtopic;
+    buildCrossword();
+  });
+});
+document.querySelectorAll('[data-cwdiff]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-cwdiff]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    currentDiff=btn.dataset.cwdiff;
+    buildCrossword();
+  });
+});
+
 buildCrossword();
 
 })();
@@ -3929,15 +4635,33 @@ const canvas=document.getElementById('bdCanvas');
 const ctx=canvas.getContext('2d');
 const nextCanvas=document.getElementById('bdNext');
 const nctx=nextCanvas.getContext('2d');
+const holdCanvas=document.getElementById('bdHold');
+const hctx=holdCanvas.getContext('2d');
 const scoreEl=document.getElementById('bdScore');
 const levelEl=document.getElementById('bdLevel');
 const linesEl=document.getElementById('bdLines');
+const comboEl=document.getElementById('bdCombo');
 const statusEl=document.getElementById('bdStatus');
 const levelBadge=document.getElementById('bdLevelBadge');
 
-const COLS=10,ROWS=20,CELL=24;
-const COLORS=['','#00e5ff','#f5c518','#bb86fc','#00e676','#ff4081','#F97316','#ef4444'];
-// Pieces: I O T S Z L J
+const COLS=10,ROWS=20,CELL=30;
+canvas.width=COLS*CELL; canvas.height=ROWS*CELL;
+
+const SKINS={
+  neon:{bg:'#000',grid:'rgba(0,229,255,0.05)',border:'rgba(0,229,255,.4)',
+    colors:['','#00e5ff','#f5c518','#bb86fc','#00e676','#ff4081','#F97316','#ef4444']},
+  classic:{bg:'#111',grid:'rgba(255,255,255,0.03)',border:'rgba(255,255,255,.25)',
+    colors:['','#4dd0e1','#ffd54f','#ce93d8','#a5d6a7','#f48fb1','#ffb74d','#ef9a9a']},
+  candy:{bg:'#1a0030',grid:'rgba(255,100,255,0.05)',border:'rgba(255,100,255,.3)',
+    colors:['','#ff80ab','#ea80fc','#b388ff','#69f0ae','#ff6e40','#ffd740','#ff5252']},
+  matrix:{bg:'#001400',grid:'rgba(0,255,70,0.05)',border:'rgba(0,255,70,.25)',
+    colors:['','#00ff41','#39ff14','#7fff00','#adff2f','#b2ff59','#ccff90','#f0ff80']}
+};
+let skin=SKINS.neon;
+
+const LEVEL_NAMES=['Startup','Local Biz','Page 2','Page 1','Maps Pack','AI Search','GEO Ranked','Authority','Dominator','SEO Legend','SERP God','AI Master','Domain King','Rank Wizard','Top 0.1%'];
+const LEVEL_MSGS=['🚀 Business is live!','📈 Getting traction!','😅 Stuck on page 2…','😎 Page 1 vibes!','📍 Maps Pack!','🤖 AI Search mode!','🌎 GEO Ranked!','💎 Authority!','⚡ Dominator!','🏆 SEO LEGEND!','🔱 SERP GOD!','🧠 AI Master!','👑 Domain King!','🧙 Rank Wizard!','🌟 TOP 0.1%!'];
+
 const PIECES=[
   [[1,1,1,1]],
   [[2,2],[2,2]],
@@ -3948,23 +4672,24 @@ const PIECES=[
   [[0,7],[0,7],[7,7]]
 ];
 
-// Marketing-themed level names
-const LEVEL_NAMES=['Startup','Local Biz','Page 2','Page 1','Maps Pack','AI Search','GEO Ranked','Authority','Dominator','SEO Legend'];
-
-let board,piece,pieceX,pieceY,nextPiece,score,lines,level,running,paused,raf,dropTimer,dropInterval;
+let board,piece,pieceX,pieceY,nextPiece,holdPiece,canHold,score,lines,level,running,paused,raf,dropTimer,dropInterval,combo,comboActive,flashRow;
 
 function emptyBoard(){return Array.from({length:ROWS},()=>Array(COLS).fill(0));}
 function randomPiece(){return PIECES[Math.floor(Math.random()*PIECES.length)];}
+function rotatePiece(p){return p[0].map((_,i)=>p.map(r=>r[i]).reverse());}
+function rotateCCW(p){return p[0].map((_,i)=>p.map(r=>r[r.length-1-i]));}
 
-function rotatePiece(p){
-  return p[0].map((_,i)=>p.map(r=>r[i]).reverse());
+function wallKick(p,ox,oy){
+  const kicks=[0,-1,1,-2,2];
+  for(const kx of kicks){if(valid(p,ox+kx,oy))return ox+kx;}
+  return null;
 }
 
 function valid(p,ox,oy){
   for(let r=0;r<p.length;r++){
     for(let c=0;c<p[r].length;c++){
       if(!p[r][c]) continue;
-      const nx=ox+c, ny=oy+r;
+      const nx=ox+c,ny=oy+r;
       if(nx<0||nx>=COLS||ny>=ROWS) return false;
       if(ny>=0&&board[ny][nx]) return false;
     }
@@ -3982,33 +4707,45 @@ function lockPiece(){
     }
   }
   clearLines();
+  canHold=true;
   spawnPiece();
 }
 
 function clearLines(){
-  let cleared=0;
+  const clearedRows=[];
   for(let r=ROWS-1;r>=0;r--){
-    if(board[r].every(c=>c!==0)){
-      board.splice(r,1);
-      board.unshift(Array(COLS).fill(0));
-      cleared++;r++;
-    }
+    if(board[r].every(c=>c!==0)) clearedRows.push(r);
   }
+  const cleared=clearedRows.length;
   if(cleared){
-    const pts=[0,100,300,500,800];
-    score+=(pts[cleared]||800)*(level);
-    lines+=cleared;
-    const newLevel=Math.min(10,Math.floor(lines/10)+1);
-    if(newLevel>level){
-      level=newLevel;
-      dropInterval=Math.max(80,800-((level-1)*80));
-      levelEl.textContent=level;
-      levelBadge.textContent='LVL '+level;
-      statusEl.textContent='🎉 LEVEL '+level+' — '+LEVEL_NAMES[level-1].toUpperCase()+'!';
-      setTimeout(()=>{if(running&&!paused)statusEl.textContent='';},2000);
-    }
-    scoreEl.textContent=score;
-    linesEl.textContent=lines;
+    flashRow=clearedRows;
+    drawBoard();
+    setTimeout(()=>{
+      clearedRows.sort((a,b)=>b-a).forEach(row=>{board.splice(row,1);board.unshift(Array(COLS).fill(0));});
+      flashRow=null;
+      const pts=[0,100,300,500,800];
+      const base=pts[Math.min(cleared,4)]||800;
+      const multiplier=level*(comboActive?combo+1:1);
+      score+=base*multiplier;
+      if(comboActive){combo++;} else{comboActive=true;combo=1;}
+      comboEl.textContent=combo+'×';
+      lines+=cleared;
+      const newLevel=Math.min(15,Math.floor(lines/10)+1);
+      if(newLevel>level){
+        level=newLevel;
+        dropInterval=Math.max(50,900-((level-1)*60));
+        levelEl.textContent=level;
+        levelBadge.textContent='LVL '+level;
+        statusEl.textContent=(LEVEL_MSGS[level-1]||'🔥 LEVEL UP!')+'  '+LEVEL_NAMES[level-1].toUpperCase();
+        setTimeout(()=>{if(running&&!paused)statusEl.textContent='';},2500);
+        updateDropTimer();
+      }
+      scoreEl.textContent=score;
+      linesEl.textContent=lines;
+      drawBoard();
+    },120);
+  } else {
+    comboActive=false;combo=0;comboEl.textContent='0';
   }
 }
 
@@ -4021,142 +4758,163 @@ function spawnPiece(){
   drawNext();
 }
 
-function endGame(){
-  running=false;
-  cancelAnimationFrame(raf);
-  clearInterval(dropTimer);
-  statusEl.textContent='GAME OVER — Score: '+score+' | Hit START to play again';
-  drawBoard();
+function holdCurrentPiece(){
+  if(!canHold) return;
+  canHold=false;
+  if(!holdPiece){
+    holdPiece=piece;
+    spawnPiece();
+  } else {
+    const tmp=holdPiece;holdPiece=piece;piece=tmp;
+    pieceX=Math.floor((COLS-piece[0].length)/2);pieceY=0;
+    if(!valid(piece,pieceX,pieceY)){endGame();return;}
+  }
+  drawHold();drawBoard();
 }
 
-function drawCell(context,x,y,colorIdx,size){
-  if(!colorIdx){return;}
-  const s=size||CELL;
-  const col=COLORS[colorIdx];
-  context.fillStyle=col;
+function endGame(){
+  running=false;cancelAnimationFrame(raf);clearInterval(dropTimer);
+  let row=0;
+  const fill=setInterval(()=>{
+    if(row>=ROWS){clearInterval(fill);statusEl.textContent='GAME OVER — Score: '+score+' | Press START to retry';return;}
+    for(let c=0;c<COLS;c++) board[row][c]=Math.floor(Math.random()*7)+1;
+    row++;drawBoard();
+  },40);
+}
+
+function drawCell(context,x,y,colorIdx,s,alpha){
+  if(!colorIdx) return;
+  const col=skin.colors[colorIdx];
+  context.save();
+  if(alpha!=null) context.globalAlpha=alpha;
+  context.fillStyle=col;context.shadowColor=col;context.shadowBlur=8;
   context.fillRect(x*s+1,y*s+1,s-2,s-2);
-  // highlight
-  context.fillStyle='rgba(255,255,255,0.25)';
+  context.shadowBlur=0;
+  context.fillStyle='rgba(255,255,255,0.28)';
   context.fillRect(x*s+1,y*s+1,s-2,3);
   context.fillRect(x*s+1,y*s+1,3,s-2);
-  // shadow
-  context.fillStyle='rgba(0,0,0,0.3)';
+  context.fillStyle='rgba(0,0,0,0.35)';
   context.fillRect(x*s+s-3,y*s+1,2,s-2);
   context.fillRect(x*s+1,y*s+s-3,s-2,2);
+  context.restore();
 }
 
 function drawGhost(){
   let gy=pieceY;
   while(valid(piece,pieceX,gy+1)) gy++;
   if(gy===pieceY) return;
-  ctx.globalAlpha=0.18;
   for(let r=0;r<piece.length;r++)
     for(let c=0;c<piece[r].length;c++)
-      if(piece[r][c]) drawCell(ctx,pieceX+c,gy+r,piece[r][c]);
-  ctx.globalAlpha=1;
+      if(piece[r][c]) drawCell(ctx,pieceX+c,gy+r,piece[r][c],CELL,0.15);
 }
 
 function drawBoard(){
-  ctx.fillStyle='#000';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  // grid lines
-  ctx.strokeStyle='rgba(255,255,255,0.04)';
-  ctx.lineWidth=1;
+  ctx.fillStyle=skin.bg;ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.strokeStyle=skin.grid;ctx.lineWidth=1;
   for(let r=0;r<ROWS;r++){ctx.beginPath();ctx.moveTo(0,r*CELL);ctx.lineTo(COLS*CELL,r*CELL);ctx.stroke();}
   for(let c=0;c<COLS;c++){ctx.beginPath();ctx.moveTo(c*CELL,0);ctx.lineTo(c*CELL,ROWS*CELL);ctx.stroke();}
-  // board pieces
-  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) drawCell(ctx,c,r,board[r][c]);
-  // ghost + active piece
+  for(let r=0;r<ROWS;r++){
+    if(flashRow&&flashRow.includes(r)){ctx.fillStyle='rgba(255,255,255,0.88)';ctx.fillRect(0,r*CELL,canvas.width,CELL);}
+    else for(let c=0;c<COLS;c++) drawCell(ctx,c,r,board[r][c],CELL,1);
+  }
   if(running&&!paused&&piece){
     drawGhost();
     for(let r=0;r<piece.length;r++)
       for(let c=0;c<piece[r].length;c++)
-        if(piece[r][c]) drawCell(ctx,pieceX+c,pieceY+r,piece[r][c]);
+        if(piece[r][c]) drawCell(ctx,pieceX+c,pieceY+r,piece[r][c],CELL,1);
+  }
+  if(!running&&!board.some(row=>row.some(c=>c))){
+    ctx.fillStyle='rgba(0,0,0,0.5)';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle=skin.colors[1];
+    ctx.font=`${CELL*.9}px 'Press Start 2P',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText('BLOCK',canvas.width/2,canvas.height*.38);
+    ctx.fillStyle=skin.colors[3];ctx.fillText('DROP',canvas.width/2,canvas.height*.52);
+    ctx.fillStyle='rgba(255,255,255,.4)';
+    ctx.font=`${CELL*.35}px 'Press Start 2P',monospace`;
+    ctx.fillText('PRESS START',canvas.width/2,canvas.height*.68);
+  }
+  if(paused){
+    ctx.fillStyle='rgba(0,0,0,.65)';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='#f5c518';ctx.font=`bold ${CELL*.85}px 'Press Start 2P',monospace`;
+    ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('PAUSED',canvas.width/2,canvas.height/2);
   }
 }
 
-function drawNext(){
-  nctx.fillStyle='#111';
-  nctx.fillRect(0,0,100,100);
-  if(!nextPiece) return;
-  const s=18;
-  const ox=Math.floor((100-nextPiece[0].length*s)/2);
-  const oy=Math.floor((100-nextPiece.length*s)/2);
-  for(let r=0;r<nextPiece.length;r++)
-    for(let c=0;c<nextPiece[r].length;c++)
-      if(nextPiece[r][c]){
-        nctx.fillStyle=COLORS[nextPiece[r][c]];
-        nctx.fillRect(ox+c*s+1,oy+r*s+1,s-2,s-2);
-        nctx.fillStyle='rgba(255,255,255,0.22)';
-        nctx.fillRect(ox+c*s+1,oy+r*s+1,s-2,3);
+function drawSmallPiece(context,p,w,h){
+  context.fillStyle=skin.bg||'#111';context.fillRect(0,0,w,h);
+  if(!p) return;
+  const s=Math.min(Math.floor(w/6),20);
+  const ox=Math.floor((w-p[0].length*s)/2);
+  const oy=Math.floor((h-p.length*s)/2);
+  for(let r=0;r<p.length;r++)
+    for(let c=0;c<p[r].length;c++)
+      if(p[r][c]){
+        const col=skin.colors[p[r][c]];
+        context.fillStyle=col;context.shadowColor=col;context.shadowBlur=6;
+        context.fillRect(ox+c*s+1,oy+r*s+1,s-2,s-2);context.shadowBlur=0;
+        context.fillStyle='rgba(255,255,255,0.25)';
+        context.fillRect(ox+c*s+1,oy+r*s+1,s-2,3);
       }
+}
+function drawNext(){drawSmallPiece(nctx,nextPiece,100,100);}
+function drawHold(){drawSmallPiece(hctx,holdPiece,100,100);}
+
+function updateDropTimer(){
+  clearInterval(dropTimer);
+  dropTimer=setInterval(()=>{
+    if(!running||paused) return;
+    if(valid(piece,pieceX,pieceY+1)){pieceY++;} else{lockPiece();}
+    drawBoard();
+  },dropInterval);
 }
 
 function startGame(){
-  board=emptyBoard();
-  score=0;lines=0;level=1;
-  dropInterval=800;
-  running=true;paused=false;
-  scoreEl.textContent='0';levelEl.textContent='1';linesEl.textContent='0';
-  levelBadge.textContent='LVL 1';
-  statusEl.textContent='';
-  nextPiece=randomPiece();
-  spawnPiece();
-  clearInterval(dropTimer);
-  dropTimer=setInterval(()=>{
-    if(!running||paused) return;
-    if(valid(piece,pieceX,pieceY+1)){pieceY++;}
-    else{lockPiece();}
-    drawBoard();
-  },dropInterval);
-  // also use rAF for smooth rendering
+  board=emptyBoard();score=0;lines=0;level=1;combo=0;comboActive=false;canHold=true;holdPiece=null;flashRow=null;
+  dropInterval=900;running=true;paused=false;
+  scoreEl.textContent='0';levelEl.textContent='1';linesEl.textContent='0';comboEl.textContent='0';
+  levelBadge.textContent='LVL 1';statusEl.textContent='';
+  nextPiece=randomPiece();spawnPiece();drawNext();drawHold();
+  updateDropTimer();
   function loop(){if(running){drawBoard();raf=requestAnimationFrame(loop);}}
-  cancelAnimationFrame(raf);
-  loop();
+  cancelAnimationFrame(raf);loop();
+  document.getElementById('bdPause').textContent='⏸ PAUSE';
 }
 
-// Drop interval needs to update dynamically
-function updateDropInterval(){
-  clearInterval(dropTimer);
-  dropTimer=setInterval(()=>{
-    if(!running||paused) return;
-    if(valid(piece,pieceX,pieceY+1)){pieceY++;}
-    else{lockPiece();}
-  },dropInterval);
-}
-
-// Patch clearLines to call updateDropInterval on level change
-const _origClearLines=clearLines;
-// (already handles level changes inline above)
-
-// Controls
 document.addEventListener('keydown',e=>{
   if(!running||paused) return;
   if(['ArrowLeft','ArrowRight','ArrowDown','ArrowUp',' '].includes(e.key)) e.preventDefault();
-  if(e.key==='ArrowLeft'&&valid(piece,pieceX-1,pieceY)) pieceX--;
-  else if(e.key==='ArrowRight'&&valid(piece,pieceX+1,pieceY)) pieceX++;
-  else if(e.key==='ArrowDown'){if(valid(piece,pieceX,pieceY+1))pieceY++;else lockPiece();}
-  else if(e.key==='ArrowUp'){const r=rotatePiece(piece);if(valid(r,pieceX,pieceY))piece=r;}
-  else if(e.key===' '){while(valid(piece,pieceX,pieceY+1))pieceY++;lockPiece();}
-  drawBoard();
+  if(e.key==='ArrowLeft'&&valid(piece,pieceX-1,pieceY)){pieceX--;drawBoard();}
+  else if(e.key==='ArrowRight'&&valid(piece,pieceX+1,pieceY)){pieceX++;drawBoard();}
+  else if(e.key==='ArrowDown'){if(valid(piece,pieceX,pieceY+1))pieceY++;else lockPiece();drawBoard();}
+  else if(e.key==='ArrowUp'||e.key==='x'){const r=rotatePiece(piece);const nx=wallKick(r,pieceX,pieceY);if(nx!=null){piece=r;pieceX=nx;}drawBoard();}
+  else if(e.key==='z'){const r=rotateCCW(piece);const nx=wallKick(r,pieceX,pieceY);if(nx!=null){piece=r;pieceX=nx;}drawBoard();}
+  else if(e.key===' '){while(valid(piece,pieceX,pieceY+1))pieceY++;lockPiece();drawBoard();}
+  else if(e.key==='c'||e.key==='C') holdCurrentPiece();
 });
 
-// Touch controls
 document.getElementById('bdTLeft').addEventListener('click',()=>{if(!running||paused)return;if(valid(piece,pieceX-1,pieceY))pieceX--;drawBoard();});
 document.getElementById('bdTRight').addEventListener('click',()=>{if(!running||paused)return;if(valid(piece,pieceX+1,pieceY))pieceX++;drawBoard();});
-document.getElementById('bdTRotate').addEventListener('click',()=>{if(!running||paused)return;const r=rotatePiece(piece);if(valid(r,pieceX,pieceY))piece=r;drawBoard();});
+document.getElementById('bdTRotate').addEventListener('click',()=>{if(!running||paused)return;const r=rotatePiece(piece);const nx=wallKick(r,pieceX,pieceY);if(nx!=null){piece=r;pieceX=nx;}drawBoard();});
+document.getElementById('bdTDown').addEventListener('click',()=>{if(!running||paused)return;if(valid(piece,pieceX,pieceY+1))pieceY++;else lockPiece();drawBoard();});
+document.getElementById('bdTHold').addEventListener('click',()=>{if(!running||paused)return;holdCurrentPiece();});
 document.getElementById('bdTDrop').addEventListener('click',()=>{if(!running||paused)return;while(valid(piece,pieceX,pieceY+1))pieceY++;lockPiece();drawBoard();});
 
 document.getElementById('bdStart').addEventListener('click',()=>{startGame();});
 document.getElementById('bdPause').addEventListener('click',()=>{
-  if(!running) return;
-  paused=!paused;
+  if(!running) return;paused=!paused;
   document.getElementById('bdPause').textContent=paused?'▶ RESUME':'⏸ PAUSE';
   statusEl.textContent=paused?'— PAUSED —':'';
-  if(!paused) drawBoard();
+  if(!paused){updateDropTimer();}drawBoard();
 });
 
-// Initial idle draw
+document.querySelectorAll('[data-bdskin]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-bdskin]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');skin=SKINS[btn.dataset.bdskin];
+    drawBoard();drawNext();drawHold();
+  });
+});
+
 board=emptyBoard();
 drawBoard();
 statusEl.textContent='Press START to play!';
