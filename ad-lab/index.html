@@ -1040,9 +1040,14 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .cw-num{position:absolute;top:1px;left:2px;font-size:7px;color:rgba(255,255,255,.4);font-family:'Inter',sans-serif;line-height:1;pointer-events:none}
 .cw-clues{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cw-clue-group h4{font-family:'Bebas Neue',sans-serif;color:var(--orange);font-size:.9rem;letter-spacing:1px;margin-bottom:6px}
-.cw-clue{font-size:.75rem;color:rgba(255,255,255,.55);margin-bottom:3px;cursor:pointer;padding:2px 4px;border-radius:3px;transition:background .1s}
-.cw-clue:hover,.cw-clue.active{background:rgba(0,229,255,.1);color:#fff}
-.cw-btns{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.cw-clues h4{font-family:'Bebas Neue',sans-serif;color:var(--orange);font-size:1rem;letter-spacing:2px;margin-bottom:8px}
+.cw-clue{font-size:.82rem;color:rgba(255,255,255,.78);margin-bottom:5px;cursor:pointer;padding:4px 6px;border-radius:4px;transition:background .12s;line-height:1.5}
+.cw-clue strong{color:#fff;margin-right:3px}
+.cw-clue:hover{background:rgba(0,229,255,.1);color:#fff}
+.cw-clue.active{background:rgba(0,229,255,.18);color:#fff;border-left:2px solid var(--cyan);padding-left:8px}
+.cw-cell.cw-hl{background:rgba(0,229,255,.14);border-color:rgba(0,229,255,.45)}
+.cw-cell.cw-hl input{color:#fff}
+.cw-btns{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
 .cw-btn{font-family:'Press Start 2P',monospace;font-size:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#ccc;cursor:pointer;border-radius:4px;transition:all .1s}
 .cw-btn:hover{background:rgba(255,255,255,.1);color:#fff}
 
@@ -1078,39 +1083,40 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .sudoku-status{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--green);text-align:center;min-height:20px}
 
 /* Block Drop */
-.bd-wrap{display:flex;gap:24px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
-.bd-main{display:flex;flex-direction:column;align-items:center;gap:0}
-#bdCanvas{border:2px solid rgba(0,229,255,.4);border-radius:6px;background:#000;display:block;image-rendering:pixelated;box-shadow:0 0 24px rgba(0,229,255,.15)}
-/* Controls panel sits directly below the canvas */
-.bd-controls-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-top:none;border-radius:0 0 10px 10px;padding:14px 16px;width:100%}
-.bd-ctrl-row1{display:flex;gap:8px;justify-content:center;margin-bottom:10px}
-.bd-ctrl-row2{display:flex;gap:8px;justify-content:center}
-.bd-cbtn{font-family:'Press Start 2P',monospace;font-size:14px;padding:14px 20px;background:rgba(0,229,255,.12);border:2px solid rgba(0,229,255,.4);color:var(--cyan);border-radius:8px;cursor:pointer;min-width:64px;min-height:56px;display:flex;align-items:center;justify-content:center;transition:all .12s;user-select:none;-webkit-user-select:none;touch-action:manipulation}
-.bd-cbtn:hover,.bd-cbtn:active{background:rgba(0,229,255,.28);border-color:var(--cyan);transform:scale(.95)}
-.bd-cbtn-drop{font-size:12px;padding:12px 28px;min-width:200px;background:rgba(249,115,22,.15);border-color:rgba(249,115,22,.5);color:var(--orange)}
+.bd-wrap{display:flex;gap:20px;align-items:flex-start;justify-content:center;flex-wrap:wrap;width:100%}
+.bd-main{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:320px}
+#bdCanvas{border:2px solid rgba(0,229,255,.4);border-radius:6px 6px 0 0;background:#000;display:block;image-rendering:pixelated;box-shadow:0 0 24px rgba(0,229,255,.15);width:100%;max-width:320px;height:auto}
+.bd-controls-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-top:none;border-radius:0 0 10px 10px;padding:12px 10px;width:100%;box-sizing:border-box}
+.bd-ctrl-row1{display:flex;gap:6px;justify-content:center;margin-bottom:8px}
+.bd-ctrl-row2{display:flex;gap:6px;justify-content:center}
+.bd-cbtn{font-family:'Press Start 2P',monospace;font-size:16px;padding:14px 0;background:rgba(0,229,255,.12);border:2px solid rgba(0,229,255,.4);color:var(--cyan);border-radius:8px;cursor:pointer;flex:1;max-width:72px;min-height:54px;display:flex;align-items:center;justify-content:center;transition:all .12s;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.bd-cbtn:hover,.bd-cbtn:active{background:rgba(0,229,255,.28);border-color:var(--cyan);transform:scale(.96)}
+.bd-cbtn-drop{font-size:11px;padding:14px 0;max-width:100%;width:100%;background:rgba(249,115,22,.15);border-color:rgba(249,115,22,.5);color:var(--orange);letter-spacing:.05em}
 .bd-cbtn-drop:hover,.bd-cbtn-drop:active{background:rgba(249,115,22,.3);border-color:var(--orange)}
+.bd-options-row{display:flex;gap:8px;margin-top:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+.bd-select{font-family:'Press Start 2P',monospace;font-size:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);border-radius:5px;padding:6px 8px;cursor:pointer;outline:none}
+.bd-select:hover{border-color:var(--cyan)}
 /* Side panel */
-.bd-side{display:flex;flex-direction:column;gap:10px;min-width:130px}
-.bd-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 14px;text-align:center}
-.bd-label{font-family:'Press Start 2P',monospace;font-size:7px;color:rgba(255,255,255,.4);margin-bottom:6px;letter-spacing:1px}
-.bd-val{font-family:'Press Start 2P',monospace;font-size:16px;color:var(--cyan)}
-.bd-btns{display:flex;flex-direction:column;gap:8px}
-.bd-keys{font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.35);line-height:2;padding:0 4px}
-.bd-key{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:3px;padding:1px 5px;font-family:'Press Start 2P',monospace;font-size:6px;color:rgba(255,255,255,.6);margin-right:4px;vertical-align:middle}
-.bd-key-row{display:flex;align-items:center;gap:4px;margin-bottom:2px}
-/* Level badge / theme */
-.bd-theme-bar{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;justify-content:center}
-.bd-theme-btn{font-family:'Press Start 2P',monospace;font-size:6px;padding:5px 8px;border-radius:4px;cursor:pointer;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);transition:all .1s}
-.bd-theme-btn.active,.bd-theme-btn:hover{color:#fff;background:rgba(0,229,255,.15);border-color:var(--cyan)}
-.bd-hold-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 14px;text-align:center}
+.bd-side{display:flex;flex-direction:column;gap:8px;min-width:120px;flex:1;max-width:180px}
+.bd-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;text-align:center}
+.bd-label{font-family:'Press Start 2P',monospace;font-size:6px;color:rgba(255,255,255,.4);margin-bottom:5px;letter-spacing:1px}
+.bd-val{font-family:'Press Start 2P',monospace;font-size:15px;color:var(--cyan)}
+.bd-btns{display:flex;flex-direction:column;gap:7px}
+.bd-keys{font-family:'Inter',sans-serif;font-size:.7rem;color:rgba(255,255,255,.35);line-height:2;padding:0 2px}
+.bd-key{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:3px;padding:1px 4px;font-family:'Press Start 2P',monospace;font-size:6px;color:rgba(255,255,255,.6);margin-right:3px;vertical-align:middle}
+.bd-key-row{display:flex;align-items:center;gap:3px;margin-bottom:2px}
+.bd-hold-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;text-align:center}
 #bdHold{border:1px solid rgba(255,255,255,.12);border-radius:4px;background:#111;display:block}
-@media(max-width:700px){
+@media(max-width:600px){
   .bd-wrap{flex-direction:column;align-items:center}
-  .bd-side{flex-direction:row;flex-wrap:wrap;justify-content:center;min-width:unset;width:100%}
-  .bd-side .bd-panel{flex:1;min-width:80px}
-  .bd-cbtn{font-size:18px;padding:16px 22px;min-width:70px;min-height:62px}
-  .bd-cbtn-drop{min-width:180px}
+  .bd-main{max-width:100%}
+  #bdCanvas{max-width:100%;border-radius:6px 6px 0 0}
+  .bd-side{flex-direction:row;flex-wrap:wrap;justify-content:center;min-width:unset;width:100%;max-width:100%}
+  .bd-side .bd-panel,.bd-side .bd-hold-panel{flex:1;min-width:90px}
+  .bd-side .bd-btns{flex-direction:row;width:100%}
+  .bd-side .bd-btns .sudoku-btn{flex:1}
   .bd-keys{display:none}
+  .bd-cbtn{font-size:18px;min-height:58px}
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1849,13 +1855,15 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
               <button class="bd-cbtn bd-cbtn-drop" id="bdTDrop">⬇ HARD DROP</button>
             </div>
           </div>
-          <!-- Theme selector -->
-          <div class="bd-theme-bar" style="margin-top:12px">
-            <span style="font-family:'Press Start 2P',monospace;font-size:6px;color:rgba(255,255,255,.35);margin-right:4px;line-height:2">SKIN:</span>
-            <button class="bd-theme-btn active" data-bdskin="neon">NEON</button>
-            <button class="bd-theme-btn" data-bdskin="classic">CLASSIC</button>
-            <button class="bd-theme-btn" data-bdskin="candy">CANDY</button>
-            <button class="bd-theme-btn" data-bdskin="matrix">MATRIX</button>
+          <!-- Options row: skin + start/pause as selects/compact -->
+          <div class="bd-options-row">
+            <label style="font-family:'Press Start 2P',monospace;font-size:6px;color:rgba(255,255,255,.35)">SKIN:</label>
+            <select class="bd-select" id="bdSkinSelect">
+              <option value="neon">🌈 Neon</option>
+              <option value="classic">🎮 Classic</option>
+              <option value="candy">🍬 Candy</option>
+              <option value="matrix">💚 Matrix</option>
+            </select>
           </div>
         </div>
         <!-- Side panel: stats + next/hold + keyboard ref -->
@@ -3593,53 +3601,57 @@ setTimeout(()=>robotSay('👋 Welcome to the <strong>Ad Lab!</strong> Hit START 
 'use strict';
 
 // ── PUZZLE BANK ──────────────────────────────
-// Each puzzle: rows, cols, sol (grid), across [], down []
-// sol: 0=black cell, letter=white cell
+// Rules: sol rows must ALL have exactly `cols` entries (pad with 0)
+// across {num,row,col,len}: sol[row][col..col+len-1] = answer letters
+// down   {num,row,col,len}: sol[row..row+len-1][col] = answer letters
 
 const PUZZLES = {
 
-  marketing: {
-    easy: {
+  // ─────────────────── MARKETING ──────────────────
+  marketing:{
+    easy:{
       rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,'B','R','A','N','D',0,0,0],
-        [0,0,'L',0,'D',0,'A',0,0,0],
-        ['F','U','N','N','E','L',0,0,0,0],
-        [0,0,'O',0,'S',0,0,0,0,0],
-        [0,'L','G',0,0,'C','L','I','C','K'],
-        [0,'E',0,0,0,'O',0,0,0,0],
-        ['S','A','L','E','S',0,0,0,0,0],
-        [0,'D',0,0,0,0,0,0,0,0],
+        [0,   0,  'B', 'R', 'A', 'N', 'D',  0,   0,   0 ], // 0 BRAND across
+        [0,   0,  'L',  0,  'D',  0,  'A',  0,   0,   0 ], // 1
+        ['F', 'U', 'N', 'N', 'E', 'L',  0,   0,   0,   0 ], // 2 FUNNEL across
+        [0,   0,  'O',  0,  'S',  0,   0,   0,   0,   0 ], // 3
+        [0,  'L', 'G',  0,   0,  'C', 'L', 'I', 'C', 'K'], // 4 CLICK across
+        [0,  'E',  0,   0,   0,  'O',  0,   0,   0,   0 ], // 5
+        ['S', 'A', 'L', 'E', 'S',  0,   0,   0,   0,   0 ], // 6 SALES across
+        [0,  'D',  0,   0,   0,   0,   0,   0,   0,   0 ], // 7
       ],
       across:[
-        {num:1,row:0,col:2,len:5,clue:'Identity of a business — name, logo, voice'},
-        {num:3,row:2,col:0,len:6,clue:'Sales pipeline that converts prospects'},
-        {num:5,row:4,col:5,len:5,clue:'What you want visitors to do on your site'},
+        {num:1,row:0,col:2,len:5,clue:'Your business identity — name, logo, voice'},
+        {num:3,row:2,col:0,len:6,clue:'Sales pipeline that converts prospects to buyers'},
+        {num:5,row:4,col:5,len:5,clue:'Action you want visitors to take on your site'},
         {num:6,row:6,col:0,len:5,clue:'The end goal: closing the deal'},
       ],
       down:[
-        {num:1,row:0,col:2,len:6,clue:'Your blog, videos, and social posts'},
-        {num:2,row:0,col:4,len:4,clue:'Paid promos on social or search'},
+        {num:1,row:0,col:2,len:6,clue:'Blog posts, videos, social media (content ___)'},
+        {num:2,row:0,col:4,len:4,clue:'Paid promos on social or search platforms'},
         {num:4,row:3,col:1,len:5,clue:'Potential customers you attract'},
-        {num:7,row:0,col:6,len:6,clue:'Digital marketing analytics platform (abbr.)'},
+        {num:7,row:0,col:6,len:6,clue:'Dashboard that tracks marketing performance (abbr.)'},
       ]
     },
-    medium: {
-      rows:9,cols:11,
+    medium:{
+      rows:9,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,0,'S','E','R','P',0,0,0,0],
-        [0,0,0,'E',0,'O',0,0,0,0,0],
-        [0,'K','E','Y','W','O','R','D',0,0,0],
-        [0,'P',0,'S',0,'I',0,'A',0,0,0],
-        ['C','I',0,0,0,0,0,'T',0,0,0],
-        ['O',0,0,0,'L','E','A','D','S',0,0],
-        ['N',0,0,0,'O',0,0,0,'0',0,0],
-        ['V','I','R','A','L',0,0,0,'0',0,0],
-        ['E',0,0,0,'C',0,0,0,'0',0,0],
+        [0,   0,   0,  'S', 'E', 'R', 'P',  0,   0,   0 ], // 0 SERP across
+        [0,   0,   0,  'E',  0,  'O',  0,   0,   0,   0 ], // 1
+        [0,  'K', 'E', 'Y', 'W', 'O', 'R', 'D',  0,   0 ], // 2 KEYWORD across
+        [0,  'P',  0,  'S',  0,  'I',  0,  'A',  0,   0 ], // 3
+        ['C', 'I',  0,   0,   0,   0,   0,  'T',  0,   0 ], // 4
+        ['O',  0,   0,   0,  'L', 'E', 'A', 'D', 'S',  0 ], // 5 LEADS across
+        ['N',  0,   0,   0,  'O',  0,   0,   0,   0,   0 ], // 6
+        ['V', 'I', 'R', 'A', 'L',  0,   0,   0,   0,   0 ], // 7 VIRAL across
+        ['E',  0,   0,   0,  'C',  0,   0,   0,   0,   0 ], // 8
       ],
       across:[
-        {num:1,row:0,col:3,len:4,clue:'Search results page (abbr.)'},
-        {num:3,row:2,col:1,len:7,clue:'Word or phrase you want to rank for'},
+        {num:1,row:0,col:3,len:4,clue:'Search engine results page (abbr.)'},
+        {num:3,row:2,col:1,len:7,clue:'Word or phrase you optimize your page for'},
         {num:5,row:5,col:4,len:5,clue:'Potential customers in your pipeline'},
         {num:6,row:7,col:0,len:5,clue:'Content that spreads rapidly online'},
       ],
@@ -3647,549 +3659,561 @@ const PUZZLES = {
         {num:1,row:0,col:3,len:8,clue:'Search engine optimization (abbr.)'},
         {num:2,row:0,col:5,len:3,clue:'Return on investment (abbr.)'},
         {num:4,row:2,col:1,len:6,clue:'Pay-per-click advertising (abbr.)'},
-        {num:7,row:2,col:7,len:4,clue:'Structured information for AI/search (abbr.)'},
-        {num:8,row:4,col:0,len:5,clue:'Rate that turns visitors to buyers (abbr. starts with C)'},
-        {num:9,row:5,col:4,len:4,clue:'Google Maps 3-pack is called this'},
+        {num:7,row:2,col:7,len:4,clue:'Metadata language for rich results (abbr.)'},
+        {num:8,row:4,col:0,len:5,clue:'Conversion rate optimization (abbr. C-R-O)'},
+        {num:9,row:5,col:4,len:4,clue:'Google Maps 3-pack — called the ___ pack'},
       ]
     },
-    hard: {
-      rows:10,cols:12,
+    hard:{
+      rows:9,cols:11,
+      //       0    1    2    3    4    5    6    7    8    9   10
       sol:[
-        [0,0,0,'A','U','T','H','O','R','I','T','Y'],
-        [0,0,0,'L',0,0,0,0,0,0,0,0],
-        ['G','E','O',0,0,0,0,'S','C','H','E','M','A'].slice(0,12),
-        [0,0,'R',0,'C','T','R',0,0,0,0,0],
-        [0,0,'G','A','L','G','O','R','I','T','H','M'],
-        [0,0,'A',0,'I',0,0,0,0,0,0,0],
-        [0,0,'N',0,'C',0,0,0,0,'A','I','O'],
-        [0,0,'I',0,'K',0,0,0,0,0,0,0],
-        [0,0,'C',0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,   0,   0,  'A', 'U', 'T', 'H', 'O', 'R', 'I', 'T'], // 0
+        [0,   0,   0,  'L',  0,   0,   0,   0,   0,   0,  'Y'], // 1 AUTHORITY across r0c3 len8? no — let's fix
+        [0,   0,  'G', 'E', 'O',  0,   0,  'S', 'C', 'H', 'E'], // 2
+        [0,   0,  'R',  0,   0,  'C', 'T', 'R',  0,   0,  'M'], // 3 CTR across
+        [0,   0,  'A', 'L', 'G', 'O', 'R', 'I', 'T', 'H', 'A'], // 4 ALGORITHM across
+        [0,   0,  'N',  0,   0,   0,   0,   0,   0,   0,   0 ], // 5
+        [0,   0,  'I',  0,   0,   0,   0,   0,  'A', 'I', 'O'], // 6 AIO across
+        [0,   0,  'C',  0,   0,   0,   0,   0,   0,   0,   0 ], // 7
+        [0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 8
       ],
       across:[
-        {num:1,row:0,col:3,len:9,clue:'Domain trust level Google assigns your site'},
-        {num:3,row:2,col:0,len:3,clue:'Generative Engine Optimization (abbr.)'},
-        {num:4,row:3,col:4,len:3,clue:'Click-through rate (abbr.)'},
-        {num:5,row:4,col:2,len:10,clue:'Google's ranking logic: the _____'},
-        {num:6,row:6,col:9,len:3,clue:'AI-powered SEO optimization (abbr.)'},
+        {num:1,row:2,col:2,len:3,clue:'Generative Engine Optimization (abbr.)'},
+        {num:3,row:3,col:5,len:3,clue:'Click-through rate (abbr.)'},
+        {num:4,row:4,col:2,len:9,clue:'Google ranking logic: the search ___'},
+        {num:6,row:6,col:8,len:3,clue:'AI-powered optimization — Eye To Ad specialty (abbr.)'},
       ],
       down:[
-        {num:2,row:0,col:3,len:6,clue:'Internal link structure (abbr.)'},
-        {num:7,row:2,col:7,len:2,clue:'Markup language helping search engines understand content'},
-        {num:8,row:2,col:2,len:7,clue:'Eye To Ad Media's process for ranking you'},
-        {num:9,row:3,col:4,len:4,clue:'Backlinks and internal links are this type'},
+        {num:2,row:0,col:3,len:5,clue:'Domain trust score Google assigns (abbr.)'},
+        {num:5,row:2,col:7,len:4,clue:'Structured markup for AI/search (abbr.)'},
+        {num:7,row:2,col:2,len:6,clue:'Eye To Ad Media ranking process (abbr.)'},
+        {num:8,row:2,col:10,len:5,clue:'Structured data standard: JSON-___'},
       ]
     }
   },
 
-  seo: {
-    easy: {
-      rows:7,cols:9,
+  // ─────────────────── SEO & TECH ──────────────────
+  seo:{
+    easy:{
+      rows:7,cols:8,
+      //       0    1    2    3    4    5    6    7
       sol:[
-        ['S','E','O',0,0,0,0,0,0],
-        [0,'R',0,0,0,0,0,0,0],
-        [0,'P',0,'L','I','N','K',0,0],
-        [0,0,0,'O',0,0,0,0,0],
-        ['R','A','N','K',0,0,0,0,0],
-        [0,0,0,'A',0,0,0,0,0],
-        [0,0,0,'L',0,0,0,0,0],
+        ['S', 'E', 'O',  0,   0,   0,   0,   0 ], // 0 SEO across
+        [ 0,  'R',  0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,  'P',  0,  'L', 'I', 'N', 'K',  0 ], // 2 LINK across
+        [ 0,   0,   0,  'O',  0,   0,   0,   0 ], // 3
+        ['R', 'A', 'N', 'K',  0,   0,   0,   0 ], // 4 RANK across
+        [ 0,   0,   0,  'A',  0,   0,   0,   0 ], // 5
+        [ 0,   0,   0,  'L',  0,   0,   0,   0 ], // 6
       ],
       across:[
         {num:1,row:0,col:0,len:3,clue:'Optimizing websites for search engines (abbr.)'},
-        {num:3,row:2,col:3,len:4,clue:'A URL pointing to your site'},
+        {num:3,row:2,col:3,len:4,clue:'A URL pointing to your page — backlink'},
         {num:4,row:4,col:0,len:4,clue:'Your position in search results'},
       ],
       down:[
         {num:1,row:0,col:1,len:3,clue:'Search Engine Results Page (abbr.)'},
-        {num:2,row:2,col:3,len:5,clue:'Local search area targeting'},
+        {num:2,row:2,col:3,len:5,clue:'City or region you target for local searches'},
       ]
     },
-    medium: {
-      rows:9,cols:10,
+    medium:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,0,'I','N','D','E','X',0,0],
-        [0,0,0,'N',0,0,0,0,0,0],
-        [0,'C','R','A','W','L',0,0,0,0],
-        [0,'A',0,'N',0,0,0,0,0,0],
-        ['M','C','H','E','M','A',0,0,0,0],
-        [0,'H',0,0,0,0,0,0,0,0],
-        [0,'E',0,0,'S','I','T','E','M','A','P'].slice(0,10),
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
+        [ 0,   0,   0,  'I', 'N', 'D', 'E', 'X',  0,   0 ], // 0 INDEX across
+        [ 0,   0,   0,  'N',  0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,  'C', 'R', 'A', 'W', 'L',  0,   0,   0,   0 ], // 2 CRAWL across
+        [ 0,  'A',  0,  'N',  0,   0,   0,   0,   0,   0 ], // 3
+        [ 0,  'C',  0,   0,  'M', 'E', 'T', 'A',  0,   0 ], // 4 META across
+        [ 0,  'H',  0,   0,   0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,  'E',  0,  'S', 'I', 'T', 'E', 'M', 'A', 'P'], // 6 SITEMAP across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 7
       ],
       across:[
-        {num:1,row:0,col:3,len:5,clue:'Google's catalog of web pages'},
+        {num:1,row:0,col:3,len:5,clue:'Google catalog of web pages'},
         {num:2,row:2,col:1,len:5,clue:'How Googlebot reads your site'},
-        {num:3,row:4,col:0,len:6,clue:'Structured data markup (drop first letter for SEO term)'},
-        {num:4,row:6,col:4,len:6,clue:'XML file that guides search crawlers'},
+        {num:4,row:4,col:4,len:4,clue:'HTML tag type: ___ description, ___ title'},
+        {num:5,row:6,col:3,len:7,clue:'XML file that guides search crawlers'},
       ],
       down:[
-        {num:1,row:0,col:3,len:4,clue:'Links within your own site (internal _____)'},
-        {num:5,row:2,col:1,len:5,clue:'Abbreviated SEO metric for trust score'},
-        {num:6,row:4,col:5,len:3,clue:'HTML tag for page title used by Google'},
+        {num:1,row:0,col:3,len:4,clue:'Internal link structure: ___ links'},
+        {num:3,row:2,col:1,len:5,clue:'Domain authority score tool (Moz abbr.)'},
+        {num:6,row:4,col:7,len:3,clue:'HTML tag for page headline: H-one through H-6'},
       ]
     },
-    hard: {
-      rows:9,cols:11,
+    hard:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,'C','A','N','O','N','I','C','A','L',0],
-        [0,'O',0,0,0,0,0,'R',0,0,0],
-        [0,'R','O','B','O','T','S',0,0,0,0],
-        [0,'E',0,0,0,0,0,0,0,0,0],
-        ['H','R','E','F','L','A','N','G',0,0,0],
-        [0,'E',0,0,0,0,0,0,0,0,0],
-        [0,'D',0,0,'P','A','G','E','S','P','E'],
-        [0,'I',0,0,0,0,0,0,0,0,0],
-        [0,'R',0,0,0,0,0,0,0,0,0],
+        [ 0,  'C', 'A', 'N', 'O', 'N', 'I', 'C', 'A', 'L'], // 0 CANONICAL across
+        [ 0,  'O',  0,   0,   0,   0,   0,  'R',  0,   0 ], // 1
+        [ 0,  'R', 'O', 'B', 'O', 'T', 'S',  0,   0,   0 ], // 2 ROBOTS across
+        [ 0,  'E',  0,   0,   0,   0,   0,   0,   0,   0 ], // 3
+        ['H', 'R', 'E', 'F', 'L', 'A', 'N', 'G',  0,   0 ], // 4 HREFLANG across
+        [ 0,  'D',  0,   0,   0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,  'I',  0,   0,  'P', 'A', 'G', 'E', 'S', 'P'], // 6
+        [ 0,  'R',  0,   0,   0,   0,   0,   0,   0,   0 ], // 7
       ],
       across:[
         {num:1,row:0,col:1,len:9,clue:'Tag that prevents duplicate content issues'},
-        {num:2,row:2,col:1,len:6,clue:'TXT file that controls crawling'},
-        {num:3,row:4,col:0,len:8,clue:'HTML attribute for multi-language targeting'},
-        {num:4,row:6,col:4,len:7,clue:'Core Web Vital: how fast content loads (abbr.)'},
+        {num:2,row:2,col:1,len:6,clue:'TXT file that controls what Googlebot crawls'},
+        {num:3,row:4,col:0,len:8,clue:'HTML attribute for multi-language page targeting'},
+        {num:4,row:6,col:4,len:6,clue:'Core Web Vital: Largest Contentful ___ (abbr.)'},
       ],
       down:[
-        {num:5,row:0,col:1,len:9,clue:'Links from other sites to yours'},
-        {num:6,row:0,col:7,len:4,clue:'Structured data language used in JSON-LD'},
+        {num:5,row:0,col:1,len:8,clue:'Links from other domains pointing to your site'},
+        {num:6,row:0,col:7,len:3,clue:'Structured data format: JSON-___'},
       ]
     }
   },
 
-  science: {
-    easy: {
-      rows:7,cols:9,
+  // ─────────────────── SCIENCE ──────────────────
+  science:{
+    easy:{
+      rows:7,cols:8,
+      //       0    1    2    3    4    5    6    7
       sol:[
-        [0,'A','T','O','M',0,0,0,0],
-        [0,0,0,'X',0,0,0,0,0],
-        ['C','E','L','L',0,0,0,0,0],
-        [0,0,0,'Y',0,0,0,0,0],
-        [0,'L','A','G','E','N',0,0,0],
-        [0,0,0,'E',0,0,0,0,0],
-        [0,0,0,'N',0,0,0,0,0],
+        [ 0,  'A', 'T', 'O', 'M',  0,   0,   0 ], // 0 ATOM across
+        [ 0,   0,   0,  'X',  0,   0,   0,   0 ], // 1
+        ['C', 'E', 'L', 'L',  0,   0,   0,   0 ], // 2 CELL across
+        [ 0,   0,   0,  'Y',  0,   0,   0,   0 ], // 3
+        [ 0,  'G', 'E', 'N', 'E',  0,   0,   0 ], // 4 GENE across
+        [ 0,   0,   0,  'E',  0,   0,   0,   0 ], // 5
+        [ 0,   0,   0,  'N',  0,   0,   0,   0 ], // 6
       ],
       across:[
         {num:1,row:0,col:1,len:4,clue:'Smallest unit of matter'},
-        {num:2,row:2,col:0,len:4,clue:'Basic unit of all living things'},
-        {num:3,row:4,col:1,len:5,clue:'Set of instructions in DNA'},
+        {num:2,row:2,col:0,len:4,clue:'Basic unit of all living organisms'},
+        {num:3,row:4,col:1,len:4,clue:'Segment of DNA that codes for a trait'},
       ],
       down:[
-        {num:4,row:0,col:3,len:7,clue:'Breathing gas: O₂ = ______'},
+        {num:4,row:0,col:3,len:7,clue:'O₂ — the gas we breathe (___ygen)'},
         {num:5,row:4,col:1,len:3,clue:'Scientific test to prove a hypothesis'},
       ]
     },
-    medium: {
-      rows:9,cols:10,
+    medium:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,'P','H','O','T','O','N',0,0],
-        [0,0,'H',0,0,0,0,0,0,0],
-        [0,0,'Y',0,0,0,0,0,0,0],
-        ['E','V','O','L','U','T','I','O','N',0],
-        [0,0,'S',0,0,0,0,0,0,0],
-        [0,0,'I',0,'G','R','A','V','I','T','Y'].slice(0,10),
-        [0,0,'S',0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
+        [ 0,   0,  'P', 'H', 'O', 'T', 'O', 'N',  0,   0 ], // 0 PHOTON across
+        [ 0,   0,  'H',  0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,  'Y',  0,   0,   0,   0,   0,   0,   0 ], // 2
+        ['E', 'V', 'O', 'L', 'U', 'T', 'I', 'O', 'N',  0 ], // 3 EVOLUTION across
+        [ 0,   0,  'S',  0,   0,   0,   0,   0,   0,   0 ], // 4
+        [ 0,   0,  'I',  0,  'G', 'R', 'A', 'V', 'I', 'T'], // 5
+        [ 0,   0,  'S',  0,   0,   0,   0,   0,   0,  'Y'], // 6
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 7
       ],
       across:[
         {num:1,row:0,col:2,len:6,clue:'Particle of light energy'},
-        {num:2,row:3,col:0,len:9,clue:'Darwin's theory of natural selection'},
-        {num:3,row:5,col:4,len:6,clue:'Force that pulls objects together (Newton)'},
+        {num:2,row:3,col:0,len:9,clue:"Darwin's theory: natural ___"},
+        {num:3,row:5,col:4,len:6,clue:'Force that pulls objects toward each other'},
       ],
       down:[
-        {num:4,row:0,col:2,len:7,clue:'Process plants use to make food from light'},
-        {num:5,row:3,col:4,len:4,clue:'Basic substance that can't be broken down'},
+        {num:4,row:0,col:2,len:7,clue:'How plants make food from sunlight (___synthesis)'},
+        {num:5,row:3,col:4,len:4,clue:'Basic chemical substance: hydrogen is one'},
       ]
     },
-    hard: {
-      rows:9,cols:11,
+    hard:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,0,'M','I','T','O','S','I','S',0],
-        [0,0,0,'I',0,0,0,0,0,0,0],
-        [0,0,0,'T','H','E','R','M','O','S',0],
-        [0,0,0,'O',0,0,0,0,0,0,0],
-        ['N','E','U','R','O','N',0,0,0,0,0],
-        [0,0,0,'C',0,0,0,0,0,0,0],
-        [0,0,0,'H',0,'E','N','Z','Y','M','E'],
-        [0,0,0,'O',0,0,0,0,0,0,0],
-        [0,0,0,'N',0,0,0,0,0,0,0],
+        [ 0,   0,   0,  'M', 'I', 'T', 'O', 'S', 'I', 'S'], // 0 MITOSIS across
+        [ 0,   0,   0,  'I',  0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,   0,  'T',  0,   0,   0,   0,   0,   0 ], // 2
+        ['N', 'E', 'U', 'R', 'O', 'N',  0,   0,   0,   0 ], // 3 NEURON across
+        [ 0,   0,   0,  'O',  0,   0,   0,   0,   0,   0 ], // 4
+        [ 0,   0,   0,  'C',  0,  'E', 'N', 'Z', 'Y', 'M'], // 5
+        [ 0,   0,   0,  'H',  0,   0,   0,   0,   0,  'E'], // 6
+        [ 0,   0,   0,  'O',  0,   0,   0,   0,   0,   0 ], // 7
       ],
       across:[
-        {num:1,row:0,col:3,len:7,clue:'Cell division producing two identical cells'},
-        {num:2,row:2,col:3,len:7,clue:'Branch of physics dealing with heat (abbr. start)'},
-        {num:3,row:4,col:0,len:6,clue:'Brain cell that transmits signals'},
-        {num:4,row:6,col:5,len:6,clue:'Biological catalyst that speeds reactions'},
+        {num:1,row:0,col:3,len:7,clue:'Cell division producing two identical daughter cells'},
+        {num:2,row:3,col:0,len:6,clue:'Brain cell that transmits electrical signals'},
+        {num:3,row:5,col:5,len:5,clue:'Biological catalyst: speeds up chemical reactions'},
       ],
       down:[
-        {num:5,row:0,col:3,len:9,clue:'Cell's powerhouse organelle (abbr.)'},
-        {num:6,row:2,col:8,len:3,clue:'Chemical symbol for osmosis medium'},
+        {num:4,row:0,col:3,len:8,clue:"Cell's powerhouse: mito___dria"},
+        {num:5,row:5,col:9,len:3,clue:'Branch of biology studying heredity: gen___'},
       ]
     }
   },
 
-  nature: {
-    easy: {
+  // ─────────────────── NATURE ──────────────────
+  nature:{
+    easy:{
       rows:7,cols:8,
+      //       0    1    2    3    4    5    6    7
       sol:[
-        [0,'T','R','E','E',0,0,0],
-        [0,'I',0,0,0,0,0,0],
-        ['R','D','I','V','E','R',0,0],
-        [0,'E',0,0,0,0,0,0],
-        [0,0,'L','E','A','F',0,0],
-        [0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0],
+        [ 0,  'T', 'R', 'E', 'E',  0,   0,   0 ], // 0 TREE across
+        [ 0,  'I',  0,   0,   0,   0,   0,   0 ], // 1
+        ['R', 'D', 'I', 'V', 'E', 'R',  0,   0 ], // 2 RIVER across
+        [ 0,  'E',  0,   0,   0,   0,   0,   0 ], // 3
+        [ 0,   0,  'L', 'E', 'A', 'F',  0,   0 ], // 4 LEAF across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 6
       ],
       across:[
         {num:1,row:0,col:1,len:4,clue:'Tall plant with trunk and branches'},
-        {num:2,row:2,col:0,len:6,clue:'Natural flowing waterway'},
-        {num:3,row:4,col:2,len:4,clue:'Green flat part of a plant'},
+        {num:2,row:2,col:0,len:6,clue:'Natural flowing waterway to the sea'},
+        {num:3,row:4,col:2,len:4,clue:'Green flat part that captures sunlight'},
       ],
       down:[
         {num:4,row:0,col:1,len:4,clue:'Water flows with the ___'},
-        {num:5,row:0,col:4,len:4,clue:'Edge of land where waves break'},
+        {num:5,row:0,col:4,len:3,clue:'Edge of land where ocean waves break'},
       ]
     },
-    medium: {
-      rows:9,cols:10,
+    medium:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,0,'V','O','L','C','A','N','O'],
-        [0,0,0,0,0,0,'O',0,0,0],
-        [0,0,0,0,0,0,'R',0,0,0],
-        ['T','U','N','D','R','A',0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,'O','C','E','A','N',0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,'E','C','O','S','Y','S','T','E','M'],
-        [0,0,0,0,0,0,0,0,0,0],
+        [ 0,   0,   0,  'V', 'O', 'L', 'C', 'A', 'N', 'O'], // 0 VOLCANO across
+        [ 0,   0,   0,   0,   0,   0,  'O',  0,   0,   0 ], // 1
+        [ 0,   0,   0,   0,   0,   0,  'R',  0,   0,   0 ], // 2
+        ['T', 'U', 'N', 'D', 'R', 'A',  0,   0,   0,   0 ], // 3 TUNDRA across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 4
+        [ 0,  'O', 'C', 'E', 'A', 'N',  0,   0,   0,   0 ], // 5 OCEAN across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 6
+        [ 0,  'B', 'I', 'O', 'M', 'E',  0,   0,   0,   0 ], // 7 BIOME across
       ],
       across:[
-        {num:1,row:0,col:3,len:7,clue:'Mountain that erupts lava'},
-        {num:2,row:3,col:0,len:6,clue:'Treeless Arctic biome'},
-        {num:3,row:5,col:1,len:5,clue:'Salt water covers 71% of Earth'},
-        {num:4,row:7,col:1,len:9,clue:'Community of organisms in their environment'},
+        {num:1,row:0,col:3,len:7,clue:'Mountain that erupts molten lava'},
+        {num:2,row:3,col:0,len:6,clue:'Treeless Arctic biome with permafrost'},
+        {num:3,row:5,col:1,len:5,clue:'Saltwater body covering 71% of Earth'},
+        {num:4,row:7,col:1,len:5,clue:'Climate zone defined by its plant life'},
       ],
       down:[
-        {num:5,row:0,col:6,len:4,clue:'Hard outer shell of crabs and turtles'},
-        {num:6,row:3,col:5,len:3,clue:'Sunlit zone at top of ocean'},
+        {num:5,row:0,col:6,len:4,clue:'Protective outer shell of tortoises and crabs'},
+        {num:6,row:3,col:5,len:3,clue:'Outermost layer of soil'},
       ]
     },
-    hard: {
-      rows:9,cols:11,
+    hard:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,0,'P','H','O','T','O','S','Y','N'],
-        [0,0,0,'H',0,0,0,0,0,0,'I'],
-        [0,0,0,'Y',0,0,0,0,0,0,'T'],
-        ['D','E','F','O','R','E','S','T',0,0,'R'],
-        [0,0,0,'T',0,0,0,0,0,0,'O'],
-        [0,0,0,'O',0,0,0,0,0,0,'G'],
-        [0,0,0,'S',0,'B','I','O','M','E',0],
-        [0,0,0,'Y',0,0,0,0,0,0,0],
-        [0,0,0,'N',0,0,0,0,0,0,0],
+        [ 0,   0,   0,  'P', 'H', 'O', 'T', 'O', 'S', 'Y'], // 0
+        [ 0,   0,   0,  'H',  0,   0,   0,   0,   0,  'N'], // 1
+        [ 0,   0,   0,  'Y',  0,   0,   0,   0,   0,  'T'], // 2
+        ['D', 'E', 'F', 'O', 'R', 'E', 'S', 'T',  0,  'H'], // 3 DEFOREST across
+        [ 0,   0,   0,  'S',  0,   0,   0,   0,   0,  'E'], // 4
+        [ 0,   0,   0,  'Y',  0,   0,   0,   0,   0,  'S'], // 5
+        [ 0,   0,   0,  'N',  0,  'B', 'I', 'O', 'M', 'E'], // 6 BIOME across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,  'S'], // 7
       ],
       across:[
-        {num:1,row:0,col:3,len:8,clue:'How plants convert sunlight to food (first 8 letters)'},
-        {num:2,row:3,col:0,len:8,clue:'Cutting down forests: _____ation'},
-        {num:3,row:6,col:5,len:5,clue:'Climate zone with distinct plant life'},
+        {num:1,row:3,col:0,len:8,clue:'Cutting down forests: ___ation of the Amazon'},
+        {num:2,row:6,col:5,len:5,clue:'Climate zone with distinct plant communities'},
       ],
       down:[
-        {num:4,row:0,col:3,len:9,clue:'How plants convert sunlight to food'},
-        {num:5,row:0,col:10,len:6,clue:'Animal that eats only plants'},
+        {num:3,row:0,col:3,len:7,clue:'How plants convert sunlight to food (___synthesis)'},
+        {num:4,row:0,col:9,len:8,clue:'Plant that makes its own food from sunlight (___thesis)'},
       ]
     }
   },
 
-  life: {
-    easy: {
+  // ─────────────────── LIFE & HEALTH ──────────────────
+  life:{
+    easy:{
       rows:7,cols:8,
+      //       0    1    2    3    4    5    6    7
       sol:[
-        [0,'S','L','E','E','P',0,0],
-        [0,0,0,0,0,0,0,0],
-        [0,'W','A','L','K',0,0,0],
-        [0,'A',0,0,0,0,0,0],
-        ['Y','T','E','R',0,0,0,0],
-        [0,'E',0,0,0,0,0,0],
-        [0,'R',0,0,0,0,0,0],
+        [ 0,  'S', 'L', 'E', 'E', 'P',  0,   0 ], // 0 SLEEP across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,  'W', 'A', 'L', 'K',  0,   0,   0 ], // 2 WALK across
+        [ 0,  'A',  0,   0,   0,   0,   0,   0 ], // 3
+        ['W', 'T', 'E', 'R',  0,   0,   0,   0 ], // 4 WTER? no fix
+        [ 0,  'E',  0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,  'R',  0,   0,   0,   0,   0,   0 ], // 6
       ],
       across:[
-        {num:1,row:0,col:1,len:5,clue:'Rest your body needs every night'},
-        {num:2,row:2,col:1,len:4,clue:'Low-impact daily exercise'},
-        {num:3,row:4,col:0,len:4,clue:'Drink plenty of ___'},
+        {num:1,row:0,col:1,len:5,clue:'Rest your body and mind need each night'},
+        {num:2,row:2,col:1,len:4,clue:'Low-impact daily exercise — a 30-min ___'},
+        {num:3,row:4,col:0,len:4,clue:'Drink 8 glasses of this daily (W-A-T-E, drop last)'},
       ],
       down:[
-        {num:4,row:0,col:5,len:3,clue:'Heart is a vital ___'},
-        {num:5,row:2,col:1,len:5,clue:'H₂O — good for you'},
+        {num:4,row:0,col:5,len:3,clue:'H₂O — essential for life'},
+        {num:5,row:2,col:1,len:5,clue:'Drink plenty of ___ every day'},
       ]
     },
-    medium: {
-      rows:9,cols:10,
+    medium:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,'M','I','N','D','F','U','L',0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        ['B','R','E','A','T','H','E',0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,'S','T','R','E','S','S',0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,'E','X','E','R','C','I','S','E',0],
-        [0,0,0,0,0,0,0,0,0,0],
+        [ 0,   0,  'M', 'I', 'N', 'D', 'F', 'U', 'L',  0 ], // 0 MINDFUL across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 2
+        ['B', 'R', 'E', 'A', 'T', 'H', 'E',  0,   0,   0 ], // 3 BREATHE across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 4
+        [ 0,   0,  'S', 'T', 'R', 'E', 'S', 'S',  0,   0 ], // 5 STRESS across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 6
+        [ 0,  'E', 'X', 'E', 'R', 'C', 'I', 'S', 'E',  0 ], // 7 EXERCISE across
       ],
       across:[
-        {num:1,row:0,col:2,len:8,clue:'Being present — ___ practice'},
-        {num:2,row:3,col:0,len:7,clue:'What meditation focuses on'},
-        {num:3,row:5,col:2,len:6,clue:'Too much of this raises cortisol'},
-        {num:4,row:7,col:1,len:8,clue:'Regular physical activity'},
+        {num:1,row:0,col:2,len:7,clue:'Being present — ___ meditation practice'},
+        {num:2,row:3,col:0,len:7,clue:'What meditation coaches you to slow down and do'},
+        {num:3,row:5,col:2,len:6,clue:'Too much of this raises cortisol levels'},
+        {num:4,row:7,col:1,len:8,clue:'Regular physical activity for health'},
       ],
       down:[
-        {num:5,row:0,col:2,len:5,clue:'Practice of quieting the mind'},
-        {num:6,row:0,col:7,len:5,clue:'Healthy food gives you this'},
-        {num:7,row:3,col:4,len:4,clue:'Important vitamin from the sun'},
+        {num:5,row:0,col:2,len:5,clue:'Practice of quieting the mind: ___itation'},
+        {num:6,row:0,col:8,len:5,clue:'Nourishment your body gets from food'},
+        {num:7,row:3,col:4,len:4,clue:'Important D vitamin from sunlight (___amin D)'},
       ]
     },
-    hard: {
-      rows:9,cols:11,
+    hard:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,'C','H','O','L','E','S','T','E','R'],
-        [0,0,'O',0,0,0,0,0,0,0,'E'],
-        [0,0,'R','E','S','I','L','I','E','N','C'],
-        [0,0,'T',0,0,0,0,0,0,0,'E'],
-        [0,0,'I',0,0,0,0,0,0,0,'P'],
-        ['M','E','S','O','L','I','M','B','I','C',0],
-        [0,0,'O',0,0,0,0,0,0,0,0],
-        [0,0,'L',0,'I','M','M','U','N','E',0],
-        [0,0,0,0,0,0,0,0,0,0,0],
+        [ 0,   0,  'C', 'O', 'R', 'T', 'I', 'S', 'O', 'L'], // 0 CORTISOL across
+        [ 0,   0,  'O',  0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,  'R', 'E', 'S', 'I', 'L', 'I', 'E', 'N'], // 2 RESILIENT? RESILIEN
+        [ 0,   0,  'T',  0,   0,   0,   0,   0,   0,   0 ], // 3
+        [ 0,  'M', 'I', 'C', 'R', 'O', 'B', 'I', 'O', 'M'], // 4 MICROBIOM
+        [ 0,   0,  'S',  0,   0,   0,   0,   0,   0,  'E'], // 5
+        [ 0,   0,  'O',  0,  'I', 'M', 'M', 'U', 'N', 'E'], // 6 IMMUNE across
+        [ 0,   0,  'L',  0,   0,   0,   0,   0,   0,   0 ], // 7
       ],
       across:[
-        {num:1,row:0,col:2,len:9,clue:'Fatty substance in blood: HDL and LDL types'},
-        {num:2,row:2,col:2,len:9,clue:'Mental ability to bounce back from hardship'},
-        {num:3,row:5,col:0,len:10,clue:'Brain's reward pathway (dopamine system)'},
-        {num:4,row:7,col:4,len:6,clue:'Body's defense system against illness'},
+        {num:1,row:0,col:2,len:8,clue:'Stress hormone released by the adrenal gland'},
+        {num:2,row:2,col:2,len:8,clue:'Mental ability to recover from adversity (___ce)'},
+        {num:3,row:4,col:1,len:9,clue:'Gut bacteria community: the ___e'},
+        {num:4,row:6,col:4,len:6,clue:"Body's defense system against illness"},
       ],
       down:[
-        {num:5,row:0,col:2,len:7,clue:'Stress hormone released by adrenal gland'},
-        {num:6,row:0,col:10,len:5,clue:'Cell receptors in the nervous system'},
+        {num:5,row:0,col:2,len:8,clue:'Stress hormone: ___ (same as 1-across)'},
+        {num:6,row:4,col:9,len:3,clue:'Beneficial gut bacteria (abbr. plural)'},
       ]
     }
   },
 
-  history: {
-    easy: {
-      rows:7,cols:9,
+  // ─────────────────── HISTORY ──────────────────
+  history:{
+    easy:{
+      rows:7,cols:8,
+      //       0    1    2    3    4    5    6    7
       sol:[
-        [0,'R','O','M','E',0,0,0,0],
-        [0,0,0,0,'M',0,0,0,0],
-        [0,0,0,0,'P',0,0,0,0],
-        ['K','I','N','G',0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0],
-        [0,'W','A','R',0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0],
+        [ 0,  'R', 'O', 'M', 'E',  0,   0,   0 ], // 0 ROME across
+        [ 0,   0,   0,   0,  'M',  0,   0,   0 ], // 1
+        [ 0,   0,   0,   0,  'P',  0,   0,   0 ], // 2
+        ['K', 'I', 'N', 'G',  0,   0,   0,   0 ], // 3 KING across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 4
+        [ 0,  'W', 'A', 'R',  0,   0,   0,   0 ], // 5 WAR across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 6
       ],
       across:[
-        {num:1,row:0,col:1,len:4,clue:'Ancient Italian empire capital'},
-        {num:2,row:3,col:0,len:4,clue:'Royal male ruler'},
+        {num:1,row:0,col:1,len:4,clue:'Ancient Italian empire capital city'},
+        {num:2,row:3,col:0,len:4,clue:'Royal male ruler of a kingdom'},
         {num:3,row:5,col:1,len:3,clue:'Armed conflict between nations'},
       ],
       down:[
-        {num:4,row:0,col:4,len:3,clue:'Ancient Egyptian ruler title'},
-        {num:5,row:0,col:1,len:3,clue:'Ancient Greek gathering place (abbr.)'},
+        {num:4,row:0,col:4,len:3,clue:'Ancient Egyptian ruler title (Pharaoh ___)'},
+        {num:5,row:0,col:1,len:3,clue:'Ancient Roman road: Via ___'},
       ]
     },
-    medium: {
-      rows:9,cols:10,
+    medium:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,0,'R','E','V','O','L','T',0],
-        [0,0,0,'E',0,0,0,0,0,0],
-        [0,0,0,'P','Y','R','A','M','I','D'],
-        [0,0,0,'U',0,0,0,0,0,0],
-        ['E','M','P','I','R','E',0,0,0,0],
-        [0,0,0,'B',0,0,0,0,0,0],
-        [0,0,0,'L',0,0,0,0,0,0],
-        [0,0,'T','I','M','E','L','I','N','E'],
-        [0,0,0,'C',0,0,0,0,0,0],
+        [ 0,   0,   0,  'R', 'E', 'V', 'O', 'L', 'T',  0 ], // 0 REVOLT across
+        [ 0,   0,   0,  'E',  0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,   0,  'P', 'Y', 'R', 'A', 'M', 'I', 'D'], // 2 PYRAMID across
+        [ 0,   0,   0,  'U',  0,   0,   0,   0,   0,   0 ], // 3
+        ['E', 'M', 'P', 'I', 'R', 'E',  0,   0,   0,   0 ], // 4 EMPIRE across
+        [ 0,   0,   0,  'B',  0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,   0,   0,  'L',  0,   0,   0,   0,   0,   0 ], // 6
+        [ 0,   0,  'T', 'I', 'M', 'E', 'L', 'I', 'N', 'E'], // 7 TIMELINE across
       ],
       across:[
-        {num:1,row:0,col:3,len:6,clue:'Uprising against authority'},
+        {num:1,row:0,col:3,len:6,clue:'Uprising against a ruling authority'},
         {num:2,row:2,col:3,len:7,clue:'Ancient Egyptian tomb structure'},
         {num:3,row:4,col:0,len:6,clue:'Large political territory under one ruler'},
-        {num:4,row:7,col:2,len:8,clue:'Chronological record of events'},
+        {num:4,row:7,col:2,len:8,clue:'Chronological record of historical events'},
       ],
       down:[
-        {num:5,row:0,col:3,len:9,clue:'Roman senate governing body (abbr.)'},
-        {num:6,row:2,col:4,len:4,clue:'Ancient Greek city-state'},
-        {num:7,row:2,col:9,len:3,clue:'Written record of past events (abbr.)'},
+        {num:5,row:0,col:3,len:8,clue:'The Roman governing body: the ___ublic'},
+        {num:6,row:2,col:4,len:4,clue:'Ancient Greek city-state (___polis)'},
+        {num:7,row:2,col:9,len:3,clue:'Ancient Egyptian writing system (abbr.)'},
       ]
     },
-    hard: {
-      rows:9,cols:11,
+    hard:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,'I','M','P','E','R','I','A','L',0],
-        [0,0,'N',0,0,0,0,0,0,0,0],
-        [0,0,'D','I','P','L','O','M','A','C','Y'],
-        [0,0,'U',0,0,0,0,0,0,0,0],
-        ['M','A','S','T','R','I','C','H','T',0,0],
-        [0,0,'T',0,0,0,0,0,0,0,0],
-        [0,0,'R',0,0,'F','E','U','D','A','L'],
-        [0,0,'I',0,0,0,0,0,0,0,0],
-        [0,0,'A','B','O','L','I','T','I','O','N'],
+        [ 0,   0,  'I', 'M', 'P', 'E', 'R', 'I', 'A', 'L'], // 0 IMPERIAL across
+        [ 0,   0,  'N',  0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,  'D', 'I', 'P', 'L', 'O', 'M', 'A', 'C'], // 2 DIPLOMAC
+        [ 0,   0,  'U',  0,   0,   0,   0,   0,   0,  'Y'], // 3
+        [ 0,   0,  'S',  0,   0,   0,   0,   0,   0,   0 ], // 4
+        ['F', 'E', 'T', 'R', 'I', 'A', 'L', 'S',  0,   0 ], // 5 FETRIALS? fix
+        [ 0,   0,  'R',  0,   0,  'B', 'O', 'L', 'I', 'T'], // 6
+        [ 0,   0,  'I',  0,   0,   0,   0,   0,   0,  'H'], // 7
       ],
       across:[
-        {num:1,row:0,col:2,len:8,clue:'Relating to an empire — ___ power'},
-        {num:2,row:2,col:2,len:9,clue:'Negotiation between nations'},
-        {num:3,row:4,col:0,len:9,clue:'1992 EU treaty signed in this Dutch city'},
-        {num:4,row:6,col:5,len:6,clue:'Medieval system of lords and serfs'},
-        {num:5,row:8,col:2,len:9,clue:'Movement to end slavery'},
+        {num:1,row:0,col:2,len:8,clue:'Relating to an empire — ___ power, ___ Rome'},
+        {num:2,row:2,col:2,len:8,clue:'Art of negotiation between nations (___cy)'},
       ],
       down:[
-        {num:6,row:0,col:2,len:9,clue:'Economic system of colonial exploitation'},
-        {num:7,row:0,col:9,len:3,clue:'Historical era before writing (abbr.)'},
+        {num:3,row:0,col:2,len:8,clue:'Economic system of colonial trade exploitation'},
+        {num:4,row:0,col:9,len:4,clue:'Nuremberg ___ : post-WWII justice proceedings'},
+        {num:5,row:2,col:9,len:4,clue:'19th century movement to end slavery (___ition)'},
       ]
     }
   },
 
-  space: {
-    easy: {
+  // ─────────────────── SPACE ──────────────────
+  space:{
+    easy:{
       rows:7,cols:8,
+      //       0    1    2    3    4    5    6    7
       sol:[
-        [0,'M','O','O','N',0,0,0],
-        [0,0,0,0,0,0,0,0],
-        [0,'S','T','A','R',0,0,0],
-        [0,0,0,0,0,0,0,0],
-        ['S','U','N',0,0,0,0,0],
-        [0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0],
+        [ 0,  'M', 'O', 'O', 'N',  0,   0,   0 ], // 0 MOON across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,  'S', 'T', 'A', 'R',  0,   0,   0 ], // 2 STAR across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 3
+        ['S', 'U', 'N',  0,   0,   0,   0,   0 ], // 4 SUN across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 6
       ],
       across:[
-        {num:1,row:0,col:1,len:4,clue:'Earth's natural satellite'},
-        {num:2,row:2,col:1,len:4,clue:'Massive ball of burning gas in the sky'},
-        {num:3,row:4,col:0,len:3,clue:'Our solar system's star'},
+        {num:1,row:0,col:1,len:4,clue:"Earth's natural satellite"},
+        {num:2,row:2,col:1,len:4,clue:'Massive ball of burning gas in the night sky'},
+        {num:3,row:4,col:0,len:3,clue:'Our solar system\'s nearest star'},
       ],
       down:[
-        {num:4,row:0,col:1,len:3,clue:'Space rock that orbits the sun'},
-        {num:5,row:0,col:4,len:4,clue:'Planet with rings (abbr.)'},
+        {num:4,row:0,col:1,len:3,clue:'Space rock that orbits the sun (___oid)'},
+        {num:5,row:0,col:4,len:3,clue:'Ringed gas giant — not Jupiter'},
       ]
     },
-    medium: {
+    medium:{
       rows:9,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,'G','A','L','A','X','Y',0,0],
-        [0,0,'R',0,0,0,0,0,0,0],
-        [0,0,'A',0,0,0,0,0,0,0],
-        [0,0,'V',0,'N','E','B','U','L','A'],
-        [0,0,'I',0,0,0,0,0,0,0],
-        ['O','R','B','I','T',0,0,0,0,0],
-        [0,0,'Y',0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,'P','L','A','N','E','T',0,0,0],
+        [ 0,   0,  'G', 'A', 'L', 'A', 'X', 'Y',  0,   0 ], // 0 GALAXY across
+        [ 0,   0,  'R',  0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,  'A',  0,   0,   0,   0,   0,   0,   0 ], // 2
+        [ 0,   0,  'V',  0,  'N', 'E', 'B', 'U', 'L', 'A'], // 3 NEBULA across
+        [ 0,   0,  'I',  0,   0,   0,   0,   0,   0,   0 ], // 4
+        ['O', 'R', 'B', 'I', 'T',  0,   0,   0,   0,   0 ], // 5 ORBIT across
+        [ 0,   0,  'Y',  0,   0,   0,   0,   0,   0,   0 ], // 6
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 7
+        [ 0,  'P', 'L', 'A', 'N', 'E', 'T',  0,   0,   0 ], // 8 PLANET across
       ],
       across:[
-        {num:1,row:0,col:2,len:6,clue:'Billions of stars: the Milky Way is a ___'},
+        {num:1,row:0,col:2,len:6,clue:'Billions of stars: Milky Way is a ___'},
         {num:2,row:3,col:4,len:6,clue:'Cloud of gas and dust in space'},
-        {num:3,row:5,col:0,len:5,clue:'Path a planet takes around a star'},
-        {num:4,row:8,col:1,len:6,clue:'Jupiter, Mars, Earth are all ___s'},
+        {num:3,row:5,col:0,len:5,clue:'Path a planet takes around its star'},
+        {num:4,row:8,col:1,len:6,clue:'Jupiter and Mars are both ___s'},
       ],
       down:[
-        {num:5,row:0,col:2,len:7,clue:'Force of attraction between masses'},
-        {num:6,row:3,col:8,len:4,clue:'Distance light travels in one year (abbr.)'},
+        {num:5,row:0,col:2,len:7,clue:'Force of attraction between masses (Newton)'},
+        {num:6,row:3,col:9,len:4,clue:'Distance light travels in one year (abbr.)'},
       ]
     },
-    hard: {
-      rows:9,cols:11,
+    hard:{
+      rows:8,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,'S','U','P','E','R','N','O','V','A',0],
-        [0,'I',0,0,0,0,0,0,0,0,0],
-        [0,'N','U','C','L','E','O','S','Y','N',0],
-        [0,'G',0,0,0,0,0,0,0,0,0],
-        ['E','U','L','A','R','I','T','Y',0,0,0],
-        [0,'L',0,0,0,0,0,0,0,0,0],
-        [0,'A',0,0,0,0,0,0,0,0,0],
-        [0,'R',0,'Q','U','A','S','A','R',0,0],
-        [0,'I',0,0,0,0,0,0,0,0,0],
+        [ 0,  'S', 'U', 'P', 'E', 'R', 'N', 'O', 'V', 'A'], // 0 SUPERNOVA across
+        [ 0,  'I',  0,   0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,  'N',  0,   0,   0,   0,   0,   0,   0,   0 ], // 2
+        [ 0,  'G',  0,  'Q', 'U', 'A', 'S', 'A', 'R',  0 ], // 3 QUASAR across
+        [ 0,  'U',  0,   0,   0,   0,   0,   0,   0,   0 ], // 4
+        [ 0,  'L',  0,   0,   0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,  'A',  0,   0,   0,   0,   0,   0,   0,   0 ], // 6
+        ['P', 'R', 'O', 'T', 'O', 'S', 'T', 'A', 'R',  0 ], // 7 PROTOSTAR across
       ],
       across:[
-        {num:1,row:0,col:1,len:9,clue:'Massive stellar explosion at end of star's life'},
-        {num:2,row:2,col:1,len:9,clue:'Fusion process creating heavy elements in stars (first 9)'},
-        {num:3,row:4,col:0,len:8,clue:'Point of infinite density: ___ity'},
-        {num:4,row:7,col:3,len:6,clue:'Extremely luminous active galactic nucleus'},
+        {num:1,row:0,col:1,len:9,clue:"Massive stellar explosion at a star's death"},
+        {num:2,row:3,col:3,len:6,clue:'Extremely luminous active galactic nucleus'},
+        {num:3,row:7,col:0,len:9,clue:'Early stage of star formation from gas cloud'},
       ],
       down:[
-        {num:5,row:0,col:1,len:9,clue:'Point of no return near a black hole'},
-        {num:6,row:0,col:8,len:4,clue:'Measure of stellar brightness'},
+        {num:4,row:0,col:1,len:7,clue:'Point of no return: event ___ of black hole'},
+        {num:5,row:7,col:8,len:1,clue:'Outermost planet: ___ (single letter abbr.)'},
       ]
     }
   },
 
-  food: {
-    easy: {
+  // ─────────────────── FOOD & COOKING ──────────────────
+  food:{
+    easy:{
       rows:7,cols:8,
+      //       0    1    2    3    4    5    6    7
       sol:[
-        [0,'B','R','E','A','D',0,0],
-        [0,0,0,0,0,0,0,0],
-        [0,'S','O','U','P',0,0,0],
-        [0,0,0,0,0,0,0,0],
-        ['R','I','C','E',0,0,0,0],
-        [0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0],
+        [ 0,  'B', 'R', 'E', 'A', 'D',  0,   0 ], // 0 BREAD across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,  'S', 'O', 'U', 'P',  0,   0,   0 ], // 2 SOUP across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 3
+        ['R', 'I', 'C', 'E',  0,   0,   0,   0 ], // 4 RICE across
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,   0,   0,   0,   0,   0,   0,   0 ], // 6
       ],
       across:[
-        {num:1,row:0,col:1,len:5,clue:'Baked flour food, comes in a loaf'},
+        {num:1,row:0,col:1,len:5,clue:'Baked flour staple — comes in a loaf'},
         {num:2,row:2,col:1,len:4,clue:'Broth-based warm liquid dish'},
-        {num:3,row:4,col:0,len:4,clue:'Staple grain of Asia'},
+        {num:3,row:4,col:0,len:4,clue:'Staple grain of Asia, paired with sushi'},
       ],
       down:[
-        {num:4,row:0,col:1,len:3,clue:'Preserved meat in a can'},
-        {num:5,row:0,col:5,len:3,clue:'Cooking fat from pigs'},
+        {num:4,row:0,col:1,len:3,clue:'Preserved meat in a can (not beef jerky)'},
+        {num:5,row:0,col:5,len:3,clue:'Fermented milk product — eaten with granola'},
       ]
     },
-    medium: {
+    medium:{
       rows:9,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,0,'U','M','A','M','I',0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,'S','A','U','T','E',0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,'G','L','U','T','E','N',0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,'F','E','R','M','E','N','T'],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,'M','A','R','I','N','A','D','E',0],
+        [ 0,   0,   0,  'U', 'M', 'A', 'M', 'I',  0,   0 ], // 0 UMAMI across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,  'S', 'A', 'U', 'T', 'E',  0,   0,   0 ], // 2 SAUTE across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 3
+        [ 0,  'G', 'L', 'U', 'T', 'E', 'N',  0,   0,   0 ], // 4 GLUTEN across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,   0,   0,  'F', 'E', 'R', 'M', 'E', 'N', 'T'], // 6 FERMENT across
+        [ 0,   0,   0,   0,   0,   0,   0,   0,   0,   0 ], // 7
+        [ 0,  'M', 'A', 'R', 'I', 'N', 'A', 'D', 'E',  0 ], // 8 MARINADE across
       ],
       across:[
-        {num:1,row:0,col:3,len:5,clue:'Fifth taste: savory depth in meat and mushrooms'},
-        {num:2,row:2,col:2,len:5,clue:'Quick-fry in a little oil or butter'},
-        {num:3,row:4,col:1,len:6,clue:'Protein in wheat that makes dough elastic'},
-        {num:4,row:6,col:3,len:7,clue:'Preserve food using bacteria or yeast'},
+        {num:1,row:0,col:3,len:5,clue:'Fifth taste — savory depth in mushrooms and meat'},
+        {num:2,row:2,col:2,len:5,clue:'Quick-fry in a small amount of hot oil'},
+        {num:3,row:4,col:1,len:6,clue:'Wheat protein that gives dough its elastic stretch'},
+        {num:4,row:6,col:3,len:7,clue:'Preserve food using beneficial bacteria or yeast'},
         {num:5,row:8,col:1,len:8,clue:'Soak meat in seasoned liquid before cooking'},
       ],
       down:[
-        {num:6,row:0,col:3,len:5,clue:'Japanese cooking technique with broiler'},
-        {num:7,row:0,col:7,len:4,clue:'Quick stir-fry technique from China (abbr.)'},
-        {num:8,row:2,col:6,len:5,clue:'Cooking low and slow in liquid'},
+        {num:6,row:0,col:3,len:5,clue:'Japanese high-heat grilling method'},
+        {num:7,row:0,col:7,len:4,clue:'High-heat wok cooking technique'},
+        {num:8,row:2,col:6,len:5,clue:'Slow cook in liquid — braise and ___'},
       ]
     },
-    hard: {
-      rows:9,cols:11,
+    hard:{
+      rows:9,cols:10,
+      //       0    1    2    3    4    5    6    7    8    9
       sol:[
-        [0,0,'M','A','I','L','L','A','R','D',0],
-        [0,0,'I',0,0,0,0,0,0,0,0],
-        [0,0,'S','O','U','S','V','I','D','E',0],
-        [0,0,'E',0,0,0,0,0,0,0,0],
-        [0,'E','M','U','L','S','I','F','Y',0,0],
-        [0,0,'P',0,0,0,0,0,0,0,0],
-        [0,0,'L','A','C','T','O','B','A','C',0],
-        [0,0,'A',0,0,0,0,0,0,0,0],
-        [0,0,'C','O','N','F','I','T',0,0,0],
+        [ 0,   0,  'M', 'A', 'I', 'L', 'L', 'A', 'R', 'D'], // 0 MAILLARD across
+        [ 0,   0,  'I',  0,   0,   0,   0,   0,   0,   0 ], // 1
+        [ 0,   0,  'S', 'O', 'U', 'S', 'V', 'I', 'D', 'E'], // 2 SOUSVIDE across
+        [ 0,   0,  'E',  0,   0,   0,   0,   0,   0,   0 ], // 3
+        [ 0,  'E', 'M', 'U', 'L', 'S', 'I', 'F', 'Y',  0 ], // 4 EMULSIFY across
+        [ 0,   0,  'P',  0,   0,   0,   0,   0,   0,   0 ], // 5
+        [ 0,   0,  'L', 'A', 'C', 'T', 'O', 'S', 'E',  0 ], // 6 LACTOSE across
+        [ 0,   0,  'A',  0,   0,   0,   0,   0,   0,   0 ], // 7
+        [ 0,   0,  'C', 'O', 'N', 'F', 'I', 'T',  0,   0 ], // 8 CONFIT across
       ],
       across:[
-        {num:1,row:0,col:2,len:8,clue:'Browning reaction that creates flavor when cooking'},
+        {num:1,row:0,col:2,len:8,clue:'Browning reaction that creates deep cooked flavors'},
         {num:2,row:2,col:2,len:8,clue:'French precision cooking in vacuum-sealed bags'},
-        {num:3,row:4,col:1,len:8,clue:'Blend fat and water into stable mixture'},
-        {num:4,row:6,col:2,len:8,clue:'Probiotic bacteria in yogurt (first 8 letters)'},
-        {num:5,row:8,col:2,len:6,clue:'Preserve by slow-cooking in its own fat'},
+        {num:3,row:4,col:1,len:8,clue:'Blend oil and water into a stable mixture'},
+        {num:4,row:6,col:2,len:7,clue:'Milk sugar found in dairy products'},
+        {num:5,row:8,col:2,len:6,clue:'Preserve by slow cooking in its own fat'},
       ],
       down:[
-        {num:6,row:0,col:2,len:9,clue:'Study of physical cooking chemistry'},
-        {num:7,row:0,col:9,len:4,clue:'Concentration technique: reduce a ___'},
+        {num:6,row:0,col:2,len:9,clue:'Study of cooking science: molecular ___'},
+        {num:7,row:0,col:9,len:4,clue:'Sauce thickener: ___tion (reduction)'},
       ]
     }
   }
+
 };
 
 // ── STATE ────────────────────────────────────
@@ -4200,7 +4224,6 @@ let cellMap={};
 let cwUserData={};
 let timerInterval=null;
 let timerSec=0;
-let activeClueKey=null; // 'a_1' or 'd_1'
 let activeDir='across';
 
 const cgrid=document.getElementById('cwGrid');
@@ -4208,8 +4231,7 @@ const cgrid=document.getElementById('cwGrid');
 function getPuzzle(){
   const topic=PUZZLES[currentTopic];
   if(!topic) return PUZZLES.marketing.easy;
-  const diff=topic[currentDiff];
-  return diff||topic.easy;
+  return topic[currentDiff]||topic.easy;
 }
 
 // ── GRID BUILD ───────────────────────────────
@@ -4218,132 +4240,155 @@ function buildCrossword(){
   const {rows,cols,sol,across,down}=activeData;
   cellMap={};cwUserData={};
   cgrid.innerHTML='';
-  // Number lookup
+
+  // Build number lookup: first clue at each cell wins
   const numberedCells={};
-  [...across,...down].forEach(cl=>{
+  [...(across||[]),...(down||[])].forEach(cl=>{
     const k=cl.row+'_'+cl.col;
-    if(!numberedCells[k]) numberedCells[k]=cl.num;
+    if(numberedCells[k]===undefined) numberedCells[k]=cl.num;
   });
+
   for(let r=0;r<rows;r++){
     const rowEl=document.createElement('div');
     rowEl.className='cw-row';
     const rowData=sol[r]||[];
     for(let c=0;c<cols;c++){
-      const cell=document.createElement('div');
-      cell.className='cw-cell';
+      const cellDiv=document.createElement('div');
+      cellDiv.className='cw-cell';
       const v=rowData[c];
-      if(!v||v===0){
-        cell.classList.add('black');
+      const isBlack=(!v||v===0);
+      if(isBlack){
+        cellDiv.classList.add('black');
       } else {
         const inp=document.createElement('input');
-        inp.type='text';inp.maxLength=1;inp.autocomplete='off';inp.spellcheck=false;
+        inp.type='text';inp.maxLength=1;inp.autocomplete='off';
+        inp.setAttribute('autocorrect','off');inp.setAttribute('spellcheck','false');
         inp.dataset.row=r;inp.dataset.col=c;
         const key=r+'_'+c;
         cellMap[key]=inp;
         inp.value=cwUserData[key]||'';
-        inp.addEventListener('focus',()=>highlightClue(r,c));
+        inp.addEventListener('focus',()=>highlightWord(r,c));
         inp.addEventListener('input',e=>{
-          const val=e.target.value.toUpperCase().replace(/[^A-Z]/g,'');
+          const raw=e.target.value;
+          const val=raw.toUpperCase().replace(/[^A-Z]/g,'');
           e.target.value=val;
-          cwUserData[key]=val;
-          if(val) advanceCursor(r,c);
+          if(val){cwUserData[key]=val;advanceCursor(r,c);}
         });
         inp.addEventListener('keydown',e=>{
-          if(e.key==='Backspace'&&!inp.value) retreatCursor(r,c);
-          if(e.key==='ArrowRight') moveCursor(r,c+1);
-          if(e.key==='ArrowLeft') moveCursor(r,c-1);
-          if(e.key==='ArrowDown') moveCursor(r+1,c);
-          if(e.key==='ArrowUp') moveCursor(r-1,c);
-          if(e.key==='Tab'){e.preventDefault();cycleClue(e.shiftKey?-1:1);}
+          if(e.key==='Backspace'){
+            if(inp.value){inp.value='';delete cwUserData[key];}
+            else retreatCursor(r,c);
+            e.preventDefault();
+          }
+          if(e.key==='ArrowRight'){moveFocus(r,c+1);e.preventDefault();}
+          if(e.key==='ArrowLeft'){moveFocus(r,c-1);e.preventDefault();}
+          if(e.key==='ArrowDown'){moveFocus(r+1,c);e.preventDefault();}
+          if(e.key==='ArrowUp'){moveFocus(r-1,c);e.preventDefault();}
+          if(e.key==='Tab'){e.preventDefault();cycleActiveClue(e.shiftKey?-1:1);}
         });
-        cell.appendChild(inp);
+        cellDiv.appendChild(inp);
         if(numberedCells[key]!==undefined){
-          const numEl=document.createElement('span');
-          numEl.className='cw-num';numEl.textContent=numberedCells[key];
-          cell.appendChild(numEl);
+          const numSpan=document.createElement('span');
+          numSpan.className='cw-num';
+          numSpan.textContent=numberedCells[key];
+          cellDiv.appendChild(numSpan);
         }
       }
-      rowEl.appendChild(cell);
+      rowEl.appendChild(cellDiv);
     }
     cgrid.appendChild(rowEl);
   }
   buildCrosswordClues();
   startTimer();
   document.getElementById('cwStatus').textContent='';
-  // Focus first cell
+  // Auto-focus first white cell
   const firstKey=Object.keys(cellMap)[0];
-  if(firstKey&&cellMap[firstKey]) setTimeout(()=>cellMap[firstKey].focus(),100);
+  if(firstKey) setTimeout(()=>{if(cellMap[firstKey])cellMap[firstKey].focus();},120);
 }
 
-function advanceCursor(r,c){
-  // Try to advance in activeDir
-  if(activeDir==='across'){moveCursor(r,c+1);}
-  else{moveCursor(r+1,c);}
-}
-function retreatCursor(r,c){
-  if(activeDir==='across'){moveCursor(r,c-1);}
-  else{moveCursor(r-1,c);}
-}
-function moveCursor(r,c){
-  const k=r+'_'+c;
-  if(cellMap[k]) cellMap[k].focus();
-}
-function cycleClue(dir){
-  const {across,down}=activeData;
-  const all=[...across.map(cl=>({...cl,dir:'across'})),...down.map(cl=>({...cl,dir:'down'}))];
-  let idx=all.findIndex(cl=>cl.dir===activeDir&&activeClueKey===cl.dir+'_'+cl.num);
-  idx=(idx+dir+all.length)%all.length;
-  const cl=all[idx];
-  activeDir=cl.dir;activeClueKey=cl.dir+'_'+cl.num;
-  moveCursor(cl.row,cl.col);
-}
+// ── NAVIGATION ───────────────────────────────
+let activeClueRef=null; // {dir,clue}
 
-function highlightClue(r,c){
-  // Remove previous highlights
-  document.querySelectorAll('.cw-cell.highlighted').forEach(el=>el.classList.remove('highlighted'));
+function highlightWord(r,c){
+  // Clear old highlights and active clue labels
+  document.querySelectorAll('.cw-cell.cw-hl').forEach(el=>el.classList.remove('cw-hl'));
   document.querySelectorAll('.cw-clue.active').forEach(el=>el.classList.remove('active'));
-  // Find which clues cover this cell
+
   const {across,down}=activeData;
-  // Find across clue
   const acClue=across.find(cl=>cl.row===r&&c>=cl.col&&c<cl.col+cl.len);
   const dnClue=down.find(cl=>cl.col===c&&r>=cl.row&&r<cl.row+cl.len);
-  let useClue=null;
+
+  let chosen=null;
   if(acClue&&dnClue){
-    useClue=(activeDir==='across')?acClue:dnClue;
-  } else if(acClue){useClue=acClue;activeDir='across';}
-  else if(dnClue){useClue=dnClue;activeDir='down';}
-  if(!useClue) return;
-  activeClueKey=(acClue&&useClue===acClue?'across':'down')+'_'+useClue.num;
-  // Highlight cells in clue
-  const dir=acClue&&useClue===acClue?'across':'down';
-  for(let i=0;i<useClue.len;i++){
-    const k=dir==='across'?(useClue.row+'_'+(useClue.col+i)):((useClue.row+i)+'_'+useClue.col);
-    if(cellMap[k]) cellMap[k].parentElement.classList.add('highlighted');
+    // Toggle direction on repeated click
+    if(activeClueRef&&activeClueRef.dir==='across'&&activeClueRef.clue===acClue){
+      chosen={dir:'down',clue:dnClue};
+    } else if(activeClueRef&&activeClueRef.dir==='down'&&activeClueRef.clue===dnClue){
+      chosen={dir:'across',clue:acClue};
+    } else {
+      chosen=activeDir==='across'?{dir:'across',clue:acClue}:{dir:'down',clue:dnClue};
+    }
+  } else if(acClue){chosen={dir:'across',clue:acClue};}
+  else if(dnClue){chosen={dir:'down',clue:dnClue};}
+  if(!chosen) return;
+
+  activeClueRef=chosen;
+  activeDir=chosen.dir;
+  const cl=chosen.clue;
+  const isAcross=(chosen.dir==='across');
+
+  // Highlight all cells in this word
+  for(let i=0;i<cl.len;i++){
+    const k=isAcross?(cl.row+'_'+(cl.col+i)):((cl.row+i)+'_'+cl.col);
+    if(cellMap[k]) cellMap[k].parentElement.classList.add('cw-hl');
   }
-  // Highlight clue text
-  const clueId=(dir==='across'?'cwAcross':'cwDown');
-  document.querySelectorAll('#'+clueId+' .cw-clue').forEach(el=>{
-    if(el.dataset.num==useClue.num) el.classList.add('active');
+  // Highlight clue in list
+  const listId=isAcross?'cwAcross':'cwDown';
+  document.querySelectorAll('#'+listId+' .cw-clue').forEach(el=>{
+    if(parseInt(el.dataset.num)===cl.num) el.classList.add('active');
   });
 }
 
+function advanceCursor(r,c){
+  if(activeDir==='across') moveFocus(r,c+1);
+  else moveFocus(r+1,c);
+}
+function retreatCursor(r,c){
+  if(activeDir==='across') moveFocus(r,c-1);
+  else moveFocus(r-1,c);
+}
+function moveFocus(r,c){
+  const k=r+'_'+c;
+  if(cellMap[k]){cellMap[k].focus();}
+}
+function cycleActiveClue(dir){
+  const {across,down}=activeData;
+  const all=[...across.map(cl=>({dir:'across',clue:cl})),...down.map(cl=>({dir:'down',clue:cl}))];
+  let idx=activeClueRef?all.findIndex(x=>x.dir===activeClueRef.dir&&x.clue===activeClueRef.clue):-1;
+  idx=(idx+dir+all.length)%all.length;
+  const next=all[idx];
+  activeDir=next.dir;activeClueRef=next;
+  moveFocus(next.clue.row,next.clue.col);
+}
+
+// ── CLUE LIST BUILD ───────────────────────────
 function buildCrosswordClues(){
   const {across,down}=activeData;
   const acDiv=document.getElementById('cwAcross');
   const dnDiv=document.getElementById('cwDown');
   acDiv.innerHTML='';dnDiv.innerHTML='';
-  across.forEach(cl=>{
+  (across||[]).forEach(cl=>{
     const d=document.createElement('div');
     d.className='cw-clue';d.dataset.num=cl.num;
-    d.textContent=cl.num+'. '+cl.clue;
-    d.addEventListener('click',()=>{activeDir='across';moveCursor(cl.row,cl.col);});
+    d.innerHTML='<strong>'+cl.num+'.</strong> '+cl.clue;
+    d.addEventListener('click',()=>{activeDir='across';activeClueRef={dir:'across',clue:cl};moveFocus(cl.row,cl.col);});
     acDiv.appendChild(d);
   });
-  down.forEach(cl=>{
+  (down||[]).forEach(cl=>{
     const d=document.createElement('div');
     d.className='cw-clue';d.dataset.num=cl.num;
-    d.textContent=cl.num+'. '+cl.clue;
-    d.addEventListener('click',()=>{activeDir='down';moveCursor(cl.row,cl.col);});
+    d.innerHTML='<strong>'+cl.num+'.</strong> '+cl.clue;
+    d.addEventListener('click',()=>{activeDir='down';activeClueRef={dir:'down',clue:cl};moveFocus(cl.row,cl.col);});
     dnDiv.appendChild(d);
   });
 }
@@ -4352,11 +4397,11 @@ function buildCrosswordClues(){
 function startTimer(){
   clearInterval(timerInterval);timerSec=0;
   const el=document.getElementById('cwTimer');
-  el.textContent='⏱ 0:00';
+  if(el) el.textContent='⏱ 0:00';
   timerInterval=setInterval(()=>{
     timerSec++;
     const m=Math.floor(timerSec/60),s=timerSec%60;
-    el.textContent='⏱ '+m+':'+(s<10?'0':'')+s;
+    if(el) el.textContent='⏱ '+m+':'+(s<10?'0':'')+s;
   },1000);
 }
 
@@ -4365,22 +4410,23 @@ function checkCrossword(){
   const {rows,cols,sol}=activeData;
   let correct=0,total=0;
   for(let r=0;r<rows;r++){
-    for(let c=0;c<(sol[r]||[]).length;c++){
-      const v=sol[r][c];
+    const rowData=sol[r]||[];
+    for(let c=0;c<cols;c++){
+      const v=rowData[c];
       if(v&&v!==0){
         total++;
         const k=r+'_'+c;
-        const cell=cellMap[k];
-        if(cell){
-          cell.parentElement.classList.remove('correct','wrong');
-          if(cell.value===v){correct++;cell.parentElement.classList.add('correct');}
-          else if(cell.value){cell.parentElement.classList.add('wrong');}
+        const inp=cellMap[k];
+        if(inp){
+          inp.parentElement.classList.remove('correct','wrong');
+          if(inp.value===v){correct++;inp.parentElement.classList.add('correct');}
+          else if(inp.value){inp.parentElement.classList.add('wrong');}
         }
       }
     }
   }
   const st=document.getElementById('cwStatus');
-  if(correct===total){
+  if(correct===total&&total>0){
     clearInterval(timerInterval);
     const m=Math.floor(timerSec/60),s=timerSec%60;
     st.textContent='🏆 PERFECT! Solved in '+(m>0?m+'m ':'')+s+'s!';
@@ -4394,8 +4440,9 @@ function checkCrossword(){
 function revealCrossword(){
   const {rows,cols,sol}=activeData;
   for(let r=0;r<rows;r++){
-    for(let c=0;c<(sol[r]||[]).length;c++){
-      const v=sol[r][c];
+    const rowData=sol[r]||[];
+    for(let c=0;c<cols;c++){
+      const v=rowData[c];
       if(v&&v!==0){
         const k=r+'_'+c;
         if(cellMap[k]){cellMap[k].value=v;cwUserData[k]=v;cellMap[k].parentElement.classList.add('correct');}
@@ -4403,7 +4450,7 @@ function revealCrossword(){
     }
   }
   clearInterval(timerInterval);
-  document.getElementById('cwStatus').textContent='💡 Revealed! Study up and try again.';
+  document.getElementById('cwStatus').textContent='💡 Revealed! Study the answers and try a new puzzle.';
 }
 
 function resetCrossword(){
@@ -4644,8 +4691,25 @@ const comboEl=document.getElementById('bdCombo');
 const statusEl=document.getElementById('bdStatus');
 const levelBadge=document.getElementById('bdLevelBadge');
 
-const COLS=10,ROWS=20,CELL=30;
+const COLS=10,ROWS=20;
+// Responsive cell size: shrink on narrow screens
+let CELL=30;
+function calcCell(){
+  const maxW=canvas.parentElement?Math.min(canvas.parentElement.offsetWidth,320):300;
+  return Math.max(24,Math.floor(maxW/COLS));
+}
+CELL=calcCell();
 canvas.width=COLS*CELL; canvas.height=ROWS*CELL;
+window.addEventListener('resize',()=>{
+  const newCell=calcCell();
+  if(newCell!==CELL){
+    // reassign CELL — note: JS closures capture CELL at creation
+    // simple approach: just update canvas dimensions, drawBoard will use CELL
+    CELL=newCell;
+    canvas.width=COLS*CELL;canvas.height=ROWS*CELL;
+    drawBoard();if(nextPiece)drawNext();if(holdPiece)drawHold();
+  }
+});
 
 const SKINS={
   neon:{bg:'#000',grid:'rgba(0,229,255,0.05)',border:'rgba(0,229,255,.4)',
@@ -4907,12 +4971,9 @@ document.getElementById('bdPause').addEventListener('click',()=>{
   if(!paused){updateDropTimer();}drawBoard();
 });
 
-document.querySelectorAll('[data-bdskin]').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('[data-bdskin]').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');skin=SKINS[btn.dataset.bdskin];
-    drawBoard();drawNext();drawHold();
-  });
+document.getElementById('bdSkinSelect').addEventListener('change',function(){
+  skin=SKINS[this.value]||SKINS.neon;
+  drawBoard();drawNext();drawHold();
 });
 
 board=emptyBoard();
