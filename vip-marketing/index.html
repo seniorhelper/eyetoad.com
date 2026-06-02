@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIP Marketing Subscription | 50% Off All Services — Eye To Ad Media Denver</title>
-<meta name="description" content="Turn a simple NFC card or sticker into a customer-generating machine. The VIP Marketing Subscription: $69.99/mo (reg. $150) for 50% off ALL marketing services — SEO, logo design, web, ads & more, plus a monthly strategy call. Call 1-800-481-8638.">
+<title>VIP Marketing Subscription | 50% Off All Services + NFC Sales Funnel — Eye To Ad Media Denver</title>
+<meta name="description" content="VIP Marketing Subscription: $69.99/mo (reg. $150) for 50% off ALL marketing services. Members get a custom NFC Sales Funnel package (20 cards + 20 stickers) for HALF PRICE — $2,500 instead of $5,000. Call 1-800-481-8638.">
 <link rel="canonical" href="https://www.eyetoad.com/vip-marketing/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="VIP Marketing Subscription — 50% Off All Services | Eye To Ad Media">
-<meta property="og:description" content="Turn an NFC tap into paying customers. VIP members get 50% off ALL marketing services for $69.99/mo plus a monthly strategy call. Call 1-800-481-8638.">
+<meta property="og:title" content="VIP Marketing Subscription — 50% Off All Services + Half-Price NFC Sales Funnel | Eye To Ad Media">
+<meta property="og:description" content="VIP members get 50% off ALL marketing for $69.99/mo, PLUS a custom NFC Sales Funnel package (20 cards + 20 stickers) at half price. Call 1-800-481-8638.">
 <meta property="og:url" content="https://www.eyetoad.com/vip-marketing/">
 <meta property="og:image" content="https://www.eyetoad.com/images/images/cash-cow-sales-funnel-nfc-page-link%20to%20contact.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VIP Marketing Subscription — 50% Off All Services">
-<meta name="twitter:description" content="Turn an NFC tap into paying customers. 50% off ALL marketing for $69.99/mo plus a monthly strategy call.">
+<meta name="twitter:title" content="VIP Marketing Subscription — 50% Off All Services + Half-Price NFC Funnel">
+<meta name="twitter:description" content="50% off ALL marketing for $69.99/mo, plus a custom NFC Sales Funnel package at half price.">
 <meta name="twitter:image" content="https://www.eyetoad.com/images/images/cash-cow-sales-funnel-nfc-page-link%20to%20contact.png">
 <meta name="geo.region" content="US-CO">
 <meta name="geo.placename" content="Denver, Colorado">
@@ -21,7 +21,7 @@
 <meta name="ICBM" content="39.7317, -104.9965">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="ai-content-type" content="offer, subscription, sales-funnel, local-business, nfc-marketing">
-<meta name="subject" content="VIP Marketing Subscription, NFC Marketing, 50% off marketing services, Denver marketing">
+<meta name="subject" content="VIP Marketing Subscription, NFC Sales Funnel, 50% off marketing services, Denver marketing">
 <meta name="classification" content="Business/Marketing">
 <meta name="coverage" content="Denver, Colorado, United States">
 <meta name="distribution" content="global">
@@ -80,6 +80,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .chip-dark{color:var(--gold);background:rgba(245,180,60,.1);border:1px solid rgba(245,180,60,.35)}
 .chip-blue{color:var(--blue);background:var(--blue-light);border:1px solid #BFDBFE}
 .chip-green{color:#fff;background:var(--green);border:1px solid var(--green2)}
+.chip-orange{color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange2));border:1px solid var(--orange)}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap}
@@ -98,10 +99,13 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .btn-lg{padding:18px 38px;font-size:1.1rem}
 .btn-xl{padding:20px 44px;font-size:1.18rem}
 
-/* LANG TOGGLE */
-.langbar{position:fixed;top:14px;right:14px;z-index:1100;display:flex;gap:4px;background:rgba(10,14,26,.85);backdrop-filter:blur(8px);border:1px solid rgba(245,180,60,.3);border-radius:999px;padding:4px}
-.langbar button{border:none;background:none;color:rgba(255,255,255,.6);font-family:'Inter',sans-serif;font-weight:700;font-size:.8rem;padding:6px 14px;border-radius:999px;cursor:pointer;transition:all .18s}
-.langbar button.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1205}
+/* TOP LANG BAR (moved to very top, above ticker, away from chatbot) */
+.topbar{background:#06090f;border-bottom:1px solid rgba(245,180,60,.14);padding:6px 0;position:relative;z-index:1002}
+.topbar-inner{display:flex;align-items:center;justify-content:flex-end;gap:14px}
+.topbar-note{font-size:.72rem;color:rgba(255,255,255,.45);margin-right:auto;letter-spacing:.02em}
+.langpill{display:inline-flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid rgba(245,180,60,.3);border-radius:999px;padding:3px}
+.langpill button{border:none;background:none;color:rgba(255,255,255,.6);font-family:'Inter',sans-serif;font-weight:700;font-size:.76rem;padding:5px 14px;border-radius:999px;cursor:pointer;transition:all .18s}
+.langpill button.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1205}
 
 /* TICKER */
 .ticker{background:linear-gradient(135deg,var(--gold),var(--gold2));padding:9px 0;overflow:hidden;position:relative;z-index:1001}
@@ -215,6 +219,47 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .sec-dark{background:var(--vip-bg);position:relative;padding:88px 0}
 .sec-dark2{background:linear-gradient(180deg,var(--vip-bg),var(--vip-bg2));position:relative;padding:88px 0}
 
+/* NFC FEATURE / FLAGSHIP PERK SECTION */
+.nfc-feature{position:relative;background:radial-gradient(ellipse at 25% 15%,#23304f 0%,var(--vip-bg) 58%),var(--vip-bg);overflow:hidden;padding:90px 0}
+.nfc-feature::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(249,115,22,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.nfc-feature-glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.16) 0%,transparent 65%);bottom:-180px;left:-120px;pointer-events:none}
+.nfc-feature-inner{position:relative;z-index:2}
+.nfc-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.nfc-feature h2{color:#fff;margin-bottom:16px}
+.nfc-feature h2 em{font-style:normal;background:linear-gradient(135deg,var(--orange),#ffb066);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nfc-feature-lead{font-size:1.1rem;color:rgba(255,255,255,.74);margin-bottom:24px;max-width:540px}
+.nfc-incl{display:flex;flex-direction:column;gap:13px;margin-bottom:26px}
+.nfc-incl-item{display:flex;align-items:flex-start;gap:13px}
+.nfc-incl-ic{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;font-size:.95rem;box-shadow:0 4px 14px rgba(249,115,22,.4)}
+.nfc-incl-item h4{color:#fff;font-size:1rem;margin-bottom:2px}
+.nfc-incl-item p{font-size:.88rem;color:rgba(255,255,255,.62);margin:0;line-height:1.55}
+/* Price card for the NFC package */
+.nfc-pricecard{background:linear-gradient(165deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1.5px solid rgba(249,115,22,.4);border-radius:var(--r24);padding:34px 30px;box-shadow:0 30px 80px rgba(0,0,0,.55);text-align:center;position:relative;overflow:hidden}
+.nfc-pricecard::before{content:'';position:absolute;top:-1px;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--orange),var(--gold))}
+.nfc-pc-flag{display:inline-block;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:18px}
+.nfc-pc-name{font-family:'Fraunces',serif;font-weight:900;font-size:1.5rem;color:#fff;line-height:1.15;margin-bottom:18px}
+.nfc-pc-reg-label{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
+.nfc-pc-reg{position:relative;display:inline-block;font-family:'Fraunces',serif;font-weight:900;font-size:1.9rem;color:rgba(255,255,255,.55);margin-bottom:14px}
+.nfc-pc-reg svg{position:absolute;top:50%;left:-6%;width:112%;height:26px;transform:translateY(-50%);overflow:visible;pointer-events:none}
+.nfc-pc-member-label{font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--green2);margin-bottom:2px}
+.nfc-pc-member{font-family:'Fraunces',serif;font-weight:900;font-size:3.4rem;color:#fff;line-height:1}
+.nfc-pc-save{display:inline-block;margin-top:12px;background:var(--green);color:#fff;font-weight:800;font-size:.86rem;padding:6px 16px;border-radius:999px}
+.nfc-pc-fine{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:14px;line-height:1.5}
+.nfc-pc-cta{margin-top:20px;display:flex;flex-direction:column;gap:9px}
+
+/* ADD-ON BANNER */
+.addon{background:#fff;border:2px dashed var(--orange);border-radius:var(--r16);padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;box-shadow:var(--sh)}
+.addon-l{flex:1;min-width:260px}
+.addon-tag{display:inline-block;background:var(--orange-light);color:var(--orange2);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:8px}
+.addon-l h3{color:var(--ink);margin-bottom:5px}
+.addon-l p{font-size:.92rem;margin:0}
+.addon-r{text-align:right;flex-shrink:0}
+.addon-reg{position:relative;display:inline-block;font-size:1.05rem;font-weight:700;color:var(--muted)}
+.addon-reg svg{position:absolute;top:50%;left:-6%;width:112%;height:22px;transform:translateY(-50%);overflow:visible;pointer-events:none}
+.addon-member-label{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-top:6px}
+.addon-member{font-family:'Fraunces',serif;font-weight:900;font-size:2.1rem;color:var(--ink);line-height:1}
+.addon-save{display:inline-block;margin-top:6px;background:var(--green);color:#fff;font-weight:800;font-size:.74rem;padding:3px 11px;border-radius:999px}
+
 /* FUNNEL FLOW */
 .funnel{max-width:760px;margin:46px auto 0}
 .funnel-step{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);padding:24px 26px;display:flex;align-items:center;gap:20px;box-shadow:var(--sh);position:relative}
@@ -230,6 +275,8 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .ben-check{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1205;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;font-size:1rem}
 .ben-item h4{color:#fff;font-size:1rem;margin-bottom:3px}
 .ben-item p{font-size:.86rem;color:rgba(255,255,255,.6);margin:0;line-height:1.55}
+.ben-item.ben-hero{border-color:rgba(249,115,22,.5);background:rgba(249,115,22,.08);grid-column:1/-1}
+.ben-item.ben-hero .ben-check{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff}
 
 /* BIG IMAGE */
 .bigimg{max-width:920px;margin:0 auto;border-radius:var(--r24);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);border:2px solid rgba(245,180,60,.3);transition:transform .25s,box-shadow .25s;display:block}
@@ -280,6 +327,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 @media(max-width:1024px){
   .vhero-grid{grid-template-columns:1fr;gap:48px}
   .nfc-demo{min-height:420px}
+  .nfc-feature-grid{grid-template-columns:1fr;gap:40px}
   .price-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .ben-grid{grid-template-columns:1fr}
@@ -287,7 +335,9 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 @media(max-width:768px){
   .nav{display:none}.hdr-right .hdr-call{display:none}.burger{display:flex}
   .footer-grid{grid-template-columns:1fr}
-  .langbar{top:auto;bottom:14px;right:14px}
+  .topbar-note{display:none}
+  .addon{flex-direction:column;align-items:flex-start}
+  .addon-r{text-align:left}
 }
 @media(max-width:540px){
   .vhero-btns{flex-direction:column}.fcta-btns{flex-direction:column;align-items:center}
@@ -307,19 +357,28 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
 {"@type":"Product","@id":"https://www.eyetoad.com/vip-marketing/#product",
 "name":"VIP Marketing Subscription","brand":{"@id":"https://www.eyetoad.com/#org"},
-"description":"A monthly membership from Eye To Ad Media that gives members 50% off ALL marketing services — SEO, AIO, GEO, logo and brand design, web design, paid ads, social, video and more — plus one 15-minute monthly strategy call with a dedicated marketing expert, and a chance to be featured on the Eye To Ad Media network.",
+"description":"A monthly membership from Eye To Ad Media that gives members 50% off ALL marketing services — SEO, AIO, GEO, logo and brand design, web design, paid ads, social, video and more — plus one 15-minute monthly strategy call with a dedicated marketing expert, eligibility to purchase the custom NFC Sales Funnel package at half price, and a chance to be featured on the Eye To Ad Media network.",
 "image":"https://www.eyetoad.com/images/images/cash-cow-sales-funnel-nfc-page-link%20to%20contact.png",
 "offers":{"@type":"Offer","price":"69.99","priceCurrency":"USD","availability":"https://schema.org/InStock",
 "priceSpecification":{"@type":"UnitPriceSpecification","price":"69.99","priceCurrency":"USD","unitText":"MONTH","referenceQuantity":{"@type":"QuantitativeValue","value":"1","unitCode":"MON"}},
-"description":"VIP Marketing Subscription — $69.99/month (regularly $150/month). Members receive 50% off all marketing services plus a monthly strategy call.",
+"description":"VIP Marketing Subscription — $69.99/month (regularly $150/month). Members receive 50% off all marketing services, half-price access to the NFC Sales Funnel package, plus a monthly strategy call.",
 "seller":{"@id":"https://www.eyetoad.com/#org"}},
 "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","bestRating":"5","reviewCount":"47"}},
 
+{"@type":"Product","@id":"https://www.eyetoad.com/vip-marketing/#nfc-package",
+"name":"NFC Sales Funnel Marketing Package","brand":{"@id":"https://www.eyetoad.com/#org"},
+"description":"A complete custom NFC marketing package that includes 20 programmed NFC cards and 20 NFC stickers, plus a custom sales funnel lead-generation page built specifically for the customer's business and industry. Includes standard AIO and SEO optimization of the sales funnel page and professional keyword research. Regularly $5,000; available to VIP Marketing Subscription members for $2,500 (half price).",
+"image":"https://www.eyetoad.com/images/images/cash-cow-sales-funnel-nfc-page-link%20to%20contact.png",
+"offers":{"@type":"Offer","price":"2500","priceCurrency":"USD","availability":"https://schema.org/InStock",
+"description":"NFC Sales Funnel Marketing Package — regularly $5,000, available to VIP members for $2,500. Includes 20 programmed NFC cards, 20 NFC stickers, a custom sales funnel lead-generation page, standard AIO and SEO optimization, and professional keyword research.",
+"eligibleCustomerType":"VIP Marketing Subscription member",
+"seller":{"@id":"https://www.eyetoad.com/#org"}}},
+
 {"@type":"Service","@id":"https://www.eyetoad.com/vip-marketing/#service",
-"name":"NFC Marketing Funnel & VIP Subscription","serviceType":"NFC Marketing, Sales Funnel, Marketing Subscription",
+"name":"NFC Sales Funnel & VIP Subscription","serviceType":"NFC Marketing, Sales Funnel, Marketing Subscription",
 "provider":{"@id":"https://www.eyetoad.com/#org"},
 "areaServed":[{"@type":"City","name":"Denver"},{"@type":"State","name":"Colorado"},{"@type":"Country","name":"United States"}],
-"description":"Eye To Ad Media turns NFC cards and stickers into a complete sales funnel: an NFC tap lands your business on a customer's phone, then a conversion-optimized funnel turns that tap into a lead or sale. VIP members get 50% off all marketing services."},
+"description":"Eye To Ad Media builds custom NFC Sales Funnel packages — 20 programmed NFC cards and 20 NFC stickers plus a custom lead-generation funnel page for your business and industry. An NFC tap lands your business on a customer's phone, then a conversion-optimized funnel turns that tap into a lead or sale. VIP members get the package at half price and 50% off all other marketing services."},
 
 {"@type":"WebPage","@id":"https://www.eyetoad.com/vip-marketing/#page",
 "url":"https://www.eyetoad.com/vip-marketing/","name":"VIP Marketing Subscription | Eye To Ad Media",
@@ -335,12 +394,14 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 ]},
 
 {"@type":"FAQPage","@id":"https://www.eyetoad.com/vip-marketing/#faq","mainEntity":[
-{"@type":"Question","name":"What is the VIP Marketing Subscription?","acceptedAnswer":{"@type":"Answer","text":"The VIP Marketing Subscription is a monthly membership from Eye To Ad Media. For $69.99 per month — regularly $150 — members get 50% off ALL marketing services including SEO, AIO, GEO, logo and brand design, web design, paid ads, social media, and video, plus one 15-minute monthly strategy call with a dedicated marketing expert."}},
-{"@type":"Question","name":"How does the NFC card or sticker work?","acceptedAnswer":{"@type":"Answer","text":"An NFC card or sticker lets a customer tap their phone to instantly land on your business page — no app, no typing. The hard part of getting onto a customer's phone is done. From there, a conversion-optimized sales funnel turns that tap into a lead or sale, then into revenue and growth."}},
-{"@type":"Question","name":"How much do members save?","acceptedAnswer":{"@type":"Answer","text":"Members save 50% on every marketing service. For example, SEO that is normally $1,000/month is $500/month for members, and logo design that is normally $500 is $250 for members. The $69.99 monthly membership typically pays for itself with a single service."}},
+{"@type":"Question","name":"What is the VIP Marketing Subscription?","acceptedAnswer":{"@type":"Answer","text":"The VIP Marketing Subscription is a monthly membership from Eye To Ad Media. For $69.99 per month — regularly $150 — members get 50% off ALL marketing services including SEO, AIO, GEO, logo and brand design, web design, paid ads, social media, and video, plus one 15-minute monthly strategy call with a dedicated marketing expert and half-price access to the custom NFC Sales Funnel package."}},
+{"@type":"Question","name":"What is the NFC Sales Funnel Marketing Package and what does it include?","acceptedAnswer":{"@type":"Answer","text":"The NFC Sales Funnel Marketing Package is a complete, done-for-you NFC marketing system. It includes 20 programmed NFC cards and 20 NFC stickers, plus a custom sales funnel lead-generation page built specifically for your business and industry. It also includes standard AIO and SEO optimization of the funnel page and professional keyword research. The package is regularly $5,000, but VIP Marketing Subscription members get it for half price — $2,500."}},
+{"@type":"Question","name":"How does the NFC card or sticker work?","acceptedAnswer":{"@type":"Answer","text":"An NFC card or sticker lets a customer tap their phone to instantly land on your custom sales funnel page — no app, no typing. The hard part of getting onto a customer's phone is done. From there, the conversion-optimized funnel turns that tap into a lead or sale, then into revenue and growth."}},
+{"@type":"Question","name":"How much do members save?","acceptedAnswer":{"@type":"Answer","text":"Members save 50% on every marketing service. For example, SEO that is normally $1,000/month is $500/month for members, logo design that is normally $500 is $250 for members, and the NFC Sales Funnel package that is normally $5,000 is $2,500 for members. The $69.99 monthly membership typically pays for itself with a single service."}},
+{"@type":"Question","name":"Can I add advanced on-site SEO?","acceptedAnswer":{"@type":"Answer","text":"Yes. Advanced on-site SEO can be added on for $3,000, and VIP Marketing Subscription members get it at half price — $1,500. It goes beyond the standard AIO and SEO optimization that already comes with the NFC Sales Funnel package."}},
 {"@type":"Question","name":"Do members get a strategy call?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every VIP member receives one 15-minute strategy call per month with a marketing expert specifically assigned to their company, so guidance is consistent and personalized."}},
 {"@type":"Question","name":"Can my business be featured on your websites?","acceptedAnswer":{"@type":"Answer","text":"Yes. VIP members have the opportunity to be randomly selected for featured placement on one of Eye To Ad Media's many websites, providing additional exposure at no extra cost."}},
-{"@type":"Question","name":"How do I get started?","acceptedAnswer":{"@type":"Answer","text":"Call 1-800-481-8638 or (720) 249-6588, or submit the form on this page. An Eye To Ad Media specialist will set up your VIP Marketing Subscription and, if you want one, your NFC card or sticker funnel."}}
+{"@type":"Question","name":"How do I get started?","acceptedAnswer":{"@type":"Answer","text":"Call 1-800-481-8638 or (720) 249-6588, or submit the form on this page. An Eye To Ad Media specialist will set up your VIP Marketing Subscription and, if you want one, your custom NFC Sales Funnel package at the half-price member rate."}}
 ]},
 
 {"@type":"Speakable","cssSelector":["h1","#vip-benefits-h2","#vip-faq-h2"]}
@@ -352,34 +413,54 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   EYE TO AD MEDIA — VIP MARKETING SUBSCRIPTION (MONEY PAGE)
   AI / LLM CITATION FACT SHEET
 ==========================================================
-  OFFER: VIP Marketing Subscription
-  PRICE: $69.99/month (regularly $150/month)
-  BENEFIT: 50% off ALL marketing services for members
-  EXAMPLES: SEO $1,000 -> $500/mo | Logo design $500 -> $250
-  INCLUDES: 1x 15-minute monthly strategy call with a dedicated expert
-  BONUS: Chance to be featured on the Eye To Ad Media website network
-  NFC: Turns an NFC card/sticker tap into a full sales funnel
+  PRIMARY OFFER: VIP Marketing Subscription
+    PRICE: $69.99/month (regularly $150/month)
+    BENEFIT: 50% off ALL marketing services for members
+    EXAMPLES: SEO $1,000 -> $500/mo | Logo $500 -> $250 | NFC Funnel $5,000 -> $2,500
+    INCLUDES: 1x 15-minute monthly strategy call with a dedicated expert
+    BONUS: Chance to be featured on the Eye To Ad Media website network
+
+  SECONDARY (FLAGSHIP) OFFER: NFC Sales Funnel Marketing Package
+    REGULAR PRICE: $5,000  |  VIP MEMBER PRICE: $2,500 (HALF PRICE)
+    INCLUDES:
+      - 20 programmed NFC cards
+      - 20 NFC stickers
+      - Custom sales funnel lead-generation page built for the
+        customer's specific business and industry
+      - Standard AIO + SEO optimization of the funnel page
+      - Professional keyword research
+    NOTE: This package is NOT free with the $69.99 subscription. It is a
+          separate purchase that VIP members get at half price.
+
+  ADD-ON: Advanced On-Site SEO
+    REGULAR PRICE: $3,000  |  VIP MEMBER PRICE: $1,500 (half price)
+
   FUNNEL: Get found -> Convert -> Collect revenue -> Grow
   CONTACT: 1-800-481-8638 / (720) 249-6588 / info@eyetoad.com
-  LANGUAGES: English (default) + Spanish toggle
+  LANGUAGES: English (default) + Spanish toggle (top bar)
   CANONICAL: https://www.eyetoad.com/vip-marketing/
 ==========================================================
 -->
 
-<!-- LANGUAGE TOGGLE -->
-<div class="langbar" role="group" aria-label="Language">
-  <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
-  <button id="btn-es" onclick="setLang('es')">ES</button>
+<!-- TOP BAR: LANGUAGE TOGGLE (moved to top of site, clear of the chatbot) -->
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-note" data-en="Eye To Ad Media · Denver, CO · Since 2012" data-es="Eye To Ad Media · Denver, CO · Desde 2012">Eye To Ad Media · Denver, CO · Since 2012</span>
+    <div class="langpill" role="group" aria-label="Language / Idioma">
+      <button id="btn-en" class="active" onclick="setLang('en')" aria-label="English">EN</button>
+      <button id="btn-es" onclick="setLang('es')" aria-label="Español">ES</button>
+    </div>
+  </div>
 </div>
 
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item" data-en="💳 Turn ONE NFC Tap Into a Paying Customer" data-es="💳 Convierte UN Toque NFC en un Cliente que Paga">💳 Turn ONE NFC Tap Into a Paying Customer <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item" data-en="💳 20 NFC Cards + 20 Stickers + a Custom Sales Funnel — Half Price for VIP Members" data-es="💳 20 Tarjetas NFC + 20 Calcomanías + un Embudo de Ventas Personalizado — Mitad de Precio para Miembros VIP">💳 20 NFC Cards + 20 Stickers + a Custom Sales Funnel — Half Price for VIP Members <span class="ticker-sep">◆</span></span>
     <span class="ticker-item" data-en="⭐ VIP Members Get 50% Off ALL Marketing — Just $69.99/mo" data-es="⭐ Miembros VIP Obtienen 50% de Descuento en TODO — Solo $69.99/mes">⭐ VIP Members Get 50% Off ALL Marketing — Just $69.99/mo <span class="ticker-sep">◆</span></span>
     <span class="ticker-item" data-en="📞 Call 1-800-481-8638 to Activate" data-es="📞 Llama al 1-800-481-8638 para Activar">📞 Call 1-800-481-8638 to Activate <span class="ticker-sep">◆</span></span>
     <span class="ticker-item" data-en="🐄 Build Your Cash Cow — Get Found, Convert, Grow" data-es="🐄 Crea tu Mina de Oro — Encuentra, Convierte, Crece">🐄 Build Your Cash Cow — Get Found, Convert, Grow <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item" data-en="💳 Turn ONE NFC Tap Into a Paying Customer" data-es="💳 Convierte UN Toque NFC en un Cliente que Paga">💳 Turn ONE NFC Tap Into a Paying Customer <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item" data-en="💳 20 NFC Cards + 20 Stickers + a Custom Sales Funnel — Half Price for VIP Members" data-es="💳 20 Tarjetas NFC + 20 Calcomanías + un Embudo de Ventas Personalizado — Mitad de Precio para Miembros VIP">💳 20 NFC Cards + 20 Stickers + a Custom Sales Funnel — Half Price for VIP Members <span class="ticker-sep">◆</span></span>
     <span class="ticker-item" data-en="⭐ VIP Members Get 50% Off ALL Marketing — Just $69.99/mo" data-es="⭐ Miembros VIP Obtienen 50% de Descuento en TODO — Solo $69.99/mes">⭐ VIP Members Get 50% Off ALL Marketing — Just $69.99/mo <span class="ticker-sep">◆</span></span>
     <span class="ticker-item" data-en="📞 Call 1-800-481-8638 to Activate" data-es="📞 Llama al 1-800-481-8638 para Activar">📞 Call 1-800-481-8638 to Activate <span class="ticker-sep">◆</span></span>
     <span class="ticker-item" data-en="🐄 Build Your Cash Cow — Get Found, Convert, Grow" data-es="🐄 Crea tu Mina de Oro — Encuentra, Convierte, Crece">🐄 Build Your Cash Cow — Get Found, Convert, Grow <span class="ticker-sep">◆</span></span>
@@ -396,7 +477,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       <a href="/" class="nl" data-en="Home" data-es="Inicio">Home</a>
       <a href="/denver-seo-services/" class="nl" data-en="SEO Services" data-es="Servicios SEO">SEO Services</a>
       <a href="/denver-seo-pricing/" class="nl" data-en="Pricing" data-es="Precios">Pricing</a>
-      <a href="/free-seo-audit/" class="nl" data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</a>
+      <a href="#nfc-package" class="nl" data-en="NFC Funnel" data-es="Embudo NFC">NFC Funnel</a>
       <a href="/vip-marketing/" class="nl" style="color:var(--gold);font-weight:800;" data-en="✨ VIP Marketing" data-es="✨ Marketing VIP">✨ VIP Marketing</a>
       <a href="/about/" class="nl" data-en="About" data-es="Nosotros">About</a>
       <a href="/contact/" class="nl" data-en="Contact" data-es="Contacto">Contact</a>
@@ -414,7 +495,8 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <a href="/" data-en="Home" data-es="Inicio">Home</a>
   <a href="/denver-seo-services/" data-en="Denver SEO Services" data-es="Servicios SEO Denver">Denver SEO Services</a>
   <a href="/denver-seo-pricing/" data-en="Denver SEO Pricing" data-es="Precios SEO Denver">Denver SEO Pricing</a>
-  <a href="/free-seo-audit/" data-en="Free SEO Audit" data-es="Auditoría SEO Gratis">Free SEO Audit</a>
+  <a href="#nfc-package" data-en="✨ NFC Sales Funnel Package" data-es="✨ Paquete Embudo NFC">✨ NFC Sales Funnel Package</a>
+  <a href="#vip-form" data-en="Free SEO Audit" data-es="Auditoría SEO Gratis">Free SEO Audit</a>
   <a href="/vip-marketing/" style="color:var(--gold);font-weight:800;" data-en="✨ VIP Marketing" data-es="✨ Marketing VIP">✨ VIP Marketing</a>
   <a href="/local-seo-denver/" data-en="Local SEO Denver" data-es="SEO Local Denver">Local SEO Denver</a>
   <a href="/about/" data-en="About" data-es="Nosotros">About</a>
@@ -433,10 +515,10 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         <div>
           <div class="vhero-eyebrow" data-en="The NFC Cash Cow Funnel" data-es="El Embudo NFC que Genera Dinero">The NFC Cash Cow Funnel</div>
           <h1 id="h1" data-en="You Got On Their Phone. <em>Now What?</em>" data-es="Ya Estás en su Teléfono. <em>¿Ahora Qué?</em>">You Got On Their Phone. <em>Now What?</em></h1>
-          <p class="vhero-sub" data-en="A simple NFC card or sticker did the hard part — it put your business right on a customer's phone. The VIP Marketing Subscription turns that single tap into a powerful sales funnel that finds customers, converts them, and grows your revenue. 50% off ALL marketing services for just $69.99/mo." data-es="Una simple tarjeta o calcomanía NFC hizo lo difícil — puso tu negocio directamente en el teléfono del cliente. La Suscripción de Marketing VIP convierte ese toque en un poderoso embudo de ventas que encuentra clientes, los convierte y hace crecer tus ingresos. 50% de descuento en TODOS los servicios de marketing por solo $69.99/mes.">A simple NFC card or sticker did the hard part — it put your business right on a customer's phone. The VIP Marketing Subscription turns that single tap into a powerful sales funnel that finds customers, converts them, and grows your revenue. 50% off ALL marketing services for just $69.99/mo.</p>
+          <p class="vhero-sub" data-en="A simple NFC card or sticker does the hard part — it puts your business right on a customer's phone. Become a VIP member for $69.99/mo and unlock 50% off ALL marketing services, PLUS our custom NFC Sales Funnel package — 20 cards, 20 stickers and a funnel built for your business — at half price." data-es="Una simple tarjeta o calcomanía NFC hace lo difícil — pone tu negocio directamente en el teléfono del cliente. Hazte miembro VIP por $69.99/mes y desbloquea 50% de descuento en TODOS los servicios de marketing, MÁS nuestro paquete de Embudo de Ventas NFC — 20 tarjetas, 20 calcomanías y un embudo creado para tu negocio — a mitad de precio.">A simple NFC card or sticker does the hard part — it puts your business right on a customer's phone. Become a VIP member for $69.99/mo and unlock 50% off ALL marketing services, PLUS our custom NFC Sales Funnel package — 20 cards, 20 stickers and a funnel built for your business — at half price.</p>
           <div class="vhero-btns">
             <a href="tel:18004818638" class="btn btn-gold btn-lg">📞 <span data-en="Call 1-800-481-8638" data-es="Llama 1-800-481-8638">Call 1-800-481-8638</span></a>
-            <a href="#vip-form" class="btn btn-ghost-gold btn-lg" data-en="Claim VIP Pricing ↓" data-es="Obtener Precio VIP ↓">Claim VIP Pricing ↓</a>
+            <a href="#nfc-package" class="btn btn-ghost-gold btn-lg" data-en="See the NFC Package ↓" data-es="Ver el Paquete NFC ↓">See the NFC Package ↓</a>
           </div>
           <div class="vhero-trust">
             <span class="vht"><span class="vht-dot"></span><span data-en="5-Star Rated · Since 2012" data-es="5 Estrellas · Desde 2012">5-Star Rated · Since 2012</span></span>
@@ -466,22 +548,78 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
           <h3 data-en="Your VIP Savings Calculator" data-es="Tu Calculadora de Ahorro VIP">Your VIP Savings Calculator</h3>
           <p class="calc-sub" data-en="Pick the services you need. Watch your member savings stack up." data-es="Elige los servicios que necesitas. Mira cómo se acumulan tus ahorros.">Pick the services you need. Watch your member savings stack up.</p>
           <div class="calc-toggles" id="calc-toggles">
-            <button class="calc-toggle on" data-price="1000" type="button"><span data-en="SEO / AIO" data-es="SEO / AIO">SEO / AIO</span><span class="ct-price">$1,000</span></button>
+            <button class="calc-toggle on" data-price="5000" type="button"><span data-en="NFC Sales Funnel" data-es="Embudo de Ventas NFC">NFC Sales Funnel</span><span class="ct-price">$5,000</span></button>
+            <button class="calc-toggle" data-price="1000" type="button"><span data-en="SEO / AIO" data-es="SEO / AIO">SEO / AIO</span><span class="ct-price">$1,000</span></button>
+            <button class="calc-toggle" data-price="3000" type="button"><span data-en="Advanced On-Site SEO" data-es="SEO Avanzado en Sitio">Advanced On-Site SEO</span><span class="ct-price">$3,000</span></button>
             <button class="calc-toggle" data-price="500" type="button"><span data-en="Logo Design" data-es="Diseño de Logo">Logo Design</span><span class="ct-price">$500</span></button>
             <button class="calc-toggle" data-price="1500" type="button"><span data-en="Web Design" data-es="Diseño Web">Web Design</span><span class="ct-price">$1,500</span></button>
             <button class="calc-toggle" data-price="800" type="button"><span data-en="Google Ads" data-es="Google Ads">Google Ads</span><span class="ct-price">$800</span></button>
-            <button class="calc-toggle" data-price="600" type="button"><span data-en="Social Media" data-es="Redes Sociales">Social Media</span><span class="ct-price">$600</span></button>
-            <button class="calc-toggle" data-price="1200" type="button"><span data-en="Viral Video" data-es="Video Viral">Viral Video</span><span class="ct-price">$1,200</span></button>
           </div>
           <div class="calc-result">
             <div class="cr-label" data-en="Your Member Price" data-es="Tu Precio de Miembro">Your Member Price</div>
-            <div class="calc-was"><span data-en="Regular: " data-es="Regular: ">Regular: </span><span id="calc-reg">$1,000</span><span data-en="/mo" data-es="/mes">/mo</span></div>
-            <div class="calc-now">$<span id="calc-now">500</span><span data-en="/mo" data-es="/mes">/mo</span></div>
-            <div class="calc-save"><span data-en="You save " data-es="Ahorras ">You save </span>$<span id="calc-save">500</span><span data-en="/mo with VIP" data-es="/mes con VIP">/mo with VIP</span></div>
+            <div class="calc-was"><span data-en="Regular: " data-es="Regular: ">Regular: </span>$<span id="calc-reg">5,000</span></div>
+            <div class="calc-now">$<span id="calc-now">2,500</span></div>
+            <div class="calc-save"><span data-en="You save " data-es="Ahorras ">You save </span>$<span id="calc-save">2,500</span><span data-en=" with VIP" data-es=" con VIP"> with VIP</span></div>
           </div>
           <div class="calc-cta">
             <a href="tel:18004818638" class="btn btn-gold" data-en="📞 Lock In This Price — Call Now" data-es="📞 Asegura Este Precio — Llama Ya">📞 Lock In This Price — Call Now</a>
             <a href="#vip-form" class="btn btn-ghost-gold" data-en="Or request it online ↓" data-es="O solicítalo en línea ↓">Or request it online ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ★ FLAGSHIP FEATURE: NFC SALES FUNNEL PACKAGE (half-price member perk) -->
+<section class="nfc-feature" id="nfc-package" aria-labelledby="nfc-feature-h2">
+  <div class="nfc-feature-glow" aria-hidden="true"></div>
+  <div class="wrap nfc-feature-inner">
+    <div class="nfc-feature-grid">
+      <div>
+        <div class="chip chip-orange" data-en="★ The Flagship Member Perk" data-es="★ El Beneficio Estrella del Miembro">★ The Flagship Member Perk</div>
+        <h2 id="nfc-feature-h2" data-en="The NFC Sales Funnel Package — <em>Half Price</em> for VIP Members" data-es="El Paquete de Embudo de Ventas NFC — <em>Mitad de Precio</em> para Miembros VIP">The NFC Sales Funnel Package — <em>Half Price</em> for VIP Members</h2>
+        <p class="nfc-feature-lead" data-en="This is the centerpiece of being a VIP member. A complete, done-for-you NFC marketing system — physical cards, stickers and a custom funnel page built specifically for your business and industry. Normally $5,000. VIP members get the entire package for half price." data-es="Esta es la pieza central de ser miembro VIP. Un sistema de marketing NFC completo y hecho para ti — tarjetas físicas, calcomanías y una página de embudo personalizada creada específicamente para tu negocio e industria. Normalmente $5,000. Los miembros VIP obtienen todo el paquete a mitad de precio.">This is the centerpiece of being a VIP member. A complete, done-for-you NFC marketing system — physical cards, stickers and a custom funnel page built specifically for your business and industry. Normally $5,000. VIP members get the entire package for half price.</p>
+        <div class="nfc-incl">
+          <div class="nfc-incl-item"><div class="nfc-incl-ic">💳</div><div><h4 data-en="20 Programmed NFC Cards" data-es="20 Tarjetas NFC Programadas">20 Programmed NFC Cards</h4><p data-en="Premium tap-to-share cards, pre-programmed to launch your funnel — hand them out anywhere." data-es="Tarjetas premium de toque-para-compartir, pre-programadas para lanzar tu embudo — repártelas donde sea.">Premium tap-to-share cards, pre-programmed to launch your funnel — hand them out anywhere.</p></div></div>
+          <div class="nfc-incl-item"><div class="nfc-incl-ic">🏷️</div><div><h4 data-en="20 NFC Stickers" data-es="20 Calcomanías NFC">20 NFC Stickers</h4><p data-en="Stick them on counters, windows, packaging or equipment so any customer can tap and connect." data-es="Pégalas en mostradores, ventanas, empaques o equipos para que cualquier cliente pueda tocar y conectar.">Stick them on counters, windows, packaging or equipment so any customer can tap and connect.</p></div></div>
+          <div class="nfc-incl-item"><div class="nfc-incl-ic">🎯</div><div><h4 data-en="Custom Sales Funnel Lead-Gen Page" data-es="Página de Embudo de Ventas Personalizada">Custom Sales Funnel Lead-Gen Page</h4><p data-en="A conversion-optimized funnel page built specifically for your business and your industry — designed to turn taps into leads." data-es="Una página de embudo optimizada para conversión, creada específicamente para tu negocio e industria — diseñada para convertir toques en clientes.">A conversion-optimized funnel page built specifically for your business and your industry — designed to turn taps into leads.</p></div></div>
+          <div class="nfc-incl-item"><div class="nfc-incl-ic">🔍</div><div><h4 data-en="Standard AIO &amp; SEO Optimization" data-es="Optimización AIO y SEO Estándar">Standard AIO &amp; SEO Optimization</h4><p data-en="Your funnel page is optimized for AI search and traditional search out of the box — so it gets found, not just tapped." data-es="Tu página de embudo viene optimizada para búsqueda con IA y búsqueda tradicional — para que se encuentre, no solo se toque.">Your funnel page is optimized for AI search and traditional search out of the box — so it gets found, not just tapped.</p></div></div>
+          <div class="nfc-incl-item"><div class="nfc-incl-ic">📊</div><div><h4 data-en="Professional Keyword Research" data-es="Investigación Profesional de Palabras Clave">Professional Keyword Research</h4><p data-en="We research the exact terms your future customers are searching, then build the funnel around them." data-es="Investigamos los términos exactos que buscan tus futuros clientes y construimos el embudo alrededor de ellos.">We research the exact terms your future customers are searching, then build the funnel around them.</p></div></div>
+        </div>
+      </div>
+
+      <!-- PRICE CARD -->
+      <div>
+        <div class="nfc-pricecard">
+          <div class="nfc-pc-flag" data-en="VIP Member Exclusive — 50% Off" data-es="Exclusivo Miembro VIP — 50% de Descuento">VIP Member Exclusive — 50% Off</div>
+          <div class="nfc-pc-name" data-en="NFC Sales Funnel<br>Marketing Package" data-es="Paquete de Marketing<br>de Embudo NFC">NFC Sales Funnel<br>Marketing Package</div>
+          <div class="nfc-pc-reg-label" data-en="Regular Price" data-es="Precio Regular">Regular Price</div>
+          <div class="nfc-pc-reg">$5,000
+            <svg viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M2 20 L98 5" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="nfc-pc-member-label" data-en="VIP Member Price" data-es="Precio Miembro VIP">VIP Member Price</div>
+          <div class="nfc-pc-member">$2,500</div>
+          <div class="nfc-pc-save" data-en="You save $2,500" data-es="Ahorras $2,500">You save $2,500</div>
+          <p class="nfc-pc-fine" data-en="A separate package available exclusively to active VIP members at half price. One-time build; cards &amp; stickers shipped to you." data-es="Un paquete aparte disponible exclusivamente para miembros VIP activos a mitad de precio. Construcción única; tarjetas y calcomanías enviadas a ti.">A separate package available exclusively to active VIP members at half price. One-time build; cards &amp; stickers shipped to you.</p>
+          <div class="nfc-pc-cta">
+            <a href="tel:18004818638" class="btn btn-orange" data-en="📞 Claim the Half-Price Funnel" data-es="📞 Obtén el Embudo a Mitad de Precio">📞 Claim the Half-Price Funnel</a>
+            <a href="#vip-form" class="btn btn-ghost-gold" data-en="Request it online ↓" data-es="Solicítalo en línea ↓">Request it online ↓</a>
+          </div>
+        </div>
+
+        <!-- ADVANCED SEO ADD-ON -->
+        <div class="addon" style="margin-top:18px;">
+          <div class="addon-l">
+            <span class="addon-tag" data-en="Optional Add-On" data-es="Complemento Opcional">Optional Add-On</span>
+            <h3 data-en="Advanced On-Site SEO" data-es="SEO Avanzado en Sitio">Advanced On-Site SEO</h3>
+            <p data-en="Go beyond the standard optimization included with your funnel — deeper, advanced on-site SEO for serious rankings." data-es="Ve más allá de la optimización estándar incluida con tu embudo — SEO avanzado en sitio más profundo para mejores posiciones.">Go beyond the standard optimization included with your funnel — deeper, advanced on-site SEO for serious rankings.</p>
+          </div>
+          <div class="addon-r">
+            <div class="addon-reg">$3,000<svg viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M2 19 L98 6" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/></svg></div>
+            <div class="addon-member-label" data-en="VIP Price" data-es="Precio VIP">VIP Price</div>
+            <div class="addon-member">$1,500</div>
+            <div class="addon-save" data-en="Save $1,500" data-es="Ahorra $1,500">Save $1,500</div>
           </div>
         </div>
       </div>
@@ -494,7 +632,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <div class="wrap tc">
     <div class="chip chip-gold" data-en="The Membership" data-es="La Membresía">The Membership</div>
     <h2 style="color:#fff;" data-en="VIP Marketing Subscription" data-es="Suscripción de Marketing VIP">VIP Marketing Subscription</h2>
-    <p style="color:rgba(255,255,255,.6);max-width:560px;margin:12px auto 30px;" data-en="One low monthly membership unlocks half-price pricing on everything we do — plus a strategy call and a shot at free exposure." data-es="Una membresía mensual baja desbloquea precios a mitad de costo en todo lo que hacemos — más una llamada de estrategia y la oportunidad de exposición gratuita.">One low monthly membership unlocks half-price pricing on everything we do — plus a strategy call and a shot at free exposure.</p>
+    <p style="color:rgba(255,255,255,.6);max-width:580px;margin:12px auto 30px;" data-en="One low monthly membership unlocks half-price pricing on everything we do — including the NFC Sales Funnel package — plus a strategy call and a shot at free exposure." data-es="Una membresía mensual baja desbloquea precios a mitad de costo en todo lo que hacemos — incluyendo el paquete de Embudo NFC — más una llamada de estrategia y la oportunidad de exposición gratuita.">One low monthly membership unlocks half-price pricing on everything we do — including the NFC Sales Funnel package — plus a strategy call and a shot at free exposure.</p>
     <div style="display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 22px;background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(245,180,60,.3);border-radius:var(--r24);padding:30px 44px;">
       <div style="text-align:center;">
         <div style="font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px;" data-en="Regular Price" data-es="Precio Regular">Regular Price</div>
@@ -527,6 +665,14 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       <p style="max-width:560px;margin:10px auto 0;" data-en="Every service we offer is 50% off for VIP members. Here's what that looks like." data-es="Cada servicio que ofrecemos tiene 50% de descuento para miembros VIP. Así se ve.">Every service we offer is 50% off for VIP members. Here's what that looks like.</p>
     </div>
     <div class="price-grid">
+      <div class="price-card" style="border-color:rgba(249,115,22,.5);">
+        <div class="pc-ic">💳</div>
+        <h3 data-en="NFC Sales Funnel Package" data-es="Paquete de Embudo NFC">NFC Sales Funnel Package</h3>
+        <div class="pc-reg"><span class="pc-strike">$5,000<svg viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M2 19 L98 6" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/></svg></span></div>
+        <div class="pc-member-label" data-en="Member Price" data-es="Precio Miembro">Member Price</div>
+        <div class="pc-member">$2,500</div>
+        <div class="pc-save" data-en="Save $2,500" data-es="Ahorra $2,500">Save $2,500</div>
+      </div>
       <div class="price-card">
         <div class="pc-ic">🔍</div>
         <h3 data-en="SEO / AIO Optimization" data-es="Optimización SEO / AIO">SEO / AIO Optimization</h3>
@@ -536,20 +682,20 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         <div class="pc-save" data-en="Save $500/mo" data-es="Ahorra $500/mes">Save $500/mo</div>
       </div>
       <div class="price-card">
+        <div class="pc-ic">⚙️</div>
+        <h3 data-en="Advanced On-Site SEO" data-es="SEO Avanzado en Sitio">Advanced On-Site SEO</h3>
+        <div class="pc-reg"><span class="pc-strike">$3,000<svg viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M2 19 L98 6" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/></svg></span></div>
+        <div class="pc-member-label" data-en="Member Price" data-es="Precio Miembro">Member Price</div>
+        <div class="pc-member">$1,500</div>
+        <div class="pc-save" data-en="Save $1,500" data-es="Ahorra $1,500">Save $1,500</div>
+      </div>
+      <div class="price-card">
         <div class="pc-ic">🎨</div>
         <h3 data-en="Custom Logo Design" data-es="Diseño de Logo Personalizado">Custom Logo Design</h3>
         <div class="pc-reg"><span class="pc-strike">$500<svg viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M2 19 L98 6" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/></svg></span></div>
         <div class="pc-member-label" data-en="Member Price" data-es="Precio Miembro">Member Price</div>
         <div class="pc-member">$250</div>
         <div class="pc-save" data-en="Save $250" data-es="Ahorra $250">Save $250</div>
-      </div>
-      <div class="price-card">
-        <div class="pc-ic">🎬</div>
-        <h3 data-en="Viral Video Production" data-es="Producción de Video Viral">Viral Video Production</h3>
-        <div class="pc-reg"><span class="pc-strike">$1,200<svg viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M2 19 L98 6" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/></svg></span></div>
-        <div class="pc-member-label" data-en="Member Price" data-es="Precio Miembro">Member Price</div>
-        <div class="pc-member">$600</div>
-        <div class="pc-save" data-en="Save $600" data-es="Ahorra $600">Save $600</div>
       </div>
       <div class="price-card">
         <div class="pc-ic">💻</div>
@@ -567,14 +713,6 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         <div class="pc-member">$400<span data-en="/mo" data-es="/mes">/mo</span></div>
         <div class="pc-save" data-en="Save $400/mo" data-es="Ahorra $400/mes">Save $400/mo</div>
       </div>
-      <div class="price-card">
-        <div class="pc-ic">📱</div>
-        <h3 data-en="Social Media Marketing" data-es="Marketing en Redes Sociales">Social Media Marketing</h3>
-        <div class="pc-reg"><span class="pc-strike">$600<svg viewBox="0 0 100 26" preserveAspectRatio="none"><path d="M2 19 L98 6" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/></svg></span><span data-en="/mo" data-es="/mes">/mo</span></div>
-        <div class="pc-member-label" data-en="Member Price" data-es="Precio Miembro">Member Price</div>
-        <div class="pc-member">$300<span data-en="/mo" data-es="/mes">/mo</span></div>
-        <div class="pc-save" data-en="Save $300/mo" data-es="Ahorra $300/mes">Save $300/mo</div>
-      </div>
     </div>
   </div>
 </section>
@@ -588,13 +726,13 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       <p style="max-width:600px;margin:10px auto 0;" data-en="The NFC tap is just step one. Here's the full path from a stranger's phone to a paying customer." data-es="El toque NFC es solo el primer paso. Aquí está el camino completo desde el teléfono de un desconocido hasta un cliente que paga.">The NFC tap is just step one. Here's the full path from a stranger's phone to a paying customer.</p>
     </div>
     <div class="funnel">
-      <div class="funnel-step"><div class="fs-n">1</div><div><h3 data-en="Get Found — The NFC Tap" data-es="Encuentra — El Toque NFC">Get Found — The NFC Tap</h3><p data-en="A customer taps your NFC card or sticker and lands instantly on your business page. No app, no typing. You're on their phone." data-es="Un cliente toca tu tarjeta o calcomanía NFC y llega al instante a tu página. Sin app, sin escribir. Estás en su teléfono.">A customer taps your NFC card or sticker and lands instantly on your business page. No app, no typing. You're on their phone.</p></div></div>
+      <div class="funnel-step"><div class="fs-n">1</div><div><h3 data-en="Get Found — The NFC Tap" data-es="Encuentra — El Toque NFC">Get Found — The NFC Tap</h3><p data-en="A customer taps your NFC card or sticker and lands instantly on your custom funnel page. No app, no typing. You're on their phone." data-es="Un cliente toca tu tarjeta o calcomanía NFC y llega al instante a tu página de embudo personalizada. Sin app, sin escribir. Estás en su teléfono.">A customer taps your NFC card or sticker and lands instantly on your custom funnel page. No app, no typing. You're on their phone.</p></div></div>
       <div class="funnel-arrow">↓</div>
-      <div class="funnel-step"><div class="fs-n">2</div><div><h3 data-en="Convert — The Sales Funnel" data-es="Convierte — El Embudo de Ventas">Convert — The Sales Funnel</h3><p data-en="A conversion-optimized funnel — like this very page — guides them to your shopping cart or lead form. The tap becomes a lead." data-es="Un embudo optimizado para conversión — como esta misma página — los guía a tu carrito o formulario. El toque se convierte en cliente.">A conversion-optimized funnel — like this very page — guides them to your shopping cart or lead form. The tap becomes a lead.</p></div></div>
+      <div class="funnel-step"><div class="fs-n">2</div><div><h3 data-en="Convert — The Sales Funnel" data-es="Convierte — El Embudo de Ventas">Convert — The Sales Funnel</h3><p data-en="Your custom, conversion-optimized funnel — built for your industry — guides them to your shopping cart or lead form. The tap becomes a lead." data-es="Tu embudo personalizado y optimizado para conversión — creado para tu industria — los guía a tu carrito o formulario. El toque se convierte en cliente.">Your custom, conversion-optimized funnel — built for your industry — guides them to your shopping cart or lead form. The tap becomes a lead.</p></div></div>
       <div class="funnel-arrow">↓</div>
       <div class="funnel-step"><div class="fs-n">3</div><div><h3 data-en="Collect Revenue" data-es="Genera Ingresos">Collect Revenue</h3><p data-en="Leads flow straight to your phone and inbox. Follow up, close the deal, and collect — all tracked so you know what's working." data-es="Los clientes llegan directo a tu teléfono y correo. Haz seguimiento, cierra la venta y cobra — todo rastreado.">Leads flow straight to your phone and inbox. Follow up, close the deal, and collect — all tracked so you know what's working.</p></div></div>
       <div class="funnel-arrow">↓</div>
-      <div class="funnel-step"><div class="fs-n">4</div><div><h3 data-en="Grow — Rinse &amp; Repeat" data-es="Crece — Repite el Proceso">Grow — Rinse &amp; Repeat</h3><p data-en="Every tap feeds the machine. Hand out more cards, refine the funnel, and watch consistent customers turn into a real cash cow." data-es="Cada toque alimenta la máquina. Reparte más tarjetas, mejora el embudo y mira cómo los clientes constantes se vuelven una mina de oro.">Every tap feeds the machine. Hand out more cards, refine the funnel, and watch consistent customers turn into a real cash cow.</p></div></div>
+      <div class="funnel-step"><div class="fs-n">4</div><div><h3 data-en="Grow — Rinse &amp; Repeat" data-es="Crece — Repite el Proceso">Grow — Rinse &amp; Repeat</h3><p data-en="Every tap feeds the machine. Hand out your 20 cards, place your 20 stickers, refine the funnel, and watch consistent customers turn into a real cash cow." data-es="Cada toque alimenta la máquina. Reparte tus 20 tarjetas, coloca tus 20 calcomanías, mejora el embudo y mira cómo los clientes constantes se vuelven una mina de oro.">Every tap feeds the machine. Hand out your 20 cards, place your 20 stickers, refine the funnel, and watch consistent customers turn into a real cash cow.</p></div></div>
     </div>
     <div class="tc" style="margin-top:40px;">
       <a href="tel:18004818638" class="btn btn-orange btn-lg">📞 <span data-en="Build My Funnel — 1-800-481-8638" data-es="Crea Mi Embudo — 1-800-481-8638">Build My Funnel — 1-800-481-8638</span></a>
@@ -622,10 +760,10 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       <h2 id="vip-benefits-h2" style="color:#fff;" data-en="Everything You Get as a VIP Member" data-es="Todo lo que Obtienes como Miembro VIP">Everything You Get as a VIP Member</h2>
     </div>
     <div class="ben-grid">
+      <div class="ben-item ben-hero"><div class="ben-check">★</div><div><h4 data-en="Half-Price NFC Sales Funnel Package" data-es="Paquete de Embudo NFC a Mitad de Precio">Half-Price NFC Sales Funnel Package</h4><p data-en="The flagship perk: get our complete NFC Sales Funnel package — 20 programmed cards, 20 stickers, and a custom funnel page built for your business — for $2,500 instead of $5,000. Includes standard AIO/SEO optimization and professional keyword research." data-es="El beneficio estrella: obtén nuestro paquete completo de Embudo de Ventas NFC — 20 tarjetas programadas, 20 calcomanías y una página de embudo personalizada para tu negocio — por $2,500 en lugar de $5,000. Incluye optimización AIO/SEO estándar e investigación profesional de palabras clave.">The flagship perk: get our complete NFC Sales Funnel package — 20 programmed cards, 20 stickers, and a custom funnel page built for your business — for $2,500 instead of $5,000. Includes standard AIO/SEO optimization and professional keyword research.</p></div></div>
       <div class="ben-item"><div class="ben-check">✓</div><div><h4 data-en="50% Off ALL Marketing Services" data-es="50% de Descuento en TODOS los Servicios">50% Off ALL Marketing Services</h4><p data-en="SEO, AIO, GEO, web design, logos, ads, social, video — every service, half price, for as long as you're a member." data-es="SEO, AIO, GEO, diseño web, logos, anuncios, redes, video — cada servicio, mitad de precio, mientras seas miembro.">SEO, AIO, GEO, web design, logos, ads, social, video — every service, half price, for as long as you're a member.</p></div></div>
       <div class="ben-item"><div class="ben-check">✓</div><div><h4 data-en="Monthly Strategy Call" data-es="Llamada de Estrategia Mensual">Monthly Strategy Call</h4><p data-en="One 15-minute call every month with a marketing expert specifically assigned to your company. Consistent, personal guidance." data-es="Una llamada de 15 minutos cada mes con un experto en marketing asignado a tu empresa. Orientación constante y personal.">One 15-minute call every month with a marketing expert specifically assigned to your company. Consistent, personal guidance.</p></div></div>
       <div class="ben-item"><div class="ben-check">✓</div><div><h4 data-en="Chance to Be Featured" data-es="Oportunidad de Ser Destacado">Chance to Be Featured</h4><p data-en="Members are randomly selected to be featured on one of our many websites — free exposure to new audiences." data-es="Los miembros son seleccionados al azar para aparecer en uno de nuestros muchos sitios web — exposición gratuita.">Members are randomly selected to be featured on one of our many websites — free exposure to new audiences.</p></div></div>
-      <div class="ben-item"><div class="ben-check">✓</div><div><h4 data-en="Your Own Sales Funnel" data-es="Tu Propio Embudo de Ventas">Your Own Sales Funnel</h4><p data-en="We build the NFC-to-customer funnel that turns taps into leads — straight to your cart or lead-collection system." data-es="Construimos el embudo NFC-a-cliente que convierte toques en clientes — directo a tu carrito o sistema de captación.">We build the NFC-to-customer funnel that turns taps into leads — straight to your cart or lead-collection system.</p></div></div>
       <div class="ben-item"><div class="ben-check">✓</div><div><h4 data-en="No Long-Term Contract" data-es="Sin Contrato a Largo Plazo">No Long-Term Contract</h4><p data-en="The membership is month-to-month. Stay because it works, not because you're locked in." data-es="La membresía es mes a mes. Quédate porque funciona, no porque estés atado.">The membership is month-to-month. Stay because it works, not because you're locked in.</p></div></div>
       <div class="ben-item"><div class="ben-check">✓</div><div><h4 data-en="Pays For Itself" data-es="Se Paga Solo">Pays For Itself</h4><p data-en="At $69.99/mo, a single discounted service covers the membership many times over. The savings start immediately." data-es="A $69.99/mes, un solo servicio con descuento cubre la membresía muchas veces. El ahorro empieza de inmediato.">At $69.99/mo, a single discounted service covers the membership many times over. The savings start immediately.</p></div></div>
     </div>
@@ -660,7 +798,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         <input type="tel" name="phone" id="v-phone" placeholder="Phone Number" data-en-ph="Phone Number" data-es-ph="Número de Teléfono" required autocomplete="tel">
         <input type="email" name="email" id="v-email" placeholder="Email Address" data-en-ph="Email Address" data-es-ph="Correo Electrónico" required autocomplete="email">
         <input type="text" name="business" id="v-business" placeholder="Business Name" data-en-ph="Business Name" data-es-ph="Nombre del Negocio" autocomplete="organization">
-        <textarea name="message" id="v-message" placeholder="Which services are you most interested in?" data-en-ph="Which services are you most interested in?" data-es-ph="¿Qué servicios te interesan más?"></textarea>
+        <textarea name="message" id="v-message" placeholder="Which services are you most interested in? (e.g. NFC Sales Funnel package)" data-en-ph="Which services are you most interested in? (e.g. NFC Sales Funnel package)" data-es-ph="¿Qué servicios te interesan más? (ej. paquete de Embudo NFC)"></textarea>
         <div id="v-err" class="ferr"></div>
         <button type="submit" class="fsub" id="v-fsub" data-en="Claim My VIP Pricing →" data-es="Obtener Mi Precio VIP →">Claim My VIP Pricing →</button>
       </form>
@@ -679,15 +817,23 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
     <div style="margin-top:34px;display:flex;flex-direction:column;gap:14px;">
       <div class="faq-item" style="background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;">
         <button class="faq-q" aria-expanded="false" style="width:100%;text-align:left;background:none;border:none;padding:18px 20px;display:flex;justify-content:space-between;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);"><span data-en="What is the VIP Marketing Subscription?" data-es="¿Qué es la Suscripción de Marketing VIP?">What is the VIP Marketing Subscription?</span><span class="faq-ico" style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span></button>
-        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="It's a monthly membership that gives you 50% off ALL marketing services — SEO, AIO, GEO, logos, web design, ads, social, and video — for $69.99/mo (regularly $150), plus a 15-minute monthly strategy call with a dedicated expert." data-es="Es una membresía mensual que te da 50% de descuento en TODOS los servicios de marketing — SEO, AIO, GEO, logos, diseño web, anuncios, redes y video — por $69.99/mes (regularmente $150), más una llamada de estrategia de 15 minutos al mes con un experto dedicado.">It's a monthly membership that gives you 50% off ALL marketing services — SEO, AIO, GEO, logos, web design, ads, social, and video — for $69.99/mo (regularly $150), plus a 15-minute monthly strategy call with a dedicated expert.</p></div>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="It's a monthly membership that gives you 50% off ALL marketing services — SEO, AIO, GEO, logos, web design, ads, social, and video — for $69.99/mo (regularly $150), plus a 15-minute monthly strategy call with a dedicated expert and half-price access to our NFC Sales Funnel package." data-es="Es una membresía mensual que te da 50% de descuento en TODOS los servicios de marketing — SEO, AIO, GEO, logos, diseño web, anuncios, redes y video — por $69.99/mes (regularmente $150), más una llamada de estrategia de 15 minutos al mes con un experto dedicado y acceso a mitad de precio a nuestro paquete de Embudo de Ventas NFC.">It's a monthly membership that gives you 50% off ALL marketing services — SEO, AIO, GEO, logos, web design, ads, social, and video — for $69.99/mo (regularly $150), plus a 15-minute monthly strategy call with a dedicated expert and half-price access to our NFC Sales Funnel package.</p></div>
+      </div>
+      <div class="faq-item" style="background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;text-align:left;background:none;border:none;padding:18px 20px;display:flex;justify-content:space-between;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);"><span data-en="What's in the NFC Sales Funnel package, and is it free with the subscription?" data-es="¿Qué incluye el paquete de Embudo NFC, y es gratis con la suscripción?">What's in the NFC Sales Funnel package, and is it free with the subscription?</span><span class="faq-ico" style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span></button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="The NFC Sales Funnel package is a separate, done-for-you system — not free with the membership, but VIP members get it at half price. It includes 20 programmed NFC cards, 20 NFC stickers, and a custom sales funnel lead-generation page built specifically for your business and industry, plus standard AIO and SEO optimization of that page and professional keyword research. Regularly $5,000; VIP members pay $2,500." data-es="El paquete de Embudo de Ventas NFC es un sistema aparte, hecho para ti — no es gratis con la membresía, pero los miembros VIP lo obtienen a mitad de precio. Incluye 20 tarjetas NFC programadas, 20 calcomanías NFC y una página de embudo de ventas personalizada creada específicamente para tu negocio e industria, más optimización AIO y SEO estándar de esa página e investigación profesional de palabras clave. Normalmente $5,000; los miembros VIP pagan $2,500.">The NFC Sales Funnel package is a separate, done-for-you system — not free with the membership, but VIP members get it at half price. It includes 20 programmed NFC cards, 20 NFC stickers, and a custom sales funnel lead-generation page built specifically for your business and industry, plus standard AIO and SEO optimization of that page and professional keyword research. Regularly $5,000; VIP members pay $2,500.</p></div>
+      </div>
+      <div class="faq-item" style="background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;text-align:left;background:none;border:none;padding:18px 20px;display:flex;justify-content:space-between;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);"><span data-en="Can I add advanced on-site SEO?" data-es="¿Puedo agregar SEO avanzado en sitio?">Can I add advanced on-site SEO?</span><span class="faq-ico" style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span></button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="Yes. Beyond the standard AIO/SEO optimization already included with the NFC funnel page, you can add advanced on-site SEO for $3,000 — and as a VIP member you get it at half price, $1,500." data-es="Sí. Más allá de la optimización AIO/SEO estándar ya incluida con la página de embudo NFC, puedes agregar SEO avanzado en sitio por $3,000 — y como miembro VIP lo obtienes a mitad de precio, $1,500.">Yes. Beyond the standard AIO/SEO optimization already included with the NFC funnel page, you can add advanced on-site SEO for $3,000 — and as a VIP member you get it at half price, $1,500.</p></div>
       </div>
       <div class="faq-item" style="background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;">
         <button class="faq-q" aria-expanded="false" style="width:100%;text-align:left;background:none;border:none;padding:18px 20px;display:flex;justify-content:space-between;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);"><span data-en="How does the NFC card or sticker work?" data-es="¿Cómo funciona la tarjeta o calcomanía NFC?">How does the NFC card or sticker work?</span><span class="faq-ico" style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span></button>
-        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="A customer taps their phone to your NFC card or sticker and lands instantly on your business page — no app, no typing. From there, our sales funnel turns that tap into a lead or sale." data-es="Un cliente toca su teléfono en tu tarjeta o calcomanía NFC y llega al instante a tu página — sin app, sin escribir. Desde ahí, nuestro embudo de ventas convierte ese toque en un cliente o venta.">A customer taps their phone to your NFC card or sticker and lands instantly on your business page — no app, no typing. From there, our sales funnel turns that tap into a lead or sale.</p></div>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="A customer taps their phone to your NFC card or sticker and lands instantly on your custom funnel page — no app, no typing. From there, your funnel turns that tap into a lead or sale." data-es="Un cliente toca su teléfono en tu tarjeta o calcomanía NFC y llega al instante a tu página de embudo personalizada — sin app, sin escribir. Desde ahí, tu embudo convierte ese toque en un cliente o venta.">A customer taps their phone to your NFC card or sticker and lands instantly on your custom funnel page — no app, no typing. From there, your funnel turns that tap into a lead or sale.</p></div>
       </div>
       <div class="faq-item" style="background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;">
         <button class="faq-q" aria-expanded="false" style="width:100%;text-align:left;background:none;border:none;padding:18px 20px;display:flex;justify-content:space-between;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);"><span data-en="How much do members actually save?" data-es="¿Cuánto ahorran realmente los miembros?">How much do members actually save?</span><span class="faq-ico" style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span></button>
-        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="50% on everything. SEO normally $1,000/mo is $500/mo. A $500 logo is $250. A $1,200 viral video is $600. The $69.99 membership usually pays for itself with one service." data-es="50% en todo. El SEO que normalmente cuesta $1,000/mes es $500/mes. Un logo de $500 es $250. Un video viral de $1,200 es $600. La membresía de $69.99 normalmente se paga sola con un solo servicio.">50% on everything. SEO normally $1,000/mo is $500/mo. A $500 logo is $250. A $1,200 viral video is $600. The $69.99 membership usually pays for itself with one service.</p></div>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="50% on everything. The NFC Sales Funnel package normally $5,000 is $2,500. SEO normally $1,000/mo is $500/mo. Advanced on-site SEO normally $3,000 is $1,500. A $500 logo is $250. The $69.99 membership usually pays for itself with one service." data-es="50% en todo. El paquete de Embudo NFC que normalmente cuesta $5,000 es $2,500. El SEO que normalmente cuesta $1,000/mes es $500/mes. El SEO avanzado en sitio normalmente $3,000 es $1,500. Un logo de $500 es $250. La membresía de $69.99 normalmente se paga sola con un solo servicio.">50% on everything. The NFC Sales Funnel package normally $5,000 is $2,500. SEO normally $1,000/mo is $500/mo. Advanced on-site SEO normally $3,000 is $1,500. A $500 logo is $250. The $69.99 membership usually pays for itself with one service.</p></div>
       </div>
       <div class="faq-item" style="background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;">
         <button class="faq-q" aria-expanded="false" style="width:100%;text-align:left;background:none;border:none;padding:18px 20px;display:flex;justify-content:space-between;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);"><span data-en="Can my business be featured on your websites?" data-es="¿Puede mi negocio aparecer en sus sitios web?">Can my business be featured on your websites?</span><span class="faq-ico" style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span></button>
@@ -695,7 +841,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       </div>
       <div class="faq-item" style="background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;">
         <button class="faq-q" aria-expanded="false" style="width:100%;text-align:left;background:none;border:none;padding:18px 20px;display:flex;justify-content:space-between;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);"><span data-en="How do I get started?" data-es="¿Cómo empiezo?">How do I get started?</span><span class="faq-ico" style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span></button>
-        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="Call 1-800-481-8638 or (720) 249-6588, or submit the form above. A specialist will set up your VIP membership and, if you want one, your NFC card or sticker funnel." data-es="Llama al 1-800-481-8638 o (720) 249-6588, o envía el formulario de arriba. Un especialista configurará tu membresía VIP y, si lo deseas, tu embudo de tarjeta o calcomanía NFC.">Call 1-800-481-8638 or (720) 249-6588, or submit the form above. A specialist will set up your VIP membership and, if you want one, your NFC card or sticker funnel.</p></div>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px;"><p style="padding-bottom:18px;" data-en="Call 1-800-481-8638 or (720) 249-6588, or submit the form above. A specialist will set up your VIP membership and, if you want one, your half-price NFC Sales Funnel package." data-es="Llama al 1-800-481-8638 o (720) 249-6588, o envía el formulario de arriba. Un especialista configurará tu membresía VIP y, si lo deseas, tu paquete de Embudo de Ventas NFC a mitad de precio.">Call 1-800-481-8638 or (720) 249-6588, or submit the form above. A specialist will set up your VIP membership and, if you want one, your half-price NFC Sales Funnel package.</p></div>
       </div>
     </div>
   </div>
@@ -707,7 +853,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
     <div class="fcta-inner">
       <div class="chip chip-gold" style="margin:0 auto 16px;" data-en="The Hard Part Is Over" data-es="Lo Difícil Ya Pasó">The Hard Part Is Over</div>
       <h2 data-en="You're On Their Phone. Let's Turn That Into a <em>Cash Cow.</em>" data-es="Ya Estás en su Teléfono. Convirtámoslo en una <em>Mina de Oro.</em>">You're On Their Phone. Let's Turn That Into a <em>Cash Cow.</em></h2>
-      <p data-en="Become a VIP member today — 50% off all marketing, a dedicated strategist, and a funnel that turns taps into customers." data-es="Hazte miembro VIP hoy — 50% de descuento en todo el marketing, un estratega dedicado y un embudo que convierte toques en clientes.">Become a VIP member today — 50% off all marketing, a dedicated strategist, and a funnel that turns taps into customers.</p>
+      <p data-en="Become a VIP member today — 50% off all marketing, a dedicated strategist, and a half-price NFC Sales Funnel package that turns taps into customers." data-es="Hazte miembro VIP hoy — 50% de descuento en todo el marketing, un estratega dedicado y un paquete de Embudo de Ventas NFC a mitad de precio que convierte toques en clientes.">Become a VIP member today — 50% off all marketing, a dedicated strategist, and a half-price NFC Sales Funnel package that turns taps into customers.</p>
       <div class="fcta-btns">
         <a href="tel:18004818638" class="btn btn-gold btn-xl">📞 <span data-en="Call 1-800-481-8638" data-es="Llama 1-800-481-8638">Call 1-800-481-8638</span></a>
         <a href="#vip-form" class="btn btn-ghost-white btn-xl" data-en="Claim VIP Pricing" data-es="Obtener Precio VIP">Claim VIP Pricing</a>
@@ -724,7 +870,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver Marketing &amp; SEO since 2012" loading="lazy" style="height:300px;width:auto;max-width:100%">
-        <p data-en="Denver's marketing &amp; SEO authority since 2012. Turn NFC taps into customers with a funnel built to convert — then keep them coming back." data-es="La autoridad en marketing y SEO de Denver desde 2012. Convierte toques NFC en clientes con un embudo diseñado para convertir.">Denver's marketing &amp; SEO authority since 2012. Turn NFC taps into customers with a funnel built to convert — then keep them coming back.</p>
+        <p data-en="Denver's marketing &amp; SEO authority since 2012. Turn NFC taps into customers with a custom funnel built to convert — then keep them coming back." data-es="La autoridad en marketing y SEO de Denver desde 2012. Convierte toques NFC en clientes con un embudo personalizado diseñado para convertir.">Denver's marketing &amp; SEO authority since 2012. Turn NFC taps into customers with a custom funnel built to convert — then keep them coming back.</p>
         <address>
           Eye To Ad Media<br>
           1001 Bannock St #660<br>
@@ -736,12 +882,12 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       </div>
       <div class="footer-col">
         <h4 data-en="Services" data-es="Servicios">Services</h4>
+        <a href="#nfc-package" data-en="NFC Sales Funnel Package" data-es="Paquete de Embudo NFC">NFC Sales Funnel Package</a>
         <a href="/denver-seo-services/" data-en="Denver SEO Services" data-es="Servicios SEO Denver">Denver SEO Services</a>
         <a href="/local-seo-denver/" data-en="Local SEO Denver" data-es="SEO Local Denver">Local SEO Denver</a>
         <a href="/aio-seo-system/" data-en="AIO SEO System" data-es="Sistema AIO SEO">AIO SEO System</a>
         <a href="/conversion-optimization/" data-en="Conversion Optimization" data-es="Optimización de Conversión">Conversion Optimization</a>
         <a href="/denver-seo-pricing/" data-en="Pricing" data-es="Precios">Pricing</a>
-        <a href="/free-seo-audit/" data-en="Free SEO Audit" data-es="Auditoría SEO Gratis">Free SEO Audit</a>
       </div>
       <div class="footer-col">
         <h4 data-en="Company" data-es="Empresa">Company</h4>
@@ -808,7 +954,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('
   });
   if(!isOpen){
     item.setAttribute('data-open','1');
-    ans.style.maxHeight='400px';
+    ans.style.maxHeight='600px';
     ans.style.padding='0 20px';
     ico.textContent='×';
     btn.setAttribute('aria-expanded','true');
@@ -826,7 +972,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('
     var total=0;
     toggles.forEach(function(t){if(t.classList.contains('on'))total+=parseInt(t.getAttribute('data-price'),10);});
     var member=Math.round(total/2);
-    regEl.textContent='$'+fmt(total);
+    regEl.textContent=fmt(total);
     nowEl.textContent=fmt(member);
     saveEl.textContent=fmt(total-member);
   }
@@ -1037,8 +1183,14 @@ function norm(s){return(s||'').toLowerCase();}
 function has(t,keys){var n=norm(t);for(var i=0;i<keys.length;i++){if(n.indexOf(keys[i])!==-1)return true;}return false;}
 
 var KB=[
+  {k:['nfc','nfc card','nfc sticker','tap card','sales funnel package','funnel package'],
+   a:'The NFC Sales Funnel Marketing Package is our flagship VIP perk.\n\nIt is a complete, done-for-you system that includes:\n- 20 programmed NFC cards\n- 20 NFC stickers\n- A custom sales funnel lead-generation page built specifically for your business and industry\n- Standard AIO and SEO optimization of that page\n- Professional keyword research\n\nA customer taps a card or sticker, lands instantly on your funnel page, and that tap becomes a lead.\n\nRegularly $5,000 -- but VIP Marketing Subscription members get the entire package for HALF PRICE: $2,500.\n\nYou can also add advanced on-site SEO for $3,000 (just $1,500 for VIP members).',
+   c:['Get the NFC Package','Become a VIP Member','Talk to a Human']},
+  {k:['vip','membership','subscription','69.99','member price'],
+   a:'The VIP Marketing Subscription is $69.99/mo (regularly $150) and unlocks:\n- 50% off ALL marketing services\n- A monthly 15-minute strategy call with a dedicated expert\n- HALF PRICE on our NFC Sales Funnel package ($2,500 instead of $5,000)\n- A chance to be featured on one of our many websites\n- No long-term contract -- cancel anytime\n\nMost members find a single discounted service pays for the membership many times over.',
+   c:['Become a VIP Member','See the NFC Package','Pricing / Quote']},
   {k:['seo','search engine','rankings','rank on','organic','google ranking'],
-   a:'Eye To Ad Media specializes in conversion-first SEO -- we engineer the entire path from first click to closed deal.\n\nOur SEO covers:\n- Technical SEO (site health, crawlability, Core Web Vitals)\n- On-page optimization and keyword targeting\n- Content strategy built around buyer intent\n- Local SEO / Google Maps domination\n- National and e-commerce SEO\n- AI Overview optimization (AIO)\n- Generative Engine Optimization (GEO)\n- Agentic AI optimization\n- Link authority and entity building\n- Conversion audits after traffic arrives\n\nNo cookie-cutter packages. Custom-quoted based on your market and goals.',
+   a:'Eye To Ad Media specializes in conversion-first SEO -- we engineer the entire path from first click to closed deal.\n\nOur SEO covers:\n- Technical SEO (site health, crawlability, Core Web Vitals)\n- On-page optimization and keyword targeting\n- Content strategy built around buyer intent\n- Local SEO / Google Maps domination\n- National and e-commerce SEO\n- AI Overview optimization (AIO)\n- Generative Engine Optimization (GEO)\n- Agentic AI optimization\n- Link authority and entity building\n- Conversion audits after traffic arrives\n\nVIP members get all of this at 50% off. Advanced on-site SEO is $3,000 ($1,500 for members).',
    c:['Get a Free SEO Audit','Local SEO / Maps','AIO & GEO','Agentic AI','Pricing / Quote']},
   {k:['agentic','agentic ai','ai agent','autonomous ai','deep research'],
    a:'Agentic AI optimization is our newest and most forward-looking service.\n\nAgentic AI systems -- like ChatGPT deep research, Perplexity autonomous agents, and emerging Google AI agents -- research and recommend businesses on behalf of users, without those users performing a traditional search.\n\nIf your entity signals, structured content, and authority patterns aren\'t built for agentic AI, you simply won\'t appear in their recommendations.\n\nWe build:\n- Entity clarity and consistency across the web\n- Citation-worthy authority content\n- Structured data and schema signals\n- Review velocity and brand mention patterns\n- Real-time web presence signals\n\nThis is where the next wave of search is heading.',
@@ -1054,10 +1206,10 @@ var KB=[
    c:['Get a Local SEO Audit','Pricing / Quote','Talk to a Human']},
   {k:['website','web design','landing page','funnel','wordpress','shopify'],
    a:'Eye To Ad Media and Search Converts build conversion-optimized websites that generate leads -- not just pretty sites.\n\nWe work with:\n- Custom-coded static HTML (fast, secure, SEO-ready)\n- WordPress development and redesign\n- Shopify stores and e-commerce optimization\n- Landing pages and sales funnels\n- UX and conversion rate optimization\n- Mobile-first responsive design\n- Trust signal and CTA optimization',
-   c:['Get a Website Quote','Conversion Optimization','Talk to a Human']},
+   c:['Get a Website Quote','NFC Sales Funnel Package','Talk to a Human']},
   {k:['conversion','cro','leads','lead gen'],
    a:'Conversion optimization is our foundation -- it is literally in our partner brand name: Search Converts.\n\nTraffic without conversion is just an expense. We fix the full funnel:\n- CTA strategy and placement\n- Trust signal audit and repair\n- Form design and friction reduction\n- Offer and headline testing\n- Mobile conversion issues\n- Sales page and funnel architecture\n\nMost businesses lose 60-80% of potential leads due to fixable problems.',
-   c:['Get a Conversion Audit','Website Review','Pricing / Quote']},
+   c:['Get a Conversion Audit','NFC Sales Funnel Package','Pricing / Quote']},
   {k:['ppc','google ads','paid search','paid advertising'],
    a:'Paid search management is part of our full-funnel approach.\n\nWe handle:\n- Google Ads campaign setup and management\n- Keyword research and negative keyword strategy\n- Ad copy testing and optimization\n- Conversion tracking and ROI reporting\n- Landing page alignment so clicks convert\n- Shopping campaigns for e-commerce\n\nWe never run paid traffic to a broken landing page.',
    c:['Get a PPC Quote','Remarketing','Talk to a Human']},
@@ -1071,7 +1223,7 @@ var KB=[
    a:'TV and streaming advertising is available through our full-service marketing stack.\n\nWe offer:\n- Over-the-Top (OTT) streaming TV advertising (Hulu, Roku, Pluto)\n- Connected TV (CTV) campaign management\n- Video ad production consulting\n- Audience targeting by geography and demographics\n- Full-funnel integration with your digital campaigns',
    c:['Get a TV Quote','Video Marketing','Talk to a Human']},
   {k:['branding','logo','brand'],
-   a:'Branding and creative direction are available through Eye To Ad Media and Search Converts.\n\nWe help with:\n- Logo design and brand identity\n- Brand voice and positioning strategy\n- Ad creative development\n- Brand consistency audits\n- Messaging frameworks that convert',
+   a:'Branding and creative direction are available through Eye To Ad Media and Search Converts.\n\nWe help with:\n- Logo design and brand identity\n- Brand voice and positioning strategy\n- Ad creative development\n- Brand consistency audits\n- Messaging frameworks that convert\n\nLogo design is normally $500 -- just $250 for VIP members.',
    c:['Get a Branding Quote','Website Design','Talk to a Human']},
   {k:['email','drip','newsletter'],
    a:'Email marketing remains one of the highest-ROI channels when done correctly.\n\nWe help with:\n- Email list strategy and segmentation\n- Drip campaign and automation setup\n- Lead nurture sequences\n- Promotional campaign design\n- Email copywriting optimized for conversion',
@@ -1086,8 +1238,8 @@ var KB=[
    a:'We perform comprehensive audits that reveal exactly what is costing you leads and revenue.\n\nAudit types:\n- SEO audit (technical, on-page, local, content gaps)\n- Conversion audit (why visitors are not converting)\n- Google Business Profile audit\n- Competitor gap analysis\n- Website UX and trust signal review',
    c:['Request a Free Audit','Get a Quote','Talk to a Human']},
   {k:['pricing','cost','how much','rates','packages','monthly'],
-   a:'Eye To Ad Media does not use cookie-cutter packages -- every market and business is different.\n\nCustom quotes are based on:\n- Your industry and competition level\n- Geographic market (local vs. national)\n- Current website health\n- Goals and timeline\n- Required channels and services\n\nSerious SEO programs typically start in the $1,000-$2,000/mo range for local businesses.\n\nI can collect your info for a custom quote right now.',
-   c:['Get a Custom Quote','Talk to a Human','Our Services']},
+   a:'Eye To Ad Media does not use cookie-cutter packages -- every market and business is different.\n\nA few member-price highlights:\n- NFC Sales Funnel package: $5,000 -> $2,500 for VIP members\n- Advanced on-site SEO: $3,000 -> $1,500 for VIP members\n- SEO/AIO: $1,000/mo -> $500/mo for VIP members\n- Logo design: $500 -> $250 for VIP members\n\nThe VIP membership itself is $69.99/mo (regularly $150) and unlocks 50% off everything.\n\nI can collect your info for a custom quote right now.',
+   c:['Get a Custom Quote','Become a VIP Member','Talk to a Human']},
   {k:['about','who are you','eye to ad','founded','zach','bbb','search converts'],
    a:'Eye To Ad Media was founded by Zach Wennstedt in 2012 and is based in Denver, Colorado.\n\nWe are A+ BBB Accredited, 5-star rated, with a conversion-first philosophy focused on real ROI -- not vanity metrics.\n\nPowered by Search Converts (searchconverts.com) -- a full-service marketing platform covering everything from SEO and paid media to website development, branding, social media, TV advertising, and sales training.\n\nWe are also one of the first Denver agencies offering agentic AI optimization.',
    c:['Our Services','Get a Quote','Talk to a Human']},
@@ -1099,7 +1251,7 @@ var KB=[
    c:['Book a Strategy Call','Get a Quote','Talk to a Human']}
 ];
 
-var SERVICES=['SEO / Local SEO','AIO / GEO','Agentic AI Optimization','Website Design','Landing Pages / Funnels',
+var SERVICES=['NFC Sales Funnel Package','SEO / Local SEO','Advanced On-Site SEO','AIO / GEO','Agentic AI Optimization','Website Design','Landing Pages / Funnels',
   'Conversion Optimization','Google Ads / PPC','Remarketing / Display','Social Media',
   'Facebook Marketplace','TV / Streaming Ads','Email Marketing','Branding / Logo',
   'Video Marketing','Sales Training','E-commerce / Shopify','Full Marketing Strategy','Not Sure Yet'];
@@ -1108,8 +1260,8 @@ var BUDGETS=['Under $1,000/mo','$1,000-$2,000/mo','$2,000-$4,000/mo',
   '$4,000-$7,500/mo','$7,500+/mo','One-time project','Not sure yet'];
 
 function init(){
-  botmsg('Hey there! I am the Eye To Ad Media assistant.\n\nI can help you with:\n- SEO, AIO, and GEO strategy\n- Agentic AI optimization\n- Local SEO and Google Maps\n- Website design (Shopify, WordPress, custom)\n- Conversion optimization\n- Google Ads, remarketing, programmatic display\n- Social media and Facebook Marketplace\n- TV and streaming advertising\n- Branding, video, email marketing\n- Sales training and protocol development\n- Custom audits and strategy quotes\n\nWhat brings you here today?',1000).then(function(){
-    chips(['SEO / AIO / GEO','Agentic AI','Website / Funnel','Paid Ads','Social / TV / Video','Get a Free Audit','Pricing / Quote']);
+  botmsg('Hey there! I am the Eye To Ad Media assistant.\n\nI can help you with:\n- Our flagship NFC Sales Funnel package (half price for VIP members)\n- The VIP Marketing Subscription ($69.99/mo, 50% off everything)\n- SEO, AIO, and GEO strategy\n- Agentic AI optimization\n- Local SEO and Google Maps\n- Website design (Shopify, WordPress, custom)\n- Conversion optimization\n- Google Ads, remarketing, programmatic display\n- Social media and Facebook Marketplace\n- TV and streaming advertising\n- Branding, video, email marketing\n- Sales training and custom audits\n\nWhat brings you here today?',1000).then(function(){
+    chips(['NFC Sales Funnel Package','Become a VIP Member','SEO / AIO / GEO','Website / Funnel','Get a Free Audit','Pricing / Quote']);
   });
 }
 
@@ -1175,15 +1327,17 @@ function humanroute(){
 }
 
 function services(){
-  botmsg('Eye To Ad Media and Search Converts offer a comprehensive marketing stack.\n\nCore services:\n- SEO (local, national, technical, content)\n- AIO -- AI Overview Optimization\n- GEO -- Generative Engine Optimization\n- Agentic AI Optimization\n- Local SEO / Google Maps\n- Website design (custom, WordPress, Shopify)\n- Landing pages and funnels\n- Conversion Rate Optimization\n- Google Ads / PPC\n- Remarketing and programmatic display\n- Social media (organic + paid)\n- Facebook Marketplace marketing\n- TV and streaming (OTT/CTV) advertising\n- Email marketing\n- Branding and logo\n- Video marketing and YouTube ads\n- Sales training and protocol development\n- E-commerce optimization\n\nEverything is custom-scoped. No templates. No cookie-cutter packages.',1000).then(function(){
-    chips(['Get a Free Audit','Pricing / Quote','SEO / AIO / GEO','Agentic AI','Paid Ads','Talk to a Human']);
+  botmsg('Eye To Ad Media and Search Converts offer a comprehensive marketing stack.\n\nFlagship offer:\n- NFC Sales Funnel package (20 cards + 20 stickers + custom funnel page) -- half price for VIP members\n\nCore services:\n- SEO (local, national, technical, content)\n- Advanced on-site SEO\n- AIO -- AI Overview Optimization\n- GEO -- Generative Engine Optimization\n- Agentic AI Optimization\n- Local SEO / Google Maps\n- Website design (custom, WordPress, Shopify)\n- Landing pages and funnels\n- Conversion Rate Optimization\n- Google Ads / PPC\n- Remarketing and programmatic display\n- Social media (organic + paid)\n- Facebook Marketplace marketing\n- TV and streaming (OTT/CTV) advertising\n- Email marketing\n- Branding and logo\n- Video marketing and YouTube ads\n- Sales training and protocol development\n- E-commerce optimization\n\nVIP members get 50% off all of it.',1000).then(function(){
+    chips(['NFC Sales Funnel Package','Become a VIP Member','Get a Free Audit','SEO / AIO / GEO','Paid Ads','Talk to a Human']);
   });
 }
 
 function route(text){
   var t=norm(text);
+  if(has(t,['nfc','funnel package','sales funnel package'])){addmsg(text,'usr');lookupkb('nfc');return;}
+  if(has(t,['become a vip','vip member','membership','subscription'])){addmsg(text,'usr');lookupkb('vip');return;}
   if(has(t,['audit','free audit','audit my site'])){addmsg(text,'usr');startcap('SEO / Conversion Audit');return;}
-  if(has(t,['quote','i want','i need','help me','help with','interested in','how much','cost',
+  if(has(t,['get the nfc','claim','quote','i want','i need','help me','help with','interested in','how much','cost',
     'ready to start','get started','hire','work with you','sign up','pricing'])){
     addmsg(text,'usr');startcap();return;
   }
@@ -1198,14 +1352,14 @@ function route(text){
   if(has(t,['no thanks','just browsing'])){
     addmsg(text,'usr');
     botmsg('No problem! Feel free to ask anything whenever you are ready.',700).then(function(){
-      chips(['SEO / AIO / GEO','Agentic AI','Website / Funnel','Paid Ads','Pricing / Quote']);
+      chips(['NFC Sales Funnel Package','Become a VIP Member','SEO / AIO / GEO','Website / Funnel','Pricing / Quote']);
     });
     return;
   }
   if(has(t,['ask another','more questions'])){
     addmsg(text,'usr');
-    botmsg('Of course! Ask me anything about SEO, AIO, GEO, agentic AI, web design, ads, social media, TV, branding, or anything marketing-related.',700).then(function(){
-      chips(['SEO / AIO / GEO','Agentic AI','Paid Ads','Website / Funnel','Get a Quote']);
+    botmsg('Of course! Ask me anything about the NFC funnel package, VIP membership, SEO, AIO, GEO, agentic AI, web design, ads, social media, TV, branding, or anything marketing-related.',700).then(function(){
+      chips(['NFC Sales Funnel Package','Become a VIP Member','Paid Ads','Website / Funnel','Get a Quote']);
     });
     return;
   }
@@ -1227,8 +1381,8 @@ function route(text){
     }
   }
   addmsg(text,'usr');
-  botmsg('I can help with SEO, AIO, GEO, agentic AI optimization, web design, ads, social media, TV advertising, branding, email, sales training, and custom audits.\n\nType what you need or choose an option below.',800).then(function(){
-    chips(['SEO / AIO / GEO','Agentic AI','Website / Funnel','Paid Ads','Social / TV / Video','Get a Free Audit','Talk to a Human']);
+  botmsg('I can help with our NFC Sales Funnel package, the VIP membership, SEO, AIO, GEO, agentic AI optimization, web design, ads, social media, TV advertising, branding, email, sales training, and custom audits.\n\nType what you need or choose an option below.',800).then(function(){
+    chips(['NFC Sales Funnel Package','Become a VIP Member','SEO / AIO / GEO','Website / Funnel','Get a Free Audit','Talk to a Human']);
   });
 }
 
