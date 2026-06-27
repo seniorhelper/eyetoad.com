@@ -214,7 +214,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .entity-card p{font-size:.9rem;line-height:1.6}
 
 /* GEO VS SEO TABLE */
-.geo-table-wrap{overflow-x:auto;margin-top:36px;border-radius:var(--r16);overflow:hidden}
+.geo-table-wrap{position:relative;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:36px;border-radius:var(--r16)}
 .geo-table{width:100%;border-collapse:collapse;min-width:520px}
 .geo-table th{padding:14px 18px;text-align:left;font-family:'Fraunces',serif;font-size:.98rem;font-weight:900;background:rgba(255,255,255,.06);color:rgba(255,255,255,.55)}
 .geo-table th:last-child{background:rgba(5,150,105,.2);color:#6EE7B7}
@@ -249,11 +249,11 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
 /* SIGNALS GRID */
 .signals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
-.signal-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r12);padding:20px 18px;transition:all .2s}
-.signal-card:hover{background:rgba(5,150,105,.15);border-color:rgba(110,231,183,.3);transform:translateY(-2px)}
-.signal-icon{font-size:1.5rem;margin-bottom:10px}
-.signal-card h4{color:#fff;margin-bottom:5px;font-size:.96rem}
-.signal-card p{font-size:.85rem;color:rgba(255,255,255,.52);line-height:1.5}
+.signal-card{background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);padding:20px 18px;transition:all .2s}
+.signal-card:hover{background:var(--emerald-light);border-color:#A7F3D0;transform:translateY(-2px);box-shadow:var(--sh)}
+.signal-icon{font-size:1.6rem;margin-bottom:10px;line-height:1}
+.signal-card h4{color:var(--ink);margin-bottom:5px;font-size:.96rem}
+.signal-card p{font-size:.85rem;color:var(--muted);line-height:1.5}
 
 /* DASHBOARD SECTION */
 .dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -325,6 +325,9 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   .entity-grid{grid-template-columns:1fr}
   .signals-grid{grid-template-columns:1fr}
   .signals-two-col{grid-template-columns:1fr!important;gap:40px!important}
+  .geo-table{min-width:580px}
+  .geo-table th,.geo-table td{padding:11px 13px;font-size:.86rem}
+  .geo-table-wrap::after{content:'⟷ swipe to compare';display:block;text-align:center;font-size:.72rem;letter-spacing:.05em;color:var(--emerald);background:var(--emerald-light);border:1px solid #A7F3D0;border-radius:20px;padding:5px 0;margin-top:12px;font-weight:600}
   .local-geo-grid{grid-template-columns:1fr}
   .faq-cols{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
