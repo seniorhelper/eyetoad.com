@@ -177,11 +177,24 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
 .hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
 .logo{display:flex;align-items:center;flex-shrink:0}
-.brand-logo{height:auto;width:auto;max-height:76px;max-width:300px}
+/* ============================================================
+   LOGO SIZE — ONE PLACE. Change these four `height` values only.
+   WHY EXPLICIT HEIGHT: with height:auto the browser falls back to
+   the PNG's intrinsic size, and the global *{max-width:100%} rule
+   then shrinks it further — that is what made it render tiny.
+   An explicit height forces the rendered size; width:auto keeps
+   the true aspect ratio; max-width:none disarms the global cap.
+   Breakpoints MUST stay in descending order (largest first) or a
+   wider query will override a narrower one.
+   Header and footer use the same scale so every page matches.
+   ============================================================ */
+.brand-logo{height:88px;width:auto;max-width:none}
+@media(max-width:1100px){.brand-logo{height:80px}}
 @media(max-width:768px){
   .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
-  .brand-logo{max-height:56px;max-width:190px}
+  .brand-logo{height:78px}
 }
+@media(max-width:420px){.brand-logo{height:62px}}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
@@ -630,7 +643,8 @@ table.cmp .yes{color:#059669;font-weight:700}
 /* ===== FOOTER ===== */
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
-.footer-brand .brand-logo{margin-bottom:16px}
+.footer-brand .brand-logo{height:96px;margin-bottom:16px}
+@media(max-width:768px){.footer-brand .brand-logo{height:82px}}
 .footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
 .footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
 .footer-brand address a{color:#FB923C}
@@ -1359,7 +1373,7 @@ table.cmp .yes{color:#059669;font-weight:700}
       <div class="svc-card"><div class="svc-ic si5">📈</div><h3>Conversion Optimization</h3><p>Rankings that don't produce calls are a waste of budget. <a href="/conversion-optimization/" style="color:var(--blue);">Conversion optimization</a> means stronger CTAs, better trust signals, faster pages, and mobile-first UX that turns visitors into paying customers.</p><a href="/conversion-optimization/" class="svc-link">View Conversion Optimization →</a></div>
       <div class="svc-card"><div class="svc-ic si6">⚙️</div><h3>SEO Systems</h3><p>One-time fixes don't compound. Our <a href="/seo-systems/" style="color:var(--blue);">ongoing SEO systems</a> build content, links, technical health, and local authority month after month — so your rankings grow while competitors stand still.</p><a href="/seo-systems/" class="svc-link">View SEO Systems →</a></div>
     </div>
-    <div class="tc" style="margin-top:38px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;"><a href="/denver-seo-pricing/" class="btn btn-orange">See Denver SEO Pricing →</a><a href="/marketing-subscription/" class="btn btn-white">⚡ Or Join for $69.99/mo</a></div>
+    <div class="tc" style="margin-top:38px;"><a href="/denver-seo-pricing/" class="btn btn-orange">See Denver SEO Pricing →</a></div>
   </div>
 </div>
 
@@ -1492,7 +1506,7 @@ table.cmp .yes{color:#059669;font-weight:700}
       <p>Most Denver business owners think of SEO as "getting to the top of Google." That's part of it — but in 2026 it's only one piece. When someone in Cherry Creek searches for a dentist, or a homeowner in Arvada looks for a roofer, the results they see are shaped by three separate systems working at once: <strong>organic rankings</strong> (the classic blue links), the <strong>local pack</strong> (the map and three listings at the top), and increasingly <strong>AI-generated answers</strong> that summarize the best options before a person ever clicks. Denver SEO done right means being present in all three.</p>
       <p><strong>How it influences your growth trajectory:</strong> local searches are overwhelmingly high-intent. Someone searching "emergency HVAC repair Denver" is not browsing — they're ready to call. When your business ranks in the top results, you capture that intent at the exact moment it converts. Because rankings compound — every new page, link, and review makes the next one easier — the effect isn't linear. A business that breaks into the top three doesn't just get a little more traffic; it captures a disproportionate share of the entire market's ready-to-buy searches, month after month. That's the difference between SEO as an expense and SEO as a growth engine.</p>
       <p><strong>Why most Denver agencies fall short:</strong> the search landscape moved, and most providers didn't. They still sell "10 blog posts a month" while AI Overviews quietly answer the questions those posts were meant to capture. <a href="/denver-seo-services/">Modern Denver SEO</a> requires structured content and entity signals that both Google and AI engines can understand, a <a href="/local-seo-denver/">local SEO foundation</a> built around your Google Business Profile, and a conversion path that turns the resulting traffic into booked calls. To understand what a fair investment looks like, see our <a href="/denver-seo-pricing/">Denver SEO pricing guide</a>, or start with a <a href="/free-seo-audit/">free SEO audit</a> of where your site stands today.</p>
-      <p><strong>What it costs to get started:</strong> most Denver local SEO campaigns run between $500 and $3,000 per month depending on competition and scope. If you want the work at member rates instead, the <a href="/marketing-subscription/">VIP Marketing Subscription</a> is $69.99/month and unlocks member pricing across every service we offer.</p>
+      <p><strong>What it costs to get started:</strong> most Denver local SEO campaigns run between $500 and $3,000 per month depending on competition and scope. Members pay less — see the VIP Marketing Subscription for member rates across every service.</p>
     </div>
 
     <div class="tc" style="margin:48px auto 0;">
@@ -1547,7 +1561,7 @@ table.cmp .yes{color:#059669;font-weight:700}
       <div class="ent-cell"><p class="ent-k">Accreditation</p><p class="ent-v">A+ BBB Accredited<small>5-star Google Business Profile</small></p></div>
       <div class="ent-cell"><p class="ent-k">Service Area</p><p class="ent-v">Denver metro &amp; Colorado<small>National SEO available in all 50 states</small></p></div>
       <div class="ent-cell"><p class="ent-k">Typical Investment</p><p class="ent-v">$500–$3,000 / month<small>Scope-based, no cookie-cutter packages</small></p></div>
-      <div class="ent-cell"><p class="ent-k">Membership</p><p class="ent-v">$69.99 / month<small><a href="/marketing-subscription/">VIP Marketing Subscription</a> — member pricing on all services</small></p></div>
+      <div class="ent-cell"><p class="ent-k">Membership</p><p class="ent-v">$69.99 / month<small>VIP Marketing Subscription — member pricing on all services</small></p></div>
     </div>
     <p class="ent-updated">Last reviewed and updated: <time datetime="2026-07-28">July 28, 2026</time></p>
   </div>
@@ -1865,7 +1879,7 @@ table.cmp .yes{color:#059669;font-weight:700}
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">How much does Denver SEO cost?<span class="faq-ico" aria-hidden="true">+</span></button>
-        <div class="faq-a"><p>Denver SEO pricing depends on competition level, keyword targets, site complexity, and scope. Most local SEO campaigns range from $500 to $3,000 per month. See our transparent <a href="/denver-seo-pricing/">Denver SEO pricing guide</a>, or call <a href="tel:18004818638">1-800-481-8638</a> for a no-pressure quote. Members of the <a href="/marketing-subscription/">VIP Marketing Subscription</a> get member rates on everything.</p></div>
+        <div class="faq-a"><p>Denver SEO pricing depends on competition level, keyword targets, site complexity, and scope. Most local SEO campaigns range from $500 to $3,000 per month. See our transparent <a href="/denver-seo-pricing/">Denver SEO pricing guide</a>, or call <a href="tel:18004818638">1-800-481-8638</a> for a no-pressure quote.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">How do I get started with Eye To Ad Media?<span class="faq-ico" aria-hidden="true">+</span></button>
