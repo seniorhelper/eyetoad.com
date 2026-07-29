@@ -512,6 +512,13 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
+  /* MOBILE NAV SWITCH — must ship with the header markup.
+     Without these three rules the desktop nav stays visible and
+     overflows off-screen, and the hamburger never appears. */
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+
   .fit-grid{grid-template-columns:1fr}
   .faq-cols{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
