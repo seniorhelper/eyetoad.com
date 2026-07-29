@@ -195,18 +195,20 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    only empty pixels are cut.
    TO TUNE: `width` controls how big the logo looks. `height` controls
    how much air is around it (raise it if the mark looks cropped, lower
-   it if there is dead space). Change nothing else.
+   it if there is dead space). `object-position` is set to 44% rather
+   than centre because the artwork sits slightly ABOVE centre in the
+   canvas — that is why only the TOP edge was clipping. Change nothing else.
    PERMANENT FIX: crop the padding out of the PNG itself, then this
    collapses to a plain `width` + `height:auto`.
    Breakpoints MUST stay in descending order (largest first).
    ============================================================ */
-.brand-logo{width:300px;height:88px;object-fit:cover;object-position:center;max-width:none}
-@media(max-width:1100px){.brand-logo{width:270px;height:80px}}
+.brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
+@media(max-width:1100px){.brand-logo{width:270px;height:94px}}
 @media(max-width:768px){
   .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
-  .brand-logo{width:250px;height:74px}
+  .brand-logo{width:250px;height:88px}
 }
-@media(max-width:430px){.brand-logo{width:205px;height:62px}}
+@media(max-width:430px){.brand-logo{width:205px;height:74px}}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
@@ -298,15 +300,36 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .ht{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:6px 12px;border-radius:20px;backdrop-filter:blur(6px)}
 .ht-dot{width:5px;height:5px;border-radius:50%;background:#86EFAC;flex-shrink:0}
 
-/* VIP band inside the hero */
-.vipband{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(251,191,36,.14),rgba(249,115,22,.14));border:1.5px solid rgba(251,191,36,.42);border-radius:var(--r16);padding:15px 18px;backdrop-filter:blur(8px);transition:all .2s}
-.vipband:hover{border-color:rgba(251,191,36,.8);background:linear-gradient(135deg,rgba(251,191,36,.22),rgba(249,115,22,.22));transform:translateY(-2px)}
-.vipband-ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#FBBF24,#F97316);display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0;box-shadow:0 6px 18px rgba(249,115,22,.45)}
-.vipband-txt{flex:1;min-width:0}
-.vipband-eyebrow{font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#FDE68A;margin-bottom:2px}
-.vipband-title{font-family:'Fraunces',serif;font-weight:900;font-size:1.02rem;color:#fff;line-height:1.25;margin-bottom:2px}
-.vipband-sub{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.45}
-.vipband-arr{color:#FDE68A;font-size:1.3rem;flex-shrink:0;font-weight:700}
+/* ============================================================
+   VIP PASS — hero membership callout.
+   Replaces the previous generic icon+text bar. Motif is a physical
+   membership pass: perforated ticket edge down the left, foil corner
+   ribbon, slow gold shine sweep, benefit chips, price. This reinforces
+   the warehouse-club framing and the NFC card members receive.
+   ============================================================ */
+.vippass{position:relative;display:block;background:linear-gradient(135deg,#150f04 0%,#2b1d07 46%,#171106 100%);border:1.5px solid rgba(251,191,36,.42);border-radius:var(--r16);padding:16px 20px 18px 32px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.5);transition:transform .22s,border-color .22s,box-shadow .22s}
+.vippass:hover{transform:translateY(-3px);border-color:rgba(251,191,36,.95);box-shadow:0 18px 50px rgba(249,115,22,.34)}
+.vippass::before{content:'';position:absolute;left:13px;top:14px;bottom:14px;width:3px;background-image:radial-gradient(circle at center,rgba(251,191,36,.62) 1.4px,transparent 1.5px);background-size:3px 9px;background-repeat:repeat-y;pointer-events:none}
+.vippass::after{content:'';position:absolute;top:-60%;left:-70%;width:42%;height:220%;background:linear-gradient(100deg,transparent,rgba(255,216,130,.18),transparent);transform:rotate(18deg);animation:foil 6.5s ease-in-out infinite;pointer-events:none}
+@keyframes foil{0%,72%{left:-70%}94%,100%{left:135%}}
+.vippass-ribbon{position:absolute;top:0;right:0;font-size:.56rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#1a1206;background:linear-gradient(135deg,#FDE68A,#FBBF24);padding:5px 13px;border-bottom-left-radius:12px;z-index:2}
+.vippass-label{display:block;font-size:.64rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#FCD34D;margin-bottom:5px;padding-right:110px}
+.vippass-title{display:block;font-family:'Fraunces',serif;font-weight:900;font-size:1.14rem;line-height:1.25;color:#fff;margin-bottom:10px}
+.vippass-title em{font-style:normal;background:linear-gradient(135deg,#FDE68A,#F59E0B);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.vippass-chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px}
+.vippass-chips span{font-size:.69rem;font-weight:700;color:#FDE68A;background:rgba(251,191,36,.13);border:1px solid rgba(251,191,36,.3);padding:3px 9px;border-radius:20px;white-space:nowrap}
+.vippass-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.vippass-cta{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;font-weight:800;color:#1a1206;background:linear-gradient(135deg,#FDE68A,#FBBF24);padding:10px 19px;border-radius:24px;box-shadow:0 6px 20px rgba(251,191,36,.34);transition:gap .18s}
+.vippass:hover .vippass-cta{gap:12px}
+.vippass-price{font-family:'Fraunces',serif;font-weight:900;color:#fff;font-size:1.45rem;line-height:1;white-space:nowrap}
+.vippass-price i{font-style:normal;font-family:'Inter',sans-serif;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.58);margin-left:2px}
+.vippass-price s{display:block;font-family:'Inter',sans-serif;font-size:.66rem;font-weight:600;color:#86EFAC;text-decoration:none;letter-spacing:.04em;margin-top:3px}
+@media(max-width:430px){
+  .vippass{padding:14px 16px 16px 28px}
+  .vippass-title{font-size:1.02rem}
+  .vippass-label{padding-right:96px}
+  .vippass-price{font-size:1.3rem}
+}
 
 /* ===== HERO FORM ===== */
 .hform-card{background:#fff;border-radius:var(--r16);padding:26px 24px;box-shadow:0 24px 80px rgba(0,0,0,.6)}
@@ -655,8 +678,8 @@ table.cmp .yes{color:#059669;font-weight:700}
 /* ===== FOOTER ===== */
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
-.footer-brand .brand-logo{width:300px;height:88px;margin-bottom:16px}
-@media(max-width:768px){.footer-brand .brand-logo{width:260px;height:78px}}
+.footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
+@media(max-width:768px){.footer-brand .brand-logo{width:260px;height:92px}}
 .footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
 .footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
 .footer-brand address a{color:#FB923C}
@@ -1149,15 +1172,18 @@ table.cmp .yes{color:#059669;font-weight:700}
             <span class="ht"><span class="ht-dot"></span>Serving Colorado Statewide</span>
           </div>
 
-          <!-- VIP MEMBERSHIP BAND — second focal point, links to the new money page -->
-          <a href="/marketing-subscription/" class="vipband">
-            <span class="vipband-ic" aria-hidden="true">⚡</span>
-            <span class="vipband-txt">
-              <span class="vipband-eyebrow">New · Members Only</span>
-              <span class="vipband-title">VIP Marketing Subscription — $69.99/mo</span>
-              <span class="vipband-sub">Member pricing on SEO, AI optimization, logo, video, print &amp; more. Priority scheduling. VIP support.</span>
+          <!-- VIP PASS — second focal point in the hero, links to the money page -->
+          <a href="/marketing-subscription/" class="vippass">
+            <span class="vippass-ribbon">Members Only</span>
+            <span class="vippass-label">VIP Marketing Subscription</span>
+            <span class="vippass-title">Unlock <em>member pricing</em> on everything we do</span>
+            <span class="vippass-chips">
+              <span>SEO</span><span>AI Optimization</span><span>Logo</span><span>Video</span><span>Print</span><span>Landing Pages</span><span>NFC</span>
             </span>
-            <span class="vipband-arr" aria-hidden="true">→</span>
+            <span class="vippass-foot">
+              <span class="vippass-cta">See what's included <span aria-hidden="true">→</span></span>
+              <span class="vippass-price">$69.99<i>/mo</i><s>Priority service · No contract</s></span>
+            </span>
           </a>
         </div>
 
