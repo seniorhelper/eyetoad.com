@@ -283,7 +283,10 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
 /* ═══════════ TICKER ═══════════ */
 .ticker{background:var(--orange);padding:7px 0;overflow:hidden;position:relative;z-index:1001}
-.ticker-track{display:flex;animation:tick 34s linear infinite;width:max-content}
+/* 34s read as sluggish. 24s desktop, and faster still on mobile where less of
+   the track is visible at once so the same duration feels slower. */
+.ticker-track{display:flex;animation:tick 24s linear infinite;width:max-content}
+@media(max-width:768px){.ticker-track{animation-duration:18s}}
 .ticker-track:hover{animation-play-state:paused}
 .ticker-item{white-space:nowrap;padding:0 32px;font-size:.78rem;font-weight:700;letter-spacing:.03em;color:var(--ink);display:flex;align-items:center;gap:10px}
 .ticker-sep{opacity:.35}
@@ -1848,7 +1851,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.faq-q'), function(btn){
 <!--
 ================================================================================
 
-   IRIS  —  Eye To Ad Media Growth Assistant          Version 5.1  ·  July 2026
+   IRIS  —  Eye To Ad Media Growth Assistant          Version 5.2  ·  July 2026
 
 ================================================================================
 
@@ -2282,7 +2285,15 @@ Array.prototype.forEach.call(document.querySelectorAll('.faq-q'), function(btn){
 /* ─────────────── CONFIG — everything you'd ever change lives here ─────────────── */
 var CFG = {
   LEAD_EMAIL   : 'info@eyetoad.com',              // ← flip to sales@eyetoad.com if you prefer
-  FS_URL       : 'https://formsubmit.co/ajax/info@eyetoad.com',
+  /* THE REGULAR FormSubmit endpoint — the same one the page forms post to.
+     v5.0 used https://formsubmit.co/ajax/... which is activated SEPARATELY,
+     had never been confirmed for this address, and required a CORS preflight
+     that a JSON body triggers. The failure was then swallowed by a silent
+     .catch(), so the visitor was told "You're all set" while nothing sent.
+     Posting form-encoded data to the regular endpoint needs no preflight and
+     inherits the activation the page forms already have. */
+  FS_POST      : 'https://formsubmit.co/info@eyetoad.com',
+  FS_AJAX      : 'https://formsubmit.co/ajax/info@eyetoad.com',
   PHONE_MAIN   : '1-800-481-8638',
   PHONE_LOCAL  : '(720) 249-6588',
   WHATSAPP_NUM : '17202496588',
@@ -2297,7 +2308,7 @@ var CFG = {
   STEP_MS      : 900,     // pause before each lead-capture question
   CHAIN_MS     : 1250,    // pause before resuming the form after a mid-form answer
   MAX_TURNS_SOFT: 4,      // turns before Iris starts working a soft close
-  VERSION      : 'iris-v5.1'
+  VERSION      : 'iris-v5.2'
 };
 
 /* ─────────────── SMALL UTILITIES ─────────────── */
@@ -3087,6 +3098,9 @@ INTENTS.push(
 {id:'i_cancel', act:'cancel', w:1.3,
  k:['cancel','stop','nevermind','never mind','forget it','not now','skip this','quit','back out','stop asking','dont want to','do not want to','exit','no more questions','stop the form']},
 
+{id:'i_retry', act:'retry', w:1.2,
+ k:['try sending again','send it again','resend','try again','retry']},
+
 {id:'i_restart', act:'restart', w:1.2,
  k:['start over','restart','reset','begin again','clear this','start again','from the top']},
 
@@ -3602,6 +3616,11 @@ function runAction(act, route){
     }
     return;
   }
+  if (act === 'retry'){
+    S.sent = false;
+    finishCapture();
+    return;
+  }
   if (act === 'restart'){ restart(); return; }
   if (act === 'more'){
     S.turns++;
@@ -3756,14 +3775,48 @@ function finishCapture(){
   clearIdle();
   updateProgress();
   var first = (S.lead.name || 'there').split(' ')[0];
-  sendLead(false);
-  say("You're all set, " + first + "! \u2705\n\n" +
-      "That's landed in our inbox. Someone will be in touch within one business day \u2014 usually much faster than that.\n\n" +
-      "In the meantime, real humans are at:\n\uD83D\uDCDE " + CFG.PHONE_MAIN +
-      "\n\uD83D\uDCDE " + CFG.PHONE_LOCAL + "  (WhatsApp too)\n\u2709\uFE0F " + CFG.LEAD_EMAIL +
-      "\n\u23F0 " + CFG.HOURS,
-    ['Ask another question|i_more', 'What do you do?|services', 'Tell me a joke|w_joke'])
-    .then(addRestart);
+  var l = S.lead;
+
+  /* Never claim delivery before the server has answered. */
+  elSend.disabled = true;
+  showTyping();
+  sendLead(false, null, function(state){
+    hideTyping();
+    elSend.disabled = false;
+    var humans = "\uD83D\uDCDE " + CFG.PHONE_MAIN + "\n\uD83D\uDCDE " + CFG.PHONE_LOCAL +
+                 "  (WhatsApp too)\n\u2709\uFE0F " + CFG.LEAD_EMAIL + "\n\u23F0 " + CFG.HOURS;
+
+    if (state === 'confirmed'){
+      say("You're all set, " + first + "! \u2705\n\n" +
+          "That's confirmed in our inbox. Someone will be in touch within one business day \u2014 usually much faster.\n\n" +
+          "In the meantime, real humans are at:\n" + humans,
+        ['Ask another question|i_more', 'What do you do?|services', 'Tell me a joke|w_joke'])
+        .then(addRestart);
+      return;
+    }
+
+    /* Sent, but nothing came back to confirm it. Saying "all set" here is what
+       lost a real lead in v5.0, so we say exactly what we know instead. */
+    var detail = "\u2022 " + (l.name || '\u2014') + " \u2014 " + (l.company || '\u2014') + "\n" +
+                 "\u2022 " + (l.phone || '\u2014') + " \u2014 " + (l.email || '\u2014') + "\n" +
+                 "\u2022 " + (l.industry || '\u2014') + " \u2014 " + (l.service || '\u2014');
+
+    if (state === 'failed'){
+      say("I couldn't send that, " + first + " \u2014 and I'd rather tell you than let it disappear. \u26A0\uFE0F\n\n" +
+          "Please reach us directly:\n" + humans + "\n\n" +
+          "Here's what you gave me, ready to paste:\n" + detail,
+        ['Try sending again|i_retry', 'Talk to a human|i_human'])
+        .then(addRestart);
+      return;
+    }
+
+    say("Sent, " + first + " \u2014 with one honest caveat. \uD83D\uDCE8\n\n" +
+        "Your details went through, but I didn't get a delivery receipt back, so I can't promise it landed. " +
+        "If you haven't heard from us within one business day, please call \u2014 don't wait on us.\n\n" +
+        humans + "\n\nYour details, in case you'd rather send them yourself:\n" + detail,
+      ['Try sending again|i_retry', 'Ask another question|i_more', 'Talk to a human|i_human'])
+      .then(addRestart);
+  });
 }
 
 /* idle during capture → save what we have rather than losing it */
@@ -3776,7 +3829,7 @@ function clearIdle(){ if (S.idleTimer){ clearTimeout(S.idleTimer); S.idleTimer =
 /* ─────────────── TRANSPORT ─────────────── */
 function payload(partial, why){
   var l = S.lead;
-  var body = {
+  return {
     _subject: (partial ? '[PARTIAL] ' : '') + 'Iris chat lead \u2014 ' +
               (l.company || l.name || 'unknown') + (partial ? ' \u2014 ' + why : ''),
     _template: 'table',
@@ -3790,39 +3843,141 @@ function payload(partial, why){
     Source: 'Iris ' + CFG.VERSION,
     Conversation: S.transcript.join('\n\n').substring(0, 5000)
   };
-  return body;
 }
-function sendLead(partial, why){
-  if (S.sent) return;
+
+/* ─── LEAD TRANSPORT ───
+   v5.0 sent a JSON body to the /ajax/ endpoint and swallowed every error with a
+   silent .catch(), so a failed send still told the visitor "You're all set."
+   Two separate faults: a JSON content-type forces a CORS preflight, and /ajax/
+   is activated separately from the regular endpoint the site's own forms use.
+
+   v5.1 does it in two stages:
+     1. fetch() to /ajax/ with a URLSearchParams body. Form-encoded is a
+        "simple" request, so there is no preflight, and /ajax/ answers with
+        readable JSON we can actually check.
+     2. If that fails for any reason, post a real hidden form into a hidden
+        iframe against the REGULAR endpoint — a browser form POST is never
+        blocked by CORS, and that endpoint already works for the page forms.
+   Delivery is only reported as successful when we have evidence. */
+
+function toParams(fields){
+  var parts = [], k;
+  for (k in fields){
+    if (!Object.prototype.hasOwnProperty.call(fields, k)) continue;
+    parts.push(encodeURIComponent(k) + '=' +
+               encodeURIComponent(fields[k] == null ? '' : String(fields[k])));
+  }
+  return parts.join('&');
+}
+
+/* Stage 2 — hidden form + hidden iframe against the regular endpoint.
+   A successful post lands the iframe on formsubmit.co, which makes its document
+   unreadable (cross-origin). A blocked or aborted request leaves an accessible
+   error document instead. That difference is how we tell them apart. */
+function postViaIframe(fields, done){
+  var settled = false, submitted = false;
+  function finish(okFlag){
+    if (settled) return;
+    settled = true;
+    setTimeout(function(){
+      safe(function(){ if (ifr.parentNode) ifr.parentNode.removeChild(ifr); });
+      safe(function(){ if (frm.parentNode) frm.parentNode.removeChild(frm); });
+    }, 1500);
+    if (done) done(okFlag);
+  }
+  var nm = 'ir-sink-' + Date.now();
+  var ifr = document.createElement('iframe');
+  ifr.name = nm;
+  ifr.setAttribute('aria-hidden', 'true');
+  ifr.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;border:0';
+  /* We deliberately do NOT try to infer success from the iframe. A cross-origin
+     document is unreadable by design, and on some origins EVERY iframe reads as
+     cross-origin — so any such check is a guess dressed up as a fact. The post
+     is made; whether it landed is reported as "unconfirmed", not as success. */
+  ifr.addEventListener('load', function(){ if (submitted) finish('unconfirmed'); });
+  document.body.appendChild(ifr);
+
+  var frm = document.createElement('form');
+  frm.method = 'POST';
+  frm.action = CFG.FS_POST;
+  frm.target = nm;
+  frm.style.display = 'none';
+  frm.setAttribute('accept-charset', 'UTF-8');
+  var k;
+  for (k in fields){
+    if (!Object.prototype.hasOwnProperty.call(fields, k)) continue;
+    var inp = document.createElement('input');
+    inp.type = 'hidden';
+    inp.name = k;
+    inp.value = fields[k] == null ? '' : String(fields[k]);
+    frm.appendChild(inp);
+  }
+  document.body.appendChild(frm);
+
+  setTimeout(function(){ finish('unconfirmed'); }, 14000);
+  submitted = true;
+  try { frm.submit(); } catch (e) { finish('failed'); }
+}
+
+/* Stage 1 — readable AJAX attempt, falling through to stage 2. */
+/* Reports one of three states, never a guess:
+     'confirmed'    — FormSubmit's AJAX endpoint answered success. Certain.
+     'unconfirmed'  — the form POST was made but no readable answer came back.
+     'failed'       — nothing could even be attempted.
+   The visitor is told which, in plain language. */
+function postLead(fields, done){
+  var settled = false, fellBack = false;
+  function settle(state){ if (settled) return; settled = true; if (done) done(state); }
+  function fallback(){
+    if (settled || fellBack) return;
+    fellBack = true;
+    postViaIframe(fields, settle);
+  }
+
+  var started = safe(function(){
+    if (typeof fetch !== 'function') return false;
+    fetch(CFG.FS_AJAX, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: toParams(fields)
+    }).then(function(r){
+      return r.ok ? r.json()['catch'](function(){ return null; }) : null;
+    }).then(function(j){
+      if (j && String(j.success) === 'true') settle('confirmed');
+      else fallback();
+    })['catch'](fallback);
+    return true;
+  });
+  if (!started) fallback();
+  setTimeout(fallback, 9000);   // slow or hung AJAX -> make the form post anyway
+}
+
+function sendLead(partial, why, done){
+  if (S.sent && !partial){ if (done) done(true); return; }
   if (!partial) S.sent = true;
-  var body = JSON.stringify(payload(partial, why || ''));
-  var done = safe(function(){
-    return fetch(CFG.FS_URL, {
-      method:'POST', keepalive:true,
-      headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
-      body: body
-    })['catch'](noop);
-  });
-  if (!done) safe(function(){
-    var x = new XMLHttpRequest();
-    x.open('POST', CFG.FS_URL, true);
-    x.setRequestHeader('Content-Type', 'application/json');
-    x.send(body);
-  });
+  postLead(payload(partial, why || ''), done);
 }
-/* Only worth sending if there's actually a way to contact them. */
+
+/* Partial leads fire on unload, where a form POST can't complete. sendBeacon
+   with FormData is a "simple" request — multipart/form-data, no preflight —
+   so it survives the page going away. */
 function flushPartial(why){
   if (S.sent || S.partialSent) return;
   var l = S.lead;
   if (!l.name) return;
   if (!l.phone && !l.email) return;
   S.partialSent = true;
-  var body = JSON.stringify(payload(true, why));
-  var beaconed = safe(function(){
-    return navigator.sendBeacon &&
-           navigator.sendBeacon(CFG.FS_URL, new Blob([body], { type:'application/json' }));
+  var fields = payload(true, why), k;
+  var sent = safe(function(){
+    if (!navigator.sendBeacon || typeof FormData === 'undefined') return false;
+    var fd = new FormData();
+    for (k in fields){
+      if (Object.prototype.hasOwnProperty.call(fields, k))
+        fd.append(k, fields[k] == null ? '' : String(fields[k]));
+    }
+    return navigator.sendBeacon(CFG.FS_POST, fd);
   });
-  if (!beaconed) sendLead(true, why);
+  if (!sent) postLead(fields, null);
 }
 
 /* ─────────────── INPUT ─────────────── */
