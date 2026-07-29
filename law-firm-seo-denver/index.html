@@ -1416,7 +1416,7 @@ table.cmp td{color:var(--ink3)}
       <div class="rv-card reveal reveal-d1">
         <div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <p class="rv-text">"I would highly recommend Zach with Eye to Ad Media. Incredibly knowledgeable and listens to your needs. He gave me valuable tips and suggestions to accommodate our needs on the new website that he has built for my company. Very happy with my new website and the professionalism offered by Zach."</p>
-        <div class="rv-author"><div class="rv-av">ES</div><div><div class="rv-name">Elizabeth Shaw-Gonzales</div><div class="rv-sub">Google Review ★★★★★</div></div></div>
+        <div class="rv-author"><div class="rv-av">ES</div><div><div class="rv-name">Elizabeth Shaw-Gonzales</div><div class="rv-sub">EASG Law · Google Review ★★★★★</div></div></div>
       </div>
       <div class="rv-card reveal reveal-d2">
         <div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -1848,7 +1848,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.faq-q'), function(btn){
 <!--
 ================================================================================
 
-   IRIS  —  Eye To Ad Media Growth Assistant          Version 5.0  ·  July 2026
+   IRIS  —  Eye To Ad Media Growth Assistant          Version 5.1  ·  July 2026
 
 ================================================================================
 
@@ -2071,7 +2071,9 @@ Array.prototype.forEach.call(document.querySelectorAll('.faq-q'), function(btn){
   background:linear-gradient(90deg,#ff7a2f,#ffb066,#22c55e)}
 
 /* messages */
-.ir-msgs{flex:1;overflow-y:auto;overflow-x:hidden;padding:14px 13px 8px;
+/* position:relative so offsetTop is measured against this list — the scroll
+   logic parks the TOP of a long answer in view instead of jumping past it. */
+.ir-msgs{flex:1;position:relative;overflow-y:auto;overflow-x:hidden;padding:14px 13px 8px;
   display:flex;flex-direction:column;scroll-behavior:smooth;overscroll-behavior:contain}
 .ir-msgs::-webkit-scrollbar{width:4px}
 .ir-msgs::-webkit-scrollbar-track{background:transparent}
@@ -2292,8 +2294,10 @@ var CFG = {
   AMBIG_GAP    : 0.08,    // if #2 is within 8% of #1, ask which they meant
   INTERRUPT    : 4.5,     // score needed to answer a question mid-lead-capture
   IDLE_MS      : 50000,   // idle during capture → save the partial lead
+  STEP_MS      : 900,     // pause before each lead-capture question
+  CHAIN_MS     : 1250,    // pause before resuming the form after a mid-form answer
   MAX_TURNS_SOFT: 4,      // turns before Iris starts working a soft close
-  VERSION      : 'iris-v5.0'
+  VERSION      : 'iris-v5.1'
 };
 
 /* ─────────────── SMALL UTILITIES ─────────────── */
@@ -2307,7 +2311,32 @@ function norm(s){
     .trim();
 }
 function toks(s){ var a = norm(s).split(' '); return (a.length === 1 && a[0] === '') ? [] : a; }
-function tokSet(s){ var t = toks(s), o = {}, i; for (i = 0; i < t.length; i++) o[t[i]] = 1; return o; }
+/* Singularize every word in a string so multi-word keywords like "walk in tub"
+   still match "walk in tubs". Used alongside tokSet by the phrase matcher. */
+function singular(w){
+  if (w.length <= 3) return w;
+  if (w.slice(-3) === 'ies') return w.slice(0, -3) + 'y';        // agencies -> agency
+  if (/(ses|xes|zes|ches|shes)$/.test(w)) return w.slice(0, -2);  // boxes -> box
+  if (w.slice(-1) === 's' && w.slice(-2) !== 'ss') return w.slice(0, -1); // logos -> logo
+  return w;
+}
+function normSing(s){
+  var t = toks(s), i, out = [];
+  for (i = 0; i < t.length; i++) out.push(singular(t[i]));
+  return out.join(' ');
+}
+/* Index each token AND a singularised form, so "logos" matches the keyword
+   "logo", "websites" matches "website", "billboards" matches "billboard".
+   Without this, plurals only earned the weak stem bonus and routinely fell
+   below MIN_SCORE — which is how "Do you do logos?" ended up being recorded
+   as somebody's name. */
+function tokSet(s){
+  var t = toks(s), o = {}, i, w;
+  for (i = 0; i < t.length; i++){
+    w = t[i]; o[w] = 1; o[singular(w)] = 1;
+  }
+  return o;
+}
 function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
 function cap(s){ return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
 function money(n){
@@ -2385,7 +2414,7 @@ function tryMath(raw){
    Gated: never fire during lead capture, pricing, or objection handling.        */
 var JOKES = [
   "SEO is like planting a tree. Best time was five years ago. Second best time is right after this conversation. 🌳",
-  "My favourite marketing metric is \"revenue.\" Deeply underrated. Very hot right now.",
+  "My favorite marketing metric is \"revenue.\" Deeply underrated. Very hot right now.",
   "A business with no reviews walks into a bar. Nobody notices.",
   "Your competitor's site loads in 1.2 seconds. Yours loads in 6. Guess who your customer married. 💍",
   "I'd tell you a joke about page two of Google, but nobody would ever see it.",
@@ -2400,10 +2429,10 @@ var JOKES = [
   "Why did the landing page go to therapy? Too much unresolved friction.",
   "Ads are rent. SEO is a mortgage. Both get you a roof — only one builds equity. 🏠",
   "I love a good billboard. Great for reaching people who are legally required to watch the road.",
-  "A marketer's favourite traffic is the kind that converts. Least favourite is I-25 at 5pm. 🚗",
+  "A marketer's favorite traffic is the kind that converts. Least favorite is I-25 at 5pm. 🚗",
   "Someone told me \"we don't need a website, we get everything from word of mouth.\" I asked how people find the word of mouth. Long pause.",
   "Your Google Business Profile is 40% filled out. So is a parachute with holes in it. Technically present. 🪂",
-  "I don't have a favourite social platform. I have a favourite cost per acquisition.",
+  "I don't have a favorite social platform. I have a favorite cost per acquisition.",
   "What do you call SEO results in 30 days? A sales pitch.",
   "Blogging is like the gym. Everyone knows it works. Almost nobody goes twice. 🏋️",
   "My love language is a form submission at 11pm. 💌",
@@ -2413,12 +2442,12 @@ var JOKES = [
   "I met a guy who spent $8,000 on a logo and $0 on a website. Beautiful logo. Nobody has ever seen it.",
   "Why do websites lose arguments? They keep getting bounced.",
   "A/B testing is just letting customers vote — except they don't know they're voting, so the results are honest. 🗳",
-  "What's a chatbot's favourite exercise? Running conversions. 🏃",
+  "What's a chatbot's favorite exercise? Running conversions. 🏃",
   "I'm not saying your checkout is slow, but I aged during it.",
   "Nothing says \"trust me with your money\" like a contact page with no phone number.",
   "Half of marketing works. The problem is everyone thinks they know which half. (Check your analytics. It's in there.)",
   "What do you call a business that ignores its reviews? Formerly a business.",
-  "My favourite genre of fiction is \"we'll get to the website next quarter.\" 📚",
+  "My favorite genre of fiction is \"we'll get to the website next quarter.\" 📚",
   "Google Ads turns dollars into clicks. Whether clicks become customers is entirely up to your landing page.",
   "Why was the keyword sad? No search volume. No friends. 😢",
   "If your marketing plan is \"post more on Facebook,\" I have some gentle news about organic reach.",
@@ -2427,8 +2456,8 @@ var JOKES = [
   "Somebody asked if SEO is dead. I said yes — then ranked the obituary.",
   "The best marketing budget is the one you can actually measure. 📊",
   "A gym membership and a marketing retainer have the same catch: both only work if you show up.",
-  "My favourite thing about Denver is the altitude. Second favourite is watching local businesses climb the map pack. ⛰",
-  "If you build it, they will come. If you build it AND optimise it, they'll come and they'll convert.",
+  "My favorite thing about Denver is the altitude. Second favorite is watching local businesses climb the map pack. ⛰",
+  "If you build it, they will come. If you build it AND optimize it, they'll come and they'll convert.",
   "Why was the marketer thrown out of the bakery? Kept trying to A/B test the donuts. 🍩",
   "Some agencies sell rankings. We sell the phone ringing. Only one of those pays your rent. ☎️",
   "A website with no analytics is a car with no speedometer. You're moving! Somewhere! Fast? Unclear! 🚙",
@@ -2497,7 +2526,7 @@ KB.push(
  c:['*Free growth audit|i_audit','Pricing','Talk to a human','Our services']},
 
 {id:'credentials', fam:'core',
- k:['bbb','accredited','rating','reviews','trustworthy','legit','credentials','how long in business','experience','established','years','since when','track record','reputation'],
+ k:['bbb','accredited','are you legit','trustworthy','legit','credentials','how long in business','how much experience','established','since when','track record','your rating','your reviews'],
  a:"Fair to ask — plenty of agencies are two guys and a laptop. 📋\n\n• Founded 2012 — 14 years in, through every major algorithm shift\n• BBB Accredited, A+ rating\n• 5-star Google rating\n• Regarded as one of the top Denver SEO agencies\n• Parent company: Search Converts LLC\n• Real Denver office at " + CFG.ADDRESS + "\n\nWe'll happily show you actual client work rather than just telling you about it.",
  c:['*Free growth audit|i_audit','Talk to a human','Why you over another agency?']},
 
@@ -2523,7 +2552,7 @@ KB.push(
 
 {id:'whoworks', fam:'core',
  k:['who does the work','in house','outsourced','offshore','subcontract','your team','how many people','account manager','who will i work with'],
- a:"You work with our team — not a call centre and not a subcontractor chain. 🙋\n\nWe keep the client roster deliberately small precisely so that's possible. You'll know who's on your account and you can reach them.\n\nThat's also why we're honest when we're not the right fit. Taking on work we can't do properly is how agencies end up with the reputation the whole industry has.",
+ a:"You work with our team — not a call center and not a subcontractor chain. 🙋\n\nWe keep the client roster deliberately small precisely so that's possible. You'll know who's on your account and you can reach them.\n\nThat's also why we're honest when we're not the right fit. Taking on work we can't do properly is how agencies end up with the reputation the whole industry has.",
  c:['Why you over another agency?','*Free growth audit|i_audit','Talk to a human']}
 );
 
@@ -2534,7 +2563,7 @@ KB.push(
 KB.push(
 {id:'growth', fam:'core', w:1.12,
  k:['more customers','more leads','more calls','more sales','more clients','more business','more work','more revenue','more jobs','new customers','new clients','get customers','get clients','get more customers','get more leads','get more calls','grow my business','grow the business','grow our business','help me grow','i want to grow','need to grow','need marketing','i need marketing','we need marketing','business is slow','slow business','not enough business','phone isnt ringing','phone is not ringing','phone not ringing','nobody finds us','no one finds us','nobody can find us','need exposure','more exposure','more visibility','get found','drum up business','increase sales','boost sales','need work','what should i do','where do i start','need customers','win more work'],
- a:"That is my favourite thing to work on. \ud83c\udfaf\n\nAnd it is the right question — most people ask about tactics before they have named the problem.\n\nQuick diagnostic, because \"more customers\" is really three very different problems wearing the same sentence:\n\n**1. Nobody knows you exist.** Plenty of capacity, not enough people finding you. That is a visibility problem — search, Maps, ads.\n\n**2. People find you but do not call.** Traffic arrives and leaves. That is a conversion problem — and more traffic would just mean more people leaving.\n\n**3. Leads come in and go cold.** They contact you and nothing closes. That is a follow-up problem, and it is the cheapest of the three to fix.\n\nWhich sounds most like you? Genuinely — the answer changes everything I would recommend, and it is the difference between spending money well and spending it twice.",
+ a:"That is my favorite thing to work on. \ud83c\udfaf\n\nAnd it is the right question — most people ask about tactics before they have named the problem.\n\nQuick diagnostic, because \"more customers\" is really three very different problems wearing the same sentence:\n\n**1. Nobody knows you exist.** Plenty of capacity, not enough people finding you. That is a visibility problem — search, Maps, ads.\n\n**2. People find you but do not call.** Traffic arrives and leaves. That is a conversion problem — and more traffic would just mean more people leaving.\n\n**3. Leads come in and go cold.** They contact you and nothing closes. That is a follow-up problem, and it is the cheapest of the three to fix.\n\nWhich sounds most like you? Genuinely — the answer changes everything I would recommend, and it is the difference between spending money well and spending it twice.",
  c:['Nobody knows we exist|seo','They visit but dont call|cro','Leads go cold|speedtolead','*Not sure - audit me|i_audit']}
 );
 
@@ -2547,22 +2576,22 @@ KB.push(
 
 {id:'localseo', fam:'search',
  k:['local seo','map pack','local pack','three pack','3 pack','local search','local ranking','city seo','service area','local rankings','google maps','maps ranking','show up on maps','local customers','near me searches'],
- a:"Local SEO. This is prime digital real estate and we specialise in occupying it. 📍\n\nThe numbers that matter:\n• The Map Pack takes about 44% of local clicks — the #1 organic result gets about 14%\n• It appears on roughly 93% of searches with local intent\n• Businesses in the 3-pack get about 126% more traffic and 93% more calls than those ranked 4-10\n• Around 46% of all Google searches are local\n\nWhat drives it: Google Business Profile signals are roughly 32% of local ranking weight, reviews about 16-20%, on-page around 19%.\n\nWhat we do: full GBP optimisation, correct primary category (single biggest lever), city and service-area pages, citation cleanup, review velocity systems, local schema, competitor gap analysis.\n\nWhat city are you targeting?",
+ a:"Local SEO. This is prime digital real estate and we specialize in occupying it. 📍\n\nThe numbers that matter:\n• The Map Pack takes about 44% of local clicks — the #1 organic result gets about 14%\n• It appears on roughly 93% of searches with local intent\n• Businesses in the 3-pack get about 126% more traffic and 93% more calls than those ranked 4-10\n• Around 46% of all Google searches are local\n\nWhat drives it: Google Business Profile signals are roughly 32% of local ranking weight, reviews about 16-20%, on-page around 19%.\n\nWhat we do: full GBP optimization, correct primary category (single biggest lever), city and service-area pages, citation cleanup, review velocity systems, local schema, competitor gap analysis.\n\nWhat city are you targeting?",
  c:['*Free local SEO audit|i_audit','Google Business Profile','Reviews strategy','Pricing']},
 
 {id:'gbp', fam:'search',
  k:['google business profile','gbp','gmb','google my business','business listing','business profile','my listing','google listing','claim my business'],
- a:"Your Google Business Profile is the single highest-leverage asset in local marketing, and most are about 40% optimised. 🏆\n\nGBP signals are roughly 32% of what decides your Map Pack position. The primary category alone is the most powerful individual factor — Google offers over 4,000 of them and picking the precise one instead of the generic one has moved businesses 2-4 positions in a few weeks.\n\nWhat we optimise:\n• Primary and secondary categories (precision beats breadth)\n• Services, descriptions and attributes, fully filled\n• Photo strategy and posting cadence\n• Q&A seeding\n• Review acquisition and response\n• NAP consistency everywhere else on the web\n\nWorth knowing: a complete profile makes people 2.7x more likely to see you as reputable, and complete profiles get about 70% more location visits.\n\nWant me to have someone audit yours? It's free and takes us about a day.",
+ a:"Your Google Business Profile is the single highest-leverage asset in local marketing, and most are about 40% optimized. 🏆\n\nGBP signals are roughly 32% of what decides your Map Pack position. The primary category alone is the most powerful individual factor — Google offers over 4,000 of them and picking the precise one instead of the generic one has moved businesses 2-4 positions in a few weeks.\n\nWhat we optimize:\n• Primary and secondary categories (precision beats breadth)\n• Services, descriptions and attributes, fully filled\n• Photo strategy and posting cadence\n• Q&A seeding\n• Review acquisition and response\n• NAP consistency everywhere else on the web\n\nWorth knowing: a complete profile makes people 2.7x more likely to see you as reputable, and complete profiles get about 70% more location visits.\n\nWant me to have someone audit yours? It's free and takes us about a day.",
  c:['*Yes, audit my profile|i_audit','Local SEO','Reviews strategy','Pricing']},
 
 {id:'aio', fam:'search',
  k:['aio','ai overview','ai overviews','google ai','ai mode','ai answer','answer box','ai search','appear in ai','featured in ai','rank in ai','ai citations','generative search','ai results','google ai mode'],
- a:"AI Overview Optimisation — the biggest shift in search since mobile-first. 🤖\n\nWhere things actually stand in 2026:\n• AI Overviews show on roughly 48% of Google searches (88% in healthcare, 83% education, 37% entertainment)\n• AI Overviews reach about 2.5 billion people monthly; Google's AI Mode passed 1 billion monthly users\n• Organic click-through dropped around 61% on queries where an AI Overview appears\n\nHere's the part nobody talks about: **brands cited inside AI Overviews earn about 35% more organic clicks and 91% more paid clicks** than uncited brands. So this isn't defensive. Being the source is now better than being the top link.\n\nWhat we build: fact-dense quotable content, front-loaded answers, FAQ and schema architecture, entity clarity, freshness cadence, and tracking of where you're cited versus your competitors.\n\nMost agencies are still writing for ten blue links.",
+ a:"AI Overview Optimization — the biggest shift in search since mobile-first. 🤖\n\nWhere things actually stand in 2026:\n• AI Overviews show on roughly 48% of Google searches (88% in healthcare, 83% education, 37% entertainment)\n• AI Overviews reach about 2.5 billion people monthly; Google's AI Mode passed 1 billion monthly users\n• Organic click-through dropped around 61% on queries where an AI Overview appears\n\nHere's the part nobody talks about: **brands cited inside AI Overviews earn about 35% more organic clicks and 91% more paid clicks** than uncited brands. So this isn't defensive. Being the source is now better than being the top link.\n\nWhat we build: fact-dense quotable content, front-loaded answers, FAQ and schema architecture, entity clarity, freshness cadence, and tracking of where you're cited versus your competitors.\n\nMost agencies are still writing for ten blue links.",
  c:['*Free AI visibility audit|i_audit','GEO strategy','Agentic SEO','Pricing']},
 
 {id:'geo', fam:'search',
  k:['geo','generative engine optimization','generative engine','llm seo','get cited','cited by ai','cited by chatgpt','ai mentions','mentioned by chatgpt','chatgpt','chatgpt seo','perplexity','gemini','llm visibility','claude','copilot','ai assistant recommend','chatgpt recommend','share of model'],
- a:"GEO — Generative Engine Optimisation. Making sure ChatGPT, Perplexity, Gemini and Claude name YOU. 🚀\n\nThis went from niche to serious fast: Adobe bought Semrush for about $1.9 billion in late 2025, framed explicitly around brand visibility in the agentic AI era. That's the market pricing the discipline.\n\nWhat actually moves the needle, per the research:\n• Adding statistics and source citations lifts AI citation rates 30-40%\n• Q&A formatting lifts them about 25%\n• **Promotional tone REDUCES citation odds by about 26%** — \"absolutely essential\" and \"the best choice\" are GEO poison\n• ChatGPT's search leans on Bing's index, so Bing indexing is non-optional\n• Expect a 4-8 week lag between publishing and appearing\n\nWe run your top queries through each engine, document where you're cited versus competitors, then close the gap. Only about 24% of marketers have started on this. That gap is your window.",
+ a:"GEO — Generative Engine Optimization. Making sure ChatGPT, Perplexity, Gemini and Claude name YOU. 🚀\n\nThis went from niche to serious fast: Adobe bought Semrush for about $1.9 billion in late 2025, framed explicitly around brand visibility in the agentic AI era. That's the market pricing the discipline.\n\nWhat actually moves the needle, per the research:\n• Adding statistics and source citations lifts AI citation rates 30-40%\n• Q&A formatting lifts them about 25%\n• **Promotional tone REDUCES citation odds by about 26%** — \"absolutely essential\" and \"the best choice\" are GEO poison\n• ChatGPT's search leans on Bing's index, so Bing indexing is non-optional\n• Expect a 4-8 week lag between publishing and appearing\n\nWe run your top queries through each engine, document where you're cited versus competitors, then close the gap. Only about 24% of marketers have started on this. That gap is your window.",
  c:['*Free AI visibility audit|i_audit','AI Overviews (AIO)','Agentic SEO','Pricing']},
 
 {id:'agentic', fam:'search',
@@ -2602,12 +2631,12 @@ KB.push(
 
 {id:'ecomseo', fam:'search',
  k:['ecommerce seo','ecommerce','e commerce','online store','shopify','shopify seo','product pages','woocommerce','sell online','store seo','product seo','category pages','online sales','build shopify'],
- a:"E-commerce SEO — different beast from local. 🛒\n\nThe work is category architecture, product page optimisation at scale, faceted navigation control, Product and Review schema, and internal linking that spreads authority to the pages that actually sell.\n\nNew in 2026: AI shopping agents. Google's Shopping Graph carries over 50 billion listings, and agents pick products based on structured data, review scores, pricing accuracy and real-time availability — not brand recognition or ad spend. Clean product data is now a distribution channel.\n\nWe handle Shopify and WooCommerce, plus custom builds. And we'll be honest about whether your margins support the work before you spend a dollar.",
+ a:"E-commerce SEO — different beast from local. 🛒\n\nThe work is category architecture, product page optimization at scale, faceted navigation control, Product and Review schema, and internal linking that spreads authority to the pages that actually sell.\n\nNew in 2026: AI shopping agents. Google's Shopping Graph carries over 50 billion listings, and agents pick products based on structured data, review scores, pricing accuracy and real-time availability — not brand recognition or ad spend. Clean product data is now a distribution channel.\n\nWe handle Shopify and WooCommerce, plus custom builds. And we'll be honest about whether your margins support the work before you spend a dollar.",
  c:['*Free e-commerce audit|i_audit','Website design','Google Ads','Pricing']},
 
 {id:'multiloc', fam:'search',
  k:['multiple locations','multi location','franchise','several offices','locations','branches','each location','chain','multiple cities'],
- a:"Multi-location and franchise marketing — a genuinely different discipline. 🏢\n\nThe traps: locations cannibalising each other's rankings, duplicate content across near-identical pages, inconsistent NAP fragmenting your authority, and one bad location's reviews dragging the brand.\n\nWhat we build: a properly structured location page for each site with genuinely local content, individually optimised Google Business Profiles, centralised review monitoring with per-location routing, consistent citations across the estate, and reporting that shows performance per location so you can see which ones need help.\n\nHow many locations are you running? The approach changes a lot between 3 and 30.",
+ a:"Multi-location and franchise marketing — a genuinely different discipline. 🏢\n\nThe traps: locations cannibalising each other's rankings, duplicate content across near-identical pages, inconsistent NAP fragmenting your authority, and one bad location's reviews dragging the brand.\n\nWhat we build: a properly structured location page for each site with genuinely local content, individually optimized Google Business Profiles, centralised review monitoring with per-location routing, consistent citations across the estate, and reporting that shows performance per location so you can see which ones need help.\n\nHow many locations are you running? The approach changes a lot between 3 and 30.",
  c:['*Free multi-location audit|i_audit','Local SEO','Pricing','Talk to a human']},
 
 {id:'intlseo', fam:'search',
@@ -2631,7 +2660,7 @@ KB.push(
 
 {id:'remarketing', fam:'paid',
  k:['remarketing','retargeting','follow them around','abandoned','pixel','audience','warm traffic','come back','display retargeting'],
- a:"Remarketing is the cheapest money in digital. 🎯\n\nThink about it: 97-98% of first-time visitors leave without converting. Remarketing is how you get a second at-bat with people who already know you.\n\nRetargeted audiences with intent signals see roughly 10x higher click-through and about a 70% lift in conversion versus cold display.\n\nWhat we set up: proper pixel and audience architecture, segmented lists by behaviour (viewed pricing versus read a blog post are very different people), frequency caps so you're persuasive rather than creepy, and creative sequencing that changes the message as they warm up.\n\nIt's usually the first thing I'd add to an existing ad account.",
+ a:"Remarketing is the cheapest money in digital. 🎯\n\nThink about it: 97-98% of first-time visitors leave without converting. Remarketing is how you get a second at-bat with people who already know you.\n\nRetargeted audiences with intent signals see roughly 10x higher click-through and about a 70% lift in conversion versus cold display.\n\nWhat we set up: proper pixel and audience architecture, segmented lists by behavior (viewed pricing versus read a blog post are very different people), frequency caps so you're persuasive rather than creepy, and creative sequencing that changes the message as they warm up.\n\nIt's usually the first thing I'd add to an existing ad account.",
  c:['*Get a remarketing quote|i_capture','Google Ads','Social ads','Pricing']},
 
 {id:'programmatic', fam:'paid',
@@ -2651,7 +2680,7 @@ KB.push(
 
 {id:'tv', fam:'paid',
  k:['tv','television','streaming','ott','ctv','connected tv','hulu','roku','tv ads','streaming ads','commercials','cable'],
- a:"TV isn't just for big brands anymore. 📺\n\nYou can now run a streaming spot targeted at homeowners in specific zip codes, aged 45-65, who searched for your service in the last 30 days. That's not a broadcast buy — that's a targeted campaign that happens to appear on a television.\n\nWhat we run: OTT streaming (Hulu, Roku, Pluto, Paramount+, Peacock), Connected TV served to actual TV screens, targeting by geography plus demographics plus behaviour, and full-funnel sequencing — TV spot, then retargeted on Google and social, then conversion.\n\nWe can produce the spot too. Most agencies place; fewer make.",
+ a:"TV isn't just for big brands anymore. 📺\n\nYou can now run a streaming spot targeted at homeowners in specific zip codes, aged 45-65, who searched for your service in the last 30 days. That's not a broadcast buy — that's a targeted campaign that happens to appear on a television.\n\nWhat we run: OTT streaming (Hulu, Roku, Pluto, Paramount+, Peacock), Connected TV served to actual TV screens, targeting by geography plus demographics plus behavior, and full-funnel sequencing — TV spot, then retargeted on Google and social, then conversion.\n\nWe can produce the spot too. Most agencies place; fewer make.",
  c:['*Get a TV quote|i_capture','Video production','Programmatic display','Pricing']},
 
 {id:'radio', fam:'paid',
@@ -2660,12 +2689,12 @@ KB.push(
  c:['*Get an audio quote|i_capture','TV & streaming','Talk to a human']},
 
 {id:'directmail', fam:'paid',
- k:['direct mail','mailer','postcard','flyers','flyer','print advertising','eddm','mailing','door hangers','brochure'],
+ k:['direct mail','mailer','postcard','flyers','flyer','print advertising','eddm','mailing','door hangers'],
  a:"Direct mail — genuinely working again, partly because everyone else abandoned it. 📬\n\nThe inbox is a warzone. The physical mailbox is nearly empty. That asymmetry is the opportunity.\n\nWhat we do: design and print, EDDM (Every Door Direct Mail) for saturation by carrier route, targeted lists by demographic and property data, and — the important part — pairing mail with digital so the same household sees the postcard and then your ad.\n\nNon-negotiable: a unique tracking number or URL on every piece. If you can't measure it, it's not marketing, it's decoration.",
  c:['*Get a mail quote|i_capture','Print & graphic design','Programmatic display','Pricing']},
 
 {id:'billboards', fam:'paid',
- k:['billboard','billboards','outdoor','ooh','signage','bus','transit','digital billboard','out of home'],
+ k:['billboard','outdoor','ooh','signage','bus','transit','digital billboard','out of home'],
  a:"Out-of-home — billboards, transit, digital boards. 🛣\n\nBest use: brand familiarity and market credibility in a defined geography. If people see your name on I-25 every morning and then see you in the Map Pack, you win the click over the name they've never heard of.\n\nWhat we handle: placement strategy and negotiation, creative (six words or fewer, honestly — nobody reads a billboard), digital board rotations, and geofenced mobile retargeting of people who passed the board, which is how you make OOH measurable at all.\n\nHonest caveat: it's a supporting channel. It won't make your phone ring on its own.",
  c:['*Get an OOH quote|i_capture','Programmatic display','Talk to a human']},
 
@@ -2684,11 +2713,11 @@ KB.push(
 KB.push(
 {id:'email', fam:'life',
  k:['email marketing','email','newsletter','nurture','drip','sequence','mailchimp','klaviyo','email list','autoresponder','email campaign'],
- a:"Email — the highest measured ROI of any channel, and the one most businesses neglect. 💌\n\nAround $36-42 back for every $1 spent. Nothing else comes close at scale.\n\nWhat we build: welcome and nurture sequences, segmentation by behaviour and lifecycle stage, abandoned-cart and abandoned-quote recovery, reactivation campaigns for dormant customers, and review-request automation.\n\nThe strategic point: acquiring a new customer costs 5-25x more than keeping one, and a 5% retention improvement can lift profit 25-95%. Email is the cheapest retention lever there is.\n\nIf you have a customer list sitting in a spreadsheet doing nothing, that's money on the table right now.",
+ a:"Email — the highest measured ROI of any channel, and the one most businesses neglect. 💌\n\nAround $36-42 back for every $1 spent. Nothing else comes close at scale.\n\nWhat we build: welcome and nurture sequences, segmentation by behavior and lifecycle stage, abandoned-cart and abandoned-quote recovery, reactivation campaigns for dormant customers, and review-request automation.\n\nThe strategic point: acquiring a new customer costs 5-25x more than keeping one, and a 5% retention improvement can lift profit 25-95%. Email is the cheapest retention lever there is.\n\nIf you have a customer list sitting in a spreadsheet doing nothing, that's money on the table right now.",
  c:['*Get an email quote|i_capture','Retention systems','Reviews strategy','Pricing']},
 
-{id:'reviews', fam:'life',
- k:['reviews','reputation','google reviews','review strategy','more reviews','get reviews','star rating','testimonials','bad review','negative review','reputation management','yelp'],
+{id:'reviews', fam:'life', w:1.08,
+ k:['reviews','review','reputation','google reviews','review strategy','more reviews','get reviews','star rating','testimonials','bad review','negative review','reputation management','yelp'],
  a:"Reviews are both a top-three local ranking signal and your single most powerful conversion tool. ⭐\n\nThe data:\n• 95% of consumers read reviews before buying; 41% say they ALWAYS do (up from 29% a year ago)\n• A one-star rating increase correlates with 5-9% more revenue\n• 92% won't consider a business under 4 stars\n• Sweet spot is 4.2-4.5 — a perfect 5.0 reads as fake\n• Businesses replying to at least 25% of reviews earn about 35% more revenue\n• **Only about 5% of businesses respond to reviews at all** — while 89% of consumers expect it\n\nThat last gap is the easiest win in this entire conversation.\n\nWhat we build: post-job and post-appointment request sequences, easy review links, response templates, and monitoring across Google, Yelp and your industry directories. Velocity matters more than total — a steady flow beats an old pile.",
  c:['*Build my review system|i_capture','Google Business Profile','Local SEO','Pricing']},
 
@@ -2726,19 +2755,19 @@ KB.push(
 /* ══════════ KB: BUILD & CREATE ══════════ */
 KB.push(
 {id:'website', fam:'build',
- k:['website','web design','web development','new website','redesign','build a site','need a website','website design','site design','rebuild','web designer','homepage','our site is dated','site is outdated','check my current site','check my site'],
+ k:['website','web design','web development','new website','redesign','build a site','build a website','make a website','need a website','website design','site design','rebuild','web designer','homepage','our site is dated','site is outdated','check my current site','check my site'],
  a:"There are websites, and there are websites that make money. We build the second kind. 💻\n\nMost agencies hand you something beautiful that converts at under 1%. Service businesses should be targeting 3-5% on contact forms and consultation requests. That gap is the entire ballgame.\n\nWhat we build:\n⚡ Hand-coded HTML/CSS/JS — genuinely fast, perfect Core Web Vitals, SEO-native\n🔷 WordPress builds and rescues\n🛒 Shopify and e-commerce\n📱 Mobile-first (mobile is over 62% of web traffic)\n🎯 Conversion architecture — CTAs, trust signals, form design\n🤖 AI-ready structure, schema baked in from day one\n\nThe ROI framing: 500 visitors a month at 1% is 5 leads. At 4% it's 20. Same traffic, same spend, four times the business.\n\nWhat are you working with now?",
- c:['*Get a website quote|i_capture','Conversion optimisation','Site speed','Pricing']},
+ c:['*Get a website quote|i_capture','Conversion optimization','Site speed','Pricing']},
 
 {id:'cro', fam:'build',
  k:['conversion','cro','conversion rate','convert','converting','not converting','no leads','low conversion','bounce rate','traffic but no leads','traffic but no calls','visit but dont call','they visit but dont call','lead generation','lead gen','optimize conversions','ab test','split test','abandoning'],
- a:"Conversion optimisation. Literally in our parent company's name, and the thing we care most about. 📊\n\nTraffic without conversion is an expensive vanity project. The global median site converts around 2.35% — the top 10% convert at 11.45%. Same internet, same budgets. The difference is systematic testing and friction removal.\n\nWhere the leaks usually are:\n📢 CTAs — placement, wording, visibility, urgency\n🏅 Trust signals — reviews, credentials, guarantees, real photos\n📋 Form design — every unnecessary field costs you leads\n📱 Mobile experience — where most of your traffic actually is\n⚡ Speed — every 100ms is about 1% of conversions\n🧪 A/B testing — testing, not guessing\n\nBenchmarks so you can place yourself: emergency trades 12-16%, legal ~7.4%, home improvement ~4%, professional services ~5.2%, e-commerce ~1.7%.\n\nWhat's your current rate? I can tell you fast whether you have a traffic problem or a conversion problem.",
+ a:"Conversion optimization. Literally in our parent company's name, and the thing we care most about. 📊\n\nTraffic without conversion is an expensive vanity project. The global median site converts around 2.35% — the top 10% convert at 11.45%. Same internet, same budgets. The difference is systematic testing and friction removal.\n\nWhere the leaks usually are:\n📢 CTAs — placement, wording, visibility, urgency\n🏅 Trust signals — reviews, credentials, guarantees, real photos\n📋 Form design — every unnecessary field costs you leads\n📱 Mobile experience — where most of your traffic actually is\n⚡ Speed — every 100ms is about 1% of conversions\n🧪 A/B testing — testing, not guessing\n\nBenchmarks so you can place yourself: emergency trades 12-16%, legal ~7.4%, home improvement ~4%, professional services ~5.2%, e-commerce ~1.7%.\n\nWhat's your current rate? I can tell you fast whether you have a traffic problem or a conversion problem.",
  c:['*Free conversion audit|i_audit','Website design','Site speed','Pricing']},
 
 {id:'landing', fam:'build',
  k:['landing page','landing pages','funnel','sales funnel','squeeze page','campaign page','lead page','opt in'],
  a:"Landing pages and funnels — where paid traffic either converts or evaporates. 🎯\n\nThe rule we won't bend: we don't run ads to a homepage. A homepage serves everyone, which means it persuades nobody. Campaign traffic needs a page built for that specific promise.\n\nWhat goes in: one offer and one action, message match to the ad that brought them, trust signals above the fold, mobile-first layout, sub-2-second load, and a form with the minimum viable number of fields.\n\nThen we test. Landing page benchmarks vary wildly by industry — legal converts around 7.4%, healthcare 3-4% with top performers at 8-10% — so the only meaningful comparison is against your own last month.",
- c:['*Get a landing page quote|i_capture','Conversion optimisation','Google Ads','Pricing']},
+ c:['*Get a landing page quote|i_capture','Conversion optimization','Google Ads','Pricing']},
 
 {id:'app', fam:'build',
  k:['app','mobile app','ios','android','application','build an app','web app','software','portal','platform'],
@@ -2746,8 +2775,8 @@ KB.push(
  c:['*Talk about my app idea|i_capture','Website design','Pricing','Talk to a human']},
 
 {id:'branding', fam:'build',
- k:['logo','branding','brand','rebrand','identity','brand identity','logo design','style guide','colors','fonts','brand system'],
- a:"Branding and logo systems — and a word of caution. 🎨\n\nWe've met the business that spent $8,000 on a logo and $0 on a website. Beautiful logo. Nobody has ever seen it. Brand matters, but it matters as a multiplier on distribution, not as a substitute for it.\n\nWhat we deliver: logo design with a real system (primary, secondary, mark, favicon), colour and typography with defined usage, brand voice guidelines, and full asset packages for print, web, signage and social.\n\nWhy it actually matters commercially: consistent branding across channels is what makes someone recognise you in the Map Pack after they saw your truck. Recognition is a conversion multiplier.\n\nBuilding from scratch or refreshing something existing?",
+ k:['logo','branding','brand','rebrand','identity','brand identity','logo design','make a logo','design a logo','need a logo','style guide','colors','fonts','brand system','visual identity'],
+ a:"Branding and logo systems — and a word of caution. 🎨\n\nWe've met the business that spent $8,000 on a logo and $0 on a website. Beautiful logo. Nobody has ever seen it. Brand matters, but it matters as a multiplier on distribution, not as a substitute for it.\n\nWhat we deliver: logo design with a real system (primary, secondary, mark, favicon), color and typography with defined usage, brand voice guidelines, and full asset packages for print, web, signage and social.\n\nWhy it actually matters commercially: consistent branding is what makes someone recognize your name in the Map Pack after they have seen it somewhere else. Recognition is a conversion multiplier.\n\nBuilding from scratch or refreshing something existing?",
  c:['*Get a branding quote|i_capture','Website design','Print & graphic design','Pricing']},
 
 {id:'graphic', fam:'build',
@@ -2756,14 +2785,14 @@ KB.push(
  c:['*Get a design quote|i_capture','Branding & logo','Direct mail','NFC cards']},
 
 {id:'nfc', fam:'build',
- k:['nfc','tap card','digital business card','qr','qr code','contactless','tap to','smart card','digital menu'],
+ k:['nfc','nfc card','nfc business card','tap card','tap business card','digital business card','qr','qr code','contactless','tap to','smart card','digital menu'],
  a:"NFC and digital business cards — genuinely fun, genuinely effective. 📲\n\nSomeone taps their phone to a card and your contact details, website, booking link or menu open instantly. No app, no typing, no card that lives in a drawer until it's thrown out.\n\nWhere it earns its keep: trade shows and networking, restaurant table cards linking to a digital menu, review-request cards at checkout (tap to leave a Google review — enormous for review velocity), realtor open houses, and contractor leave-behinds.\n\nWe do the cards, the stands, the landing pages behind them, and the tracking so you know how many taps became actions.\n\nWe also run LinkRestaurants.com, our NFC and QR digital menu network, if you're in food service.",
  c:['*Get NFC pricing|i_capture','Reviews strategy','Print design','Talk to a human']},
 
 {id:'chatbot', fam:'build',
  k:['chatbot','chat bot','ai agent','bot','live chat','automation','ai assistant','chat widget','virtual assistant'],
  a:"Chatbots and AI agents — I have a slight bias here, being one. 🤖\n\nBut the data is real: a static contact form converts about 2% of visitors; a well-built lead-gen chat converts 15-30% of the same traffic. Proactive chat invitations convert roughly 40% better than passive widgets, and businesses using them report 20-35% more leads.\n\nThe catch — and it's a real one — is that badly done chat actively hurts. Popping up in three seconds with a pushy message increases bounce. Trapping someone in a bot with no way to reach a human is worse than having no bot.\n\nSo: proactive but patient, always an obvious route to a human, and honest about what it is. I'm a very well-briefed assistant, not a person, and I'd rather say so than pretend.\n\nWe build these for clients too.",
- c:['*Get a chatbot quote|i_capture','Website design','Conversion optimisation','Pricing']},
+ c:['*Get a chatbot quote|i_capture','Website design','Conversion optimization','Pricing']},
 
 {id:'photo', fam:'build',
  k:['photo','photography','photos','headshot','product photos','images','pictures','photographer','shoot photos'],
@@ -2814,17 +2843,17 @@ KB.push(
 KB.push(
 {id:'v_legal', fam:'vert',
  k:['lawyer','attorney','law firm','law practice','law office','legal practice','legal','personal injury','criminal defense','divorce','family law','dui','estate planning','probate','immigration lawyer','litigation','solo practitioner','paralegal'],
- a:"Legal marketing is one of our strongest verticals. ⚖️\n\nWhat makes it different: bar advertising rules govern every claim (we follow the Colorado Rules of Professional Conduct — no unsubstantiated superlatives, no outcome guarantees), trust signals carry enormous weight because clients are stressed and evaluating a stranger, and practice-area specificity is everything. One page cannot rank for personal injury AND estate planning.\n\nThe economics are excellent: legal landing pages convert around 7.4% — the highest of any B2B category — because the intent is urgent. And a single case can be worth thousands.\n\nWhat we build: dedicated practice-area pages, GBP optimisation with correct legal categories, review systems, LegalService schema, intake conversion optimisation, and Local Services Ads with the Google Screened badge.\n\nRealistic timeline: Map Pack movement in 30-90 days, competitive organic terms 4-8 months.\n\nWhat's your primary practice area?",
+ a:"Legal marketing is one of our strongest verticals. ⚖️\n\nWhat makes it different: bar advertising rules govern every claim (we follow the Colorado Rules of Professional Conduct — no unsubstantiated superlatives, no outcome guarantees), trust signals carry enormous weight because clients are stressed and evaluating a stranger, and practice-area specificity is everything. One page cannot rank for personal injury AND estate planning.\n\nThe economics are excellent: legal landing pages convert around 7.4% — the highest of any B2B category — because the intent is urgent. And a single case can be worth thousands.\n\nWhat we build: dedicated practice-area pages, GBP optimization with correct legal categories, review systems, LegalService schema, intake conversion optimization, and Local Services Ads with the Google Screened badge.\n\nRealistic timeline: Map Pack movement in 30-90 days, competitive organic terms 4-8 months.\n\nWhat's your primary practice area?",
  c:['*Free legal SEO audit|i_audit','Local SEO & Maps','Pricing','Talk to a human']},
 
 {id:'v_dental', fam:'vert',
  k:['dentist','dental','dentistry','orthodontic','orthodontist','invisalign','implant','veneers','teeth','pediatric dentist','oral surgeon','dental practice','new patients'],
- a:"Dental and orthodontic marketing — a specialty of ours. 🦷\n\nWhy it's its own discipline: patient search intent is highly specific (\"implants\" and \"emergency dentist\" are completely different people), trust barriers are high, reviews are decisive, and dental CPCs run around $8.00 so paid alone gets expensive fast.\n\nHealthcare also triggers AI Overviews on about 88% of queries — the highest of any category. If you're not structured for AI citation in this vertical, you're invisible in a growing share of searches.\n\nWhat we build: service-specific pages (implants, Invisalign, cosmetic, emergency, pediatric), GBP optimisation by specialty, systematic review acquisition across Google and Healthgrades, MedicalBusiness schema, and mobile-first intake — most patient searches happen on a phone.\n\nTypical: Map Pack movement in 30-90 days, new patient flow building months 3-6.",
+ a:"Dental and orthodontic marketing — a specialty of ours. 🦷\n\nWhy it's its own discipline: patient search intent is highly specific (\"implants\" and \"emergency dentist\" are completely different people), trust barriers are high, reviews are decisive, and dental CPCs run around $8.00 so paid alone gets expensive fast.\n\nHealthcare also triggers AI Overviews on about 88% of queries — the highest of any category. If you're not structured for AI citation in this vertical, you're invisible in a growing share of searches.\n\nWhat we build: service-specific pages (implants, Invisalign, cosmetic, emergency, pediatric), GBP optimization by specialty, systematic review acquisition across Google and Healthgrades, MedicalBusiness schema, and mobile-first intake — most patient searches happen on a phone.\n\nTypical: Map Pack movement in 30-90 days, new patient flow building months 3-6.",
  c:['*Free dental SEO audit|i_audit','Local SEO & Maps','Reviews strategy','Pricing']},
 
 {id:'v_home', fam:'vert',
  k:['contractor','roofing','roofer','hvac','plumber','plumbing','electrician','remodel','remodeling','construction','home services','landscaping','painter','painting','fence','deck','concrete','flooring','handyman','garage door','pest control','solar','restoration','siding','windows'],
- a:"Home services and contracting — probably our highest-volume vertical. 🔨\n\nWhat matters here: emergency intent converts enormously (emergency trades see 12-16% website conversion because someone with a burst pipe isn't comparison shopping), the Map Pack is basically the whole battle, and speed to lead decides who wins.\n\nThat last one especially. 78% of customers buy from whoever responds first, and responding within 5 minutes makes you 21x more likely to qualify the lead. In this industry that IS the competitive advantage.\n\nWhat we build: service and service-area pages, GBP optimisation with precise categories (\"emergency plumber\" beats \"plumbing\"), review velocity systems, Local Services Ads with the Google Guaranteed badge, seasonal campaign planning, and instant-response lead handling.\n\nWe also do the offline half — door knocking, direct mail, vehicle wraps, yard signage.\n\nWhat trade are you in?",
+ a:"Home services and contracting — probably our highest-volume vertical. 🔨\n\nWhat matters here: emergency intent converts enormously (emergency trades see 12-16% website conversion because someone with a burst pipe isn't comparison shopping), the Map Pack is basically the whole battle, and speed to lead decides who wins.\n\nThat last one especially. 78% of customers buy from whoever responds first, and responding within 5 minutes makes you 21x more likely to qualify the lead. In this industry that IS the competitive advantage.\n\nWhat we build: service and service-area pages, GBP optimization with precise categories (\"emergency plumber\" beats \"plumbing\"), review velocity systems, Local Services Ads with the Google Guaranteed badge, seasonal campaign planning, and instant-response lead handling.\n\nWe also do the offline half — door knocking, direct mail, vehicle wraps, yard signage.\n\nWhat trade are you in?",
  c:['*Free home services audit|i_audit','Local Services Ads','Speed to lead','Pricing']},
 
 {id:'v_medspa', fam:'vert',
@@ -2834,12 +2863,12 @@ KB.push(
 
 {id:'v_realestate', fam:'vert',
  k:['real estate','realtor','agent','broker','property','listings','homes for sale','mortgage','title','vacation rental','airbnb','rental','apartment','property management'],
- a:"Real estate and property marketing — we run a lot of it. 🏡\n\nWe operate property and vacation-rental site networks across Colorado, Hawaii, Belize, Costa Rica and the Dominican Republic, so this is well-worn ground.\n\nWhat works: hyperlocal neighbourhood content (this is where agents actually win — nobody outranks a genuine neighbourhood expert), IDX integration done without wrecking your Core Web Vitals, video walkthroughs, seller-lead landing pages separate from buyer pages, and long-cycle nurture email because real estate decisions take months.\n\nWorth knowing: real estate shows some of the largest organic-versus-paid cost gaps of any industry — organic leads have come in around 83% cheaper. The compounding case is unusually strong here.",
+ a:"Real estate and property marketing — we run a lot of it. 🏡\n\nWe operate property and vacation-rental site networks across Colorado, Hawaii, Belize, Costa Rica and the Dominican Republic, so this is well-worn ground.\n\nWhat works: hyperlocal neighborhood content (this is where agents actually win — nobody outranks a genuine neighborhood expert), IDX integration done without wrecking your Core Web Vitals, video walkthroughs, seller-lead landing pages separate from buyer pages, and long-cycle nurture email because real estate decisions take months.\n\nWorth knowing: real estate shows some of the largest organic-versus-paid cost gaps of any industry — organic leads have come in around 83% cheaper. The compounding case is unusually strong here.",
  c:['*Free real estate audit|i_audit','Content strategy','Email nurture','Pricing']},
 
 {id:'v_restaurant', fam:'vert',
  k:['restaurant','cafe','bar','food','menu','bakery','catering','food truck','brewery','coffee shop','diner','pizzeria','hospitality'],
- a:"Restaurant and hospitality marketing. 🍽\n\nThe fundamentals: your Google Business Profile IS your marketing (photos, hours, menu, reviews), review velocity drives everything, and \"near me\" plus \"open now\" searches are where the actual decisions get made.\n\nWhat we build: GBP optimisation with proper photo and post cadence, semantic HTML menus (not a PDF or a photo — Google and AI engines can't read those, and it's an accessibility problem), Restaurant and Menu schema, review systems, social content, and NFC or QR digital menus through our LinkRestaurants network.\n\nOne small thing with outsized impact: if your menu is an image file, you're invisible for every dish you serve. Fixing that alone often moves the needle.",
+ a:"Restaurant and hospitality marketing. 🍽\n\nThe fundamentals: your Google Business Profile IS your marketing (photos, hours, menu, reviews), review velocity drives everything, and \"near me\" plus \"open now\" searches are where the actual decisions get made.\n\nWhat we build: GBP optimization with proper photo and post cadence, semantic HTML menus (not a PDF or a photo — Google and AI engines can't read those, and it's an accessibility problem), Restaurant and Menu schema, review systems, social content, and NFC or QR digital menus through our LinkRestaurants network.\n\nOne small thing with outsized impact: if your menu is an image file, you're invisible for every dish you serve. Fixing that alone often moves the needle.",
  c:['*Free restaurant audit|i_audit','NFC digital menus','Reviews strategy','Local SEO']},
 
 {id:'v_pro', fam:'vert',
@@ -2849,22 +2878,22 @@ KB.push(
 
 {id:'v_auto', fam:'vert',
  k:['auto','automotive','car dealer','dealership','mechanic','auto repair','tires','auto glass','windshield','detailing','body shop','rv','powersports','used cars'],
- a:"Automotive marketing — dealerships, repair, glass, tires, detailing, RV and powersports. 🚗\n\nWhat drives it: urgent local intent (\"mechanic near me\" converts fast), reviews as the primary trust mechanism, and mobile-dominant search — often from a roadside.\n\nWhat we build: service-specific pages, GBP optimisation with correct categories, review systems, click-to-call prominence everywhere, inventory-aware content for dealers, and seasonal campaigns (tires, AC, winterisation) planned before the season rather than during it.\n\nWe've built for auto glass, mobile mechanics, detailing, tire shops and dealers across Colorado and beyond.",
+ a:"Automotive marketing — dealerships, repair, glass, tires, detailing, RV and powersports. 🚗\n\nWhat drives it: urgent local intent (\"mechanic near me\" converts fast), reviews as the primary trust mechanism, and mobile-dominant search — often from a roadside.\n\nWhat we build: service-specific pages, GBP optimization with correct categories, review systems, click-to-call prominence everywhere, inventory-aware content for dealers, and seasonal campaigns (tires, AC, winterisation) planned before the season rather than during it.\n\nWe've built for auto glass, mobile mechanics, detailing, tire shops and dealers across Colorado and beyond.",
  c:['*Free automotive audit|i_audit','Local SEO & Maps','Reviews strategy','Pricing']},
 
 {id:'v_senior', fam:'vert',
- k:['senior','elderly','walk in tub','walk in tubs','accessibility','mobility','home health','assisted living','medicare','aging','caregiver','wheelchair','grab bar'],
+ k:['senior','elderly','walk in tub','walk in shower','roll in shower','accessible shower','accessibility','mobility','home health','assisted living','medicare','aging','caregiver','wheelchair','grab bar'],
  a:"Senior services and accessibility products — a category we know deeply. 👴\n\nWe operate Aging Safely Baths and Showers4Less, so walk-in tubs, accessible showers, grab bars and safety modifications are genuinely our own business, not a case study.\n\nWhat's distinctive: the researcher is often the adult child, not the end user, so content has to speak to both. Trust and safety credentials matter enormously. Financing and VA benefits (HISA grants in particular) frequently decide the sale. And phone conversion dominates — this audience calls rather than fills forms.\n\nWhat we build: state and city-level service pages, benefit and financing explainers, large-type accessible design, prominent phone CTAs, and review systems weighted toward the family decision-maker.",
  c:['*Free senior services audit|i_audit','Website design','Local SEO','Talk to a human']},
 
 {id:'v_tourism', fam:'vert',
  k:['tourism','travel','hotel','resort','tours','vacation','excursion','diving','fishing charter','snorkeling','adventure','guide service','destination','belize','costa rica','hawaii','dominican'],
- a:"Tourism and travel — genuinely our home turf. 🌴\n\nWe own and operate site networks across Belize, Costa Rica, the Dominican Republic and Hawaii covering restaurants, hotels, diving, fishing charters, adventure tours and real estate. So we're not learning this vertical on your budget.\n\nWhat matters: destination-level content that captures the research phase months before booking, booking-path conversion optimisation, review and social proof (decisive in travel), seasonal search patterns, and multilingual content where the market calls for it.\n\nAlso increasingly important: AI travel planning. People now ask ChatGPT to plan itineraries. If your property or tour isn't structured to be cited, you're absent from a fast-growing share of trip planning.",
+ a:"Tourism and travel — genuinely our home turf. 🌴\n\nWe own and operate site networks across Belize, Costa Rica, the Dominican Republic and Hawaii covering restaurants, hotels, diving, fishing charters, adventure tours and real estate. So we're not learning this vertical on your budget.\n\nWhat matters: destination-level content that captures the research phase months before booking, booking-path conversion optimization, review and social proof (decisive in travel), seasonal search patterns, and multilingual content where the market calls for it.\n\nAlso increasingly important: AI travel planning. People now ask ChatGPT to plan itineraries. If your property or tour isn't structured to be cited, you're absent from a fast-growing share of trip planning.",
  c:['*Free tourism audit|i_audit','AI search (AIO/GEO)','Content strategy','Talk to a human']},
 
 {id:'v_fitness', fam:'vert',
  k:['gym','fitness','personal trainer','yoga','pilates','crossfit','studio','martial arts','dance','salon','barber','spa','nails','tattoo','massage','beauty'],
- a:"Fitness, wellness and personal-care businesses — gyms, studios, salons, barbers, spas. 💪\n\nWhat drives this category: local discovery, visual proof, reviews, and — the part most owners miss — retention. Acquiring a member costs 5-25x what keeping one costs, and a 5% retention lift can move profit 25-95%. Most studios pour everything into acquisition and quietly leak members out the back.\n\nWhat we build: GBP and Map Pack optimisation, class and service pages, Instagram and short-form video (the highest-ROI social format), review systems, booking-flow conversion work, and lifecycle email that actually keeps people.\n\nSmall thing with real impact: automated booking reminders. Studios using them report roughly 25% fewer no-shows.",
+ a:"Fitness, wellness and personal-care businesses — gyms, studios, salons, barbers, spas. 💪\n\nWhat drives this category: local discovery, visual proof, reviews, and — the part most owners miss — retention. Acquiring a member costs 5-25x what keeping one costs, and a 5% retention lift can move profit 25-95%. Most studios pour everything into acquisition and quietly leak members out the back.\n\nWhat we build: GBP and Map Pack optimization, class and service pages, Instagram and short-form video (the highest-ROI social format), review systems, booking-flow conversion work, and lifecycle email that actually keeps people.\n\nSmall thing with real impact: automated booking reminders. Studios using them report roughly 25% fewer no-shows.",
  c:['*Free fitness audit|i_audit','Social media','Retention systems','Pricing']}
 );
 
@@ -2957,12 +2986,12 @@ KB.push(
 
 {id:'obj_triedseo', fam:'obj', obj:true,
  k:['tried seo','seo didnt work','didnt work','did not work','doesnt work','waste of money','burned before','bad experience','last agency failed','didnt see results','no results','never worked','scammed','ripped off'],
- a:"That's a completely fair place to be standing, and I'd be sceptical too. 😐\n\nHere's the uncomfortable truth: most failed SEO campaigns weren't a failure of SEO. They were a failure of how it was sold, scoped and measured.\n\nThe patterns we see over and over:\n• **Wrong keywords.** You ranked for twenty terms. The chart went up. The phone didn't ring — because they were the wrong twenty. Ranking #4 for \"what is SEO\" generates zero leads for an SEO agency.\n• **A template, not a strategy.** The agency onboarded you into a system built for the average client. You're not the average client.\n• **No conversion path.** Traffic arrived at a site that couldn't convert it, so it looked like SEO failed when the website failed.\n• **Nobody tracked leads.** Only reporting rankings and traffic, never calls and revenue.\n• **Quit at month four.** Real movement takes 3-6 months minimum.\n\nSo the fair question isn't \"does SEO work.\" It's \"what specifically was done, and was any of it connected to revenue?\"\n\nTell me what happened last time and I'll tell you honestly whether it was the channel or the execution. I'll also tell you if I think you shouldn't bother.",
+ a:"That's a completely fair place to be standing, and I'd be skeptical too. 😐\n\nHere's the uncomfortable truth: most failed SEO campaigns weren't a failure of SEO. They were a failure of how it was sold, scoped and measured.\n\nThe patterns we see over and over:\n• **Wrong keywords.** You ranked for twenty terms. The chart went up. The phone didn't ring — because they were the wrong twenty. Ranking #4 for \"what is SEO\" generates zero leads for an SEO agency.\n• **A template, not a strategy.** The agency onboarded you into a system built for the average client. You're not the average client.\n• **No conversion path.** Traffic arrived at a site that couldn't convert it, so it looked like SEO failed when the website failed.\n• **Nobody tracked leads.** Only reporting rankings and traffic, never calls and revenue.\n• **Quit at month four.** Real movement takes 3-6 months minimum.\n\nSo the fair question isn't \"does SEO work.\" It's \"what specifically was done, and was any of it connected to revenue?\"\n\nTell me what happened last time and I'll tell you honestly whether it was the channel or the execution. I'll also tell you if I think you shouldn't bother.",
  c:['*Have someone review my last campaign|i_capture','Free growth audit|i_audit','Pricing','Talk to a human']},
 
 {id:'obj_seodead', fam:'obj', obj:true,
  k:['is seo dead','seo dead','seo dying','ai killing seo','ai replacing search','do i even need seo','pointless now','still worth it','zero click','no clicks','ai taking traffic','google killing seo','is seo still'],
- a:"Is SEO dead? No. Is it radically different from 2019? Absolutely. 📉📈\n\nThe scary numbers first, because they're real: about **58.5% of searches end without a click**. AI Overviews show on roughly 48% of queries and cut organic click-through around 61% where they appear. **93% of AI Mode sessions end without a website visit.**\n\nNow the part that changes the conclusion: **AI answers cite sources.** And brands cited inside AI Overviews earn about **35% more organic clicks and 91% more paid clicks** than uncited brands.\n\nSo the game moved from *ranking* to *being the source*. Which is still SEO — Google's own 2026 guidance says optimising for its generative features is still SEO. It's just a harder, more technical version of it.\n\nWhat actually works now: be the cited source (AIO and GEO), win the searches where clicks still absolutely happen (local, commercial, transactional — the Map Pack still takes 44% of local clicks), and build entity authority across every engine.\n\nSEO isn't dead. Businesses pretending nothing changed — those are dead.",
+ a:"Is SEO dead? No. Is it radically different from 2019? Absolutely. 📉📈\n\nThe scary numbers first, because they're real: about **58.5% of searches end without a click**. AI Overviews show on roughly 48% of queries and cut organic click-through around 61% where they appear. **93% of AI Mode sessions end without a website visit.**\n\nNow the part that changes the conclusion: **AI answers cite sources.** And brands cited inside AI Overviews earn about **35% more organic clicks and 91% more paid clicks** than uncited brands.\n\nSo the game moved from *ranking* to *being the source*. Which is still SEO — Google's own 2026 guidance says optimizing for its generative features is still SEO. It's just a harder, more technical version of it.\n\nWhat actually works now: be the cited source (AIO and GEO), win the searches where clicks still absolutely happen (local, commercial, transactional — the Map Pack still takes 44% of local clicks), and build entity authority across every engine.\n\nSEO isn't dead. Businesses pretending nothing changed — those are dead.",
  c:['*Free AI visibility audit|i_audit','AI Overviews (AIO)','GEO strategy','Local SEO']},
 
 {id:'obj_expensive', fam:'obj', obj:true,
@@ -2986,7 +3015,7 @@ KB.push(
  c:['*Free growth audit|i_audit','Pricing','How long does it take?','Talk to a human']},
 
 {id:'obj_lastagency', fam:'obj', obj:true,
- k:['how do i know you','not like the last','trust you','prove it','why should i believe','all agencies say','heard that before','guarantee results','same as everyone','sceptical','skeptical','sales pitch'],
+ k:['how do i know you','not like the last','trust you','prove it','why should i believe','all agencies say','heard that before','guarantee results','same as everyone','skeptical','skeptical','sales pitch'],
  a:"You don't know yet. And anyone who tells you otherwise on message three is selling. 🤷\n\nSo here's what I'd actually offer instead of promises:\n\n**Start with the free audit.** Real findings on your site, your profile, your competitors. You keep them regardless. If we're wrong or shallow, you've lost nothing and you'll know.\n\n**No long-term contract.** If we don't produce, you leave.\n\n**Check the receipts.** BBB Accredited A+, 5-star Google rating, 14 years in business since 2012. Ask us for client work in your industry — we'll show you actual sites.\n\n**And the thing that actually separates agencies:** ask whoever you're evaluating what metric they report on. If the answer is rankings and traffic, be careful. If it's calls, forms and revenue, you're talking to someone serious.\n\nAsk us hard questions. We'd genuinely rather lose a bad fit than sign one.",
  c:['*Start with the free audit|i_audit','Talk to a human','Why you over others?','Pricing']},
 
@@ -2997,8 +3026,8 @@ KB.push(
 
 {id:'obj_competitor', fam:'obj', obj:true,
  k:['competitor is huge','big competitor','cant compete','national chain','big brand','they have bigger budget','outspend','franchise competitor','david and goliath','beat my competition','competitors outrank'],
- a:"Big competitors have budget. You have specificity and proximity. In local search that's a real fight. 🥊\n\nWhy the giant doesn't automatically win:\n• **Proximity is a ranking factor they can't buy.** A national chain's nearest location may be 20 miles from the searcher. You're two.\n• **Specificity beats breadth.** They rank for the category. You can own the exact service plus the exact neighbourhood.\n• **Review velocity is winnable.** Steady recent reviews outperform an old pile, and most big competitors are terrible at this — only about 5% of businesses respond to reviews at all.\n• **They move slowly.** Corporate approval chains mean you can adapt to an algorithm shift in a week where they take a quarter.\n• **AI search doesn't weight brand size** the way traditional search did.\n\nWhat we'd actually do: competitor gap analysis first, find the terms they're neglecting, and take those before going anywhere near the head-on fight.\n\nWho are you up against? I can tell you roughly how beatable that looks.",
- c:['*Analyse my competitors|i_capture','Local SEO','Free growth audit|i_audit','Talk to a human']},
+ a:"Big competitors have budget. You have specificity and proximity. In local search that's a real fight. 🥊\n\nWhy the giant doesn't automatically win:\n• **Proximity is a ranking factor they can't buy.** A national chain's nearest location may be 20 miles from the searcher. You're two.\n• **Specificity beats breadth.** They rank for the category. You can own the exact service plus the exact neighborhood.\n• **Review velocity is winnable.** Steady recent reviews outperform an old pile, and most big competitors are terrible at this — only about 5% of businesses respond to reviews at all.\n• **They move slowly.** Corporate approval chains mean you can adapt to an algorithm shift in a week where they take a quarter.\n• **AI search doesn't weight brand size** the way traditional search did.\n\nWhat we'd actually do: competitor gap analysis first, find the terms they're neglecting, and take those before going anywhere near the head-on fight.\n\nWho are you up against? I can tell you roughly how beatable that looks.",
+ c:['*Analyze my competitors|i_capture','Local SEO','Free growth audit|i_audit','Talk to a human']},
 
 {id:'obj_havesomeone', fam:'obj', obj:true,
  k:['already have someone','have an seo guy','have an agency','working with someone','current agency','already working with','have a marketing person','got a guy','someone doing it'],
@@ -3078,13 +3107,15 @@ INTENTS.push(
 var ALL = [];
 function buildRoutes(){ ALL = INTENTS.concat(KB); return ALL; }
 
-function scoreRoute(nText, set, route){
+function scoreRoute(nText, set, route, nSing){
   var s = 0, keys = route.k, i, kw, t, hit;
   var padded = ' ' + nText + ' ';
+  var paddedS = ' ' + (nSing || nText) + ' ';
   for (i = 0; i < keys.length; i++){
     kw = keys[i];
     if (kw.indexOf(' ') > -1){
-      if (padded.indexOf(' ' + kw + ' ') > -1) s += 2.4 + kw.split(' ').length * 1.05;
+      if (padded.indexOf(' ' + kw + ' ') > -1 || paddedS.indexOf(' ' + kw + ' ') > -1)
+        s += 2.4 + kw.split(' ').length * 1.05;
       else if (nText.indexOf(kw) > -1) s += 0.9;
     } else if (set[kw] === 1){
       s += 2.6;
@@ -3109,9 +3140,9 @@ function scoreRoute(nText, set, route){
 
 function rank(text){
   if (!ALL.length) buildRoutes();
-  var nText = norm(text), set = tokSet(text), out = [], i, sc;
+  var nText = norm(text), nSing = normSing(text), set = tokSet(text), out = [], i, sc;
   for (i = 0; i < ALL.length; i++){
-    sc = scoreRoute(nText, set, ALL[i]);
+    sc = scoreRoute(nText, set, ALL[i], nSing);
     if (sc > 0) out.push({ r: ALL[i], s: sc });
   }
   out.sort(function(a, b){ return b.s - a.s; });
@@ -3144,7 +3175,7 @@ function nextJoke(){
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   RUNTIME — DOM wiring, mascot behaviour, capture flow, transport
+   RUNTIME — DOM wiring, mascot behavior, capture flow, transport
    ══════════════════════════════════════════════════════════════════════════ */
 
 var W = document.getElementById('irisw');
@@ -3188,7 +3219,7 @@ var PAGE_MAP = [
   { re:/pricing|cost/i,                                 id:'pricing',       label:'pricing' },
   { re:/local[\s-]?seo|map pack|google[\s-]?business/i,  id:'localseo',      label:'local SEO' },
   { re:/\baio\b|ai[\s-]?seo|generative|\bgeo\b|ai search/i, id:'aio',       label:'AI search' },
-  { re:/conversion|\bcro\b/i,                           id:'cro',           label:'conversion optimisation' },
+  { re:/conversion|\bcro\b/i,                           id:'cro',           label:'conversion optimization' },
   { re:/web[\s-]?design|website/i,                       id:'website',       label:'web design' },
   { re:/audit/i,                                        id:'i_audit',       label:'audits' }
 ];
@@ -3276,7 +3307,27 @@ function initFooterWatch(){
 }
 
 /* ─────────────── MESSAGE RENDERING ─────────────── */
-function scrollDown(){ elMsgs.scrollTop = elMsgs.scrollHeight; }
+/* ─── SCROLL ───
+   Two problems the old version had on a phone:
+   1. It always jumped to the very bottom, so a long answer opened with its
+      first lines already scrolled off the top.
+   2. It re-scrolled on every new message, fighting the visitor if they had
+      scrolled up to re-read something.
+   Now: auto-scroll only while the visitor is already near the bottom, and for
+   a message taller than most of the visible area, park its TOP in view. */
+var autoScroll = true;
+function nearBottom(){
+  return (elMsgs.scrollHeight - elMsgs.scrollTop - elMsgs.clientHeight) < 70;
+}
+function scrollDown(){ if (autoScroll) elMsgs.scrollTop = elMsgs.scrollHeight; }
+function parkMessage(el){
+  if (!autoScroll || !el) { return; }
+  if (el.offsetHeight > elMsgs.clientHeight * 0.72){
+    elMsgs.scrollTop = Math.max(0, el.offsetTop - 10);   // show the opening lines
+  } else {
+    elMsgs.scrollTop = elMsgs.scrollHeight;
+  }
+}
 
 /* Renders **bold** only. Everything else is inserted as text, so nothing a
    visitor types can ever become markup. */
@@ -3297,13 +3348,14 @@ function addMsg(text, who){
   el.className = who === 'bot' ? 'ir-bot' : 'ir-usr';
   if (who === 'bot') renderInto(el, text); else el.textContent = text;
   elMsgs.appendChild(el);
-  scrollDown();
+  if (who !== 'bot'){ autoScroll = true; scrollDown(); }
   S.transcript.push((who === 'bot' ? 'Iris' : 'Visitor') + ': ' + text);
   if (who === 'bot' && !S.open){
     S.unread++;
     elBadge.textContent = S.unread > 9 ? '9+' : String(S.unread);
     elBadge.classList.add('ir-show');
   }
+  return el;
 }
 function clearChips(){
   var c = elMsgs.querySelectorAll('.ir-chips'), i;
@@ -3332,7 +3384,6 @@ function addChips(labels){
     wrap.appendChild(b);
   });
   elMsgs.appendChild(wrap);
-  scrollDown();
 }
 var typingEl = null;
 function showTyping(){
@@ -3347,17 +3398,20 @@ function hideTyping(){
   if (typingEl && typingEl.parentNode) typingEl.parentNode.removeChild(typingEl);
   typingEl = null;
 }
-/* delay scales with message length so long answers feel considered, not laggy */
+/* Delay scales with length so a long answer feels written rather than dumped.
+   Everything is appended first, then the view is positioned ONCE — otherwise
+   the chips scroll the message we just parked back out of sight. */
 function say(text, chips, delay){
-  if (delay == null) delay = Math.min(1150, 420 + String(text).length * 1.6);
+  if (delay == null) delay = Math.min(1600, 560 + String(text).length * 1.9);
   elSend.disabled = true;
   showTyping();
   return new Promise(function(resolve){
     setTimeout(function(){
       hideTyping();
-      addMsg(text, 'bot');
+      var el = addMsg(text, 'bot');
       elSend.disabled = false;
       if (chips) addChips(chips);
+      parkMessage(el);
       resolve();
     }, delay);
   });
@@ -3380,9 +3434,29 @@ function addRestart(){
 }
 
 /* ─────────────── OPEN / CLOSE ─────────────── */
+/* ─── MOBILE KEYBOARD ───
+   The panel is fixed to the layout viewport, which does NOT shrink when the
+   on-screen keyboard opens. Without this the message list is pushed under the
+   keyboard and the top of the conversation becomes unreachable. */
+function fitViewport(){
+  var vv = window.visualViewport;
+  if (!vv || !S.open || window.innerWidth > 580){
+    elPanel.style.height = ''; elPanel.style.top = ''; elPanel.style.bottom = '';
+    return;
+  }
+  elPanel.style.top = vv.offsetTop + 'px';
+  elPanel.style.bottom = 'auto';
+  elPanel.style.height = vv.height + 'px';
+}
+if (window.visualViewport){
+  window.visualViewport.addEventListener('resize', fitViewport);
+  window.visualViewport.addEventListener('scroll', fitViewport);
+}
+
 function openPanel(){
   if (S.open) return;
   S.open = true;
+  autoScroll = true;
   hideBubble(true);
   elPanel.classList.remove('ir-closing');
   elPanel.classList.add('ir-open');
@@ -3393,8 +3467,9 @@ function openPanel(){
   S.unread = 0;
   elBadge.classList.remove('ir-show');
   wave();
+  fitViewport();
   if (!S.started){ S.started = true; greet(); }
-  setTimeout(function(){ safe(function(){ elInp.focus(); }); }, 260);
+  setTimeout(function(){ safe(function(){ elInp.focus(); fitViewport(); }); }, 260);
 }
 function closePanel(){
   if (!S.open) return;
@@ -3404,6 +3479,7 @@ function closePanel(){
   elPanel.setAttribute('aria-hidden', 'true');
   elFab.setAttribute('aria-expanded', 'false');
   elLaunch.classList.remove('ir-hide-m');
+  elPanel.style.height = ''; elPanel.style.top = ''; elPanel.style.bottom = '';
   if (S.isCapturing) flushPartial('panel closed');
 }
 
@@ -3427,7 +3503,7 @@ function greet(){
 
   if (S.ctx.vertical && S.ctx.verticalLabel){
     say(greetByHour() + "! I'm Iris \u2014 the growth assistant here. \uD83D\uDC4B\n\n" +
-        "Looks like you're reading about " + S.ctx.verticalLabel + ", so I'll assume that's the neighbourhood.\n\n" +
+        "Looks like you're reading about " + S.ctx.verticalLabel + ", so I'll assume that's the neighborhood.\n\n" +
         "My job is helping you work out how to grow the business \u2014 more visibility, more leads, more customers actually walking through the door. Ask me anything, or tell me what's not working.",
       ['Tell me about this|' + S.ctx.vertical, 'I need more customers|growth',
        'What does it cost?|pricing', '*Free growth audit|i_audit']);
@@ -3607,7 +3683,7 @@ function askStep(){
   if (!st){ finishCapture(); return; }
   if (S.lead[st.f]){ S.step++; askStep(); return; }     // skip pre-filled fields
   var q = typeof st.ask === 'function' ? st.ask(S.lead) : st.ask;
-  say(q, st.chips || null, 620);
+  say(q, st.chips || null, CFG.STEP_MS);
   armIdle();
 }
 function captureInput(raw){
@@ -3644,8 +3720,9 @@ function captureInput(raw){
     var txt = resolveAnswer(top.r);
     if (txt === '__JOKE__') txt = nextJoke();
     say(txt).then(function(){
-      say("Right \u2014 back where we were. " +
-          (typeof st.ask === 'function' ? st.ask(S.lead) : st.ask), st.chips || null, 600);
+      say("Now \u2014 back to where we were. " +
+          (typeof st.ask === 'function' ? st.ask(S.lead) : st.ask),
+          st.chips || null, CFG.CHAIN_MS);
     });
     return;
   }
@@ -3658,7 +3735,7 @@ function captureInput(raw){
   }
   if (!st.ok(v)){
     addMsg(v, 'usr');
-    say(st.err, st.chips || null, 560);
+    say(st.err, st.chips || null, 700);
     return;
   }
   addMsg(v, 'usr');
@@ -3792,7 +3869,7 @@ function handleInput(raw){
 var LABELS = {
   seo:'SEO & rankings', localseo:'Local SEO & Maps', gbp:'Google Business Profile',
   aio:'AI Overviews', geo:'Getting cited by AI', agentic:'Agentic AI',
-  ppc:'Google Ads', website:'Website design', cro:'Conversion optimisation',
+  ppc:'Google Ads', website:'Website design', cro:'Conversion optimization',
   pricing:'Pricing', reviews:'Reviews & reputation', email:'Email marketing',
   socialads:'Social media', video:'Video', growth:'Getting more customers',
   content:'Content strategy', speed:'Site speed', services:'Full service list'
@@ -3823,6 +3900,9 @@ if (elStatus && elStatusT){
   else { elStatus.classList.add('ir-off'); elStatusT.textContent = 'Online \u00B7 team back at 8AM MT'; }
 }
 if (elWa) elWa.href = 'https://wa.me/' + CFG.WHATSAPP_NUM;
+
+elMsgs.addEventListener('scroll', function(){ autoScroll = nearBottom(); }, { passive:true });
+elInp.addEventListener('focus', function(){ setTimeout(fitViewport, 120); });
 
 elFab.addEventListener('click', function(){ S.open ? closePanel() : openPanel(); });
 elPill.addEventListener('click', openPanel);
