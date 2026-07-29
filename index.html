@@ -183,25 +183,30 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
 .logo{display:flex;align-items:center;flex-shrink:0}
 /* ============================================================
-   LOGO SIZE — ONE PLACE. Change these four `width` values only.
-   *** NEVER SIZE THIS LOGO BY HEIGHT. ***
-   Sizing by height (height:XXXpx or max-height) makes the rendered
-   WIDTH depend on the PNG's intrinsic aspect ratio. This file does
-   not have the ratio its HTML attributes imply, so every
-   height-based attempt collapsed the logo to a fraction of its
-   intended size. Width is deterministic: width:210px renders 210px
-   wide, full stop, and height:auto keeps the artwork undistorted.
-   max-width:none is REQUIRED to defeat the global *{max-width:100%}.
+   LOGO SIZE — ONE PLACE.
+   ROOT CAUSE (found July 28 2026): eye-to-ad-media-logo-denver-seo.png
+   contains a large amount of TRANSPARENT PADDING. The artwork occupies
+   only a horizontal band in the middle of a much taller canvas. That is
+   why height-based sizing shrank the visible mark, and why width-based
+   sizing produced a ~330px tall header full of empty space.
+   THE FIX: give the img a fixed WIDTH and a fixed HEIGHT window, then
+   `object-fit:cover` scales the image to fill the width and crops the
+   transparent bands off the top and bottom. Nothing is distorted —
+   only empty pixels are cut.
+   TO TUNE: `width` controls how big the logo looks. `height` controls
+   how much air is around it (raise it if the mark looks cropped, lower
+   it if there is dead space). Change nothing else.
+   PERMANENT FIX: crop the padding out of the PNG itself, then this
+   collapses to a plain `width` + `height:auto`.
    Breakpoints MUST stay in descending order (largest first).
-   Header and footer use the same scale so every page matches.
    ============================================================ */
-.brand-logo{width:300px;height:auto;max-width:none}
-@media(max-width:1100px){.brand-logo{width:260px}}
+.brand-logo{width:300px;height:88px;object-fit:cover;object-position:center;max-width:none}
+@media(max-width:1100px){.brand-logo{width:270px;height:80px}}
 @media(max-width:768px){
   .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
-  .brand-logo{width:210px}
+  .brand-logo{width:250px;height:74px}
 }
-@media(max-width:430px){.brand-logo{width:180px}}
+@media(max-width:430px){.brand-logo{width:205px;height:62px}}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
@@ -650,8 +655,8 @@ table.cmp .yes{color:#059669;font-weight:700}
 /* ===== FOOTER ===== */
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
-.footer-brand .brand-logo{width:300px;margin-bottom:16px}
-@media(max-width:768px){.footer-brand .brand-logo{width:240px}}
+.footer-brand .brand-logo{width:300px;height:88px;margin-bottom:16px}
+@media(max-width:768px){.footer-brand .brand-logo{width:260px;height:78px}}
 .footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
 .footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
 .footer-brand address a{color:#FB923C}
