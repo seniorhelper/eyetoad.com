@@ -149,26 +149,37 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
 .ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;padding:6px 0;flex-wrap:wrap}
 .ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+/* The left group is allowed to shrink; the right group is not. Without this the
+   domain pill forces the row wider than .wrap on narrow screens and the phone
+   number gets pushed out past the 20px gutter — the last digit ends up flush
+   against the viewport edge. padding-right keeps a couple of px of air even at
+   the tightest width. */
+.ubar-left{min-width:0;flex:0 1 auto;overflow:hidden}
+.ubar-right{flex:0 0 auto}
 .ubar-dom{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;color:#FDBA74;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.35);padding:6px 14px;border-radius:20px;transition:all .18s;white-space:nowrap}
 .ubar-dom:hover{background:rgba(249,115,22,.22);color:#fff;border-color:var(--orange)}
 .ubar-txt{font-size:.78rem;color:rgba(255,255,255,.5);white-space:nowrap}
 .ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
 .ubar-link:hover{color:var(--orange)}
-.ubar-tel{font-size:.82rem;font-weight:800;color:var(--orange);white-space:nowrap}
+.ubar-tel{font-size:.82rem;font-weight:800;color:var(--orange);white-space:nowrap;padding-right:4px}
 @media(max-width:768px){
   .ubar-txt,.ubar-link{display:none}
   .ubar-inner{justify-content:space-between;min-height:38px;gap:8px;flex-wrap:nowrap}
   .ubar-dom{font-size:.72rem;padding:5px 11px}
-  .ubar-tel{font-size:.78rem}
+  .ubar-tel{font-size:.78rem;padding-right:6px}
 }
 
 /* ===== TICKER ===== */
 .ticker{background:var(--orange);padding:7px 0;overflow:hidden;position:relative;z-index:1001}
-.ticker-track{display:flex;animation:tick 34s linear infinite;width:max-content}
+.ticker-track{display:flex;animation:tick 18s linear infinite;width:max-content}
 .ticker-track:hover{animation-play-state:paused}
 .ticker-item{white-space:nowrap;padding:0 32px;font-size:.78rem;font-weight:700;letter-spacing:.03em;color:var(--ink);display:flex;align-items:center;gap:10px}
 .ticker-sep{opacity:.35}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Marquee speed lives here. 18s desktop / 14s mobile (was 34s — too slow to read
+   as motion). Lower = faster. The track is DOUBLED (10 spans for 5 items) and
+   animates to -50%, so one full cycle shows each item exactly once. */
+@media(max-width:768px){.ticker-track{animation-duration:14s}}
 
 /* ============================================================
    HEADER
