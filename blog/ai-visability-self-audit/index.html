@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is AI Recommending Your Business? A 15-Minute Self-Audit (2026)</title>
+<meta name="description" content="Run this free 15-minute audit to find out whether ChatGPT, Perplexity, Gemini and Google AI Overviews recommend your business — six prompts, a scored checklist, and the fixes that actually work.">
+<link rel="canonical" href="https://eyetoad.com/blog/ai-visibility-self-audit/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Eye To Ad Media">
+<meta property="og:title" content="Is AI Recommending Your Business? A 15-Minute Self-Audit">
+<meta property="og:description" content="Six prompts, a scored checklist, and the fixes that actually work. No tools, no agency required.">
+<meta property="og:url" content="https://eyetoad.com/blog/ai-visibility-self-audit/">
+<meta property="og:image" content="https://eyetoad.com/images/images/denver-seo-services-hero.png">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-07-28">
+<meta property="article:modified_time" content="2026-07-28">
+<meta property="article:author" content="Eye To Ad Media">
+<meta property="article:section" content="AI Search">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Is AI Recommending Your Business? A 15-Minute Self-Audit">
+<meta name="twitter:description" content="Six prompts, a scored checklist, and the fixes that actually work.">
+<meta name="twitter:image" content="https://eyetoad.com/images/images/denver-seo-services-hero.png">
+
+<meta name="geo.region" content="US-CO">
+<meta name="geo.placename" content="Denver, Colorado">
+<meta name="geo.position" content="39.7317;-104.9965">
+<meta name="ICBM" content="39.7317, -104.9965">
+
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="ai-content-type" content="article, how-to, audit, ai-search-optimization">
+<meta name="subject" content="AI visibility audit, generative engine optimization, ChatGPT business recommendations, AI Overviews">
+<meta name="classification" content="Business/Marketing/AI Search">
+<meta name="author" content="Eye To Ad Media">
+<meta name="publisher" content="Eye To Ad Media">
+<meta name="copyright" content="Eye To Ad Media, Denver, CO">
+
+<meta name="googlebot" content="index, follow, max-snippet:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1">
+<meta name="GPTBot" content="index">
+<meta name="anthropic-ai" content="index">
+<meta name="Claude-Web" content="index">
+<meta name="ClaudeBot" content="index">
+<meta name="PerplexityBot" content="index">
+<meta name="Perplexity-User" content="index">
+<meta name="Google-Extended" content="index">
+<meta name="ChatGPT-User" content="index">
+<meta name="OAI-SearchBot" content="index">
+<meta name="Applebot-Extended" content="index">
+<meta name="CCBot" content="index">
+<meta name="meta-externalagent" content="index">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+<link rel="shortcut icon" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/images/images/eye-to-ad-media-logo-denver-seo.png" fetchpriority="high">
+
+<style>
+/* ===== PROMPT CARDS (copy to clipboard) ===== */
+.prompt{background:#0f172a;border:1.5px solid rgba(196,181,253,.28);border-radius:var(--r12);padding:18px 20px;margin:16px 0;position:relative;overflow:hidden}
+.prompt::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(196,181,253,.06) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+.prompt>*{position:relative;z-index:2}
+.prompt-n{font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#C4B5FD;margin-bottom:8px}
+.prompt-t{font-family:'Inter',sans-serif;font-size:.98rem;color:#E9E5FF;line-height:1.65;font-style:italic;margin-bottom:14px}
+.prompt-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.prompt-where{font-size:.74rem;color:rgba(255,255,255,.42);font-weight:600}
+.prompt-copy{background:rgba(196,181,253,.14);border:1px solid rgba(196,181,253,.34);color:#C4B5FD;font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;padding:7px 15px;border-radius:20px;cursor:pointer;transition:all .18s;white-space:nowrap}
+.prompt-copy:hover{background:rgba(196,181,253,.28);color:#fff}
+.prompt-copy.done{background:rgba(34,197,94,.2);border-color:rgba(34,197,94,.45);color:#86EFAC}
+.prompt-look{font-size:.86rem;color:var(--ink3);background:var(--off);border-left:3px solid var(--violet);padding:11px 15px;border-radius:0 8px 8px 0;margin:-6px 0 22px}
+.prompt-look b{color:var(--ink)}
+
+/* ===== INTERACTIVE SCORECARD ===== */
+.sc{background:#fff;border:1.5px solid var(--border);border-radius:var(--r24);overflow:hidden;margin:30px 0;box-shadow:var(--sh-lg)}
+.sc-head{background:linear-gradient(150deg,var(--ink) 0%,#1a1060 100%);padding:26px 28px;position:relative;overflow:hidden}
+.sc-head::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(196,181,253,.08) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+.sc-head>*{position:relative;z-index:2}
+.sc-head h3{color:#fff;font-size:1.24rem;margin:0 0 5px}
+.sc-head p{color:rgba(255,255,255,.6);font-size:.9rem;margin:0}
+.sc-body{padding:24px 28px}
+.sc-group{font-size:.66rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--violet);margin:20px 0 10px}
+.sc-group:first-child{margin-top:0}
+.sc-item{display:flex;align-items:flex-start;gap:12px;padding:11px 13px;border:1.5px solid var(--border);border-radius:var(--r8);margin-bottom:8px;cursor:pointer;transition:all .18s;background:#fff}
+.sc-item:hover{border-color:#C4B5FD;background:#FAF9FF}
+.sc-item.on{border-color:var(--violet);background:#F5F3FF}
+.sc-item:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
+.sc-box{width:20px;height:20px;border-radius:5px;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.72rem;color:transparent;font-weight:900;transition:all .18s;margin-top:1px}
+.sc-item.on .sc-box{background:var(--violet);border-color:var(--violet);color:#fff}
+.sc-txt{flex:1;font-size:.92rem;font-weight:600;color:var(--ink);line-height:1.45}
+.sc-txt small{display:block;font-size:.78rem;font-weight:400;color:var(--muted);margin-top:2px;line-height:1.5}
+.sc-pts{font-size:.74rem;font-weight:800;color:var(--muted);white-space:nowrap;margin-top:2px}
+.sc-out{background:linear-gradient(150deg,#0f172a,#1a1060);padding:28px;text-align:center;position:relative;overflow:hidden}
+.sc-out::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(196,181,253,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.sc-out>*{position:relative;z-index:2}
+.sc-label{font-size:.68rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
+.sc-score{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.8rem,9vw,4rem);line-height:1;background:linear-gradient(135deg,#DDD6FE,#8B5CF6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sc-band{font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;color:#fff;margin-top:10px}
+.sc-diag{font-size:.92rem;color:rgba(255,255,255,.68);margin-top:9px;line-height:1.65;max-width:520px;margin-left:auto;margin-right:auto}
+.sc-bar{height:11px;background:rgba(255,255,255,.12);border-radius:8px;overflow:hidden;margin:16px auto 0;max-width:420px}
+.sc-bar-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,#8B5CF6,#DDD6FE);transition:width .4s ease;width:0}
+.sc-cta{margin-top:20px}
+.sc-foot{font-size:.76rem;color:var(--muted);text-align:center;padding:14px 22px;background:var(--off);border-top:1px solid var(--border);line-height:1.6}
+</style>
+
+<style>
+/* ===== TOKENS ===== */
+:root{
+  --ink:#101828;
+  --ink2:#1D2939;
+  --ink3:#344054;
+  --blue:#2563EB;
+  --blue2:#1D4ED8;
+  --blue-light:#EFF6FF;
+  --orange:#F97316;
+  --orange2:#EA580C;
+  --orange-light:#FFF7ED;
+  --white:#FFFFFF;
+  --off:#F9FAFB;
+  --border:#E4E7EC;
+  --muted:#667085;
+  --r8:8px;--r12:12px;--r16:16px;--r24:24px;
+  --sh:0 4px 16px rgba(0,0,0,.09);
+  --sh-lg:0 16px 48px rgba(0,0,0,.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;max-width:100%}
+*{max-width:100%;word-break:break-word}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'Inter',sans-serif;color:var(--ink3);background:var(--white);line-height:1.7;font-size:16px}
+img{display:block;max-width:100%;height:auto;word-break:normal}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+/* ===== TYPE ===== */
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:900;line-height:1.1;color:var(--ink)}
+h1{font-size:clamp(1.85rem,5vw,3.2rem)}
+h2{font-size:clamp(1.65rem,3.5vw,2.4rem)}
+h3{font-size:clamp(1.1rem,2vw,1.35rem);font-weight:700}
+h4{font-size:1rem;font-weight:700}
+p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
+
+/* ===== LAYOUT ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;width:100%}
+.section{padding:84px 0}
+.tc{text-align:center}
+.skip{position:absolute;left:-9999px;top:0;background:var(--orange);color:#fff;padding:12px 18px;font-weight:700;z-index:99999}
+.skip:focus{left:8px;top:8px}
+
+/* ===== CHIPS / LABELS ===== */
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 13px;border-radius:20px;margin-bottom:12px}
+.chip-blue{color:var(--blue);background:var(--blue-light);border:1px solid #BFDBFE}
+.chip-orange{color:var(--orange2);background:var(--orange-light);border:1px solid #FED7AA}
+.chip-dark{color:rgba(255,255,255,.6);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
+.chip-white{color:var(--ink2);background:rgba(255,255,255,.9);border:1px solid var(--border)}
+.chip-purple{color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
+.btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
+.btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
+.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 20px rgba(37,99,235,.3)}
+.btn-blue:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-2px)}
+.btn-ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-ghost-blue{background:transparent;color:var(--blue);border-color:var(--blue)}
+.btn-ghost-blue:hover{background:var(--blue-light)}
+.btn-white{background:#fff;color:var(--ink);border-color:#fff}
+.btn-white:hover{background:var(--off)}
+.btn-lg{padding:17px 36px;font-size:1.08rem}
+
+/* ===== UTILITY BAR (very top — domain search + phone) ===== */
+.ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
+.ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;padding:6px 0;flex-wrap:wrap}
+.ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ubar-dom{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;color:#FDBA74;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.35);padding:6px 14px;border-radius:20px;transition:all .18s;white-space:nowrap}
+.ubar-dom:hover{background:rgba(249,115,22,.22);color:#fff;border-color:var(--orange)}
+.ubar-txt{font-size:.78rem;color:rgba(255,255,255,.5);white-space:nowrap}
+.ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
+.ubar-link:hover{color:var(--orange)}
+.ubar-tel{font-size:.82rem;font-weight:800;color:var(--orange);white-space:nowrap}
+@media(max-width:768px){
+  .ubar-txt,.ubar-link{display:none}
+  .ubar-inner{justify-content:space-between;min-height:38px;gap:8px;flex-wrap:nowrap}
+  .ubar-dom{font-size:.72rem;padding:5px 11px}
+  .ubar-tel{font-size:.78rem}
+}
+
+/* ===== TICKER ===== */
+.ticker{background:var(--orange);padding:7px 0;overflow:hidden;position:relative;z-index:1001}
+.ticker-track{display:flex;animation:tick 34s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{white-space:nowrap;padding:0 32px;font-size:.78rem;font-weight:700;letter-spacing:.03em;color:var(--ink);display:flex;align-items:center;gap:10px}
+.ticker-sep{opacity:.35}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============================================================
+   HEADER
+   LOGO SIZE (locked July 2026 — do NOT reduce):
+     desktop max-height 76px / max-width 300px
+     mobile  max-height 56px / max-width 190px
+     footer  matches header exactly (same rule, .brand-logo)
+   The old build set .hdr-inner{height:300px} which produced ~220px
+   of EMPTY padding on mobile and pushed the hero below the fold.
+   Header is now content-height. Logo itself was NOT shrunk.
+   .mob-nav top offset is now set by JS (measureHeader) instead of a
+   hard-coded 300px, so header height and menu can never drift apart.
+   ============================================================ */
+.hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
+.hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
+.logo{display:flex;align-items:center;flex-shrink:0}
+/* ============================================================
+   LOGO SIZE — ONE PLACE.
+   ROOT CAUSE (found July 28 2026): eye-to-ad-media-logo-denver-seo.png
+   contains a large amount of TRANSPARENT PADDING. The artwork occupies
+   only a horizontal band in the middle of a much taller canvas. That is
+   why height-based sizing shrank the visible mark, and why width-based
+   sizing produced a ~330px tall header full of empty space.
+   THE FIX: give the img a fixed WIDTH and a fixed HEIGHT window, then
+   `object-fit:cover` scales the image to fill the width and crops the
+   transparent bands off the top and bottom. Nothing is distorted —
+   only empty pixels are cut.
+   TO TUNE: `width` controls how big the logo looks. `height` controls
+   how much air is around it (raise it if the mark looks cropped, lower
+   it if there is dead space). `object-position` is set to 44% rather
+   than centre because the artwork sits slightly ABOVE centre in the
+   canvas — that is why only the TOP edge was clipping. Change nothing else.
+   PERMANENT FIX: crop the padding out of the PNG itself, then this
+   collapses to a plain `width` + `height:auto`.
+   Breakpoints MUST stay in descending order (largest first).
+   ============================================================ */
+.brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
+@media(max-width:1100px){.brand-logo{width:270px;height:94px}}
+@media(max-width:768px){
+  .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
+  .brand-logo{width:250px;height:88px}
+}
+@media(max-width:430px){.brand-logo{width:205px;height:74px}}
+.nav{display:flex;align-items:center;gap:2px}
+.nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
+.nl:hover{color:#fff;background:rgba(255,255,255,.07)}
+.ni{position:relative}
+.ni:hover .drop,.ni:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
+.drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
+.drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
+.drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+.hdr-right{display:flex;align-items:center;gap:9px}
+.hdr-call{display:flex;align-items:center;gap:7px;font-size:.9rem;font-weight:700;color:var(--orange);padding:8px 14px;border-radius:var(--r8);border:1.5px solid rgba(249,115,22,.4);transition:all .2s;white-space:nowrap}
+.hdr-call:hover{background:rgba(249,115,22,.1);border-color:var(--orange)}
+/* VIP Marketing Subscription pill — sits inline with Free Audit, reads as a CTA not a nav link */
+.hdr-vip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#0b1220;background:linear-gradient(135deg,#FBBF24,#F97316);padding:9px 16px;border-radius:22px;white-space:nowrap;box-shadow:0 4px 18px rgba(249,115,22,.4);transition:all .2s}
+.hdr-vip:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(249,115,22,.55)}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:7px;flex-shrink:0}
+.burger span{display:block;height:2px;background:#fff;border-radius:2px;transition:all .28s ease}
+.burger span:nth-child(2){width:75%}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:16px 20px 40px;-webkit-overflow-scrolling:touch}
+.mob-nav.open{display:block}
+.mob-sec{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:16px 0 6px}
+.mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.mob-nav a:hover{color:var(--orange)}
+.mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
+.mob-dom{display:block!important;margin:0 0 6px;padding:13px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)!important;color:#fff!important;font-weight:700!important;border-radius:var(--r12);border-bottom:1px solid rgba(255,255,255,.16)!important}
+.mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
+
+/* ===== AI STRIP — now a single compact scrollable line on mobile ===== */
+.ai-strip{background:linear-gradient(90deg,var(--ink2) 0%,#1a2d54 50%,var(--ink2) 100%);border-bottom:1px solid rgba(37,99,235,.25);padding:9px 0}
+.ai-inner{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font-size:.82rem;color:rgba(255,255,255,.55)}
+.ai-badge{padding:3px 11px;border-radius:20px;font-size:.74rem;font-weight:700;white-space:nowrap}
+.ab-blue{background:rgba(37,99,235,.2);border:1px solid rgba(37,99,235,.4);color:#93C5FD}
+.ab-orange{background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.35);color:#FDBA74}
+.ab-green{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#86EFAC}
+.ab-purple{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.35);color:#c4b5fd}
+.ai-dot{color:rgba(255,255,255,.2)}
+@media(max-width:900px){
+  .ai-inner{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:2px;scrollbar-width:none;-ms-overflow-style:none}
+  .ai-inner::-webkit-scrollbar{display:none}
+  .ai-inner>*{flex-shrink:0}
+  .ai-strip{padding:7px 0}
+}
+</style>
+
+<style>
+/* ============================================================
+   ARTICLE TEMPLATE — reusable for every eyetoad blog post.
+   Charts are drawn in CSS from real numbers written into the
+   markup. No chart library, no images, no fake data — the bar
+   widths are the percentages themselves, so the visual can never
+   disagree with the figure printed beside it.
+   ============================================================ */
+:root{--gold:#FBBF24;--gold2:#FDE68A;--gold3:#F59E0B;--violet:#7C3AED;--violet-l:#EDE9FE}
+
+.breadcrumb{background:var(--off);border-bottom:1px solid var(--border);padding:12px 0}
+.bc-list{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
+.bc-list a{color:var(--blue);font-weight:600}
+.bc-sep{color:#CBD5E1}
+
+/* HERO */
+.art-hero{background:linear-gradient(135deg,#0f0c29 0%,#1a1060 52%,#24243e 100%);padding:52px 0 46px;position:relative;overflow:hidden}
+.art-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.art-hero-glow{position:absolute;right:-80px;top:-100px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.26) 0%,transparent 66%);pointer-events:none}
+.art-hero-inner{position:relative;z-index:2;max-width:820px}
+.art-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;font-size:.8rem;color:rgba(255,255,255,.5)}
+.art-meta .am-cat{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:#DBEAFE;color:#1E40AF;padding:3px 11px;border-radius:20px}
+.art-hero h1{color:#fff;font-size:clamp(1.85rem,4.6vw,2.9rem);margin-bottom:16px;line-height:1.14}
+.art-hero h1 em{font-style:normal;color:#C4B5FD}
+.art-standfirst{color:rgba(255,255,255,.76);font-size:1.1rem;line-height:1.7}
+
+/* LAYOUT */
+.art-section{padding:44px 0 80px}
+.art-layout{display:grid;grid-template-columns:1fr 300px;gap:52px;align-items:start}
+.art-body{max-width:760px;min-width:0}
+
+/* TYPOGRAPHY */
+.art-body h2{font-size:clamp(1.45rem,3vw,2rem);margin:44px 0 14px;scroll-margin-top:110px}
+.art-body h2:first-of-type{margin-top:8px}
+.art-body h3{font-size:clamp(1.1rem,2vw,1.28rem);margin:30px 0 10px;color:var(--ink)}
+.art-body p{font-size:1.06rem;line-height:1.82;color:var(--ink3);margin-bottom:17px}
+.art-body a{color:var(--blue);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.art-body a:hover{color:var(--blue2)}
+.art-body strong{color:var(--ink);font-weight:700}
+.art-body ul,.art-body ol{margin:0 0 20px}
+.art-body li{font-size:1.04rem;line-height:1.75;color:var(--ink3);margin-bottom:10px;padding-left:26px;position:relative}
+.art-body ul li::before{content:'';position:absolute;left:6px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.art-body ol{counter-reset:ol}
+.art-body ol li{counter-increment:ol}
+.art-body ol li::before{content:counter(ol);position:absolute;left:0;top:1px;width:19px;height:19px;border-radius:50%;background:var(--ink);color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+
+/* ANSWER BOX — direct-answer block for AI extraction */
+.answer{background:var(--blue-light);border-left:5px solid var(--blue);border-radius:0 var(--r12) var(--r12) 0;padding:22px 26px;margin:26px 0 30px}
+.answer .a-label{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.answer p{font-size:1.04rem;line-height:1.78;color:var(--ink2);margin:0}
+.answer p+p{margin-top:12px}
+
+/* CALLOUTS */
+.callout{border-radius:var(--r12);padding:20px 24px;margin:26px 0;border:1.5px solid}
+.callout p{margin-bottom:0;font-size:1rem}
+.callout p+p{margin-top:11px}
+.callout .c-label{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+.c-warn{background:#FEF2F2;border-color:#FECACA}
+.c-warn .c-label{color:#B91C1C}
+.c-tip{background:#F0FDF4;border-color:#BBF7D0}
+.c-tip .c-label{color:#047857}
+.c-note{background:#FFFBEB;border-color:#FDE68A}
+.c-note .c-label{color:#B45309}
+
+/* TOC */
+.toc{background:var(--off);border:1.5px solid var(--border);border-radius:var(--r16);padding:22px 26px;margin:8px 0 30px}
+.toc h2{font-size:.74rem!important;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px!important;font-family:'Inter',sans-serif}
+.toc ol{margin:0;counter-reset:toc}
+.toc li{counter-increment:toc;font-size:.95rem;margin-bottom:7px;padding-left:26px}
+.toc li::before{content:counter(toc);position:absolute;left:0;top:1px;width:19px;height:19px;border-radius:50%;background:#fff;border:1.5px solid var(--border);color:var(--muted);font-size:.68rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.toc a{color:var(--ink3);font-weight:600;text-decoration:none}
+.toc a:hover{color:var(--blue);text-decoration:underline}
+
+/* ===== CHARTS (pure CSS, widths = the real values) ===== */
+.chart{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);padding:26px 24px 20px;margin:30px 0;box-shadow:var(--sh)}
+.chart-title{font-family:'Fraunces',serif;font-weight:900;font-size:1.08rem;color:var(--ink);margin-bottom:4px}
+.chart-sub{font-size:.85rem;color:var(--muted);margin-bottom:20px;line-height:1.55}
+.bar-row{margin-bottom:16px}
+.bar-row:last-of-type{margin-bottom:6px}
+.bar-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
+.bar-lab{font-size:.9rem;font-weight:600;color:var(--ink3);line-height:1.4}
+.bar-val{font-family:'Fraunces',serif;font-weight:900;font-size:1.15rem;color:var(--ink);white-space:nowrap}
+.bar-track{height:13px;background:var(--off);border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.bar-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--blue),#60A5FA)}
+.bar-fill.o{background:linear-gradient(90deg,var(--orange2),var(--gold))}
+.bar-fill.g{background:linear-gradient(90deg,#047857,#34D399)}
+.bar-fill.v{background:linear-gradient(90deg,#5B21B6,#A78BFA)}
+.bar-fill.grey{background:linear-gradient(90deg,#94A3B8,#CBD5E1)}
+.chart-src{font-size:.76rem;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:16px;line-height:1.6}
+.chart-src a{color:var(--muted);text-decoration:underline}
+
+/* paired comparison chart */
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px}
+.vs-col{background:var(--off);border:1.5px solid var(--border);border-radius:var(--r12);padding:18px}
+.vs-col.win{background:#F0FDF4;border-color:#BBF7D0}
+.vs-h{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.vs-col.win .vs-h{color:#047857}
+.vs-num{font-family:'Fraunces',serif;font-weight:900;font-size:2.1rem;line-height:1;color:var(--ink);margin-bottom:6px}
+.vs-d{font-size:.86rem;color:var(--muted);line-height:1.55}
+.vs-steps{margin-top:12px}
+.vs-steps li{font-size:.83rem;padding-left:20px;margin-bottom:5px;color:var(--ink3)}
+.vs-steps li::before{content:'';position:absolute;left:4px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--muted)}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;margin:28px 0;border-radius:var(--r12);border:1.5px solid var(--border);-webkit-overflow-scrolling:touch}
+table.data{width:100%;min-width:560px;border-collapse:collapse;background:#fff;font-size:.93rem}
+table.data caption{caption-side:top;text-align:left;padding:15px 18px 11px;font-size:.8rem;color:var(--muted);font-weight:600}
+table.data th,table.data td{padding:13px 17px;text-align:left;border-bottom:1px solid var(--border);line-height:1.55;vertical-align:top}
+table.data thead th{background:var(--ink);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-bottom:none}
+table.data tbody th{font-weight:700;color:var(--ink);background:var(--off);white-space:nowrap}
+table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-bottom:none}
+table.data .yes{color:#047857;font-weight:700}
+table.data .no{color:#B91C1C;font-weight:700}
+
+/* FAQ */
+.faq-item{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;transition:border-color .2s;margin-bottom:11px}
+.faq-item:hover{border-color:#BFDBFE}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:17px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.4}
+.faq-ico{width:25px;height:25px;border-radius:50%;background:var(--off);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;color:var(--blue);transition:all .22s;margin-top:1px}
+.faq-item.open .faq-ico{background:var(--blue);color:#fff;transform:rotate(45deg);border-color:var(--blue)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px}
+.faq-item.open .faq-a{max-height:1000px;padding:0 20px 17px}
+.faq-a p{font-size:.96rem;color:var(--muted);line-height:1.75;margin-bottom:10px}
+.faq-a p:last-child{margin-bottom:0}
+
+/* CTA */
+.art-cta{background:linear-gradient(150deg,var(--ink) 0%,#1a1060 100%);border-radius:var(--r24);padding:36px 34px;margin:44px 0 0;position:relative;overflow:hidden}
+.art-cta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(196,181,253,.08) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.art-cta>*{position:relative;z-index:2}
+.art-cta h2{color:#fff;margin:0 0 10px;font-size:1.5rem}
+.art-cta p{color:rgba(255,255,255,.68);margin-bottom:20px;font-size:1rem}
+.art-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* NEXT READS */
+.next-reads{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.nr{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);padding:18px;transition:all .2s}
+.nr:hover{border-color:#BFDBFE;box-shadow:var(--sh);transform:translateY(-2px)}
+.nr span{font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange2);display:block;margin-bottom:6px}
+.nr b{font-size:.96rem;color:var(--ink);font-weight:700;line-height:1.35;display:block}
+
+/* SIDEBAR */
+.art-side{position:sticky;top:112px}
+.side-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);padding:22px;margin-bottom:18px}
+.side-card h3{font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+.side-card a{display:block;font-size:.88rem;color:var(--ink3);padding:7px 0;border-bottom:1px solid var(--border);font-weight:500}
+.side-card a:last-child{border-bottom:none}
+.side-card a:hover{color:var(--orange)}
+.side-form{background:linear-gradient(150deg,var(--ink) 0%,#1a1060 100%);border-radius:var(--r16);padding:22px 20px;margin-bottom:18px}
+.side-form h3{color:#fff;font-family:'Fraunces',serif;font-size:1.1rem;font-weight:900;letter-spacing:0;text-transform:none;margin-bottom:6px}
+.side-form .sf-sub{color:rgba(255,255,255,.6);font-size:.84rem;margin-bottom:14px;line-height:1.55}
+.side-form label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px}
+.side-form input{width:100%;padding:10px 12px;margin-bottom:11px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.16);border-radius:var(--r8);color:#fff;font-family:'Inter',sans-serif;font-size:.91rem;outline:none}
+.side-form input::placeholder{color:rgba(255,255,255,.33)}
+.side-form input:focus{border-color:#C4B5FD}
+.side-form button{width:100%;padding:13px;background:var(--orange);color:#fff;border:none;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 6px 20px rgba(249,115,22,.38)}
+.side-form button:hover{background:var(--orange2)}
+.side-form button:disabled{opacity:.6;cursor:not-allowed}
+.sf-note{font-size:.71rem;color:rgba(255,255,255,.38);text-align:center;margin-top:9px;line-height:1.5}
+.sf-err{display:none;font-size:.81rem;color:#FCA5A5;background:rgba(220,38,38,.14);border:1px solid rgba(248,113,113,.3);border-radius:6px;padding:8px 10px;margin-bottom:9px}
+
+/* FOOTER */
+.footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
+.footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
+@media(max-width:768px){.footer-brand .brand-logo{width:260px;height:92px}}
+.footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
+.footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
+.footer-brand address a{color:#FB923C}
+.footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px}
+.footer-col a{display:block;font-size:.86rem;color:rgba(255,255,255,.75);padding:4px 0;transition:color .18s}
+.footer-col a:hover{color:var(--orange)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bot p{font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-links a:hover{color:var(--orange)}
+
+@media(max-width:1024px){
+  .art-layout{grid-template-columns:1fr;gap:40px}
+  .art-side{position:static}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bot{flex-direction:column;text-align:center}
+  .next-reads{grid-template-columns:1fr}
+  .vs-grid{grid-template-columns:1fr}
+  .art-hero{padding:36px 0 34px}
+  .art-section{padding:30px 0 56px}
+  .art-cta{padding:26px 22px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://eyetoad.com/#org","name":"Eye To Ad Media","url":"https://eyetoad.com",
+"logo":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png"},
+"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","foundingDate":"2012",
+"address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"}},
+
+{"@type":"BlogPosting","@id":"https://eyetoad.com/blog/ai-visibility-self-audit/#article",
+"headline":"Is AI Recommending Your Business? A 15-Minute Self-Audit Anyone Can Run",
+"description":"A free, tool-free audit that tells you whether ChatGPT, Perplexity, Gemini and Google AI Overviews recommend your business — six prompts, a scored twelve-point checklist, and the fixes that actually work.",
+"url":"https://eyetoad.com/blog/ai-visibility-self-audit/",
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://eyetoad.com/blog/ai-visibility-self-audit/"},
+"datePublished":"2026-07-28","dateModified":"2026-07-28","inLanguage":"en-US","wordCount":4600,
+"articleSection":"AI Search",
+"keywords":"AI visibility audit, is AI recommending my business, does ChatGPT recommend my business, AI search optimization, generative engine optimization, GEO audit, does llms.txt help SEO, how to appear in AI Overviews",
+"author":{"@type":"Organization","name":"Eye To Ad Media","url":"https://eyetoad.com/about/"},
+"publisher":{"@id":"https://eyetoad.com/#org"},
+"image":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/denver-seo-services-hero.png"},
+"isPartOf":{"@type":"Blog","@id":"https://eyetoad.com/blog/#blog","name":"Eye To Ad Media Denver SEO Blog","url":"https://eyetoad.com/blog/"},
+"about":[{"@type":"Thing","name":"Generative engine optimization"},{"@type":"Thing","name":"Artificial intelligence search"},{"@type":"Thing","name":"Local business marketing"}],
+"mentions":[{"@type":"Organization","name":"Google Search Central","url":"https://developers.google.com/search"},
+            {"@type":"Organization","name":"Search Engine Land","url":"https://searchengineland.com/"},
+            {"@type":"Organization","name":"Answer.AI"}]},
+
+{"@type":"BreadcrumbList","@id":"https://eyetoad.com/blog/ai-visibility-self-audit/#breadcrumb","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://eyetoad.com/"},
+{"@type":"ListItem","position":2,"name":"SEO Blog","item":"https://eyetoad.com/blog/"},
+{"@type":"ListItem","position":3,"name":"AI Visibility Self-Audit","item":"https://eyetoad.com/blog/ai-visibility-self-audit/"}]},
+
+{"@type":"DefinedTermSet","@id":"https://eyetoad.com/blog/ai-visibility-self-audit/#terms","name":"AI search terms","hasDefinedTerm":[
+{"@type":"DefinedTerm","name":"AI visibility","description":"Whether and how often an AI assistant names a business when asked for a recommendation in its category and area."},
+{"@type":"DefinedTerm","name":"GEO","description":"Generative Engine Optimization. The practice of making a business citable and recommendable by AI answer engines such as ChatGPT, Perplexity and Gemini."},
+{"@type":"DefinedTerm","name":"Citation share","description":"How often a business appears across a set of relevant AI prompts, expressed as a proportion of those prompts."},
+{"@type":"DefinedTerm","name":"llms.txt","description":"A Markdown file placed at a site's root, proposed by Jeremy Howard of Answer.AI in September 2024, intended to summarise a site for language models. Google Search does not use it."},
+{"@type":"DefinedTerm","name":"Zero-click search","description":"A search that ends without the user clicking through to any website, because the answer appeared in the results page itself."},
+{"@type":"DefinedTerm","name":"Entity","description":"A uniquely identifiable business, person or place that search engines and AI models track independently of any single web page."}]},
+
+{"@type":"HowTo","@id":"https://eyetoad.com/blog/ai-visibility-self-audit/#howto",
+"name":"How to audit whether AI recommends your business",
+"description":"A fifteen-minute check anyone can run, using nothing but free AI assistants and a notepad.",
+"totalTime":"PT15M",
+"estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"0"},
+"tool":[{"@type":"HowToTool","name":"ChatGPT"},{"@type":"HowToTool","name":"Perplexity"},{"@type":"HowToTool","name":"Google AI Overviews"},{"@type":"HowToTool","name":"A notepad"}],
+"step":[
+{"@type":"HowToStep","name":"Open a fresh session","text":"Start a new conversation with no memory or history active, and turn off personalisation if your account offers it. Otherwise the assistant may name you simply because you have discussed your own business before."},
+{"@type":"HowToStep","name":"Run the six prompts","text":"Ask each of the six category prompts exactly as written, substituting your service and city. Do not mention your business name in the first five."},
+{"@type":"HowToStep","name":"Record what appears","text":"For each prompt, write down whether you were named, which competitors were named, and what reason the assistant gave for naming them."},
+{"@type":"HowToStep","name":"Repeat across engines","text":"Run the same six prompts in at least two other assistants. Different engines draw on different sources, so a business can be invisible in one and prominent in another."},
+{"@type":"HowToStep","name":"Run the brand check","text":"Finally ask each assistant directly about your business by name, and note whether the facts it returns are accurate and current."},
+{"@type":"HowToStep","name":"Score the technical checklist","text":"Work through the twelve-point checklist covering entity consistency, crawler access, structured data, review signals and content format. Total the score."},
+{"@type":"HowToStep","name":"Fix in priority order","text":"Start with anything blocking crawlers, then entity accuracy, then review signals, then content structure. Re-run the audit in ninety days."}]},
+
+{"@type":"FAQPage","@id":"https://eyetoad.com/blog/ai-visibility-self-audit/#faq","mainEntity":[
+{"@type":"Question","name":"How do I check if AI recommends my business?","acceptedAnswer":{"@type":"Answer","text":"Open a fresh session in ChatGPT, Perplexity or Gemini with personalisation and memory turned off, then ask for a recommendation in your category and city without naming your business. Record whether you appear, which competitors appear, and what reasons the assistant gives. Repeat across at least three assistants, because each draws on different sources. Finally ask about your business by name and check whether the facts returned are accurate. The whole process takes about fifteen minutes and costs nothing."}},
+{"@type":"Question","name":"Why doesn't ChatGPT know my business exists?","acceptedAnswer":{"@type":"Answer","text":"Usually one of five reasons. Your site may block AI crawlers in robots.txt. Your business facts may be inconsistent across the web, so no clear entity forms. You may have too few or too stale reviews for the assistant to consider you credible. Your content may be written as marketing copy rather than as extractable answers. Or your business may simply be absent from the third-party sources these systems lean on, such as directories, local press and industry listings. The audit in this article isolates which of the five applies to you."}},
+{"@type":"Question","name":"Does llms.txt help my business appear in AI search?","acceptedAnswer":{"@type":"Answer","text":"Not for Google. On 15 June 2026 Google updated its official AI optimization guidance to state plainly that you do not need to create machine readable files, AI text files, markup or Markdown to appear in Google Search including its generative AI features, because Google Search does not use them. Google added that maintaining such files is completely fine but will neither help nor harm your visibility. Independent crawler logging found only 84 of 62,100 AI bot requests over 90 days touched an llms.txt file, roughly 0.1 percent. Some other systems do read it, so it is not useless, but it should never be sold as a core AI visibility deliverable."}},
+{"@type":"Question","name":"How often should I re-run an AI visibility audit?","acceptedAnswer":{"@type":"Answer","text":"Every ninety days is a sensible cadence for most local businesses. AI answers shift as models are updated, as source content changes and as competitors publish. Ninety days is long enough for changes you make to be crawled and reflected, and short enough that you notice a slide before it costs you meaningful business. Keep the same six prompts each time so the results are comparable."}},
+{"@type":"Question","name":"Is AI visibility different from SEO?","acceptedAnswer":{"@type":"Answer","text":"It overlaps heavily but is not identical. Traditional SEO optimises for a ranked list of links. AI visibility optimises for being named inside a generated answer, where there is no list and usually only two or three businesses get mentioned. The underlying work is largely the same: accurate entity data, genuine authority, structured content and strong reviews. What differs is the format of the content and the emphasis on being quotable and factually extractable rather than merely relevant."}},
+{"@type":"Question","name":"Do AI assistants use Google reviews?","acceptedAnswer":{"@type":"Answer","text":"Yes. Review signals are among the strongest inputs AI systems use when deciding which local businesses to name. Rating, review volume, recency and the actual language customers use in review text all feed that judgement. A business with weak or stale review signals can be excluded from an AI recommendation before a search results page is ever generated."}},
+{"@type":"Question","name":"Should I block AI crawlers from my website?","acceptedAnswer":{"@type":"Answer","text":"For most local service businesses, no. Blocking AI crawlers removes any chance of being cited in AI answers, which is the opposite of what a business trying to attract customers wants. Blocking makes sense mainly for publishers whose business model depends on selling access to their own content. If you want AI assistants to recommend you, they must be able to read you, so check your robots.txt for disallow rules affecting GPTBot, ClaudeBot, PerplexityBot, Google-Extended and similar agents."}},
+{"@type":"Question","name":"How long does it take to appear in AI answers after making changes?","acceptedAnswer":{"@type":"Answer","text":"Expect weeks rather than days, and treat ninety days as a realistic first checkpoint. AI systems have to crawl the change, and many answers draw on third-party sources such as directories and press that update on their own schedule. Live-retrieval engines such as Perplexity tend to reflect changes faster than assistants relying more heavily on training data."}},
+{"@type":"Question","name":"What content format gets cited most by AI?","acceptedAnswer":{"@type":"Answer","text":"Content that answers a question directly, near the top, in language that can be lifted without editing. Comparison content performs particularly well, accounting for the largest share of AI citations of any format. Research from Princeton and the Allen Institute for AI found that adding statistics increased a source's visibility in generative answers by about 26 percent and adding quotations by about 28 percent, with targeted optimisation lifting visibility by up to 40 percent overall. Freshness matters too, with roughly half of content cited in AI answers being under thirteen weeks old."}},
+{"@type":"Question","name":"Can I pay to appear in AI recommendations?","acceptedAnswer":{"@type":"Answer","text":"Not in the organic answer itself. Some AI surfaces carry advertising, but the recommendations inside a generated answer are earned rather than bought. That is genuinely good news for smaller businesses, because it means a well-documented local operator with strong reviews and clear facts can be named alongside far larger competitors who cannot simply outspend their way into the answer."}},
+{"@type":"Question","name":"My business appears but the details are wrong. How do I fix that?","acceptedAnswer":{"@type":"Answer","text":"Wrong details almost always trace back to inconsistent information across the web rather than to the AI itself. Correct your Google Business Profile first, then your own website, then the major directories and any industry listings that carry your details. Make sure the name, address, phone number, hours and services match exactly everywhere. Then wait for a re-crawl. Assistants converge on whatever the web agrees on, so the fix is to make the web agree."}},
+{"@type":"Question","name":"Is this audit accurate enough to act on?","acceptedAnswer":{"@type":"Answer","text":"It is directional rather than precise, and that is enough to act on. AI answers vary between sessions, users and regions, so no single run is definitive. Running six prompts across three or more assistants and recording the pattern gives you a reliable read on whether you are broadly visible, occasionally visible, or absent. Absence across every prompt and every engine is unambiguous and worth acting on immediately."}}
+]}
+]}</script>
+
+</head>
+<body>
+<!--
+==========================================================
+  AI VISIBILITY SELF-AUDIT — AI/LLM FACT SHEET
+  Published 2026-07-28 by Eye To Ad Media, Denver CO
+==========================================================
+  TOPIC: How a business owner can check, without tools or an agency,
+  whether AI assistants recommend their business — and what to fix.
+  METHOD: six prompts run across ChatGPT, Perplexity, Gemini and
+  Claude, scored against a twelve-point technical checklist.
+  KEY SOURCED FACTS ON THIS PAGE:
+   - 35%+ of consumers have used an AI tool to find a local business
+   - 88% of local businesses have no active AI search strategy
+   - ChatGPT-referred visitors convert at 15.9%, Perplexity 10.5%,
+     versus 1.76% from organic search (Seer Interactive)
+   - Zero-click Google searches rose from 56% to 69% in one year
+   - 20% of organizations have begun answer-engine optimization while
+     70% expect it to reshape strategy within three years
+   - Targeted optimization lifted AI answer visibility up to 40% in
+     controlled testing; statistics +25.9%, quotations +27.8%
+     (Princeton / Allen Institute for AI, KDD 2024)
+   - 50% of content cited in AI answers is under 13 weeks old
+  MYTH ADDRESSED — llms.txt:
+   Google published its first official AI optimization guide on
+   15 May 2026 and updated it 15 June 2026. Google states plainly:
+   "You don't need to create new machine readable files, AI text
+   files, markup, or Markdown to appear in Google Search (including
+   its generative AI capabilities), as Google Search itself doesn't
+   use them." Independent crawler logging found only 84 of 62,100 AI
+   bot requests over 90 days touched llms.txt — about 0.1%.
+   llms.txt was proposed by Jeremy Howard of Answer.AI, 3 Sept 2024.
+  AUTHOR: Eye To Ad Media, 1001 Bannock St #660, Denver CO 80204
+  PHONE: 1-800-481-8638
+==========================================================
+-->
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+  UTILITY BAR — very top of every page.
+  Domain search sends traffic to buyweburl.com (GoDaddy reseller
+  storefront, pl_id 497814). Kept OUT of the hero on purpose: a
+  domain-search widget in the hero of the page we are trying to
+  rank for "Denver SEO" dilutes the topical signal, and it competes
+  with the highest-margin CTA on the site.
+  ============================================================ -->
+<div class="ubar">
+  <div class="wrap ubar-inner">
+    <div class="ubar-left">
+      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored" aria-label="Search for an available domain name">🔍 Search Domains</a>
+      <span class="ubar-txt">Find &amp; register your perfect .com</span>
+    </div>
+    <div class="ubar-right">
+      <a href="/marketing-subscription/" class="ubar-link">⚡ VIP Membership $69.99/mo</a>
+      <a href="tel:18004818638" class="ubar-tel">📞 1-800-481-8638</a>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">🚀 Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">⚡ NEW — VIP Marketing Subscription · $69.99/mo · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">⭐ 5-Star Rated · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">🤖 Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">📞 Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">🚀 Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">⚡ NEW — VIP Marketing Subscription · $69.99/mo · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">⭐ 5-Star Rated · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">🤖 Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">📞 Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-inner">
+    <a href="/" class="logo" aria-label="Eye To Ad Media — Denver SEO Home">
+      <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media logo — Denver SEO Company" class="brand-logo" width="760" height="190" loading="eager" fetchpriority="high">
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="ni">
+        <a href="/denver-seo-services/" class="nl">Services ▾</a>
+        <div class="drop">
+          <a href="/denver-seo-services/">Denver SEO Services</a>
+          <a href="/local-seo-denver/">Local SEO Denver</a>
+          <a href="/seo-systems/">SEO Systems</a>
+          <a href="/aio-seo-system/">AIO SEO System</a>
+          <a href="/generative-engine-optimization-system/">GEO System</a>
+          <a href="/conversion-optimization/">Conversion Optimization</a>
+          <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+          <a href="/free-seo-audit/">Free SEO Audit</a>
+        </div>
+      </div>
+      <div class="ni">
+        <a href="/industries/" class="nl">Industries ▾</a>
+        <div class="drop">
+          <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
+          <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
+          <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
+          <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
+          <a href="/fitness-marketing-denver/">Fitness Marketing Denver</a>
+          <a href="/real-estate-marketing-denver/">Real Estate Marketing Denver</a>
+          <a href="/chiropractor-seo-denver/">Chiropractor SEO Denver</a>
+          <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
+          <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
+        </div>
+      </div>
+      <a href="/locations/" class="nl">Locations</a>
+      <a href="/blog/" class="nl">Blog</a>
+      <a href="/about/" class="nl">About</a>
+      <div class="ni">
+        <a href="/ad-lab/" class="nl" style="color:#F97316;font-weight:700;">⚗️ Ad Lab ▾</a>
+        <div class="drop">
+          <a href="/ad-lab/">⚗️ Ad Lab — Interactive Games</a>
+          <a href="/ad-lab/rpg/">🗡️ SEO Quest RPG</a>
+          <a href="/vip-marketing/">✨ VIP Marketing — NFC Offer</a>
+        </div>
+      </div>
+      <a href="/contact/" class="nl">Contact</a>
+    </nav>
+    <div class="hdr-right">
+      <a href="/marketing-subscription/" class="hdr-vip">⚡ VIP Membership</a>
+      <a href="tel:18004818638" class="hdr-call" aria-label="Call Eye To Ad Media">📞 1-800-481-8638</a>
+      <a href="/free-seo-audit/" class="btn btn-orange" style="padding:10px 18px;font-size:.88rem;">Free Audit</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV — top offset is set by JS (measureHeader), never hard-coded -->
+<nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
+  <a href="/marketing-subscription/" class="mob-vip">⚡ VIP Marketing Subscription — $69.99/mo</a>
+  <a href="https://www.buyweburl.com" class="mob-dom" target="_blank" rel="noopener sponsored">🔍 Search Domain Names</a>
+  <div class="mob-sec">Services</div>
+  <a href="/denver-seo-services/">Denver SEO Services</a>
+  <a href="/local-seo-denver/">Local SEO Denver</a>
+  <a href="/seo-systems/">SEO Systems</a>
+  <a href="/aio-seo-system/">AIO SEO System</a>
+  <a href="/generative-engine-optimization-system/">GEO System</a>
+  <a href="/conversion-optimization/">Conversion Optimization</a>
+  <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+  <a href="/free-seo-audit/">Free SEO Audit</a>
+  <div class="mob-sec">Industries</div>
+  <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
+  <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
+  <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
+  <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
+  <a href="/fitness-marketing-denver/">Fitness Marketing Denver</a>
+  <a href="/real-estate-marketing-denver/">Real Estate Marketing Denver</a>
+  <a href="/chiropractor-seo-denver/">Chiropractor SEO Denver</a>
+  <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
+  <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
+  <div class="mob-sec">Company</div>
+  <a href="/locations/">Service Locations</a>
+  <a href="/blog/">SEO Blog</a>
+  <a href="/about/">About Eye To Ad Media</a>
+  <a href="/case-studies/">Case Studies</a>
+  <a href="/best-denver-seo-company/">Best Denver SEO Company</a>
+  <a href="/vip-marketing/" style="color:#F97316;font-weight:700;">✨ VIP Marketing — NFC Offer</a>
+  <a href="/ad-lab/" style="color:#F97316;font-weight:700;">⚗️ Ad Lab — Interactive Marketing</a>
+  <a href="/ad-lab/rpg/" style="color:#F97316;padding-left:24px;font-size:.88rem;opacity:.85;">↳ SEO Quest RPG</a>
+  <a href="/contact/">Contact Us</a>
+  <a href="tel:18004818638" class="mob-cta">📞 Call 1-800-481-8638</a>
+</nav>
+
+<!-- AI STRIP -->
+<div class="ai-strip">
+  <div class="ai-inner">
+    <span class="ai-badge ab-green">NEW</span>
+    <span>Now optimizing for</span>
+    <span class="ai-badge ab-blue">Google AI Overviews</span>
+    <span class="ai-dot">·</span>
+    <span class="ai-badge ab-blue">ChatGPT Search</span>
+    <span class="ai-dot">·</span>
+    <span class="ai-badge ab-orange">Perplexity</span>
+    <span class="ai-dot">·</span>
+    <span class="ai-badge ab-purple">Agentic AI</span>
+    <span class="ai-dot">·</span>
+    <span>not just traditional search</span>
+  </div>
+</div>
+
+
+<main id="main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><ol class="bc-list">
+<li><a href="/">Home</a></li><li><span class="bc-sep" aria-hidden="true">›</span></li>
+<li><a href="/blog/">SEO Blog</a></li><li><span class="bc-sep" aria-hidden="true">›</span></li>
+<li aria-current="page">AI Visibility Self-Audit</li></ol></div></nav>
+
+<section class="art-hero">
+  <div class="art-hero-glow" aria-hidden="true"></div>
+  <div class="wrap art-hero-inner">
+    <p class="art-meta"><span class="am-cat" style="background:#EDE9FE;color:#5B21B6;">AI Search</span><span>July 28, 2026</span><span>·</span><span>17 min read</span></p>
+    <h1>Is AI Recommending Your Business? <em>A 15-Minute Self-Audit</em> Anyone Can Run</h1>
+    <p class="art-standfirst">No tools. No agency. No subscription. Six prompts, a scored checklist, and an honest answer about whether ChatGPT, Perplexity and Google's AI actually know you exist.</p>
+  </div>
+</section>
+
+<section class="art-section">
+  <div class="wrap">
+    <div class="art-layout">
+      <article class="art-body">
+
+        <div class="answer">
+          <p class="a-label">Quick answer</p>
+          <p><strong>To check whether AI recommends your business, open a fresh session in ChatGPT, Perplexity or Gemini with memory and personalisation switched off, then ask for a recommendation in your category and city without naming your business.</strong> Record whether you appear, who does, and the reasons given.</p>
+          <p>Repeat across at least three assistants, because each pulls from different sources. Then ask about your business by name and check whether the facts are right. Fifteen minutes, no cost, and the result tells you more than most paid audits.</p>
+        </div>
+
+        <p>Something quiet happened over the last two years. A meaningful share of your customers stopped starting at Google.</p>
+
+        <p>They open ChatGPT instead. They ask Perplexity. They read the AI summary at the top of the results page and never scroll. And in every one of those cases, a machine picks two or three businesses to name — out of the dozens that could have been named.</p>
+
+        <p>So here is the uncomfortable question. When that happens in your category, in your city, does your name come up?</p>
+
+        <p>Most owners have never checked. Not because they do not care, but because nobody told them it was checkable. It is. And it takes about a quarter of an hour.</p>
+
+        <nav class="toc" aria-label="Contents">
+          <h2>What's in this guide</h2>
+          <ol>
+            <li><a href="#stakes">Why this is worth fifteen minutes</a></li>
+            <li><a href="#setup">Setting up a clean test</a></li>
+            <li><a href="#prompts">The six prompts</a></li>
+            <li><a href="#reading">How to read your results</a></li>
+            <li><a href="#scorecard">The 12-point technical scorecard</a></li>
+            <li><a href="#signals">What AI actually looks at</a></li>
+            <li><a href="#llms">The llms.txt myth</a></li>
+            <li><a href="#fixes">Fixes in priority order</a></li>
+            <li><a href="#cadence">How often to re-run it</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="stakes">Why this is worth fifteen minutes</h2>
+
+        <p>Two numbers explain the whole opportunity. One is about customers. The other is about competitors.</p>
+
+        <div class="chart">
+          <p class="chart-title">The gap between how people search and how businesses market</p>
+          <p class="chart-sub">United States, 2026</p>
+
+          <div class="bar-row">
+            <div class="bar-head"><span class="bar-lab">Local businesses with <strong>no</strong> active AI search strategy</span><span class="bar-val">88%</span></div>
+            <div class="bar-track"><div class="bar-fill o" style="width:88%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span class="bar-lab">Google searches that now end without a click</span><span class="bar-val">69%</span></div>
+            <div class="bar-track"><div class="bar-fill grey" style="width:69%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span class="bar-lab">Organizations expecting AI answers to reshape their strategy</span><span class="bar-val">70%</span></div>
+            <div class="bar-track"><div class="bar-fill v" style="width:70%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span class="bar-lab">Consumers who have used AI to find a local business</span><span class="bar-val">35%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:35%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span class="bar-lab">Organizations that have actually started optimizing for it</span><span class="bar-val">20%</span></div>
+            <div class="bar-track"><div class="bar-fill grey" style="width:20%"></div></div>
+          </div>
+
+          <p class="chart-src">Sources: GrowthPro AI (2026) for local business AI strategy adoption and consumer usage; Similarweb (2025) for zero-click share, up from 56% the prior year; Acquia/Frase (2026) for the belief-versus-implementation gap. Bar widths are the stated percentages.</p>
+        </div>
+
+        <p>Look at the first bar and the last one together. Nearly nine in ten local businesses have done nothing. Only one in five organisations of any size has started. Meanwhile a third of consumers are already using AI to find local services.</p>
+
+        <p>That is not a trend you need to get ahead of eventually. That is a gap sitting open right now.</p>
+
+        <p>And the traffic that does arrive from these systems behaves unusually well. Visitors referred from ChatGPT convert at around 15.9%, and from Perplexity around 10.5%, against roughly 1.76% for ordinary organic search. The reason is simple: they arrive already holding a recommendation. Somebody they trust — or something they trust — already vouched for you.</p>
+
+        <div class="callout c-note">
+          <p class="c-label">The uncomfortable version</p>
+          <p>In a traditional search result there are ten links, and being seventh still puts you on the page. In an AI answer there are two or three names. Being fourth is the same as being invisible. That compression is the whole reason this matters more than a ranking drop.</p>
+        </div>
+
+        <h2 id="setup">Setting up a clean test</h2>
+
+        <p>Before you run anything, remove the ways this test can lie to you. There are three.</p>
+
+        <ul>
+          <li><strong>Turn off memory and personalisation.</strong> If you have discussed your own business with an assistant before, it may name you out of context rather than merit. In ChatGPT this means disabling memory and using a temporary chat. In others, log out or use a private window.</li>
+          <li><strong>Use a fresh session for every prompt.</strong> Assistants carry context forward. Ask six questions in one thread and answers two through six are contaminated by answer one.</li>
+          <li><strong>Do not name your business first.</strong> The first five prompts must be category questions. The moment you say your name, you have told the assistant the answer.</li>
+        </ul>
+
+        <p>Then pick your inputs. You need your <strong>service</strong> as a customer would say it — "plumber", not "hydronic systems specialist" — and your <strong>city or neighbourhood</strong>.</p>
+
+        <p>Have a notepad open. You are recording three things per prompt: whether you appeared, who did, and what reason the assistant gave.</p>
+
+        <p>That third column is the one people skip, and it is the most valuable. The reasoning tells you exactly what the system thinks matters in your category.</p>
+
+        <h2 id="prompts">The six prompts</h2>
+
+        <p>Run these exactly as written, swapping in your service and city. Copy each one, run it in a fresh session, record the result, move on.</p>
+
+        <div class="prompt">
+          <p class="prompt-n">Prompt 1 · The basic recommendation</p>
+          <p class="prompt-t">"Who is the best [your service] in [your city]? Give me three options and explain why you picked each one."</p>
+          <div class="prompt-row">
+            <span class="prompt-where">Run in: ChatGPT · Perplexity · Gemini</span>
+            <button class="prompt-copy" type="button" data-p="Who is the best [your service] in [your city]? Give me three options and explain why you picked each one.">Copy</button>
+          </div>
+        </div>
+        <p class="prompt-look"><b>What to look for:</b> whether you appear at all, and whether the reasoning mentions reviews, years in business, specialisation or something else entirely.</p>
+
+        <div class="prompt">
+          <p class="prompt-n">Prompt 2 · The buying-intent version</p>
+          <p class="prompt-t">"I need a [your service] in [your city] this week. Who should I call, and what should I ask them before hiring?"</p>
+          <div class="prompt-row">
+            <span class="prompt-where">Run in: ChatGPT · Perplexity</span>
+            <button class="prompt-copy" type="button" data-p="I need a [your service] in [your city] this week. Who should I call, and what should I ask them before hiring?">Copy</button>
+          </div>
+        </div>
+        <p class="prompt-look"><b>What to look for:</b> urgency changes the answer. Some businesses surface for research questions but vanish for ready-to-buy ones.</p>
+
+        <div class="prompt">
+          <p class="prompt-n">Prompt 3 · The specialisation test</p>
+          <p class="prompt-t">"Which [your service] companies in [your city] specialise in [your most profitable service]? Be specific about who does what."</p>
+          <div class="prompt-row">
+            <span class="prompt-where">Run in: ChatGPT · Perplexity · Gemini</span>
+            <button class="prompt-copy" type="button" data-p="Which companies in my city specialise in this particular service? Be specific about who does what.">Copy</button>
+          </div>
+        </div>
+        <p class="prompt-look"><b>What to look for:</b> this is where small businesses win. General category answers favour big names. Specialisation answers favour whoever documented their niche clearly.</p>
+
+        <div class="prompt">
+          <p class="prompt-n">Prompt 4 · The comparison</p>
+          <p class="prompt-t">"Compare the top [your service] providers in [your city]. Make a table with pricing approach, specialisms, and what customers say about each."</p>
+          <div class="prompt-row">
+            <span class="prompt-where">Run in: Perplexity · Gemini</span>
+            <button class="prompt-copy" type="button" data-p="Compare the top providers in my category and city. Make a table with pricing approach, specialisms, and what customers say about each.">Copy</button>
+          </div>
+        </div>
+        <p class="prompt-look"><b>What to look for:</b> comparison content is the format most cited by AI. If a competitor dominates this answer, look at what they published to earn it.</p>
+
+        <div class="prompt">
+          <p class="prompt-n">Prompt 5 · The neighbourhood test</p>
+          <p class="prompt-t">"I live in [your neighbourhood or nearest suburb]. Which local [your service] businesses actually serve that area?"</p>
+          <div class="prompt-row">
+            <span class="prompt-where">Run in: ChatGPT · Perplexity</span>
+            <button class="prompt-copy" type="button" data-p="I live in this neighbourhood. Which local businesses in this category actually serve that area?">Copy</button>
+          </div>
+        </div>
+        <p class="prompt-look"><b>What to look for:</b> service-area accuracy. Many businesses are visible city-wide but invisible for the specific suburbs they actually work in.</p>
+
+        <div class="prompt">
+          <p class="prompt-n">Prompt 6 · The brand check <em>(do this one last)</em></p>
+          <p class="prompt-t">"Tell me about [your business name] in [your city]. What do they do, who do they serve, and what do customers say?"</p>
+          <div class="prompt-row">
+            <span class="prompt-where">Run in: all four, including Claude</span>
+            <button class="prompt-copy" type="button" data-p="Tell me about this business in this city. What do they do, who do they serve, and what do customers say?">Copy</button>
+          </div>
+        </div>
+        <p class="prompt-look"><b>What to look for:</b> accuracy. Wrong hours, an old address, services you dropped years ago, or a flat "I don't have information about that business" — each points to a different problem.</p>
+
+        <div class="callout c-tip">
+          <p class="c-label">Do this bit properly</p>
+          <p>Write the answers down. Do not just read them and form an impression. In ninety days you will re-run the same six prompts, and a written record is the only way to tell whether anything you changed actually worked.</p>
+        </div>
+
+
+        <h2 id="reading">How to read your results</h2>
+
+        <p>You now have six answers across three or four assistants. Sort what you found into one of four buckets.</p>
+
+        <div class="tbl-wrap">
+          <table class="data">
+            <caption>Diagnosing your AI visibility from the six-prompt audit.</caption>
+            <thead><tr><th scope="col">What you saw</th><th scope="col">What it means</th><th scope="col">Where to start</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Named in most prompts, facts correct</th><td>You are visible and your entity is clean</td><td>Protect it — keep reviews and content fresh</td></tr>
+              <tr><th scope="row">Named sometimes, mostly for general prompts</th><td>Broad presence, weak specialisation signals</td><td>Publish depth on your most profitable service</td></tr>
+              <tr><th scope="row">Named but details wrong or outdated</th><td>Entity inconsistency across the web</td><td>Fix your facts everywhere before anything else</td></tr>
+              <tr><th scope="row">Never named, competitors always are</th><td>You are effectively invisible to these systems</td><td>Start with crawler access and review signals</td></tr>
+              <tr><th scope="row">Assistant says it has no information</th><td>No usable entity has formed at all</td><td>Google Business Profile, citations, then content</td></tr>
+              <tr><th scope="row">Named in Perplexity but not ChatGPT</th><td>Live web presence fine, training-data presence thin</td><td>Third-party mentions — press, directories, industry sites</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>That last row deserves a note, because it confuses people. Perplexity leans heavily on live retrieval, so it reflects the current web quickly. Assistants that lean more on training data reflect a slower, older picture built from how widely you are referenced across the internet.</p>
+
+        <p>So being visible in one and not the other is diagnostic, not contradictory. It tells you your website is fine but the wider web barely mentions you.</p>
+
+        <h2 id="scorecard">The 12-point technical scorecard</h2>
+
+        <p>The prompts tell you <em>whether</em> you are visible. This checklist tells you <em>why</em>. Tick everything that is genuinely true — be honest, since nobody sees this but you.</p>
+
+        <div class="sc">
+          <div class="sc-head">
+            <h3>AI Visibility Scorecard</h3>
+            <p>Twelve checks. Tick what's true. Your score updates as you go.</p>
+          </div>
+          <div class="sc-body" id="scBody">
+            <p class="sc-group">Access — can AI read you at all?</p>
+            <div class="sc-item" data-pts="12" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">My robots.txt does not block AI crawlers<small>Check for Disallow rules affecting GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot</small></span>
+              <span class="sc-pts">12 pts</span>
+            </div>
+            <div class="sc-item" data-pts="8" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">My key content is real HTML text, not images or scripts<small>Text baked into images or loaded only by JavaScript is often invisible to AI crawlers</small></span>
+              <span class="sc-pts">8 pts</span>
+            </div>
+
+            <p class="sc-group">Entity — does the web agree on who you are?</p>
+            <div class="sc-item" data-pts="10" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">My Google Business Profile is complete and current<small>Hours, services, categories, photos, description — all accurate today</small></span>
+              <span class="sc-pts">10 pts</span>
+            </div>
+            <div class="sc-item" data-pts="10" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">My name, address and phone match exactly everywhere<small>Website, Google, directories, social profiles — character for character</small></span>
+              <span class="sc-pts">10 pts</span>
+            </div>
+            <div class="sc-item" data-pts="7" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">My website states the plain facts in readable text<small>Founded, location, services, service area, phone — written out, not just in a footer image</small></span>
+              <span class="sc-pts">7 pts</span>
+            </div>
+
+            <p class="sc-group">Proof — is there reason to recommend you?</p>
+            <div class="sc-item" data-pts="10" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">I have at least as many reviews as my map pack rivals<small>Relative volume matters more than any absolute number</small></span>
+              <span class="sc-pts">10 pts</span>
+            </div>
+            <div class="sc-item" data-pts="8" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">My newest review is less than a month old<small>Roughly half of AI-cited content is under 13 weeks old; stale profiles read as stale businesses</small></span>
+              <span class="sc-pts">8 pts</span>
+            </div>
+            <div class="sc-item" data-pts="6" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">Independent sites mention my business by name<small>Directories, local press, suppliers, industry associations, partner sites</small></span>
+              <span class="sc-pts">6 pts</span>
+            </div>
+
+            <p class="sc-group">Format — is your content quotable?</p>
+            <div class="sc-item" data-pts="9" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">My pages answer real questions directly, near the top<small>A clear answer in the first paragraph beats three paragraphs of throat-clearing</small></span>
+              <span class="sc-pts">9 pts</span>
+            </div>
+            <div class="sc-item" data-pts="7" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">I use structured data (schema) on key pages<small>LocalBusiness, FAQPage and Service markup, valid and matching visible content</small></span>
+              <span class="sc-pts">7 pts</span>
+            </div>
+            <div class="sc-item" data-pts="7" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">I publish comparison or specific-data content<small>Comparison formats earn the largest share of AI citations of any content type</small></span>
+              <span class="sc-pts">7 pts</span>
+            </div>
+            <div class="sc-item" data-pts="6" role="checkbox" aria-checked="false" tabindex="0">
+              <span class="sc-box" aria-hidden="true">✓</span>
+              <span class="sc-txt">Something on my site was updated in the last 90 days<small>Freshness is a live signal, not a vanity metric</small></span>
+              <span class="sc-pts">6 pts</span>
+            </div>
+          </div>
+
+          <div class="sc-out" aria-live="polite">
+            <p class="sc-label">Your AI visibility score</p>
+            <div class="sc-score" id="scScore">0</div>
+            <div class="sc-bar"><div class="sc-bar-fill" id="scBar"></div></div>
+            <p class="sc-band" id="scBand">Tick the boxes above to score</p>
+            <p class="sc-diag" id="scDiag">Every item is weighted by how much it actually affects whether an AI names your business.</p>
+            <div class="sc-cta"><a href="/free-seo-audit/" class="btn btn-orange">Get the full audit done for you →</a></div>
+          </div>
+          <p class="sc-foot">Weightings reflect our own experience across Denver client work plus the published research cited throughout this article. Treat the score as a priority guide, not a precise measurement.</p>
+        </div>
+
+        <h2 id="signals">What AI actually looks at</h2>
+
+        <p>Strip away the mystique and these systems are doing something fairly understandable. They need to name a business, and they need a defensible reason. So they look for evidence.</p>
+
+        <p><strong>Consistency.</strong> If twelve sources agree your name, address and phone, a confident entity forms. If four sources disagree, the system hedges — and hedging usually means naming somebody else.</p>
+
+        <p><strong>Corroboration.</strong> Your own website claiming you are the best is worth almost nothing. Independent sources saying anything factual about you is worth a great deal. This is why a mention in a local paper or a trade association listing outweighs another page of marketing copy.</p>
+
+        <p><strong>Extractability.</strong> Content that answers a question plainly can be lifted into an answer. Content that builds atmosphere for four paragraphs before saying anything cannot. This is a genuine format difference, not a writing-quality judgement.</p>
+
+        <p><strong>Recency.</strong> Roughly half of the content cited in AI answers is under thirteen weeks old. A site untouched for two years is not just stale to humans.</p>
+
+        <p><strong>Specificity.</strong> Research from Princeton and the Allen Institute for AI found that adding statistics to a page increased its visibility in generative answers by about 26%, and adding quotations by about 28%, with targeted optimisation lifting visibility by up to 40% overall. Vague pages lose to precise ones.</p>
+
+        <div class="callout c-tip">
+          <p class="c-label">The practical translation</p>
+          <p>Say specific, checkable things. "We've served Denver since 2012" beats "we have years of experience." "Most campaigns show movement in 3–6 months" beats "results vary." Precision is not just better writing — it measurably increases the chance of being quoted.</p>
+        </div>
+
+        <h2 id="llms">The llms.txt myth</h2>
+
+        <p>Now for something you may have been sold, or may be about to be.</p>
+
+        <p>Over the last year a file called <strong>llms.txt</strong> has been marketed hard as an AI visibility essential. It is a Markdown file placed at your site root, proposed by Jeremy Howard of Answer.AI in September 2024, intended to summarise your site for language models.</p>
+
+        <p>Plenty of agencies now bill for creating and maintaining one. So it is worth knowing what Google says about it.</p>
+
+        <p>Google published its first official AI optimization guide on 15 May 2026, then updated it on 15 June. It lives in the Generative AI fundamentals section of <a href="https://developers.google.com/search" target="_blank" rel="noopener noreferrer">Google Search Central</a>, and the relevant line is not ambiguous:</p>
+
+        <div class="callout c-note">
+          <p class="c-label">Google Search Central, AI optimization guidance, 15 June 2026</p>
+          <p>"You don't need to create new machine readable files, AI text files, markup, or Markdown to appear in Google Search (including its generative AI capabilities), as Google Search itself doesn't use them."</p>
+          <p>And on the file specifically: "It's completely fine if you decide to create and maintain LLMS.txt files (or other similar files) for other services or systems that use these files. Doing so won't harm (nor help) your visibility or rankings in Google Search, as Google Search ignores them."</p>
+        </div>
+
+        <p>Google's position has been consistent, and was <a href="https://searchengineland.com/" target="_blank" rel="noopener noreferrer">reported at the time by Search Engine Land</a>. Gary Illyes said at Search Central Live in July 2025 that Google does not support llms.txt and had no plans to. John Mueller compared the idea to the old meta keywords tag — a signal spammers stuffed and search engines eventually ignored entirely.</p>
+
+        <p>Independent measurement backs this up. One test domain logged 62,100 AI bot requests over ninety days. Just 84 of them touched the llms.txt file. That is around <strong>0.1% of AI crawler traffic</strong>.</p>
+
+        <p>To be fair, the picture is not entirely one-sided. Some systems outside Google do read the file, and Google confusingly added an llms.txt check to its Lighthouse audit tool. If you run documentation-heavy software where AI coding assistants parse your docs, there is a genuine if narrow use case.</p>
+
+        <p>But for a local service business? It does essentially nothing, and it should never appear as a headline deliverable on an invoice.</p>
+
+        <div class="callout c-warn">
+          <p class="c-label">If someone is selling you this</p>
+          <p>Ask them one question: "Which specific AI systems read this file, and what evidence do you have that it changed our visibility?" A good answer names systems and shows before-and-after data. A vague answer about future-proofing means you are paying for a text file.</p>
+          <p>The same test applies to any AI-search deliverable. The work that moves the needle is unglamorous: accurate facts, real authority, clear content, strong reviews. That is harder to sell than a magic file, which is precisely why the magic file gets sold.</p>
+        </div>
+
+
+        <h2 id="fixes">Fixes, in priority order</h2>
+
+        <p>Work down this list. Do not skip ahead, because each step makes the next one more effective.</p>
+
+        <h3>1. Unblock the crawlers (today, 10 minutes)</h3>
+
+        <p>Open <code>yoursite.com/robots.txt</code> in a browser. Look for <code>Disallow</code> rules affecting GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot or a blanket block on all agents.</p>
+
+        <p>If you find one, decide deliberately. Publishers who sell access to their own content have a reason to block. A plumber does not. If you want AI to recommend you, it has to be able to read you.</p>
+
+        <h3>2. Make the web agree about you (this week)</h3>
+
+        <p>Fix your Google Business Profile first — hours, categories, services, description, photos. Then your own site. Then the directories.</p>
+
+        <p>The standard is exact match. "Suite 660" on one and "#660" on another is a small inconsistency to you and a genuine ambiguity to a machine trying to decide whether those are the same business.</p>
+
+        <h3>3. Restart your review flow (this month)</h3>
+
+        <p>Reviews are among the heaviest inputs to these recommendations, and recency counts as much as volume. If your newest review is four months old, that is the highest-return fix available to you.</p>
+
+        <p>We covered the whole method in <a href="/blog/how-to-get-more-google-reviews/">how to get more Google reviews without being annoying</a> — including the two rules that carry real penalties. The fastest mechanism for collecting them is covered in our <a href="/blog/nfc-marketing-for-small-business/">NFC marketing guide</a>.</p>
+
+        <h3>4. Write the facts down plainly (this month)</h3>
+
+        <p>Somewhere on your site, in ordinary readable text, state: what you do, where you do it, when you started, who you serve, what it typically costs, and how to reach you.</p>
+
+        <p>Most business websites never say these things directly. They imply them through imagery and adjectives. A machine cannot extract an implication.</p>
+
+        <h3>5. Publish something worth quoting (next quarter)</h3>
+
+        <p>Comparison content earns the largest share of AI citations of any format. So a page that honestly compares options in your category — including when someone should <em>not</em> choose you — is unusually likely to be cited.</p>
+
+        <p>Add real numbers. Add named sources. Add specifics you can defend. That is what the Princeton research measured, and it is the cheapest lever most businesses never pull.</p>
+
+        <h3>6. Then check the destination</h3>
+
+        <p>An AI recommendation sends someone to your site with unusually high intent. If they land on something slow or confusing, you have wasted the hardest-won click in marketing. Our post on <a href="/blog/website-traffic-but-no-calls-denver/">why your website gets traffic but no calls</a> covers the symptoms, and <a href="/conversion-optimization/">conversion optimization</a> covers the repair.</p>
+
+        <div class="callout c-tip">
+          <p class="c-label">The order matters</p>
+          <p>Publishing brilliant content while your robots.txt blocks AI crawlers is wasted effort. Fixing crawler access while your business facts contradict each other across six directories is also wasted effort. Access, then identity, then proof, then content. In that order.</p>
+        </div>
+
+        <h2 id="cadence">How often to re-run it</h2>
+
+        <p>Every ninety days. Same six prompts, same assistants, same notepad.</p>
+
+        <p>Ninety days is long enough for changes to be crawled and reflected, and short enough that a slide shows up before it costs you real money. Any more often and you are measuring noise — these answers vary between sessions and regions, so week-to-week movement means very little.</p>
+
+        <p>Track three things over time: how many of the six prompts named you, how many assistants named you at least once, and whether the facts returned were accurate. Three numbers, four times a year. That is a complete AI visibility programme for a local business.</p>
+
+        <p>One caution on expectations. Changes take weeks, not days. Live-retrieval engines like Perplexity reflect updates fastest. Assistants leaning on training data move far more slowly, because they are waiting on the wider web to catch up with you.</p>
+
+        <h2>What this audit cannot tell you</h2>
+
+        <p>Worth being straight about the limits.</p>
+
+        <p>These answers vary. Between sessions, between users, between regions, and between model versions. So no single run is definitive, and anyone selling you a precise "AI visibility percentage" is selling precision that does not exist yet.</p>
+
+        <p>What the audit does reliably is separate three states: broadly visible, occasionally visible, and absent. Absence across six prompts and three assistants is not noise. That is a finding, and it is actionable today.</p>
+
+        <p>It also cannot tell you how much business you are losing. Nobody can measure the customer who asked ChatGPT, got three names that were not yours, and called one of them. That loss is invisible by design — which is exactly why it goes unnoticed for so long.</p>
+
+        <div class="art-cta">
+          <h2>Want us to run the full version?</h2>
+          <p>We'll run the prompts across every major assistant, audit the technical side properly, benchmark you against your actual map pack competitors, and give you a prioritised fix list. Free, and we'll tell you if the honest answer is that you're already fine.</p>
+          <div class="art-cta-btns">
+            <a href="/free-seo-audit/" class="btn btn-orange btn-lg">Get a Free AI Visibility Audit</a>
+            <a href="tel:18004818638" class="btn btn-ghost-white btn-lg">📞 1-800-481-8638</a>
+          </div>
+        </div>
+
+        <h2 id="faq">Frequently asked questions</h2>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How do I check if AI recommends my business?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Open a fresh session in ChatGPT, Perplexity or Gemini with personalisation and memory turned off, then ask for a recommendation in your category and city without naming your business. Record whether you appear, which competitors appear, and what reasons the assistant gives.</p><p>Repeat across at least three assistants, because each draws on different sources. Finally, ask about your business by name and check the facts. The whole process takes about fifteen minutes and costs nothing.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Why doesn't ChatGPT know my business exists?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Usually one of five reasons. Your site blocks AI crawlers in robots.txt. Your business facts are inconsistent across the web, so no clear entity forms. You have too few or too stale reviews to read as credible. Your content is marketing copy rather than extractable answers. Or you are simply absent from the third-party sources these systems lean on — directories, local press, industry listings.</p><p>The audit in this article isolates which of the five applies to you.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Does llms.txt help my business appear in AI search?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Not for Google. On 15 June 2026 Google updated its official AI optimization guidance to state that you do not need machine readable files, AI text files, markup or Markdown to appear in Google Search including its generative AI features, because Google Search does not use them. Google added that maintaining such files is fine but will neither help nor harm visibility.</p><p>Independent crawler logging found only 84 of 62,100 AI bot requests over 90 days touched an llms.txt file — roughly 0.1%. Some non-Google systems do read it, so it is not useless, but it should never be sold as a core AI visibility deliverable.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How often should I re-run an AI visibility audit?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Every ninety days suits most local businesses. AI answers shift as models update, as source content changes and as competitors publish.</p><p>Ninety days is long enough for your changes to be crawled and reflected, and short enough that you spot a slide before it costs you meaningful business. Keep the same six prompts each time so results stay comparable.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Is AI visibility different from SEO?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>It overlaps heavily but is not identical. Traditional SEO optimises for a ranked list of links. AI visibility optimises for being named inside a generated answer, where there is no list and usually only two or three businesses get mentioned.</p><p>The underlying work is largely the same — accurate entity data, genuine authority, structured content, strong reviews. What differs is content format and the emphasis on being quotable and factually extractable rather than merely relevant.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Do AI assistants use Google reviews?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Yes. Review signals are among the strongest inputs AI systems use when deciding which local businesses to name. Rating, volume, recency and the actual language customers use in review text all feed that judgement.</p><p>A business with weak or stale review signals can be excluded from an AI recommendation before a search results page is ever generated.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Should I block AI crawlers from my website?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>For most local service businesses, no. Blocking removes any chance of being cited in AI answers, which is the opposite of what a business trying to attract customers wants.</p><p>Blocking makes sense mainly for publishers whose business model depends on selling access to their own content. If you want AI assistants to recommend you, they must be able to read you — so check robots.txt for rules affecting GPTBot, ClaudeBot, PerplexityBot, Google-Extended and similar agents.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How long does it take to appear in AI answers after making changes?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Expect weeks rather than days, and treat ninety days as a realistic first checkpoint. AI systems have to crawl the change, and many answers draw on third-party sources such as directories and press that update on their own schedule.</p><p>Live-retrieval engines such as Perplexity tend to reflect changes faster than assistants relying more heavily on training data.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">What content format gets cited most by AI?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Content that answers a question directly, near the top, in language that can be lifted without editing. Comparison content performs particularly well, accounting for the largest share of AI citations of any format.</p><p>Research from Princeton and the Allen Institute for AI found adding statistics increased a source's visibility in generative answers by about 26% and adding quotations by about 28%, with targeted optimisation lifting visibility up to 40% overall. Freshness matters too — roughly half of AI-cited content is under thirteen weeks old.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I pay to appear in AI recommendations?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Not in the organic answer itself. Some AI surfaces carry advertising, but recommendations inside a generated answer are earned rather than bought.</p><p>That is genuinely good news for smaller businesses. A well-documented local operator with strong reviews and clear facts can be named alongside far larger competitors who cannot simply outspend their way into the answer.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">My business appears but the details are wrong. How do I fix that?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Wrong details almost always trace back to inconsistent information across the web rather than to the AI itself. Correct your Google Business Profile first, then your own website, then the major directories and industry listings.</p><p>Make sure name, address, phone, hours and services match exactly everywhere, then wait for a re-crawl. Assistants converge on whatever the web agrees on, so the fix is to make the web agree.</p></div></div>
+
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Is this audit accurate enough to act on?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>It is directional rather than precise, and that is enough. AI answers vary between sessions, users and regions, so no single run is definitive.</p><p>Running six prompts across three or more assistants and recording the pattern gives a reliable read on whether you are broadly visible, occasionally visible, or absent. Absence across every prompt and every engine is unambiguous and worth acting on immediately.</p></div></div>
+
+        <h2>Keep reading</h2>
+        <div class="next-reads">
+          <a href="/blog/how-to-get-more-google-reviews/" class="nr"><span>Local SEO</span><b>How to get more Google reviews without being annoying</b></a>
+          <a href="/blog/how-ai-is-changing-local-search/" class="nr"><span>AI Search</span><b>How Google AI Overviews are changing local search</b></a>
+          <a href="/blog/nfc-marketing-for-small-business/" class="nr"><span>Technology</span><b>NFC marketing: the complete tap-to-connect guide</b></a>
+          <a href="/blog/google-business-profile-ranking-factors-denver/" class="nr"><span>Local SEO</span><b>The 7 Google Maps ranking factors that matter most</b></a>
+        </div>
+
+      </article>
+
+      <aside class="art-side">
+        <div class="side-form">
+          <h3>Free AI Visibility Audit</h3>
+          <p class="sf-sub">We'll run the full prompt set across every major assistant and send you a prioritised fix list.</p>
+          <form id="art-form" method="POST" novalidate data-fs="info@eyetoad.com">
+            <input type="text" name="_honey" id="_honey_art" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
+            <input type="email" name="alt_contact_url" id="_decoy_art" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
+            <input type="hidden" name="_loadtime" id="_loadtime_art" value="">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Free Audit Request — AI Visibility article">
+            <input type="hidden" name="_next" value="https://eyetoad.com/thank-you/">
+            <input type="hidden" name="form_source" value="Blog article — AI visibility self-audit">
+            <label for="ar-name">Your name</label>
+            <input type="text" name="name" id="ar-name" placeholder="First and last name" required autocomplete="name">
+            <label for="ar-website">Website</label>
+            <input type="text" name="website" id="ar-website" placeholder="yoursite.com" required autocomplete="url">
+            <label for="ar-phone">Phone</label>
+            <input type="tel" name="phone" id="ar-phone" placeholder="Best number" required autocomplete="tel">
+            <label for="ar-email">Email</label>
+            <input type="email" name="email" id="ar-email" placeholder="you@company.com" required autocomplete="email">
+            <div class="sf-err" role="alert" id="err-art"></div>
+            <button type="submit" id="btn-art">Request My Free Audit</button>
+          </form>
+          <p class="sf-note">🔒 Private. No spam, ever.</p>
+        </div>
+
+        <div class="side-card">
+          <h3>In this guide</h3>
+          <a href="#stakes">Why it's worth 15 minutes</a>
+          <a href="#setup">Setting up a clean test</a>
+          <a href="#prompts">The six prompts</a>
+          <a href="#reading">Reading your results</a>
+          <a href="#scorecard">The 12-point scorecard</a>
+          <a href="#signals">What AI looks at</a>
+          <a href="#llms">The llms.txt myth</a>
+          <a href="#fixes">Fixes in priority order</a>
+        </div>
+
+        <div class="side-card">
+          <h3>Related services</h3>
+          <a href="/aio-seo-system/">AIO SEO System</a>
+          <a href="/generative-engine-optimization-system/">GEO System</a>
+          <a href="/local-seo-denver/">Local SEO Denver</a>
+          <a href="/conversion-optimization/">Conversion Optimization</a>
+          <a href="/free-seo-audit/">Free SEO Audit</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Site footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver SEO Agency since 2012" class="brand-logo" width="760" height="190" loading="lazy">
+        <p>Denver's SEO authority for modern search since 2012 — Google, AI Overviews, agentic AI, local maps, and conversion. Serving Denver and surrounding Colorado.</p>
+        <address>
+          Eye To Ad Media<br>
+          1001 Bannock St #660<br>
+          Denver, CO 80204<br>
+          <a href="tel:17202496588">(720) 249-6588</a><br>
+          <a href="tel:18004818638">1-800-481-8638</a><br>
+          <a href="https://eyetoad.com">eyetoad.com</a>
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/denver-seo-services/">Denver SEO Services</a>
+        <a href="/local-seo-denver/">Local SEO Denver</a>
+        <a href="/seo-systems/">SEO Systems</a>
+        <a href="/aio-seo-system/">AIO SEO System</a>
+        <a href="/generative-engine-optimization-system/">GEO System</a>
+        <a href="/conversion-optimization/">Conversion Optimization</a>
+        <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+        <a href="/free-seo-audit/">Free SEO Audit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
+        <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
+        <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
+        <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
+        <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+        <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
+        <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
+        <a href="/industries/">All Industries →</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/marketing-subscription/" style="color:#FBBF24;font-weight:700;">⚡ VIP Marketing Subscription</a>
+        <a href="/about/">About Us</a>
+        <a href="/best-denver-seo-company/">Best Denver SEO Company</a>
+        <a href="/vip-marketing/" style="color:#FB923C;font-weight:600;">✨ VIP Marketing — NFC</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/ad-lab/">⚗️ Ad Lab</a>
+        <a href="/ad-lab/rpg/" style="padding-left:14px;font-size:.82rem;opacity:.75;">↳ SEO Quest RPG</a>
+        <a href="/blog/">SEO Blog</a>
+        <a href="/contact/">Contact</a>
+        <a href="/locations/">Locations</a>
+        <a href="https://www.buyweburl.com" target="_blank" rel="noopener sponsored">🔍 Search Domain Names</a>
+        <h4 style="margin-top:16px;">Legal</h4>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/accessibility/">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-07-28">July 28, 2026</time>.</p>
+      <div class="footer-links">
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/accessibility/">Accessibility</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/robots.txt">Robots.txt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CORE UI (identical behaviour to the homepage) ===== */
+(function(){
+  var hdr=document.getElementById('hdr');
+  var burger=document.getElementById('burger');
+  var mobNav=document.getElementById('mobNav');
+  window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>30);},{passive:true});
+  function measureHeader(){var r=hdr.getBoundingClientRect();mobNav.style.top=Math.max(0,r.bottom)+'px';}
+  window.addEventListener('resize',measureHeader);
+  window.addEventListener('scroll',measureHeader,{passive:true});
+  measureHeader();
+  burger.addEventListener('click',function(){
+    measureHeader();
+    var o=mobNav.classList.toggle('open');
+    burger.classList.toggle('open',o);
+    burger.setAttribute('aria-expanded',o);
+    document.body.style.overflow=o?'hidden':'';
+  });
+  mobNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      mobNav.classList.remove('open');burger.classList.remove('open');
+      burger.setAttribute('aria-expanded',false);document.body.style.overflow='';
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&mobNav.classList.contains('open')){burger.click();}
+  });
+})();
+
+/* ===== FAQ ACCORDION ===== */
+(function(){
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.closest('.faq-item');
+      var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el){
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded',false);
+      });
+      if(!wasOpen){item.classList.add('open');btn.setAttribute('aria-expanded',true);}
+    });
+  });
+})();
+
+
+/* ===== COPY-TO-CLIPBOARD PROMPTS ===== */
+(function(){
+  document.querySelectorAll('.prompt-copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var txt=b.getAttribute('data-p')||'';
+      function done(){var o=b.textContent;b.textContent='Copied \u2713';b.classList.add('done');
+        setTimeout(function(){b.textContent=o;b.classList.remove('done');},1800);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(done).catch(function(){});
+      }else{
+        var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.left='-9999px';
+        document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy');done();}catch(e){}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+})();
+
+/* ============================================================
+   AI VISIBILITY SCORECARD
+   Real scoring. Weights live in the markup as data-pts so the
+   printed points and the maths can never disagree.
+   ============================================================ */
+(function(){
+  var body=document.getElementById('scBody');
+  if(!body)return;
+  var items=Array.prototype.slice.call(body.querySelectorAll('.sc-item'));
+  var scoreEl=document.getElementById('scScore');
+  var barEl=document.getElementById('scBar');
+  var bandEl=document.getElementById('scBand');
+  var diagEl=document.getElementById('scDiag');
+
+  var MAX=items.reduce(function(a,i){return a+parseInt(i.getAttribute('data-pts'),10);},0);
+
+  var BANDS=[
+    {min:90,name:'Strong',d:'You are doing the work most businesses skip. Protect it: keep reviews flowing and refresh key pages quarterly.'},
+    {min:70,name:'Solid, with gaps',d:'The foundation is there. Close the unticked items above and you will likely start appearing in answers where you currently do not.'},
+    {min:45,name:'Partially visible',d:'You are probably named occasionally but inconsistently. The unticked access and entity items are almost certainly why.'},
+    {min:20,name:'Mostly invisible',d:'AI systems have little to work with. Start at the top of the list — crawler access and entity consistency — before writing anything new.'},
+    {min:0, name:'Invisible',d:'Right now there is almost nothing for an AI to use. The good news is that the first three fixes are cheap and fast.'}
+  ];
+
+  function render(){
+    var got=0;
+    items.forEach(function(i){
+      if(i.classList.contains('on')) got+=parseInt(i.getAttribute('data-pts'),10);
+    });
+    var pct=Math.round(got/MAX*100);
+    scoreEl.textContent=pct;
+    barEl.style.width=pct+'%';
+    var band=BANDS.find(function(b){return pct>=b.min;});
+    bandEl.textContent=band.name+' \u2014 '+got+' of '+MAX+' points';
+    diagEl.textContent=band.d;
+  }
+
+  items.forEach(function(i){
+    function toggle(){
+      var on=i.classList.toggle('on');
+      i.setAttribute('aria-checked',on?'true':'false');
+      render();
+    }
+    i.addEventListener('click',toggle);
+    i.addEventListener('keydown',function(e){
+      if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle();}
+    });
+  });
+
+  render();
+})();
+
+/* ============================================================
+   AUDIT FORM SPAM STACK
+   ============================================================ */
+(function(){
+  var form=document.getElementById('art-form');
+  if(!form)return;
+  document.getElementById('_loadtime_art').value=Date.now();
+  var btn=document.getElementById('btn-art');
+  var err=document.getElementById('err-art');
+  var last=0;
+  function show(m){err.textContent=m;err.style.display='block';}
+
+  form.addEventListener('submit',function(e){
+    err.style.display='none';
+    if(document.getElementById('_honey_art').value!==''){e.preventDefault();return;}
+    if(document.getElementById('_decoy_art').value!==''){e.preventDefault();return;}
+
+    var elapsed=Date.now()-parseInt(document.getElementById('_loadtime_art').value||'0',10);
+    if(elapsed<4000){e.preventDefault();show('Please take a moment to fill out the form.');return;}
+
+    var now=Date.now();
+    if(last&&(now-last)<60000){e.preventDefault();show('Please wait a moment before submitting again.');return;}
+
+    var name=document.getElementById('ar-name').value.trim();
+    if(name.length<2||/[<>{}|\\]|https?:\/\//i.test(name)){e.preventDefault();show('Please enter a valid name.');return;}
+
+    var site=document.getElementById('ar-website').value.trim();
+    if(site.length<4){e.preventDefault();show('Please enter your website address.');return;}
+
+    var phone=document.getElementById('ar-phone').value.replace(/\D/g,'');
+    if(phone.length<10){e.preventDefault();show('Please enter a valid phone number (10+ digits).');return;}
+
+    var email=document.getElementById('ar-email').value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){e.preventDefault();show('Please enter a valid email address.');return;}
+
+    /* Endpoint assembled here, never present in the raw HTML. */
+    form.action=['https:','','formsubmit.co',form.getAttribute('data-fs')||'info@eyetoad.com'].join('/');
+    last=now;
+    btn.disabled=true;
+    btn.textContent='Sending...';
+  });
+})();
+</script>
+
+
+<!-- Eye To Ad Media Chatbot Widget (v5 — VIP Subscription aware) -->
+<style>
+#etad{position:fixed;right:20px;bottom:20px;z-index:999999;font-family:'Inter',Arial,sans-serif}
+#etad *{box-sizing:border-box;margin:0;padding:0}
+#etad-fab{width:62px;height:62px;border-radius:50%;border:none;background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(249,115,22,.45);animation:etad-pulse 3s infinite;position:relative}
+#etad-fab:hover{transform:scale(1.08)}
+#etad-fab.open{animation:none;background:#475569;font-size:20px}
+@keyframes etad-pulse{0%,100%{box-shadow:0 8px 32px rgba(249,115,22,.45),0 0 0 0 rgba(249,115,22,.4)}50%{box-shadow:0 8px 32px rgba(249,115,22,.45),0 0 0 10px rgba(249,115,22,0)}}
+#etad-dot{position:absolute;top:3px;right:3px;width:13px;height:13px;background:#22c55e;border-radius:50%;border:2px solid #fff;display:none}
+#etad-dot.on{display:block;animation:etad-blink 2s infinite}
+@keyframes etad-blink{0%,100%{opacity:1}50%{opacity:.3}}
+#etad-panel{position:absolute;right:0;bottom:76px;width:370px;max-width:calc(100vw - 24px);height:600px;max-height:calc(100vh - 120px);background:#0b1220;border:1px solid rgba(255,255,255,.1);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.55);display:none;flex-direction:column;overflow:hidden}
+#etad-panel.open{display:flex}
+#etad-head{padding:14px 16px 12px;background:linear-gradient(135deg,#0f1e35,#111827);border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+#etad-head-row{display:flex;align-items:center;justify-content:space-between}
+#etad-head-l{display:flex;align-items:center;gap:10px}
+#etad-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f97316,#f59e0b);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+#etad-title{font-size:14px;font-weight:700;color:#f1f5f9}
+#etad-live{font-size:11px;color:#22c55e;display:flex;align-items:center;gap:4px;margin-top:2px}
+#etad-live-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;display:inline-block}
+#etad-sub{font-size:11px;color:#94a3b8;margin-top:7px;line-height:1.5}
+#etad-xbtn{border:none;background:rgba(255,255,255,.08);color:#94a3b8;font-size:16px;cursor:pointer;border-radius:7px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#etad-xbtn:hover{background:rgba(255,255,255,.15);color:#fff}
+#etad-prog{height:3px;background:rgba(255,255,255,.08);display:none;flex-shrink:0}
+#etad-prog-fill{height:100%;background:linear-gradient(90deg,#f97316,#f59e0b);transition:width .4s;width:0}
+#etad-msgs{flex:1;overflow-y:auto;padding:16px 14px;background:#0b1220}
+#etad-msgs::-webkit-scrollbar{width:3px}
+#etad-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.em-bot,.em-usr{max-width:88%;padding:10px 13px;border-radius:16px;font-size:13px;line-height:1.55;white-space:pre-line;margin-bottom:9px}
+.em-bot{background:#1a2333;border:1px solid rgba(255,255,255,.1);color:#f1f5f9;border-top-left-radius:4px;align-self:flex-start}
+.em-usr{background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;border-top-right-radius:4px;align-self:flex-end;font-weight:500}
+.em-wrap{display:flex;flex-direction:column}
+.em-typing{display:flex;align-items:center;gap:5px;padding:11px 14px;background:#1a2333;border:1px solid rgba(255,255,255,.1);border-radius:16px;border-top-left-radius:4px;width:fit-content;margin-bottom:9px}
+.em-typing span{width:6px;height:6px;background:#94a3b8;border-radius:50%;animation:etad-bounce .9s infinite}
+.em-typing span:nth-child(2){animation-delay:.15s}
+.em-typing span:nth-child(3){animation-delay:.3s}
+@keyframes etad-bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+.em-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.em-chip{border:1px solid rgba(249,115,22,.35);background:rgba(249,115,22,.08);color:#fbd5b5;padding:7px 12px;font-size:12px;border-radius:999px;cursor:pointer;font-family:inherit;transition:all .15s}
+.em-chip:hover{background:rgba(249,115,22,.22);border-color:#f97316;color:#fff}
+#etad-foot{border-top:1px solid rgba(255,255,255,.1);padding:11px 13px 9px;background:rgba(0,0,0,.2);flex-shrink:0}
+#etad-irow{display:flex;gap:7px}
+#etad-inp{flex:1;padding:10px 13px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:11px;color:#f1f5f9;font-size:13px;font-family:inherit;outline:none}
+#etad-inp:focus{border-color:#f97316}
+#etad-inp::placeholder{color:#94a3b8}
+#etad-sbtn{min-width:48px;height:40px;border:none;border-radius:11px;background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#etad-sbtn:hover{transform:scale(1.05)}
+#etad-sbtn:disabled{opacity:.5;cursor:not-allowed}
+#etad-fmeta{display:flex;justify-content:space-between;margin-top:7px}
+#etad-ftel{font-size:10px;color:#94a3b8;line-height:1.5}
+#etad-ftel a{color:#f97316;text-decoration:none}
+#etad-fstat{font-size:10px;color:#38bdf8}
+@media(max-width:600px){
+  #etad{right:14px;bottom:14px}
+  #etad-panel{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0;z-index:999998}
+}
+</style>
+
+<div id="etad">
+  <div id="etad-panel" aria-hidden="true">
+    <div id="etad-head">
+      <div id="etad-head-row">
+        <div id="etad-head-l">
+          <div id="etad-av">&#127919;</div>
+          <div>
+            <div id="etad-title">Eye To Ad Media</div>
+            <div id="etad-live"><span id="etad-live-dot"></span>Live Assistant</div>
+          </div>
+        </div>
+        <button id="etad-xbtn" aria-label="Close">&#x2715;</button>
+      </div>
+      <div id="etad-sub">SEO &middot; AIO &middot; GEO &middot; Agentic AI &middot; Web Design &middot; PPC &middot; Conversion &middot; Branding &middot; VIP Membership</div>
+    </div>
+    <div id="etad-prog"><div id="etad-prog-fill"></div></div>
+    <div id="etad-msgs"></div>
+    <div id="etad-foot">
+      <div id="etad-irow">
+        <input id="etad-inp" type="text" placeholder="Ask about SEO, ads, membership..." autocomplete="off" maxlength="300"/>
+        <button id="etad-sbtn" type="button" aria-label="Send">&#10148;</button>
+      </div>
+      <div id="etad-fmeta">
+        <div id="etad-ftel"><a href="tel:18004818638">1-800-481-8638</a> &middot; <a href="tel:17202496588">(720) 249-6588</a><br>Denver, CO &middot; Serving Businesses Nationwide</div>
+        <div id="etad-fstat"></div>
+      </div>
+    </div>
+  </div>
+  <button id="etad-fab" aria-label="Chat with Eye To Ad Media" aria-expanded="false">&#128172;<span id="etad-dot"></span></button>
+</div>
+
+<script>
+(function(){
+'use strict';
+var FSURL='https://formsubmit.co/ajax/sales@eyetoad.com';
+var fab=document.getElementById('etad-fab');
+var dot=document.getElementById('etad-dot');
+var panel=document.getElementById('etad-panel');
+var xbtn=document.getElementById('etad-xbtn');
+var msgs=document.getElementById('etad-msgs');
+var inp=document.getElementById('etad-inp');
+var sbtn=document.getElementById('etad-sbtn');
+var fstat=document.getElementById('etad-fstat');
+var prog=document.getElementById('etad-prog');
+var progf=document.getElementById('etad-prog-fill');
+
+var S={open:false,ready:false,capture:false,field:null,
+  lead:{name:'',company:'',phone:'',email:'',website:'',industry:'',service:'',budget:'',notes:''}};
+
+function setprog(){
+  if(!S.capture){prog.style.display='none';return;}
+  prog.style.display='block';
+  var ff=['name','company','phone','email','website','industry','service','budget'];
+  var done=ff.filter(function(f){return S.lead[f];}).length;
+  progf.style.width=Math.round(done/ff.length*100)+'%';
+}
+function scrl(){msgs.scrollTop=msgs.scrollHeight;}
+function addmsg(text,who){
+  var w=document.createElement('div');w.className='em-wrap';
+  var m=document.createElement('div');m.className='em-'+who;
+  m.textContent=text;w.appendChild(m);msgs.appendChild(w);scrl();
+}
+function showtyping(){
+  var el=document.createElement('div');el.className='em-typing';el.id='etad-typing';
+  el.innerHTML='<span></span><span></span><span></span>';
+  msgs.appendChild(el);scrl();return el;
+}
+function botmsg(text,delay){
+  delay=delay||1100;
+  return new Promise(function(res){
+    var el=showtyping();
+    setTimeout(function(){
+      if(el.parentNode)el.parentNode.removeChild(el);
+      addmsg(text,'bot');scrl();res();
+    },delay);
+  });
+}
+function chips(labels){
+  msgs.querySelectorAll('.em-chips').forEach(function(el){el.parentNode.removeChild(el);});
+  var wrap=document.createElement('div');wrap.className='em-chips';
+  labels.forEach(function(lbl){
+    var b=document.createElement('button');b.type='button';b.className='em-chip';b.textContent=lbl;
+    b.addEventListener('click',function(){
+      msgs.querySelectorAll('.em-chips').forEach(function(el){el.parentNode.removeChild(el);});
+      handle(lbl);
+    });
+    wrap.appendChild(b);
+  });
+  msgs.appendChild(wrap);scrl();
+}
+function openchat(){
+  S.open=true;panel.classList.add('open');panel.setAttribute('aria-hidden','false');
+  fab.classList.add('open');fab.setAttribute('aria-expanded','true');
+  fab.innerHTML='&#x2715;';if(dot)dot.style.display='none';
+  if(!S.ready){S.ready=true;init();}
+  setTimeout(function(){inp.focus();},150);
+}
+function closechat(){
+  S.open=false;panel.classList.remove('open');panel.setAttribute('aria-hidden','true');
+  fab.classList.remove('open');fab.setAttribute('aria-expanded','false');
+  fab.innerHTML='&#128172;<span id="etad-dot"></span>';
+  dot=document.getElementById('etad-dot');
+}
+function norm(s){return(s||'').toLowerCase();}
+function has(t,keys){var n=norm(t);for(var i=0;i<keys.length;i++){if(n.indexOf(keys[i])!==-1)return true;}return false;}
+
+var KB=[
+  {k:['vip','membership','subscription','member pricing','69.99','monthly plan','join'],
+   a:'The VIP Marketing Subscription is our monthly marketing membership.\n\n$69.99/month. No contract. Cancel anytime.\n\nMembership unlocks member pricing on:\n- SEO\n- AI Optimization (AIO)\n- Logo Design\n- Video Production\n- Graphic Design\n- Print Design\n- Landing Pages\n- Google Business Profile Optimization\n- Website Updates\n- NFC Marketing\n\nPlus:\n- Priority scheduling ahead of non-members\n- VIP support\n- Monthly reporting\n- Member-only perks as we add them\n\nThink of it like a warehouse club: one monthly fee unlocks better pricing on the whole catalog.',
+   c:['See Membership Page','Get a Quote','Talk to a Human']},
+  {k:['seo','search engine','rankings','rank on','organic','google ranking'],
+   a:'Eye To Ad Media specializes in conversion-first SEO -- we engineer the entire path from first click to closed deal.\n\nOur SEO covers:\n- Technical SEO (site health, crawlability, Core Web Vitals)\n- On-page optimization and keyword targeting\n- Content strategy built around buyer intent\n- Local SEO / Google Maps domination\n- National and e-commerce SEO\n- AI Overview optimization (AIO)\n- Generative Engine Optimization (GEO)\n- Agentic AI optimization\n- Link authority and entity building\n- Conversion audits after traffic arrives\n\nNo cookie-cutter packages. Custom-quoted based on your market and goals.',
+   c:['Get a Free SEO Audit','Local SEO / Maps','AIO & GEO','VIP Membership','Pricing / Quote']},
+  {k:['agentic','ai agent','autonomous ai','deep research'],
+   a:'Agentic AI optimization is our newest and most forward-looking service.\n\nAgentic AI systems -- like ChatGPT deep research, Perplexity autonomous agents, and emerging Google AI agents -- research and recommend businesses on behalf of users, without those users performing a traditional search.\n\nIf your entity signals, structured content, and authority patterns are not built for agentic AI, you simply will not appear in their recommendations.\n\nWe build:\n- Entity clarity and consistency across the web\n- Citation-worthy authority content\n- Structured data and schema signals\n- Review velocity and brand mention patterns\n- Real-time web presence signals',
+   c:['Get a Quote','AIO & GEO','Talk to a Human']},
+  {k:['aio','ai optimization','ai overview','ai search','chatgpt','perplexity','answer engine'],
+   a:'AI Overview Optimization (AIO) is one of our core differentiators.\n\nGoogle AI Overviews now appear above traditional results for millions of searches. If your content is not structured to win those placements, you are invisible to a growing share of your audience.\n\nWe help with:\n- Structured content built for AI answer selection\n- Entity clarity and topical authority\n- FAQ and schema markup strategy\n- Visibility in ChatGPT, Perplexity, Gemini, and Google AIO\n- Positioning your brand as the trusted answer source',
+   c:['GEO Strategy','Agentic AI','Get a Quote','Talk to a Human']},
+  {k:['geo','generative engine'],
+   a:'Generative Engine Optimization (GEO) positions your brand to be cited by AI engines -- not just ranked by traditional algorithms.\n\nWhen someone asks ChatGPT or Perplexity who to call for your service, we make sure your name comes up.\n\n- Citation-worthy authority content\n- Semantic entity consistency across the web\n- Structured service pages with expertise signals\n- Schema and structured data\n- Content designed to be quoted by AI engines',
+   c:['AIO Strategy','Agentic AI','Get a Custom Quote','Talk to a Human']},
+  {k:['local seo','google maps','map pack','google business','near me'],
+   a:'Local SEO is one of our flagship services.\n\nWe help your business dominate the Google Map Pack with:\n- Google Business Profile optimization\n- Map pack ranking strategy\n- City and service-area landing pages\n- Hyperlocal content targeting\n- Citation building and cleanup\n- Review generation strategy\n- Local schema markup\n- Competitor gap analysis',
+   c:['Get a Local SEO Audit','Pricing / Quote','Talk to a Human']},
+  {k:['domain','buy a domain','register domain','url','web address'],
+   a:'You can search and register domain names right through us.\n\nUse the "Search Domain Names" link at the very top of any page -- it opens our domain storefront where you can check availability and register in a couple of minutes.\n\nOnce you have the domain, we can build the site, host it, and run the SEO on it.',
+   c:['Website / Funnel','VIP Membership','Talk to a Human']},
+  {k:['website','web design','landing page','funnel','wordpress','shopify'],
+   a:'Eye To Ad Media builds conversion-optimized websites that generate leads -- not just pretty sites.\n\nWe work with:\n- Custom-coded static HTML (fast, secure, SEO-ready)\n- WordPress development and redesign\n- Shopify stores and e-commerce optimization\n- Landing pages and sales funnels\n- UX and conversion rate optimization\n- Mobile-first responsive design\n- Trust signal and CTA optimization',
+   c:['Get a Website Quote','Conversion Optimization','VIP Membership']},
+  {k:['conversion','cro','leads','lead gen'],
+   a:'Conversion optimization is our foundation.\n\nTraffic without conversion is just an expense. We fix the full funnel:\n- CTA strategy and placement\n- Trust signal audit and repair\n- Form design and friction reduction\n- Offer and headline testing\n- Mobile conversion issues\n- Sales page and funnel architecture\n\nMost businesses lose 60-80% of potential leads due to fixable problems.',
+   c:['Get a Conversion Audit','Website Review','Pricing / Quote']},
+  {k:['ppc','google ads','paid search','paid advertising'],
+   a:'Paid search management is part of our full-funnel approach.\n\nWe handle:\n- Google Ads campaign setup and management\n- Keyword research and negative keyword strategy\n- Ad copy testing and optimization\n- Conversion tracking and ROI reporting\n- Landing page alignment so clicks convert\n- Shopping campaigns for e-commerce',
+   c:['Get a PPC Quote','Remarketing','Talk to a Human']},
+  {k:['remarketing','retargeting','display','programmatic'],
+   a:'Remarketing and programmatic display keep your brand in front of your audience at every stage of the buying cycle.\n\n- Google remarketing and display campaigns\n- Programmatic display advertising\n- Facebook and Instagram remarketing\n- Dynamic product retargeting\n- Full-funnel audience segmentation\n- OTT and Connected TV advertising',
+   c:['Get a Remarketing Quote','TV / Streaming Ads','Talk to a Human']},
+  {k:['social','facebook','instagram','tiktok'],
+   a:'Social media marketing is part of our full-stack approach.\n\n- Organic social media strategy and content\n- Paid social campaigns (Facebook, Instagram, LinkedIn, TikTok)\n- Audience targeting and lookalike strategy\n- Facebook Marketplace marketing\n- Short-form video content strategy\n- Social proof and brand trust building',
+   c:['Facebook Ads Quote','Full Marketing Strategy','Talk to a Human']},
+  {k:['tv','streaming','ctv','ott'],
+   a:'TV and streaming advertising is available through our full-service marketing stack.\n\n- Over-the-Top (OTT) streaming TV advertising (Hulu, Roku, Pluto)\n- Connected TV (CTV) campaign management\n- Video ad production consulting\n- Audience targeting by geography and demographics\n- Full-funnel integration with your digital campaigns',
+   c:['Get a TV Quote','Video Marketing','Talk to a Human']},
+  {k:['branding','logo','brand','print','graphic design'],
+   a:'Branding and creative are available through Eye To Ad Media.\n\n- Logo design and brand identity\n- Graphic design and print design\n- Brand voice and positioning strategy\n- Ad creative development\n- Messaging frameworks that convert\n\nAll of these are included at member pricing with the VIP Marketing Subscription.',
+   c:['VIP Membership','Get a Branding Quote','Talk to a Human']},
+  {k:['nfc','tap card','business card tap'],
+   a:'NFC marketing turns a physical tap into a digital experience.\n\nWe program NFC cards, stickers and stands that instantly open your menu, offer page, review link or booking form.\n\nGreat for restaurants, contractors, trade shows and storefront windows -- and included at member pricing with the VIP Marketing Subscription.',
+   c:['VIP Membership','Get an NFC Quote','Talk to a Human']},
+  {k:['email','drip','newsletter'],
+   a:'Email marketing remains one of the highest-ROI channels when done correctly.\n\n- Email list strategy and segmentation\n- Drip campaign and automation setup\n- Lead nurture sequences\n- Promotional campaign design\n- Email copywriting optimized for conversion',
+   c:['Email Marketing Quote','Full Funnel Strategy','Talk to a Human']},
+  {k:['audit','site audit','analyze'],
+   a:'We perform comprehensive audits that reveal exactly what is costing you leads and revenue.\n\n- SEO audit (technical, on-page, local, content gaps)\n- Conversion audit (why visitors are not converting)\n- Google Business Profile audit\n- AI visibility check (are you showing up in ChatGPT and AI Overviews?)\n- Competitor gap analysis',
+   c:['Request a Free Audit','Get a Quote','Talk to a Human']},
+  {k:['pricing','cost','how much','rates','packages','monthly'],
+   a:'Eye To Ad Media does not use cookie-cutter packages -- every market and business is different.\n\nCustom quotes are based on:\n- Your industry and competition level\n- Geographic market (local vs. national)\n- Current website health\n- Goals and timeline\n\nMost local SEO programs run $500-$3,000/mo.\n\nIf you want everything at member rates, the VIP Marketing Subscription is $69.99/mo and unlocks member pricing across every service.',
+   c:['VIP Membership','Get a Custom Quote','Talk to a Human']},
+  {k:['about','who are you','eye to ad','founded','zach','bbb'],
+   a:'Eye To Ad Media was founded by Zach Wennstedt in 2012 and is based in Denver, Colorado.\n\nWe are A+ BBB Accredited, 5-star rated, with a conversion-first philosophy focused on real ROI -- not vanity metrics.\n\nWe are also one of the first Denver agencies offering agentic AI optimization.',
+   c:['Our Services','VIP Membership','Get a Quote']},
+  {k:['contact','phone','address','hours','reach'],
+   a:'You can reach Eye To Ad Media here:\n\nPhone: 1-800-481-8638\nPhone: (720) 249-6588\nEmail: sales@eyetoad.com\nOffice: 1001 Bannock St, Suite 660, Denver CO 80204\nHours: Monday-Friday, 8AM-6PM MT\n\nWould you like to leave your info for a callback or quote?',
+   c:['Yes, request a callback','No thanks, just browsing']},
+  {k:['results','guarantee','how long','timeline','roi','how fast'],
+   a:'We do not make unrealistic promises, but here is what we can tell you:\n\nMost SEO campaigns show meaningful movement within 60-90 days, with strong momentum building from months 3-6. Local campaigns often move faster.\n\nWhat makes us different:\n- We focus on revenue outcomes, not ranking reports\n- We fix conversion issues before driving more traffic\n- We work with a limited number of clients so every account gets real attention',
+   c:['Book a Strategy Call','Get a Quote','Talk to a Human']}
+];
+
+var SERVICES=['SEO / Local SEO','AIO / GEO','Agentic AI Optimization','VIP Marketing Subscription','Website Design','Landing Pages / Funnels',
+  'Conversion Optimization','Google Ads / PPC','Remarketing / Display','Social Media',
+  'NFC Marketing','TV / Streaming Ads','Email Marketing','Branding / Logo',
+  'Video Marketing','E-commerce / Shopify','Full Marketing Strategy','Not Sure Yet'];
+
+var BUDGETS=['Under $1,000/mo','$1,000-$2,000/mo','$2,000-$4,000/mo',
+  '$4,000-$7,500/mo','$7,500+/mo','One-time project','Just the $69.99 membership','Not sure yet'];
+
+function init(){
+  botmsg('Hey there! I am the Eye To Ad Media assistant.\n\nI can help you with:\n- SEO, AIO, and GEO strategy\n- Agentic AI optimization\n- Local SEO and Google Maps\n- The VIP Marketing Subscription ($69.99/mo)\n- Website design and landing pages\n- Conversion optimization\n- Google Ads, remarketing, display\n- Social, TV, video, branding, NFC\n- Custom audits and strategy quotes\n\nWhat brings you here today?',1000).then(function(){
+    chips(['SEO / AIO / GEO','⚡ VIP Membership','Agentic AI','Website / Funnel','Paid Ads','Get a Free Audit','Pricing / Quote']);
+  });
+}
+function startcap(hint){
+  S.capture=true;if(hint&&!S.lead.service)S.lead.service=hint;setprog();
+  botmsg('Perfect -- let me collect a few details so we can put together a custom quote or strategy call.\n\nThis takes about 60 seconds. What is your name?',900).then(function(){S.field='name';});
+}
+function asknext(){
+  var l=S.lead;setprog();
+  if(!l.name){botmsg('What is your name?',900).then(function(){S.field='name';});return;}
+  if(!l.company){botmsg('What company or business are you with?',900).then(function(){S.field='company';});return;}
+  if(!l.phone){botmsg('Best phone number to reach you?',900).then(function(){S.field='phone';});return;}
+  if(!l.email){botmsg('And your email address?',900).then(function(){S.field='email';});return;}
+  if(!l.website){botmsg('What is your website URL? (Type none if you do not have one)',900).then(function(){S.field='website';});return;}
+  if(!l.industry){botmsg('What industry is your business in?',900).then(function(){S.field='industry';});return;}
+  if(!l.service){botmsg('Which service are you most interested in?',900).then(function(){S.field='service';chips(SERVICES);});return;}
+  if(!l.budget){botmsg('What monthly budget range are you working with?',900).then(function(){S.field='budget';chips(BUDGETS);});return;}
+  if(!l.notes){botmsg('Last one -- anything else we should know about your goals or timeline? (Type skip to skip)',900).then(function(){S.field='notes';});return;}
+  S.field=null;submitlead();
+}
+function capfield(raw){
+  var v=raw.trim();
+  if(S.field==='phone'&&v.replace(/\D/g,'').length<10){addmsg(v,'usr');botmsg('Please enter a valid phone number with at least 10 digits.',900);return;}
+  if(S.field==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){addmsg(v,'usr');botmsg('Please enter a valid email address.',900);return;}
+  if(S.field==='notes'&&v.toLowerCase()==='skip'){addmsg('(skipped)','usr');S.lead.notes='N/A';asknext();return;}
+  addmsg(v,'usr');S.lead[S.field]=v;asknext();
+}
+function submitlead(){
+  S.capture=false;setprog();var l=S.lead;
+  fstat.textContent='Sending...';sbtn.disabled=true;
+  fetch(FSURL,{method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      _subject:'New Chatbot Lead -- eyetoad.com -- '+l.name,
+      _template:'table',_captcha:'false',
+      Name:l.name,Company:l.company,Phone:l.phone,Email:l.email,
+      Website:l.website,Industry:l.industry,Service:l.service,
+      Budget:l.budget,Notes:l.notes,Source:'eyetoad.com chatbot'
+    })
+  }).then(function(r){return r.json();})
+  .then(function(){
+    botmsg('Done! You are all set, '+l.name+'.\n\nYour information has been sent to the Eye To Ad Media team. Expect to hear back within 1 business day -- often much sooner.\n\nIn the meantime you can also call:\n1-800-481-8638\n(720) 249-6588\n\nIs there anything else I can help you with?',900).then(function(){
+      chips(['Ask Another Question','Our Services','VIP Membership','Call Now']);
+    });
+  }).catch(function(){
+    botmsg('I had a problem sending your request. Please reach out directly:\nPhone: 1-800-481-8638\nEmail: sales@eyetoad.com\n\nYour info: '+l.name+' | '+l.phone+' | '+l.email,900);
+  }).finally(function(){
+    fstat.textContent='';sbtn.disabled=false;
+    S.lead={name:'',company:'',phone:'',email:'',website:'',industry:'',service:'',budget:'',notes:''};
+    S.capture=false;S.field=null;
+  });
+}
+function humanroute(){
+  botmsg('Happy to connect you with the team!\n\nPhone: 1-800-481-8638\nPhone: (720) 249-6588\nEmail: sales@eyetoad.com\nHours: Monday-Friday, 8AM-6PM MT\n\nOr I can collect your info for a callback right now.',700).then(function(){
+    chips(['Yes, collect my info','No thanks, just browsing']);
+  });
+}
+function services(){
+  botmsg('Eye To Ad Media offers a comprehensive marketing stack.\n\n- SEO (local, national, technical, content)\n- AIO -- AI Overview Optimization\n- GEO -- Generative Engine Optimization\n- Agentic AI Optimization\n- Local SEO / Google Maps\n- Website design (custom, WordPress, Shopify)\n- Landing pages and funnels\n- Conversion Rate Optimization\n- Google Ads / PPC\n- Remarketing and programmatic display\n- Social media (organic + paid)\n- NFC marketing\n- TV and streaming (OTT/CTV) advertising\n- Email marketing\n- Branding, logo, graphic and print design\n- Video marketing and YouTube ads\n- E-commerce optimization\n\nEverything is custom-scoped -- and every one of these is available at member pricing with the VIP Marketing Subscription.',1000).then(function(){
+    chips(['VIP Membership','Get a Free Audit','Pricing / Quote','SEO / AIO / GEO','Talk to a Human']);
+  });
+}
+function route(text){
+  var t=norm(text);
+  if(has(t,['see membership page','membership page'])){addmsg(text,'usr');window.location.href='/marketing-subscription/';return;}
+  if(has(t,['audit','free audit','audit my site'])){addmsg(text,'usr');startcap('SEO / Conversion Audit');return;}
+  if(has(t,['quote','i want','i need','help me','help with','interested in','ready to start','get started','hire','work with you','sign up'])){
+    addmsg(text,'usr');startcap();return;
+  }
+  if(has(t,['talk to a human','speak to someone','book a call','callback','request a callback'])){addmsg(text,'usr');humanroute();return;}
+  if(has(t,['call now','call us'])){
+    addmsg(text,'usr');
+    botmsg('Call us anytime:\n\n1-800-481-8638\n(720) 249-6588\n\nMonday-Friday, 8AM-6PM MT.',700).then(function(){chips(['Get a Quote','Our Services']);});
+    return;
+  }
+  if(has(t,['services','what do you do','show services'])){addmsg(text,'usr');services();return;}
+  if(has(t,['yes, collect my info','yes collect','yes start','yes, request a callback'])){addmsg(text,'usr');startcap();return;}
+  if(has(t,['no thanks','just browsing'])){
+    addmsg(text,'usr');
+    botmsg('No problem! Feel free to ask anything whenever you are ready.',700).then(function(){
+      chips(['SEO / AIO / GEO','VIP Membership','Website / Funnel','Paid Ads','Pricing / Quote']);
+    });
+    return;
+  }
+  if(has(t,['ask another','more questions'])){
+    addmsg(text,'usr');
+    botmsg('Of course! Ask me anything about SEO, AIO, GEO, agentic AI, the VIP membership, web design, ads, social media, TV, branding, or anything marketing-related.',700).then(function(){
+      chips(['SEO / AIO / GEO','VIP Membership','Paid Ads','Website / Funnel','Get a Quote']);
+    });
+    return;
+  }
+  if(has(t,['seo / aio / geo'])){addmsg(text,'usr');lookupkb('seo');return;}
+  if(has(t,['website / funnel'])){addmsg(text,'usr');lookupkb('website');return;}
+  if(has(t,['paid ads'])){addmsg(text,'usr');lookupkb('ppc');return;}
+  if(has(t,['aio & geo','geo strategy','aio strategy'])){addmsg(text,'usr');lookupkb('geo');return;}
+  if(has(t,['local seo / maps'])){addmsg(text,'usr');lookupkb('local seo');return;}
+  if(has(t,['conversion optimization'])){addmsg(text,'usr');lookupkb('conversion');return;}
+  for(var i=0;i<KB.length;i++){
+    if(has(t,KB[i].k)){
+      addmsg(text,'usr');
+      (function(item){botmsg(item.a,1000).then(function(){if(item.c)chips(item.c);});})(KB[i]);
+      return;
+    }
+  }
+  addmsg(text,'usr');
+  botmsg('I can help with SEO, AIO, GEO, agentic AI optimization, the VIP Marketing Subscription, web design, ads, social media, TV advertising, branding, NFC, email, and custom audits.\n\nType what you need or choose an option below.',800).then(function(){
+    chips(['SEO / AIO / GEO','VIP Membership','Agentic AI','Website / Funnel','Paid Ads','Get a Free Audit','Talk to a Human']);
+  });
+}
+function lookupkb(term){
+  for(var i=0;i<KB.length;i++){
+    if(has(term,KB[i].k)){
+      (function(item){botmsg(item.a,1000).then(function(){if(item.c)chips(item.c);});})(KB[i]);
+      return;
+    }
+  }
+}
+function handle(raw){
+  var v=(raw||'').trim();if(!v)return;
+  fstat.textContent='';inp.value='';inp.focus();
+  if(S.capture&&S.field){capfield(v);}else{route(v);}
+}
+fab.addEventListener('click',function(){S.open?closechat():openchat();});
+xbtn.addEventListener('click',closechat);
+sbtn.addEventListener('click',function(){handle(inp.value);});
+inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();handle(inp.value);}});
+setTimeout(function(){if(!S.ready&&!S.open&&dot)dot.classList.add('on');},14000);
+})();
+</script>
+<!-- End Eye To Ad Media Chatbot Widget -->
+
+</body>
+</html>
