@@ -151,7 +151,12 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
 .ubar-link:hover{color:var(--orange)}
 .ubar-tel{font-size:.82rem;font-weight:800;color:var(--orange);white-space:nowrap}
-@media(max-width:768px){.ubar-txt,.ubar-link{display:none}.ubar-inner{justify-content:space-between;min-height:38px}}
+@media(max-width:768px){
+  .ubar-txt,.ubar-link{display:none}
+  .ubar-inner{justify-content:space-between;min-height:38px;gap:8px;flex-wrap:nowrap}
+  .ubar-dom{font-size:.72rem;padding:5px 11px}
+  .ubar-tel{font-size:.78rem}
+}
 
 /* ===== TICKER ===== */
 .ticker{background:var(--orange);padding:7px 0;overflow:hidden;position:relative;z-index:1001}
@@ -178,23 +183,25 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
 .logo{display:flex;align-items:center;flex-shrink:0}
 /* ============================================================
-   LOGO SIZE — ONE PLACE. Change these four `height` values only.
-   WHY EXPLICIT HEIGHT: with height:auto the browser falls back to
-   the PNG's intrinsic size, and the global *{max-width:100%} rule
-   then shrinks it further — that is what made it render tiny.
-   An explicit height forces the rendered size; width:auto keeps
-   the true aspect ratio; max-width:none disarms the global cap.
-   Breakpoints MUST stay in descending order (largest first) or a
-   wider query will override a narrower one.
+   LOGO SIZE — ONE PLACE. Change these four `width` values only.
+   *** NEVER SIZE THIS LOGO BY HEIGHT. ***
+   Sizing by height (height:XXXpx or max-height) makes the rendered
+   WIDTH depend on the PNG's intrinsic aspect ratio. This file does
+   not have the ratio its HTML attributes imply, so every
+   height-based attempt collapsed the logo to a fraction of its
+   intended size. Width is deterministic: width:210px renders 210px
+   wide, full stop, and height:auto keeps the artwork undistorted.
+   max-width:none is REQUIRED to defeat the global *{max-width:100%}.
+   Breakpoints MUST stay in descending order (largest first).
    Header and footer use the same scale so every page matches.
    ============================================================ */
-.brand-logo{height:88px;width:auto;max-width:none}
-@media(max-width:1100px){.brand-logo{height:80px}}
+.brand-logo{width:300px;height:auto;max-width:none}
+@media(max-width:1100px){.brand-logo{width:260px}}
 @media(max-width:768px){
   .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
-  .brand-logo{height:78px}
+  .brand-logo{width:210px}
 }
-@media(max-width:420px){.brand-logo{height:62px}}
+@media(max-width:430px){.brand-logo{width:180px}}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
@@ -643,8 +650,8 @@ table.cmp .yes{color:#059669;font-weight:700}
 /* ===== FOOTER ===== */
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
-.footer-brand .brand-logo{height:96px;margin-bottom:16px}
-@media(max-width:768px){.footer-brand .brand-logo{height:82px}}
+.footer-brand .brand-logo{width:300px;margin-bottom:16px}
+@media(max-width:768px){.footer-brand .brand-logo{width:240px}}
 .footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
 .footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
 .footer-brand address a{color:#FB923C}
@@ -963,7 +970,7 @@ table.cmp .yes{color:#059669;font-weight:700}
 <div class="ubar">
   <div class="wrap ubar-inner">
     <div class="ubar-left">
-      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored" aria-label="Search for an available domain name">🔍 Search Domain Names</a>
+      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored" aria-label="Search for an available domain name">🔍 Search Domains</a>
       <span class="ubar-txt">Find &amp; register your perfect .com</span>
     </div>
     <div class="ubar-right">
