@@ -1,4 +1,158 @@
+# ============================================================
+#  robots.txt — eyetoad.com
+#  Last updated: 2026-08-05
+#
+#  POLICY: this site is deliberately WIDE OPEN. Nothing here is
+#  blocked, because nothing on this site needs hiding and every
+#  blocked path is a chance to accidentally suppress something
+#  that matters. (The July 2026 favicon investigation confirmed
+#  /images/ is reachable — keep it that way.)
+#
+#  IF YOU ADD A Disallow LINE, READ THIS FIRST:
+#  Disallow stops CRAWLING, not INDEXING. A disallowed URL can
+#  still appear in results as a bare link with no snippet, and
+#  because Google can no longer fetch the page it will never see
+#  a noindex tag there either. To keep a page OUT of the index,
+#  use <meta name="robots" content="noindex"> on the page and
+#  leave it crawlable. Never use both — they cancel each other.
+# ============================================================
+
+# ---- Default: everything, for everyone ----
 User-agent: *
 Allow: /
 
-Sitemap: https://www.eyetoad.com/sitemap.xml
+# CSS, JS and images must stay crawlable. Google renders pages the
+# way a browser does; blocking assets makes it judge a broken page.
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /*.mp4$
+
+# ---- Search engines, explicitly ----
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ============================================================
+#  AI CRAWLERS — EXPLICITLY WELCOME. THIS IS DELIBERATE.
+#
+#  These are already permitted by the User-agent: * group above.
+#  They are restated individually so the intent is unambiguous to
+#  anyone auditing this file, and so a future edit to the default
+#  group cannot silently cut off AI visibility.
+#
+#  Why an SEO agency wants these open: AIO, GEO and agentic search
+#  are services this company sells. Getting cited inside AI answers
+#  requires being crawlable by the systems producing those answers.
+#  Blocking them would make the homepage's own argument dishonest.
+#
+#  Google-Extended is the important one — it governs whether this
+#  content can be used to ground Gemini and Vertex AI answers. It
+#  does NOT affect Google Search ranking either way.
+# ============================================================
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft / Copilot
+User-agent: Bingbot-Extended
+Allow: /
+
+# Meta
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Common Crawl — feeds many downstream AI training sets
+User-agent: CCBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Timpi
+User-agent: Timpibot
+Allow: /
+
+# ============================================================
+#  SITEMAP
+#  MUST be the apex host. Every canonical, og:url and JSON-LD @id
+#  on this site is apex (eyetoad.com, never www). Declaring a www
+#  sitemap here sent Google through a 301 for no reason and
+#  contradicted the canonical strategy applied everywhere else.
+#  Fixed 2026-08-05.
+#
+#  Sitemap directives are host-independent, so one absolute URL
+#  here covers the whole site. Add further sitemaps on their own
+#  Sitemap: lines if you split them later.
+# ============================================================
+Sitemap: https://eyetoad.com/sitemap.xml
