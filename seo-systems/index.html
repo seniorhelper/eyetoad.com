@@ -78,6 +78,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="preload" as="image" href="/images/images/eye-to-ad-media-logo-denver-seo.png" fetchpriority="high">
+<link rel="preload" as="image" href="/images/images/seo-marketing-system-flow.png">
 
 
 <style>
@@ -356,14 +357,27 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .sf-ok{display:none;text-align:center;font-size:.94rem;color:#047857;line-height:1.65}
 .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
 
-/* ===== SECTIONS ===== */
+/* ===== FIGURE ===== */
+.sv-fig{margin:30px 0;border-radius:var(--r16);overflow:hidden;border:1.5px solid var(--border);box-shadow:var(--sh-lg);background:var(--off)}
+.sv-fig img{display:block;width:100%;height:auto;max-width:100%}
+.sv-fig figcaption{padding:13px 20px;font-size:.86rem;color:var(--muted);line-height:1.6;background:#fff;border-top:1px solid var(--border)}
+.sv-dark .sv-fig{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.04)}
+.sv-dark .sv-fig figcaption{background:rgba(255,255,255,.05);color:rgba(255,255,255,.7);border-top-color:rgba(255,255,255,.12)}
+
+/* ===== SECTIONS =====
+ */
 .sv-sec{padding:74px 0}
 .sv-off{background:var(--off)}
+/* Dark section text was rgba(255,255,255,.72) — roughly 8:1 on
+   #101828, technically passing but visibly washed out on an OLED
+   phone in a bright room, which is where most of this traffic is.
+   Raised to .88 for body copy. Do not lower it again. */
 .sv-dark{background:var(--ink)}
 .sv-dark h2,.sv-dark h3{color:#fff}
-.sv-dark p,.sv-dark li{color:rgba(255,255,255,.72)}
+.sv-dark p,.sv-dark li{color:rgba(255,255,255,.88)}
 .sv-dark strong{color:#fff}
-.sv-dark a{color:#93C5FD}
+.sv-dark a{color:#A5C9FF;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(165,201,255,.45)}
+.sv-dark a:hover{color:#CFE0FF;text-decoration-color:#CFE0FF}
 .sv-narrow{max-width:840px;margin:0 auto}
 .sv-sec h2{font-size:clamp(1.55rem,3.3vw,2.25rem);letter-spacing:-.015em;margin-bottom:14px}
 .sv-sec h3{font-size:clamp(1.1rem,2vw,1.3rem);margin:28px 0 10px}
@@ -502,7 +516,7 @@ table.sv-tbl .no{color:#DC2626;font-weight:700}
 .sv-fcta::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 18% 82%,rgba(249,115,22,.12) 0%,transparent 56%)}
 .sv-fcta .inner{position:relative;z-index:2;max-width:660px;margin:0 auto;padding:0 20px}
 .sv-fcta h2{color:#fff;margin-bottom:14px}
-.sv-fcta p{color:rgba(255,255,255,.66);font-size:1.06rem;margin-bottom:30px}
+.sv-fcta p{color:rgba(255,255,255,.86);font-size:1.06rem;margin-bottom:30px}
 .sv-fcta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* reveal */
@@ -625,7 +639,8 @@ table.sv-tbl .no{color:#DC2626;font-weight:700}
 "inLanguage":"en-US",
 "datePublished":"2025-11-01","dateModified":"2026-08-05",
 "breadcrumb":{"@id":"https://eyetoad.com/seo-systems/#breadcrumb"},
-"primaryImageOfPage":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/seo-marketing-system-flow.png"},
+"primaryImageOfPage":{"@type":"ImageObject","@id":"https://eyetoad.com/seo-systems/#primaryimage","url":"https://eyetoad.com/images/images/seo-marketing-system-flow.png","width":1200,"height":630,"caption":"The 5-Layer SEO System — each layer feeds the next"},
+"image":{"@id":"https://eyetoad.com/seo-systems/#primaryimage"},
 "speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".sv-answer"]},
 "description":"What monthly SEO services should include, what they cost, and the questions to ask before hiring. The 5-Layer SEO System runs search and AI visibility as one engine."},
 
@@ -928,8 +943,8 @@ table.sv-tbl .no{color:#DC2626;font-weight:700}
         <span>🗓️ Operating Since 2012</span>
       </div>
       <div class="sv-cta-row">
-        <a href="#layers" class="btn btn-primary">See what's included</a>
-        <a href="/denver-seo-pricing/" class="btn btn-ghost-light">View pricing</a>
+        <a href="#layers" class="btn btn-orange">See what's included</a>
+        <a href="/denver-seo-pricing/" class="btn btn-ghost-white">View pricing</a>
       </div>
     </div>
 
@@ -1019,6 +1034,13 @@ table.sv-tbl .no{color:#DC2626;font-weight:700}
 <section class="sv-sec sv-off" id="layers">
   <div class="wrap sv-narrow">
     <h2>The 5-Layer SEO System</h2>
+    <figure class="sv-fig">
+      <img src="/images/images/seo-marketing-system-flow.png"
+           alt="The five layers of an SEO system flowing into one another — technical foundation, content and topical authority, local and entity signals, authority and corroboration, and conversion and measurement"
+           width="1200" height="630" loading="eager" fetchpriority="high" decoding="async">
+      <figcaption>Each layer feeds the next. Break the chain anywhere and everything above it stops compounding — which is what produces rising traffic alongside flat lead volume.</figcaption>
+    </figure>
+
     <p>This is the framework every engagement we run is built on. The order is the point: each layer makes the one after it cheaper and more effective, which is why we build them in this sequence rather than all at once.</p>
 
     <div class="lay">
@@ -1392,8 +1414,8 @@ table.sv-tbl .no{color:#DC2626;font-weight:700}
     <h2>Find out what's actually holding your site back</h2>
     <p>A free audit covering all five layers — technical health, content, local and entity signals, authority, and conversion. You get the findings whether or not you ever hire us.</p>
     <div class="sv-fcta-btns">
-      <a href="/free-seo-audit/" class="btn btn-primary btn-lg">Get My Free SEO Audit</a>
-      <a href="tel:18004818638" class="btn btn-ghost-light btn-lg">📞 1-800-481-8638</a>
+      <a href="/free-seo-audit/" class="btn btn-orange btn-lg">Get My Free SEO Audit</a>
+      <a href="tel:18004818638" class="btn btn-ghost-white btn-lg">📞 1-800-481-8638</a>
     </div>
     <p style="margin:24px 0 0;font-size:.88rem;color:rgba(255,255,255,.5)">Denver-based since 2012 · A+ BBB Accredited · 5-Star Google Rated</p>
   </div>
