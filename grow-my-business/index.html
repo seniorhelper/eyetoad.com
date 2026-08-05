@@ -1620,6 +1620,65 @@ table.stg td{color:var(--ink3)}
 </footer>
 
 <script>
+/* ============================================================
+   CHROME UI — header shadow, mobile nav, hamburger.
+   ADDED Aug 5 2026. This page shipped with the chrome MARKUP and
+   the chrome CSS but none of the chrome JAVASCRIPT, so the burger
+   button rendered and did absolutely nothing when tapped. Mobile
+   had no working menu at all.
+
+   Copied verbatim from the homepage core UI script. Deliberately
+   omitted from that script: the hero video loader, scratch-off
+   widget, ask-an-AI copy buttons and the homepage FAQ accordion —
+   none of those elements exist on this page. This page has its own
+   .gfaq accordion further down in the answer desk script.
+
+   If you change any of this on the homepage, change it here too.
+   ============================================================ */
+(function(){
+  var hdr=document.getElementById('hdr');
+  var burger=document.getElementById('burger');
+  var mobNav=document.getElementById('mobNav');
+  if(!hdr||!burger||!mobNav) return;
+
+  window.addEventListener('scroll',function(){
+    hdr.classList.toggle('scrolled',window.scrollY>30);
+  },{passive:true});
+
+  /* Mobile nav offset is MEASURED, never hard-coded, so the menu can
+     never drift out of sync with the header height. */
+  function measureHeader(){
+    var r=hdr.getBoundingClientRect();
+    mobNav.style.top=Math.max(0,r.bottom)+'px';
+  }
+  window.addEventListener('resize',measureHeader);
+  window.addEventListener('scroll',measureHeader,{passive:true});
+  measureHeader();
+
+  burger.addEventListener('click',function(){
+    measureHeader();
+    var o=mobNav.classList.toggle('open');
+    burger.classList.toggle('open',o);
+    burger.setAttribute('aria-expanded',o);
+    document.body.style.overflow=o?'hidden':'';
+  });
+
+  mobNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      mobNav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded',false);
+      document.body.style.overflow='';
+    });
+  });
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&mobNav.classList.contains('open')){burger.click();}
+  });
+})();
+</script>
+
+<script>
 /* =====================================================================
    GROW MY BUSINESS — ANSWER DESK
    No API, no backend, no account. Everything ships with the page.
