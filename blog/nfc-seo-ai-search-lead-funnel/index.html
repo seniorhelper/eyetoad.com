@@ -643,6 +643,67 @@ table.art-tbl .no{color:#DC2626;font-weight:700}
 {"@type":"Question","name":"Which stage should I fix first?","acceptedAnswer":{"@type":"Answer","text":"The destination, always. Sending taps to an incomplete Google Business Profile or a slow website converts enthusiasm into a dead end and wastes every capture opportunity you create. Complete the profile, pick the most specific primary category, verify your name, address and phone are identical across the web, and make sure the page loads quickly on a phone over cellular. Only then start deploying tags."}}]}
 ]}</script>
 
+
+<style>
+/* ============================================================
+   MOBILE OVERFLOW FIX — added Aug 5 2026
+   ------------------------------------------------------------
+   SYMPTOM: on phones the article body extended past the right
+   edge and was CLIPPED by html,body{overflow-x:hidden}, so text
+   was cut off with no way to scroll to it. Reported on a Pixel 9
+   Pro XL; reproduces on any viewport under roughly 620px.
+
+   ROOT CAUSE: CSS Grid items default to `min-width:auto`, which
+   means a grid child will NOT shrink below the min-content width
+   of its widest descendant. The article body contains tables
+   declared at min-width:600px and <pre> blocks with
+   white-space:pre. Those set a large intrinsic minimum, the grid
+   column refused to shrink to the viewport, and the overflow was
+   then clipped rather than scrolled.
+
+   THE ACTUAL FIX: minmax(0,1fr) instead of 1fr on the grid
+   columns, plus min-width:0 on the grid children. Everything
+   below that is belt and braces.
+   DO NOT revert these to plain `1fr` — that reintroduces the bug.
+   ============================================================ */
+
+/* --- the fix --- */
+.art-layout{grid-template-columns:280px minmax(0,1fr)}
+.blog-layout{grid-template-columns:minmax(0,1fr) 330px}
+.art-layout>*,.blog-layout>*{min-width:0;max-width:100%}
+.art-body,.toc,.toc-inner,.blog-sidebar,.gmb-wrap,.gmb-narrow,.desk{min-width:0;max-width:100%}
+
+@media(max-width:1080px){ .art-layout{grid-template-columns:minmax(0,1fr)} }
+@media(max-width:1024px){ .blog-layout{grid-template-columns:minmax(0,1fr)} }
+
+/* --- wide components contain their own overflow --- */
+.tbl-wrap,.stage-wrap,.cmp-wrap{max-width:100%;overflow-x:auto}
+.snip,.snip pre{max-width:100%}
+.snip pre{overflow-x:auto}
+.score,.quiz,.cmp,.flow,.loop,.compound,.art-cta,.author,.related,.capture,.sb-form{max-width:100%}
+
+/* --- nested grids must be allowed to collapse --- */
+.rp-grid,.sig,.vs,.focus,.card-pair,.cmp-cols,.compound-row,.loop-grid,.post-grid,
+.f-row,.crow,.levers,.num-grid,.rsrc-grid,.gfaq,.quiz-opts,.hero-stats,.reg-cities{min-width:0}
+.rp-grid>*,.sig>*,.vs>*,.focus>*,.card-pair>*,.cmp-cols>*,.compound-row>*,
+.loop-grid>*,.post-grid>*,.levers>*,.num-grid>*,.rsrc-grid>*,.gfaq>*{min-width:0;max-width:100%}
+
+/* --- long unbreakable strings must wrap, not push --- */
+.art-body{overflow-wrap:break-word}
+.art-body code,.art-body a,.qr-links a,.cmp-go,.res-list a,.ans-body a{overflow-wrap:anywhere}
+.snip code{white-space:pre}
+
+/* --- form controls --- */
+.art-cta input,.art-cta button,.cap-form input,.cap-form button,
+.capture input,.capture button,.handoff input,.handoff textarea,
+.sb-form input,.sb-form button,.cmp-pick select{max-width:100%;min-width:0}
+.crow,.f-row,.fcta-mini-row{flex-wrap:wrap}
+
+/* --- media --- */
+.art-body img,.art-hero-img img,.pc-head img,.fp-img img{max-width:100%;height:auto}
+.art-body table{max-width:none}
+</style>
+
 </head>
 <body>
 <!--
