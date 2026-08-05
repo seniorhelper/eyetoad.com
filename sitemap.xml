@@ -1,49 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================
+  eyetoad.com — XML Sitemap
+  Rebuilt 2026-08-05
+
+  WHAT WAS WRONG WITH THE PREVIOUS VERSION (all four are real):
+
+  1. EVERY URL WAS www.eyetoad.com. Every canonical, og:url and
+     JSON-LD @id on this site is APEX. The sitemap was therefore
+     telling Google to index one host while every page declared a
+     different one. Now apex throughout. Never reintroduce www.
+
+  2. ALL SEVEN LOCATION URLs WERE 404s. The file listed
+     /seo-arvada/, /seo-lakewood/ and so on. The live pages are at
+     /locations/arvada-seo/, /locations/lakewood-seo/, etc. Seven
+     dead URLs were being actively submitted to Google.
+
+  3. FIVE LIVE CITY PAGES WERE MISSING ENTIRELY — Thornton,
+     Westminster, Centennial, Highlands Ranch and Parker. Thirteen
+     city pages exist; seven wrong ones were listed.
+
+  4. NINE LIVE PAGES WERE MISSING, including three of the highest
+     converting URLs on the site: /free-seo-audit/,
+     /denver-seo-pricing/ and /marketing-subscription/.
+
+  ============================================================
+  WHY THERE IS NO <changefreq> OR <priority> ANY MORE:
+  Google ignores both. They are vestigial from the 2005 spec.
+  Keeping them meant maintaining two fields that do nothing and
+  drift out of sync with reality. Removing them costs nothing.
+
+  WHY SOME ENTRIES HAVE NO <lastmod>:
+  Deliberate. An inaccurate lastmod is worse than none — Google
+  will stop trusting the field across the WHOLE sitemap if the
+  dates do not match reality. The old file claimed 2026-03-01 for
+  everything, including pages rebuilt in July. Dates below appear
+  only where the real modification date is known. Add a lastmod
+  when you next genuinely edit a page, and only then.
+  ============================================================
+
+  MAINTENANCE RULE: when you add a page, add it here in the same
+  commit and submit the sitemap in Search Console. When you change
+  a URL, change it here — a sitemap full of 404s wastes crawl
+  budget and signals a poorly maintained site.
+  ============================================================
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Core Pages -->
-  <url><loc>https://www.eyetoad.com/</loc><lastmod>2026-03-01</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.eyetoad.com/about/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/contact/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.eyetoad.com/case-studies/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/terms.html</loc><lastmod>2026-01-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <!-- ================= CORE ================= -->
+  <url><loc>https://eyetoad.com/</loc><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://eyetoad.com/about/</loc></url>
+  <url><loc>https://eyetoad.com/contact/</loc><lastmod>2026-07-29</lastmod></url>
+  <url><loc>https://eyetoad.com/case-studies/</loc></url>
+  <url><loc>https://eyetoad.com/best-denver-seo-company/</loc></url>
 
-  <!-- Services -->
-  <url><loc>https://www.eyetoad.com/denver-seo-services/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.eyetoad.com/local-seo-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.eyetoad.com/seo-systems/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/aio-seo-system/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/generative-engine-optimization-system/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/conversion-optimization/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- ================= TOOLS ================= -->
+  <!-- Added Aug 5 2026. Remove this entry if the page is not yet published —
+       a sitemap must never list a URL that does not resolve. -->
+  <url><loc>https://eyetoad.com/grow-my-business/</loc><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://eyetoad.com/free-seo-audit/</loc></url>
+  <url><loc>https://eyetoad.com/ad-lab/</loc></url>
+  <url><loc>https://eyetoad.com/ad-lab/rpg/</loc></url>
 
-  <!-- Industries -->
-  <url><loc>https://www.eyetoad.com/industries/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/contractor-seo-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/dentist-seo-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/law-firm-seo-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/med-spa-seo-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/fitness-marketing-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/real-estate-marketing-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/chiropractor-seo-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/roofing-seo-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/hvac-seo-denver/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- ================= SERVICES ================= -->
+  <url><loc>https://eyetoad.com/denver-seo-services/</loc></url>
+  <url><loc>https://eyetoad.com/local-seo-denver/</loc><lastmod>2026-07-29</lastmod></url>
+  <url><loc>https://eyetoad.com/seo-systems/</loc></url>
+  <url><loc>https://eyetoad.com/aio-seo-system/</loc></url>
+  <url><loc>https://eyetoad.com/generative-engine-optimization-system/</loc></url>
+  <url><loc>https://eyetoad.com/conversion-optimization/</loc></url>
+  <url><loc>https://eyetoad.com/denver-seo-pricing/</loc></url>
 
-  <!-- Locations -->
-  <url><loc>https://www.eyetoad.com/locations/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/seo-arvada/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/seo-lakewood/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/seo-aurora/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/seo-littleton/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/seo-wheat-ridge/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/seo-broomfield/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/seo-castle-rock/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- ================= MEMBERSHIP ================= -->
+  <url><loc>https://eyetoad.com/marketing-subscription/</loc></url>
+  <url><loc>https://eyetoad.com/vip-marketing/</loc></url>
 
-  <!-- Blog -->
-  <url><loc>https://www.eyetoad.com/blog/</loc><lastmod>2026-03-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.eyetoad.com/blog/how-google-ai-overviews-are-changing-denver-seo/</loc><lastmod>2026-03-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/blog/google-maps-ranking-factors-denver/</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/blog/conversion-optimization-before-seo/</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/blog/chatgpt-search-local-business/</loc><lastmod>2026-01-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.eyetoad.com/blog/core-web-vitals-denver-small-business/</loc><lastmod>2026-01-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- ================= INDUSTRIES ================= -->
+  <url><loc>https://eyetoad.com/industries/</loc></url>
+  <url><loc>https://eyetoad.com/contractor-seo-denver/</loc></url>
+  <url><loc>https://eyetoad.com/dentist-seo-denver/</loc></url>
+  <url><loc>https://eyetoad.com/law-firm-seo-denver/</loc></url>
+  <url><loc>https://eyetoad.com/med-spa-seo-denver/</loc></url>
+  <url><loc>https://eyetoad.com/fitness-marketing-denver/</loc></url>
+  <url><loc>https://eyetoad.com/real-estate-marketing-denver/</loc></url>
+  <url><loc>https://eyetoad.com/chiropractor-seo-denver/</loc></url>
+  <url><loc>https://eyetoad.com/roofing-seo-denver/</loc></url>
+  <url><loc>https://eyetoad.com/hvac-seo-denver/</loc></url>
+
+  <!-- The /industries/ page advertises seventeen verticals, including
+       plumbing, electrical, landscaping, dermatology and veterinary.
+       Only these nine have confirmed URLs. If the other eight are live,
+       add them here — an industry page nobody links to and nobody
+       submits is an industry page that will not rank. -->
+
+  <!-- ================= LOCATIONS =================
+       CORRECTED Aug 5 2026. Path is /locations/{city}-seo/ — NOT
+       /seo-{city}/, which is what the old sitemap submitted and which
+       404s. All thirteen live city pages are now listed. -->
+  <url><loc>https://eyetoad.com/locations/</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://eyetoad.com/locations/aurora-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/lakewood-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/thornton-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/arvada-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/westminster-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/centennial-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/highlands-ranch-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/castle-rock-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/broomfield-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/parker-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/littleton-seo/</loc></url>
+  <url><loc>https://eyetoad.com/locations/wheat-ridge-seo/</loc></url>
+
+  <!-- ================= BLOG ================= -->
+  <url><loc>https://eyetoad.com/blog/</loc></url>
+
+  <!-- Confirmed live — found linked from /locations/ and missing from the
+       old sitemap entirely. -->
+  <url><loc>https://eyetoad.com/blog/seo-timeline-first-90-days-denver/</loc></url>
+  <url><loc>https://eyetoad.com/blog/why-denver-is-a-hard-seo-market/</loc></url>
+
+  <!-- CARRIED OVER FROM THE OLD SITEMAP — VERIFY EACH ONE BEFORE TRUSTING.
+       These five were in the previous file, but so were seven location URLs
+       that all 404. Open each in a browser. Delete any that do not resolve. -->
+  <url><loc>https://eyetoad.com/blog/how-google-ai-overviews-are-changing-denver-seo/</loc></url>
+  <url><loc>https://eyetoad.com/blog/google-maps-ranking-factors-denver/</loc></url>
+  <url><loc>https://eyetoad.com/blog/conversion-optimization-before-seo/</loc></url>
+  <url><loc>https://eyetoad.com/blog/chatgpt-search-local-business/</loc></url>
+  <url><loc>https://eyetoad.com/blog/core-web-vitals-denver-small-business/</loc></url>
+
+  <!-- Five further blog posts were published June–July 2026 targeting Denver
+       SEO keyword clusters. Add their URLs here — unsubmitted posts get
+       discovered slowly, which wastes the freshness window they were
+       written for. -->
+
+  <!-- ================= LEGAL ================= -->
+  <url><loc>https://eyetoad.com/privacy-policy/</loc></url>
+  <url><loc>https://eyetoad.com/accessibility/</loc></url>
+  <!-- KNOWN INCONSISTENCY: the only non-trailing-slash URL on the site.
+       The file is literally terms.html. Renaming it requires updating every
+       link sitewide plus this entry, in one commit. Do not half-fix it. -->
+  <url><loc>https://eyetoad.com/terms.html</loc></url>
+
+  <!-- DELIBERATELY EXCLUDED: /thank-you/ — a form destination with no
+       standalone search value. Keep it out of the sitemap and put a
+       <meta name="robots" content="noindex"> on the page itself. Do NOT
+       block it in robots.txt; a blocked page can still be indexed as a
+       bare link, and Google would never see the noindex tag. -->
 
 </urlset>
