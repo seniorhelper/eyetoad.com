@@ -222,7 +222,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    TO TUNE: `width` controls how big the logo looks. `height` controls
    how much air is around it (raise it if the mark looks cropped, lower
    it if there is dead space). `object-position` is set to 44% rather
-   than centre because the artwork sits slightly ABOVE centre in the
+   than center because the artwork sits slightly ABOVE center in the
    canvas — that is why only the TOP edge was clipping. Change nothing else.
    NOTE (July 29 2026): the <img> width/height ATTRIBUTES are now 300x102
    to match what CSS actually renders. They used to be 760x190 (the raw
@@ -315,6 +315,31 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 /* Iris chat widget sits bottom-right — keep the footer bottom row clear of it */
 @media(min-width:581px){.footer-bot{padding-bottom:34px}}
 
+</style>
+
+<style>
+/* ============================================================
+   CHROME RESPONSIVE — restored Aug 5 2026.
+   These rules live in the homepage's RESPONSIVE block. The original
+   extraction for this page sliced the footer CSS out and stopped at
+   the RESPONSIVE comment, which dropped ALL of them. Symptoms were:
+     • footer stayed at 4 columns on phones and collapsed into
+       one-character-per-line stacks
+     • desktop nav never hid
+     • hamburger button never appeared, so mobile had no menu at all
+   Values below are copied verbatim from the homepage. If you change
+   them there, change them here too.
+   ============================================================ */
+@media(max-width:1024px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bot{flex-direction:column;text-align:center}
+}
 </style>
 
 <style>
@@ -707,16 +732,16 @@ table.stg td{color:var(--ink3)}
 {"@type":"Question","name":"Am I charging enough for my product or service?","acceptedAnswer":{"@type":"Answer","text":"Most small businesses underprice, and it is rarely fixable by working harder. Build your floor honestly: materials, your own time at a real hourly rate, overhead allocation, taxes, and profit as a deliberate line item rather than whatever happens to be left over. If that floor is close to what you currently charge, you are not running a business, you are buying yourself a job. A ten percent price increase usually produces more profit than a ten percent volume increase, because the increase costs nothing to deliver."}},
 {"@type":"Question","name":"Why is my business profitable but always short on cash?","acceptedAnswer":{"@type":"Answer","text":"Profit and cash are different things measured on different timelines. Profit records a sale when it is earned; cash arrives when the customer actually pays. A business can be profitable on paper and unable to make payroll because receivables are slow, inventory is tying up money, or debt principal is consuming cash without appearing as an expense. Cash flow problems are the most commonly cited cause of small business failure. Track a rolling thirteen-week cash forecast alongside your profit and loss statement rather than relying on either alone."}},
 {"@type":"Question","name":"Do I need a business plan to grow?","acceptedAnswer":{"@type":"Answer","text":"You need a one-page working plan regardless: who the customer is, what you sell, what it costs to deliver, what you charge, how people find you, and what you need per month to break even. That takes an afternoon and it changes decisions. A full formal plan of fifteen to thirty pages with three years of projections is required only when someone else's money is involved, such as a bank or SBA loan, an investor, a commercial landlord, or a grant application. The SBA publishes free templates for both formats."}},
-{"@type":"Question","name":"How do I get more customers without spending more on ads?","acceptedAnswer":{"@type":"Answer","text":"Start with the free assets most businesses leave half-finished. Complete your Google Business Profile, choosing the most specific primary category available rather than a broad one. Build a consistent process for requesting reviews immediately after good outcomes. Respond to every review, since most businesses do not and customers notice. Ask existing customers for referrals directly rather than hoping. Fix your response time to inbound enquiries. None of those cost money, and together they typically outperform a modest ad budget spent on a site that is not converting."}},
+{"@type":"Question","name":"How do I get more customers without spending more on ads?","acceptedAnswer":{"@type":"Answer","text":"Start with the free assets most businesses leave half-finished. Complete your Google Business Profile, choosing the most specific primary category available rather than a broad one. Build a consistent process for requesting reviews immediately after good outcomes. Respond to every review, since most businesses do not and customers notice. Ask existing customers for referrals directly rather than hoping. Fix your response time to inbound inquiries. None of those cost money, and together they typically outperform a modest ad budget spent on a site that is not converting."}},
 {"@type":"Question","name":"When should I hire my first employee?","acceptedAnswer":{"@type":"Answer","text":"Three signals indicate genuine readiness rather than temporary busyness. You are consistently turning down profitable work because of capacity, not during one good month. You can cover the full cost of the role for six months from current cash flow assuming the hire generates nothing. And you have written down what the person will actually do, because a job you cannot describe is a job you cannot manage or evaluate. Budget wages plus roughly twenty to thirty percent for payroll taxes, workers compensation, unemployment insurance, benefits and equipment."}},
-{"@type":"Question","name":"What free help is available for small business owners?","acceptedAnswer":{"@type":"Answer","text":"Substantially more than most owners realise. SCORE provides free mentoring from experienced business people. Small Business Development Centers, funded partly by the SBA and hosted at universities, provide free one-on-one advising and will help prepare a loan package at no charge. The SBA publishes free business plan templates, startup cost calculators and a lender matching tool. The IRS provides free guidance for the self-employed. Grants.gov lists every legitimate federal grant at no cost. Anyone charging a fee to access these is reselling something free."}},
-{"@type":"Question","name":"How long does it take to grow a business?","acceptedAnswer":{"@type":"Answer","text":"It depends entirely on which lever you pull. Pricing changes show up in the next invoice. Follow-up and response time improvements show up within days. Conversion improvements to a website or sales process typically show within weeks. Paid advertising produces traffic immediately but takes a few weeks to optimise. Search engine optimisation typically takes three to six months for meaningful movement and six to twelve for substantial results. Referral and retention systems compound over quarters. Anyone promising transformational results in thirty days is selling rather than advising."}},
+{"@type":"Question","name":"What free help is available for small business owners?","acceptedAnswer":{"@type":"Answer","text":"Substantially more than most owners realize. SCORE provides free mentoring from experienced business people. Small Business Development Centers, funded partly by the SBA and hosted at universities, provide free one-on-one advising and will help prepare a loan package at no charge. The SBA publishes free business plan templates, startup cost calculators and a lender matching tool. The IRS provides free guidance for the self-employed. Grants.gov lists every legitimate federal grant at no cost. Anyone charging a fee to access these is reselling something free."}},
+{"@type":"Question","name":"How long does it take to grow a business?","acceptedAnswer":{"@type":"Answer","text":"It depends entirely on which lever you pull. Pricing changes show up in the next invoice. Follow-up and response time improvements show up within days. Conversion improvements to a website or sales process typically show within weeks. Paid advertising produces traffic immediately but takes a few weeks to optimize. Search engine optimization typically takes three to six months for meaningful movement and six to twelve for substantial results. Referral and retention systems compound over quarters. Anyone promising transformational results in thirty days is selling rather than advising."}},
 {"@type":"Question","name":"Should I hire a business coach or a consultant?","acceptedAnswer":{"@type":"Answer","text":"The distinction is simple. A consultant does the work for you and hands you a deliverable. A coach helps you make better decisions and builds your capability so you do not need them permanently. If the gap is execution capacity, hire a consultant or contractor. If the gap is clarity, priorities, or the fact that every decision still routes through you, hire a coach. Before paying for either, use SCORE and your local Small Business Development Center, both of which provide the same kind of guidance at no cost."}},
 {"@type":"Question","name":"What percentage of small businesses fail, and why?","acceptedAnswer":{"@type":"Answer","text":"Bureau of Labor Statistics data consistently shows roughly one in five new businesses closing within the first year, about half surviving to five years, and roughly a third reaching ten years. The dominant cited cause is cash flow rather than a bad idea. Insufficient demand, undercapitalisation and the owner being unable to step out of daily delivery follow. Notably, businesses that survive the first five years have far better odds thereafter, because by then they have found product-market fit and stabilised operations."}},
 {"@type":"Question","name":"Do I need a website if I already have social media?","acceptedAnswer":{"@type":"Answer","text":"Yes, for three concrete reasons. Google Business Profile performance improves when a real website supports the listing. Social platforms are rented rather than owned, so a suspension or algorithm change can remove your entire pipeline with no appeal. And AI assistants and search engines cite crawlable websites when recommending businesses, not social posts. Social media remains worth doing as a channel that points at something you actually own."}},
 {"@type":"Question","name":"How do I get customers to pay on time?","acceptedAnswer":{"@type":"Answer","text":"Most late payment is a systems problem rather than a character problem. Take deposits of thirty to fifty percent on project work. Shorten terms to net fifteen rather than net thirty. Invoice immediately, since every day of delay adds a day to payment. Make paying frictionless with card and ACH links in the invoice. Automate reminders before the due date and at three, seven and fourteen days after. Put a late fee in the contract and actually apply it, because unenforced terms train customers to ignore them."}},
 {"@type":"Question","name":"What numbers should every business owner track?","acceptedAnswer":{"@type":"Answer","text":"Five numbers cover most decisions. Leads per month tells you whether visibility is working. Close rate tells you whether sales is working. Average transaction value tells you whether pricing and packaging are working. Repeat rate tells you whether retention is working. And cash on hand measured in weeks of runway tells you how much time you have to fix any of the above. Improving the first four by ten percent each compounds to roughly a forty-six percent revenue increase, which is why small consistent improvements beat dramatic single changes."}},
-{"@type":"Question","name":"How do I compete with a larger competitor?","acceptedAnswer":{"@type":"Answer","text":"Do not compete on their terms. Larger competitors win on price, breadth and brand recognition, so choose ground where size is a disadvantage. Speed of response, specialisation in a narrow niche, direct access to the owner, local knowledge and genuine relationships are all things a large organisation struggles to replicate. In local search specifically, ranking depends on relevance, proximity and signals such as reviews rather than company size, which is why a well-run small business regularly outranks a national chain in its own city."}},
+{"@type":"Question","name":"How do I compete with a larger competitor?","acceptedAnswer":{"@type":"Answer","text":"Do not compete on their terms. Larger competitors win on price, breadth and brand recognition, so choose ground where size is a disadvantage. Speed of response, specialization in a narrow niche, direct access to the owner, local knowledge and genuine relationships are all things a large organization struggles to replicate. In local search specifically, ranking depends on relevance, proximity and signals such as reviews rather than company size, which is why a well-run small business regularly outranks a national chain in its own city."}},
 {"@type":"Question","name":"Should I raise prices if I might lose customers?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, and losing some customers is often the point. Raise prices for new customers first so you can observe the effect without risk. Give existing customers advance notice and a reason. Expect to lose a portion, and expect that portion to be concentrated among your least profitable and most demanding accounts. Run the maths before you decide: if a ten percent increase loses you fifteen percent of customers, you may still be more profitable and have freed capacity for better work."}},
 {"@type":"Question","name":"Is Eye To Ad Media going to try to sell me something?","acceptedAnswer":{"@type":"Answer","text":"Not on this page. The answer desk is free, requires no signup, and collects nothing unless you deliberately submit a form asking someone to contact you. Eye To Ad Media is a Denver marketing agency and does sell marketing services, so if a question touches on search visibility, advertising or conversion, the answer will say what the company does and link to the relevant page. Everything else points to free government and nonprofit resources such as the SBA, SCORE and the IRS, because those are genuinely the right answer for most formation, tax and funding questions."}}
 ]}
@@ -1165,7 +1190,7 @@ table.stg td{color:var(--ink3)}
       <li><b>Which 20% of customers produce most of the profit?</b> And what would happen if you built the business around them specifically?</li>
       <li><b>Which customers are unprofitable?</b> Most owners have some and have never checked which.</li>
       <li><b>When did you last raise prices?</b> If the answer is over two years, you have quietly taken a pay cut.</li>
-      <li><b>How fast do you respond to an inbound enquiry?</b> Measure it honestly for a week rather than guessing.</li>
+      <li><b>How fast do you respond to an inbound inquiry?</b> Measure it honestly for a week rather than guessing.</li>
       <li><b>How many weeks of payroll could you cover if revenue stopped tomorrow?</b></li>
       <li><b>What breaks first if you triple?</b> That is your next investment, and it is usually not marketing.</li>
       <li><b>What are you avoiding?</b> There is almost always one conversation, one firing, one price increase, or one system. The avoidance is the constraint.</li>
@@ -1229,7 +1254,7 @@ table.stg td{color:var(--ink3)}
     <p>Break-even is where you stop losing money. Three inputs, and you should know all three from memory:</p>
     <ul>
       <li><strong>Fixed costs</strong> &mdash; rent, insurance, software, salaries. These happen whether you sell anything or not.</li>
-      <li><strong>Variable costs</strong> &mdash; materials, job labour, processing fees. These scale with sales.</li>
+      <li><strong>Variable costs</strong> &mdash; materials, job labor, processing fees. These scale with sales.</li>
       <li><strong>Contribution margin</strong> &mdash; price minus variable cost, per job or per unit.</li>
     </ul>
     <p><strong>Break-even = fixed costs &divide; contribution margin.</strong> For example: $6,000 a month in fixed costs, an average job of $900 with $400 of variable cost. Contribution margin is $500. Therefore you need 12 jobs a month simply to reach zero.</p>
@@ -1247,7 +1272,7 @@ table.stg td{color:var(--ink3)}
   <div class="gmb-wrap gmb-narrow">
     <span class="chip chip-blue">Getting found, getting chosen</span>
     <h2 id="market-h2">Marketing and Sales, Ranked by What Actually Works</h2>
-    <p class="gmb-lead">This is the part we do for a living, so read it with appropriate scepticism. Even so, the order below is what we would tell a friend, and it starts with the free things.</p>
+    <p class="gmb-lead">This is the part we do for a living, so read it with appropriate skepticism. Even so, the order below is what we would tell a friend, and it starts with the free things.</p>
 
     <p>Marketing is not one activity. It is three, and confusing them wastes enormous amounts of money. There is getting <em>found</em>, getting <em>chosen</em>, and getting them to <em>come back</em>. Most businesses spend everything on the first and neglect the other two, which is precisely backwards from a cost perspective.</p>
 
@@ -1266,7 +1291,7 @@ table.stg td{color:var(--ink3)}
     <p>Once the free layer is working, the question becomes which channel fits your economics. Broadly:</p>
     <ul>
       <li><strong>Advertising</strong> buys attention immediately and stops the day you stop paying. It is the right tool when you need revenue this quarter, and it produces something more valuable than sales &mdash; data on which searches actually turn into customers.</li>
-      <li><strong><a href="/denver-seo-services/">Search optimisation</a></strong> is slower, typically three to six months for meaningful movement, but it compounds into an asset that keeps producing. Feed it the keyword data your ads produced.</li>
+      <li><strong><a href="/denver-seo-services/">Search optimization</a></strong> is slower, typically three to six months for meaningful movement, but it compounds into an asset that keeps producing. Feed it the keyword data your ads produced.</li>
       <li><strong>AI search visibility</strong> is the newest surface and the least contested. When someone asks an AI assistant for a recommendation, it pulls from crawlable sites, structured data and third-party corroboration &mdash; not from your social posts. We cover the mechanics on our <a href="/aio-seo-system/">AIO</a> and <a href="/generative-engine-optimization-system/">GEO</a> pages.</li>
       <li><strong>Your website</strong> is where all of it either converts or leaks. If people find you and leave, more traffic is just a more expensive leak.</li>
     </ul>
@@ -1331,7 +1356,7 @@ table.stg td{color:var(--ink3)}
       <li><strong>Choose a structure</strong> &mdash; sole proprietor, LLC or corporation &mdash; and register with your Secretary of State.</li>
       <li><strong>Get an EIN.</strong> Free, about ten minutes, <a href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online" target="_blank" rel="noopener">directly from the IRS</a>. Never pay a third party for this.</li>
       <li><strong>Open a business bank account.</strong> Never run business money through a personal account &mdash; it is how liability protection gets pierced.</li>
-      <li><strong>Handle licences and sales tax</strong> at state, county and city level. In Colorado specifically, home-rule cities collect separately from the state, and missing that is the most common compliance gap here.</li>
+      <li><strong>Handle licenses and sales tax</strong> at state, county and city level. In Colorado specifically, home-rule cities collect separately from the state, and missing that is the most common compliance gap here.</li>
       <li><strong>Get insurance</strong> before your first customer, not after your first claim.</li>
       <li><strong>Set up how people find you</strong> &mdash; a real website, a complete Google Business Profile, and one or two channels you will actually work.</li>
     </ol>
@@ -1456,11 +1481,11 @@ table.stg td{color:var(--ink3)}
       </div>
       <div class="gfaq-item">
         <button class="gfaq-q" aria-expanded="false">What free help is available for small business owners?<span class="gfaq-ico" aria-hidden="true">+</span></button>
-        <div class="gfaq-a"><p>Considerably more than most owners realise. <a href="https://www.score.org/" target="_blank" rel="noopener">SCORE</a> provides free mentoring from people who have run businesses. <a href="https://americassbdc.org/" target="_blank" rel="noopener">Small Business Development Centers</a> give free one-on-one advising and will prepare a loan package at no cost. The <a href="https://www.sba.gov/business-guide" target="_blank" rel="noopener">SBA</a> publishes free templates and calculators. <a href="https://www.grants.gov/" target="_blank" rel="noopener">Grants.gov</a> lists every legitimate federal grant. Anyone charging for access is reselling something free.</p></div>
+        <div class="gfaq-a"><p>Considerably more than most owners realize. <a href="https://www.score.org/" target="_blank" rel="noopener">SCORE</a> provides free mentoring from people who have run businesses. <a href="https://americassbdc.org/" target="_blank" rel="noopener">Small Business Development Centers</a> give free one-on-one advising and will prepare a loan package at no cost. The <a href="https://www.sba.gov/business-guide" target="_blank" rel="noopener">SBA</a> publishes free templates and calculators. <a href="https://www.grants.gov/" target="_blank" rel="noopener">Grants.gov</a> lists every legitimate federal grant. Anyone charging for access is reselling something free.</p></div>
       </div>
       <div class="gfaq-item">
         <button class="gfaq-q" aria-expanded="false">How long does it take to grow a business?<span class="gfaq-ico" aria-hidden="true">+</span></button>
-        <div class="gfaq-a"><p>It depends entirely on the lever. Pricing shows up on the next invoice. Response-time fixes show within days. Conversion work on a site or sales process shows within weeks. Advertising produces traffic immediately and takes a few weeks to optimise. Search optimisation typically needs 3&ndash;6 months for meaningful movement and 6&ndash;12 for substantial results. Retention and referral systems compound over quarters. Anyone promising transformation in 30 days is selling, not advising.</p></div>
+        <div class="gfaq-a"><p>It depends entirely on the lever. Pricing shows up on the next invoice. Response-time fixes show within days. Conversion work on a site or sales process shows within weeks. Advertising produces traffic immediately and takes a few weeks to optimize. Search optimization typically needs 3&ndash;6 months for meaningful movement and 6&ndash;12 for substantial results. Retention and referral systems compound over quarters. Anyone promising transformation in 30 days is selling, not advising.</p></div>
       </div>
       <div class="gfaq-item">
         <button class="gfaq-q" aria-expanded="false">Should I hire a business coach or a consultant?<span class="gfaq-ico" aria-hidden="true">+</span></button>
@@ -1484,7 +1509,7 @@ table.stg td{color:var(--ink3)}
       </div>
       <div class="gfaq-item">
         <button class="gfaq-q" aria-expanded="false">How do I compete with a much larger competitor?<span class="gfaq-ico" aria-hidden="true">+</span></button>
-        <div class="gfaq-a"><p>Do not fight on their ground. Large competitors win on price, breadth and recognition, so pick terrain where size is a liability. Speed of response, deep specialisation, direct access to the owner, local knowledge and real relationships are all difficult for a big organisation to replicate. In local search specifically, ranking rewards relevance, proximity and signals like reviews rather than company size &mdash; which is exactly why a well-run small business regularly outranks a national chain in its own city.</p></div>
+        <div class="gfaq-a"><p>Do not fight on their ground. Large competitors win on price, breadth and recognition, so pick terrain where size is a liability. Speed of response, deep specialization, direct access to the owner, local knowledge and real relationships are all difficult for a big organization to replicate. In local search specifically, ranking rewards relevance, proximity and signals like reviews rather than company size &mdash; which is exactly why a well-run small business regularly outranks a national chain in its own city.</p></div>
       </div>
       <div class="gfaq-item">
         <button class="gfaq-q" aria-expanded="false">Should I raise prices if I might lose customers?<span class="gfaq-ico" aria-hidden="true">+</span></button>
@@ -1872,7 +1897,7 @@ const KB = [
  <p><strong>What a big company genuinely struggles to copy:</strong></p>
  <ul>
  <li><strong>Speed.</strong> They have approval chains. You have a phone.</li>
- <li><strong>Specialisation.</strong> Being the obvious choice for one narrow thing beats being an option for everything.</li>
+ <li><strong>Specialization.</strong> Being the obvious choice for one narrow thing beats being an option for everything.</li>
  <li><strong>Owner access.</strong> "You will work with me directly" is a genuine differentiator to a lot of buyers.</li>
  <li><strong>Local knowledge and relationships.</strong> Difficult to replicate from a regional office.</li>
  <li><strong>Flexibility.</strong> You can say yes to something unusual without a committee.</li>
@@ -1945,7 +1970,7 @@ KB.push(
  a:`<p>Break-even is the point where you stop losing money. Three inputs, and you should know all three without looking them up.</p>
  <ul>
  <li><strong>Fixed costs</strong> &mdash; rent, insurance, software, salaries. These happen whether you sell anything or not.</li>
- <li><strong>Variable costs</strong> &mdash; materials, job labour, processing fees. These scale with sales.</li>
+ <li><strong>Variable costs</strong> &mdash; materials, job labor, processing fees. These scale with sales.</li>
  <li><strong>Contribution margin</strong> &mdash; price minus variable cost, per job or unit.</li>
  </ul>
  <p><strong>Break-even units = fixed costs &divide; contribution margin.</strong></p>
@@ -2062,7 +2087,7 @@ KB.push(
  <li><strong>Pick a structure</strong> and register with your Secretary of State.</li>
  <li><strong>Get an EIN</strong> free from the IRS &mdash; about ten minutes online.</li>
  <li><strong>Open a business bank account.</strong> Never run business money through a personal account.</li>
- <li><strong>Handle licences and sales tax</strong> at state, county and city level.</li>
+ <li><strong>Handle licenses and sales tax</strong> at state, county and city level.</li>
  <li><strong>Get insurance</strong> before your first customer, not after your first claim.</li>
  <li><strong>Set up how you get found</strong> &mdash; website, Google Business Profile, one or two channels you will actually work.</li>
  </ol>
@@ -2093,7 +2118,7 @@ KB.push(
  kw:['how much money','startup cost','cost to start','need to save','how much do i need to start','capital to start','savings'],
  a:`<p>Two numbers, and people almost always miss the second one.</p>
  <ol>
- <li><strong>One-time startup costs</strong> &mdash; registration, equipment, deposits, initial inventory, website, licences, insurance.</li>
+ <li><strong>One-time startup costs</strong> &mdash; registration, equipment, deposits, initial inventory, website, licenses, insurance.</li>
  <li><strong>Runway</strong> &mdash; enough cash to cover business expenses <em>and</em> your personal living expenses for 6 to 12 months with little revenue.</li>
  </ol>
  <p>Service businesses can often start for a few thousand dollars. Anything with a lease, inventory or vehicles climbs into the tens of thousands quickly.</p>
@@ -2126,7 +2151,7 @@ KB.push(
  a:`<p><strong>Yes &mdash; but probably not the 40-page kind you are picturing.</strong> There are two documents doing two different jobs, and confusing them is why most people stall.</p>
  <ul>
  <li><strong>A one-page working plan.</strong> Everyone needs this. Who the customer is, what you sell, what it costs to deliver, what you charge, how people find you, and your monthly break-even. It takes an afternoon and it actually changes decisions.</li>
- <li><strong>A full formal plan.</strong> Required only when someone else's money is involved &mdash; a bank or SBA loan, an investor, a commercial landlord, a grant, or certain licences. Expect 15&ndash;30 pages with three years of projections.</li>
+ <li><strong>A full formal plan.</strong> Required only when someone else's money is involved &mdash; a bank or SBA loan, an investor, a commercial landlord, a grant, or certain licenses. Expect 15&ndash;30 pages with three years of projections.</li>
  </ul>
  <p>The real value is not the document. Writing it forces real numbers onto assumptions you have been carrying loosely. Most people discover their pricing is wrong or their acquisition cost is unknown &mdash; and finding that on paper costs a lot less than finding it in month eight.</p>
  <div class="callout">Self-funding a service business? Start with the one-pager. Write the formal plan when a lender asks.</div>`,
@@ -2144,7 +2169,7 @@ KB.push(
  <li><strong>Executive summary</strong> &mdash; write it last, one page, must stand alone.</li>
  <li><strong>Company description</strong> &mdash; what you do, structure, location, ownership.</li>
  <li><strong>Market analysis</strong> &mdash; size, target customer, competitors, and honestly why you win.</li>
- <li><strong>Organisation and management</strong> &mdash; who does what, and their track record.</li>
+ <li><strong>Organization and management</strong> &mdash; who does what, and their track record.</li>
  <li><strong>Products or services</strong> &mdash; what you sell, cost to deliver, pricing.</li>
  <li><strong>Marketing and sales</strong> &mdash; how customers find you and what one costs to acquire.</li>
  <li><strong>Funding request</strong> &mdash; amount, use of funds, repayment plan.</li>
@@ -2209,7 +2234,7 @@ KB.push(
  </ol>
  <p>Operating under a name different from your legal entity name? File a trade name (DBA) too.</p>
  <div class="callout">Registering an entity and getting licensed are different things. Forming an LLC does not license you to do anything.</div>
- <p><strong>Colorado specifically:</strong> <a href="https://mybiz.colorado.gov/" target="_blank" rel="noopener">MyBizColorado</a> handles state registration, sales tax licence, unemployment insurance and FAMLI in one portal.</p>`,
+ <p><strong>Colorado specifically:</strong> <a href="https://mybiz.colorado.gov/" target="_blank" rel="noopener">MyBizColorado</a> handles state registration, sales tax license, unemployment insurance and FAMLI in one portal.</p>`,
  links:[['SBA — register your business','https://www.sba.gov/business-guide/launch-your-business/register-your-business','sba.gov'],
         ['MyBizColorado','https://mybiz.colorado.gov/','mybiz.colorado.gov'],
         ['Colorado Secretary of State','https://www.coloradosos.gov/','coloradosos.gov']],
@@ -2290,12 +2315,12 @@ KB.push(
  kw:['business license','what licenses','need a license','permits','licensing requirements','license requirements','permit'],
  a:`<p>There is no single answer, because licensing happens in up to four separate layers. Check all four.</p>
  <ol>
- <li><strong>State sales tax licence</strong> &mdash; required if you sell taxable goods or certain services.</li>
- <li><strong>Professional or occupational licence</strong> &mdash; for regulated trades: contractors, cosmetology, real estate, healthcare and many more.</li>
- <li><strong>City or county licence</strong> &mdash; varies enormously, and this is the layer people miss.</li>
+ <li><strong>State sales tax license</strong> &mdash; required if you sell taxable goods or certain services.</li>
+ <li><strong>Professional or occupational license</strong> &mdash; for regulated trades: contractors, cosmetology, real estate, healthcare and many more.</li>
+ <li><strong>City or county license</strong> &mdash; varies enormously, and this is the layer people miss.</li>
  <li><strong>Federal permits</strong> &mdash; only for regulated industries such as alcohol, firearms, aviation or transportation.</li>
  </ol>
- <div class="callout"><strong>Colorado note:</strong> the state issues no general business licence, but 70+ home-rule municipalities collect their own sales tax and require separate registration. Your state licence does not cover them. This is the most common compliance gap here, and it usually surfaces years later with penalties attached.</div>`,
+ <div class="callout"><strong>Colorado note:</strong> the state issues no general business license, but 70+ home-rule municipalities collect their own sales tax and require separate registration. Your state license does not cover them. This is the most common compliance gap here, and it usually surfaces years later with penalties attached.</div>`,
  links:[['SBA — apply for licenses and permits','https://www.sba.gov/business-guide/launch-your-business/apply-licenses-permits','sba.gov'],
         ['MyBizColorado','https://mybiz.colorado.gov/','mybiz.colorado.gov'],
         ['Colorado Dept of Revenue','https://tax.colorado.gov/','tax.colorado.gov']],
@@ -2308,7 +2333,7 @@ KB.push(
  a:`<p>If you sell tangible goods at retail, generally yes. Most services are untaxed at the state level in many states, but exceptions exist and rules have been shifting &mdash; verify your specific category rather than assuming.</p>
  <p><strong>How it works:</strong></p>
  <ul>
- <li>Apply through your state revenue department. A retail licence usually covers wholesale too.</li>
+ <li>Apply through your state revenue department. A retail license usually covers wholesale too.</li>
  <li>Then register separately with any local jurisdiction that self-collects.</li>
  <li>File on the schedule assigned to you, even in months with no sales.</li>
  </ul>
@@ -2374,7 +2399,7 @@ KB.push(
  kw:['accountant','cpa','bookkeeper','do my own taxes','hire an accountant','need a cpa','tax preparer'],
  a:`<p>Separate the two roles &mdash; they are different jobs and people frequently hire the wrong one.</p>
  <ul>
- <li><strong>Bookkeeper</strong> &mdash; keeps transactions categorised month to month. Worth outsourcing early; cheap relative to the time it eats and the errors it prevents.</li>
+ <li><strong>Bookkeeper</strong> &mdash; keeps transactions categorized month to month. Worth outsourcing early; cheap relative to the time it eats and the errors it prevents.</li>
  <li><strong>CPA</strong> &mdash; files returns and, more importantly, does tax <em>planning</em>. A good one saves more than the fee through entity structure, retirement contributions and timing.</li>
  </ul>
  <p>Do it yourself while you are a simple sole proprietor with straightforward income. Get help once you have employees, inventory, multiple states, an S-corp election, or revenue past roughly $100K.</p>
@@ -2408,7 +2433,7 @@ KB.push(
  <ol>
  <li><strong>Separate bank account and card.</strong> This alone does 80% of the work.</li>
  <li><strong>Pick software</strong> and connect the accounts so transactions import automatically. Any mainstream option is fine &mdash; consistency beats features.</li>
- <li><strong>Set a categorisation schedule</strong> &mdash; 20 minutes weekly, not four hours in April.</li>
+ <li><strong>Set a categorization schedule</strong> &mdash; 20 minutes weekly, not four hours in April.</li>
  <li><strong>Save receipts digitally</strong>, photographed at the moment of purchase.</li>
  <li><strong>Reconcile monthly</strong> against your bank statement.</li>
  <li><strong>Read two reports each month</strong> &mdash; profit and loss, and cash flow.</li>
@@ -2493,7 +2518,7 @@ KB.push(
  <ol>
  <li><strong>EIN</strong> from the IRS.</li>
  <li><strong>State wage withholding account</strong> and <strong>unemployment insurance account</strong>.</li>
- <li><strong>Paid leave registration</strong> where your state requires it &mdash; Colorado's FAMLI programme is mandatory, and rates change, so check the current year.</li>
+ <li><strong>Paid leave registration</strong> where your state requires it &mdash; Colorado's FAMLI program is mandatory, and rates change, so check the current year.</li>
  <li><strong>Workers' compensation</strong> policy in force.</li>
  <li><strong>New hire paperwork</strong> &mdash; I-9, W-4, state withholding form, and report the hire to the state directory.</li>
  <li><strong>A payroll service.</strong> Use one. The filing calendar and deposit deadlines are where DIY payroll goes wrong, and the penalties exceed what a service costs.</li>
@@ -2563,7 +2588,7 @@ KB.push(
  q:'How do I show up on Google Maps?',
  alt:['Google Business Profile','Google My Business','Local pack'],
  kw:['google business profile','google my business','google maps','map pack','local listing','show up on maps','local pack','gbp','maps ranking'],
- a:`<p>For a local business this is the highest-return free asset you have. Claim it, then optimise deliberately.</p>
+ a:`<p>For a local business this is the highest-return free asset you have. Claim it, then optimize deliberately.</p>
  <p><strong>Setup:</strong> claim and verify the listing, choose the most specific primary category available, set a service area if you do not want your home address public, and add accurate hours.</p>
  <p><strong>What actually moves ranking:</strong></p>
  <ul>
@@ -2617,7 +2642,7 @@ KB.push(
 {id:'cro', cat:'market',
  q:'People visit my website but never call. Why?',
  alt:['Not converting','Traffic but no leads','Conversion rate'],
- kw:['not converting','traffic but no leads','visitors dont call','conversion','conversion rate','bounce rate','nobody calls','low conversion','no enquiries'],
+ kw:['not converting','traffic but no leads','visitors dont call','conversion','conversion rate','bounce rate','nobody calls','low conversion','no inquiries'],
  a:`<p>This is a conversion problem, and doubling your traffic would simply double your disappointment.</p>
  <p><strong>Where sites leak, roughly in order of frequency:</strong></p>
  <ul>
@@ -2738,7 +2763,7 @@ KB.push(
  <p><strong>What to build, in order:</strong></p>
  <ul>
  <li><strong>A welcome sequence</strong> for new contacts, sent automatically.</li>
- <li><strong>Segmentation</strong> by behaviour and lifecycle stage &mdash; a past customer and a cold lead need different messages.</li>
+ <li><strong>Segmentation</strong> by behavior and lifecycle stage &mdash; a past customer and a cold lead need different messages.</li>
  <li><strong>Abandoned quote or cart recovery.</strong> Frequently the highest-return automation in the whole stack.</li>
  <li><strong>Reactivation campaigns</strong> for dormant customers.</li>
  <li><strong>Review requests</strong>, automated after job completion.</li>
@@ -3843,7 +3868,7 @@ KB.push(
 
 {id:'lsa', fam:'paid',
  k:['local services ads','lsa','google screened','google guaranteed','pay per lead','screened badge'],
- a:"Local Services Ads — criminally underused by most local businesses. ✅\n\nThese sit ABOVE regular Google Ads and above the Map Pack. You get the \"Google Screened\" or \"Google Guaranteed\" badge, and crucially you pay per **lead**, not per click.\n\nFor home services, legal, and a lot of professional categories this is often the cheapest qualified lead available — and the badge itself is a serious trust signal.\n\nSetup is fiddly: licence and insurance verification, background checks, category selection, and active lead-dispute management (you can dispute junk leads, and most businesses never bother, so they overpay).\n\nWe handle all of it. Are you in a category that qualifies? Tell me your industry and I'll tell you.",
+ a:"Local Services Ads — criminally underused by most local businesses. ✅\n\nThese sit ABOVE regular Google Ads and above the Map Pack. You get the \"Google Screened\" or \"Google Guaranteed\" badge, and crucially you pay per **lead**, not per click.\n\nFor home services, legal, and a lot of professional categories this is often the cheapest qualified lead available — and the badge itself is a serious trust signal.\n\nSetup is fiddly: license and insurance verification, background checks, category selection, and active lead-dispute management (you can dispute junk leads, and most businesses never bother, so they overpay).\n\nWe handle all of it. Are you in a category that qualifies? Tell me your industry and I'll tell you.",
  c:['*See if I qualify|i_capture','Google Ads','Local SEO','Pricing']},
 
 {id:'remarketing', fam:'paid',
@@ -3964,7 +3989,7 @@ KB.push(
 
 {id:'branding', fam:'build',
  k:['branding','brand','rebrand','brand identity','logo','logo design','brand strategy','identity','style guide','brand refresh','new logo','design a logo'],
- a:"Branding and identity — the thing that makes everything else cheaper. 🎨\n\nWhat we deliver: logo design and full identity systems, colour and typography systems, brand voice and messaging, style guides so it stays consistent, brand positioning, and full rebrands.\n\nWhy it's not decoration: consistent brand presentation across channels increases revenue by roughly 23%, and 81% of consumers say they need to trust a brand before buying. Recognition compounds — every ad, every mailer, every billboard works harder when it looks like it came from the same company.\n\nOne caution I'd offer: a logo alone doesn't fix a business. If the site doesn't convert, a beautiful logo just makes a prettier dead end.",
+ a:"Branding and identity — the thing that makes everything else cheaper. 🎨\n\nWhat we deliver: logo design and full identity systems, color and typography systems, brand voice and messaging, style guides so it stays consistent, brand positioning, and full rebrands.\n\nWhy it's not decoration: consistent brand presentation across channels increases revenue by roughly 23%, and 81% of consumers say they need to trust a brand before buying. Recognition compounds — every ad, every mailer, every billboard works harder when it looks like it came from the same company.\n\nOne caution I'd offer: a logo alone doesn't fix a business. If the site doesn't convert, a beautiful logo just makes a prettier dead end.",
  c:['*Get a branding quote|i_capture','Graphic design','Website design','Pricing']},
 
 {id:'graphic', fam:'build',
@@ -3974,7 +3999,7 @@ KB.push(
 
 {id:'nfc', fam:'build',
  k:['nfc','tap card','digital business card','qr code','qr','contactless','tap to pay','smart card','digital menu','nfc menu','tap menu'],
- a:"NFC and QR — genuinely one of our favourite tools. 📲\n\nTap a phone on a card, sticker or table tent and something happens instantly: contact saved, menu opened, review page loaded, promo claimed.\n\nWhere we deploy it: digital business cards that never go out of date, restaurant menus you update without reprinting, instant review-request cards at point of sale, trade show lead capture, product packaging that opens instructions, and window stickers.\n\nWe run a whole NFC menu network for restaurants — including in Belize — so this is well past theory for us.\n\nThe review use case is the sharpest: hand someone a card at the moment they're happiest and remove every step between that feeling and a five-star review.",
+ a:"NFC and QR — genuinely one of our favorite tools. 📲\n\nTap a phone on a card, sticker or table tent and something happens instantly: contact saved, menu opened, review page loaded, promo claimed.\n\nWhere we deploy it: digital business cards that never go out of date, restaurant menus you update without reprinting, instant review-request cards at point of sale, trade show lead capture, product packaging that opens instructions, and window stickers.\n\nWe run a whole NFC menu network for restaurants — including in Belize — so this is well past theory for us.\n\nThe review use case is the sharpest: hand someone a card at the moment they're happiest and remove every step between that feeling and a five-star review.",
  c:['*Get NFC pricing|i_capture','Reviews strategy','Print design','Talk to a human']},
 
 {id:'chatbot', fam:'build',
@@ -4002,7 +4027,7 @@ KB.push(
 
 {id:'consulting', fam:'ops',
  k:['consulting','consultant','business plan','business planning','strategy','advisor','coaching','business consulting','planning','growth strategy','fractional'],
- a:"Business consulting and growth strategy — where we start when marketing isn't the actual problem. 🧭\n\nWhat we work on: growth strategy and planning, business and expansion plans, market and competitor analysis, pricing strategy, offer development, operational efficiency, and revenue modelling.\n\nWhy it's on the menu: sometimes the honest answer to \"how do I get more customers\" is that your pricing is wrong, your offer is unclear, or you can't service more customers if you got them. Spending on ads in any of those situations makes things worse, faster.\n\nWe'd rather tell you that than take the money.",
+ a:"Business consulting and growth strategy — where we start when marketing isn't the actual problem. 🧭\n\nWhat we work on: growth strategy and planning, business and expansion plans, market and competitor analysis, pricing strategy, offer development, operational efficiency, and revenue modeling.\n\nWhy it's on the menu: sometimes the honest answer to \"how do I get more customers\" is that your pricing is wrong, your offer is unclear, or you can't service more customers if you got them. Spending on ads in any of those situations makes things worse, faster.\n\nWe'd rather tell you that than take the money.",
  c:['*Book a strategy session|i_capture','Free growth audit|i_audit','Talk to a human']},
 
 {id:'handbook', fam:'ops',
@@ -4040,7 +4065,7 @@ KB.push(
 
 {id:'v_home', fam:'vert',
  k:['contractor','roofing','roofer','plumber','plumbing','hvac','electrician','landscaping','construction','remodeling','home services','painter','flooring','garage door','solar','handyman','pest control','cleaning service'],
- a:"Home services — our home turf, and the category where speed to lead decides everything. 🔨\n\nHome improvement CPCs run around $8.33, and these are emergency-intent categories where the first business to answer usually wins the job.\n\nWhere we focus: Local Services Ads (usually the best cost-per-lead in the category), Map Pack rankings for every service area you cover, emergency-intent pages that convert, review velocity, speed to lead — 5-minute response makes you 21x more likely to qualify, and post-storm campaigns where seasonality applies.\n\nWe also do the offline half most agencies dropped: direct mail, door knocking, vehicle wraps, yard signs. In home services, the combination of digital presence plus physical visibility in the neighbourhood is genuinely hard to compete with.\n\nWhat's your trade?",
+ a:"Home services — our home turf, and the category where speed to lead decides everything. 🔨\n\nHome improvement CPCs run around $8.33, and these are emergency-intent categories where the first business to answer usually wins the job.\n\nWhere we focus: Local Services Ads (usually the best cost-per-lead in the category), Map Pack rankings for every service area you cover, emergency-intent pages that convert, review velocity, speed to lead — 5-minute response makes you 21x more likely to qualify, and post-storm campaigns where seasonality applies.\n\nWe also do the offline half most agencies dropped: direct mail, door knocking, vehicle wraps, yard signs. In home services, the combination of digital presence plus physical visibility in the neighborhood is genuinely hard to compete with.\n\nWhat's your trade?",
  c:['*Free home services audit|i_audit','Local Services Ads|lsa','Speed to lead','Pricing']},
 
 {id:'v_medspa', fam:'vert',
@@ -4050,7 +4075,7 @@ KB.push(
 
 {id:'v_realestate', fam:'vert',
  k:['real estate','realtor','agent','broker','property','listings','homes','realty','mortgage','title company'],
- a:"Real estate — a personal-brand category more than a company-brand category. 🏡\n\nWhere we focus: neighbourhood and hyperlocal content (that's the durable moat), listing presentation including photography, video and drone, personal brand building rather than brokerage brand, review and testimonial systems, database nurture for past clients and sphere — most agents neglect this and it's where repeat and referral business lives, and lead capture with genuine follow-up automation.\n\nThe unglamorous truth in real estate: most agents don't lose deals to better marketing, they lose them to inconsistent follow-up on leads they already have.\n\nResidential, commercial, or investment focus?",
+ a:"Real estate — a personal-brand category more than a company-brand category. 🏡\n\nWhere we focus: neighborhood and hyperlocal content (that's the durable moat), listing presentation including photography, video and drone, personal brand building rather than brokerage brand, review and testimonial systems, database nurture for past clients and sphere — most agents neglect this and it's where repeat and referral business lives, and lead capture with genuine follow-up automation.\n\nThe unglamorous truth in real estate: most agents don't lose deals to better marketing, they lose them to inconsistent follow-up on leads they already have.\n\nResidential, commercial, or investment focus?",
  c:['*Free real estate audit|i_audit','Video production|video','CRM setup|crm','Pricing']},
 
 {id:'v_restaurant', fam:'vert',
@@ -4065,7 +4090,7 @@ KB.push(
 
 {id:'v_auto', fam:'vert',
  k:['auto','automotive','car dealership','dealership','mechanic','auto repair','body shop','tires','detailing','car wash','collision'],
- a:"Automotive — high-intent local search and heavy review dependence. 🚗\n\nWhere we focus: Map Pack rankings for service searches, review strategy (trust is the whole battle in auto repair), service-specific pages for each thing you do, emergency and same-day intent capture, and speed to lead — a broken-down car is the most urgent purchase intent there is.\n\nFor dealerships: inventory feeds, model-specific pages, and video walkarounds. For independents: the neighbourhood trust play, which is cheaper and often more durable.\n\nWe also run OTT and streaming for automotive clients — targeted TV is unusually effective in this category because the purchase is considered and geography-bound.\n\nRepair, dealership, or specialty?",
+ a:"Automotive — high-intent local search and heavy review dependence. 🚗\n\nWhere we focus: Map Pack rankings for service searches, review strategy (trust is the whole battle in auto repair), service-specific pages for each thing you do, emergency and same-day intent capture, and speed to lead — a broken-down car is the most urgent purchase intent there is.\n\nFor dealerships: inventory feeds, model-specific pages, and video walkarounds. For independents: the neighborhood trust play, which is cheaper and often more durable.\n\nWe also run OTT and streaming for automotive clients — targeted TV is unusually effective in this category because the purchase is considered and geography-bound.\n\nRepair, dealership, or specialty?",
  c:['*Free automotive audit|i_audit','Reviews strategy|reviews','Local SEO|localseo','Pricing']},
 
 {id:'v_senior', fam:'vert',
@@ -4203,7 +4228,7 @@ KB.push(
 
 {id:'obj_contract', fam:'obj',
  k:['contract','locked in','long term','commitment','cancel anytime','how long am i stuck','term length','agreement','trapped'],
- a:"No long-term contracts. Genuinely. 📝\n\nWe keep clients by producing results, not by trapping them in a 12-month agreement. If we're not working, you shouldn't be stuck.\n\nOne piece of honesty though: SEO takes 3 to 6 months to show meaningful results. That's not a sales line, that's how the mechanism works — crawling, indexing, authority building and competitive displacement all take time. Signing up for one month of SEO and cancelling is genuinely wasting your money, and I'd rather say that than take it.\n\nPaid media and conversion work show much faster. If you want quicker signal, that's often the better starting point.",
+ a:"No long-term contracts. Genuinely. 📝\n\nWe keep clients by producing results, not by trapping them in a 12-month agreement. If we're not working, you shouldn't be stuck.\n\nOne piece of honesty though: SEO takes 3 to 6 months to show meaningful results. That's not a sales line, that's how the mechanism works — crawling, indexing, authority building and competitive displacement all take time. Signing up for one month of SEO and canceling is genuinely wasting your money, and I'd rather say that than take it.\n\nPaid media and conversion work show much faster. If you want quicker signal, that's often the better starting point.",
  c:['*Free growth audit|i_audit','Pricing','How long does it take?|timeline','Talk to a human']},
 
 {id:'obj_lastagency', fam:'obj',
