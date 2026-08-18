@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Eye To Ad Media — Growth Presentation</title>
+
+<!-- ============================================================
+  PRIVATE SALES DECK — eyetoad.com/sell-myself/
+  NOT linked from navigation anywhere. Deliberately noindex so it
+  never competes with the money pages and never shows up in a
+  prospect's search results before the meeting.
+  To make it public later: delete the robots line below.
+  ============================================================ -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A101C">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0A101C;
+  --ink2:#101828;
+  --ink3:#1A2436;
+  --blue:#2563EB;
+  --blue-lt:#60A5FA;
+  --orange:#F97316;
+  --orange-lt:#FDBA74;
+  --green:#4ADE80;
+  --white:#FFFFFF;
+  --dim:rgba(255,255,255,.56);
+  --dimmer:rgba(255,255,255,.34);
+  --line:rgba(255,255,255,.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--ink)}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
+  overscroll-behavior:none;
+}
+h1,h2,.display{font-family:'Fraunces',Georgia,serif;font-weight:900;line-height:1.02;letter-spacing:-.02em}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:6px}
+
+/* ─── STAGE ─── */
+#stage{
+  position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 120% 80% at 78% 8%, rgba(37,99,235,.20) 0%, transparent 62%),
+    radial-gradient(ellipse 100% 70% at 10% 96%, rgba(249,115,22,.13) 0%, transparent 60%),
+    var(--ink);
+}
+#stage::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:30px 30px;
+}
+
+.slide{
+  position:absolute;inset:0;
+  display:none;
+  flex-direction:column;justify-content:center;
+  padding:calc(env(safe-area-inset-top) + 74px) 7vw calc(env(safe-area-inset-bottom) + 96px);
+  overflow-y:auto;
+  z-index:2;
+}
+.slide.on{display:flex;animation:rise .5s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.slide > *{max-width:960px;width:100%;margin-left:auto;margin-right:auto}
+
+/* stagger children */
+.slide.on > *{animation:rise .55s cubic-bezier(.16,1,.3,1) both}
+.slide.on > *:nth-child(1){animation-delay:.04s}
+.slide.on > *:nth-child(2){animation-delay:.13s}
+.slide.on > *:nth-child(3){animation-delay:.22s}
+.slide.on > *:nth-child(4){animation-delay:.31s}
+.slide.on > *:nth-child(5){animation-delay:.40s}
+.slide.on > *:nth-child(6){animation-delay:.49s}
+
+/* ─── TYPE SCALE ─── */
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-family:'IBM Plex Mono',monospace;font-size:clamp(.62rem,1.5vw,.72rem);
+  font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:26px;
+}
+.eyebrow::before{content:'';width:34px;height:2px;background:var(--orange);flex-shrink:0}
+.eyebrow.b{color:var(--blue-lt)}.eyebrow.b::before{background:var(--blue-lt)}
+.eyebrow.g{color:var(--green)}.eyebrow.g::before{background:var(--green)}
+
+.big{font-size:clamp(2.1rem,6.4vw,4.6rem)}
+.mid{font-size:clamp(1.75rem,4.8vw,3.4rem)}
+.sub{
+  font-size:clamp(1.02rem,2.4vw,1.4rem);line-height:1.55;
+  color:var(--dim);font-weight:400;margin-top:26px;max-width:720px;
+}
+.sub strong{color:var(--white);font-weight:600}
+em{font-style:normal;color:var(--orange-lt)}
+em.b{color:var(--blue-lt)}
+em.g{color:var(--green)}
+
+/* ─── CHROME ─── */
+#topbar{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  padding:calc(env(safe-area-inset-top) + 16px) 7vw 0;
+  display:flex;align-items:center;justify-content:space-between;
+  pointer-events:none;
+}
+.mark{
+  font-family:'IBM Plex Mono',monospace;font-size:.66rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dimmer);
+}
+.count{font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:var(--dimmer);letter-spacing:.14em}
+.count b{color:var(--white);font-weight:600}
+
+#rail{position:fixed;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.07);z-index:20}
+#railfill{height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--blue-lt));transition:width .45s cubic-bezier(.16,1,.3,1)}
+
+#nav{
+  position:fixed;z-index:21;
+  bottom:calc(env(safe-area-inset-bottom) + 22px);
+  left:7vw;right:7vw;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.back{
+  font-size:.84rem;font-weight:600;color:var(--dimmer);padding:10px 4px;
+  transition:color .18s;
+}
+.back:hover{color:var(--white)}
+.back[hidden]{visibility:hidden;display:block}
+.next{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:999px;
+  background:var(--orange);color:#fff;font-weight:700;font-size:1rem;
+  box-shadow:0 8px 30px rgba(249,115,22,.42);
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.next:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(249,115,22,.58)}
+.next.blue{background:var(--blue);box-shadow:0 8px 30px rgba(37,99,235,.45)}
+.next.blue:hover{box-shadow:0 12px 38px rgba(37,99,235,.6)}
+
+/* invisible tap zones — advance by tapping anywhere on the right */
+.zone{position:fixed;top:0;bottom:64px;width:32%;z-index:5}
+#zoneL{left:0}#zoneR{right:0}
+
+/* ─── COMPONENTS ─── */
+.stack{display:flex;flex-direction:column;gap:14px;margin-top:34px}
+.row{
+  display:flex;align-items:baseline;gap:18px;
+  padding:16px 0;border-top:1px solid var(--line);
+}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row .n{
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dimmer);
+  flex-shrink:0;width:26px;letter-spacing:.1em;
+}
+.row .t{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.05rem,2.6vw,1.5rem);color:#fff}
+.row .d{font-size:.9rem;color:var(--dim);margin-left:auto;text-align:right;max-width:46%;line-height:1.45}
+.row.hot .t{color:var(--orange-lt)}
+
+.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2px;margin-top:34px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.fig{background:var(--ink);padding:24px 20px}
+.fig .v{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,5vw,3rem);line-height:1;color:var(--orange)}
+.fig .v.b{color:var(--blue-lt)}.fig .v.g{color:var(--green)}
+.fig .k{font-size:.9rem;font-weight:600;color:#fff;margin-top:10px}
+.fig .s{font-size:.78rem;color:var(--dimmer);margin-top:4px;line-height:1.45}
+
+.cite{
+  font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:var(--dimmer);
+  margin-top:22px;letter-spacing:.04em;line-height:1.6;
+}
+
+/* THE LEDGER — signature element */
+.ledger{
+  margin-top:30px;border:1px solid rgba(249,115,22,.28);border-radius:18px;
+  background:linear-gradient(160deg,rgba(249,115,22,.07),rgba(37,99,235,.05));
+  padding:24px 24px 8px;
+}
+.dial{display:flex;align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.dial:last-of-type{border-bottom:none}
+.dial label{font-size:.88rem;color:var(--dim);flex:1;min-width:0}
+.dial .out{
+  font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1.02rem;
+  color:var(--orange-lt);width:82px;text-align:right;flex-shrink:0;
+}
+.dial input[type=range]{
+  -webkit-appearance:none;appearance:none;width:44%;max-width:230px;height:3px;
+  background:rgba(255,255,255,.16);border-radius:3px;outline:none;flex-shrink:0;
+}
+.dial input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--orange);cursor:grab;box-shadow:0 2px 10px rgba(249,115,22,.6);
+}
+.dial input[type=range]::-moz-range-thumb{
+  width:22px;height:22px;border:none;border-radius:50%;
+  background:var(--orange);cursor:grab;box-shadow:0 2px 10px rgba(249,115,22,.6);
+}
+.total{
+  margin:6px -24px 0;padding:24px;text-align:center;
+  border-top:1px solid rgba(249,115,22,.28);
+  background:rgba(0,0,0,.26);border-radius:0 0 17px 17px;
+}
+.total .lbl{
+  font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dimmer);margin-bottom:10px;
+}
+.total .amt{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(2.6rem,10vw,5rem);line-height:1;
+  color:var(--green);letter-spacing:-.03em;
+}
+.total .note{font-size:.8rem;color:var(--dimmer);margin-top:12px}
+
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 16px;border-radius:999px;font-size:.8rem;font-weight:600;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--dim);
+}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+
+.choice{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:34px}
+.opt{
+  border:1px solid var(--line);border-radius:16px;padding:26px 24px;
+  background:rgba(255,255,255,.035);transition:border-color .2s,transform .2s;
+}
+.opt:hover{border-color:rgba(249,115,22,.5);transform:translateY(-3px)}
+.opt .tag{
+  font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:12px;
+}
+.opt h3{font-family:'Fraunces',serif;font-weight:900;font-size:1.4rem;margin-bottom:10px}
+.opt p{font-size:.92rem;color:var(--dim);line-height:1.6}
+.opt .pr{font-family:'IBM Plex Mono',monospace;font-size:1.05rem;color:#fff;margin-top:16px;font-weight:600}
+
+/* live pulse dot for the opening slide */
+.live{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;color:var(--green);font-weight:600;margin-bottom:22px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.9s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5)}50%{opacity:.7;box-shadow:0 0 0 9px rgba(74,222,128,0)}}
+
+/* search-glass svg on slide 2 */
+.searchviz{margin-top:34px;width:100%;max-width:560px}
+.searchviz .beam{stroke-dasharray:5 7;animation:march 3.4s linear infinite}
+@keyframes march{to{stroke-dashoffset:-48}}
+
+/* ─── PRESENTER NOTES (rep-facing, hidden by default) ─── */
+#notes{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  background:#050A12;border-top:2px solid var(--orange);
+  padding:18px 7vw calc(env(safe-area-inset-bottom) + 18px);
+  display:none;max-height:46vh;overflow-y:auto;
+}
+#notes.on{display:block;animation:rise .3s ease both}
+#notes .hd{
+  font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:10px;
+}
+#notes p{font-size:.92rem;line-height:1.65;color:#D6E2F0;max-width:820px}
+#notes p + p{margin-top:9px}
+#notes b{color:var(--orange-lt)}
+#notetoggle{
+  position:fixed;z-index:41;right:calc(7vw - 8px);
+  bottom:calc(env(safe-area-inset-bottom) + 74px);
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.05);border:1px solid var(--line);
+  color:var(--dimmer);font-size:.7rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;transition:all .18s;
+}
+#notetoggle:hover,#notetoggle.on{color:var(--orange);border-color:rgba(249,115,22,.5)}
+
+@media(max-width:640px){
+  .slide{padding:calc(env(safe-area-inset-top) + 64px) 7vw calc(env(safe-area-inset-bottom) + 92px)}
+  .row{flex-wrap:wrap;gap:6px}
+  .row .d{margin-left:0;text-align:left;max-width:100%;width:100%;padding-left:44px}
+  .dial{flex-wrap:wrap;gap:10px}
+  .dial label{flex:1 0 100%}
+  .dial input[type=range]{width:auto;flex:1}
+  .next{padding:14px 24px;font-size:.94rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <span class="mark">Eye To Ad Media</span>
+  <span class="count"><b id="cur">1</b> / <span id="tot">17</span></span>
+</div>
+
+<div id="stage">
+
+<!-- 01 ─────────────────────────────────────────────── -->
+<section class="slide on">
+  <span class="live"><i></i>Happening right now</span>
+  <h1 class="big">Someone in your city is searching for what you sell.</h1>
+  <p class="sub">Not this month. Not this week. <strong>In the next few minutes.</strong></p>
+</section>
+
+<!-- 02 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow">The only question that matters</p>
+  <h1 class="big">Whose name do they find?</h1>
+  <svg class="searchviz" viewBox="0 0 560 150" fill="none" aria-hidden="true">
+    <circle cx="66" cy="75" r="27" stroke="#60A5FA" stroke-width="3"/>
+    <path d="M86 95 L108 117" stroke="#60A5FA" stroke-width="6" stroke-linecap="round"/>
+    <path class="beam" d="M140 75 H400" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="418" y="46" width="118" height="58" rx="12" fill="rgba(249,115,22,.1)" stroke="#F97316" stroke-width="2"/>
+    <path d="M441 75 h72 M441 62 h50 M441 88 h60" stroke="#FDBA74" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+  </svg>
+  <p class="sub">Every search ends with one business getting the call — and everyone else getting nothing.</p>
+</section>
+
+<!-- 03 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow b">Before I show you anything</p>
+  <h1 class="mid">Let me ask you something.</h1>
+  <p class="sub" style="font-size:clamp(1.3rem,3.4vw,2rem);color:#fff;font-weight:500;line-height:1.35;">How many <em>new customers a week</em> would actually change your year?</p>
+</section>
+
+<!-- 04 ─── THE LEDGER ─────────────────────────────── -->
+<section class="slide" data-ledger>
+  <p class="eyebrow">Let's do the math out loud</p>
+  <h2 class="mid">Twenty a week. What's that worth?</h2>
+  <div class="ledger">
+    <div class="dial">
+      <label for="d1">New customers per week</label>
+      <input type="range" id="d1" min="5" max="60" step="5" value="20">
+      <span class="out" id="o1">20</span>
+    </div>
+    <div class="dial">
+      <label for="d2">Average ticket</label>
+      <input type="range" id="d2" min="10" max="400" step="5" value="30">
+      <span class="out" id="o2">$30</span>
+    </div>
+    <div class="dial">
+      <label for="d3">Visits per year, once they're yours</label>
+      <input type="range" id="d3" min="1" max="24" step="1" value="6">
+      <span class="out" id="o3">6</span>
+    </div>
+    <div class="total">
+      <div class="lbl">Added revenue, year one</div>
+      <div class="amt" id="amt">$187,200</div>
+      <div class="note">Your numbers. Slide them to whatever's true.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow g">Sit with that for a second</p>
+  <h1 class="big">That isn't a projection. It's arithmetic.</h1>
+  <p class="sub">And it's already on the table. Those customers exist, they're searching today, and they're spending that money <strong>somewhere.</strong></p>
+</section>
+
+<!-- 06 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow">Here's the uncomfortable part</p>
+  <h1 class="mid">You're not competing for that money.</h1>
+  <p class="sub" style="font-size:clamp(1.2rem,3vw,1.7rem);color:#fff;font-weight:500;">You're competing to be <em>findable</em> at the moment someone decides.</p>
+  <p class="sub">The best business in town loses to the one that shows up first. Every single day. That's not fair — it's just how it works now.</p>
+</section>
+
+<!-- 07 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow b">Where customers find you in 2026</p>
+  <h2 class="mid">Five places. Not one.</h2>
+  <div class="stack">
+    <div class="row"><span class="n">01</span><span class="t">Google search</span><span class="d">The crowded lane everyone knows about</span></div>
+    <div class="row"><span class="n">02</span><span class="t">Google Maps</span><span class="d">The three listings above the links</span></div>
+    <div class="row hot"><span class="n">03</span><span class="t">AI Overviews</span><span class="d">The answer <em>above</em> the results</span></div>
+    <div class="row hot"><span class="n">04</span><span class="t">ChatGPT &amp; Perplexity</span><span class="d">Where buyers now start</span></div>
+    <div class="row hot"><span class="n">05</span><span class="t">AI agents</span><span class="d">Shortlisting you without a human ever searching</span></div>
+  </div>
+  <p class="sub">Most businesses show up in one of these. Some in none.</p>
+</section>
+
+<!-- 08 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow">What changed this year</p>
+  <div class="figures">
+    <div class="fig"><div class="v">48%</div><div class="k">of Google searches</div><div class="s">now return an AI-generated answer at the top</div></div>
+    <div class="fig"><div class="v b">1 billion</div><div class="k">monthly AI Mode users</div><div class="s">Google's own figure, announced May 2026</div></div>
+    <div class="fig"><div class="v">Agents</div><div class="k">now call businesses</div><div class="s">Google's assistant will phone you on a customer's behalf. If nobody answers, it moves on.</div></div>
+  </div>
+  <p class="sub">If the AI answer doesn't mention you, you were never in the running. There's no page two.</p>
+  <p class="cite">Industry research compiled March 2026; Google I/O announcements, May 2026.</p>
+</section>
+
+<!-- 09 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow g">And here's the good news</p>
+  <h1 class="mid">Only <em class="g">7%</em> of local searches show an AI answer.</h1>
+  <p class="sub">When somebody searches for a place to eat near them, or a service near them, <strong>the map still decides.</strong> That's a fight you can win — and win faster than you'd think.</p>
+  <p class="cite">Local SEO research compiled 2026.</p>
+</section>
+
+<!-- 10 ─── TIE-DOWN ───────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow b">Quick gut check</p>
+  <h1 class="big">Does it make sense that being <em class="b">findable</em> is worth more than being pretty?</h1>
+</section>
+
+<!-- 11 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow">Your website</p>
+  <h1 class="mid">The only employee who works 168 hours a week.</h1>
+  <p class="sub">It never calls in sick. Never has an off night. Never forgets to mention the special, the guarantee, or the phone number.</p>
+  <div class="pills">
+    <span class="pill">Open at 2am</span>
+    <span class="pill">Never negotiates</span>
+    <span class="pill">Costs less than one shift</span>
+    <span class="pill">Answers the same way every time</span>
+  </div>
+</section>
+
+<!-- 12 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow">But only if it's built to sell</p>
+  <h2 class="mid">A brochure sits there. A system goes hunting.</h2>
+  <div class="stack">
+    <div class="row"><span class="n">SEO</span><span class="t">Get found</span><span class="d">Google, Maps, and the searches that come with a credit card already out</span></div>
+    <div class="row"><span class="n">AI</span><span class="t">Get recommended</span><span class="d">AI Overviews, ChatGPT, Perplexity, and the agents doing the shortlisting</span></div>
+    <div class="row"><span class="n">WEB</span><span class="t">Get the call</span><span class="d">A site fast enough and clear enough that finding you turns into calling you</span></div>
+  </div>
+  <p class="sub">All three, or none of it compounds.</p>
+</section>
+
+<!-- 13 ─────────────────────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow b">Who you'd be working with</p>
+  <div class="figures">
+    <div class="fig"><div class="v b">2012</div><div class="k">Serving Denver since</div><div class="s">Fourteen years, every algorithm shift</div></div>
+    <div class="fig"><div class="v">5.0</div><div class="k">From 60 Google reviews</div><div class="s">Verified Google Business Profile</div></div>
+    <div class="fig"><div class="v g">A+</div><div class="k">BBB Accredited</div><div class="s">Better Business Bureau</div></div>
+  </div>
+  <p class="sub">You'd work directly with the owner. Not a call center, not a subcontractor, not a template.</p>
+</section>
+
+<!-- 14 ─── COST OF WAITING ────────────────────────── -->
+<section class="slide" data-delay>
+  <p class="eyebrow">The part nobody talks about</p>
+  <h2 class="mid">Waiting has a price too.</h2>
+  <div class="figures">
+    <div class="fig"><div class="v" id="permonth">$15,600</div><div class="k">Every month you wait</div><div class="s">Based on the numbers you set a minute ago</div></div>
+    <div class="fig"><div class="v b">3–6 mo</div><div class="k">Before rankings move</div><div class="s">The clock starts the day we start, not the day you decide</div></div>
+    <div class="fig"><div class="v g">Compounds</div><div class="k">Rankings build on rankings</div><div class="s">Starting later costs more to reach the same position</div></div>
+  </div>
+  <p class="sub">Your competitor isn't waiting for a better quarter. <strong>The window closes by someone else walking through it.</strong></p>
+</section>
+
+<!-- 15 ─── PRICE CONDITIONING ─────────────────────── -->
+<section class="slide">
+  <p class="eyebrow b">So what does this cost?</p>
+  <h1 class="mid">Less than one part-time employee.</h1>
+  <p class="sub">A part-timer costs you somewhere north of $2,000 a month, works 20 hours a week, and can't be in two places at once. This works every hour of every day and shows up in front of people already looking for you.</p>
+</section>
+
+<!-- 16 ─── THE OFFER ──────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow">Two ways to start</p>
+  <h2 class="mid">Pick the one that fits today.</h2>
+  <div class="choice">
+    <div class="opt">
+      <div class="tag">Option A</div>
+      <h3>The full system</h3>
+      <p>Website, SEO, AI optimization and the conversion path — built together so each one makes the others work harder. This is the one that moves the number you set earlier.</p>
+      <div class="pr">$500 – $3,000 / month</div>
+    </div>
+    <div class="opt">
+      <div class="tag">Option B</div>
+      <h3>Start focused</h3>
+      <p>One deliverable, done properly. Usually your Google Business Profile and the map pack, because that's where the fastest movement lives for a local business.</p>
+      <div class="pr">From $100 / month</div>
+    </div>
+  </div>
+  <p class="sub">Both start the same way — we go to work this week, not next quarter.</p>
+</section>
+
+<!-- 17 ─── THE CLOSE ──────────────────────────────── -->
+<section class="slide">
+  <p class="eyebrow">One question left</p>
+  <h1 class="big">Which one do you want to start with?</h1>
+</section>
+
+</div>
+
+<div id="zoneL" class="zone" aria-hidden="true"></div>
+<div id="zoneR" class="zone" aria-hidden="true"></div>
+
+<div id="rail"><div id="railfill"></div></div>
+
+<nav id="nav">
+  <button class="back" id="back" hidden>&larr; Back</button>
+  <button class="next" id="next">Next <span aria-hidden="true">&rarr;</span></button>
+</nav>
+
+<button id="notetoggle" type="button" aria-label="Toggle presenter notes" title="Presenter notes (N)">N</button>
+<aside id="notes" aria-live="polite">
+  <div class="hd">Presenter note — client can't see this if you keep it closed</div>
+  <div id="notebody"></div>
+</aside>
+
+<script>
+(function(){
+'use strict';
+
+var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+var i = 0, N = slides.length;
+var $cur = document.getElementById('cur');
+var $tot = document.getElementById('tot');
+var $fill = document.getElementById('railfill');
+var $next = document.getElementById('next');
+var $back = document.getElementById('back');
+var $notes = document.getElementById('notes');
+var $noteBody = document.getElementById('notebody');
+var $noteToggle = document.getElementById('notetoggle');
+$tot.textContent = N;
+
+/* ── PRESENTER SCRIPT ──
+   This is the actual sales choreography. Each note tells the rep what to
+   SAY and — more importantly — when to SHUT UP. The pauses are where the
+   sale happens. Edit freely; the array index maps to the slide index. */
+var NOTES = [
+  "<p><b>Open low and slow.</b> Don't pitch. Say: \"Before I show you anything, I want to make sure this is even worth your time.\"</p><p>Let the slide sit for two seconds before you talk.</p>",
+  "<p>Say their category out loud: <b>\"Somebody's searching for a place to eat right now. Whose name comes up?\"</b></p><p>Then stop. Let them answer. If they say \"probably not us\" — you've already won the frame.</p>",
+  "<p><b>This is the SPIN question. Ask it and go completely silent.</b></p><p>Do not fill the pause. Whatever number they say out loud is now <i>their</i> number, not yours. Write it down in front of them.</p>",
+  "<p>Hand them the phone or turn the laptop. <b>Let them move the sliders themselves.</b></p><p>Ask: \"What's your average ticket?\" and \"How often does a regular come back?\" Set it to their real numbers, not mine.</p><p>Say nothing while the total updates.</p>",
+  "<p><b>Trial close #1.</b> \"Is that number about right, or am I being conservative?\"</p><p>If they say conservative — go back and raise the slider. That moment does more selling than anything I could write.</p>",
+  "<p>This reframes the problem from \"my business isn't good enough\" to \"my business isn't visible enough.\" That's a much easier thing for an owner to admit.</p><p>Say: <b>\"This isn't about your food. It's about the people who never got to try it.\"</b></p>",
+  "<p>Point at rows 3, 4 and 5. Ask: <b>\"Have you ever checked whether you show up in any of those?\"</b></p><p>Almost nobody has. That's the gap.</p>",
+  "<p>Don't oversell the stats — read one, then stop. The agent-calls-you fact is the one that lands. Let it.</p>",
+  "<p><b>Relief slide. Deliberate.</b> You just made the problem feel big; now make it feel solvable.</p><p>\"This is fixable, and for a local business it's fixable faster than most people think.\"</p>",
+  "<p><b>The tie-down. Ask it, then wait for the yes.</b></p><p>Don't move to the next slide until they've actually said it. A verbal yes here makes every later yes easier.</p>",
+  "<p>Compare it to something they staff. \"What do you pay someone for a Friday night shift?\"</p><p>You're conditioning price before you ever say a number.</p>",
+  "<p>Tie-down #2: <b>\"Does that split make sense — found, recommended, then the call?\"</b></p>",
+  "<p>Credibility, delivered flatly. Don't brag. Read it and move.</p><p>If they ask about other clients, that's a buying signal — answer it and go straight to the next slide.</p>",
+  "<p><b>The cost of delay. This is the one-call close.</b></p><p>Point at the monthly number — it's their own arithmetic. \"That's what next month looks like if we don't start.\"</p><p>Then: \"It's not that it gets harder. It's that it gets more expensive to catch up.\"</p>",
+  "<p>Anchor is set. Now the real price feels small by comparison.</p><p>Do not apologize for the number. Say it, then be quiet.</p>",
+  "<p><b>Alternative-choice close.</b> Never \"do you want to do this?\" Always \"which one?\"</p><p>If they hesitate, take the pressure off: \"Option B is how most people start. We can always expand.\"</p>",
+  "<p><b>Ask it. Then say nothing at all.</b></p><p>The first person to speak loses. Let it be them. When they answer, get the start date on the calendar before you leave the table.</p>"
+];
+
+function go(n){
+  if(n < 0 || n >= N) return;
+  slides[i].classList.remove('on');
+  i = n;
+  slides[i].classList.add('on');
+  slides[i].scrollTop = 0;
+  $cur.textContent = i + 1;
+  $fill.style.width = ((i + 1) / N * 100) + '%';
+  $back.hidden = (i === 0);
+  if(i === N - 1){
+    $next.innerHTML = 'Start over';
+    $next.classList.add('blue');
+  } else {
+    $next.innerHTML = 'Next <span aria-hidden="true">&rarr;</span>';
+    $next.classList.remove('blue');
+  }
+  $noteBody.innerHTML = NOTES[i] || '';
+  if(slides[i].hasAttribute('data-delay')) paintDelay();
+}
+
+$next.addEventListener('click', function(){ (i === N - 1) ? go(0) : go(i + 1); });
+$back.addEventListener('click', function(){ go(i - 1); });
+document.getElementById('zoneR').addEventListener('click', function(){ if(i < N - 1) go(i + 1); });
+document.getElementById('zoneL').addEventListener('click', function(){ go(i - 1); });
+
+document.addEventListener('keydown', function(e){
+  if(e.target.tagName === 'INPUT') return;
+  if(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown'){ e.preventDefault(); go(i + 1); }
+  if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); go(i - 1); }
+  if(e.key === 'Home'){ go(0); }
+  if(e.key === 'End'){ go(N - 1); }
+  if(e.key === 'n' || e.key === 'N'){ toggleNotes(); }
+});
+
+/* swipe */
+var x0 = null, y0 = null;
+document.addEventListener('touchstart', function(e){
+  if(e.target.tagName === 'INPUT') return;
+  x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+}, {passive:true});
+document.addEventListener('touchend', function(e){
+  if(x0 === null) return;
+  var dx = e.changedTouches[0].clientX - x0;
+  var dy = e.changedTouches[0].clientY - y0;
+  if(Math.abs(dx) > 56 && Math.abs(dx) > Math.abs(dy) * 1.6){ dx < 0 ? go(i + 1) : go(i - 1); }
+  x0 = null; y0 = null;
+}, {passive:true});
+
+function toggleNotes(){
+  var on = $notes.classList.toggle('on');
+  $noteToggle.classList.toggle('on', on);
+}
+$noteToggle.addEventListener('click', toggleNotes);
+
+/* ── THE LEDGER ── */
+var d1 = document.getElementById('d1'), d2 = document.getElementById('d2'), d3 = document.getElementById('d3');
+var o1 = document.getElementById('o1'), o2 = document.getElementById('o2'), o3 = document.getElementById('o3');
+var $amt = document.getElementById('amt'), $per = document.getElementById('permonth');
+var shown = 0;
+
+function fmt(n){ return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+
+function annual(){
+  return (+d1.value) * 52 * (+d2.value) * (+d3.value);
+}
+function paintDials(animate){
+  o1.textContent = d1.value;
+  o2.textContent = '$' + d2.value;
+  o3.textContent = d3.value;
+  var target = annual();
+  if(animate === false){ shown = target; $amt.textContent = fmt(target); return; }
+  countTo(target);
+}
+function countTo(target){
+  var from = shown, start = null, dur = 620;
+  function step(ts){
+    if(!start) start = ts;
+    var p = Math.min(1, (ts - start) / dur);
+    var e = 1 - Math.pow(1 - p, 3);
+    shown = from + (target - from) * e;
+    $amt.textContent = fmt(shown);
+    if(p < 1) requestAnimationFrame(step); else shown = target;
+  }
+  requestAnimationFrame(step);
+}
+function paintDelay(){
+  $per.textContent = fmt(annual() / 12);
+}
+[d1, d2, d3].forEach(function(el){ el.addEventListener('input', function(){ paintDials(true); }); });
+paintDials(false);
+
+/* preload note for slide 1 */
+$noteBody.innerHTML = NOTES[0];
+})();
+</script>
+</body>
+</html>
