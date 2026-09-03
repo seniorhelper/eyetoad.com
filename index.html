@@ -276,7 +276,75 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    Breakpoints MUST stay in descending order (largest first).
    ============================================================ */
 .brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
-@media(max-width:1100px){.brand-logo{width:270px;height:94px}}
+
+/* ============================================================
+   HEADER FIT — ADDED Sep 2 2026. This fixes a real clipping bug,
+   not a cosmetic one. Read before touching any breakpoint below.
+
+   ROOT CAUSE: at full size the header row needs roughly 1340px —
+   a 300px logo, seven nav items, and three right-hand CTAs, none
+   of which may shrink (flex-shrink:0) or wrap (white-space:nowrap).
+   Its container is .wrap, capped at 1180px. So the row ALWAYS
+   overflowed its container by ~160px, at every viewport width.
+
+   WHY NOBODY CAUGHT IT: on a wide monitor that overflow spills into
+   the empty margin outside .wrap and is invisible. Below roughly
+   1540px of CSS width the spill runs past the viewport edge instead
+   and the Free Audit button is sliced in half. A 1920x1080 laptop at
+   125% display scaling is 1536 CSS px, which is exactly on the wrong
+   side of that line — which is how this was finally found. The
+   "empty space on the left" is the same bug seen from the other end:
+   the container stays centred while the content spills right.
+
+   THE FIX: shrink the row in stages so it fits 1180 at every width.
+   The rejected alternative was giving the header its own wider
+   container; that works, but it puts the logo ~110px left of the
+   hero headline and breaks the vertical alignment of the whole page
+   against every section below it.
+
+   THE TWO ITEMS DROPPED at the narrow end — the phone number and
+   the VIP pill — are BOTH still present in the utility bar sitting
+   directly above the header, so nothing becomes unreachable at any
+   width. That is why those two were chosen and not, say, the Free
+   Audit button, which has no duplicate anywhere in the chrome.
+
+   The hamburger now takes over at 1024px rather than 768px. Between
+   roughly 770 and 1000px the seven-item desktop nav genuinely cannot
+   fit, and a tablet getting the mobile menu is a normal outcome
+   rather than a compromise. The 768px block further down in the
+   RESPONSIVE section still repeats those three rules; that is
+   harmless duplication, not a conflict — the values are identical.
+
+   ABOVE 1600px NOTHING CHANGES. The logo stays at its locked
+   300x102, so the July 2026 size lock is preserved on real desktop
+   widths.
+
+   BREAKPOINTS MUST STAY IN DESCENDING ORDER (largest first).
+   ============================================================ */
+@media(max-width:1600px){
+  .hdr-inner{gap:10px}
+  .hdr-right{gap:7px}
+  .brand-logo{width:265px;height:92px}
+  .nl{font-size:.78rem;padding:8px 6px}
+  .nl-tool{padding:8px 11px}
+  .hdr-vip{font-size:.78rem;padding:8px 13px}
+  .hdr-call{font-size:.84rem;padding:7px 11px}
+}
+@media(max-width:1360px){
+  /* the phone number is duplicated in the utility bar directly above */
+  .hdr-call{display:none}
+}
+@media(max-width:1150px){
+  /* the VIP pill is duplicated in the utility bar too */
+  .hdr-vip{display:none}
+}
+@media(max-width:1024px){
+  /* MOBILE NAV SWITCH — all three rules are required. Omitting any one
+     removes the hamburger entirely and strands the whole menu. */
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+}
 @media(max-width:768px){
   .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
   .brand-logo{width:250px;height:88px}
@@ -425,8 +493,15 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    members receive.
    BOTTOM MARGIN (Aug 5 2026): on mobile the Iris launcher used to
    sit directly on top of the MEMBERS ONLY ribbon and the price. Iris
-   now hides itself while the hero is on screen (see iris.js), and
-   this block keeps a little breathing room underneath regardless.
+   was supposed to hide itself while the hero is on screen (see
+   iris.js), and this block keeps a little breathing room underneath
+   regardless.
+   >>> OPEN ISSUE (Sep 2 2026): that hero-hide behaviour is NOT
+   firing since Iris moved into the external /iris.js. The launcher
+   currently sits on top of the hero form on desktop. It is a
+   selector/observer problem inside iris.js, not a problem in this
+   file — do not try to fix it with CSS here, and do not raise the
+   z-index of anything in the hero to compensate. Fix it in iris.js.
    ============================================================ */
 .vippass{position:relative;display:block;background:linear-gradient(135deg,#150f04 0%,#2b1d07 46%,#171106 100%);border:1.5px solid rgba(251,191,36,.42);border-radius:var(--r16);padding:16px 20px 18px 32px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.5);transition:transform .22s,border-color .22s,box-shadow .22s}
 .vippass:hover{transform:translateY(-3px);border-color:rgba(251,191,36,.95);box-shadow:0 18px 50px rgba(249,115,22,.34)}
@@ -678,7 +753,14 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    The table has always had FIVE rows — Local/Maps is its own surface
    with its own signals. The heading, the intro and the note beneath
    all say five. If you add a row, update all four.
-   NOTE (Aug 14 2026): a SECOND table now appears further down in the
+   NOTE (Sep 2 2026): AI Mode was folded into the EXISTING "AIO" row
+   rather than added as a sixth row, deliberately. It is another
+   Google AI surface, not a sixth competitive arena, and adding a row
+   would have meant editing the heading, the intro, the caption and
+   this comment in the same commit for no strategic gain. The
+   Overviews-vs-AI-Mode distinction is covered in full on
+   /aio-seo-system/.
+   NOTE (Aug 14 2026): a SECOND table appears further down in the
    "What Actually Changed in 2026" section. It reuses these same
    styles deliberately. The five-row rule applies to THIS table only.
    ============================================================ */
@@ -838,6 +920,11 @@ table.cmp .yes{color:#059669;font-weight:700}
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
 .footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
+/* Footer logo tracks the header. The header shrinks at 1600 for the fit fix
+   above, so the footer follows at the same breakpoint to keep the two marks
+   the same size — the July 2026 note says the footer matches the header, and
+   this is what keeps that true. */
+@media(max-width:1600px){.footer-brand .brand-logo{width:265px;height:92px}}
 @media(max-width:768px){.footer-brand .brand-logo{width:260px;height:92px}}
 .footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
 .footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
@@ -869,8 +956,11 @@ table.cmp .yes{color:#059669;font-weight:700}
   .mid-cta-inner{flex-direction:column;text-align:center}
 }
 @media(max-width:768px){
-  /* MOBILE NAV SWITCH — both halves are required. Omitting either one
-     removes the hamburger entirely and strands the whole menu. */
+  /* MOBILE NAV SWITCH — these three now also fire at 1024px in the HEADER FIT
+     block near the top of the file, because the desktop nav cannot fit
+     between roughly 770 and 1000px. They are repeated here deliberately:
+     identical values, no conflict, and removing either copy is how the
+     hamburger goes missing. */
   .nav{display:none}
   .hdr-right{display:none}
   .burger{display:flex}
@@ -979,6 +1069,14 @@ table.cmp .yes{color:#059669;font-weight:700}
      removed, in BOTH the schema and the visible FAQ. The subpage is
      still reachable from the footer and the mobile menu, so nothing
      is orphaned.
+ 15. ANCHOR TEXT, FINISHED PROPERLY (Sep 2 2026). Point 14 removed
+     the FAQ link but MISSED the two sitewide chrome links, which are
+     a far bigger signal than one in-body link because they appear on
+     every URL on the site. Both now read "How to Choose an SEO
+     Company": the footer Company column and the mobile menu Company
+     section. Destination unchanged in both cases — only the anchor
+     text moved. If you ever add that page back to the desktop top
+     nav, use the same label.
 
   OPEN TODOs — do NOT invent either URL:
   • Replace the share.google/ shortlink with the full canonical Maps
@@ -1193,9 +1291,14 @@ table.cmp .yes{color:#059669;font-weight:700}
   FIVE SEARCH SURFACES COVERED:
     1. SEO      — ranked blue links (Google, Bing)
     2. LOCAL    — Google Maps and the local 3-pack
-    3. AIO      — Google AI Overviews
+    3. AIO      — Google AI Overviews and AI Mode
     4. GEO      — generative answers (ChatGPT, Perplexity, Gemini)
     5. AGENTIC  — autonomous AI research agents that shortlist vendors
+  NOTE ON SURFACE 3: AI Overviews and AI Mode share Google's index and
+    its query fan-out mechanic, but they select their citations
+    separately and overlap on only a small share of cited URLs. They
+    are covered together here as one Google AI surface and separately
+    in detail at https://eyetoad.com/aio-seo-system/.
   SERVICES:
     - SEO (technical, on-page, off-page, content)
     - Local SEO / Google Maps / Google Business Profile
@@ -1248,6 +1351,10 @@ table.cmp .yes{color:#059669;font-weight:700}
   domain-search widget in the hero of the page we are trying to rank
   for "Denver SEO" dilutes the topical signal, and it competes with
   the highest-margin CTA on the site.
+  ALSO LOAD-BEARING FOR THE HEADER FIT: the phone number and the VIP
+  membership link here are the reason the header can safely drop its
+  own copies of both at narrow widths. If you ever remove either
+  from this bar, revisit the HEADER FIT breakpoints in the CSS first.
   ============================================================ -->
 <div class="ubar">
   <div class="wrap ubar-inner">
@@ -1292,6 +1399,9 @@ table.cmp .yes{color:#059669;font-weight:700}
   under Company, and linked from the Local SEO and Denver Authority
   section CTAs.
   ON SUB-PAGES: mark the current page's nav link with aria-current="page".
+  NOTE (Sep 2 2026): the markup here is UNCHANGED. The clipped Free
+  Audit button was never a markup problem — see the HEADER FIT block
+  in the CSS. Do not "fix" this by deleting nav items.
   ============================================================ -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
@@ -1353,7 +1463,15 @@ table.cmp .yes{color:#059669;font-weight:700}
   </div>
 </header>
 
-<!-- MOBILE NAV — top offset is set by JS (measureHeader), never hard-coded -->
+<!-- MOBILE NAV — top offset is set by JS (measureHeader), never hard-coded.
+     ANCHOR TEXT FIX (Sep 2 2026): the Company entry for
+     /best-denver-seo-company/ now reads "How to Choose an SEO Company",
+     matching the footer. It previously said "Best Denver SEO Company" —
+     which was an oversight, not a decision. The footer was relabelled to
+     stop feeding that subpage "Denver SEO company" anchor text from every
+     URL on the site while it outranks this homepage for the head term, and
+     a sitewide mobile menu is every URL on the site. Both chrome links now
+     say the same thing. Destination unchanged. -->
 <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
   <a href="/marketing-subscription/" class="mob-vip">⚡ VIP Marketing Subscription — $69.99/mo</a>
   <a href="/grow-my-business/" class="mob-tool">🚀 Grow My Business — Free Tool</a>
@@ -1382,7 +1500,7 @@ table.cmp .yes{color:#059669;font-weight:700}
   <a href="/blog/">SEO Blog</a>
   <a href="/about/">About Eye To Ad Media</a>
   <a href="/case-studies/">Case Studies</a>
-  <a href="/best-denver-seo-company/">Best Denver SEO Company</a>
+  <a href="/best-denver-seo-company/">How to Choose an SEO Company</a>
   <a href="/vip-marketing/" style="color:#F97316;font-weight:700;">✨ VIP Marketing — NFC Offer</a>
   <a href="/ad-lab/" style="color:#F97316;font-weight:700;">⚗️ Ad Lab — Interactive Marketing</a>
   <a href="/ad-lab/rpg/" style="color:#F97316;padding-left:24px;font-size:.88rem;opacity:.85;">↳ SEO Quest RPG</a>
@@ -1413,7 +1531,6 @@ table.cmp .yes{color:#059669;font-weight:700}
     <span class="ai-txt">not just traditional search</span>
   </div>
 </div>
-
 
 <main id="main">
 
@@ -1789,6 +1906,11 @@ table.cmp .yes{color:#059669;font-weight:700}
   published this comparison. Strongest single AIO/GEO asset on the page.
   FIVE rows. The heading, the intro paragraph, the caption and the note
   underneath all say five. Change one, change all four.
+  AI MODE (Sep 2 2026): folded into the EXISTING AIO row rather than
+  added as a sixth. It is another Google AI surface, not a sixth
+  competitive arena. The full Overviews-vs-AI-Mode distinction — they
+  share an index and a fan-out mechanic but cite largely different
+  pages — is covered on /aio-seo-system/.
   ============================================================ -->
 <section class="section" style="background:#fff;" aria-labelledby="cmp-h2">
   <div class="wrap">
@@ -1823,8 +1945,8 @@ table.cmp .yes{color:#059669;font-weight:700}
           </tr>
           <tr>
             <th scope="row">AIO</th>
-            <td>Google AI Overviews, above the blue links</td>
-            <td>Direct-answer formatting, question-shaped headings, schema, extractable facts</td>
+            <td>Google AI Overviews above the blue links, and AI Mode instead of them</td>
+            <td>Direct-answer formatting, question-shaped headings, schema, extractable facts — selected passage by passage, not page by page</td>
             <td><span class="yes">Most Denver agencies</span></td>
           </tr>
           <tr>
@@ -1902,18 +2024,30 @@ table.cmp .yes{color:#059669;font-weight:700}
   the site's editorial standard — no unsourced precision. If a figure
   cannot be attributed, state it qualitatively or remove it.
 
-  THE MOST VALUABLE CLAIM ON THIS PAGE is the local-vs-informational
-  split: AI Overviews are common on informational queries and rare on
-  local-intent ones. It contradicts the prevailing panic narrative,
-  it is checkable, and corrections of a widely-repeated error are
-  disproportionately likely to be cited by answer engines.
+  THE MOST VALUABLE CLAIM ON THIS PAGE is the local intent split: AI
+  Overviews are common on informational-local questions and rare on
+  plain "near me" searches. It contradicts the prevailing panic
+  narrative, it is checkable, and corrections of a widely-repeated
+  error are disproportionately likely to be cited by answer engines.
 
-  THIS SECTION IS DATED CONTENT. Re-verify every figure by Feb 2027
-  or replace the section outright. Stale statistics with confident
-  dates are worse than no statistics.
+  >>> REVISED Sep 2 2026. The previous version of that claim said AI
+  Overviews appear on "only about 7% of searches with local intent."
+  That was the late-2025 figure (7.9%) and it had been overtaken. It
+  UNDERSTATED our own argument, which is the one place on this page we
+  could not afford a stale number — the section's whole premise is
+  that almost nobody reports this accurately. Replaced with
+  Whitespark's 540-query intent split. The argument is unchanged and
+  now stronger.
+
+  THIS SECTION IS DATED CONTENT. One figure went stale in under a
+  month, so the old "re-verify by Feb 2027" cadence was too slow.
+  SPOT-CHECK EVERY QUARTER, full re-verification by Feb 2027 at the
+  latest, or replace the section outright. Stale statistics with
+  confident dates are worse than no statistics.
 
   It reuses table.cmp styles deliberately — the five-row rule in the
-  CSS comment applies to the OTHER table, not this one.
+  CSS comment applies to the OTHER table, not this one, which is why
+  a seventh row could be added here without touching a heading.
 
   LINK NOTE (Sep 2 2026): the closing paragraph used to link to
   /best-denver-seo-company/ with the anchor "the best Denver SEO
@@ -1921,30 +2055,31 @@ table.cmp .yes{color:#059669;font-weight:700}
   the head term "Denver SEO", which is backwards. The homepage should
   not be handing it more anchor text while that is true. The
   paragraph now sends the reader to the free audit instead. The
-  subpage is still linked from the footer and the mobile menu.
+  subpage is still linked from the footer and the mobile menu, with
+  neutral anchor text.
   ============================================================ -->
 <section class="section" style="background:#fff;" aria-labelledby="shift-h2">
   <div class="wrap">
     <div class="tc" style="margin-bottom:8px;">
-      <span class="chip chip-purple" style="margin:0 auto 12px;">Updated August 2026</span>
+      <span class="chip chip-purple" style="margin:0 auto 12px;">Updated September 2026</span>
       <h2 id="shift-h2">What Actually Changed in Denver SEO in 2026 — and Why Most Local Businesses Are Reading It Wrong</h2>
       <p style="max-width:700px;margin:10px auto 0;">There is a lot of noise about AI killing search. Some of it is true. The part that matters most for a Denver service business is the part almost nobody reports accurately.</p>
     </div>
 
     <div class="wis-answer" style="margin-top:30px;">
       <p class="wis-label">📌 Quick Answer</p>
-      <p><strong>AI Overviews have changed informational search dramatically and local search far less.</strong> Industry research compiled in 2026 put AI Overviews on roughly 48% of all Google searches by March 2026 — but on only about 7% of searches with local intent. When someone in Denver searches "emergency plumber near me" or "HVAC repair Arvada," Google still returns a map pack with three businesses, reviews and phone numbers. The businesses panicking about AI Overviews are often the ones whose real problem is that their Google Business Profile is half-finished.</p>
+      <p><strong>AI Overviews have changed informational search dramatically and local search unevenly — and how the customer phrases the query decides which.</strong> Whitespark's 540-query study across three cities and six industries found AI Overviews on about 68% of local business queries against local packs on about 39%. Split by intent it inverts: plain "near me" style searches triggered an Overview only around 15% of the time, while informational-local questions triggered one roughly 77% of the time. So when someone in Denver searches "emergency plumber near me," Google still returns a map pack with businesses, reviews and phone numbers — while that same plumber's guide content is being summarized above the fold. The businesses panicking about their map pack are usually the ones whose real problem is a half-finished Google Business Profile. The ones who should be worried are watching their informational traffic quietly disappear and have not noticed.</p>
     </div>
 
     <div class="wis-body" style="margin-top:32px;">
-      <p><strong>What genuinely shifted.</strong> At Google I/O in May 2026, Google announced that AI Mode had passed one billion monthly users, with query volume reported as more than doubling each quarter since launch. Alongside that, analysts tracking AI Overview citations found the share of cited sources drawn from the top ten organic results had fallen sharply from where it sat in mid-2025 — meaning ranking first no longer guarantees you are the source the answer is built from. Google also confirmed in July 2026 that smaller core updates now roll continuously without announcement, which is why rankings move on weeks when no update has been named.</p>
+      <p><strong>What genuinely shifted.</strong> At Google I/O in May 2026, Google announced that AI Mode had passed one billion monthly users, with query volume reported as more than doubling each quarter since launch. Alongside that, analysts tracking AI Overview citations found the share of cited sources drawn from the top ten organic results had fallen sharply from where it sat in mid-2025 — meaning ranking first no longer guarantees you are the source the answer is built from. Google also confirmed in July 2026 that smaller core updates now roll continuously without announcement, which is why rankings move on weeks when no update has been named. And in June 2026 Google finally gave site owners a way to see any of this, with a dedicated generative AI performance report in Search Console.</p>
 
       <p><strong>What that means in practice.</strong> Two different jobs now sit under the heading "Denver SEO," and they are optimised differently. Informational content — the blog posts, the guides, the explainers — is competing to be <em>quoted</em> inside an answer. Commercial local content — your service pages, your Google Business Profile, your reviews — is still competing to be <em>ranked and called</em>. Treating both the same way is the most common mistake we see when a business brings us their previous agency's work.</p>
     </div>
 
     <div class="cmp-wrap" style="margin-top:34px;">
       <table class="cmp">
-        <caption>How the 2026 AI search changes affect a Denver local business — Eye To Ad Media, verified August 14, 2026.</caption>
+        <caption>How the 2026 AI search changes affect a Denver local business — Eye To Ad Media, verified September 2, 2026.</caption>
         <thead>
           <tr>
             <th scope="col">What changed</th>
@@ -1961,17 +2096,22 @@ table.cmp .yes{color:#059669;font-weight:700}
           <tr>
             <th scope="row">AI Overviews on informational queries</th>
             <td>~48% of all searches, per research compiled March 2026</td>
-            <td>Blog and guide traffic falls even when rankings hold. A field study reported by Search Engine Journal found click-through dropping roughly 38% on queries where an AI Overview appears.</td>
+            <td>Blog and guide traffic falls even when rankings hold. A randomized field experiment circulated in 2026 by Agarwal and Sen found organic clicks dropping roughly 40% on queries where an AI Overview appears, with the no-click share rising from about 54% to 72%.</td>
           </tr>
           <tr>
             <th scope="row">AI Overviews on <em>local</em> queries</th>
-            <td>~7%, per local SEO research compiled 2026</td>
-            <td><span class="yes">The map pack still decides local.</span> If you sell to people searching "near me" in Denver, your Google Business Profile is still the highest-leverage asset you own.</td>
+            <td>~15% on "near me", ~77% on informational-local, per Whitespark's 540-query study</td>
+            <td><span class="yes">Phrasing decides everything.</span> If you sell to people searching "near me" in Denver, your Google Business Profile is still the highest-leverage asset you own. If your traffic comes from guides and how-tos, that layer is already being summarized above the fold.</td>
           </tr>
           <tr>
             <th scope="row">Citation source mix</th>
-            <td>Tracked through 2026</td>
-            <td>The share of AI Overview citations coming from top-ten organic results fell substantially against mid-2025 levels. Being cited is now a separate objective from ranking.</td>
+            <td>76% → 38% between July 2025 and March 2026, per Ahrefs</td>
+            <td>The share of AI Overview citations coming from top-ten organic results roughly halved across a dataset of around 863,000 keyword SERPs. Position still helps — position one carries about a 53% chance of appearing — but roughly six in ten citations now go to pages outside page one. <span class="yes">Being cited is a separate objective from ranking.</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Google finally reports AI visibility</th>
+            <td>Launched June 3, 2026; worldwide August 31, 2026</td>
+            <td>Search Console now carries a dedicated generative AI performance report covering AI Overviews and AI Mode. It gives impressions by page, country, device and date — and deliberately withholds clicks, click-through rate, queries and position. Data starts May 2026, so there is no earlier history to compare against. <a href="/aio-seo-system/" style="color:var(--blue);font-weight:600;">How to read it →</a></td>
           </tr>
           <tr>
             <th scope="row">Ask Maps goes agentic</th>
@@ -1981,13 +2121,13 @@ table.cmp .yes{color:#059669;font-weight:700}
           <tr>
             <th scope="row">Agentic booking for local services</th>
             <td>Announced at I/O 2026, US rollout summer 2026</td>
-            <td><span class="yes">The one to prepare for.</span> Covering categories including home repair, beauty and pet care — in some cases Google's AI will phone the business on the customer's behalf. If nobody answers, it moves to the next provider.</td>
+            <td><span class="yes">The one to prepare for.</span> Covering categories including home repair, beauty and pet care — in some cases Google's AI will phone the business on the customer's behalf. Google's own documentation describes booking through a booking partner first and an automated call second, so the call is the fallback for businesses with no machine-readable availability. If nobody answers, it moves to the next provider.</td>
           </tr>
         </tbody>
       </table>
     </div>
     <p class="cmp-swipe" aria-hidden="true">← swipe the table sideways →</p>
-    <p class="cmp-note">Figures above are drawn from published industry research and Google's own announcements as of August 14, 2026. Percentages vary by methodology, category and device — treat them as direction, not precision.</p>
+    <p class="cmp-note">Figures above are drawn from published industry research and Google's own announcements as of September 2, 2026. Local intent splits are from Whitespark; citation-share figures are from Ahrefs; click-loss figures are from the Agarwal and Sen field experiment. Percentages vary by methodology, category and device — treat them as direction, not precision.</p>
 
     <div class="tc" style="margin:48px auto 0;">
       <span class="chip chip-orange" style="margin:0 auto 10px;">What We'd Do About It</span>
@@ -2025,7 +2165,6 @@ table.cmp .yes{color:#059669;font-weight:700}
     </div>
   </div>
 </section>
-
 
 <!-- ============================================================
   VISIBLE ENTITY FACT SHEET
@@ -2307,7 +2446,6 @@ table.cmp .yes{color:#059669;font-weight:700}
   </div>
 </section>
 
-
 <!-- FAQ — OFF-WHITE SKEW
      22 VISIBLE QUESTIONS. The FAQPage schema in <head> mirrors all 22, in
      this order, with this wording. If you add, remove or reword one here,
@@ -2536,6 +2674,12 @@ table.cmp .yes{color:#059669;font-weight:700}
   Locations lives in the Company column (moved out of the top nav to
   make room for the Grow My Business tool). Do not remove it from
   here or the page becomes genuinely orphaned.
+  ANCHOR TEXT (Sep 2 2026): the /best-denver-seo-company/ entry reads
+  "How to Choose an SEO Company", and the mobile menu now matches. A
+  sitewide chrome link is the single largest anchor-text signal on the
+  site, and while that subpage outranks this homepage for the head
+  term it should not be receiving "Best Denver SEO Company" from every
+  URL we own. Destination unchanged; only the anchor text moved.
   ============================================================ -->
 <footer class="footer" aria-label="Site footer">
   <div class="wrap">
@@ -2631,7 +2775,10 @@ table.cmp .yes{color:#059669;font-weight:700}
 
   /* Mobile nav offset is MEASURED, never hard-coded. The old build pinned
      .mob-nav to top:300px, which had to be kept in sync with
-     .hdr-inner{height:300px} by hand — and wasn't. */
+     .hdr-inner{height:300px} by hand — and wasn't.
+     This is also why the HEADER FIT breakpoints needed no JS change: the
+     menu position is derived from the rendered header, whatever size it
+     happens to be at that viewport width. */
   function measureHeader(){
     var r=hdr.getBoundingClientRect();
     mobNav.style.top=Math.max(0,r.bottom)+'px';
@@ -3040,6 +3187,15 @@ table.cmp .yes{color:#059669;font-weight:700}
 
   DEFER: the script is deferred, so it never blocks rendering and the
   widget mounts after the page is parsed. Do not remove the attribute.
+
+  >>> OPEN BUG (Sep 2 2026), FIX IN /iris.js NOT HERE: the launcher is
+  supposed to hide itself while the hero is on screen. Since the move
+  to the external file that behaviour is not firing, and on desktop
+  the launcher and its "Grow my business" pill sit on top of the hero
+  form's service dropdown. Look for the hero IntersectionObserver or
+  its selector inside iris.js — the hero markup on this page is
+  unchanged, so a stale selector is the likely cause. Do NOT paper
+  over it with z-index or extra margin in this file.
   ============================================================ -->
 <script src="/iris.js" defer></script>
 
