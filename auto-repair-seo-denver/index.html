@@ -301,6 +301,53 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
 .drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
 .drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+/* ============================================================
+   INDUSTRIES MEGA-DROPDOWN — CHROME v5 (Sep 2 2026)
+
+   WHY THIS EXISTS: the site has SEVENTEEN live industry pages and
+   the v4 dropdown listed nine. The other eight — auto repair,
+   dermatology, electrician, landscaping, personal injury, plumber,
+   restaurant and veterinarian — had NO sitewide internal link at
+   all and were reachable only via the /industries/ hub. A sitewide
+   nav link is one of the strongest internal signals a page can
+   receive, so those eight were being starved of the one thing that
+   was cheapest to give them.
+
+   WHY IT IS NOT A FLAT LIST: seventeen items in one column is a
+   ~700px tall menu, which is worse UX than the problem it solves.
+   This is a three-column grouped panel — six, five and six — that
+   stays one screenful on any laptop.
+
+   IT IS DELIBERATELY NOT A .drop. If it shared that class, the
+   existing rule `.ni:hover .drop{transform:translateY(0)}` would
+   cancel the translateX(-50%) that centres this panel and it would
+   hang off the right edge of the viewport. Two classes, two hover
+   rules, no interference. Do not merge them.
+
+   LABELS ARE SHORTENED ("Dentist SEO", not "Dentist SEO Denver").
+   Seventeen sitewide links all reading "<Industry> SEO Denver" is a
+   lot of identical exact-match anchor text pointing at seventeen
+   pages from every URL on the site. The geo term is carried by each
+   page's own title, H1, content and schema; the nav does not need
+   to repeat it seventeen times. This is an anchor-diversity choice,
+   not an oversight.
+
+   IF YOU ADD AN INDUSTRY PAGE: add it to the right group HERE, in
+   the MOBILE NAV, and on the /industries/ hub — same commit.
+   ============================================================ */
+.drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
+.ni:hover .drop-mega,.ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
+.drop-mega a{display:block;padding:7px 9px;border-radius:6px;font-size:.85rem;line-height:1.35;color:rgba(255,255,255,.72);transition:all .15s}
+.drop-mega a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+.drop-mega a[aria-current="page"]{background:rgba(37,99,235,.22);color:#BFDBFE;font-weight:700}
+.drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+.drop-all a{color:#93C5FD;font-weight:700}
+@media(max-width:1150px){.drop-mega{width:540px;gap:2px 10px}.drop-mega a{font-size:.81rem;padding:6px 8px}}
+/* mobile nav group sub-labels — quieter than .mob-sec so the three
+   industry groups read as subdivisions of Industries, not as peers
+   of Services and Company */
+.mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
 .hdr-right{display:flex;align-items:center;gap:9px}
 .hdr-call{display:flex;align-items:center;gap:7px;font-size:.9rem;font-weight:700;color:var(--orange);padding:8px 14px;border-radius:var(--r8);border:1.5px solid rgba(249,115,22,.4);transition:all .2s;white-space:nowrap}
 .hdr-call:hover{background:rgba(249,115,22,.1);border-color:var(--orange)}
@@ -961,16 +1008,37 @@ table.ar-tbl .no{color:#B42318;font-weight:700}
       </div>
       <div class="ni">
         <a href="/industries/" class="nl">Industries ▾</a>
-        <div class="drop">
-          <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
-          <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
-          <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
-          <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
-          <a href="/fitness-marketing-denver/">Fitness Marketing Denver</a>
-          <a href="/real-estate-marketing-denver/">Real Estate Marketing Denver</a>
-          <a href="/chiropractor-seo-denver/">Chiropractor SEO Denver</a>
-          <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
-          <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
+        <!-- CHROME v5 — all 17 industry pages, grouped into three columns.
+             See the .drop-mega note in the CSS for why this is not a .drop
+             and why the labels drop the "Denver" suffix. -->
+        <div class="drop-mega">
+          <div class="dg">
+            <h5>Home &amp; Trade</h5>
+          <a href="/contractor-seo-denver/">Contractor SEO</a>
+          <a href="/electrician-seo-denver/">Electrician SEO</a>
+          <a href="/hvac-seo-denver/">HVAC SEO</a>
+          <a href="/landscaping-seo-denver/">Landscaping SEO</a>
+          <a href="/plumber-seo-denver/">Plumber SEO</a>
+          <a href="/roofing-seo-denver/">Roofing SEO</a>
+          </div>
+          <div class="dg">
+            <h5>Health &amp; Wellness</h5>
+          <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+          <a href="/dentist-seo-denver/">Dentist SEO</a>
+          <a href="/dermatology-seo-denver/">Dermatology SEO</a>
+          <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+          <a href="/veterinarian-seo-denver/">Veterinarian SEO</a>
+          </div>
+          <div class="dg">
+            <h5>Professional &amp; Consumer</h5>
+          <a href="/auto-repair-seo-denver/" aria-current="page">Auto Repair SEO</a>
+          <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+          <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+          <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
+          <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+          <a href="/restaurant-seo-denver/">Restaurant SEO</a>
+          </div>
+          <div class="drop-all"><a href="/industries/">Compare all 17 industries →</a></div>
         </div>
       </div>
       <a href="/grow-my-business/" class="nl nl-tool">🚀 Grow My Business</a>
@@ -1016,15 +1084,27 @@ table.ar-tbl .no{color:#B42318;font-weight:700}
   <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
   <a href="/free-seo-audit/">Free SEO Audit</a>
   <div class="mob-sec">Industries</div>
-  <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
-  <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
-  <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
-  <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
-  <a href="/fitness-marketing-denver/">Fitness Marketing Denver</a>
-  <a href="/real-estate-marketing-denver/">Real Estate Marketing Denver</a>
-  <a href="/chiropractor-seo-denver/">Chiropractor SEO Denver</a>
-  <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
-  <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
+  <div class="mob-sub">Home &amp; Trade</div>
+  <a href="/contractor-seo-denver/">Contractor SEO</a>
+  <a href="/electrician-seo-denver/">Electrician SEO</a>
+  <a href="/hvac-seo-denver/">HVAC SEO</a>
+  <a href="/landscaping-seo-denver/">Landscaping SEO</a>
+  <a href="/plumber-seo-denver/">Plumber SEO</a>
+  <a href="/roofing-seo-denver/">Roofing SEO</a>
+  <div class="mob-sub">Health &amp; Wellness</div>
+  <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+  <a href="/dentist-seo-denver/">Dentist SEO</a>
+  <a href="/dermatology-seo-denver/">Dermatology SEO</a>
+  <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+  <a href="/veterinarian-seo-denver/">Veterinarian SEO</a>
+  <div class="mob-sub">Professional &amp; Consumer</div>
+  <a href="/auto-repair-seo-denver/" aria-current="page">Auto Repair SEO</a>
+  <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+  <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+  <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
+  <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+  <a href="/restaurant-seo-denver/">Restaurant SEO</a>
+  <a href="/industries/">Compare all 17 industries →</a>
   <div class="mob-sec">Company</div>
   <a href="/locations/">Service Locations</a>
   <a href="/blog/">SEO Blog</a>
