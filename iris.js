@@ -101,7 +101,7 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
 
 
 /* ── full figure: she gets a proper entrance when the panel opens, then the
-   conversation scrolls over her. Draws from the same <symbol> as the
+   conversation scrolls over her. Draws from the same <g id="irx-iris"> as the
    launcher, so the artwork exists once in the file. ── */
 .ir-stage{display:flex;flex-direction:column;align-items:center;padding:6px 0 14px;
   animation:ir-stage-in .55s cubic-bezier(.34,1.3,.64,1) both}
@@ -435,7 +435,10 @@ var IRIS_HTML = `
         <radialGradient id="irxHalo" cx=".5" cy=".5" r=".5">
           <stop offset=".55" stop-color="#FF8438" stop-opacity=".4"/><stop offset="1" stop-color="#FF8438" stop-opacity="0"/>
         </radialGradient>
-      </defs><symbol id="irx-iris" viewBox="0 0 170 320"><g id="irx-art" class="irx-float">
+      </defs><!-- Plain <g>, NOT a <symbol>: a symbol's own viewBox overrides the crop on
+       the <svg> using it, which squeezed the full figure into the 64px
+       launcher instead of showing the bust. Keep this a <g>. -->
+  <g id="irx-iris"><g id="irx-art" class="irx-float">
 
         <!-- ===== STAFF (behind) ===== -->
         <path d="M30 62 L27 300" stroke="#93A6C9" stroke-width="7" stroke-linecap="round"/>
@@ -617,7 +620,7 @@ var IRIS_HTML = `
         <circle cx="70" cy="58" r="5.5" fill="url(#irxEye)" stroke="#0B1626" stroke-width="2"/>
         <circle cx="70" cy="58" r="2" fill="#0B1626"/>
         <circle cx="72" cy="20" r="4.5" fill="#FBBF24" stroke="#0B1626" stroke-width="2.5" class="irx-glow"/>
-      </g></symbol></svg>
+      </g></g></svg>
 
   <!-- ═══════════ PROACTIVE BUBBLE ═══════════ -->
   <div class="ir-bubble" id="ir-bubble" role="status">
@@ -637,7 +640,7 @@ var IRIS_HTML = `
     <button class="ir-fab" id="ir-fab" type="button" aria-expanded="false"
             aria-controls="ir-panel" aria-label="Open chat with Iris, growth assistant">
       <!-- ── IRIS: target-bodied growth bot. Cloned into the header avatar at runtime. ── -->
-      <svg viewBox="16 4 138 138" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use href="#irx-iris"/></svg>
+      <svg viewBox="22 6 126 126" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><use href="#irx-iris"/></svg>
       <span class="ir-badge" id="ir-badge" aria-hidden="true"></span>
     </button>
 
