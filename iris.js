@@ -1909,6 +1909,9 @@ if (window.visualViewport) window.visualViewport.addEventListener('resize', fitV
 function openPanel(){
   if (S.open) return;
   S.open = true;
+  /* Announce open state on <body>. The mascot (and anything else pinned to a
+     corner) hides itself off this class rather than guessing Iris's z-index. */
+  document.body.classList.add('ir-panel-open');
   $panel.classList.remove('ir-closing');
   $panel.classList.add('ir-open');
   $panel.setAttribute('aria-hidden', 'false');
@@ -1933,6 +1936,7 @@ window.irisReady = true;
 function closePanel(){
   if (!S.open) return;
   S.open = false;
+  document.body.classList.remove('ir-panel-open');
   $panel.classList.add('ir-closing');
   $fab.setAttribute('aria-expanded', 'false');
   setTimeout(function(){
