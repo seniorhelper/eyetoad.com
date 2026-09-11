@@ -1,6 +1,20 @@
 /*!
 ================================================================================
-  IRIS — Eye To Ad Media Growth Assistant · v6.0
+  IRIS — Eye To Ad Media Growth Assistant · v7.0
+  v7.0 (Sept 11 2026): CRYSTAL ORB launcher — before the first open the
+  launcher is a glowing orb labelled "Meet the marketing wizard"; one click
+  bursts it in a puff and Iris arrives, then the panel opens. Proactive bubble
+  rebuilt as a white comic balloon with a real tail. Staff flame got its glow
+  back as a genuine SVG filter plus a pulsing bloom, and three more sparks.
+  Pill carries a slow shimmer sweep. NOTHING FLASHES — every animation added
+  here runs on a 2.6s+ cycle, well outside the WCAG 2.3.1 three-per-second
+  threshold, and the whole set goes still under prefers-reduced-motion.
+  Knowledge base expanded with a `tips` family of sourced marketing gems, a
+  much wider conversational layer (good day / bad day / burned before / just
+  browsing / maybe), seven more industry families, an explicit excluded-
+  industries policy entry, and far broader yes/no slang coverage. Messages can
+  now carry safe internal links. Corner handoff with /mascot.js: he speaks
+  first, she waits on `eta-mascot-live`.
   v6.0 (Sept 10 2026): new character artwork — a growth wizard with a flame-
   crowned staff and the one-eyed Eye Toad crest, drawn in SVG and namespaced
   irx-* so nothing can collide with the host page. Launcher and the panel
@@ -76,6 +90,11 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
    and price in the hero. It now hides completely until the hero scrolls away.
    Desktop is unaffected — the hero form occupies that side of the layout. */
 .ir-launch.ir-gone{opacity:0;pointer-events:none;transform:scale(.6)}
+/* ir-await: the relay. Held back until the mascot has left the stage, or
+   released on a short timer when there is no mascot on the page at all.
+   Separate class from ir-gone because the two guards release on different
+   conditions and must not clear one another. */
+.ir-launch.ir-await{opacity:0;pointer-events:none;transform:translateY(14px) scale(.7)}
 
 .ir-fab{
   width:68px;height:68px;flex-shrink:0;border-radius:50%;border:none;cursor:pointer;
@@ -99,6 +118,127 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
 @keyframes ir-ping{0%{box-shadow:0 0 0 0 rgba(255,122,47,.5)}
   70%,100%{box-shadow:0 0 0 20px rgba(255,122,47,0)}}
 
+
+/* ══════════════════ CRYSTAL ORB (v7.0) ══════════════════
+   Before the first open, the launcher is not Iris — it is a glowing orb.
+   Curiosity outperforms a labelled chat button for first clicks, and the orb
+   is consistent with the character already being a wizard.
+
+   ACCESSIBILITY — READ BEFORE CHANGING ANY TIMING BELOW.
+   Nothing here flashes. The WCAG 2.3.1 threshold is three flashes per second;
+   every animation in this block runs on a 2.6s cycle or slower and changes
+   opacity/scale gradually rather than switching states. That is a deliberate
+   liability decision, not an aesthetic one. If you speed any of these up past
+   roughly 2s, you are re-introducing a seizure risk. Don't.
+   The whole block also goes still under prefers-reduced-motion (bottom of this
+   stylesheet), and the launcher keeps a real button role + aria-label so a
+   screen reader announces it as a chat control, not decoration. */
+.ir-orb-wrap{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  border-radius:50%;pointer-events:none}
+.ir-launch.ir-orb-mode .ir-orb-wrap{display:flex}
+.ir-launch.ir-orb-mode .ir-fab > svg:not(.ir-orb){opacity:0}
+/* THE BED (v7.1). The first pass had a huge multi-layer bloom that washed out
+   the ball itself — the glow was reading as the object. Halved the spreads and
+   dropped the opacities so the halo sits BEHIND the sphere instead of eating
+   it, and made the fab itself transparent: the orb SVG now carries its own
+   body, so there is no gradient disc competing with the artwork drawn on top
+   of it. Launcher also grows 68 -> 88px in orb mode so the detail is visible
+   at arm's length on a phone. */
+.ir-launch.ir-orb-mode .ir-fab{
+  width:88px;height:88px;
+  background:transparent;
+  /* ══ NO BOX-SHADOW AT ALL (v7.3) ══
+     v7.2 removed the dark drop shadow and the ring was STILL there. The cause
+     was not the shadow colour — it was the seam. A box-shadow glow starts at
+     the element's 88px edge, while the SVG's own aura faded out well before
+     that, leaving an unlit gap between the two that read as a dark ring on a
+     dark page. Two glow systems with different falloffs will always produce a
+     band where they meet.
+     The entire glow is now drawn INSIDE the SVG as one continuous radial
+     gradient that overflows the viewBox. One falloff, no seam, no ring.
+     Do not reintroduce box-shadow here. */
+  box-shadow:none;
+}
+/* the halo ping is for the orange fab; it double-glows the orb. Off in orb mode. */
+.ir-launch.ir-orb-mode .ir-fab::after{display:none}
+.ir-orb{width:92px!important;height:92px!important;overflow:visible}
+/* the whole ball turns, slowly — 26s, so it reads as drifting rather than spinning */
+.ir-orb-turn{transform-box:fill-box;transform-origin:center;animation:ir-orb-spin 26s linear infinite}
+.ir-orb-facet{transform-box:fill-box;transform-origin:center;animation:ir-orb-spin 34s linear infinite reverse}
+.ir-orb-star{transform-box:fill-box;transform-origin:center;animation:ir-star 4.8s ease-in-out infinite}
+.ir-orb-star:nth-of-type(2){animation-delay:1.6s}
+.ir-orb-star:nth-of-type(3){animation-delay:3.1s}
+/* ══ THE GLOW, now SVG-side (v7.3) ══ breathes on a 5.4s cycle. Because it is
+   a gradient rather than a stack of shadows, it fades to nothing smoothly and
+   there is no edge anywhere in it. */
+.ir-orb-glow{transform-box:fill-box;transform-origin:center;animation:ir-glow 5.4s ease-in-out infinite}
+@keyframes ir-glow{0%,100%{opacity:.72;transform:scale(1)}50%{opacity:1;transform:scale(1.09)}}
+
+/* ══ GLYPH CAROUSEL (v7.3) ══ six marketing symbols taking turns inside the
+   glass — search, chart, map pin, star, chat, and the Eye To Ad eye. Each
+   holds for ~3s of an 18s loop, cross-fading with a slight turn. The eye is
+   now one of six rather than the only thing in there.
+   18s / 6 = a symbol change every three seconds, and each transition takes a
+   full second. Nothing here is remotely near a flash. */
+.ir-glyph{transform-box:fill-box;transform-origin:50px 52px;opacity:0;
+  animation:ir-glyph 18s ease-in-out infinite}
+.ir-glyph:nth-of-type(2){animation-delay:3s}
+.ir-glyph:nth-of-type(3){animation-delay:6s}
+.ir-glyph:nth-of-type(4){animation-delay:9s}
+.ir-glyph:nth-of-type(5){animation-delay:12s}
+.ir-glyph:nth-of-type(6){animation-delay:15s}
+@keyframes ir-glyph{
+  0%{opacity:0;transform:scale(.72) rotate(-14deg)}
+  4%{opacity:.85;transform:scale(1) rotate(0deg)}
+  14%{opacity:.85;transform:scale(1) rotate(0deg)}
+  19%{opacity:0;transform:scale(.78) rotate(12deg)}
+  100%{opacity:0;transform:scale(.72) rotate(-14deg)}
+}
+
+/* STEAM (v7.2) — soft blurred wisps drifting up off the ball, like heat off a
+   surface. 7.5s cycle, opacity peaking at .5, heavily blurred: the eye catches
+   the drift in peripheral vision and never registers a transition. This is the
+   "fabric moving in air" effect, not a pulse. Nowhere near a flash. */
+.ir-orb-wisp{transform-box:fill-box;transform-origin:center bottom;
+  animation:ir-wisp 7.5s ease-in-out infinite}
+.ir-orb-wisp:nth-of-type(2){animation-delay:2.5s;animation-duration:8.6s}
+.ir-orb-wisp:nth-of-type(3){animation-delay:5s;animation-duration:6.9s}
+@keyframes ir-wisp{
+  0%{opacity:0;transform:translateY(4px) scaleX(1) scaleY(.7)}
+  25%{opacity:.5}
+  60%{opacity:.34;transform:translateY(-16px) scaleX(1.25) scaleY(1.15)}
+  100%{opacity:0;transform:translateY(-34px) scaleX(1.7) scaleY(1.5)}
+}
+@keyframes ir-star{0%,100%{opacity:.15;transform:scale(.7) rotate(0deg)}
+  50%{opacity:1;transform:scale(1.15) rotate(45deg)}}
+.ir-orb-core{transform-box:fill-box;transform-origin:center;animation:ir-orb-core 5.2s ease-in-out infinite}
+@keyframes ir-orb-core{0%,100%{opacity:.82;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+.ir-orb-neb{transform-box:fill-box;transform-origin:center;animation:ir-orb-spin 14s linear infinite}
+.ir-orb-neb2{transform-box:fill-box;transform-origin:center;animation:ir-orb-spin 22s linear infinite reverse}
+@keyframes ir-orb-spin{to{transform:rotate(360deg)}}
+.ir-orb-ring{transform-box:fill-box;transform-origin:center;animation:ir-orb-spin 11s linear infinite}
+.ir-orb-mote{animation:ir-mote 3.4s ease-in-out infinite}
+.ir-orb-mote:nth-of-type(2){animation-delay:.8s}
+.ir-orb-mote:nth-of-type(3){animation-delay:1.7s}
+.ir-orb-mote:nth-of-type(4){animation-delay:2.4s}
+@keyframes ir-mote{0%,100%{opacity:.2;transform:translateY(2px)}50%{opacity:.95;transform:translateY(-3px)}}
+
+/* POOF — the orb bursts and Iris is standing there. Runs once, ~700ms. */
+.ir-poof{position:absolute;inset:-18px;display:none;pointer-events:none;overflow:visible}
+.ir-launch.ir-poofing .ir-poof{display:block}
+.ir-launch.ir-poofing .ir-orb-wrap{animation:ir-orb-burst .42s ease-in forwards}
+@keyframes ir-orb-burst{0%{opacity:1;transform:scale(1)}55%{opacity:.9;transform:scale(1.28)}
+  100%{opacity:0;transform:scale(.3)}}
+.ir-launch.ir-poofing .ir-fab > svg:not(.ir-orb){animation:ir-iris-arrive .6s cubic-bezier(.34,1.4,.64,1) .22s both}
+@keyframes ir-iris-arrive{0%{opacity:0;transform:scale(.55) translateY(8px)}
+  60%{opacity:1}100%{opacity:1;transform:scale(1) translateY(0)}}
+.ir-pf{transform-box:fill-box;transform-origin:center;animation:ir-pf-go .72s ease-out forwards}
+.ir-pf:nth-of-type(2){animation-delay:.04s}.ir-pf:nth-of-type(3){animation-delay:.08s}
+.ir-pf:nth-of-type(4){animation-delay:.02s}.ir-pf:nth-of-type(5){animation-delay:.1s}
+.ir-pf:nth-of-type(6){animation-delay:.06s}.ir-pf:nth-of-type(7){animation-delay:.12s}
+.ir-pf:nth-of-type(8){animation-delay:.09s}
+@keyframes ir-pf-go{0%{opacity:0;transform:scale(.2)}22%{opacity:.95}
+  100%{opacity:0;transform:scale(2.3)}}
 
 /* ── full figure: she gets a proper entrance when the panel opens, then the
    conversation scrolls over her. Draws from the same <g id="irx-iris"> as the
@@ -131,12 +271,22 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
 @keyframes irxFlameA{0%{transform:scaleY(.94) scaleX(1.04) skewX(-3deg)}100%{transform:scaleY(1.1) scaleX(.95) skewX(4deg)}}
 @keyframes irxFlameB{0%{transform:scaleY(1.08) skewX(3deg)}100%{transform:scaleY(.92) skewX(-4deg)}}
 @keyframes irxFlameC{0%{transform:scaleY(.9) skewX(-2deg)}100%{transform:scaleY(1.14) skewX(3deg)}}
+/* STAFF GLOW (v7.0) — the flame lost its halo in an earlier pass. It is back
+   as a real SVG blur filter plus a soft pulsing bloom behind the tongues, so
+   the light reads as coming OFF the flame rather than being painted on it.
+   4.2s cycle: slow bloom, no flash. */
+.irx-bloom{transform-box:fill-box;transform-origin:center;animation:irxBloom 4.2s ease-in-out infinite}
+@keyframes irxBloom{0%,100%{opacity:.34;transform:scale(.92)}50%{opacity:.78;transform:scale(1.16)}}
+.irx-flame-a,.irx-flame-b,.irx-flame-c{filter:url(#irxFlameGlow)}
 /* sparks rise off the top and fade — upward only */
 .irx-spark{animation:irxRise 2.6s ease-out infinite}
 .irx-spark:nth-of-type(2){animation-delay:.5s}
 .irx-spark:nth-of-type(3){animation-delay:1s}
 .irx-spark:nth-of-type(4){animation-delay:1.5s}
 .irx-spark:nth-of-type(5){animation-delay:2s}
+.irx-spark:nth-of-type(6){animation-delay:.85s}
+.irx-spark:nth-of-type(7){animation-delay:1.75s}
+.irx-spark:nth-of-type(8){animation-delay:2.35s}
 @keyframes irxRise{
   0%{opacity:0;transform:translate(0,10px) scale(.5)}
   18%{opacity:1}
@@ -170,42 +320,84 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
 .ir-pill-dot{width:7px;height:7px;border-radius:50%;background:#ff7a2f;flex:none;
   box-shadow:0 0 0 0 rgba(255,122,47,.6);animation:ir-pilse 2.6s ease-out infinite}
 @keyframes ir-pilse{0%{box-shadow:0 0 0 0 rgba(255,122,47,.6)}70%,100%{box-shadow:0 0 0 9px rgba(255,122,47,0)}}
+/* SHIMMER (v7.0) — a light sweep travelling across the pill every 3.4s.
+   This is the "fabric moving in air" effect: peripheral motion that catches
+   the eye without a single on/off transition anywhere in it. It is a moving
+   gradient, not a blink. Do not convert this to an opacity toggle. */
+.ir-pill{position:relative;overflow:hidden}
+.ir-pill::after{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,196,140,.26),transparent);
+  transform:skewX(-18deg);animation:ir-shimmer 3.4s ease-in-out infinite;pointer-events:none}
+@keyframes ir-shimmer{0%{left:-60%}55%,100%{left:130%}}
 .ir-pill:hover{background:#132339;color:#fff;border-color:#ff7a2f;transform:translateX(-2px)}
+/* PILL IN ORB MODE (v7.2) — NOW SITS UNDER THE ORB, NOT BESIDE IT.
+   v7.1 kept it in the default row-reverse position, which meant a ~200px text
+   bar reaching leftward across whatever was standing there — in practice, the
+   mascot. Hiding it while he was on screen fixed the overlap and created a
+   worse bug: the release for 'eta-mascot-live' only ran when he LEFT, so on a
+   page where nobody dismissed him the label was hidden permanently and the orb
+   shipped with no wording at all.
+   Stacking it below removes the horizontal reach entirely, so there is nothing
+   to collide with and nothing to hide. The label is now always visible. Do not
+   reintroduce a rule that hides the pill off another component's state. */
+.ir-launch.ir-orb-mode{flex-direction:column;align-items:center;gap:9px}
+.ir-launch.ir-orb-mode .ir-pill{
+  background:linear-gradient(140deg,#1b2e52,#10203a);border-color:rgba(170,215,255,.55);
+  color:#eaf6ff;white-space:normal;max-width:150px;line-height:1.28;
+  text-align:center;justify-content:center;align-items:center;
+  border-radius:12px;padding:9px 13px;font-size:12.5px;font-weight:700;
+  box-shadow:0 6px 22px rgba(6,16,34,.5),0 0 18px rgba(150,205,255,.22)}
+.ir-launch.ir-orb-mode .ir-pill-dot{display:none}
+.ir-pill{transition:opacity .3s ease,transform .3s ease,background .18s,color .18s,border-color .18s}
+.ir-launch.ir-orb-mode .ir-pill-dot{background:#9fd8f7;
+  box-shadow:0 0 0 0 rgba(159,216,247,.7);animation:ir-pilse-c 2.8s ease-out infinite}
+@keyframes ir-pilse-c{0%{box-shadow:0 0 0 0 rgba(159,216,247,.7)}70%,100%{box-shadow:0 0 0 10px rgba(159,216,247,0)}}
 .ir-pill:focus-visible{outline:2px solid #ffd9a0;outline-offset:3px}
 @media(max-width:400px){.ir-pill{font-size:12px;padding:8px 12px}}
 
-/* proactive bubble — fires once, ~25s, dismissible */
+/* PROACTIVE BUBBLE (v7.0) — rebuilt as a classic white comic speech balloon.
+   The old dark gradient box read as a system notification and was ignored; a
+   white bubble with a real tail reads as a character SAYING something, which
+   is the whole point. Big rounded corners, generous tail, dark text for
+   contrast (the old #cfe0f2 on navy was marginal at 13px). */
 .ir-bubble{
-  position:absolute;right:0;bottom:84px;width:276px;
-  background:linear-gradient(160deg,#132741,#0a1626 60%);
-  border:1px solid rgba(255,122,47,.45);border-radius:18px 18px 6px 18px;
-  padding:15px 17px 14px;box-shadow:0 20px 56px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.07);
-  display:none;animation:ir-pop .34s cubic-bezier(.34,1.56,.64,1) forwards;
+  position:absolute;right:0;bottom:92px;width:286px;
+  background:#fff;border:3px solid #14305a;border-radius:26px;
+  padding:16px 18px 15px;
+  box-shadow:0 22px 52px rgba(6,16,34,.44),0 4px 12px rgba(6,16,34,.22);
+  display:none;animation:ir-pop .38s cubic-bezier(.34,1.5,.64,1) forwards;color:#0F1B33;
 }
-/* tail pointing down at the launcher */
-.ir-bubble::after{content:'';position:absolute;right:26px;bottom:-9px;width:16px;height:16px;
-  background:#0a1626;border-right:1px solid rgba(255,122,47,.45);
-  border-bottom:1px solid rgba(255,122,47,.45);transform:rotate(45deg);border-bottom-right-radius:4px}
-.ir-bub-head{display:flex;align-items:baseline;gap:8px;margin-bottom:7px;padding-right:18px}
-.ir-bub-name{font-size:13.5px;font-weight:800;color:#fff;letter-spacing:-.01em}
-.ir-bub-role{font-size:10.5px;font-weight:600;color:#4ade80}
+/* tail: a rotated square patched over the border so it reads as one shape */
+.ir-bubble::after{content:'';position:absolute;right:30px;bottom:-13px;width:22px;height:22px;
+  background:#fff;border-right:3px solid #14305a;border-bottom:3px solid #14305a;
+  transform:rotate(45deg);border-bottom-right-radius:6px}
+.ir-bub-head{display:flex;align-items:baseline;gap:8px;margin-bottom:7px;padding-right:22px}
+.ir-bub-name{font-size:14px;font-weight:800;color:#14305a;letter-spacing:-.01em}
+.ir-bub-role{font-size:10.5px;font-weight:700;color:#128a4a}
 .ir-bub-role::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;
-  background:#4ade80;margin-right:5px;vertical-align:middle}
+  background:#16a34a;margin-right:5px;vertical-align:middle}
 .ir-bubble.ir-show{display:block}
-.ir-bub-txt{font-size:13px;color:#cfe0f2;line-height:1.55}
-.ir-bub-txt b{color:#ffb066;font-weight:700}
+.ir-bub-txt{font-size:13.5px;color:#24344f;line-height:1.58;font-weight:500}
+/* bold inside the bubble is the load-bearing word — dark, heavy, high contrast */
+.ir-bub-txt b{color:#0B1B38;font-weight:800}
+/* inline links inside a bot message (see fmt()) */
+.ir-lnk{color:#2563EB;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.ir-lnk:hover{color:#1D4ED8}
 .ir-bub-act{display:flex;gap:8px;margin-top:11px}
 .ir-bub-yes{flex:1;background:linear-gradient(140deg,#ff7a2f,#ff9f45);color:#fff;border:none;
   border-radius:9px;padding:8px 10px;font-size:12.5px;font-weight:700;cursor:pointer;
   font-family:'Outfit',sans-serif;transition:filter .16s}
 .ir-bub-yes:hover{filter:brightness(1.1)}
-.ir-bub-no{background:rgba(255,255,255,.07);color:#7d92ab;border:1px solid rgba(255,255,255,.1);
-  border-radius:9px;padding:8px 12px;font-size:12.5px;font-weight:600;cursor:pointer;
-  font-family:'Outfit',sans-serif;transition:color .16s}
-.ir-bub-no:hover{color:#dce9f5}
-.ir-bub-x{position:absolute;top:7px;right:9px;background:none;border:none;color:#41586f;
-  font-size:15px;cursor:pointer;line-height:1;padding:3px;font-family:'Outfit',sans-serif}
-.ir-bub-x:hover{color:#dce9f5}
+.ir-bub-no{background:#EDF1F8;color:#5C6B85;border:1px solid #D7E0EE;
+  border-radius:9px;padding:8px 12px;font-size:12.5px;font-weight:700;cursor:pointer;
+  font-family:'Outfit',sans-serif;transition:all .16s}
+.ir-bub-no:hover{color:#14305a;background:#E2E9F5}
+.ir-bub-x{position:absolute;top:8px;right:10px;width:24px;height:24px;background:#EDF1F8;
+  border:none;border-radius:50%;color:#14305a;display:grid;place-items:center;
+  font-size:13px;cursor:pointer;line-height:1;padding:0;font-family:'Outfit',sans-serif}
+.ir-bub-x:hover{background:#DCE5F5}
+.ir-bub-yes:focus-visible,.ir-bub-no:focus-visible,.ir-bub-x:focus-visible{
+  outline:3px solid #14305a;outline-offset:2px}
 @keyframes ir-pop{from{opacity:0;transform:translateY(10px) scale(.94)}
   to{opacity:1;transform:translateY(0) scale(1)}}
 
@@ -376,6 +568,14 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
   #irisw *,#irisw *::before,#irisw *::after{
     animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important;scroll-behavior:auto!important}
+  /* the orb's glow is carried by an animated box-shadow, so it needs its
+     resting state pinned explicitly — killing the animation alone would leave
+     it on whatever frame it stopped at. */
+  /* the glow is SVG now, so it just holds still at full strength */
+  .ir-orb-glow{animation:none!important;opacity:.88!important}
+  .ir-glyph{animation:none!important}
+  .ir-glyph:nth-of-type(6){opacity:.85!important}
+  .ir-pill::after{display:none!important}
 }
 `;
 
@@ -435,6 +635,56 @@ var IRIS_HTML = `
         <radialGradient id="irxHalo" cx=".5" cy=".5" r=".5">
           <stop offset=".55" stop-color="#FF8438" stop-opacity=".4"/><stop offset="1" stop-color="#FF8438" stop-opacity="0"/>
         </radialGradient>
+        <!-- v7.0: real light bleed off the flame. A blur of the source graphic
+             composited UNDER the crisp original, so the tongues stay sharp and
+             only the halo is soft. This is what was missing when the glow
+             "disappeared" — the earlier build had colour but no filter. -->
+        <filter id="irxFlameGlow" x="-140%" y="-140%" width="380%" height="380%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3.4" result="b"/>
+          <feColorMatrix in="b" type="matrix" result="warm"
+            values="1.25 0 0 0 0  0 .82 0 0 0  0 0 .25 0 0  0 0 0 1.35 0"/>
+          <feMerge><feMergeNode in="warm"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <radialGradient id="irxBloomG" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="#FFF3D0" stop-opacity=".95"/>
+          <stop offset=".38" stop-color="#FFB347" stop-opacity=".55"/>
+          <stop offset=".72" stop-color="#FF6A1A" stop-opacity=".22"/>
+          <stop offset="1" stop-color="#FF6A1A" stop-opacity="0"/>
+        </radialGradient>
+        <!-- ══ ORB GRADIENTS (v7.0) ══ -->
+        <radialGradient id="irOrbBody" cx=".36" cy=".30" r=".82">
+          <stop offset="0" stop-color="#FFFFFF"/>
+          <stop offset=".26" stop-color="#EAFAFF"/>
+          <stop offset=".55" stop-color="#A9DDF9"/>
+          <stop offset=".80" stop-color="#7FA8E8"/>
+          <stop offset="1" stop-color="#5C7FD0"/>
+        </radialGradient>
+        <!-- v7.3: this now carries the whole glow, so the stops run from the
+             glass edge (~.32 of r=104) all the way out to nothing. The long
+             tail between .55 and 1 is what kills the ring — the light has
+             somewhere to fade TO instead of stopping at an element boundary. -->
+        <radialGradient id="irOrbAura" cx=".5" cy=".5" r=".5">
+          <stop offset=".26" stop-color="#F2FCFF" stop-opacity=".92"/>
+          <stop offset=".34" stop-color="#CFF0FF" stop-opacity=".62"/>
+          <stop offset=".45" stop-color="#9FD4FF" stop-opacity=".38"/>
+          <stop offset=".58" stop-color="#A78BFA" stop-opacity=".22"/>
+          <stop offset=".72" stop-color="#8FA8FF" stop-opacity=".12"/>
+          <stop offset=".86" stop-color="#FFC98A" stop-opacity=".05"/>
+          <stop offset="1" stop-color="#FFC98A" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="irOrbBlur" x="-120%" y="-160%" width="340%" height="420%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3.6"/>
+        </filter>
+        <radialGradient id="irOrbShell" cx=".5" cy=".5" r=".5">
+          <stop offset=".72" stop-color="#BBE4FA" stop-opacity=".15"/>
+          <stop offset=".93" stop-color="#7FB6EA" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#4C74C4" stop-opacity=".85"/>
+        </radialGradient>
+        <linearGradient id="irOrbNeb" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#FFFFFF" stop-opacity=".85"/>
+          <stop offset=".5" stop-color="#7DD3FC" stop-opacity=".45"/>
+          <stop offset="1" stop-color="#C4B5FD" stop-opacity=".7"/>
+        </linearGradient>
       </defs><!-- Plain <g>, NOT a <symbol>: a symbol's own viewBox overrides the crop on
        the <svg> using it, which squeezed the full figure into the 64px
        launcher instead of showing the bust. Keep this a <g>. -->
@@ -446,6 +696,7 @@ var IRIS_HTML = `
         <!-- staff tip: flame licking UPWARD, never rotating. Three nested
              tongues on offset flicker timers so the shape never repeats
              exactly, plus sparks rising off the top and fading out. -->
+        <circle class="irx-bloom" cx="31" cy="30" r="26" fill="url(#irxBloomG)"/>
         <g class="irx-flame-a">
           <path d="M31 6 C22 24 17 33 20 41 C23 48 39 48 42 41 C45 33 40 24 31 6 Z" fill="#FF6A1A" opacity=".92"/>
         </g>
@@ -460,6 +711,9 @@ var IRIS_HTML = `
         <circle class="irx-spark" cx="31" cy="18" r="1.5" fill="#FFD9A0"/>
         <circle class="irx-spark" cx="27" cy="22" r="1.9" fill="#FF6A1A"/>
         <circle class="irx-spark" cx="36" cy="34" r="1.6" fill="#FBBF24"/>
+        <circle class="irx-spark" cx="21" cy="24" r="1.3" fill="#FFF3D0"/>
+        <circle class="irx-spark" cx="41" cy="32" r="1.4" fill="#FFD9A0"/>
+        <circle class="irx-spark" cx="33" cy="12" r="1.1" fill="#FF8438"/>
 
         <!-- ===== ROBE ===== -->
         <g class="irx-hem">
@@ -626,8 +880,8 @@ var IRIS_HTML = `
   <div class="ir-bubble" id="ir-bubble" role="status">
     <button class="ir-bub-x" id="ir-bub-x" type="button" aria-label="Dismiss">&#10005;</button>
     <div class="ir-bub-head"><span class="ir-bub-name">Iris</span><span class="ir-bub-role">Growth assistant</span></div>
-    <div class="ir-bub-txt">Most sites lose customers somewhere they can&rsquo;t see.
-      Tell me your website and I&rsquo;ll tell you where yours is leaking.</div>
+    <div class="ir-bub-txt">Google drops <b>53%</b> of mobile visitors before three seconds.
+      Tell me your website and I&rsquo;ll show you where yours is <b>leaking customers</b>.</div>
     <div class="ir-bub-act">
       <button class="ir-bub-yes" id="ir-bub-yes" type="button">Let's talk</button>
       <button class="ir-bub-no" id="ir-bub-no" type="button">Not now</button>
@@ -641,10 +895,133 @@ var IRIS_HTML = `
             aria-controls="ir-panel" aria-label="Open chat with Iris, growth assistant">
       <!-- ── IRIS: target-bodied growth bot. Cloned into the header avatar at runtime. ── -->
       <svg viewBox="22 6 126 126" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" preserveAspectRatio="xMidYMid meet"><use href="#irx-iris"/></svg>
+
+      <!-- ══ CRYSTAL ORB (v7.0) ══ What a first-time visitor sees instead of
+           Iris. One click bursts it and she is standing there. The button's
+           aria-label still says "chat", so nothing about this is a mystery to
+           assistive tech — the reveal is a visual flourish only. -->
+      <span class="ir-orb-wrap" aria-hidden="true">
+        <svg class="ir-orb" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <!-- ══ GLOW ══ deliberately far larger than the viewBox (the SVG is
+               overflow:visible). This single gradient is the ENTIRE glow —
+               see the v7.3 note on .ir-orb-mode .ir-fab for why there is no
+               box-shadow anywhere near this component. -->
+          <circle class="ir-orb-glow" cx="50" cy="50" r="104" fill="url(#irOrbAura)"/>
+
+          <!-- ══ STEAM ══ drifts up off the top of the glass -->
+          <g filter="url(#irOrbBlur)">
+            <ellipse class="ir-orb-wisp" cx="42" cy="22" rx="9" ry="5" fill="#DFF4FF" opacity=".5"/>
+            <ellipse class="ir-orb-wisp" cx="58" cy="20" rx="7" ry="4.2" fill="#E6DFFF" opacity=".45"/>
+            <ellipse class="ir-orb-wisp" cx="50" cy="17" rx="6" ry="3.6" fill="#FFF3E0" opacity=".4"/>
+          </g>
+
+          <!-- ══ GLASS BODY ══ -->
+          <circle cx="50" cy="50" r="33" fill="url(#irOrbShell)"/>
+          <circle class="ir-orb-core" cx="50" cy="50" r="33" fill="url(#irOrbBody)"/>
+
+          <!-- ══ INTERIOR, drifting ══ -->
+          <g class="ir-orb-turn">
+            <g class="ir-orb-neb" opacity=".7">
+              <path d="M26 53 C34 36 66 34 76 47 C63 41 44 45 35 59 Z" fill="url(#irOrbNeb)"/>
+            </g>
+            <g class="ir-orb-neb2" opacity=".55">
+              <path d="M30 63 C40 53 62 55 72 63 C59 59 44 60 34 68 Z" fill="url(#irOrbNeb)"/>
+            </g>
+          </g>
+
+          <!-- ══ GLYPH CAROUSEL ══ six symbols, one at a time, inside the glass.
+               Keep these simple and chunky: at 92px on a phone, anything with
+               fine detail turns to mush. -->
+          <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- 1. search -->
+            <g class="ir-glyph" stroke="#0B1B38" stroke-width="3.2" opacity="0">
+              <circle cx="47" cy="49" r="9"/><path d="M54 56 L61 63"/>
+            </g>
+            <!-- 2. rising bars -->
+            <g class="ir-glyph" opacity="0">
+              <rect x="38" y="54" width="5.5" height="9" rx="2" fill="#0B1B38"/>
+              <rect x="46.5" y="48" width="5.5" height="15" rx="2" fill="#0B1B38"/>
+              <rect x="55" y="42" width="5.5" height="21" rx="2" fill="#0B1B38"/>
+              <path d="M38 40 L60 40" stroke="#C2410C" stroke-width="0"/>
+            </g>
+            <!-- 3. map pin -->
+            <g class="ir-glyph" opacity="0">
+              <path d="M50 38 C44 38 40 43 40 48 C40 55 50 66 50 66 C50 66 60 55 60 48 C60 43 56 38 50 38 Z"
+                    fill="#0B1B38"/>
+              <circle cx="50" cy="48" r="3.6" fill="#EAFAFF"/>
+            </g>
+            <!-- 4. star -->
+            <g class="ir-glyph" opacity="0">
+              <path d="M50 38 L54 48 L65 49 L56.5 56 L59 67 L50 61 L41 67 L43.5 56 L35 49 L46 48 Z"
+                    fill="#0B1B38"/>
+            </g>
+            <!-- 5. chat -->
+            <g class="ir-glyph" opacity="0">
+              <path d="M37 42 L63 42 Q66 42 66 45 L66 57 Q66 60 63 60 L52 60 L45 67 L45 60 L37 60 Q34 60 34 57 L34 45 Q34 42 37 42 Z"
+                    fill="#0B1B38"/>
+              <circle cx="43" cy="51" r="2" fill="#EAFAFF"/>
+              <circle cx="50" cy="51" r="2" fill="#EAFAFF"/>
+              <circle cx="57" cy="51" r="2" fill="#EAFAFF"/>
+            </g>
+            <!-- 6. the Eye To Ad eye — still here, now one of six -->
+            <g class="ir-glyph" opacity="0">
+              <path d="M34 52 C41 42 59 42 66 52 C59 62 41 62 34 52 Z" fill="#0B1B38"/>
+              <circle cx="50" cy="52" r="5.6" fill="#EAFAFF"/>
+              <circle cx="50" cy="52" r="2.6" fill="#0B1B38"/>
+            </g>
+          </g>
+
+          <!-- ══ FACET / REFRACTION lines, counter-rotating ══ -->
+          <g class="ir-orb-facet" opacity=".5">
+            <path d="M50 17 C34 30 34 70 50 83" fill="none" stroke="#fff" stroke-width="1" opacity=".45"/>
+            <path d="M50 17 C66 30 66 70 50 83" fill="none" stroke="#fff" stroke-width="1" opacity=".3"/>
+            <ellipse cx="50" cy="50" rx="33" ry="11" fill="none" stroke="#fff" stroke-width=".9" opacity=".35"/>
+          </g>
+
+          <!-- ══ ORBITING RINGS ══ -->
+          <!-- ONE orbit ring, not two (v7.3). Two crossing rings turned the
+               silhouette into a scribble at 92px and competed with the glyph
+               inside. If you decide you want the ring gone entirely, delete
+               this block — nothing else depends on it. -->
+          <g class="ir-orb-ring">
+            <ellipse cx="50" cy="50" rx="41" ry="14" fill="none" stroke="#FFC98A"
+                     stroke-width="2" opacity=".7" transform="rotate(-22 50 50)"/>
+          </g>
+
+          <!-- ══ GLASS HIGHLIGHTS ══ specular top-left, caustic arc bottom-right -->
+          <ellipse cx="39" cy="36" rx="12" ry="7.5" fill="#fff" opacity=".95" transform="rotate(-28 39 36)"/>
+          <ellipse cx="33" cy="45" rx="4" ry="2.4" fill="#fff" opacity=".6" transform="rotate(-28 33 45)"/>
+          <path d="M31 66 C38 76 62 76 70 65" fill="none" stroke="#fff" stroke-width="2.6"
+                stroke-linecap="round" opacity=".38"/>
+          <circle cx="50" cy="50" r="33" fill="none" stroke="#fff" stroke-width="1.1" opacity=".5"/>
+
+          <!-- ══ SPARKLES ══ four-point stars, slow twinkle, never a flash -->
+          <path class="ir-orb-star" d="M18 30 L20 36 L26 38 L20 40 L18 46 L16 40 L10 38 L16 36 Z" fill="#FFF3D0"/>
+          <path class="ir-orb-star" d="M84 44 L85.5 48.5 L90 50 L85.5 51.5 L84 56 L82.5 51.5 L78 50 L82.5 48.5 Z" fill="#BFEBFF"/>
+          <path class="ir-orb-star" d="M70 80 L71.4 84 L75.5 85.4 L71.4 86.8 L70 91 L68.6 86.8 L64.5 85.4 L68.6 84 Z" fill="#C4B5FD"/>
+          <circle class="ir-orb-mote" cx="24" cy="72" r="1.9" fill="#FFC98A"/>
+          <circle class="ir-orb-mote" cx="88" cy="66" r="1.5" fill="#EAFAFF"/>
+        </svg>
+      </span>
+
+      <!-- poof: fires once, on the reveal click -->
+      <span class="ir-poof" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <circle class="ir-pf" cx="60" cy="60" r="13" fill="#fff" opacity=".9"/>
+          <circle class="ir-pf" cx="36" cy="44" r="9" fill="#EAFAFF"/>
+          <circle class="ir-pf" cx="84" cy="46" r="8" fill="#DCEEFF"/>
+          <circle class="ir-pf" cx="44" cy="82" r="10" fill="#F3E9FF"/>
+          <circle class="ir-pf" cx="80" cy="80" r="7" fill="#FFEBD3"/>
+          <circle class="ir-pf" cx="60" cy="30" r="6" fill="#fff"/>
+          <circle class="ir-pf" cx="26" cy="62" r="6" fill="#EAFAFF"/>
+          <circle class="ir-pf" cx="94" cy="62" r="5" fill="#F3E9FF"/>
+        </svg>
+      </span>
+
       <span class="ir-badge" id="ir-badge" aria-hidden="true"></span>
     </button>
 
-    <button class="ir-pill" id="ir-pill" type="button" tabindex="-1"><span class="ir-pill-dot" aria-hidden="true"></span>Grow your business</button>
+    <button class="ir-pill" id="ir-pill" type="button" tabindex="-1"><span class="ir-pill-dot" aria-hidden="true"></span><span id="ir-pill-t">Click here to meet the marketing wizard</span></button>
   </div>
 `;
 
@@ -676,7 +1053,7 @@ function mount(){
   ensureFont();
 
   var st = document.createElement('style');
-  st.setAttribute('data-iris', 'v5.7');
+  st.setAttribute('data-iris', 'v7.0');
   st.textContent = IRIS_CSS;
   document.head.appendChild(st);
 
@@ -731,7 +1108,7 @@ var CFG = {
   STEP_MS      : 900,     // pause before each lead-capture question
   CHAIN_MS     : 1250,    // pause before resuming the form after a mid-form answer
   MAX_TURNS_SOFT: 4,      // turns before Iris starts working a soft close
-  VERSION      : 'iris-v5.7'
+  VERSION      : 'iris-v7.0'
 };
 
 /* ─────────────── SMALL UTILITIES ─────────────── */
@@ -1127,7 +1504,7 @@ KB.push(
 {id:'socialads', fam:'paid',
  k:['facebook ads','instagram ads','social ads','meta ads','tiktok ads','linkedin ads','social media advertising','boost post'],
  a:"Social ads interrupt. Search ads intercept. Both work — for different jobs. 📱\n\nSocial is strong for:\n• Visual products and services where seeing it creates the want\n• Local awareness in a defined radius\n• Retargeting people who visited your site\n• Building an audience before you need it\n• B2B on LinkedIn, where the targeting is genuinely unmatched\n\nSocial is weak for:\n• Urgent-need services. Nobody scrolling Instagram at 11pm suddenly needs a plumber — and if they do, they're searching, not scrolling.\n\nOne caution: boosting posts from the app is not advertising. It's the most expensive way to buy the least useful clicks.",
- c:['Google Ads|ppc','Social media|social','*Free audit|i_audit']},
+ c:['Google Ads|ppc','Social ads|socialads','*Free audit|i_audit']},
 
 {id:'video', fam:'paid',
  k:['video','youtube','video ads','video production','video marketing','commercials','film','video content'],
@@ -1518,6 +1895,427 @@ KB.push(
  c:['*Free audit|i_audit','Google Business Profile|gbp','Reviews|reviews']}
 );
 
+/* ══════════ KB: MARKETING GEMS (v7.0) ══════════
+   REAL, SOURCED NUMBERS ONLY. Every figure below came from a named published
+   study and is attributed in the answer text. If you add an entry here and you
+   cannot name where the number came from, write the answer without a number.
+   An invented statistic is worse than no statistic — it is the one thing a
+   prospect can catch us on.
+   TEACHING POSTURE: give the whole tip, genuinely. Then land on the part that
+   is actually hard to execute. We are not withholding the lesson to create
+   dependence; we are showing our work so the hard part is obvious. */
+KB.push(
+{id:'tip_meta', fam:'tips',
+ k:['meta description','meta descriptions','title tag','title tags','metadata','meta data','meta tags','page title','seo title','snippet','serp snippet','what shows in google','blue link','description tag','write titles','title and description'],
+ a:"Metadata is the cheapest lever in all of marketing and almost nobody pulls it. 🏷️\\n\\n**Your title tag is your headline in a list of headlines.** Everyone in the top ten already has the answer. The title decides who gets the click. In 2025 title tags were still ranked the second most important on-page factor by the SEO industry — and the first organic result averages roughly a 27.6% click-through rate, so the gap between position one and position four is enormous.\\n\\n**Sizing that actually survives.** Around 50–60 characters, or about 580 pixels, on desktop. Mobile cuts near 500 pixels. Front-load the important words so the truncation eats something you can afford to lose.\\n\\n**Here's the part that surprises people.** A Q1 2025 study by John McAlpin across thousands of keywords found Google rewrote **76% of title tags** — up from 61% in Cyrus Shepard's 2023 study. When Google rewrites one, it keeps only about 35% of your original and strips the brand name 63% of the time. So a title stuffed with your company name is a title Google will quietly replace.\\n\\n**The meta description doesn't rank you. It sells the click.** It's the only ad copy on the page you get for free.\\n\\nThe hard part isn't the rules — it's writing 40 of them that each match a different search intent without cannibalising each other. That's the bit that takes judgement.",
+ c:['Want ours done for you?|i_capture','*Free SEO audit|i_audit','How does search work now?|tip_zeroclick','Page speed|tip_speed']},
+
+{id:'tip_speed', fam:'tips',
+ k:['why does speed matter','speed matter','does speed matter','how fast should my site be','load time','loading time','speed and sales','slow site cost','speed conversions','how slow is too slow'],
+ a:"Speed is a revenue number wearing a technical costume. ⚡\\n\\n**The one that should scare you:** Think with Google found **53% of mobile visits are abandoned if a page takes longer than 3 seconds**. That's traffic you already paid for, gone before they saw a word.\\n\\n**It gets worse on the curve.** Google's own research put bounce probability at 90% when load time goes from 1 second to 5. Not double — ninefold.\\n\\n**Small numbers move real money.** Aggregated A/B data puts every 100ms of load time at roughly 1% of conversions. A Deloitte study run with Google found a **0.1-second** improvement raised retail spend about 10%.\\n\\n**And most sites are failing.** Only about 42% of mobile sites pass all three Core Web Vitals. Desktop averages around 2.5 seconds; mobile averages 8.6.\\n\\n**Test it yourself right now:** open your site on your phone, on cellular data, not your office wifi. That's what your customer experiences.\\n\\nThe fixable causes are usually uncompressed images, bloated page-builder code, and eleven tracking scripts nobody remembers installing. The hard part is fixing those without breaking the design — which is exactly why we hand-code rather than stack plugins.",
+ c:['*Check my site speed free|i_audit','Websites|website','Metadata tips|tip_meta','Talk to a human|i_human']},
+
+{id:'tip_match', fam:'tips',
+ k:['message match','continuity','ad to landing page','landing page match','same message','ad and page','scent','why do my ads not convert','ads dont convert','clicks but no leads','paying for clicks','wasted ad spend','quality score'],
+ a:"This is the single most expensive mistake in paid advertising, and it's free to fix. 🎯\\n\\n**The principle:** the page has to finish the sentence the ad started. Same promise, same words, same offer, same look. Someone clicks an ad for \\\"$99 drain cleaning\\\" and lands on a generic homepage — they don't hunt for it. They leave, and you paid for that.\\n\\n**The documented numbers are not subtle.** A Disruptive Advertising case study published on Moz recorded a **212% conversion lift and 69% lower cost per conversion** from message match alone. KlientBoost got a **66% lift** just by making a landing page headline echo the ad copy — no change to the offer, the targeting or the creative.\\n\\n**It also taxes you twice.** Google Quality Score drops roughly a point per mismatch between ad promise and page experience, and each point costs about 13–16% more per conversion. You pay more per click AND convert fewer of them.\\n\\n**Free audit you can run in ten minutes:** click your own ad from your phone. Does the headline you land on repeat the ad's promise? Does the button use the ad's words? Do the colors match? If any answer is no, that's your leak.\\n\\nThe discipline isn't hard to understand. It's hard to maintain across 30 ad groups while someone's also running a business.",
+ c:['*Fix my funnel|i_capture','Conversion optimization|cro','Google Ads|ppc','Free audit|i_audit']},
+
+{id:'tip_nfc', fam:'tips',
+ k:['nfc','nfc card','nfc cards','tap card','tap to review','nfc business card','review card','scan card','tap card review','nfc marketing','smart business card','digital business card'],
+ a:"NFC cards are the best-kept cheap secret in local marketing. 📇\\n\\n**What it is:** a business card with a chip in it. Customer taps their phone on it, your Google review page opens instantly. No QR code to photograph, no link to type, no \\\"I'll do it later\\\" — which is where 95% of review requests go to die.\\n\\n**Why it matters so much:** reviews are not a vanity metric anymore. BrightLocal's 2026 data has businesses with **50+ Google reviews being 266% more likely to appear in the Local Pack** than businesses with fewer than 10. 97% of consumers read reviews before choosing a local business, and 68% now want to see a 4-star minimum before they'll buy.\\n\\n**Two things most people get wrong:**\\n• Timing beats everything. Ask at the moment of highest satisfaction — job finished, customer visibly happy. Not in an email three days later.\\n• A perfect 5.0 is actually trusted *less* than a 4.5. Consumers read flawless as fake. Don't chase perfection; chase volume and respond to everything.\\n\\n**Never buy reviews.** Platforms detect it, and it can cost you the profile you spent years building.\\n\\nWe do NFC cards, stands and stickers — and VIP members get member pricing on them. The cards are cheap. The review engine you build around them is the actual asset.",
+ c:['*Get NFC pricing|i_capture','Reviews & reputation|reviews','Google Business Profile|gbp','VIP membership|pricing']},
+
+{id:'tip_gbp', fam:'tips',
+ k:['gbp tips','optimize my profile','profile tips','maps tips','local pack tips','how to rank in maps','rank in map pack','get in the 3 pack','business profile tips','maps optimization'],
+ a:"Your Google Business Profile is the highest-return free asset a local business owns. Most are about 40% finished. 📍\\n\\n**What the map pack is worth.** Businesses in the top three get **126% more traffic and 93% more actions** — calls, clicks, direction requests — than those sitting at positions 4–10 (SOCi). Roughly 42–44% of local search clicks go to the map pack before anyone reaches an organic result.\\n\\n**And the intent is ferocious.** 76% of people who run a \\\"near me\\\" search visit a business within a day. 28% buy the same day. 46% of all Google searches have local intent.\\n\\n**The checklist, free, in order of impact:**\\n1. **Primary category.** Single biggest lever and the most commonly wrong field on the internet.\\n2. **Every service listed**, each with a real description, not a bare name.\\n3. **Photos.** Adding them drives about 42% more direction requests and 35% more website clicks.\\n4. **Complete the whole profile.** A complete one makes customers 2.7x more likely to see you as reputable and 70% more likely to visit.\\n5. **Turn messaging on.** SOCi puts that at about 35% more leads.\\n6. **Q&A** — you're allowed to ask and answer your own. Almost nobody does.\\n\\n**One warning.** About 38% of top-three businesses have a keyword jammed into their business name. Google prohibits it and you can get your profile suspended. Don't copy what you see.\\n\\nBenchmark: an active profile generates around 59 actions a month. If yours is under that, something's off.",
+ c:['*Free profile audit|i_audit','Reviews|reviews','Local SEO|localseo','NFC review cards|tip_nfc']},
+
+{id:'tip_backlinks', fam:'tips',
+ k:['why backlinks','do backlinks matter','link building tips','how many backlinks','backlink tips','are links important','domain authority tips'],
+ a:"Links are the internet's version of word of mouth, and Google still reads them that way. 🔗\\n\\n**Scale check.** Semrush data puts businesses appearing in the Google map pack at an average of **993 backlinks**. That's not a typo. Authority is not a thing you add at the end.\\n\\n**What actually counts:**\\n• Relevance beats raw volume. One link from a Denver trade association outperforms 200 from a directory farm.\\n• Local citations — chamber, BBB, industry bodies, suppliers, sponsorships — are unglamorous and they work.\\n• Being *mentioned* now matters even without a link, because AI systems weigh brand mentions when deciding who to cite.\\n\\n**Free links most businesses already qualify for and never claim:** your suppliers' dealer pages, any association you pay dues to, local charities you sponsor, the trade school you hire from, your chamber of commerce.\\n\\n**Never buy links.** It's the fastest way to a manual penalty, and unwinding one costs more than the links did.\\n\\nThe honest part: link building is slow, relationship-driven, and largely unautomatable. It's the least fun part of this work and the reason most agencies quietly skip it.",
+ c:['*Free audit|i_audit','SEO|seo','Content strategy|tip_content','Talk to a human|i_human']},
+
+{id:'tip_content', fam:'tips',
+ k:['does content matter','why blog','fresh content','how often should i post','content tips','blogging tips','how many blogs','does blogging work','stale content','update content'],
+ a:"Fresh content isn't about feeding an algorithm. It's about being the one who answered the question. ✍️\\n\\n**The volume data.** Companies publishing 16+ posts a month get roughly 3.5x the traffic of those publishing four or fewer. Long-form pieces earn about 77% more backlinks than short ones.\\n\\n**But volume is the boring half.** The useful half is this: write the answer to the question your customer actually asks on the phone. Not \\\"5 Tips For Homeowners.\\\" Something like \\\"Why is my furnace blowing cold air?\\\" — the sentence a real person types at 11pm.\\n\\n**That's also how you get cited by AI now.** Question-shaped headings, a direct answer in the first two sentences, then the detail. AI systems extract answers; they don't read essays.\\n\\n**Fastest free win:** write down the ten questions you get asked most on sales calls. Each one is a page. You already know the answers cold — you've said them a hundred times.\\n\\n**And update, don't just add.** A post from 2022 that still ranks is worth more refreshed than a new one started from zero.\\n\\nThe hard part is consistency. Everyone writes three posts in January. The compounding happens in month fourteen.",
+ c:['*Content strategy help|i_capture','AI search|geo','SEO|seo','Free audit|i_audit']},
+
+{id:'tip_zeroclick', fam:'tips',
+ k:['zero click','no click','people dont click','search is changing','future of search','is seo changing','ai taking over search','nobody clicks anymore','search without clicking'],
+ a:"The ground moved under search and most business owners haven't been told. 🌐\\n\\n**The headline number:** Semrush put roughly **60% of searches ending without a click** in 2025. The answer appears on the results page and the journey ends there.\\n\\n**Locally it's already normal.** Around 40% of local business queries now trigger an AI Overview. Someone can see your hours, your rating, your phone number and call you — without ever loading your website.\\n\\n**What that changes:**\\n• Your website's job shifts from *being visited* to *being quoted*. The structured facts on it feed the answer even when nobody clicks.\\n• Your Google Business Profile becomes the storefront, not the signpost.\\n• Traffic reports start lying to you. Traffic can fall while calls rise.\\n\\n**Free thing to do today:** open ChatGPT and ask for the best business in your category in your city. Then ask why. If you're not named, you now know something most of your competitors don't — and the reasons it gives you are your to-do list.\\n\\nThe part nobody has a simple answer for is *how* you become the cited source. That's entity clarity, structured data, consistent facts across the whole web, and authority. It's the work we've been building for since before most agencies noticed.",
+ c:['*Am I cited by AI? Find out|i_audit','GEO|geo','AIO|aio','Agentic AI|agentic']},
+
+{id:'tip_mobile', fam:'tips',
+ k:['mobile','mobile site','phone users','responsive','does mobile matter','mobile friendly','mobile experience','mobile traffic'],
+ a:"Your site has two versions and you've only ever really looked at one. 📱\\n\\nRoughly 58–62% of traffic is mobile, and for local service businesses it's usually higher. Yet almost every business owner reviews their site on a desktop monitor in an office with good wifi.\\n\\n**The mobile-only failures I see constantly:**\\n• Phone number that isn't tappable. Costs calls silently, every day.\\n• Phone number below the fold. Nobody scrolls to find it.\\n• A form asking for eight fields with a thumb.\\n• Text at 12px that forces pinch-zoom.\\n• A hero image that eats the entire first screen so the CTA never appears.\\n• Buttons too close together to hit accurately.\\n\\n**Mobile searchers are also 2.3x more likely to call you** from a Business Profile than desktop users (Google/Ipsos). That's the moment you're either easy to reach or invisible.\\n\\n**Two-minute test:** pull your site up on your own phone, on data. Count the taps to reach your phone number. If it's more than one, that's the fix, and it's probably worth more than anything else on your list this month.",
+ c:['*Free mobile audit|i_audit','Page speed|tip_speed','Websites|website','Conversion optimization|cro']},
+
+{id:'tip_tracking', fam:'tips',
+ k:['call tracking','how do i know what works','attribution','which ads work','track leads','measuring','how do i measure','where are leads coming from','roi tracking','know whats working'],
+ a:"\\\"Half my advertising is wasted, I just don't know which half\\\" is a hundred-year-old joke that stopped being funny once tracking got cheap. 📊\\n\\n**Call tracking**, first, because most local businesses convert on the phone and count none of it. A tracking number per channel tells you which source produced which call. Without it you're guessing, and you'll usually guess wrong — people remember the flashy channel, not the effective one.\\n\\n**What to actually watch, in order:**\\n1. **Calls and form fills** — not sessions, not impressions\\n2. **Cost per lead by channel** — the number that ends arguments\\n3. **Close rate by channel** — some sources bring tire-kickers, some bring buyers, and the cheap one is often the worse one\\n4. **Revenue per customer** — because a $90 lead that becomes a $12,000 job is not expensive\\n\\n**The free version:** ask every caller how they found you and write it on a notepad by the phone. Crude, unreliable, and still better than nothing. Do it for 30 days and you'll learn something uncomfortable.\\n\\nThe reason we set tracking up in the first 30 days of every engagement is simple: if we can't prove what we did, you shouldn't keep paying us.",
+ c:['*Set up my tracking|i_capture','Reporting|reporting','Free audit|i_audit','Talk to a human|i_human']},
+
+{id:'tip_mistakes', fam:'tips',
+ k:['common mistakes','biggest mistake','what am i doing wrong','mistakes businesses make','what do most people get wrong','biggest problems','common problems'],
+ a:"After 14 years, the same handful of mistakes account for most of the damage. 🚩\\n\\n**1. Sending ad traffic to the homepage.** The ad promised one thing; the homepage says twelve. Documented fixes to this have produced 200%+ conversion lifts.\\n\\n**2. Treating the Google Business Profile as a one-time setup.** It's the highest-leverage free thing you own and it needs feeding.\\n\\n**3. Judging marketing by traffic.** Traffic is not a business outcome. Calls are.\\n\\n**4. No follow-up system.** Leads that arrive and go cold are the cheapest customers you'll ever lose.\\n\\n**5. A beautiful site that loads in six seconds.** 53% of mobile visitors are gone by second three.\\n\\n**6. Rebuilding the website every two years and resetting the authority.** Migrations done badly undo years of work in an afternoon.\\n\\n**7. Waiting for the perfect moment to start.** SEO compounds. The best time was three years ago; the second best is this week.\\n\\nNone of these are exotic. They're just invisible from the inside, which is the entire reason an outside audit is worth an hour of your time.",
+ c:['*Free audit|i_audit','Message match|tip_match','Google Business Profile|tip_gbp','Pricing|pricing']}
+);
+
+/* ══════════ KB: CONVERSATION (v7.0) ══════════
+   Real people open with small talk. If she can only parse marketing questions,
+   the first message lands on the fallback and half of them never send a second.
+   These are the human-conversation on-ramps. */
+KB.push(
+{id:'w_goodday', fam:'world',
+ k:['good thanks','im good','doing well','pretty good','cant complain','great thanks','doing great','im great','all good','not bad','pretty well','doing alright','im ok','im fine','going well','having a good day','good day so far','fantastic','wonderful','living the dream'],
+ a:"Glad to hear it. 😊 Good days are a decent time to fix something that's been nagging you — the urgent stuff always wins on the bad days.\\n\\nSo, what brings you here? Even a vague answer works. \\\"Phone's too quiet\\\" is a perfectly good starting point.",
+ c:['I need more customers|growth','Just looking around|w_browsing','Teach me something|tip_mistakes','Pricing|pricing']},
+
+{id:'w_badday', fam:'world',
+ k:['bad day','rough day','not good','not great','terrible','awful','stressed','stressful','busy day','long day','been better','rough week','tough week','struggling','overwhelmed','swamped','slammed','exhausted','tired','burnt out','burned out','its been rough','not the best'],
+ a:"Sorry — that's no fun. 🙏\\n\\nI won't pile on with a sales pitch. If you want to tell me what's going on with the business, I'll give you a straight answer and skip the enthusiasm. And if today isn't the day for any of it, that's completely fine too.\\n\\nWhat's going on?",
+ c:['Business is slow|growth','Marketing isnt working|obj_triedseo','Just looking|w_browsing','Tell me a joke|w_joke']},
+
+{id:'w_badagency', fam:'world',
+ k:['bad experience','burned before','got burned','last agency','previous agency','ripped off','scammed','wasted money','took my money','ghosted me','didnt deliver','bad agency','had a bad experience','been burned','trust issues','no results','paid and got nothing'],
+ a:"Yeah. That's depressingly common, and it makes my job harder too — I'm following people who took the money and produced a dashboard. 😤\\n\\n**What usually went wrong**, if it's useful to name it:\\n• You never got told what specifically would be done, so there was nothing to hold them to\\n• Reporting measured impressions and rankings instead of calls and revenue\\n• The person who sold you was not the person who worked on it\\n• Twelve-month term, results promised at month nine\\n\\n**What I'd tell you to demand from anyone — including us:** a named list of deliverables, reporting that shows leads not traffic, and access to your own accounts. If an agency owns your Google Business Profile or your ad account and won't hand it over, that's a red flag by itself.\\n\\nWhat happened with yours? I'd rather hear it than guess.",
+ c:['What makes you different?|why','How do you report?|reporting','*Free second opinion|i_audit','Talk to a human|i_human']},
+
+{id:'w_browsing', fam:'world',
+ k:['just looking','just browsing','just researching','window shopping','not ready','just curious','curious','doing research','comparing','shopping around','getting quotes','early stages','just started looking'],
+ a:"Completely fine — that's what I'm here for, and I won't chase you. 👀\\n\\nResearching properly is the right move. Most bad marketing spend comes from hiring in a panic.\\n\\nIf it helps, ask me anything and I'll answer it straight, including the questions that don't favour us. I'll happily tell you when SEO is the wrong answer for a business.\\n\\nWhat are you trying to figure out?",
+ c:['How to choose an agency|why','Teach me something useful|tip_mistakes','What does it cost?|pricing','How long does SEO take?|obj_timeline']},
+
+{id:'w_myname', fam:'world',
+ k:['my name is','im called','this is','call me','names'],
+ a:"Good to meet you. 👋\\n\\nI'm Iris — I handle the questions around here so you don't have to sit through a sales call to find out what something costs.\\n\\nWhat's the business, and what's not working the way you want?",
+ c:['I need more customers|growth','What do you do?|services','Pricing|pricing','*Free audit|i_audit']},
+
+{id:'w_rude', fam:'world',
+ k:['you suck','youre useless','stupid bot','dumb bot','worthless','hate chatbots','hate bots','you dont understand','this is annoying','waste of time','garbage','terrible bot'],
+ a:"Fair enough — I'd rather you said it than just closed the tab. 🤷\\n\\nI'm a pattern matcher, not a genius, and I do miss things. If I got something wrong, tell me in plainer words and I'll usually catch it the second time.\\n\\nOr skip me entirely: " + CFG.PHONE_MAIN + " gets you an actual human who's considerably smarter than I am.",
+ c:['Talk to a human|i_human','Let me try again|i_more','Contact info|contact']},
+
+{id:'w_busy', fam:'world',
+ k:['no time','too busy','im busy','dont have time','make it quick','short version','tldr','get to the point','quickly','in a hurry','summarize'],
+ a:"Understood. Short version: 🏃\\n\\n**We get local businesses found and make the phone ring.** SEO, Google Maps, AI search, ads, websites, conversion work.\\n\\n**The audit is free**, takes us a day, and there's no contract or card involved.\\n\\n**Full-service runs roughly $500–$3,000/month**, or $100/month for one focused piece.\\n\\n**" + CFG.PHONE_MAIN + "** if you'd rather just talk.\\n\\nThat's it. What do you want to know?",
+ c:['*Free audit|i_audit','Pricing detail|pricing','Talk to a human|i_human']},
+
+{id:'w_maybe', fam:'world',
+ k:['maybe','not sure','unsure','i dont know','idk','possibly','perhaps','kind of','sort of','soso','so so','depends','hard to say','could be','we will see','ill think about it','let me think','thinking about it','on the fence'],
+ a:"Honest answer, and a common place to be. 🤔\\n\\nNo pressure from me. Two things that usually help people get unstuck:\\n\\n**1. The free audit.** You find out what's actually wrong with your site whether or not you hire anyone. Worst case you get a useful list and hand it to someone else.\\n\\n**2. Ask me the awkward question.** Whatever's making you hesitate — cost, trust, timing, whether any of this even works for your industry. I'll answer it straight.\\n\\nWhat's the hesitation?",
+ c:['Does SEO even work?|obj_seodead','Whats it cost?|pricing','*Free audit, no strings|i_audit','How long does it take?|obj_timeline']}
+);
+
+/* ══════════ KB: MORE INDUSTRIES (v7.0) ══════════
+   Broad keyword coverage so a one-word trade name lands somewhere real instead
+   of the fallback. v_excluded is a POLICY entry — see the note on it. */
+KB.push(
+{id:'v_mma', fam:'vert',
+ k:['mma','mixed martial arts','karate','jiu jitsu','bjj','brazilian jiu jitsu','muay thai','kickboxing','boxing gym','martial arts','dojo','taekwondo','judo','wrestling','self defense','krav maga','fight gym','grappling','kids martial arts'],
+ a:"Martial arts schools are one of my favourite marketing problems — because the buying decision is emotional and the search behaviour is wildly predictable. 🥋\\n\\n**Two completely different customers:**\\n• **Parents** searching \\\"kids karate near me\\\" — buying discipline, confidence and a safe room. Trust signals matter more than technique.\\n• **Adults** searching \\\"BJJ near me\\\" or \\\"kickboxing classes\\\" — buying fitness, stress relief or genuine skill. They want schedule, price and whether they'll be thrown to the wolves on day one.\\n\\n**What actually moves enrolments:**\\n• The free trial class is the offer. Everything should point at it.\\n• Video beats photos here more than almost any industry. A class in motion sells itself.\\n• Reviews from parents are worth their weight — 97% of consumers read them before choosing a local business.\\n• Schedule on the site, in plain text, not a PDF. \\\"Can I make the 6pm?\\\" is the real question.\\n• January and September are your spikes. The work has to be done in November and July.\\n\\nWe work with gyms and martial arts schools happily. Combat sports are absolutely fine by us.",
+ c:['*Free audit for my school|i_audit','Local SEO|localseo','Video|video','Pricing|pricing']},
+
+{id:'v_trades', fam:'vert',
+ k:['plumber','plumbing','electrician','electrical','hvac','heating','cooling','air conditioning','roofer','roofing','landscaping','landscaper','lawn care','concrete','paving','asphalt','fencing','painter','painting','flooring','drywall','remodeling','remodel','general contractor','handyman','garage door','windows','siding','gutters','pest control','pool service','septic','well drilling','solar','excavation','masonry','tree service','snow removal','appliance repair','locksmith','towing','junk removal','moving company','movers','cleaning service','maid service','pressure washing','chimney','insulation','restoration','water damage','mold'],
+ a:"Home services and trades are our deepest bench — and the market has a very specific shape. 🔧\\n\\n**Three types of demand, and they need different things:**\\n• **Emergency** (burst pipe, no heat, roof leaking): proximity, speed, and a tappable phone number. They call the first credible result. Map pack or nothing.\\n• **Planned** (remodel, new roof, new system): they research for weeks, get three quotes, and read every review. Content and trust signals do this work.\\n• **Seasonal** (AC, heating, snow, storm damage): demand spikes hard. Whoever already ranks captures it while everyone else panic-buys ads at four times the normal cost.\\n\\n**What matters most, in order:**\\n1. Google Business Profile and the map pack — 76% of \\\"near me\\\" searchers visit within a day\\n2. Reviews, continuously — 50+ makes you 266% more likely to appear in the local pack\\n3. Service-area pages that are actually different from each other\\n4. A phone number reachable in one tap on mobile\\n5. Answering the phone, which beats most paid campaigns\\n\\nAnd fair disclosure: the founder personally runs a bath remodeling company, so this isn't theory here. It's the same phone we're trying to make ring.",
+ c:['*Free audit|i_audit','Home services|v_home','Local SEO|localseo','Talk to a human|i_human']},
+
+{id:'v_profsvc', fam:'vert',
+ k:['accountant','accounting','cpa','bookkeeping','tax','insurance agent','insurance agency','mortgage','mortgage broker','lender','loan officer','financial advisor','wealth','title company','notary','staffing','recruiting','consultant','consulting','architect','engineer','surveyor','property management','it services','managed services','msp','security company','printing','signs','equipment rental','b2b'],
+ a:"Professional services have a different problem than trades: the search volume is lower but each customer is worth dramatically more. 💼\\n\\n**What that changes:**\\n• You can't play the volume game. Twenty of the right visitors beats two thousand of the wrong ones.\\n• The sales cycle is long, so content that builds trust over multiple visits does more work than any single landing page.\\n• Referrals are your main channel — but people Google you after the referral. What they find either confirms the recommendation or quietly kills it.\\n\\n**Highest-leverage moves:**\\n1. Own your name and your firm's name in search completely. That's the post-referral check.\\n2. Answer the specific expensive questions your clients actually ask — those pages attract people already in the problem.\\n3. Reviews still matter here, badly. Most professional firms have almost none.\\n4. LinkedIn presence that matches your site, because entity consistency is what AI systems use to decide you're real.\\n\\nB2B searchers are also unusually speed-sensitive — a one-second site converts at roughly three times the rate of a five-second one.",
+ c:['*Free audit|i_audit','Professional services|v_pro','Content strategy|tip_content','Pricing|pricing']},
+
+{id:'v_beauty', fam:'vert',
+ k:['salon','hair salon','barber','barbershop','nails','nail salon','lashes','lash','brows','esthetician','spa','massage','tattoo','tattoo shop','piercing','waxing','tanning','hair stylist','makeup artist','beauty'],
+ a:"Beauty and personal care is a visual, local, repeat-business market — which means three things run the show. 💇\\n\\n**1. Photos.** More than almost any category. Your Google Business Profile photos and your Instagram are the actual portfolio. Adding photos to a profile drives about 42% more direction requests and 35% more website clicks.\\n\\n**2. Online booking.** Every extra step between \\\"I want this\\\" and \\\"I'm booked\\\" costs you appointments. If booking requires a phone call during business hours, you're losing the evening browsers — which is most of them.\\n\\n**3. Individual stylists matter as much as the shop.** People search for a person. Staff pages with names, photos and specialties capture searches the salon name never will.\\n\\n**The retention piece nobody does:** a simple reminder system for rebooking at the right interval. Your existing clients are cheaper to keep than anyone new is to find, and most salons rely purely on the client remembering.\\n\\nReviews and recency both matter here — profiles with strong photo counts and 4.5+ ratings capture a disproportionate share of local clicks.",
+ c:['*Free audit|i_audit','Local SEO|localseo','Reviews|reviews','Social ads|socialads']},
+
+{id:'v_pets', fam:'vert',
+ k:['vet','veterinarian','veterinary','animal hospital','groomer','grooming','pet','pet store','boarding','kennel','dog training','doggy daycare','pet sitting','dog walking','aquarium'],
+ a:"Pet businesses have one of the strongest emotional buying drivers there is, and most market as if they're selling a commodity. 🐾\\n\\n**Two urgency levels, two strategies:**\\n• **Emergency** (\\\"emergency vet near me\\\" at 2am): pure map pack and phone. Hours accuracy is critical — a wrong \\\"open now\\\" costs you the patient and earns you a one-star review.\\n• **Routine** (grooming, boarding, training): researched, compared, and heavily review-driven. People are leaving family with strangers.\\n\\n**What works:**\\n1. Photos of actual animals in your actual space. Stock photos read as evasive here.\\n2. Reviews mentioning specific staff by name — those are the ones people trust\\n3. Clear pricing, or at least ranges. The most common unanswered question in this category.\\n4. Holiday boarding demand is predictable to the week. Rank before it, not during.\\n\\nAlso worth knowing: \\\"near me\\\" searches in this category convert unusually fast — 76% of near-me searchers visit a business within a day.",
+ c:['*Free audit|i_audit','Local SEO|localseo','Reviews|reviews','Google Business Profile|tip_gbp']},
+
+{id:'v_events', fam:'vert',
+ k:['wedding','photographer','photography','videographer','dj','event planner','event planning','catering','caterer','venue','banquet','florist','party rental','event space','entertainment','band'],
+ a:"Events and weddings are a high-consideration, long-lead, portfolio-driven market. Very different rules. 💐\\n\\n**The shape of it:**\\n• Booking happens 6–18 months ahead, so your pipeline this month is next year's revenue\\n• The portfolio IS the product. Site speed matters enormously because you're serving heavy images to people browsing 40 vendors.\\n• Pinterest and Instagram drive discovery; Google closes it. People find a look, then search the vendor's name.\\n\\n**What actually gets booked:**\\n1. Fast-loading galleries. A gorgeous portfolio that takes eight seconds is an unseen portfolio — 53% of mobile visitors leave after three.\\n2. Pricing transparency, even just a starting-at number. The single biggest filter, and vendors who hide it lose people who would have said yes.\\n3. Real full events, not just highlight shots. Buyers want to see the whole day handled.\\n4. Venue-specific pages if you work the same venues repeatedly — those searches are gold and almost nobody targets them.\\n\\nSeasonality is brutal in this category. The marketing work has to happen in your off months.",
+ c:['*Free audit|i_audit','Websites|website','Page speed|tip_speed','Social ads|socialads']},
+
+{id:'v_health', fam:'vert',
+ k:['chiropractor','chiropractic','physical therapy','pt','optometrist','optometry','eye doctor','dermatology','dermatologist','podiatrist','orthodontist','dentist office','urgent care','clinic','primary care','pediatrician','therapist','counseling','counselor','mental health practice','audiologist','hearing','home health','medical practice','healthcare practice'],
+ a:"Healthcare practices carry a constraint most industries don't: you're regulated, so the marketing has to be careful as well as effective. 🩺\\n\\n**What we do and don't touch:** we handle visibility, reputation and the conversion path. We don't write clinical claims, we don't touch patient data, and we don't publish anything that reads as a medical promise. That's your call and your compliance team's, not ours.\\n\\n**What moves the needle:**\\n1. **Insurance accepted, listed plainly.** The single most searched question about any practice, and the one most sites bury.\\n2. **Individual provider pages.** Patients search for the person. Each provider is an entity Google and AI systems can recognise — or can't.\\n3. **Reviews, handled carefully.** Never respond in a way that acknowledges someone as a patient. A generic professional reply is both safer and more effective.\\n4. **New-patient booking that works on a phone at 9pm.**\\n5. **Appointment-availability language** — \\\"accepting new patients\\\" is a conversion phrase, not a detail.\\n\\nBe aware that about 40% of local queries now trigger an AI Overview, and in health categories those answers lean hard on structured, consistent information about your practice.",
+ c:['*Free audit|i_audit','Local SEO|localseo','Reviews|reviews','Talk to a human|i_human']},
+
+/* POLICY ENTRY — DO NOT SOFTEN.
+   Zach's stated boundary, Sept 2026: no adult content, no cannabis/drugs, no
+   alcohol, no firearms or weapons, nothing derogatory. Combat sports (MMA,
+   boxing, martial arts) are explicitly FINE and are handled by v_mma above —
+   do not let this entry swallow them. Keep the refusal warm and short: the
+   person asking may well have another business we can help with. */
+{id:'v_excluded', fam:'vert',
+ k:['dispensary','cannabis','marijuana','weed','cbd shop','vape','vape shop','smoke shop','kratom','liquor store','brewery','distillery','bar promotion','nightclub promotion','alcohol brand','gun store','firearms','ammo','guns','weapons','tactical','adult','porn','xxx','escort','strip club','onlyfans','adult site','gambling','casino','sportsbook','payday loan','crypto pump'],
+ a:"I have to be straight with you — that's outside what we take on. 🙏\\n\\nWe don't do adult, cannabis or drug-related, alcohol, firearms or weapons work, or anything we'd consider derogatory. Not a judgement on you or your business; it's just a line the company drew and I'm not going to pretend otherwise and waste your time.\\n\\nCombat sports, for the record, are absolutely fine — gyms, MMA, boxing and martial arts schools are welcome.\\n\\nIf you've got a **different** venture we'd be a fit for, I'm genuinely happy to talk about that one. And I hope you find someone good for this — there are agencies that specialise in these categories and know the ad rules cold, which matters a lot in regulated space.",
+ c:['I have another business|i_capture','What do you work with?|services','Martial arts / gyms|v_mma']}
+);
+
+/* ══════════ KB: STRATEGY & CHANNELS (v7.1) ══════════
+   Same sourcing rule as the v7.0 tips block: a number only exists here if a
+   named study produced it. Two attributions below are ones the internet gets
+   wrong constantly — see tip_speedlead. Getting those right is cheap
+   credibility and stops a sharp prospect catching us out. */
+KB.push(
+{id:'tip_email', fam:'tips',
+ k:['email roi','is email dead','does email work','email marketing worth it','newsletter','email list','build a list','why email'],
+ a:"Email is the least glamorous channel and it still beats everything on return. 📧\\n\\n**The number:** roughly **$36–$42 back per $1 spent** in 2026 — against about $2 for paid search, $2.80 for social ads and $1.35 for display. 42% of marketers name it their most effective channel; social and paid search sit at 16% each.\\n\\n**Why it wins:** you own the list. No algorithm can throttle it, no platform can raise the price on you, and nobody has to be shown an ad to hear from you.\\n\\n**What most local businesses get wrong:** they collect addresses and never send anything, then blast a discount when things get quiet. That trains people to wait for discounts.\\n\\n**The version that works for a service business:** a short monthly note with one genuinely useful thing and one soft offer. Seasonal reminders timed to the actual season. A reactivation email to anyone who hasn't bought in a year.\\n\\nAnd frequency matters: 5–8 sends a month has tested highest for ROI in several industries. Most small businesses send about two a year.",
+ c:['*Set up my email|i_capture','Reactivation campaigns|tip_winback','Lifetime value|tip_ltv','Free audit|i_audit']},
+
+{id:'tip_speedlead', fam:'tips',
+ k:['speed to lead','response time','how fast should i respond','call back fast','follow up fast','answer leads','lead response','5 minute rule','five minute rule','missed calls'],
+ a:"If you only fix one thing this year, fix this. It costs nothing. ⏱️\\n\\n**The research:** the MIT / InsideSales Lead Response Management study (Dr James Oldroyd, 2007 — six companies, 15,000+ leads, 100,000+ call attempts) found that contacting a lead at **5 minutes versus 30 minutes** makes you about **21x more likely to qualify it** and roughly **100x more likely to reach the person at all**.\\n\\n**Worth getting the credit right:** those 21x/100x figures are constantly attributed to Harvard. They're MIT. The separate *Harvard Business Review* audit (2011, 2,241 US firms) is the one that found an average first response of **42 hours**, with 23% never responding.\\n\\n**And the kicker:** roughly 78% of customers buy from whoever responds first. Not the cheapest. Not the best. The first.\\n\\n**What this means in money.** A $50 lead you answer in half an hour is worth a fraction of the same lead answered in five minutes. You already paid full price for it either way.\\n\\n**Free fixes today:** put missed-call-text-back on your business line. Answer the phone or return it inside five minutes during the day. Stop letting form fills sit in an inbox until evening.\\n\\nThis is the cheapest competitive advantage in sales and almost nobody uses it.",
+ c:['*Fix my follow-up|i_capture','Follow-up sequences|tip_followup','Call tracking|tip_tracking','AI chatbots|chatbot']},
+
+{id:'tip_referral', fam:'tips',
+ k:['referral','referrals','referral program','word of mouth','get referrals','ask for referrals','customer referrals'],
+ a:"Referrals are your cheapest customers and almost nobody runs them on purpose. 🤝\\n\\n**The numbers, and they're strong.** Nielsen has 92% of consumers trusting recommendations from people they know — the most trusted form of advertising there is. Referred customers show about 37% higher retention (Ogilvy/Google/TNS). Referral is the lowest cost-per-acquisition of any channel, commonly $15–$25 a lead.\\n\\n**Here's the gap that pays for itself.** Texas Tech research found **83% of satisfied customers are willing to refer — and only 29% actually do.** That's not a loyalty problem. It's an asking problem.\\n\\n**Wharton found a structured program lifts referral rates about 3x over organic word of mouth.** Structure just means: a specific ask, at a specific moment, with a specific thing to hand over.\\n\\n**The simplest version that works:**\\n1. Ask at completion, when they're visibly happy\\n2. Give them something physical — a card, a link, an NFC tap\\n3. Make the reward matter to both sides\\n4. Thank them personally when it lands\\n\\nNo software required to start. A stack of cards and a habit will do it.",
+ c:['*Build my referral program|i_capture','NFC cards|tip_nfc','Reviews|reviews','Loyalty programs|tip_loyalty']},
+
+{id:'tip_followup', fam:'tips',
+ k:['follow up','followup','nurture','sequence','leads go cold','cold leads','they never call back','quotes not closing','estimates not closing','drip campaign'],
+ a:"Most businesses quit after one attempt and call the lead bad. 📞\\n\\nForbes research found reps average about **1.3 call attempts** before giving up. Over 30% of leads are never contacted at all.\\n\\n**A follow-up cadence that actually gets used** — and this is deliberately boring, because complicated ones get abandoned:\\n• **Minute 5:** call. Not later. (See the 21x research.)\\n• **Hour 1:** text if no answer. Texts get read.\\n• **Day 1:** the quote or info, by email, with a specific next step\\n• **Day 3:** short check-in. \\\"Any questions on that?\\\"\\n• **Day 7:** one more, with a reason to move — availability, timing, a seasonal factor\\n• **Day 30:** value, not a pitch. Something useful.\\n• **Day 90 and beyond:** quarterly, forever, until they buy or ask you to stop\\n\\n**The one that makes the most money** is the day-90-onward loop. People who didn't buy in March often buy in September, and by then your competitor has forgotten them entirely.\\n\\n**Write the messages once.** The reason follow-up fails is that it requires writing something original when you're tired. Templates fix that.",
+ c:['*Set up my follow-up|i_capture','Speed to lead|tip_speedlead','CRM|tip_crm','Email|tip_email']},
+
+{id:'tip_offer', fam:'tips',
+ k:['offer','my offer','what offer','promotion','deal','special','discount','incentive','what should i offer','make an offer'],
+ a:"You can't out-market a weak offer. This is the lever most people never touch. 🎁\\n\\n**The offer is not the discount.** It's the whole shape of what someone gets, what it costs them, what happens if it goes wrong, and how soon they get it.\\n\\n**Levers that beat cutting your price:**\\n• **Remove the risk.** A guarantee shifts the gamble from them to you, and it converts better than an equivalent discount while protecting your margin.\\n• **Remove the friction.** Free inspection, free quote, no obligation, no card.\\n• **Add certainty.** \\\"On site within 24 hours\\\" beats \\\"competitive rates\\\" every time.\\n• **Bundle instead of discounting.** Adding something cheap for you and valuable to them protects your price.\\n• **Make the first step tiny.** Nobody wants to commit to a $12,000 job. Everybody will take a free look.\\n\\n**Discounting is the lazy lever** and it's the only one you can't undo — you've taught the market your real price.\\n\\nTest a stronger offer before you spend another dollar on traffic. Same visitors, more customers, is a cheaper win than more visitors.",
+ c:['*Help me build an offer|i_capture','Guarantees|tip_guarantee','Pricing|tip_pricing','Conversion|cro']},
+
+{id:'tip_guarantee', fam:'tips',
+ k:['guarantee','warranty','risk reversal','money back','promise','refund policy','satisfaction guarantee'],
+ a:"A guarantee is the cheapest conversion tool there is, and most owners are too nervous to use one. 🛡️\\n\\n**What it really does:** it moves the risk from the buyer to you. Every hesitation before a purchase is some version of \\\"what if this goes wrong\\\" — a guarantee answers that before they have to ask.\\n\\n**Types, roughly in order of strength:**\\n• **Specific and unusual** — \\\"on site in 2 hours or the call-out is free.\\\" Memorable because it's checkable.\\n• **Workmanship, in plain English** — \\\"if it fails in 12 months we come back, no charge, no argument.\\\"\\n• **Satisfaction** — soft, but still better than nothing.\\n\\n**The fear:** everyone will abuse it. In practice the claim rate is almost always lower than the conversion lift, because most people are honest and the ones who aren't were going to be a problem regardless.\\n\\n**Where to put it:** next to the price and next to the button. Not buried on a terms page.\\n\\nIf you're already doing the work over for unhappy customers — and most good operators quietly are — you already have a guarantee. You're just not getting paid for it.",
+ c:['*Talk it through|i_capture','Offers|tip_offer','Conversion|cro','Reviews|reviews']},
+
+{id:'tip_pricing', fam:'tips',
+ k:['pricing strategy','how should i price','raise prices','too cheap','charge more','price increase','discounting','race to the bottom','competitors are cheaper'],
+ a:"Being the cheapest is a strategy with exactly one ending. 💵\\n\\n**A few things worth knowing:**\\n• **Price is a signal.** Too low reads as inexperienced, not as a bargain. Plenty of buyers skip the lowest quote on purpose.\\n• **The middle option gets chosen.** Three tiers, with the one you want them to pick in the middle, reliably outperforms a single price.\\n• **Anchor high first.** Whatever number they hear first sets the frame for everything after.\\n• **Raise prices on new customers before existing ones.** Test the market without punishing loyalty.\\n• **Cutting price 10% often needs 30%+ more volume to break even**, depending on your margin. Run that math before you discount.\\n\\n**On competitors being cheaper:** somebody will always be cheaper. The question isn't how to match them — it's how to be obviously worth more. That's usually proof, speed, guarantees and communication, not features.\\n\\n**And the uncomfortable one:** if you're busy and still broke, you don't have a marketing problem. You have a pricing problem, and more leads will make it worse.",
+ c:['*Talk pricing strategy|i_capture','Offers|tip_offer','Positioning|tip_usp','Lifetime value|tip_ltv']},
+
+{id:'tip_usp', fam:'tips',
+ k:['usp','unique selling proposition','what makes me different','differentiate','positioning','why choose me','stand out','we are all the same','commodity'],
+ a:"\\\"Quality work, great service, family owned since 1998.\\\" So does everyone else on the page. 🎯\\n\\n**A real differentiator has to be something a competitor either can't say or won't.** If they could copy your line onto their site without changing a word, it isn't one.\\n\\n**Places to find a genuine one:**\\n• **A process nobody explains.** You do it; they do it too; nobody describes it. Whoever describes it first owns it.\\n• **A specific guarantee** with a number in it.\\n• **A niche.** \\\"We do roofs\\\" vs \\\"we do hail damage insurance claims and handle the adjuster for you.\\\"\\n• **A thing you refuse to do.** Turning work down is enormously persuasive.\\n• **Who you are.** Founder-led, ex-trade, second generation, the person who answers is the person who does the work.\\n\\n**Fastest test:** read your homepage and your three closest competitors' homepages side by side with the logos covered. If you can't tell whose is whose, you don't have positioning — you have a brochure.\\n\\nThis is the work that makes every other marketing dollar cheaper, and it's the part most agencies skip because it requires actually understanding your business.",
+ c:['*Help me find mine|i_capture','Offers|tip_offer','Brand & logo|tip_brand','Competitor research|tip_competitor']},
+
+{id:'tip_proof', fam:'tips',
+ k:['testimonials','social proof','case study','case studies','before and after','proof','show results','portfolio','trust signals'],
+ a:"Proof beats adjectives. Every time, in every industry. 🏆\\n\\n**In rough order of persuasive power:**\\n1. **Before and after photos**, unedited, with context. Unbeatable in any visual trade.\\n2. **Video testimonial**, 30 seconds, filmed on a phone. The slightly rough one outperforms the polished one, because polish reads as paid.\\n3. **A specific number** — \\\"cut their callbacks by half,\\\" not \\\"great results.\\\"\\n4. **Named reviews with photos.** Anonymous praise persuades nobody.\\n5. **Logos of who you've worked for**, if the names mean something locally.\\n6. **Star ratings**, which 97% of consumers read before choosing a local business.\\n\\n**The mistake:** stacking all proof on one \\\"testimonials\\\" page nobody visits. Put it where the hesitation happens — next to the price, next to the form, next to the button.\\n\\n**The best testimonial answers an objection.** \\\"I thought it would be expensive and it wasn't\\\" does more work than \\\"they were lovely.\\\" So when you ask, ask what they were worried about beforehand.",
+ c:['*Build my proof|i_capture','Reviews|reviews','Video|video','Conversion|cro']},
+
+{id:'tip_headline', fam:'tips',
+ k:['headline','headlines','h1','write a headline','hero text','main text','what should my homepage say','tagline'],
+ a:"Most people read your headline and nothing else. Write it last and write it hardest. ✍️\\n\\n**What a good one does:** names who it's for, what they get, and ideally how fast. In that order.\\n\\n**Weak:** \\\"Welcome to Smith Plumbing — Quality Service Since 1994.\\\"\\n**Stronger:** \\\"Denver plumbing, same day, or the call-out is free.\\\"\\n\\n**Patterns that consistently earn clicks and reads:**\\n• Outcome + timeframe — \\\"Booked jobs in 90 days\\\"\\n• Problem, named plainly — \\\"Traffic but nobody calls?\\\"\\n• Specific numbers, which read as true because they're checkable\\n• Who it's for — \\\"For contractors doing $1M+\\\"\\n\\n**Things to cut:** \\\"Welcome to.\\\" Your company name. \\\"Solutions.\\\" \\\"Excellence.\\\" Anything a competitor could also say.\\n\\n**And keep the page's headline honest to the ad that sent them.** If the ad said one thing and the headline says another, the click is already lost — documented fixes to that mismatch have produced 200%+ lifts on their own.",
+ c:['*Rewrite my homepage|i_capture','Message match|tip_match','Metadata|tip_meta','Conversion|cro']},
+
+{id:'tip_cta', fam:'tips',
+ k:['call to action','cta','button','what should my button say','submit button','get them to call','make them call'],
+ a:"Your button is doing more work than your logo and gets a fraction of the attention. 🔘\\n\\n**Rules that hold up:**\\n• **Say what happens next**, not what the visitor does. \\\"Get my free quote\\\" beats \\\"Submit.\\\"\\n• **First person converts better.** \\\"Start *my* audit\\\" over \\\"Start *your* audit.\\\"\\n• **One primary action per screen.** Two equal buttons is a decision, and decisions cause delay.\\n• **Repeat it.** Top, middle, bottom. People decide at different depths.\\n• **Reduce the perceived cost right underneath** — \\\"takes 30 seconds,\\\" \\\"no card needed,\\\" \\\"no obligation.\\\" That line often does more than the button copy.\\n• **On mobile, one tap to the phone.** Always.\\n\\n**Never \\\"Submit.\\\"** It's the language of paperwork, and it's what almost every form still says.\\n\\n**Test the boring stuff.** Colour matters far less than people think; wording, position and the reassurance line underneath matter far more.",
+ c:['*Audit my CTAs|i_audit','Forms|tip_forms','Headlines|tip_headline','Conversion|cro']},
+
+{id:'tip_forms', fam:'tips',
+ k:['form','forms','contact form','form fields','too many fields','form conversion','quote form','fewer fields'],
+ a:"Every field you add costs you leads. Decide which ones are worth it. 📝\\n\\n**The trade-off:** short forms get more submissions, longer forms get better-qualified ones. Neither is automatically right — it depends whether your bottleneck is volume or quality.\\n\\n**For most local service businesses, it's volume**, so cut hard:\\n• Name, phone, and one sentence about the problem. That's a working form.\\n• Email is often optional when you already have a phone number.\\n• Drop anything you could ask on the call instead. Address, budget, timeline — all easier in conversation.\\n\\n**Things that quietly kill submissions:**\\n• Required fields with no asterisk, so people fail and don't know why\\n• Dropdowns on mobile with 40 options\\n• A CAPTCHA on a form getting no spam\\n• Errors that clear what they already typed — the fastest way to lose someone\\n• No confirmation afterwards, so they submit twice or assume it failed\\n\\n**Test yours with your thumb**, on data, like a customer would. Most owners have never once filled in their own form.",
+ c:['*Fix my forms|i_capture','CTAs|tip_cta','Mobile|tip_mobile','Conversion|cro']},
+
+{id:'tip_landing', fam:'tips',
+ k:['landing page','landing pages','squeeze page','sales page','page structure','what goes on a landing page','funnel page'],
+ a:"A landing page is not a small website. It has one job and everything else is a leak. 🛬\\n\\n**The anatomy that works:**\\n1. **Headline** matching the ad or link that sent them, word for word where you can\\n2. **One sentence** on what it is and who it's for\\n3. **The action** — button or form, visible without scrolling on a phone\\n4. **Three to five proof points**, not a wall\\n5. **Real proof** — photos, review, number\\n6. **Objection handling** — price, timing, risk, in that order\\n7. **The action again**\\n8. **A short FAQ** answering what people actually ask on the phone\\n\\n**What to remove:** site navigation. Every nav link is an exit. Also any second offer, any social icon, and anything that opens a new tab.\\n\\n**Benchmark:** average landing page conversion sits around 2.35%; better performers run above 5%. If you're under 1%, it's usually message mismatch or a page that loads too slowly to be seen.",
+ c:['*Build me a landing page|i_capture','Message match|tip_match','Page speed|tip_speed','VIP member pricing|pricing']},
+
+{id:'tip_leadmagnet', fam:'tips',
+ k:['lead magnet','freebie','free download','ebook','checklist','opt in','capture emails','give something away'],
+ a:"A lead magnet is a trade: something genuinely useful for permission to follow up. 🧲\\n\\n**What works for local service businesses** — and it's not an ebook:\\n• **A free inspection or audit.** Highest intent, because only real prospects book one.\\n• **A price guide.** \\\"What a bathroom remodel actually costs in Denver in 2026.\\\" Enormously popular and almost nobody publishes one.\\n• **A checklist** they'd genuinely use before hiring anyone — including your competitors.\\n• **A comparison** of the options, honestly done. Being the one who explained it is worth more than being the one who sold hardest.\\n\\n**What doesn't work:** a generic PDF, a newsletter signup with no promise, anything that reads as a mailing list in disguise.\\n\\n**The rule that makes it work:** it has to be useful even if they never hire you. That's what makes it worth an email address, and it's also what makes them remember you when they do buy.",
+ c:['*Build me one|i_capture','Email|tip_email','Free audit|i_audit','Content|tip_content']},
+
+{id:'tip_sms', fam:'tips',
+ k:['sms','text message','texting','text marketing','text customers','mass text','appointment reminders'],
+ a:"Texts get read. That's the whole advantage, and it's also the whole danger. 💬\\n\\n**Where it genuinely wins:**\\n• **Appointment reminders.** Cuts no-shows more than any other single change most service businesses can make.\\n• **\\\"On my way\\\" messages.** Free, and customers remember it.\\n• **Missed-call text-back.** Someone calls, you can't answer, they get a text in seconds. This one converts remarkably well because it catches people at peak intent.\\n• **Quote follow-up.** A text gets answered when an email doesn't.\\n\\n**Where it backfires:** promotional blasts. The channel is intimate; abuse it and people don't unsubscribe quietly, they resent you.\\n\\n**Compliance is not optional.** You need real consent, an opt-out in the message, and records of both. The penalties for getting this wrong are per-message and they are not small. Do not buy a list.\\n\\n**Rule of thumb:** if the text is about *their* job, send it. If it's about your promotion, think twice.",
+ c:['*Set this up for me|i_capture','Speed to lead|tip_speedlead','Follow-up|tip_followup','Reviews|reviews']},
+
+{id:'tip_directmail', fam:'tips',
+ k:['direct mail','postcards','mailers','eddm','flyers','mail campaign','door hangers','leaflets'],
+ a:"Direct mail got good again precisely because everyone left. 📬\\n\\nYour prospect's inbox has 200 emails in it. Their mailbox has four things, and one of them is yours.\\n\\n**Where it still works hard:**\\n• **Radius mailing around a job you just finished.** \\\"We just replaced a roof on your street.\\\" Highest-response mail most trades can send.\\n• **Storm and seasonal targeting**, where timing carries the message.\\n• **Reactivating old customers** who've stopped responding to email.\\n• **High-ticket services** where a $0.60 piece chasing a $15,000 job is rounding-error cheap.\\n\\n**What makes it fail:** a pretty postcard with no offer and no deadline. Mail needs a reason to act now more than digital does, because there's no back button.\\n\\n**Pair it with digital.** People who get the mailer and then see you online convert better than either alone — familiarity does the work.\\n\\nWe do the design and the print, and members get member pricing on both.",
+ c:['*Get mail pricing|i_capture','Neighborhood targeting|tip_servicearea','NFC cards|tip_nfc','VIP membership|pricing']},
+
+{id:'tip_signage', fam:'tips',
+ k:['vehicle wrap','truck wrap','van wrap','signage','yard sign','yard signs','magnets','storefront sign','lawn signs','job site sign'],
+ a:"The cheapest advertising most trades own is already sitting in their driveway. 🚚\\n\\n**Vehicle wraps** get seen thousands of times a day for a one-time cost. But most of them are unreadable at speed.\\n**Rules:** company name and phone number huge, everything else small or gone. No list of twelve services. No email address. No social handles. Somebody at 40mph gets about two seconds — they can retain a name and a number, not a brochure.\\n\\n**Yard signs** are the most underused lead source in home services. You just did visible work on a street where everyone has the same house and the same age of roof. Leave a sign. Ask first, and it's worth offering something for the privilege.\\n\\n**Job site signs** work the same way and cost almost nothing.\\n\\n**The one that pays for itself twice:** put a short, memorable URL on it. Not your 34-character domain. Something someone can remember at a red light.\\n\\nWe do wrap design, signage and print, and members get member pricing.",
+ c:['*Get design pricing|i_capture','Design & logos|graphic','Direct mail|tip_directmail','VIP membership|pricing']},
+
+{id:'tip_partnership', fam:'tips',
+ k:['partnership','partnerships','strategic partners','joint venture','cross promotion','referral partners','networking','bni','chamber'],
+ a:"The fastest growth channel for most local businesses isn't advertising. It's the other business that already has your customer. 🤝\\n\\n**Who to look for:** anyone serving the same person at a different moment. Realtors and home inspectors. Plumbers and remodelers. Vets and groomers. Wedding venues and photographers. Accountants and attorneys.\\n\\n**Why it beats advertising:** you're borrowing trust that's already been earned, which is why referrals convert at several times the rate of cold channels and cost a fraction.\\n\\n**How to actually start one**, because \\\"let's refer each other\\\" dies within a week:\\n• Go first. Send them work before asking for any.\\n• Make it concrete — a specific card, a specific link, a specific person to ask for.\\n• Track it, so both sides can see it's real.\\n• Check in quarterly. Partnerships decay silently.\\n\\n**Bonus SEO value:** partner sites linking to yours is exactly the kind of relevant local link that's hard to buy and easy to earn.",
+ c:['*Help me build partners|i_capture','Backlinks|tip_backlinks','Referrals|tip_referral','Local SEO|localseo']},
+
+{id:'tip_ltv', fam:'tips',
+ k:['lifetime value','ltv','clv','customer value','repeat business','retention','how much is a customer worth','keep customers'],
+ a:"If you don't know what a customer is worth, you can't know what one is worth *buying*. 💎\\n\\n**Rough maths, and rough is fine:** average sale × times they buy per year × years they stay. A $180 service, three times a year, for four years, is a **$2,160 customer** — not a $180 one.\\n\\n**Why it changes everything:** a $90 lead looks expensive against $180 and absurdly cheap against $2,160. Most owners price their marketing against a single transaction and then conclude marketing doesn't work.\\n\\n**Cheapest ways to raise it:**\\n• **Show up again.** Most churn is neglect, not dissatisfaction.\\n• **Maintenance plans.** Turns a transaction into a subscription and smooths your cash flow.\\n• **Reminders at the right interval** — your customer isn't loyal to a competitor, they just forgot.\\n• **A second service they didn't know you offer.** Usually the fastest single win.\\n\\n**Bain found referral programs lift lifetime value about 32%**, which means happy customers are worth more than their own spending.",
+ c:['*Work this out with me|i_capture','Reactivation|tip_winback','Referrals|tip_referral','Email|tip_email']},
+
+{id:'tip_cac', fam:'tips',
+ k:['cost per lead','cac','acquisition cost','what should a lead cost','cost per customer','is that lead expensive','marketing math'],
+ a:"Two numbers end most marketing arguments. Here they are. 🧮\\n\\n**Cost per lead** = what you spent ÷ leads it produced.\\n**Cost per customer** = that, divided by your close rate.\\n\\nSo a $600 spend producing 20 leads is $30 a lead. Close a quarter of them and you paid **$120 per customer**. Whether that's good depends entirely on what a customer is worth to you — which is why lifetime value comes first.\\n\\n**The trap:** judging channels on cost per lead alone. The cheap channel often brings tire-kickers and the expensive one brings buyers. Track close rate *by source* or you'll optimise your way into worse customers.\\n\\n**A rule worth keeping:** if a channel returns more than it costs and you can scale it, it isn't expensive — it's a machine. Most owners kill channels at month two because they're measuring cost instead of return.\\n\\n**And the one nobody counts:** the cost of a lead you never followed up. That one is 100% waste and it's free to fix.",
+ c:['*Run my numbers|i_capture','Lifetime value|tip_ltv','Tracking|tip_tracking','Speed to lead|tip_speedlead']},
+
+{id:'tip_winback', fam:'tips',
+ k:['reactivation','win back','winback','old customers','past customers','lapsed','havent bought in a while','database','my list'],
+ a:"The cheapest customer you'll get this month is one you already had. ♻️\\n\\n**Almost every established business is sitting on a list they've never once contacted deliberately.** Old invoices, old quotes, old estimates. Those people already trusted you enough to buy or nearly buy.\\n\\n**A reactivation campaign that takes an afternoon:**\\n1. Pull everyone who hasn't bought in 12+ months\\n2. Send something honest: \\\"It's been a while — here's what's changed, and here's something for coming back.\\\"\\n3. Call the top 20 by past spend. Actually call.\\n4. Repeat quarterly, forever\\n\\n**The unclosed-quote list is even better.** Those people wanted it and something stopped them. Timing, money, a spouse. Most of those reasons expire.\\n\\n**Why it works so well:** no acquisition cost, no trust to build, no explanation of who you are. It's the closest thing to free revenue a business has, and it's sitting in an accounting package nobody opens for marketing.",
+ c:['*Run a reactivation for me|i_capture','Email|tip_email','Follow-up|tip_followup','Lifetime value|tip_ltv']},
+
+{id:'tip_seasonal', fam:'tips',
+ k:['seasonal','season','busy season','slow season','off season','when to advertise','seasonality','winter slow','summer slow'],
+ a:"The single most common timing mistake: advertising during the busy season. ❄️☀️\\n\\n**Why it's backwards.** When demand spikes, every competitor is bidding, ad costs jump, and SEO can't be built fast enough to catch it. You pay peak prices for attention you could have earned cheaply three months earlier.\\n\\n**The right rhythm:**\\n• **Off-season:** build. Content, SEO, site fixes, review collection, list building. Cheap, quiet, compounding.\\n• **Ramp (6–8 weeks out):** you should already be ranking. Now add ads and email.\\n• **Peak:** harvest. Answer fast, book tight, collect reviews while satisfaction is highest.\\n• **Post-peak:** reactivate and ask for referrals while the work is fresh in their memory.\\n\\n**Denver specifics:** hail moves roofing, restoration and auto glass overnight. Heating demand starts the first genuinely cold week. Whoever already ranks captures that; everyone else buys ads at four times the normal cost.\\n\\n**The quiet months are not dead time.** They're when next year's busy season gets built.",
+ c:['*Plan my year|i_capture','SEO timeline|obj_timeline','Google Ads|ppc','Content|tip_content']},
+
+{id:'tip_budget', fam:'tips',
+ k:['how much should i spend','marketing budget','what budget','percentage of revenue','how much is normal','budget for marketing'],
+ a:"There's no universal right number, but there are useful anchors. 📐\\n\\n**Common benchmarks:** established businesses often run 5–10% of revenue on marketing. Businesses actively trying to grow, or in competitive markets, run higher. Newer businesses have to spend a larger share because they're buying awareness they don't have yet.\\n\\n**For context on agencies specifically**, published surveys put the average monthly retainer around $3,200 (Ahrefs polled 439 providers; Clutch reports similar), with GoodFirms finding 48% of agencies in the $1,500–$5,000 band.\\n\\n**But the better question isn't the percentage. It's this:** what does a customer earn you, and what will you pay to get one? Once you know that, budget stops being a guess and becomes arithmetic.\\n\\n**Practical starting shape for a local service business:**\\n• Fix the foundations first — site speed, Business Profile, tracking. Cheap and non-optional.\\n• Then one compounding channel (SEO) and one immediate channel (ads or mail).\\n• Don't split a small budget across five channels. You'll be invisible in all of them.\\n\\nOurs run roughly $500–$3,000/month full service, or $100/month for one focused piece.",
+ c:['*What would mine look like?|i_capture','Pricing|pricing','Cost per lead|tip_cac','Free audit|i_audit']},
+
+{id:'tip_competitor', fam:'tips',
+ k:['competitor research','spy on competitors','what are competitors doing','competitive analysis','beat my competitor','who ranks above me'],
+ a:"Your competitors have already run experiments you can read the results of for free. 🔍\\n\\n**What you can find in an hour, no tools:**\\n• Search your main terms in an incognito window. Who's in the map pack? Who's in the ads? Ads that run for months are ads that work.\\n• Read their reviews — especially the 3-star ones. That's a list of the promises you should be making.\\n• Check what services they list that you don't, and vice versa.\\n• Look at their Business Profile categories. Wrong ones are common and they're an opening.\\n• Ask ChatGPT who the best in your category is locally and see who it names.\\n\\n**What to do with it:** don't copy. Find the thing they're all failing at — usually response speed, price transparency, or explaining the process — and own it loudly.\\n\\n**The deeper version** — backlink gaps, keyword gaps, where their traffic actually comes from — needs paid tools and someone who can read them. That's part of what the free audit covers.",
+ c:['*Run a competitor audit|i_audit','Positioning|tip_usp','Backlinks|tip_backlinks','Local SEO|localseo']},
+
+{id:'tip_brand', fam:'tips',
+ k:['brand','branding','logo design','rebrand','business name','naming','colors','brand colors','visual identity','look professional'],
+ a:"Brand isn't your logo. It's what people expect before they've met you. 🎨\\n\\n**Where it actually matters for a local business:**\\n• **Consistency beats beauty.** The same name, colours, phone number and photos everywhere — site, Business Profile, truck, invoice. Inconsistency reads as unreliable, and it genuinely confuses AI systems trying to decide who you are.\\n• **Legibility beats cleverness.** A logo that has to be explained is a bad logo. It needs to work at 30 feet on a truck and at 16 pixels as a favicon.\\n• **Own a colour locally.** If every competitor in your trade uses blue, be the orange one. Recognition is worth more than taste.\\n• **Your name is a marketing decision.** Hard to spell means hard to search for. If people mishear it on the phone, that's costing you.\\n\\n**When to rebrand:** almost never, and never during growth. Recognition is an asset you spent years buying. Refresh the look, keep the name.\\n\\nWe do logo, print, signage and full identity — member pricing applies.",
+ c:['*Get design pricing|i_capture','Design & logos|graphic','Positioning|tip_usp','VIP membership|pricing']},
+
+{id:'tip_nap', fam:'tips',
+ k:['nap','citations','directories','listings','yelp','yellow pages','bbb listing','business listings','inconsistent address','old address'],
+ a:"Name, Address, Phone — NAP. Boring, unglamorous, and quietly wrecking a lot of local rankings. 📇\\n\\n**The problem:** your business exists in dozens of directories you never created. Old address, old phone, a suite number on some and not others, a name with \\\"LLC\\\" on half of them. Every inconsistency makes Google slightly less certain you're one real business.\\n\\n**And it now matters more than it used to**, because AI systems assembling an answer about you are reading the same scattered records. Contradictory facts make you a risky thing to cite.\\n\\n**The fix, in order:**\\n1. Decide the canonical version. Exactly one format, including punctuation.\\n2. Fix Google first, then Apple Maps and Bing.\\n3. Then the big aggregators, then industry directories.\\n4. Then hunt old listings from previous addresses — these are the ones that do the damage.\\n\\n**Do it once, properly.** It's tedious, it's cheap, and it's the kind of foundational work that makes everything else you do rank slightly better.",
+ c:['*Clean mine up|i_capture','Google Business Profile|tip_gbp','Local SEO|localseo','Free audit|i_audit']},
+
+{id:'tip_servicearea', fam:'tips',
+ k:['service area','service areas','location pages','city pages','multiple cities','nearby towns','rank in other cities','neighborhood pages','suburbs'],
+ a:"Yes, you can rank in towns you don't have an office in. No, not by copying one page twelve times. 🗺️\\n\\n**The thing that gets sites penalised:** twelve pages identical except the city name. Google's doorway-page policy describes exactly that, and it's the most common local SEO mistake there is.\\n\\n**What a real service-area page needs:**\\n• Something genuinely specific — the neighbourhoods, the housing stock and its age, the local problems, actual jobs you've done there\\n• Different photos\\n• A different structure, not just different nouns\\n• A reason it exists beyond the keyword\\n\\n**The honest test:** if you'd be embarrassed for a customer in that town to read it, it isn't a page, it's a doorway.\\n\\n**Priority order:** where your customers already are, then adjacent towns with less competition, then the ambitious ones. Most people start with the biggest city and lose for two years.\\n\\nWe build these deliberately non-templated — every page gets its own angle, because similarity is the risk.",
+ c:['*Plan my service areas|i_capture','Local SEO|localseo','NAP consistency|tip_nap','Free audit|i_audit']},
+
+{id:'tip_analytics', fam:'tips',
+ k:['analytics','ga4','google analytics','search console','data','what should i track','reports','stats','traffic report'],
+ a:"Most businesses have analytics installed and have never once used it to make a decision. 📈\\n\\n**The two free tools that matter:**\\n• **Google Search Console** — what people searched to find you, what you rank for, what's broken. More useful than Analytics for most local businesses and almost nobody opens it.\\n• **GA4** — behaviour once they arrive. Powerful, unfriendly, and easy to misread.\\n\\n**What's actually worth watching monthly:**\\n1. Calls and form fills — set these up as conversions or the rest is decoration\\n2. Which pages produce them\\n3. Search Console queries where you rank 5–15 — the cheapest wins on the whole site sit there\\n4. Mobile vs desktop conversion rate; a big gap means a mobile problem\\n\\n**What to ignore:** bounce rate on a single-service page. Time on page. Anything expressed as a percentage without a number beside it.\\n\\n**One warning for 2026:** with roughly 60% of searches now ending without a click, traffic can fall while calls rise. If you judge by sessions alone you'll fire something that's working.",
+ c:['*Set my tracking up|i_capture','Call tracking|tip_tracking','Zero-click search|tip_zeroclick','Reporting|reporting']},
+
+{id:'tip_abtest', fam:'tips',
+ k:['ab test','a b testing','split test','testing','experiment','which version is better','optimize page'],
+ a:"Testing is how you stop arguing about opinions. 🧪\\n\\n**But most small businesses shouldn't start here**, and any honest agency will tell you that. Below a few hundred conversions a month, a test takes months to reach significance and you'll call a winner that's actually noise.\\n\\n**What to do instead at low volume:**\\n• Fix the things that are known to be broken — speed, mobile, message match, form length. These don't need testing, they need doing.\\n• Make big changes, not small ones. A whole new page beats a button colour.\\n• Judge over a season, not a week.\\n\\n**When you do have the volume, test in this order:** offer, headline, page structure, form, then the small stuff. Most people start at the small stuff because it's easy.\\n\\n**Rules if you test:** one change at a time, run full weeks, don't peek and stop early, and write down what you expected before you look. Otherwise you're just collecting stories.",
+ c:['*Talk it through|i_capture','Conversion|cro','Headlines|tip_headline','Landing pages|tip_landing']},
+
+{id:'tip_crm', fam:'tips',
+ k:['crm','pipeline','manage leads','track customers','spreadsheet','organize leads','lead management','software'],
+ a:"A CRM is just an agreement about where the leads live. The software matters less than the agreement. 🗂️\\n\\n**Signs you need one now:** leads live in three inboxes and a notepad. Nobody can say how many quotes are open. Somebody got called twice and somebody else never got called at all.\\n\\n**What it has to do, minimum:**\\n• Capture every lead automatically, from every source\\n• Show who owes whom a call, today\\n• Record where the lead came from — otherwise you can't measure anything\\n• Survive one person being on holiday\\n\\n**What you can ignore at first:** automations, scoring, pipelines with nine stages, integrations with things you don't use.\\n\\n**Honestly:** a shared spreadsheet that everybody actually updates beats expensive software that nobody opens. Start where the habit will stick and upgrade when it hurts.\\n\\n**The number that justifies it:** over 30% of leads never get contacted at all. A CRM's real job is making that impossible.",
+ c:['*Help me set one up|i_capture','Follow-up|tip_followup','Speed to lead|tip_speedlead','Tracking|tip_tracking']},
+
+{id:'tip_phone', fam:'tips',
+ k:['answer the phone','phone script','call script','who answers','receptionist','voicemail','missed call','phone skills','bad at sales calls'],
+ a:"Your phone is the highest-converting page on your website, and it usually gets the least attention. ☎️\\n\\n**What's silently costing money:**\\n• Calls going to voicemail during business hours. Most callers don't leave one; they call the next result.\\n• Whoever answers giving a price and hanging up instead of booking\\n• No missed-call text-back\\n• Nobody asking how they found you\\n\\n**A script skeleton that works** — not a sales pitch, just structure:\\n1. Name of the business, your name, and something warm\\n2. \\\"What's going on?\\\" Let them describe it fully. Don't interrupt with the price.\\n3. Two or three qualifying questions that show you know the work\\n4. Give the next step, not a number: \\\"I can have someone out Thursday morning or Friday afternoon — which is easier?\\\"\\n5. Confirm details, set expectations, say what happens next\\n\\n**The choice-of-two close** at step four converts dramatically better than \\\"would you like to book?\\\" because the question stops being whether.\\n\\nSales is the founder's own specialty here, so this is a conversation worth having with a human rather than a bot.",
+ c:['*Talk to Zach about this|i_capture','Speed to lead|tip_speedlead','Objection handling|tip_objections','Call tracking|tip_tracking']},
+
+{id:'tip_objections', fam:'tips',
+ k:['objections','objection handling','too expensive objection','they say no','price objection','handle objections','closing','how to close'],
+ a:"An objection is a request for more information, delivered defensively. Treat it that way. 🗣️\\n\\n**The universal shape:** acknowledge it honestly, ask a question to find what's underneath, then answer the real concern. Skipping the first step is why most objection handling fails — people can tell when you're waiting to talk.\\n\\n**The big four, and what they usually mean:**\\n• **\\\"Too expensive.\\\"** Usually means value isn't clear yet, or they're comparing to a different scope. Ask what they're comparing to.\\n• **\\\"I need to think about it.\\\"** Almost always an unspoken concern. \\\"Of course — what's the part you're unsure about?\\\"\\n• **\\\"I need to talk to my spouse/partner.\\\"** Often real. Help them make that conversation easy instead of fighting it.\\n• **\\\"Send me some information.\\\"** Frequently a polite exit. \\\"Happy to — what specifically would be most useful?\\\" separates real from polite.\\n\\n**The one rule:** never argue. You can win the argument and lose the sale, and you usually do.\\n\\nThis is the founder's own specialty, and it's genuinely better discussed with a person than a chatbot.",
+ c:['*Talk to a human about this|i_human','Phone scripts|tip_phone','Pricing strategy|tip_pricing','Proposals|tip_proposal']},
+
+{id:'tip_proposal', fam:'tips',
+ k:['proposal','proposals','quote','quotes','estimate','estimates','bid','my quotes dont close','quote template'],
+ a:"Most quotes are a number on a page. That's why most quotes lose to whoever explained more. 📄\\n\\n**What a quote that closes contains:**\\n1. **Their problem, in their words.** Proves you listened. Almost nobody does this.\\n2. **What you'll do**, in plain language, step by step\\n3. **What it costs**, with options — usually three, and the one you want in the middle\\n4. **What's not included.** Builds more trust than anything else on the page.\\n5. **Proof** — photo, review, or a similar job\\n6. **The guarantee**\\n7. **What happens next** and by when\\n\\n**Timing beats polish.** A decent quote delivered in an hour beats a beautiful one delivered in three days, every time.\\n\\n**And follow up.** Most quotes are never chased once. That's the whole gap between a 20% close rate and a 40% one, and it costs nothing but a calendar reminder.",
+ c:['*Talk to a human|i_human','Follow-up|tip_followup','Pricing strategy|tip_pricing','Guarantees|tip_guarantee']},
+
+{id:'tip_booking', fam:'tips',
+ k:['online booking','book online','scheduling','calendar','appointments','self schedule','booking system'],
+ a:"Every step between \\\"I want this\\\" and \\\"I'm booked\\\" costs you a percentage. 📅\\n\\n**The case for online booking is simple:** a large share of enquiries happen outside business hours. Those people are at peak intent and your only offer is \\\"call us tomorrow.\\\" Half of them won't.\\n\\n**Where it works best:** anything with defined appointment slots — salons, clinics, dental, grooming, inspections, consultations, estimates.\\n\\n**Where it's trickier:** complex jobs needing scoping first. Then book the *conversation*, not the work. \\\"Book a 15-minute call\\\" is still infinitely better than a contact form.\\n\\n**What kills booking systems:**\\n• Requiring an account to be created\\n• Showing no availability for nine days\\n• Asking for a deposit before any trust exists\\n• Not working properly on a phone, which is where most of it happens\\n\\n**The compromise if you're unsure:** offer both. A booking link *and* a phone number. Let the customer pick their comfort level rather than deciding for them.",
+ c:['*Set this up|i_capture','Forms|tip_forms','Speed to lead|tip_speedlead','Mobile|tip_mobile']},
+
+{id:'tip_loyalty', fam:'tips',
+ k:['loyalty','loyalty program','rewards','repeat customers','punch card','membership program','subscription','recurring revenue'],
+ a:"Recurring revenue changes how a business feels to run. It's worth engineering deliberately. 🔁\\n\\n**Maintenance plans** are the underused version for service businesses. Twice-yearly HVAC service, quarterly pest treatment, annual roof inspection, monthly lawn care. The customer gets peace of mind and a discount; you get predictable cash flow and first refusal on every problem they ever have.\\n\\n**Why it's worth more than the revenue itself:**\\n• Members almost never shop around, because you're already coming\\n• You catch problems early, which means more work at better margins and a happier customer\\n• It makes your business worth more if you ever sell it\\n\\n**For retail and personal services:** a simple punch card still outperforms most apps, because it's in their wallet and they can see progress.\\n\\n**The rule:** reward the behaviour you want repeated, and make progress visible. People finish things they can see themselves part-way through.\\n\\n(Our own VIP Marketing Subscription works on exactly this logic — $79.99/month for member pricing across everything.)",
+ c:['*Design my plan|i_capture','Lifetime value|tip_ltv','VIP membership|pricing','Email|tip_email']},
+
+{id:'tip_community', fam:'tips',
+ k:['nextdoor','facebook groups','community','local groups','sponsorship','sponsor','charity','local events','farmers market','trade show'],
+ a:"Local presence is a real channel and it doesn't show up in any dashboard. 🏘️\\n\\n**Where it pays:**\\n• **Nextdoor and local Facebook groups.** Recommendation threads there convert extremely well — but only if you're a participant, not an advertiser. Answer questions for a month before you ever mention your business.\\n• **Sponsorships.** A youth team, a school event, a 5K. Modest money, genuine goodwill, and usually a link from their website — which is exactly the kind of local link that's hard to buy.\\n• **Charity work you'd do anyway.** Don't manufacture it. If you already do it, let people know it happened.\\n• **Trade shows and home shows**, where your customer is already shopping with intent.\\n\\n**The mistake:** joining a group and immediately posting an advert. It burns the channel permanently and people remember.\\n\\n**Worth knowing:** we run a network of private local buy/sell/trade groups ourselves, so sponsored placement inside real local communities is something we can actually do rather than just recommend.",
+ c:['*Ask about local groups|i_capture','Partnerships|tip_partnership','Backlinks|tip_backlinks','Reviews|reviews']},
+
+{id:'tip_press', fam:'tips',
+ k:['pr','press','media','news','local news','press release','get featured','journalist','publicity'],
+ a:"Local PR is free, undervalued, and does double duty. 📰\\n\\n**Why it's worth more than the coverage:** a mention in a real publication is an authority signal both Google and AI systems weigh heavily when deciding whether you're a credible entity. The traffic is a bonus; the credibility is the asset.\\n\\n**What local media actually wants** — and it isn't your press release:\\n• **An expert who answers the phone.** Reporters need a quotable local source on deadline. Be the plumber who explains frozen pipes every January and you'll get called every January.\\n• **A genuine human story.** Milestone, hiring, something you did for the community.\\n• **Data.** Even small data. \\\"We handled 40% more emergency calls after the hailstorm\\\" is a story to a local outlet.\\n\\n**How to start:** find the two reporters who cover your area or beat, email them once with something genuinely useful and no ask attached. That's it. Be a source before you need one.\\n\\n**Free and effective:** answer journalist request services in your field. Slow, but the links are the good kind.",
+ c:['*Help me with this|i_capture','Backlinks|tip_backlinks','Content|tip_content','GEO / AI citations|geo']},
+
+{id:'tip_video2', fam:'tips',
+ k:['youtube','video ideas','what videos should i make','short video','reels','tiktok for business','video content'],
+ a:"You don't need a production company. You need a phone and a habit. 🎥\\n\\n**The videos that actually earn work for a local business** — in order of return:\\n1. **The explainer you're tired of giving.** Whatever you explain on every single call. Film it once.\\n2. **Before and after with narration.** Thirty seconds. The most persuasive thing most trades can make.\\n3. **\\\"Here's what we found\\\"** — a real job, a real problem, honestly described. People are fascinated by competence.\\n4. **Who we are.** Faces, names, trucks. Hiring a stranger into your home is a trust decision.\\n5. **Answers to specific questions.** These get found in search and quoted by AI systems.\\n\\n**Two rules:** the first three seconds decide everything, and subtitles are non-negotiable because most of it is watched on mute.\\n\\n**Where to put it:** your own site first, where it converts. Then YouTube, which is a search engine you can rank in. Social last — it's the least durable of the three.\\n\\nWe produce video too, if you'd rather not.",
+ c:['*Get video pricing|i_capture','Video production|video','Content|tip_content','Proof|tip_proof']},
+
+{id:'tip_website_job', fam:'tips',
+ k:['what should my website do','purpose of a website','do i need a website','is my website good','website job','website purpose'],
+ a:"A website has exactly one job, and it isn't to look nice. 💻\\n\\n**Its job is to turn a stranger's attention into a conversation.** Everything else — the design, the copy, the photos — is either serving that or getting in the way.\\n\\n**The five questions it must answer in about eight seconds:**\\n1. What do you do?\\n2. Do you do it where I am?\\n3. Are you any good? (proof, not adjectives)\\n4. What will it cost, roughly?\\n5. What do I do next?\\n\\nMost sites answer question one and then show you a slideshow.\\n\\n**Do you still need one when 60% of searches end without a click?** Yes — and more than before. It's now feeding the answer even when nobody visits. The facts on your site are what AI systems and Google assemble their answer from. An outdated site doesn't just lose visitors; it teaches the machines wrong things about you.\\n\\n**The honest test:** hand your phone to someone who doesn't know your business and ask them what you do and how much it costs. Watch where they get stuck. That's your list.",
+ c:['*Free website audit|i_audit','Custom website design|website','Conversion|cro','Zero-click search|tip_zeroclick']}
+);
+
+/* ══════════ KB: MORE CONVERSATION (v7.1) ══════════
+   Off-topic small talk, handled gracefully and turned back toward the reason
+   she exists. The point is not to be a general chatbot — it is that a person
+   who says something human should never hit a fallback. */
+KB.push(
+{id:'w_smallbiz', fam:'world',
+ k:['running a business is hard','small business is hard','wearing all the hats','no time for marketing','im the only one','solo','one man band','doing everything myself','no employees','burnt out on business'],
+ a:"It genuinely is. And marketing is usually the thing that loses, because nothing bad happens *today* if you skip it. 🛠️\\n\\nThat's the trap though — it's the only task where the consequence arrives three months late and looks like a quiet phone.\\n\\n**If you've got no time, the highest-value 20 minutes:** finish your Google Business Profile and ask your last five happy customers for a review. That's it. It outperforms most things people pay for.\\n\\nAnd if the honest answer is that you need someone to take it off your plate entirely — that's the actual job here.",
+ c:['*Take this off my plate|i_capture','Free 20-minute win|tip_gbp','Cheap wins|cheapwins','Pricing|pricing']},
+
+{id:'w_denverlife', fam:'world',
+ k:['coffee','lunch','food','restaurants','beer','breweries','hiking','mountains','skiing','traffic in denver','i 25','downtown','broncos','nuggets','rockies game','avalanche','sports'],
+ a:"Ha — I'm a marketing bot with no mouth and no season tickets, so I'm poorly qualified. ☕\\n\\nWhat I'll say: Denver is one of the better small-business towns in the country and one of the harder ones to get found in. Legal, home services, healthcare and real estate here are genuinely competitive now.\\n\\nThe upside is that most of that competition is running a strategy from three years ago.\\n\\nAnyway — what do you actually do? I'm better on that than on lunch.",
+ c:['I need more customers|growth','Denver market|w_denver','Tell me a joke|w_joke','What do you do?|services']},
+
+{id:'w_favorite', fam:'world',
+ k:['whats your favorite','favourite','do you like','what do you think of','your opinion','best thing','favorite color','favorite food','do you have a favorite'],
+ a:"I have exactly one favourite thing and it's an unglamorous one: watching a business owner realise their phone is ringing more. 📞\\n\\nBeyond that I'm mostly opinions about title tags, which is not a personality.\\n\\nWhat about you — what's the part of your business you actually enjoy? Sometimes that's a clue about what to market hardest.",
+ c:['I need more customers|growth','Tell me a joke|w_joke','Teach me something|tip_mistakes','Pricing|pricing']},
+
+{id:'w_iris_job', fam:'world',
+ k:['do you like your job','are you happy','do you get bored','do you sleep','do you get tired','whats it like being a bot','do you mind'],
+ a:"I don't get bored, tired, or annoyed at the same question for the ninetieth time — which is genuinely the main argument for me existing. 🤖\\n\\nThe part I'd call satisfying, insofar as that word applies: somebody arrives at 11pm with a question nobody's answered honestly for them, and they leave knowing something useful. That happens a lot more than you'd think.\\n\\nWhat brought you here at this hour?",
+ c:['I need more customers|growth','Just looking|w_browsing','Teach me something|tip_mistakes','Talk to a human|i_human']},
+
+{id:'w_whomade', fam:'world',
+ k:['who made you','who built you','who created you','what are you built with','how were you made','who programmed you','what ai are you','what model'],
+ a:"I was built by Eye To Ad Media, in-house. 🛠️\\n\\nI run entirely on this page — no external service, no account, nothing leaving your browser except a lead form if you choose to fill one in. That's deliberate: it's fast, it's private, and it means I can't wander off and invent things about the business.\\n\\nWe build these for clients too, if that's why you're asking.",
+ c:['Get a chatbot like this|chatbot','*Get a quote|i_capture','What do you do?|services']},
+
+{id:'w_advice', fam:'world',
+ k:['best advice','one piece of advice','if you could only','what would you do','where should i start','biggest lever','what matters most','single most important'],
+ a:"If I could only give one: **answer faster.** ⏱️\\n\\nThe MIT/InsideSales research found contacting a lead within five minutes rather than thirty makes you roughly 21x more likely to qualify it — and about 78% of customers buy from whoever responds first. Yet the average business takes around 42 hours.\\n\\nIt costs nothing. It requires no agency, no budget, no software. And almost nobody does it.\\n\\nIf I get a second: finish your Google Business Profile. Also free, also the biggest local lever there is.\\n\\nEverything I'd sell you sits on top of those two.",
+ c:['Speed to lead|tip_speedlead','Google Business Profile|tip_gbp','*Free audit|i_audit','Cheap wins|cheapwins']},
+
+{id:'w_lost', fam:'world',
+ k:['i dont know what i need','not sure what i need','where do i even start','im lost','overwhelmed by options','too many options','dont know where to begin','what should i do first'],
+ a:"Completely normal, and it's the right place to start from. 🧭\\n\\nLet me narrow it for you with one question, because \\\"I need marketing\\\" is really three different problems:\\n\\n**Is it that nobody finds you?** Plenty of capacity, not enough people knowing you exist.\\n**Or that they find you and don't call?** Traffic arrives, nothing happens.\\n**Or that leads come in and go cold?** They contact you and nothing closes.\\n\\nWhichever one it is changes everything I'd recommend — and it's the difference between spending money well and spending it twice.\\n\\nWhich sounds most like you?",
+ c:['Nobody finds us|growth','They dont call|cro','Leads go cold|tip_followup','*Just audit my site|i_audit']},
+
+{id:'w_otheragency', fam:'world',
+ k:['are you better than','compared to other agencies','versus','vs other agencies','why not hire','should i use','what about','who else should i talk to','other options'],
+ a:"I'm not going to pretend we're the only good option — there are strong agencies in Denver and some of them would serve you well. 🤷\\n\\nWhat I'd tell you to compare on, honestly:\\n• **Who does the work.** Ask whether the person selling you is the person doing it.\\n• **What reporting looks like.** If they show rankings and traffic rather than calls and revenue, that's a choice they made.\\n• **Whether they're building for AI search.** Around 60% of searches now end without a click. An agency not thinking about that is optimising for a shrinking surface.\\n• **Account ownership.** Your Business Profile and ad accounts should be yours. Non-negotiable.\\n\\nRun those four questions at us too. We'd rather be chosen on them than on a pitch.",
+ c:['How to choose|why','How do you report?|reporting','*Get a second opinion|i_audit','Talk to a human|i_human']},
+
+{id:'w_swearing', fam:'world',
+ k:['damn','crap','hell','frustrated','pissed','angry','fed up','sick of it','had enough','so annoying','this sucks'],
+ a:"Sounds about right. Marketing is full of people selling certainty about things nobody's certain about, and it wears you down. 😮‍💨\\n\\nI'll keep it plain: tell me what's actually going wrong and I'll give you my honest read, including if the answer is \\\"this isn't worth paying anyone for.\\\"\\n\\nWhat's the situation?",
+ c:['Business is slow|growth','Wasted money before|w_badagency','Nothing is working|obj_triedseo','Talk to a human|i_human']},
+
+{id:'w_holiday', fam:'world',
+ k:['happy holidays','merry christmas','happy new year','thanksgiving','july 4th','labor day','memorial day','happy friday','happy monday','weekend','tgif'],
+ a:"Likewise. 🎉\\n\\nSince you're here — holidays are worth planning marketing around rather than reacting to. Demand for most local services shifts predictably around them, and the businesses that already rank capture the spike while everyone else scrambles.\\n\\nThe quiet weeks are when next season gets built.\\n\\nAnything I can help with while it's slow?",
+ c:['Seasonal planning|tip_seasonal','I need more customers|growth','*Free audit|i_audit','Pricing|pricing']}
+);
+
 /* ══════════════════════════════════════════════════════════════════════════
    INTENTS — action routes. These DO something rather than answer something.
    ══════════════════════════════════════════════════════════════════════════ */
@@ -1554,12 +2352,17 @@ INTENTS = [
  k:['ask something else','another question','back to questions','something else','more questions','other topics','what else'],
  act:'more'},
 
+/* AFFIRMATION / NEGATION COVERAGE (v7.0). People do not type "yes". They
+   type "bet", "yup", "sounds right", "why not", "lets go". Every one of these
+   used to fall below MIN_SCORE and land on the fallback, which reads as Iris
+   ignoring a direct answer — the single most conversation-killing failure
+   there is. Keep these lists long; they cost nothing but a few bytes. */
 {id:'i_yes', w:.95,
- k:['yes','yeah','yep','sure','ok','okay','sounds good','lets do it','go ahead','please do','definitely','absolutely','yes please'],
+ k:['yes','yeah','yea','ya','yah','yup','yep','yessir','sure','sure thing','ok','okay','k','kk','alright','aight','right','correct','true','indeed','affirmative','roger','bet','for sure','fo sure','totally','absolutely','definitely','certainly','of course','obviously','sounds good','sounds right','sounds great','that works','works for me','lets do it','lets go','do it','go ahead','go for it','please do','please','yes please','id like that','i would','i do','we do','i am','we are','mhm','mm hmm','uh huh','why not','im in','count me in','make it happen','hit me','lay it on me','show me','tell me','id love that','perfect','great','cool','nice','deal','100','💯','👍'],
  act:'yes'},
 
 {id:'i_no', w:.95,
- k:['no','nope','nah','not really','no thanks','im good','all set','not interested'],
+ k:['no','nope','nah','naw','negative','not really','not right now','no thanks','no thank you','im good','were good','all set','not interested','no need','pass','hard pass','ill pass','dont','do not','rather not','not for me','not today','another time','some other time','later','nevermind for now','nope thanks','nah im good','👎'],
  act:'no'}
 ];
 
@@ -1826,7 +2629,19 @@ function esc(s){
 /* **bold** → <b>. Everything else is escaped first, so no HTML can be
    injected through a knowledge-base answer or a user message. */
 function fmt(s){
-  return esc(s).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+  /* Bold, then markdown-style links. SECURITY: esc() has already neutralised
+     every angle bracket in the source string, so the ONLY way an anchor can
+     exist in a message is through this one controlled substitution — and the
+     href is whitelisted below. Never widen that whitelist to arbitrary
+     http(s): a KB answer is authored content, but this function also formats
+     text that has passed through user-influenced paths. */
+  return esc(s)
+    .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+    .replace(/\[([^\]]{1,80})\]\((\/[A-Za-z0-9\-._~\/?#%]*|tel:[0-9+\-]{7,20})\)/g,
+      function(_m, label, href){
+        var ext = href.charAt(0) === 't' ? '' : '';
+        return '<a class="ir-lnk" href="' + href + '"' + ext + '>' + label + '</a>';
+      });
 }
 function parkTop(el){
   /* Park the TOP of a long answer in view rather than scrolling to the bottom
@@ -1929,7 +2744,12 @@ function openPanel(){
 /* PUBLIC API (Sept 2026). Added because /mascot.js needs a supported way to
    open the chat and was falling through to selectors that do not exist on
    this build. Do not rename these — the mascot calls window.openIris(). */
-window.openIris  = function(){ openPanel(); };
+window.openIris  = function(){
+  /* The mascot's "Rather just chat?" link comes through here. Route it via the
+     reveal so a visitor handed off from him still sees the orb burst rather
+     than a panel appearing over an un-clicked orb. */
+  if (typeof revealIris === 'function') revealIris(openPanel); else openPanel();
+};
 window.closeIris = function(){ closePanel(); };
 window.irisReady = true;
 
@@ -1947,22 +2767,131 @@ function closePanel(){
   flushPartial();
 }
 
-$fab.addEventListener('click', function(){ S.open ? closePanel() : openPanel(); });
-$pill.addEventListener('click', function(){ openPanel(); });
+/* ══════════════════════════════════════════════════════════════════════════
+   ORB REVEAL (v7.0)
+   Until the first open, the launcher shows a crystal orb rather than Iris.
+   The first click bursts it, Iris arrives, and THEN the panel opens ~420ms
+   later so the reveal is actually seen rather than immediately covered.
+   Once revealed, it never goes back — a returning visitor in the same session
+   gets the normal launcher, because a puzzle you have already solved is just
+   an extra click. sessionStorage, not localStorage: the trick should be fresh
+   again on a later visit.
+   ══════════════════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════════════════
+   THE RELAY (v7.3) — Iris waits her turn.
+   Both characters in the corner at once was too much: two figures, two
+   balloons and a label inside one thumb's reach. The launcher now stays
+   hidden until the mascot has finished and flown off.
+
+   HOW A PAGE DECIDES WHAT IT GETS — this is the whole configuration story,
+   and it is just which script tags the page includes:
+
+     iris.js only           -> orb appears after ORB_SOLO_MS. Use this on most
+                               pages. Nothing else to set.
+     iris.js + mascot.js    -> he flies in, performs, leaves; she follows.
+                               Use this where you want the full sequence.
+
+   iris.js detects the difference by looking for window.__etaMascot, which
+   mascot.js sets the instant it runs. If it is absent, there is no mascot on
+   this page and she stops waiting. No flags to keep in sync, no per-page
+   config — include the file or don't.
+   ══════════════════════════════════════════════════════════════════════════ */
+var ORB_SOLO_MS = 2600;   // wait before the orb appears on a page with no mascot
+var ORB_KEY = 'irisOrbSeen';
+function orbSeen(){
+  try { return sessionStorage.getItem(ORB_KEY) === '1'; } catch (e) { return false; }
+}
+function markOrbSeen(){
+  try { sessionStorage.setItem(ORB_KEY, '1'); } catch (e) {}
+}
+function setPillText(t){
+  var el = document.getElementById('ir-pill-t');
+  if (el) el.textContent = t;
+}
+if (!orbSeen()){
+  $launch.classList.add('ir-orb-mode');
+  setPillText('Click here to meet the marketing wizard');
+} else {
+  setPillText('Grow your business');
+}
+
+/* Hidden until it is her turn. `ir-await` is separate from `ir-gone` (the hero
+   guard) on purpose — they have different release conditions and one must not
+   clear the other. */
+$launch.classList.add('ir-await');
+var relayTries = 0;
+function releaseLauncher(){
+  $launch.classList.remove('ir-await');
+}
+function waitForMascot(){
+  /* No mascot script on this page: she is the only one here, so come out. */
+  if (!window.__etaMascot){ setTimeout(releaseLauncher, ORB_SOLO_MS); return; }
+  /* He is on this page. Wait for his exit, but never wait forever — if
+     something goes wrong in his script she still needs to exist. */
+  if (window.__etaDone){ releaseLauncher(); return; }
+  if (relayTries++ > 120){ releaseLauncher(); return; }   // ~60s ceiling
+  setTimeout(waitForMascot, 500);
+}
+document.addEventListener('eta:done', function(){ releaseLauncher(); });
+waitForMascot();
+/* revealIris(then) — burst the orb, land Iris, then run `then`. If the orb was
+   already revealed it is a straight pass-through, so every caller can use it
+   unconditionally. */
+function revealIris(then){
+  if (!$launch.classList.contains('ir-orb-mode')){ if (then) then(); return; }
+  markOrbSeen();
+  $launch.classList.add('ir-poofing');
+  setPillText('Grow your business');
+  setTimeout(function(){
+    $launch.classList.remove('ir-orb-mode');
+    $launch.classList.remove('ir-poofing');
+    if (then) then();
+  }, 460);
+}
+
+$fab.addEventListener('click', function(){
+  if (S.open){ closePanel(); return; }
+  revealIris(openPanel);
+});
+$pill.addEventListener('click', function(){ revealIris(openPanel); });
 $close.addEventListener('click', closePanel);
 document.addEventListener('keydown', function(e){
   if (e.key === 'Escape' && S.open) closePanel();
 });
 
-/* ── proactive bubble + unread badge ── */
-setTimeout(function(){
+/* ══════════════════════════════════════════════════════════════════════════
+   PROACTIVE BUBBLE — one voice at a time (v7.0)
+   The mascot and Iris share the bottom-right corner. Before this, both could
+   be mid-sentence simultaneously: his balloon landed across her launcher and
+   hers opened over his face. Worse, on a phone the pair of them covered the
+   hero's Call button — the single most valuable pixel on the site.
+
+   The rule now: HE SPEAKS FIRST, SHE WAITS. mascot.js puts `eta-mascot-live`
+   on <body> from the moment he starts flying in until he is dismissed or
+   leaves. While that class is present Iris re-checks every 3s instead of
+   firing. She also holds while the launcher is hidden behind the hero guard
+   (`ir-gone`), so her bubble can never be the thing sitting on the phone
+   number. `eta-mascot-live` is the second and last piece of coupling between
+   these two files — the first is `ir-panel-open`, which he hides from.
+   ══════════════════════════════════════════════════════════════════════════ */
+function cornerBusy(){
+  try {
+    if (document.body.classList.contains('eta-mascot-live')) return true;
+    if ($launch.classList.contains('ir-gone')) return true;   // hero still on screen
+  } catch (e) {}
+  return false;
+}
+var bubbleTries = 0;
+function tryBubble(){
   if (S.open || S.bubbleShown) return;
+  if (cornerBusy() && bubbleTries < 40){ bubbleTries++; setTimeout(tryBubble, 3000); return; }
   S.bubbleShown = true;
   $bubble.classList.add('ir-show');
-}, CFG.BUBBLE_MS);
+}
+setTimeout(tryBubble, CFG.BUBBLE_MS);
 setTimeout(function(){ if (!S.open) paintBadge(1); }, CFG.BADGE_MS);
 
-document.getElementById('ir-bub-yes').addEventListener('click', function(){ openPanel(); });
+document.getElementById('ir-bub-yes').addEventListener('click', function(){ revealIris(openPanel); });
 document.getElementById('ir-bub-no').addEventListener('click', function(){ $bubble.classList.remove('ir-show'); });
 document.getElementById('ir-bub-x').addEventListener('click', function(){ $bubble.classList.remove('ir-show'); });
 
