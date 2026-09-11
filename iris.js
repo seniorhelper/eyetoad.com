@@ -1,6 +1,12 @@
 /*!
 ================================================================================
-  IRIS — Eye To Ad Media Growth Assistant · v5.7
+  IRIS — Eye To Ad Media Growth Assistant · v6.0
+  v6.0 (Sept 10 2026): new character artwork — a growth wizard with a flame-
+  crowned staff and the one-eyed Eye Toad crest, drawn in SVG and namespaced
+  irx-* so nothing can collide with the host page. Launcher and the panel
+  avatar share one drawing. Pill and proactive bubble restyled. Knowledge base
+  price corrected to $79.99. window.openIris()/closeIris() exposed for
+  /mascot.js. Everything below boot() is otherwise the v5.7 logic.
   EXTERNALIZED Sep 2 2026 from the inline block that used to sit before </body>
   on every page.
 ================================================================================
@@ -93,24 +99,84 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
 @keyframes ir-ping{0%{box-shadow:0 0 0 0 rgba(255,122,47,.5)}
   70%,100%{box-shadow:0 0 0 20px rgba(255,122,47,0)}}
 
+/* ── Iris character animation (namespaced irx-*) ── */
+
+.irx-float{animation:irxFloat 5s ease-in-out infinite}
+@keyframes irxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.irx-hem{transform-origin:85px 150px;animation:irxHem 4.2s ease-in-out infinite alternate}
+@keyframes irxHem{0%{transform:skewX(-1.6deg)}100%{transform:skewX(1.8deg)}}
+.irx-lid{transform-box:fill-box;transform-origin:center top;transform:scaleY(0);animation:irxBlink 6s infinite}
+@keyframes irxBlink{0%,93%,100%{transform:scaleY(0)}95%,97.5%{transform:scaleY(1)}}
+.i-stafflid{transform-box:fill-box;transform-origin:center top;transform:scaleY(0);animation:irxBlink 6s infinite .9s}
+/* flame: three tongues, each flickering on its own timer and origin so the
+   silhouette never repeats. Anchored at the base — it does not rotate. */
+.irx-flame-a,.irx-flame-b,.irx-flame-c{transform-box:fill-box;transform-origin:center bottom}
+.irx-flame-a{animation:irxFlameA 1.7s ease-in-out infinite alternate}
+.irx-flame-b{animation:irxFlameB 1.15s ease-in-out infinite alternate}
+.irx-flame-c{animation:irxFlameC .85s ease-in-out infinite alternate}
+@keyframes irxFlameA{0%{transform:scaleY(.94) scaleX(1.04) skewX(-3deg)}100%{transform:scaleY(1.1) scaleX(.95) skewX(4deg)}}
+@keyframes irxFlameB{0%{transform:scaleY(1.08) skewX(3deg)}100%{transform:scaleY(.92) skewX(-4deg)}}
+@keyframes irxFlameC{0%{transform:scaleY(.9) skewX(-2deg)}100%{transform:scaleY(1.14) skewX(3deg)}}
+/* sparks rise off the top and fade — upward only */
+.irx-spark{animation:irxRise 2.6s ease-out infinite}
+.irx-spark:nth-of-type(2){animation-delay:.5s}
+.irx-spark:nth-of-type(3){animation-delay:1s}
+.irx-spark:nth-of-type(4){animation-delay:1.5s}
+.irx-spark:nth-of-type(5){animation-delay:2s}
+@keyframes irxRise{
+  0%{opacity:0;transform:translate(0,10px) scale(.5)}
+  18%{opacity:1}
+  60%{opacity:.85}
+  100%{opacity:0;transform:translate(-4px,-30px) scale(.25)}
+}
+.irx-toadlid{transform-box:fill-box;transform-origin:center top;transform:scaleY(0);animation:irxBlink 4.4s infinite 2.1s}
+.irx-croak{transform-box:fill-box;transform-origin:center bottom;animation:irxCroak 4.4s ease-in-out infinite}
+@keyframes irxCroak{0%,86%,100%{transform:scaleY(1)}92%{transform:scaleY(1.09) scaleX(.97)}}
+.irx-glow{transform-box:fill-box;transform-origin:center;animation:irxGlow 3s ease-in-out infinite}
+@keyframes irxGlow{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.9;transform:scale(1.12)}}
+.irx-pupil{animation:irxLook 7s ease-in-out infinite}
+@keyframes irxLook{0%,40%,100%{transform:translateX(0)}50%,62%{transform:translateX(2.4px)}}
+.irx-dot{animation:irxTwinkle 3.4s ease-in-out infinite}
+.irx-dot:nth-of-type(2){animation-delay:.5s}
+.irx-dot:nth-of-type(3){animation-delay:1.1s}
+.irx-dot:nth-of-type(4){animation-delay:1.7s}
+.irx-dot:nth-of-type(5){animation-delay:2.3s}
+@keyframes irxTwinkle{0%,100%{opacity:.25}50%{opacity:1}}
+
 /* label pill — always visible, tells people what this is */
 .ir-pill{
-  background:#0d1a2c;color:#ffd0ad;border:1px solid rgba(255,122,47,.42);
-  padding:9px 15px;border-radius:999px;font-size:13px;font-weight:600;
-  white-space:nowrap;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.45);
+  display:flex;align-items:center;gap:8px;
+  background:linear-gradient(140deg,#12243d,#0b1728);color:#ffe2c8;
+  border:1px solid rgba(255,122,47,.5);
+  padding:10px 16px 10px 13px;border-radius:12px 12px 4px 12px;
+  font-size:13px;font-weight:600;white-space:nowrap;cursor:pointer;
+  box-shadow:0 8px 26px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);
   transition:all .18s ease;letter-spacing:.005em;
 }
+.ir-pill-dot{width:7px;height:7px;border-radius:50%;background:#ff7a2f;flex:none;
+  box-shadow:0 0 0 0 rgba(255,122,47,.6);animation:ir-pilse 2.6s ease-out infinite}
+@keyframes ir-pilse{0%{box-shadow:0 0 0 0 rgba(255,122,47,.6)}70%,100%{box-shadow:0 0 0 9px rgba(255,122,47,0)}}
 .ir-pill:hover{background:#132339;color:#fff;border-color:#ff7a2f;transform:translateX(-2px)}
 .ir-pill:focus-visible{outline:2px solid #ffd9a0;outline-offset:3px}
 @media(max-width:400px){.ir-pill{font-size:12px;padding:8px 12px}}
 
 /* proactive bubble — fires once, ~25s, dismissible */
 .ir-bubble{
-  position:absolute;right:0;bottom:84px;width:262px;background:#0d1a2c;
-  border:1px solid rgba(255,122,47,.4);border-radius:16px 16px 4px 16px;
-  padding:14px 16px 13px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  position:absolute;right:0;bottom:84px;width:276px;
+  background:linear-gradient(160deg,#132741,#0a1626 60%);
+  border:1px solid rgba(255,122,47,.45);border-radius:18px 18px 6px 18px;
+  padding:15px 17px 14px;box-shadow:0 20px 56px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.07);
   display:none;animation:ir-pop .34s cubic-bezier(.34,1.56,.64,1) forwards;
 }
+/* tail pointing down at the launcher */
+.ir-bubble::after{content:'';position:absolute;right:26px;bottom:-9px;width:16px;height:16px;
+  background:#0a1626;border-right:1px solid rgba(255,122,47,.45);
+  border-bottom:1px solid rgba(255,122,47,.45);transform:rotate(45deg);border-bottom-right-radius:4px}
+.ir-bub-head{display:flex;align-items:baseline;gap:8px;margin-bottom:7px;padding-right:18px}
+.ir-bub-name{font-size:13.5px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.ir-bub-role{font-size:10.5px;font-weight:600;color:#4ade80}
+.ir-bub-role::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:#4ade80;margin-right:5px;vertical-align:middle}
 .ir-bubble.ir-show{display:block}
 .ir-bub-txt{font-size:13px;color:#cfe0f2;line-height:1.55}
 .ir-bub-txt b{color:#ffb066;font-weight:700}
@@ -344,8 +410,9 @@ var IRIS_HTML = `
   <!-- ═══════════ PROACTIVE BUBBLE ═══════════ -->
   <div class="ir-bubble" id="ir-bubble" role="status">
     <button class="ir-bub-x" id="ir-bub-x" type="button" aria-label="Dismiss">&#10005;</button>
-    <div class="ir-bub-txt">Want <b>more customers</b>? I can probably help &mdash; ask me anything
-      about growing your business. &#128075;</div>
+    <div class="ir-bub-head"><span class="ir-bub-name">Iris</span><span class="ir-bub-role">Growth assistant</span></div>
+    <div class="ir-bub-txt">Most sites lose customers somewhere they can&rsquo;t see.
+      Tell me your website and I&rsquo;ll tell you where yours is leaking.</div>
     <div class="ir-bub-act">
       <button class="ir-bub-yes" id="ir-bub-yes" type="button">Let's talk</button>
       <button class="ir-bub-no" id="ir-bub-no" type="button">Not now</button>
@@ -358,50 +425,206 @@ var IRIS_HTML = `
     <button class="ir-fab" id="ir-fab" type="button" aria-expanded="false"
             aria-controls="ir-panel" aria-label="Open chat with Iris, growth assistant">
       <!-- ── IRIS: target-bodied growth bot. Cloned into the header avatar at runtime. ── -->
-      <svg viewBox="0 0 120 128" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
-        <g class="ir-body">
-          <!-- antenna -->
-          <path d="M60 34 V17" stroke="#0B1626" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-          <circle class="ir-bulb" cx="60" cy="11" r="6" fill="#22c55e" stroke="#0B1626" stroke-width="3"/>
-          <!-- legs + feet -->
-          <path d="M50 100 V115" stroke="#0B1626" stroke-width="6" stroke-linecap="round"/>
-          <path d="M70 100 V115" stroke="#0B1626" stroke-width="6" stroke-linecap="round"/>
-          <path d="M44 119 H55" stroke="#0B1626" stroke-width="6" stroke-linecap="round"/>
-          <path d="M65 119 H76" stroke="#0B1626" stroke-width="6" stroke-linecap="round"/>
-          <!-- arms -->
-          <path class="ir-arm ir-arm-l" d="M24 70 C12 74 8 83 10 91" stroke="#0B1626"
-                stroke-width="5.5" stroke-linecap="round" fill="none"/>
-          <path class="ir-arm ir-arm-r" d="M96 70 C108 74 112 83 110 91" stroke="#0B1626"
-                stroke-width="5.5" stroke-linecap="round" fill="none"/>
-          <!-- target body -->
-          <circle cx="60" cy="68" r="38" fill="#FFFFFF"/>
-          <circle cx="60" cy="68" r="31" fill="#E8500F"/>
-          <circle cx="60" cy="68" r="24" fill="#FFFFFF"/>
-          <circle cx="60" cy="68" r="18" fill="#0B1626"/>
-          <!-- face -->
-          <g class="ir-eyes">
-            <circle cx="50" cy="66" r="6.5" fill="#FFFFFF"/>
-            <circle cx="70" cy="66" r="6.5" fill="#FFFFFF"/>
-            <circle class="ir-pupil" cx="50" cy="66" r="3.2" fill="#0B1626"/>
-            <circle class="ir-pupil" cx="70" cy="66" r="3.2" fill="#0B1626"/>
-          </g>
-          <!-- glasses -->
-          <g stroke="#FFC98A" stroke-width="2.4" fill="none" stroke-linecap="round">
-            <circle cx="50" cy="66" r="8.5"/>
-            <circle cx="70" cy="66" r="8.5"/>
-            <path d="M58.5 65.4 Q60 63.6 61.5 65.4"/>
-            <path d="M41.6 63.6 L35 60.6"/>
-            <path d="M78.4 63.6 L85 60.6"/>
-          </g>
-          <!-- smile -->
-          <path d="M53 77 Q60 83.5 67 77" stroke="#FFC98A" stroke-width="2.8"
-                fill="none" stroke-linecap="round"/>
+      <svg viewBox="16 4 138 138" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+<defs>
+        <linearGradient id="irxRobe" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#3358CC"/><stop offset=".5" stop-color="#1E3A8A"/><stop offset="1" stop-color="#122A63"/>
+        </linearGradient>
+        <radialGradient id="irxEye" cx=".38" cy=".33" r=".78">
+          <stop offset="0" stop-color="#FFD9A0"/><stop offset=".45" stop-color="#FF8438"/><stop offset="1" stop-color="#B33C00"/>
+        </radialGradient>
+        <radialGradient id="irxHalo" cx=".5" cy=".5" r=".5">
+          <stop offset=".55" stop-color="#FF8438" stop-opacity=".4"/><stop offset="1" stop-color="#FF8438" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+<g id="irx-art" class="irx-float">
+
+        <!-- ===== STAFF (behind) ===== -->
+        <path d="M30 62 L27 300" stroke="#93A6C9" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="31" cy="52" r="30" fill="url(#irxHalo)" class="irx-glow"/>
+        <!-- staff tip: flame licking UPWARD, never rotating. Three nested
+             tongues on offset flicker timers so the shape never repeats
+             exactly, plus sparks rising off the top and fading out. -->
+        <g class="irx-flame-a">
+          <path d="M31 6 C22 24 17 33 20 41 C23 48 39 48 42 41 C45 33 40 24 31 6 Z" fill="#FF6A1A" opacity=".92"/>
         </g>
-      </svg>
+        <g class="irx-flame-b">
+          <path d="M31 15 C25 28 22 35 24 41 C26 46 36 46 38 41 C40 35 37 27 31 15 Z" fill="#FBBF24"/>
+        </g>
+        <g class="irx-flame-c">
+          <path d="M31 25 C28 33 26 37 27 41 C28 44 34 44 35 41 C36 37 34 32 31 25 Z" fill="#FFF3D0"/>
+        </g>
+        <circle class="irx-spark" cx="24" cy="30" r="2.3" fill="#FBBF24"/>
+        <circle class="irx-spark" cx="38" cy="26" r="1.8" fill="#FF8438"/>
+        <circle class="irx-spark" cx="31" cy="18" r="1.5" fill="#FFD9A0"/>
+        <circle class="irx-spark" cx="27" cy="22" r="1.9" fill="#FF6A1A"/>
+        <circle class="irx-spark" cx="36" cy="34" r="1.6" fill="#FBBF24"/>
+
+        <!-- ===== ROBE ===== -->
+        <g class="irx-hem">
+          <path d="M66 146 C50 154 46 170 44 188 L28 292 Q85 314 142 292 L126 188 C124 170 120 154 104 146 Z"
+                fill="url(#irxRobe)" stroke="#0B1626" stroke-width="4.5" stroke-linejoin="round"/>
+          <circle class="irx-dot" cx="68" cy="212" r="3" fill="#8FC6FF"/>
+          <circle class="irx-dot" cx="96" cy="232" r="2.4" fill="#8FC6FF"/>
+          <circle class="irx-dot" cx="74" cy="254" r="2.8" fill="#8FC6FF"/>
+          <circle class="irx-dot" cx="104" cy="272" r="2.4" fill="#8FC6FF"/>
+          <circle class="irx-dot" cx="62" cy="276" r="2.6" fill="#8FC6FF"/>
+          <path d="M68 212 L96 232 L74 254 L104 272" stroke="#8FC6FF" stroke-width="1.6" fill="none" opacity=".35"/>
+
+          <!-- ================= THE EYE TOAD CREST =================
+               An embroidered crest on the robe, sitting clear of the belt.
+               Real toad anatomy: broad flat skull with a blunt snout, PAROTOID
+               GLANDS behind the eye (the signature toad feature frogs do not
+               have), cranial crests, irregular warts that break the outline,
+               mottled dorsal patches, hind legs folded with knees up and
+               five-toed webbed feet, four-toed forelimbs propping it up.
+               One eye, centred, with a heavy brow ridge and a horizontal
+               pupil — toads have horizontal pupils, frogs' vary. -->
+          <g class="irx-croak" transform="translate(0,34)">
+            <!-- HIND LEGS -->
+            <g fill="#17913F" stroke="#0B1626" stroke-width="2.8" stroke-linejoin="round">
+              <path d="M63 240 C49 237 40 246 40 258 C40 267 46 273 54 272 L60 263 C54 261 51 256 53 250 C56 243 58 241 65 243 Z"/>
+              <path d="M107 240 C121 237 130 246 130 258 C130 267 124 273 116 272 L110 263 C116 261 119 256 117 250 C114 243 112 241 105 243 Z"/>
+            </g>
+            <path d="M52 268 L33 271 L36 279 L47 284 L57 277 Z" fill="#25A854" stroke="#0B1626" stroke-width="2.3" stroke-linejoin="round"/>
+            <path d="M118 268 L137 271 L134 279 L123 284 L113 277 Z" fill="#25A854" stroke="#0B1626" stroke-width="2.3" stroke-linejoin="round"/>
+            <g stroke="#0B1626" stroke-width="2" stroke-linecap="round" fill="none" opacity=".85">
+              <path d="M53 270 L34 271 M53 270 L36 278 M53 270 L44 284 M53 270 L53 285 M53 270 L58 277"/>
+              <path d="M117 270 L136 271 M117 270 L134 278 M117 270 L126 284 M117 270 L117 285 M117 270 L112 277"/>
+            </g>
+
+            <!-- BODY: broad, flat, blunt snout at the front -->
+            <path d="M58 248 C56 234 64 222 72 218 C78 215 92 215 98 218 C106 222 114 234 112 248
+                     C111 259 104 266 96 268 C89 270 81 270 74 268 C66 266 59 259 58 248 Z"
+                  fill="#22C55E" stroke="#0B1626" stroke-width="3.2" stroke-linejoin="round"/>
+            <!-- mottled dorsal patches -->
+            <g fill="#15803D" opacity=".55">
+              <ellipse cx="68" cy="252" rx="7" ry="5" transform="rotate(-18 68 252)"/>
+              <ellipse cx="102" cy="252" rx="7" ry="5" transform="rotate(18 102 252)"/>
+              <ellipse cx="85" cy="262" rx="9" ry="4.5"/>
+              <ellipse cx="74" cy="235" rx="5" ry="3.5" transform="rotate(-24 74 235)"/>
+              <ellipse cx="96" cy="235" rx="5" ry="3.5" transform="rotate(24 96 235)"/>
+            </g>
+            <!-- warts, several breaking the outline -->
+            <g fill="#126E34" stroke="#0B1626" stroke-width="1.4">
+              <circle cx="61" cy="243" r="3.2"/><circle cx="109" cy="243" r="3.2"/>
+              <circle cx="64" cy="258" r="2.8"/><circle cx="106" cy="258" r="2.8"/>
+              <circle cx="78" cy="264" r="2.4"/><circle cx="92" cy="264" r="2.4"/>
+              <circle cx="85" cy="248" r="2.2"/>
+            </g>
+            <!-- PAROTOID GLANDS — the toad tell -->
+            <ellipse cx="67" cy="230" rx="9" ry="5.5" transform="rotate(-32 67 230)" fill="#1BA34C" stroke="#0B1626" stroke-width="2.6"/>
+            <ellipse cx="103" cy="230" rx="9" ry="5.5" transform="rotate(32 103 230)" fill="#1BA34C" stroke="#0B1626" stroke-width="2.6"/>
+            <!-- cranial crests -->
+            <path d="M74 222 C79 218 91 218 96 222" fill="none" stroke="#0B1626" stroke-width="2.2" opacity=".6"/>
+            <!-- wide mouth with downturned corners, snout, nostrils -->
+            <path d="M62 244 Q85 260 108 244" fill="none" stroke="#0B1626" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M62 244 Q65 250 70 252 M108 244 Q105 250 100 252" fill="none" stroke="#0B1626" stroke-width="2" stroke-linecap="round" opacity=".65"/>
+            <path d="M79 238 Q85 242 91 238" fill="none" stroke="#0B1626" stroke-width="1.8" opacity=".45"/>
+            <circle cx="80" cy="232" r="1.7" fill="#0B1626"/>
+            <circle cx="90" cy="232" r="1.7" fill="#0B1626"/>
+
+            <!-- FORELIMBS -->
+            <g fill="#17913F" stroke="#0B1626" stroke-width="2.8" stroke-linejoin="round">
+              <path d="M74 264 C70 271 69 278 71 283 L80 282 C78 277 78 271 81 266 Z"/>
+              <path d="M96 264 C100 271 101 278 99 283 L90 282 C92 277 92 271 89 266 Z"/>
+            </g>
+            <g stroke="#0B1626" stroke-width="2" stroke-linecap="round" fill="none" opacity=".85">
+              <path d="M75 282 L69 289 M75 282 L75 291 M75 282 L81 288 M75 282 L84 287"/>
+              <path d="M95 282 L101 289 M95 282 L95 291 M95 282 L89 288 M95 282 L86 287"/>
+            </g>
+
+            <!-- THE EYE: heavy brow, horizontal pupil -->
+            <ellipse cx="85" cy="222" rx="15" ry="12" fill="#22C55E" stroke="#0B1626" stroke-width="3.2"/>
+            <path d="M70 219 C74 210 96 210 100 219" fill="#1BA34C" stroke="#0B1626" stroke-width="3"/>
+            <ellipse cx="85" cy="221" rx="11" ry="9.5" fill="#FFF6E0" stroke="#0B1626" stroke-width="2.8"/>
+            <g class="irx-pupil">
+              <circle cx="85" cy="221" r="6.5" fill="url(#irxEye)" stroke="#0B1626" stroke-width="2"/>
+              <ellipse cx="85" cy="221" rx="5" ry="2.3" fill="#0B1626"/>
+              <circle cx="82" cy="218" r="1.8" fill="#fff" opacity=".9"/>
+            </g>
+            <ellipse class="irx-toadlid" cx="85" cy="221" rx="11.5" ry="10" fill="#1BA34C"/>
+          </g>
+          <path d="M66 150 C60 190 56 244 52 288" fill="none" stroke="#0B1626" stroke-width="2.4" opacity=".22"/>
+          <path d="M104 150 C110 190 114 244 118 288" fill="none" stroke="#0B1626" stroke-width="2.4" opacity=".22"/>
+          <path d="M28 292 Q85 314 142 292" fill="none" stroke="#FF6A1A" stroke-width="6" stroke-linecap="round"/>
+        </g>
+
+        <!-- V-neck of the inner garment, then belt -->
+        <path d="M70 146 L85 176 L100 146 Z" fill="#0E1F4D" stroke="#0B1626" stroke-width="3" stroke-linejoin="round"/>
+
+        <!-- ===== ARMS + CUFFS ===== -->
+        <path d="M68 152 C50 162 38 180 34 200 L50 203 C53 186 58 172 74 160 Z"
+              fill="url(#irxRobe)" stroke="#0B1626" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="32" y="196" width="22" height="10" rx="5" fill="#FF6A1A" stroke="#D94A00" stroke-width="2.5" transform="rotate(-12 43 201)"/>
+        <!-- hand closed around the staff, fingers wrapping in front of it -->
+        <path d="M22 210 C22 203 27 199 33 200 C39 201 42 206 41 213 C40 220 35 224 29 223 C24 222 22 217 22 210 Z"
+              fill="#F2C39C" stroke="#0B1626" stroke-width="3"/>
+        <g stroke="#0B1626" stroke-width="2" stroke-linecap="round" fill="none" opacity=".65">
+          <path d="M25 207 L39 208 M24 213 L40 214 M26 219 L38 219"/>
+        </g>
+        <path d="M33 200 C37 198 41 200 41 204" fill="none" stroke="#0B1626" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M102 152 C120 162 130 182 128 204 L112 201 C114 184 108 170 96 160 Z"
+              fill="url(#irxRobe)" stroke="#0B1626" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="110" y="198" width="22" height="10" rx="5" fill="#FF6A1A" stroke="#D94A00" stroke-width="2.5" transform="rotate(6 121 203)"/>
+        <!-- open hand, relaxed at her side -->
+        <path d="M117 210 C117 204 122 200 128 201 C134 202 137 207 136 214 C135 221 130 225 124 224 C119 223 117 217 117 210 Z"
+              fill="#F2C39C" stroke="#0B1626" stroke-width="3"/>
+        <g stroke="#C08A5E" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".7">
+          <path d="M124 216 L124 223 M129 216 L130 223 M133 214 L134 220"/>
+        </g>
+
+        <!-- ===== HAIR (behind face) ===== -->
+        <path d="M58 96 C46 118 46 152 54 178 L74 170 C66 146 66 118 74 100 Z"
+              fill="#7A4A1E" stroke="#0B1626" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M112 96 C126 118 128 154 118 182 L98 172 C108 148 106 118 98 100 Z"
+              fill="#7A4A1E" stroke="#0B1626" stroke-width="3.5" stroke-linejoin="round"/>
+        <g stroke="#A9713A" stroke-width="2.6" stroke-linecap="round" fill="none" opacity=".8">
+          <path d="M62 108 C56 128 56 152 61 170"/>
+          <path d="M108 108 C116 128 117 154 112 174"/>
+        </g>
+
+        <!-- ===== FACE ===== -->
+        <ellipse cx="85" cy="114" rx="24" ry="25" fill="#F2C39C" stroke="#C08A5E" stroke-width="3"/>
+        <path d="M63 128 C69 144 101 144 107 128" fill="none" stroke="#D49A6E" stroke-width="3" opacity=".45" stroke-linecap="round"/>
+        <path d="M69 104 L81 101" stroke="#4A2C17" stroke-width="4" stroke-linecap="round"/>
+        <path d="M89 101 L101 104" stroke="#4A2C17" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="75" cy="114" rx="7.5" ry="8.5" fill="#fff" stroke="#8E6140" stroke-width="2.2"/>
+        <ellipse cx="95" cy="114" rx="7.5" ry="8.5" fill="#fff" stroke="#8E6140" stroke-width="2.2"/>
+        <path d="M67 109 C70 105 80 105 82.5 109" fill="none" stroke="#3A2411" stroke-width="3" stroke-linecap="round"/>
+        <path d="M87.5 109 C90 105 100 105 103 109" fill="none" stroke="#3A2411" stroke-width="3" stroke-linecap="round"/>
+        <path d="M66 108 L63 105 M104 108 L107 105" stroke="#3A2411" stroke-width="2.4" stroke-linecap="round"/>
+        <ellipse cx="66" cy="124" rx="6" ry="3.5" fill="#E8896B" opacity=".3"/>
+        <ellipse cx="104" cy="124" rx="6" ry="3.5" fill="#E8896B" opacity=".3"/>
+        <g class="irx-pupil">
+          <circle cx="76" cy="115" r="4" fill="#1B6FD8"/><circle cx="96" cy="115" r="4" fill="#1B6FD8"/>
+          <circle cx="74.5" cy="113" r="1.6" fill="#fff"/><circle cx="94.5" cy="113" r="1.6" fill="#fff"/>
+        </g>
+        <ellipse class="irx-lid" cx="75" cy="114" rx="8" ry="9" fill="#F2C39C"/>
+        <ellipse class="irx-lid" cx="95" cy="114" rx="8" ry="9" fill="#F2C39C"/>
+        <path d="M85 118 L82.5 125 L87.5 125" fill="none" stroke="#C08A5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M76 132 Q85 139 94 132" fill="none" stroke="#96603A" stroke-width="3.2" stroke-linecap="round"/>
+
+        <!-- ===== FRINGE under the brim ===== -->
+        <path d="M62 96 C70 86 100 86 108 96 C100 92 90 90 85 94 C78 90 70 90 62 96 Z"
+              fill="#7A4A1E" stroke="#0B1626" stroke-width="3" stroke-linejoin="round"/>
+
+        <!-- ===== WIZARD HAT ===== -->
+        <path d="M40 88 C42 58 50 28 64 14 C69 7 78 10 77 20 C75 38 90 64 130 86 Z"
+              fill="url(#irxRobe)" stroke="#0B1626" stroke-width="4.5" stroke-linejoin="round"/>
+        <ellipse cx="85" cy="90" rx="54" ry="13" fill="url(#irxRobe)" stroke="#0B1626" stroke-width="4.5"/>
+        <path d="M47 80 C62 88 108 88 124 80" fill="none" stroke="#FF6A1A" stroke-width="9" stroke-linecap="round"/>
+        <!-- the eye emblem on the hat ties it to the logo -->
+        <ellipse cx="70" cy="58" rx="13" ry="9" fill="#fff" stroke="#0B1626" stroke-width="3"/>
+        <circle cx="70" cy="58" r="5.5" fill="url(#irxEye)" stroke="#0B1626" stroke-width="2"/>
+        <circle cx="70" cy="58" r="2" fill="#0B1626"/>
+        <circle cx="72" cy="20" r="4.5" fill="#FBBF24" stroke="#0B1626" stroke-width="2.5" class="irx-glow"/>
+      </g>
+</svg>
       <span class="ir-badge" id="ir-badge" aria-hidden="true"></span>
     </button>
 
-    <button class="ir-pill" id="ir-pill" type="button" tabindex="-1">Grow my business &rarr;</button>
+    <button class="ir-pill" id="ir-pill" type="button" tabindex="-1"><span class="ir-pill-dot" aria-hidden="true"></span>Grow your business</button>
   </div>
 `;
 
@@ -994,7 +1217,7 @@ KB.push(
 
 {id:'graphic', fam:'build',
  k:['logo','logo design','graphic design','print design','brochure','business cards','flyer design','signage design','packaging','design work','need a logo','do you do logos'],
- a:"Yes — logo, graphic and print design are all in-house. 🎨\n\nWhat we produce:\n• Logo design and full brand identity systems\n• Business cards, brochures, flyers, rack cards\n• Vehicle wraps and signage artwork\n• Trade show graphics and banners\n• Packaging and labels\n• Social and ad creative\n\nOn logos specifically: a logo's job is recognition, not cleverness. It has to work at the size of a phone icon and in one colour on a shirt. Most logos that lose that test were designed on a large screen and never checked anywhere else.\n\nVIP members get member pricing on all of it — the membership is $69.99/month.",
+ a:"Yes — logo, graphic and print design are all in-house. 🎨\n\nWhat we produce:\n• Logo design and full brand identity systems\n• Business cards, brochures, flyers, rack cards\n• Vehicle wraps and signage artwork\n• Trade show graphics and banners\n• Packaging and labels\n• Social and ad creative\n\nOn logos specifically: a logo's job is recognition, not cleverness. It has to work at the size of a phone icon and in one colour on a shirt. Most logos that lose that test were designed on a large screen and never checked anywhere else.\n\nVIP members get member pricing on all of it — the membership is $79.99/month.",
  c:['Branding|branding','VIP membership|pricing','*Get a design quote|i_capture']},
 
 {id:'nfc', fam:'build',
@@ -1177,7 +1400,7 @@ KB.push(
 
 {id:'w_price_of_iris', fam:'world',
  k:['how much are you','can i buy you','get a bot like you','how much for a chatbot','build me a bot','what does this cost to build'],
- a:"You can have one, yes. 🤖\n\nWe build these — knowledge base, lead capture, page awareness, the lot. Cost depends on how much it needs to know and what it needs to connect to.\n\nWhat makes them worth it: a large share of enquiries happen outside office hours, and a bot that can actually answer questions captures the ones a contact form loses.\n\nVIP members get member pricing on this like everything else — membership is $69.99/month.\n\nWant a quote? Takes a short conversation to scope properly.",
+ a:"You can have one, yes. 🤖\n\nWe build these — knowledge base, lead capture, page awareness, the lot. Cost depends on how much it needs to know and what it needs to connect to.\n\nWhat makes them worth it: a large share of enquiries happen outside office hours, and a bot that can actually answer questions captures the ones a contact form loses.\n\nVIP members get member pricing on this like everything else — membership is $79.99/month.\n\nWant a quote? Takes a short conversation to scope properly.",
  c:['*Get a chatbot quote|i_capture','Chatbots|chatbot','VIP membership|pricing']}
 );
 
@@ -1203,7 +1426,7 @@ KB.push(
 
 {id:'obj_expensive', fam:'obj',
  k:['too expensive','cant afford','out of my budget','cheaper','too much money','pricey','expensive','not in the budget','high cost'],
- a:"Fair. And I'd rather have this conversation now than after you've signed something uncomfortable. 💰\n\nA few honest things:\n\n**You don't have to start big.** Build-your-own plans start at $100/month for one focused deliverable. That's a real starting point, not a bait price — but nobody should pretend $100 buys a full campaign.\n\n**The membership exists for exactly this.** $69.99/month unlocks member pricing across everything, cancel anytime.\n\n**The audit is free.** No contract, no card, no obligation. You'll know what's wrong whether or not you hire anyone.\n\n**And the useful reframe:** what's one customer worth to you? If it's $2,000 and a campaign costs $800/month, the maths is about how many you need, not whether you can afford it.\n\nIf the honest answer is that now isn't the time — that's a real answer and I won't push.",
+ a:"Fair. And I'd rather have this conversation now than after you've signed something uncomfortable. 💰\n\nA few honest things:\n\n**You don't have to start big.** Build-your-own plans start at $100/month for one focused deliverable. That's a real starting point, not a bait price — but nobody should pretend $100 buys a full campaign.\n\n**The membership exists for exactly this.** $79.99/month unlocks member pricing across everything, cancel anytime.\n\n**The audit is free.** No contract, no card, no obligation. You'll know what's wrong whether or not you hire anyone.\n\n**And the useful reframe:** what's one customer worth to you? If it's $2,000 and a campaign costs $800/month, the maths is about how many you need, not whether you can afford it.\n\nIf the honest answer is that now isn't the time — that's a real answer and I won't push.",
  c:['Pricing|pricing','*Free audit anyway|i_audit','VIP membership|pricing']},
 
 {id:'obj_diy', fam:'obj',
@@ -1218,7 +1441,7 @@ KB.push(
 
 {id:'obj_contract', fam:'obj',
  k:['contract','long term contract','locked in','commitment','cancel anytime','month to month','how long am i committed','tied in','get out'],
- a:"Straight answer, because this is one where agencies are routinely slippery. 📝\n\n**Terms are set per engagement.** Month-to-month is available and it's what most clients run on. Some engagements — particularly bigger builds with real upfront production — are structured with a defined term, because the cost is front-loaded and that has to be shared fairly.\n\n**You'd know which applies before signing, not after.** That's the actual commitment I can make.\n\n**The free audit carries no contract, no card and no obligation at all.** That part is unconditional.\n\n**The VIP membership is $69.99/month and cancels anytime.**\n\nWhat I won't tell you is \"no contracts, ever,\" because it wouldn't be true and you'd find out later. If an agency tells you that without qualification, ask them to put it in writing.",
+ a:"Straight answer, because this is one where agencies are routinely slippery. 📝\n\n**Terms are set per engagement.** Month-to-month is available and it's what most clients run on. Some engagements — particularly bigger builds with real upfront production — are structured with a defined term, because the cost is front-loaded and that has to be shared fairly.\n\n**You'd know which applies before signing, not after.** That's the actual commitment I can make.\n\n**The free audit carries no contract, no card and no obligation at all.** That part is unconditional.\n\n**The VIP membership is $79.99/month and cancels anytime.**\n\nWhat I won't tell you is \"no contracts, ever,\" because it wouldn't be true and you'd find out later. If an agency tells you that without qualification, ask them to put it in writing.",
  c:['Pricing|pricing','*Free audit — no obligation|i_audit','How do you work?|process']},
 
 {id:'obj_lastagency', fam:'obj',
@@ -1266,7 +1489,7 @@ KB.push(
 KB.push(
 {id:'pricing', fam:'core', w:1.1,
  k:['pricing','price','cost','how much','rates','fees','packages','what do you charge','how much do you charge','quote','budget','affordable','membership','vip','subscription','plans','monthly cost'],
- a:"No games, and no \"it depends\" without numbers attached. 💵\n\n**Free SEO audit — $0.** No contract, no card, no obligation. You keep the findings whether you hire us or not.\n\n**Build-your-own — from $100/month.** One focused deliverable. An honest entry point, and I won't pretend it's a full campaign.\n\n**Full-service local SEO — typically $500-$3,000/month.** Depends on competition, scope and how much needs fixing first.\n\n**VIP Marketing Subscription — $69.99/month, cancel anytime.** Unlocks member pricing across everything: SEO, AI optimisation, logo, video, graphic and print design, landing pages, Business Profile work, website updates, NFC. Plus priority scheduling and VIP support. It works like a warehouse club — you're buying access, and the discount is the perk.\n\n**Ads and other channels** are scoped per campaign, and we're transparent about what's management fee versus media spend.\n\nWhat's the goal? I can tell you roughly where you'd land.",
+ a:"No games, and no \"it depends\" without numbers attached. 💵\n\n**Free SEO audit — $0.** No contract, no card, no obligation. You keep the findings whether you hire us or not.\n\n**Build-your-own — from $100/month.** One focused deliverable. An honest entry point, and I won't pretend it's a full campaign.\n\n**Full-service local SEO — typically $500-$3,000/month.** Depends on competition, scope and how much needs fixing first.\n\n**VIP Marketing Subscription — $79.99/month, cancel anytime — and it costs less if you pay annually.** Unlocks member pricing across everything: SEO, AI optimisation, logo, video, graphic and print design, landing pages, Business Profile work, website updates, NFC. Plus priority scheduling and VIP support. It works like a warehouse club — you're buying access, and the discount is the perk.\n\n**Ads and other channels** are scoped per campaign, and we're transparent about what's management fee versus media spend.\n\nWhat's the goal? I can tell you roughly where you'd land.",
  c:['*Free audit first|i_audit','What affects the price?|budget','Talk to a human|i_human','Contracts?|obj_contract']},
 
 {id:'cheapwins', fam:'core',
@@ -1680,6 +1903,13 @@ function openPanel(){
   if (!S.greeted){ S.greeted = true; greet(); }
   setTimeout(function(){ try { $inp.focus(); } catch (e) {} }, 340);
 }
+/* PUBLIC API (Sept 2026). Added because /mascot.js needs a supported way to
+   open the chat and was falling through to selectors that do not exist on
+   this build. Do not rename these — the mascot calls window.openIris(). */
+window.openIris  = function(){ openPanel(); };
+window.closeIris = function(){ closePanel(); };
+window.irisReady = true;
+
 function closePanel(){
   if (!S.open) return;
   S.open = false;
