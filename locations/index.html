@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Service Locations | Denver Metro SEO — Eye To Ad Media</title>
-<meta name="description" content="Local SEO across the Denver metro — Denver, Arvada, Lakewood, Aurora, Thornton, Westminster, Centennial, Highlands Ranch, Littleton, Parker, Broomfield, Wheat Ridge and Castle Rock. Each city gets its own strategy. Call 1-800-481-8638.">
+<title>SEO Service Areas | Denver, the Mountain West &amp; Nationwide</title>
+<meta name="description" content="Local SEO in 24 cities across 9 states. Every market gets its own strategy, not a template. Call 1-800-481-8638.">
 <link rel="canonical" href="https://eyetoad.com/locations/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Eye To Ad Media">
-<meta property="og:title" content="Service Locations | Denver Metro SEO — Eye To Ad Media">
-<meta property="og:description" content="Thirteen Denver metro cities, each with a dedicated local SEO strategy built for that market's competition and search behaviour.">
+<meta property="og:title" content="SEO Service Areas | Eye To Ad Media">
+<meta property="og:description" content="Local SEO in 24 cities across 9 states. Every market gets its own strategy, not a template. Call 1-800-481-8638.">
 <meta property="og:url" content="https://eyetoad.com/locations/">
 <meta property="og:image" content="https://eyetoad.com/images/images/denver-local-seo-domination-map.png">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Service Locations | Denver Metro SEO">
-<meta name="twitter:description" content="Thirteen Denver metro cities, each with a dedicated local SEO strategy.">
+<meta name="twitter:title" content="SEO Service Areas | Eye To Ad Media">
+<meta name="twitter:description" content="Local SEO in 24 cities across 9 states. Every market gets its own strategy, not a template.">
 <meta name="twitter:image" content="https://eyetoad.com/images/images/denver-local-seo-domination-map.png">
 
 <meta name="geo.region" content="US-CO">
@@ -24,14 +24,14 @@
 <meta name="ICBM" content="39.7317, -104.9965">
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="ai-content-type" content="service-area, local-business, directory, seo-agency">
-<meta name="subject" content="Denver metro local SEO service areas and city coverage">
+<meta name="ai-content-type" content="service-area, directory, seo-agency, multi-market">
+<meta name="subject" content="Local SEO service areas across the United States">
 <meta name="classification" content="Business/Marketing/Local SEO">
-<meta name="coverage" content="Denver metropolitan area, Colorado, United States">
+<meta name="coverage" content="United States">
 <meta name="author" content="Eye To Ad Media">
 <meta name="publisher" content="Eye To Ad Media">
 <meta name="copyright" content="Eye To Ad Media, Denver, CO">
-<meta name="article:modified_time" content="2026-07-28T00:00:00-06:00">
+<meta name="article:modified_time" content="2026-09-10T00:00:00-06:00">
 
 <meta name="googlebot" content="index, follow, max-snippet:-1">
 <meta name="bingbot" content="index, follow, max-snippet:-1">
@@ -80,10 +80,23 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden;max-width:100%}
-*{max-width:100%;word-break:break-word}
+
+/* ============================================================
+   OVERFLOW CONTROL — Aug 5 2026 REWRITE.
+   The old rule was:     Applied to EVERY element, `word-break:break-word` splits ordinary
+   prose mid-word on narrow screens — "optimiza-\ntion" — which looks
+   like a rendering bug and is what the audit flagged.
+   The replacement does the same containment job without touching
+   normal text: `overflow-wrap:anywhere` only breaks a word when it
+   genuinely cannot fit (long URLs, email addresses, unspaced
+   strings), and max-width is scoped to the elements that actually
+   overflow. Do not reinstate the universal selector.
+   ============================================================ */
+img,svg,video,canvas,iframe,table,pre,blockquote{max-width:100%}
+body,p,li,h1,h2,h3,h4,td,th,dd,dt,figcaption,address{overflow-wrap:anywhere}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
 body{font-family:'Inter',sans-serif;color:var(--ink3);background:var(--white);line-height:1.7;font-size:16px}
-img{display:block;max-width:100%;height:auto;word-break:normal}
+img{display:block;max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 :focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
@@ -114,7 +127,10 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .chip-white{color:var(--ink2);background:rgba(255,255,255,.9);border:1px solid var(--border)}
 .chip-purple{color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe}
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTONS =====
+   VALID MODIFIERS ONLY: btn-orange, btn-blue, btn-ghost-white,
+   btn-ghost-blue, btn-white, btn-lg. There is no btn-primary and no
+   btn-ghost-light — using one silently renders an unstyled button. */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
 .btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
 .btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
@@ -130,40 +146,70 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
 /* ===== UTILITY BAR (very top — domain search + phone) ===== */
 .ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
-.ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;padding:6px 0;flex-wrap:wrap}
+.ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:7px 0;flex-wrap:wrap}
 .ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.ubar-dom{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;color:#FDBA74;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.35);padding:6px 14px;border-radius:20px;transition:all .18s;white-space:nowrap}
-.ubar-dom:hover{background:rgba(249,115,22,.22);color:#fff;border-color:var(--orange)}
+/* The left group may shrink; the right group may not. Without this the domain
+   pill forces the row wider than .wrap on narrow screens and the phone number
+   is pushed past the 20px gutter, last digit flush to the viewport edge. */
+.ubar-left{min-width:0;flex:0 1 auto;overflow:hidden}
+.ubar-right{flex:0 0 auto}
+/* DOMAIN PILL: was an orange-tinted pill competing with the CTA. Now a quiet
+   outline that reads as a utility link, which is what it is. */
+.ubar-dom{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);padding:7px 15px;border-radius:8px;transition:all .18s;white-space:nowrap}
+.ubar-dom:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.32)}
 .ubar-txt{font-size:.78rem;color:rgba(255,255,255,.5);white-space:nowrap}
 .ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
 .ubar-link:hover{color:var(--orange)}
-.ubar-tel{font-size:.82rem;font-weight:800;color:var(--orange);white-space:nowrap}
+/* PHONE NUMBER — deliberately the loudest text in the chrome (Sept 2026).
+   1.75rem is roughly 2.1x the old .82rem and is about the practical ceiling
+   for a single-row utility bar; past this the bar becomes the tallest thing
+   above the fold and pushes the hero down, which is the problem the AI-strip
+   removal just solved. If it needs to be bigger still, it has to move into
+   the header row on its own line rather than grow here. */
+.ubar-tel{font-size:1.75rem;font-weight:800;color:#fff;white-space:nowrap;padding-right:4px;letter-spacing:-.01em;line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.5);transition:color .18s}
+.ubar-tel:hover{color:var(--orange)}
+/* "Call" is set smaller than the number on purpose: it supplies the verb a
+   CTA needs without stealing size from the thing you actually want read and
+   tapped. Sentence case, not all-caps. */
+.ubar-tel-lbl{font-size:.52em;font-weight:600;color:rgba(255,255,255,.6);margin-right:7px;letter-spacing:.02em}
+.ubar-tel:hover .ubar-tel-lbl{color:rgba(249,115,22,.75)}
 @media(max-width:768px){
   .ubar-txt,.ubar-link{display:none}
   .ubar-inner{justify-content:space-between;min-height:38px;gap:8px;flex-wrap:nowrap}
-  .ubar-dom{font-size:.72rem;padding:5px 11px}
-  .ubar-tel{font-size:.78rem}
+  .ubar-dom{font-size:.72rem;padding:6px 11px}
+  .ubar-tel{font-size:1.35rem;padding-right:2px}
+  .ubar-tel-lbl{margin-right:5px}
 }
 
 /* ===== TICKER ===== */
-.ticker{background:var(--orange);padding:7px 0;overflow:hidden;position:relative;z-index:1001}
-.ticker-track{display:flex;animation:tick 34s linear infinite;width:max-content}
+/* TICKER (Sept 2026): was a full-width SOLID ORANGE band. Between it, the
+   orange CTA, the orange eyebrow and the gold VIP card, the first screen had
+   four competing warm blocks — the "circus" problem. The band is now dark and
+   sits with the utility bar, header and hero as one continuous dark field, so
+   ORANGE APPEARS EXACTLY ONCE ABOVE THE FOLD: the primary CTA. Keep it that
+   way. If you need to accent something up here, use the separator diamonds. */
+.ticker{background:linear-gradient(90deg,#080E1A 0%,#16233E 50%,#080E1A 100%);border-top:1px solid rgba(249,115,22,.22);border-bottom:1px solid rgba(249,115,22,.22);padding:8px 0;overflow:hidden;position:relative;z-index:1001}
+.ticker-track{display:flex;animation:tick 28s linear infinite;width:max-content}
 .ticker-track:hover{animation-play-state:paused}
-.ticker-item{white-space:nowrap;padding:0 32px;font-size:.78rem;font-weight:700;letter-spacing:.03em;color:var(--ink);display:flex;align-items:center;gap:10px}
-.ticker-sep{opacity:.35}
+.ticker-item{white-space:nowrap;padding:0 32px;font-size:.79rem;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:10px}
+.ticker-sep{color:var(--orange);opacity:.65}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Marquee speed. 21.6s desktop / 16.8s mobile. Lower = faster. The track is
+   DOUBLED (10 spans for 5 items) and animates to -50%, so one full cycle
+   shows each item exactly once. Keep both halves identical.
+   Slowed 20% on Aug 14 2026 (was 18s / 14s) — the previous pace was
+   marginally too fast to finish reading an item on a phone. */
+@media(max-width:768px){.ticker-track{animation-duration:22s}}
 
 /* ============================================================
    HEADER
    LOGO SIZE (locked July 2026 — do NOT reduce):
-     desktop max-height 76px / max-width 300px
-     mobile  max-height 56px / max-width 190px
-     footer  matches header exactly (same rule, .brand-logo)
-   The old build set .hdr-inner{height:300px} which produced ~220px
-   of EMPTY padding on mobile and pushed the hero below the fold.
-   Header is now content-height. Logo itself was NOT shrunk.
-   .mob-nav top offset is now set by JS (measureHeader) instead of a
-   hard-coded 300px, so header height and menu can never drift apart.
+     desktop 300x102 / mobile 250x88 / footer matches header
+   The old build set .hdr-inner{height:300px}, producing ~220px of
+   EMPTY padding on mobile and pushing the hero below the fold.
+   Header is now content-height. The logo itself was NOT shrunk.
+   .mob-nav top offset is set by JS (measureHeader), never hard-coded,
+   so header height and menu position cannot drift apart.
    ============================================================ */
 .hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
 .hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
@@ -171,26 +217,90 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .logo{display:flex;align-items:center;flex-shrink:0}
 /* ============================================================
    LOGO SIZE — ONE PLACE.
-   ROOT CAUSE (found July 28 2026): eye-to-ad-media-logo-denver-seo.png
+   ROOT CAUSE (July 28 2026): eye-to-ad-media-logo-denver-seo.png
    contains a large amount of TRANSPARENT PADDING. The artwork occupies
    only a horizontal band in the middle of a much taller canvas. That is
    why height-based sizing shrank the visible mark, and why width-based
    sizing produced a ~330px tall header full of empty space.
-   THE FIX: give the img a fixed WIDTH and a fixed HEIGHT window, then
-   `object-fit:cover` scales the image to fill the width and crops the
-   transparent bands off the top and bottom. Nothing is distorted —
-   only empty pixels are cut.
-   TO TUNE: `width` controls how big the logo looks. `height` controls
-   how much air is around it (raise it if the mark looks cropped, lower
-   it if there is dead space). `object-position` is set to 44% rather
-   than centre because the artwork sits slightly ABOVE centre in the
-   canvas — that is why only the TOP edge was clipping. Change nothing else.
+   THE FIX: fixed WIDTH and fixed HEIGHT window, then `object-fit:cover`
+   scales to fill the width and crops the transparent bands off top and
+   bottom. Nothing is distorted — only empty pixels are cut.
+   TO TUNE: `width` controls apparent size. `height` controls the air
+   around it (raise if the mark looks cropped, lower if there is dead
+   space). `object-position` is 44% rather than centre because the
+   artwork sits slightly ABOVE centre — that is why only the TOP edge
+   was clipping. Change nothing else.
+   The <img> width/height ATTRIBUTES are 300x102 to match what CSS
+   renders. They used to be 760x190 (the raw file), which reserved a box
+   with the wrong aspect ratio and caused a layout shift on first paint.
    PERMANENT FIX: crop the padding out of the PNG itself, then this
    collapses to a plain `width` + `height:auto`.
    Breakpoints MUST stay in descending order (largest first).
    ============================================================ */
 .brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
-@media(max-width:1100px){.brand-logo{width:270px;height:94px}}
+
+/* ============================================================
+   HEADER FIT — ADDED Sep 2 2026. This fixes a real clipping bug,
+   not a cosmetic one. Read before touching any breakpoint below.
+
+   ROOT CAUSE: at full size the header row needs roughly 1340px —
+   a 300px logo, seven nav items, and three right-hand CTAs, none
+   of which may shrink (flex-shrink:0) or wrap (white-space:nowrap).
+   Its container is .wrap, capped at 1180px. So the row ALWAYS
+   overflowed its container by ~160px, at every viewport width.
+
+   WHY NOBODY CAUGHT IT: on a wide monitor that overflow spills into
+   the empty margin outside .wrap and is invisible. Below roughly
+   1540px of CSS width the spill runs past the viewport edge instead
+   and the Free Audit button is sliced in half. A 1920x1080 laptop at
+   125% display scaling is 1536 CSS px, which is exactly on the wrong
+   side of that line — which is how this was finally found. The
+   "empty space on the left" is the same bug seen from the other end:
+   the container stays centred while the content spills right.
+
+   THE FIX: shrink the row in stages so it fits 1180 at every width.
+   The rejected alternative was giving the header its own wider
+   container; that works, but it puts the logo ~110px left of the
+   hero headline and breaks the vertical alignment of the whole page
+   against every section below it.
+
+   THE TWO ITEMS DROPPED at the narrow end — the phone number and
+   the VIP pill — are BOTH still present in the utility bar sitting
+   directly above the header, so nothing becomes unreachable at any
+   width. That is why those two were chosen and not, say, the Free
+   Audit button, which has no duplicate anywhere in the chrome.
+
+   The hamburger now takes over at 1024px rather than 768px. Between
+   roughly 770 and 1000px the seven-item desktop nav genuinely cannot
+   fit, and a tablet getting the mobile menu is a normal outcome
+   rather than a compromise. The 768px block further down in the
+   RESPONSIVE section still repeats those three rules; that is
+   harmless duplication, not a conflict — the values are identical.
+
+   ABOVE 1600px NOTHING CHANGES. The logo stays at its locked
+   300x102, so the July 2026 size lock is preserved on real desktop
+   widths.
+
+   BREAKPOINTS MUST STAY IN DESCENDING ORDER (largest first).
+   ============================================================ */
+@media(max-width:1600px){
+  .hdr-inner{gap:10px}
+  .hdr-right{gap:7px}
+  .brand-logo{width:265px;height:92px}
+  .nl{font-size:.78rem;padding:8px 6px}
+  .hdr-vip{font-size:.78rem;padding:8px 13px}
+}
+@media(max-width:1150px){
+  /* the VIP pill is duplicated in the utility bar too */
+  .hdr-vip{display:none}
+}
+@media(max-width:1024px){
+  /* MOBILE NAV SWITCH — all three rules are required. Omitting any one
+     removes the hamburger entirely and strands the whole menu. */
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+}
 @media(max-width:768px){
   .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
   .brand-logo{width:250px;height:88px}
@@ -204,10 +314,81 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
 .drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
 .drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+/* ============================================================
+   INDUSTRIES MEGA-DROPDOWN — CHROME v5 (Sep 2 2026)
+
+   WHY THIS EXISTS: the site has SEVENTEEN live industry pages and
+   the v4 dropdown listed nine. The other eight — auto repair,
+   dermatology, electrician, landscaping, personal injury, plumber,
+   restaurant and veterinarian — had NO sitewide internal link at
+   all and were reachable only via the /industries/ hub. A sitewide
+   nav link is one of the strongest internal signals a page can
+   receive, so those eight were being starved of the one thing that
+   was cheapest to give them.
+
+   WHY IT IS NOT A FLAT LIST: seventeen items in one column is a
+   ~700px tall menu, which is worse UX than the problem it solves.
+   This is a three-column grouped panel — six, five and six — that
+   stays one screenful on any laptop.
+
+   IT IS DELIBERATELY NOT A .drop. If it shared that class, the
+   existing rule `.ni:hover .drop{transform:translateY(0)}` would
+   cancel the translateX(-50%) that centres this panel and it would
+   hang off the right edge of the viewport. Two classes, two hover
+   rules, no interference. Do not merge them.
+
+   LABELS ARE SHORTENED ("Dentist SEO", not "Dentist SEO Denver").
+   Seventeen sitewide links all reading "<Industry> SEO Denver" is a
+   lot of identical exact-match anchor text pointing at seventeen
+   pages from every URL on the site. The geo term is carried by each
+   page's own title, H1, content and schema; the nav does not need
+   to repeat it seventeen times. This is an anchor-diversity choice,
+   not an oversight.
+
+   IF YOU ADD AN INDUSTRY PAGE: add it to the right group HERE, in
+   the MOBILE NAV, and on the /industries/ hub — same commit.
+   ============================================================ */
+.drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
+.ni:hover .drop-mega,.ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
+.drop-mega a{display:block;padding:7px 9px;border-radius:6px;font-size:.85rem;line-height:1.35;color:rgba(255,255,255,.72);transition:all .15s}
+.drop-mega a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+.drop-mega a[aria-current="page"]{background:rgba(37,99,235,.22);color:#BFDBFE;font-weight:700}
+.drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+.drop-all a{color:#93C5FD;font-weight:700}
+@media(max-width:1150px){.drop-mega{width:540px;gap:2px 10px}.drop-mega a{font-size:.81rem;padding:6px 8px}}
+/* mobile nav group sub-labels — quieter than .mob-sec so the three
+   industry groups read as subdivisions of Industries, not as peers
+   of Services and Company */
+.mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
+/* ============================================================
+   MOBILE NAV ACCORDION (Sept 2026). The mobile menu used to be a flat
+   list of every link on the site — 45+ items in one scroll. The desktop
+   nav had dropdowns; mobile did not, so on a phone the restructure was
+   invisible. Sections are now collapsed by default and the whole menu
+   fits one screen. Tapping a header opens one section.
+   If you add a nav section, give it a .mob-acc button and wrap its links
+   in a .mob-group div — the JS binds by class, so nothing else changes.
+   ============================================================ */
+/* menu close row — always reachable, never scrolls away */
+.mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-top img{width:190px;height:66px;object-fit:cover;object-position:center 44%;max-width:none}
+.mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
+.mob-x:hover{background:rgba(255,255,255,.16)}
+/* phone: dark with a bright white number so only ONE solid orange block
+   exists in the menu — the audit button, which is the primary action */
+.mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
+.mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
+.mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
+.mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
+.mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
+.mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
+.mob-group{display:none;padding-bottom:6px}
+.mob-group.open{display:block}
 .hdr-right{display:flex;align-items:center;gap:9px}
-.hdr-call{display:flex;align-items:center;gap:7px;font-size:.9rem;font-weight:700;color:var(--orange);padding:8px 14px;border-radius:var(--r8);border:1.5px solid rgba(249,115,22,.4);transition:all .2s;white-space:nowrap}
-.hdr-call:hover{background:rgba(249,115,22,.1);border-color:var(--orange)}
-/* VIP Marketing Subscription pill — sits inline with Free Audit, reads as a CTA not a nav link */
+/* VIP Marketing Subscription pill — inline with Free Audit, reads as a CTA */
 .hdr-vip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#0b1220;background:linear-gradient(135deg,#FBBF24,#F97316);padding:9px 16px;border-radius:22px;white-space:nowrap;box-shadow:0 4px 18px rgba(249,115,22,.4);transition:all .2s}
 .hdr-vip:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(249,115,22,.55)}
 .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:7px;flex-shrink:0}
@@ -218,28 +399,19 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mob-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:16px 20px 40px;-webkit-overflow-scrolling:touch}
 .mob-nav.open{display:block}
-.mob-sec{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:16px 0 6px}
+/* Iris mounts at #irisw (the #etad id belongs to the OLD inline widget still
+   on some pages — both are covered). Hidden while the menu is open so the
+   nudge bubble cannot overlap the navigation. Same for the mascot. */
+body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!important}
 .mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .mob-nav a:hover{color:var(--orange)}
 .mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
-.mob-dom{display:block!important;margin:0 0 6px;padding:13px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)!important;color:#fff!important;font-weight:700!important;border-radius:var(--r12);border-bottom:1px solid rgba(255,255,255,.16)!important}
 .mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
 
-/* ===== AI STRIP — now a single compact scrollable line on mobile ===== */
-.ai-strip{background:linear-gradient(90deg,var(--ink2) 0%,#1a2d54 50%,var(--ink2) 100%);border-bottom:1px solid rgba(37,99,235,.25);padding:9px 0}
-.ai-inner{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font-size:.82rem;color:rgba(255,255,255,.55)}
-.ai-badge{padding:3px 11px;border-radius:20px;font-size:.74rem;font-weight:700;white-space:nowrap}
-.ab-blue{background:rgba(37,99,235,.2);border:1px solid rgba(37,99,235,.4);color:#93C5FD}
-.ab-orange{background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.35);color:#FDBA74}
-.ab-green{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#86EFAC}
-.ab-purple{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.35);color:#c4b5fd}
-.ai-dot{color:rgba(255,255,255,.2)}
-@media(max-width:900px){
-  .ai-inner{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:2px;scrollbar-width:none;-ms-overflow-style:none}
-  .ai-inner::-webkit-scrollbar{display:none}
-  .ai-inner>*{flex-shrink:0}
-  .ai-strip{padding:7px 0}
-}
+/* AI STRIP CSS REMOVED (Sept 2026) along with its markup. The strip was a
+   fourth chrome band above the fold; its message lives in the ticker. This
+   deleted .ai-strip / .ai-inner / .ai-badge / .ab-* and their two media
+   query blocks — roughly 1.5KB of rules with nothing left to style. */
 </style>
 
 <style>
@@ -262,6 +434,34 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .loc-stats span{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);padding:6px 13px;border-radius:20px}
 .loc-stats b{color:#93C5FD;font-weight:800}
 .loc-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+
+
+/* ===== SERVICE-AREA MAP ===== */
+.map-wrap{margin-top:30px;background:linear-gradient(160deg,#0B1626,#0F1D33);border:1px solid #22355C;
+  border-radius:var(--r16);padding:18px 14px 12px;box-shadow:var(--sh-lg)}
+.usmap{display:block;width:100%;height:auto}
+.pin{cursor:pointer}
+.pin-shadow{fill:#000;opacity:.42}
+.pin-body{transition:transform .18s cubic-bezier(.34,1.5,.6,1);transform-box:fill-box;transform-origin:bottom center}
+.pin-drop{fill:url(#pinG);stroke:#5E1206;stroke-width:2.4;stroke-linejoin:round}
+.pin-hub .pin-drop{fill:url(#pinGold);stroke:#7A5106}
+.pin-shine{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;opacity:.55}
+.pin-hole{fill:#3A0A03;opacity:.85}
+.pin-hub .pin-hole{fill:#5A3A04}
+.pin-label{fill:#C7D6EE;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;text-anchor:middle;
+  paint-order:stroke;stroke:#0B1626;stroke-width:4;stroke-linejoin:round;pointer-events:none}
+.pin-hub .pin-label{fill:#FDE68A;font-size:17px}
+.pin:hover .pin-body,.pin:focus .pin-body{transform:translateY(-7px) scale(1.12)}
+.pin:hover .pin-label,.pin:focus .pin-label{fill:#fff}
+.pin:focus{outline:none}
+.pin:focus .pin-drop{stroke:#FFD9A0;stroke-width:3.5}
+.map-note{text-align:center;font-size:.82rem;color:var(--muted);margin-top:10px;font-style:italic}
+@media(max-width:700px){
+  .pin-label{font-size:22px}
+  .pin-hub .pin-label{font-size:25px}
+  .map-wrap{padding:12px 8px 8px}
+}
+@media (prefers-reduced-motion:reduce){.pin-body{transition:none}}
 
 /* ===== CITY FINDER ===== */
 .finder{background:#fff;border-bottom:1px solid var(--border);padding:20px 0;position:sticky;top:0;z-index:60;box-shadow:0 2px 12px rgba(0,0,0,.04)}
@@ -398,90 +598,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 }
 </style>
 
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":["Organization","ProfessionalService"],"@id":"https://eyetoad.com/#org",
-"name":"Eye To Ad Media","url":"https://eyetoad.com",
-"logo":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png"},
-"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","foundingDate":"2012",
-"founder":{"@type":"Person","name":"Zach Wennstedt"},
-"description":"Denver SEO company founded in 2012, providing local SEO, Google Maps optimization, AI search optimization and conversion optimization across the Denver metropolitan area.",
-"address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},
-"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},
-"areaServed":[
- {"@type":"City","name":"Denver","addressRegion":"CO"},
- {"@type":"City","name":"Arvada","addressRegion":"CO"},
- {"@type":"City","name":"Lakewood","addressRegion":"CO"},
- {"@type":"City","name":"Aurora","addressRegion":"CO"},
- {"@type":"City","name":"Thornton","addressRegion":"CO"},
- {"@type":"City","name":"Westminster","addressRegion":"CO"},
- {"@type":"City","name":"Centennial","addressRegion":"CO"},
- {"@type":"City","name":"Highlands Ranch","addressRegion":"CO"},
- {"@type":"City","name":"Littleton","addressRegion":"CO"},
- {"@type":"City","name":"Parker","addressRegion":"CO"},
- {"@type":"City","name":"Broomfield","addressRegion":"CO"},
- {"@type":"City","name":"Wheat Ridge","addressRegion":"CO"},
- {"@type":"City","name":"Castle Rock","addressRegion":"CO"},
- {"@type":"State","name":"Colorado"},{"@type":"Country","name":"United States"}],
-"sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/eyetoadmedia"]},
-
-{"@type":"CollectionPage","@id":"https://eyetoad.com/locations/#page",
-"url":"https://eyetoad.com/locations/","name":"Service Locations | Denver Metro SEO — Eye To Ad Media",
-"description":"Local SEO across the Denver metro. Thirteen cities, each with a dedicated strategy built for that market's competition and search behaviour.",
-"inLanguage":"en-US","dateModified":"2026-07-28",
-"about":{"@id":"https://eyetoad.com/#org"},
-"breadcrumb":{"@id":"https://eyetoad.com/locations/#breadcrumb"},
-"mainEntity":{"@id":"https://eyetoad.com/locations/#cities"}},
-
-{"@type":"BreadcrumbList","@id":"https://eyetoad.com/locations/#breadcrumb","itemListElement":[
-{"@type":"ListItem","position":1,"name":"Home","item":"https://eyetoad.com/"},
-{"@type":"ListItem","position":2,"name":"Service Locations","item":"https://eyetoad.com/locations/"}]},
-
-{"@type":"ItemList","@id":"https://eyetoad.com/locations/#cities","name":"Denver metro cities served by Eye To Ad Media","numberOfItems":13,"itemListElement":[
-{"@type":"ListItem","position":1,"name":"Denver SEO","url":"https://eyetoad.com/"},
-{"@type":"ListItem","position":2,"name":"Aurora SEO","url":"https://eyetoad.com/locations/aurora-seo/"},
-{"@type":"ListItem","position":3,"name":"Lakewood SEO","url":"https://eyetoad.com/locations/lakewood-seo/"},
-{"@type":"ListItem","position":4,"name":"Thornton SEO","url":"https://eyetoad.com/locations/thornton-seo/"},
-{"@type":"ListItem","position":5,"name":"Arvada SEO","url":"https://eyetoad.com/locations/arvada-seo/"},
-{"@type":"ListItem","position":6,"name":"Westminster SEO","url":"https://eyetoad.com/locations/westminster-seo/"},
-{"@type":"ListItem","position":7,"name":"Centennial SEO","url":"https://eyetoad.com/locations/centennial-seo/"},
-{"@type":"ListItem","position":8,"name":"Highlands Ranch SEO","url":"https://eyetoad.com/locations/highlands-ranch-seo/"},
-{"@type":"ListItem","position":9,"name":"Castle Rock SEO","url":"https://eyetoad.com/locations/castle-rock-seo/"},
-{"@type":"ListItem","position":10,"name":"Broomfield SEO","url":"https://eyetoad.com/locations/broomfield-seo/"},
-{"@type":"ListItem","position":11,"name":"Parker SEO","url":"https://eyetoad.com/locations/parker-seo/"},
-{"@type":"ListItem","position":12,"name":"Littleton SEO","url":"https://eyetoad.com/locations/littleton-seo/"},
-{"@type":"ListItem","position":13,"name":"Wheat Ridge SEO","url":"https://eyetoad.com/locations/wheat-ridge-seo/"}]},
-
-{"@type":"Service","@id":"https://eyetoad.com/locations/#service",
-"name":"Denver Metro Local SEO","serviceType":"Local search engine optimization",
-"provider":{"@id":"https://eyetoad.com/#org"},
-"areaServed":{"@type":"AdministrativeArea","name":"Denver metropolitan area, Colorado"},
-"description":"City-specific local SEO covering Google Business Profile optimization, Google Maps and local pack rankings, local citations, neighbourhood content, AI Overview optimization and conversion optimization.",
-"hasOfferCatalog":{"@type":"OfferCatalog","name":"City coverage","itemListElement":[
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Arvada SEO","url":"https://eyetoad.com/locations/arvada-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Lakewood SEO","url":"https://eyetoad.com/locations/lakewood-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Aurora SEO","url":"https://eyetoad.com/locations/aurora-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Littleton SEO","url":"https://eyetoad.com/locations/littleton-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Wheat Ridge SEO","url":"https://eyetoad.com/locations/wheat-ridge-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Broomfield SEO","url":"https://eyetoad.com/locations/broomfield-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Castle Rock SEO","url":"https://eyetoad.com/locations/castle-rock-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Thornton SEO","url":"https://eyetoad.com/locations/thornton-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Westminster SEO","url":"https://eyetoad.com/locations/westminster-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Centennial SEO","url":"https://eyetoad.com/locations/centennial-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Highlands Ranch SEO","url":"https://eyetoad.com/locations/highlands-ranch-seo/"}},
- {"@type":"Offer","itemOffered":{"@type":"Service","name":"Parker SEO","url":"https://eyetoad.com/locations/parker-seo/"}}]}},
-
-{"@type":"FAQPage","@id":"https://eyetoad.com/locations/#faq","mainEntity":[
-{"@type":"Question","name":"Which Denver metro cities does Eye To Ad Media serve?","acceptedAnswer":{"@type":"Answer","text":"Eye To Ad Media has dedicated local SEO strategy pages for thirteen Denver metro cities: Denver, Aurora, Lakewood, Thornton, Arvada, Westminster, Centennial, Highlands Ranch, Castle Rock, Broomfield, Parker, Littleton and Wheat Ridge. The agency also serves Englewood, Greenwood Village, Commerce City, Golden, Brighton, Northglenn, Lone Tree, Erie, Superior, Louisville, Lafayette, Longmont and Boulder, and works with national clients remotely across all fifty states."}},
-{"@type":"Question","name":"Why does each city need its own SEO strategy?","acceptedAnswer":{"@type":"Answer","text":"Because each city has a different competitive field, different customer demographics and different search behaviour. A roofing company that dominates Denver search may not rank in Lakewood at all. Google's local algorithm weighs proximity and local entity signals heavily, so a business in Thornton needs citations, content and Google Business Profile optimization specific to Thornton in order to rank there. Broad metro-wide optimization does not carry the same weight for city-specific searches."}},
-{"@type":"Question","name":"Do you have to be located in a city to rank there?","acceptedAnswer":{"@type":"Answer","text":"No, but proximity is a real ranking factor for the Google Maps local pack, so a physical address inside a city is an advantage there. Businesses without a location in a given city can still rank strongly in organic results for that city by building city-specific content, local citations, service area definitions in their Google Business Profile, and reviews that mention the area. The realistic goal for a service-area business is organic visibility first, with map pack presence strongest closest to the actual address."}},
-{"@type":"Question","name":"How long does it take to rank in a new Denver metro city?","acceptedAnswer":{"@type":"Answer","text":"Google Maps and local pack movement often appears within thirty to ninety days once a Google Business Profile is properly optimized and local citations are consistent. Organic rankings for competitive city terms generally take three to six months, and longer in the most contested markets such as Denver proper and Aurora. Smaller and faster-growing markets such as Parker or Wheat Ridge frequently move faster because the competitive density is lower."}},
-{"@type":"Question","name":"Which Denver suburbs are easiest to rank in?","acceptedAnswer":{"@type":"Answer","text":"Generally the smaller and faster-growing outer suburbs, where fewer established competitors have invested in local SEO. Parker, Wheat Ridge, Castle Rock and Highlands Ranch typically have lower competitive density than Denver proper, Aurora or Lakewood. That said, ease of ranking is category-specific: a saturated vertical in a small city can be harder than an underserved vertical in a large one, so the honest answer always requires looking at the specific market."}},
-{"@type":"Question","name":"Can one campaign cover the whole Denver metro?","acceptedAnswer":{"@type":"Answer","text":"Partially. A single campaign can build overall domain authority and brand signals that help everywhere. But ranking in the local pack for a specific city requires city-level signals: dedicated pages, local citations, neighbourhood content and Google Business Profile configuration. Most businesses see the best return by concentrating on the two or three cities that produce the most revenue rather than spreading effort thinly across all thirteen."}},
-{"@type":"Question","name":"Do you serve cities outside the Denver metro?","acceptedAnswer":{"@type":"Answer","text":"Yes. Eye To Ad Media is based in Denver and most clients are in the metro, but the agency also works along the Front Range in Boulder, Longmont, Louisville, Lafayette, Erie and Superior, and takes on national clients remotely in all fifty states. Local clients do have an advantage on Google Maps work because the agency knows these markets directly."}},
-{"@type":"Question","name":"What is included in a city-specific SEO strategy?","acceptedAnswer":{"@type":"Answer","text":"A city-specific strategy includes Google Business Profile optimization configured for that city, local citation building and cleanup, city and neighbourhood level content, local schema markup, review acquisition strategy, competitor analysis for that specific local pack, and AI search optimization so the business appears in AI-generated local recommendations. Reporting is tracked per city rather than blended across the metro."}}
-]}
-]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://eyetoad.com/#org","name":"Eye To Ad Media","url":"https://eyetoad.com","logo":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png"},"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","foundingDate":"2012","founder":{"@type":"Person","name":"Zach Wennstedt"},"description":"Denver SEO company founded in 2012, providing local SEO, Google Maps optimization, AI search optimization and conversion optimization across the Denver metropolitan area.","address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},"areaServed":[{"@type":"City","name":"Denver","addressRegion":"CO"},{"@type":"City","name":"Aurora","addressRegion":"CO"},{"@type":"City","name":"Lakewood","addressRegion":"CO"},{"@type":"City","name":"Thornton","addressRegion":"CO"},{"@type":"City","name":"Arvada","addressRegion":"CO"},{"@type":"City","name":"Westminster","addressRegion":"CO"},{"@type":"City","name":"Centennial","addressRegion":"CO"},{"@type":"City","name":"Highlands Ranch","addressRegion":"CO"},{"@type":"City","name":"Castle Rock","addressRegion":"CO"},{"@type":"City","name":"Broomfield","addressRegion":"CO"},{"@type":"City","name":"Parker","addressRegion":"CO"},{"@type":"City","name":"Littleton","addressRegion":"CO"},{"@type":"City","name":"Wheat Ridge","addressRegion":"CO"},{"@type":"City","name":"Colorado Springs","addressRegion":"CO"},{"@type":"City","name":"Fort Collins","addressRegion":"CO"},{"@type":"City","name":"Cheyenne","addressRegion":"WY"},{"@type":"City","name":"Salt Lake City","addressRegion":"UT"},{"@type":"City","name":"Boise","addressRegion":"ID"},{"@type":"City","name":"Albuquerque","addressRegion":"NM"},{"@type":"City","name":"Phoenix","addressRegion":"AZ"},{"@type":"City","name":"Omaha","addressRegion":"NE"},{"@type":"City","name":"Fayetteville","addressRegion":"AR"},{"@type":"City","name":"Dallas","addressRegion":"TX"},{"@type":"City","name":"Charlotte","addressRegion":"NC"},{"@type":"State","name":"Colorado"},{"@type":"State","name":"Wyoming"},{"@type":"State","name":"Utah"},{"@type":"State","name":"Idaho"},{"@type":"State","name":"New Mexico"},{"@type":"State","name":"Arizona"},{"@type":"State","name":"Nebraska"},{"@type":"State","name":"Arkansas"},{"@type":"State","name":"Texas"},{"@type":"State","name":"North Carolina"},{"@type":"Country","name":"United States"}],"sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/EyeToAd/","https://x.com/EyeToAdmedia"]},{"@type":"CollectionPage","@id":"https://eyetoad.com/locations/#page","url":"https://eyetoad.com/locations/","name":"SEO Service Areas | Denver, the Mountain West & Nationwide","description":"Local SEO in 24 cities across 9 states. Every market gets its own strategy, not a template.","inLanguage":"en-US","dateModified":"2026-09-10","about":{"@id":"https://eyetoad.com/#org"},"breadcrumb":{"@id":"https://eyetoad.com/locations/#breadcrumb"},"mainEntity":{"@id":"https://eyetoad.com/locations/#cities"}},{"@type":"BreadcrumbList","@id":"https://eyetoad.com/locations/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eyetoad.com/"},{"@type":"ListItem","position":2,"name":"Service Locations","item":"https://eyetoad.com/locations/"}]},{"@type":"ItemList","@id":"https://eyetoad.com/locations/#cities","name":"Cities served by Eye To Ad Media","numberOfItems":24,"itemListElement":[{"@type":"ListItem","position":1,"name":"Denver SEO","url":"https://eyetoad.com/"},{"@type":"ListItem","position":2,"name":"Aurora SEO","url":"https://eyetoad.com/locations/aurora-seo/"},{"@type":"ListItem","position":3,"name":"Lakewood SEO","url":"https://eyetoad.com/locations/lakewood-seo/"},{"@type":"ListItem","position":4,"name":"Thornton SEO","url":"https://eyetoad.com/locations/thornton-seo/"},{"@type":"ListItem","position":5,"name":"Arvada SEO","url":"https://eyetoad.com/locations/arvada-seo/"},{"@type":"ListItem","position":6,"name":"Westminster SEO","url":"https://eyetoad.com/locations/westminster-seo/"},{"@type":"ListItem","position":7,"name":"Centennial SEO","url":"https://eyetoad.com/locations/centennial-seo/"},{"@type":"ListItem","position":8,"name":"Highlands Ranch SEO","url":"https://eyetoad.com/locations/highlands-ranch-seo/"},{"@type":"ListItem","position":9,"name":"Castle Rock SEO","url":"https://eyetoad.com/locations/castle-rock-seo/"},{"@type":"ListItem","position":10,"name":"Broomfield SEO","url":"https://eyetoad.com/locations/broomfield-seo/"},{"@type":"ListItem","position":11,"name":"Parker SEO","url":"https://eyetoad.com/locations/parker-seo/"},{"@type":"ListItem","position":12,"name":"Littleton SEO","url":"https://eyetoad.com/locations/littleton-seo/"},{"@type":"ListItem","position":13,"name":"Wheat Ridge SEO","url":"https://eyetoad.com/locations/wheat-ridge-seo/"},{"@type":"ListItem","position":14,"name":"Colorado Springs SEO","url":"https://eyetoad.com/locations/colorado-springs-seo/"},{"@type":"ListItem","position":15,"name":"Fort Collins SEO","url":"https://eyetoad.com/locations/fort-collins-seo/"},{"@type":"ListItem","position":16,"name":"Cheyenne SEO","url":"https://eyetoad.com/locations/cheyenne-seo/"},{"@type":"ListItem","position":17,"name":"Salt Lake City SEO","url":"https://eyetoad.com/locations/salt-lake-city-seo/"},{"@type":"ListItem","position":18,"name":"Boise SEO","url":"https://eyetoad.com/locations/boise-seo/"},{"@type":"ListItem","position":19,"name":"Albuquerque SEO","url":"https://eyetoad.com/locations/albuquerque-seo/"},{"@type":"ListItem","position":20,"name":"Phoenix SEO","url":"https://eyetoad.com/locations/phoenix-seo/"},{"@type":"ListItem","position":21,"name":"Omaha SEO","url":"https://eyetoad.com/locations/omaha-seo/"},{"@type":"ListItem","position":22,"name":"Fayetteville SEO","url":"https://eyetoad.com/locations/northwest-arkansas-seo/"},{"@type":"ListItem","position":23,"name":"Dallas SEO","url":"https://eyetoad.com/locations/dallas-seo/"},{"@type":"ListItem","position":24,"name":"Charlotte SEO","url":"https://eyetoad.com/locations/charlotte-seo/"}]},{"@type":"Service","@id":"https://eyetoad.com/locations/#service","name":"Multi-Market Local SEO","serviceType":"Local search engine optimization","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":{"@type":"Country","name":"United States"},"description":"City-specific local SEO covering Google Business Profile optimization, Google Maps and local pack rankings, local citations, neighbourhood content, AI Overview optimization and conversion optimization.","hasOfferCatalog":{"@type":"OfferCatalog","name":"City coverage","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Aurora SEO","url":"https://eyetoad.com/locations/aurora-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Lakewood SEO","url":"https://eyetoad.com/locations/lakewood-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Thornton SEO","url":"https://eyetoad.com/locations/thornton-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Arvada SEO","url":"https://eyetoad.com/locations/arvada-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Westminster SEO","url":"https://eyetoad.com/locations/westminster-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Centennial SEO","url":"https://eyetoad.com/locations/centennial-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Highlands Ranch SEO","url":"https://eyetoad.com/locations/highlands-ranch-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Castle Rock SEO","url":"https://eyetoad.com/locations/castle-rock-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Broomfield SEO","url":"https://eyetoad.com/locations/broomfield-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Parker SEO","url":"https://eyetoad.com/locations/parker-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Littleton SEO","url":"https://eyetoad.com/locations/littleton-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Wheat Ridge SEO","url":"https://eyetoad.com/locations/wheat-ridge-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Colorado Springs SEO","url":"https://eyetoad.com/locations/colorado-springs-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fort Collins SEO","url":"https://eyetoad.com/locations/fort-collins-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cheyenne SEO","url":"https://eyetoad.com/locations/cheyenne-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Salt Lake City SEO","url":"https://eyetoad.com/locations/salt-lake-city-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Boise SEO","url":"https://eyetoad.com/locations/boise-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Albuquerque SEO","url":"https://eyetoad.com/locations/albuquerque-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Phoenix SEO","url":"https://eyetoad.com/locations/phoenix-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Omaha SEO","url":"https://eyetoad.com/locations/omaha-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fayetteville SEO","url":"https://eyetoad.com/locations/northwest-arkansas-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dallas SEO","url":"https://eyetoad.com/locations/dallas-seo/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Charlotte SEO","url":"https://eyetoad.com/locations/charlotte-seo/"}}]}},{"@type":"FAQPage","@id":"https://eyetoad.com/locations/#faq","mainEntity":[{"@type":"Question","name":"Which cities does Eye To Ad Media serve?","acceptedAnswer":{"@type":"Answer","text":"Eye To Ad Media has dedicated strategy pages for 24 cities across nine states. In Colorado: Denver, Aurora, Lakewood, Thornton, Arvada, Westminster, Centennial, Highlands Ranch, Castle Rock, Broomfield, Parker, Littleton, Wheat Ridge, Colorado Springs and Fort Collins. Across the Mountain West: Cheyenne, Salt Lake City, Boise, Albuquerque and Phoenix. Nationally: Omaha, Northwest Arkansas, Dallas and Charlotte. The agency also works with clients in all fifty states."}},{"@type":"Question","name":"Why does each city need its own SEO strategy?","acceptedAnswer":{"@type":"Answer","text":"Because each city has a different competitive field, different customer demographics and different search behaviour. A roofing company that dominates Denver search may not rank in Lakewood at all. Google's local algorithm weighs proximity and local entity signals heavily, so a business in Thornton needs citations, content and Google Business Profile optimization specific to Thornton in order to rank there. Broad metro-wide optimization does not carry the same weight for city-specific searches."}},{"@type":"Question","name":"Do you have to be located in a city to rank there?","acceptedAnswer":{"@type":"Answer","text":"No, but proximity is a real ranking factor for the Google Maps local pack, so a physical address inside a city is an advantage there. Businesses without a location in a given city can still rank strongly in organic results for that city by building city-specific content, local citations, service area definitions in their Google Business Profile, and reviews that mention the area. The realistic goal for a service-area business is organic visibility first, with map pack presence strongest closest to the actual address."}},{"@type":"Question","name":"How long does it take to rank in a new Denver metro city?","acceptedAnswer":{"@type":"Answer","text":"Google Maps and local pack movement often appears within thirty to ninety days once a Google Business Profile is properly optimized and local citations are consistent. Organic rankings for competitive city terms generally take three to six months, and longer in the most contested markets such as Denver proper and Aurora. Smaller and faster-growing markets such as Parker or Wheat Ridge frequently move faster because the competitive density is lower."}},{"@type":"Question","name":"Which Denver suburbs are easiest to rank in?","acceptedAnswer":{"@type":"Answer","text":"Generally the smaller and faster-growing outer suburbs, where fewer established competitors have invested in local SEO. Parker, Wheat Ridge, Castle Rock and Highlands Ranch typically have lower competitive density than Denver proper, Aurora or Lakewood. That said, ease of ranking is category-specific: a saturated vertical in a small city can be harder than an underserved vertical in a large one, so the honest answer always requires looking at the specific market."}},{"@type":"Question","name":"Can one campaign cover the whole Denver metro?","acceptedAnswer":{"@type":"Answer","text":"Partially. A single campaign can build overall domain authority and brand signals that help everywhere. But ranking in the local pack for a specific city requires city-level signals: dedicated pages, local citations, neighbourhood content and Google Business Profile configuration. Most businesses see the best return by concentrating on the two or three cities that produce the most revenue rather than spreading effort thinly across all thirteen."}},{"@type":"Question","name":"Do you serve cities outside the Denver metro?","acceptedAnswer":{"@type":"Answer","text":"Yes. Eye To Ad Media is based in Denver and most clients are in the metro, but the agency also works along the Front Range in Boulder, Longmont, Louisville, Lafayette, Erie and Superior, and takes on national clients remotely in all fifty states. Local clients do have an advantage on Google Maps work because the agency knows these markets directly."}},{"@type":"Question","name":"What is included in a city-specific SEO strategy?","acceptedAnswer":{"@type":"Answer","text":"A city-specific strategy includes Google Business Profile optimization configured for that city, local citation building and cleanup, city and neighbourhood level content, local schema markup, review acquisition strategy, competitor analysis for that specific local pack, and AI search optimization so the business appears in AI-generated local recommendations. Reporting is tracked per city rather than blended across the metro."}},{"@type":"Question","name":"Can a Denver agency rank my business in another state?","acceptedAnswer":{"@type":"Answer","text":"Yes for organic and AI-answer visibility, with one honest limit on Google Maps. Proximity is a real ranking factor in the local pack and it favours a business's own address rather than its agency's, so the map radius you own is set by where you are, not where we are. Everything else is not distance-limited: organic rankings, AI Overview and generative-answer citations, content, technical health and conversion. In practice we build those first, then maximise the profile radius you genuinely own."}},{"@type":"Question","name":"How do you learn a market you have not worked in before?","acceptedAnswer":{"@type":"Answer","text":"The first deliverable is research, not content: competitive density in the category, who currently holds the map pack, which pages AI Overviews are citing for those queries, and what the top three competitors are doing. That research is produced before anything is written and it belongs to the client whether or not they continue. If the market turns out to be locked up by established competitors, that is said in the audit rather than six months into an engagement."}}]}]}</script>
 
 </head>
 <body>
@@ -524,44 +641,63 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   rank for "Denver SEO" dilutes the topical signal, and it competes
   with the highest-margin CTA on the site.
   ============================================================ -->
+<!-- ============================================================
+  UTILITY BAR — very top of every page.
+  Domain search sends traffic to buyweburl.com (GoDaddy reseller
+  storefront, pl_id 497814). Kept OUT of the hero on purpose: a
+  domain-search widget in the hero of the page we are trying to rank
+  for "Denver SEO" dilutes the topical signal, and it competes with
+  the highest-margin CTA on the site.
+  ALSO LOAD-BEARING FOR THE HEADER FIT: the phone number and the VIP
+  membership link here are the reason the header can safely drop its
+  own copies of both at narrow widths. If you ever remove either
+  from this bar, revisit the HEADER FIT breakpoints in the CSS first.
+  ============================================================ -->
 <div class="ubar">
   <div class="wrap ubar-inner">
     <div class="ubar-left">
-      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored" aria-label="Search for an available domain name">🔍 Search Domains</a>
+      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored" aria-label="Search for an available domain name">Search Domains</a>
       <span class="ubar-txt">Find &amp; register your perfect .com</span>
     </div>
     <div class="ubar-right">
-      <a href="/marketing-subscription/" class="ubar-link">⚡ VIP Membership $69.99/mo</a>
-      <a href="tel:18004818638" class="ubar-tel">📞 1-800-481-8638</a>
+      <a href="/marketing-subscription/" class="ubar-link">VIP Membership</a>
+      <a href="tel:18004818638" class="ubar-tel"><span class="ubar-tel-lbl">Call</span>1-800-481-8638</a>
     </div>
   </div>
 </div>
 
-<!-- TICKER -->
+
+<!-- TICKER — the track is DOUBLED (10 spans for 5 items) and animates to
+     -50%, so one cycle shows each item exactly once. If you edit an item,
+     edit BOTH copies or the loop will visibly jump. -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item">🚀 Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">⚡ NEW — VIP Marketing Subscription · $69.99/mo · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">⭐ 5-Star Rated · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">🤖 Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">📞 Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">🚀 Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">⚡ NEW — VIP Marketing Subscription · $69.99/mo · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">⭐ 5-Star Rated · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">🤖 Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">📞 Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">NEW — VIP Marketing Subscription · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">5.0 from 60 Google Reviews · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">NEW — VIP Marketing Subscription · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">5.0 from 60 Google Reviews · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
   </div>
 </div>
+
 
 <!-- HEADER -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
     <a href="/" class="logo" aria-label="Eye To Ad Media — Denver SEO Home">
-      <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media logo — Denver SEO Company" class="brand-logo" width="760" height="190" loading="eager" fetchpriority="high">
+      <!-- width/height MUST match what the CSS renders (300x102), not the raw
+           file's 760x190, or the browser reserves the wrong box and the page
+           visibly shifts on first paint. -->
+      <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media logo — Denver SEO Company" class="brand-logo" width="300" height="102" loading="eager" fetchpriority="high">
     </a>
     <nav class="nav" aria-label="Main navigation">
       <div class="ni">
-        <a href="/denver-seo-services/" class="nl">Services ▾</a>
+        <a href="/denver-seo-services/" class="nl">Services &#9662;</a>
         <div class="drop">
           <a href="/denver-seo-services/">Denver SEO Services</a>
           <a href="/local-seo-denver/">Local SEO Denver</a>
@@ -574,35 +710,84 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         </div>
       </div>
       <div class="ni">
-        <a href="/industries/" class="nl">Industries ▾</a>
-        <div class="drop">
-          <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
-          <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
-          <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
-          <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
-          <a href="/fitness-marketing-denver/">Fitness Marketing Denver</a>
-          <a href="/real-estate-marketing-denver/">Real Estate Marketing Denver</a>
-          <a href="/chiropractor-seo-denver/">Chiropractor SEO Denver</a>
-          <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
-          <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
+        <a href="/industries/" class="nl">Industries &#9662;</a>
+        <div class="drop-mega">
+          <div class="dg">
+            <h5>Home &amp; Trade</h5>
+          <a href="/contractor-seo-denver/">Contractor SEO</a>
+          <a href="/electrician-seo-denver/">Electrician SEO</a>
+          <a href="/hvac-seo-denver/">HVAC SEO</a>
+          <a href="/landscaping-seo-denver/">Landscaping SEO</a>
+          <a href="/plumber-seo-denver/">Plumber SEO</a>
+          <a href="/roofing-seo-denver/">Roofing SEO</a>
+          </div>
+          <div class="dg">
+            <h5>Health &amp; Wellness</h5>
+          <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+          <a href="/dentist-seo-denver/">Dentist SEO</a>
+          <a href="/dermatology-seo-denver/">Dermatology SEO</a>
+          <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+          <a href="/veterinarian-seo-denver/">Veterinarian SEO</a>
+          </div>
+          <div class="dg">
+            <h5>Professional &amp; Consumer</h5>
+          <a href="/auto-repair-seo-denver/">Auto Repair SEO</a>
+          <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+          <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+          <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
+          <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+          <a href="/restaurant-seo-denver/">Restaurant SEO</a>
+          </div>
+          <div class="drop-all"><a href="/industries/">Compare all 17 industries &rarr;</a></div>
         </div>
       </div>
-      <a href="/locations/" class="nl">Locations</a>
-      <a href="/blog/" class="nl">Blog</a>
-      <a href="/about/" class="nl">About</a>
       <div class="ni">
-        <a href="/ad-lab/" class="nl" style="color:#F97316;font-weight:700;">⚗️ Ad Lab ▾</a>
-        <div class="drop">
-          <a href="/ad-lab/">⚗️ Ad Lab — Interactive Games</a>
-          <a href="/ad-lab/rpg/">🗡️ SEO Quest RPG</a>
-          <a href="/vip-marketing/">✨ VIP Marketing — NFC Offer</a>
+        <a href="/locations/" class="nl">Locations &#9662;</a>
+        <!-- LOCATIONS MEGA — reuses .drop-mega. Adding a city is ONE line here,
+             one line in the mobile nav, and one card on /locations/. The footer
+             deliberately lists HUBS ONLY so it never becomes a city keyword list. -->
+        <div class="drop-mega">
+          <div class="dg">
+            <h5>Colorado</h5>
+          <a href="/locations/">Denver Metro</a>
+          <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+          <a href="/locations/fort-collins-seo/">Fort Collins</a>
+          </div>
+          <div class="dg">
+            <h5>Mountain West</h5>
+          <a href="/locations/salt-lake-city-seo/">Salt Lake City</a>
+          <a href="/locations/boise-seo/">Boise</a>
+          <a href="/locations/albuquerque-seo/">Albuquerque</a>
+          <a href="/locations/cheyenne-seo/">Cheyenne</a>
+          <a href="/locations/phoenix-seo/">Phoenix</a>
+          </div>
+          <div class="dg">
+            <h5>National</h5>
+          <a href="/locations/dallas-seo/">Dallas</a>
+          <a href="/locations/charlotte-seo/">Charlotte</a>
+          <a href="/locations/omaha-seo/">Omaha</a>
+          <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
+          </div>
+          <div class="drop-all"><a href="/locations/">See every location we serve &rarr;</a></div>
         </div>
       </div>
+      <div class="ni">
+        <a href="/blog/" class="nl">Resources &#9662;</a>
+        <div class="drop">
+          <a href="/blog/">SEO Blog</a>
+          <a href="/case-studies/">Case Studies</a>
+          <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+          <a href="/grow-my-business/">Grow My Business Tool</a>
+          <a href="/ad-lab/">Ad Lab</a>
+          <a href="/ad-lab/rpg/">SEO Quest RPG</a>
+          <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
+        </div>
+      </div>
+      <a href="/about/" class="nl">About</a>
       <a href="/contact/" class="nl">Contact</a>
     </nav>
     <div class="hdr-right">
-      <a href="/marketing-subscription/" class="hdr-vip">⚡ VIP Membership</a>
-      <a href="tel:18004818638" class="hdr-call" aria-label="Call Eye To Ad Media">📞 1-800-481-8638</a>
+      <a href="/marketing-subscription/" class="hdr-vip">VIP Membership</a>
       <a href="/free-seo-audit/" class="btn btn-orange" style="padding:10px 18px;font-size:.88rem;">Free Audit</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobNav">
@@ -613,74 +798,101 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
 <!-- MOBILE NAV — top offset is set by JS (measureHeader), never hard-coded -->
 <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
-  <a href="/marketing-subscription/" class="mob-vip">⚡ VIP Marketing Subscription — $69.99/mo</a>
-  <a href="https://www.buyweburl.com" class="mob-dom" target="_blank" rel="noopener sponsored">🔍 Search Domain Names</a>
-  <div class="mob-sec">Services</div>
-  <a href="/denver-seo-services/">Denver SEO Services</a>
-  <a href="/local-seo-denver/">Local SEO Denver</a>
-  <a href="/seo-systems/">SEO Systems</a>
-  <a href="/aio-seo-system/">AIO SEO System</a>
-  <a href="/generative-engine-optimization-system/">GEO System</a>
-  <a href="/conversion-optimization/">Conversion Optimization</a>
-  <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
-  <a href="/free-seo-audit/">Free SEO Audit</a>
-  <div class="mob-sec">Industries</div>
-  <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
-  <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
-  <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
-  <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
-  <a href="/fitness-marketing-denver/">Fitness Marketing Denver</a>
-  <a href="/real-estate-marketing-denver/">Real Estate Marketing Denver</a>
-  <a href="/chiropractor-seo-denver/">Chiropractor SEO Denver</a>
-  <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
-  <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
-  <div class="mob-sec">Company</div>
-  <a href="/locations/">Service Locations</a>
-  <a href="/blog/">SEO Blog</a>
-  <a href="/about/">About Eye To Ad Media</a>
-  <a href="/case-studies/">Case Studies</a>
-  <a href="/best-denver-seo-company/">Best Denver SEO Company</a>
-  <a href="/vip-marketing/" style="color:#F97316;font-weight:700;">✨ VIP Marketing — NFC Offer</a>
-  <a href="/ad-lab/" style="color:#F97316;font-weight:700;">⚗️ Ad Lab — Interactive Marketing</a>
-  <a href="/ad-lab/rpg/" style="color:#F97316;padding-left:24px;font-size:.88rem;opacity:.85;">↳ SEO Quest RPG</a>
-  <a href="/contact/">Contact Us</a>
-  <a href="tel:18004818638" class="mob-cta">📞 Call 1-800-481-8638</a>
-</nav>
-
-<!-- AI STRIP -->
-<div class="ai-strip">
-  <div class="ai-inner">
-    <span class="ai-badge ab-green">NEW</span>
-    <span>Now optimizing for</span>
-    <span class="ai-badge ab-blue">Google AI Overviews</span>
-    <span class="ai-dot">·</span>
-    <span class="ai-badge ab-blue">ChatGPT Search</span>
-    <span class="ai-dot">·</span>
-    <span class="ai-badge ab-orange">Perplexity</span>
-    <span class="ai-dot">·</span>
-    <span class="ai-badge ab-purple">Agentic AI</span>
-    <span class="ai-dot">·</span>
-    <span>not just traditional search</span>
+  <div class="mob-top">
+    <a href="/" aria-label="Eye To Ad Media home"><img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media" width="190" height="66" loading="lazy"></a>
+    <button class="mob-x" id="mobClose" type="button" aria-label="Close menu">&#x2715;</button>
   </div>
-</div>
-
+  <a href="/free-seo-audit/" class="mob-cta" style="margin:0 0 10px;">Get a Free SEO Audit</a>
+  <a href="tel:18004818638" class="mob-tel"><span>Call us</span>1-800-481-8638</a>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-services">
+    <a href="/denver-seo-services/">Denver SEO Services</a>
+    <a href="/local-seo-denver/">Local SEO Denver</a>
+    <a href="/seo-systems/">SEO Systems</a>
+    <a href="/aio-seo-system/">AIO SEO System</a>
+    <a href="/generative-engine-optimization-system/">GEO System</a>
+    <a href="/conversion-optimization/">Conversion Optimization</a>
+    <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+    <a href="/free-seo-audit/">Free SEO Audit</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-industries">Industries<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-industries">
+    <div class="mob-sub">Home &amp; Trade</div>
+    <a href="/contractor-seo-denver/">Contractor SEO</a>
+    <a href="/electrician-seo-denver/">Electrician SEO</a>
+    <a href="/hvac-seo-denver/">HVAC SEO</a>
+    <a href="/landscaping-seo-denver/">Landscaping SEO</a>
+    <a href="/plumber-seo-denver/">Plumber SEO</a>
+    <a href="/roofing-seo-denver/">Roofing SEO</a>
+    <div class="mob-sub">Health &amp; Wellness</div>
+    <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+    <a href="/dentist-seo-denver/">Dentist SEO</a>
+    <a href="/dermatology-seo-denver/">Dermatology SEO</a>
+    <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+    <a href="/veterinarian-seo-denver/">Veterinarian SEO</a>
+    <div class="mob-sub">Professional &amp; Consumer</div>
+    <a href="/auto-repair-seo-denver/">Auto Repair SEO</a>
+    <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+    <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+    <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
+    <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+    <a href="/restaurant-seo-denver/">Restaurant SEO</a>
+    <a href="/industries/">Compare all 17 industries &rarr;</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-locations">Locations<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-locations">
+    <div class="mob-sub">Colorado</div>
+    <a href="/locations/">Denver Metro</a>
+    <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+    <a href="/locations/fort-collins-seo/">Fort Collins</a>
+    <div class="mob-sub">Mountain West</div>
+    <a href="/locations/salt-lake-city-seo/">Salt Lake City</a>
+    <a href="/locations/boise-seo/">Boise</a>
+    <a href="/locations/albuquerque-seo/">Albuquerque</a>
+    <a href="/locations/cheyenne-seo/">Cheyenne</a>
+    <a href="/locations/phoenix-seo/">Phoenix</a>
+    <div class="mob-sub">National</div>
+    <a href="/locations/dallas-seo/">Dallas</a>
+    <a href="/locations/charlotte-seo/">Charlotte</a>
+    <a href="/locations/omaha-seo/">Omaha</a>
+    <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
+    <a href="/locations/">See every location we serve &rarr;</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-resources">
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+    <a href="/grow-my-business/">Grow My Business Tool</a>
+    <a href="/ad-lab/rpg/">SEO Quest RPG</a>
+    <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
+    <a href="https://www.buyweburl.com" target="_blank" rel="noopener sponsored">Search Domain Names</a>
+  </div>
+  <!-- FLAT LINKS: single destinations, not categories. A collapsible section
+       holding one or two links is worse than no section at all. -->
+  <a href="/blog/" class="mob-flat">Blog</a>
+  <a href="/ad-lab/" class="mob-flat">Ad Lab</a>
+  <a href="/about/" class="mob-flat">About</a>
+  <a href="/contact/" class="mob-flat">Contact</a>
+  <a href="/marketing-subscription/" class="mob-flat">VIP Marketing Subscription</a>
+  <p class="mob-proof"><b>5.0</b> from 60 Google Reviews &middot; <b>A+</b> BBB Accredited<br>Denver-based since 2012 &middot; Answers in 1 business day</p>
+</nav>
 
 <main id="main">
 <nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><ol class="bc-list">
 <li><a href="/">Home</a></li><li><span class="bc-sep" aria-hidden="true">›</span></li>
-<li aria-current="page">Service Locations</li></ol></div></nav>
+<li aria-current="page">Service Areas</li></ol></div></nav>
 
 <section class="loc-hero" aria-labelledby="h1">
   <div class="loc-glow" aria-hidden="true"></div>
   <div class="wrap loc-hero-inner">
-    <span class="chip chip-dark">Denver Metro Service Area</span>
-    <h1 id="h1">Local SEO Across the <em>Denver Metro</em></h1>
-    <p>Thirteen cities, each with its own strategy. Because a campaign built for Denver proper does not rank a business in Thornton, and one built for Castle Rock does not work in Aurora. Different competition, different customers, different search behaviour.</p>
+    <span class="chip chip-dark">Service Areas</span>
+    <h1 id="h1">Local SEO in <em>24 Cities</em> Across 9 States</h1>
+    <p>Every one gets its own strategy, because a campaign built for Denver does not rank a business in Dallas, and one built for Phoenix does nothing in Boise. Different competition, different customers, different search behaviour, different answer engines quoting different sources.</p>
     <div class="loc-stats">
-      <span><b>13</b> dedicated city strategies</span>
-      <span><b>2012</b> serving Denver since</span>
-      <span><b>5-star</b> Google rated</span>
-      <span><b>50</b> states served remotely</span>
+      <span><b>24</b> dedicated city strategies</span>
+      <span><b>9</b> states</span>
+      <span><b>2012</b> in business since</span>
+      <span><b>5.0</b> from 60 Google reviews</span>
     </div>
     <div class="loc-hero-btns">
       <a href="tel:18004818638" class="btn btn-orange btn-lg">📞 Call 1-800-481-8638</a>
@@ -695,7 +907,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
     <div class="fd-search">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
       <label for="citySearch" style="position:absolute;left:-9999px;">Search cities</label>
-      <input type="search" id="citySearch" placeholder="Find your city — try &ldquo;Thornton&rdquo; or &ldquo;80020&rdquo;" autocomplete="off">
+      <input type="search" id="citySearch" placeholder="Find your city — try &ldquo;Boise&rdquo; or &ldquo;80020&rdquo;" autocomplete="off">
       <button class="fd-clear" id="cityClear" type="button" aria-label="Clear search">&times;</button>
     </div>
     <div class="fd-regions" id="cityRegions" role="group" aria-label="Filter by region">
@@ -706,16 +918,178 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       <button class="fd-reg" data-reg="east" type="button">East</button>
       <button class="fd-reg" data-reg="southcentral" type="button">South Central</button>
       <button class="fd-reg" data-reg="south" type="button">South</button>
+      <button class="fd-reg" data-reg="conorth" type="button">Colorado</button>
+      <button class="fd-reg" data-reg="mw" type="button">Mountain West</button>
+      <button class="fd-reg" data-reg="nat" type="button">National</button>
     </div>
     <p class="fd-count" id="cityCount" aria-live="polite"></p>
   </div>
 </div>
 
+
+<!-- ============================================================
+  SERVICE-AREA MAP. Hand-drawn SVG — no image file, no map library, no API
+  key, and it stays crisp at any size. Pins are real <a> elements so they are
+  crawlable links and keyboard focusable, not JS-only hotspots. The 3D read
+  comes from three stacked pieces per pin: a ground shadow ellipse, the drop
+  body with a gradient, and a highlight arc. ADDING A CITY = one <a> block.
+  ============================================================ -->
+<section class="sec sec-white" aria-labelledby="map-h2">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="chip chip-blue" style="margin:0 auto 12px;">Where We Work</span>
+      <h2 id="map-h2">24 Cities, 9 States, One Team</h2>
+      <p>Tap a pin to see how we approach that market. The cluster over Colorado is not decoration &mdash; that is where we have worked the longest.</p>
+    </div>
+    <div class="map-wrap">
+      <svg class="usmap" viewBox="0 0 1000 620" role="img" aria-label="Map of the United States showing the cities Eye To Ad Media serves">
+        <defs>
+          <linearGradient id="mapLand" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1B2D4C"/><stop offset="1" stop-color="#122139"/>
+          </linearGradient>
+          <linearGradient id="pinG" x1="0" y1="0" x2="0.4" y2="1">
+            <stop offset="0" stop-color="#FF8F52"/><stop offset=".45" stop-color="#EF4023"/><stop offset="1" stop-color="#A81B0C"/>
+          </linearGradient>
+          <linearGradient id="pinGold" x1="0" y1="0" x2="0.4" y2="1">
+            <stop offset="0" stop-color="#FFE08A"/><stop offset=".45" stop-color="#FBBF24"/><stop offset="1" stop-color="#B4780A"/>
+          </linearGradient>
+          <radialGradient id="hubGlow" cx=".5" cy=".5" r=".5">
+            <stop offset=".35" stop-color="#FBBF24" stop-opacity=".45"/><stop offset="1" stop-color="#FBBF24" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- simplified continental outline -->
+        <path class="land" d="M148 168 L196 150 L243 141 L300 133 L352 128 L404 124 L455 120 L505 118 L556 120 L604 126
+          L652 132 L700 130 L742 126 L782 134 L812 152 L836 176 L858 204 L880 236 L898 268 L912 300 L920 330
+          L906 356 L880 372 L856 392 L830 414 L806 438 L780 456 L752 470 L724 478 L694 482 L664 486 L634 494
+          L604 506 L574 516 L544 520 L514 516 L486 506 L458 494 L430 486 L402 482 L374 480 L346 474 L318 462
+          L292 446 L268 428 L246 408 L226 386 L208 362 L192 336 L178 308 L166 278 L156 246 L150 210 Z"
+          fill="url(#mapLand)" stroke="#2C4470" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- state-line suggestion, kept faint so it reads as texture not geography -->
+        <g class="statelines" stroke="#2C4470" stroke-width="1.6" fill="none" opacity=".55">
+          <path d="M243 141 L246 408 M352 128 L346 474 M455 120 L458 494 M556 120 L544 520 M652 132 L634 494 M742 126 L724 478"/>
+          <path d="M166 278 L912 300 M178 308 L906 356 M192 336 L880 372"/>
+        </g>
+        <circle cx="418" cy="300" r="66" fill="url(#hubGlow)"/>
+      <a class="pin pin-hub" href="/locations/" tabindex="0" aria-label="Denver SEO">
+        <ellipse class="pin-shadow" cx="418" cy="303" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(418,300)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="418" y="318">Denver</text>
+      </a>
+      <a class="pin pin-co" href="/locations/colorado-springs-seo/" tabindex="0" aria-label="Colorado Springs SEO">
+        <ellipse class="pin-shadow" cx="424" cy="333" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(424,330)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="424" y="348">Colorado Springs</text>
+      </a>
+      <a class="pin pin-co" href="/locations/fort-collins-seo/" tabindex="0" aria-label="Fort Collins SEO">
+        <ellipse class="pin-shadow" cx="414" cy="285" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(414,282)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="414" y="300">Fort Collins</text>
+      </a>
+      <a class="pin pin-mw" href="/locations/cheyenne-seo/" tabindex="0" aria-label="Cheyenne SEO">
+        <ellipse class="pin-shadow" cx="409" cy="271" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(409,268)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="409" y="286">Cheyenne</text>
+      </a>
+      <a class="pin pin-mw" href="/locations/salt-lake-city-seo/" tabindex="0" aria-label="Salt Lake City SEO">
+        <ellipse class="pin-shadow" cx="305" cy="271" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(305,268)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="305" y="286">Salt Lake City</text>
+      </a>
+      <a class="pin pin-mw" href="/locations/boise-seo/" tabindex="0" aria-label="Boise SEO">
+        <ellipse class="pin-shadow" cx="245" cy="208" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(245,205)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="245" y="223">Boise</text>
+      </a>
+      <a class="pin pin-mw" href="/locations/albuquerque-seo/" tabindex="0" aria-label="Albuquerque SEO">
+        <ellipse class="pin-shadow" cx="382" cy="395" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(382,392)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="382" y="410">Albuquerque</text>
+      </a>
+      <a class="pin pin-mw" href="/locations/phoenix-seo/" tabindex="0" aria-label="Phoenix SEO">
+        <ellipse class="pin-shadow" cx="283" cy="418" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(283,415)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="283" y="433">Phoenix</text>
+      </a>
+      <a class="pin pin-nat" href="/locations/omaha-seo/" tabindex="0" aria-label="Omaha SEO">
+        <ellipse class="pin-shadow" cx="545" cy="271" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(545,268)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="545" y="286">Omaha</text>
+      </a>
+      <a class="pin pin-nat" href="/locations/northwest-arkansas-seo/" tabindex="0" aria-label="Northwest Arkansas SEO">
+        <ellipse class="pin-shadow" cx="576" cy="381" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(576,378)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="576" y="396">Northwest Arkansas</text>
+      </a>
+      <a class="pin pin-nat" href="/locations/dallas-seo/" tabindex="0" aria-label="Dallas SEO">
+        <ellipse class="pin-shadow" cx="540" cy="445" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(540,442)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="540" y="460">Dallas</text>
+      </a>
+      <a class="pin pin-nat" href="/locations/charlotte-seo/" tabindex="0" aria-label="Charlotte SEO">
+        <ellipse class="pin-shadow" cx="754" cy="363" rx="9" ry="3.4"/>
+        <g class="pin-body" transform="translate(754,360)">
+          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
+          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
+          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        </g>
+        <text class="pin-label" x="754" y="378">Charlotte</text>
+      </a>
+      </svg>
+      <p class="map-note">Denver is home. Everything else we reached by being good at this, not by opening an office.</p>
+    </div>
+  </div>
+</section>
+
 <section class="sec sec-white">
   <div class="wrap">
     <div class="sec-head">
       <span class="chip chip-blue" style="margin:0 auto 12px;">Service Areas</span>
-      <h2>Denver and Surrounding Communities We Serve</h2>
+      <h2 id="cities-h2">Every City We Build Strategies For</h2>
       <p>Grouped by region, because geography drives competition. Pick your city for a strategy built specifically for that market.</p>
     </div>
 
@@ -833,6 +1207,90 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         </div>
       </div>
 
+
+      <div class="reg-block" data-reg="conorth">
+        <div class="reg-head"><h3>Colorado &mdash; Beyond the Metro</h3><span>Front Range</span></div>
+        <div class="city-grid">
+          <a href="/locations/colorado-springs-seo/" class="city" data-reg="conorth" data-s="colorado springs 80903 80906 80919 80920 80921 el paso county garden of the gods military academy fort carson peterson downtown">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Colorado Springs</h4><span class="city-pop">~490,000</span></div>
+            <p>Colorado's second-largest city and a fraction of Denver's agency density. Military, defense contracting, healthcare and a fast-growing north-side residential corridor.</p>
+            <span class="city-link">Colorado Springs SEO &rarr;</span>
+          </a>
+          <a href="/locations/fort-collins-seo/" class="city" data-reg="conorth" data-s="fort collins 80521 80524 80525 80526 80528 larimer county old town csu colorado state university harmony">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Fort Collins</h4><span class="city-pop">~170,000</span></div>
+            <p>Old Town, Colorado State and the Harmony corridor. A university town with high household income, strong home services demand and unusually light local SEO competition.</p>
+            <span class="city-link">Fort Collins SEO &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="reg-block" data-reg="mw">
+        <div class="reg-head"><h3>Mountain West</h3><span>Within a short flight of home</span></div>
+        <div class="city-grid">
+          <a href="/locations/cheyenne-seo/" class="city" data-reg="mw" data-s="cheyenne 82001 82007 82009 wyoming laramie county f e warren capitol">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Cheyenne</h4><span class="city-pop">~65,000</span></div>
+            <p>Ninety minutes up I-25 and a different state's rules. Small, underserved, and one of the easiest markets on this page to win outright.</p>
+            <span class="city-link">Cheyenne SEO &rarr;</span>
+          </a>
+          <a href="/locations/salt-lake-city-seo/" class="city" data-reg="mw" data-s="salt lake city 84101 84102 84103 84106 84109 utah wasatch sugar house downtown slc silicon slopes">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Salt Lake City</h4><span class="city-pop">~210,000</span></div>
+            <p>Silicon Slopes money, a dense professional services market and a metro that punches well above its population for search volume.</p>
+            <span class="city-link">Salt Lake City SEO &rarr;</span>
+          </a>
+          <a href="/locations/boise-seo/" class="city" data-reg="mw" data-s="boise 83702 83703 83704 83705 83706 83709 idaho ada county meridian eagle downtown boise">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Boise</h4><span class="city-pop">~240,000</span></div>
+            <p>One of the fastest-growing metros of the past decade, with a business community that expanded faster than the agencies serving it.</p>
+            <span class="city-link">Boise SEO &rarr;</span>
+          </a>
+          <a href="/locations/albuquerque-seo/" class="city" data-reg="mw" data-s="albuquerque 87101 87102 87106 87109 87110 87111 new mexico bernalillo county nob hill sandia uptown">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Albuquerque</h4><span class="city-pop">~560,000</span></div>
+            <p>Large, spread out, and quietly under-competed. Home services and healthcare dominate search here, and most competitors are still running 2019 playbooks.</p>
+            <span class="city-link">Albuquerque SEO &rarr;</span>
+          </a>
+          <a href="/locations/phoenix-seo/" class="city" data-reg="mw" data-s="phoenix 85003 85004 85016 85018 85020 85028 arizona maricopa county scottsdale tempe mesa chandler">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Phoenix</h4><span class="city-pop">~1,650,000</span></div>
+            <p>Among the top metros in the country for numeric population growth. Big market, real competition, and enough search volume that second place still pays.</p>
+            <span class="city-link">Phoenix SEO &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="reg-block" data-reg="nat">
+        <div class="reg-head"><h3>National</h3><span>Markets worth the flight</span></div>
+        <div class="city-grid">
+          <a href="/locations/omaha-seo/" class="city" data-reg="nat" data-s="omaha 68102 68104 68114 68124 68130 68144 nebraska douglas county old market midtown west omaha">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Omaha</h4><span class="city-pop">~490,000</span></div>
+            <p>A stable, insurance-and-logistics economy with steady home services demand. We already run sister sites in this market, so it is not a cold start.</p>
+            <span class="city-link">Omaha SEO &rarr;</span>
+          </a>
+          <a href="/locations/northwest-arkansas-seo/" class="city" data-reg="nat" data-s="northwest arkansas fayetteville springdale rogers bentonville 72701 72703 72712 72758 72764 walmart supplier benton washington county">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Northwest Arkansas</h4><span class="city-pop">~590,000</span></div>
+            <p>Fayetteville, Springdale, Rogers and Bentonville. Ranked ninth nationally for percentage growth and up 41% since 2010, on the back of the Walmart supplier ecosystem, with almost no serious agency competition.</p>
+            <span class="city-link">Northwest Arkansas SEO &rarr;</span>
+          </a>
+          <a href="/locations/dallas-seo/" class="city" data-reg="nat" data-s="dallas 75201 75204 75206 75214 75219 75225 texas fort worth dfw uptown oak lawn plano frisco">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Dallas</h4><span class="city-pop">~1,300,000</span></div>
+            <p>Added over 123,000 residents in a single year. Heavily contested at the head terms, but the long tail is wide enough that a focused campaign still lands.</p>
+            <span class="city-link">Dallas SEO &rarr;</span>
+          </a>
+          <a href="/locations/charlotte-seo/" class="city" data-reg="nat" data-s="charlotte 28202 28203 28207 28209 28211 28226 north carolina mecklenburg county uptown south end ballantyne">
+            <span class="city-new">New</span>
+            <div class="city-top"><span class="city-ic">&#128205;</span><h4>Charlotte</h4><span class="city-pop">~900,000</span></div>
+            <p>Banking, healthcare and relentless residential construction. One of the strongest growth metros in the Southeast and less saturated than Atlanta or Austin.</p>
+            <span class="city-link">Charlotte SEO &rarr;</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="no-city" id="noCity">
@@ -843,7 +1301,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
     <div class="also">
       <h3>Don't see your city?</h3>
-      <p>These thirteen have dedicated strategy pages, but our service area is considerably wider. We work across the whole Front Range, and we take national clients remotely in all fifty states.</p>
+      <p>These have dedicated strategy pages, but the service area is wider than the list. We work across the whole Front Range and take clients in all fifty states. If your market is not here, it usually means we have not built the page yet &mdash; not that we cannot work there.</p>
       <div class="also-chips">
         <span>Englewood</span><span>Greenwood Village</span><span>Commerce City</span><span>Golden</span>
         <span>Brighton</span><span>Northglenn</span><span>Lone Tree</span><span>Erie</span>
@@ -858,8 +1316,8 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <div class="wrap">
     <div class="sec-head">
       <span class="chip chip-orange" style="margin:0 auto 12px;">Why Location-Specific SEO</span>
-      <h2 id="why-h2">Why Every Denver Suburb Needs Its Own Strategy</h2>
-      <p>A broad metro campaign treats Arvada and Castle Rock identically. They are not remotely the same market.</p>
+      <h2 id="why-h2">Why Every Market Needs Its Own Strategy</h2>
+      <p>A one-size campaign treats Arvada and Charlotte identically. They are not remotely the same market, and neither are two suburbs twenty minutes apart.</p>
     </div>
     <div class="why-grid">
       <div class="why">
@@ -900,6 +1358,53 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 </section>
 
 
+
+<!-- Fresh section (Sept 2026). Answers the question every out-of-state visitor
+     actually has, which the page never addressed: what happens if you are not
+     in Colorado. Written to be quotable by answer engines — short direct
+     claims, no superlatives. -->
+<section class="sec sec-off" aria-labelledby="how-h2">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="chip chip-orange" style="margin:0 auto 12px;">Outside Colorado</span>
+      <h2 id="how-h2">What Happens When You Are Not in Denver</h2>
+      <p>A fair question, and the honest answer is more useful than a sales one.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why">
+        <div class="why-ic">&#128269;</div>
+        <h3>The market gets studied before anything gets written</h3>
+        <p>Competitive density in your category, who currently holds the map pack, which pages the AI Overviews are quoting for your service, and what the top three are doing that you are not. That research is the first deliverable, and it is yours whether or not you hire us.</p>
+      </div>
+      <div class="why">
+        <div class="why-ic">&#128205;</div>
+        <h3>Proximity is a ranking factor, so we plan around it</h3>
+        <p>Your Google Business Profile ranks strongest nearest your own address. That is true everywhere and no agency changes it. What we build is the organic and AI-answer visibility that is not distance-limited, plus the profile work that maximises the radius you do own.</p>
+      </div>
+      <div class="why">
+        <div class="why-ic">&#129302;</div>
+        <h3>AI answers do not care where the agency sits</h3>
+        <p>When someone asks an assistant for a recommendation in your city, it weighs entity consistency, citations and structured facts. None of those are geographic. This is the part of search where an out-of-state team is on equal footing, and it is growing fastest.</p>
+      </div>
+      <div class="why">
+        <div class="why-ic">&#128222;</div>
+        <h3>You get a person, not a ticket queue</h3>
+        <p>The founder works on accounts directly. That does not change with your area code. Phones are answered by a person Monday to Friday, 8AM to 6PM Mountain, and if you would rather meet face to face, that gets arranged.</p>
+      </div>
+      <div class="why">
+        <div class="why-ic">&#9878;&#65039;</div>
+        <h3>We will tell you when a market is not worth it</h3>
+        <p>Some categories in some cities are locked up by companies who have spent a decade and real money getting there. If yours is one of them, you will hear that in the audit rather than after six months of invoices.</p>
+      </div>
+      <div class="why">
+        <div class="why-ic">&#128200;</div>
+        <h3>Reporting is per city, never blended</h3>
+        <p>If you sell in four markets, you get four sets of numbers. Blended metro-wide reporting hides the one city that is quietly carrying the whole campaign, and the two that are not working.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="loc-form-sec" id="audit" aria-labelledby="form-h2">
   <div class="wrap loc-form-grid">
     <div class="lf-txt">
@@ -925,7 +1430,6 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
         <input type="hidden" name="_loadtime" id="_loadtime_loc" value="">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="Free Local SEO Audit Request — Locations page">
-        <input type="hidden" name="_next" value="https://eyetoad.com/thank-you/">
         <input type="hidden" name="form_source" value="Locations gateway">
 
         <label for="lf-name">Your name</label>
@@ -964,13 +1468,13 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <div class="wrap">
     <div class="sec-head">
       <span class="chip chip-blue" style="margin:0 auto 12px;">Common Questions</span>
-      <h2 id="faq-h2">Denver Metro Coverage — Questions We Get</h2>
+      <h2 id="faq-h2">Service Area Questions We Get</h2>
       <p>Straight answers about service areas, ranking timelines and which markets are actually worth going after.</p>
     </div>
     <div class="faq-cols">
 
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">Which Denver metro cities do you serve?<span class="faq-ico" aria-hidden="true">+</span></button>
-      <div class="faq-a"><p>We have dedicated strategy pages for thirteen cities: Denver, Aurora, Lakewood, Thornton, Arvada, Westminster, Centennial, Highlands Ranch, Castle Rock, Broomfield, Parker, Littleton and Wheat Ridge.</p><p>We also serve Englewood, Greenwood Village, Commerce City, Golden, Brighton, Northglenn, Lone Tree, Erie, Superior, Louisville, Lafayette, Longmont and Boulder — plus national clients remotely across all fifty states.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Which cities does Eye To Ad Media serve?<span class="faq-ico" aria-hidden="true">+</span></button>
+      <div class="faq-a"><p>Twenty-four cities across nine states have dedicated strategy pages. In Colorado: Denver, Aurora, Lakewood, Thornton, Arvada, Westminster, Centennial, Highlands Ranch, Castle Rock, Broomfield, Parker, Littleton, Wheat Ridge, Colorado Springs and Fort Collins.</p><p>Across the Mountain West: Cheyenne, Salt Lake City, Boise, Albuquerque and Phoenix. Nationally: Omaha, Northwest Arkansas, Dallas and Charlotte. We also work with clients in all fifty states.</p></div></div>
 
       <div class="faq-item"><button class="faq-q" aria-expanded="false">Do I have to be located in a city to rank there?<span class="faq-ico" aria-hidden="true">+</span></button>
       <div class="faq-a"><p>No, but proximity is a genuine ranking factor for the Google Maps local pack, so an address inside the city helps there.</p><p>Businesses without a location in a city can still rank strongly in organic results by building city-specific content, consistent local citations, a properly configured service area in their Google Business Profile, and reviews that mention the area. For a service-area business the realistic plan is organic visibility first, with map pack strength greatest nearest your actual address.</p></div></div>
@@ -993,6 +1497,12 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you serve cities outside the metro?<span class="faq-ico" aria-hidden="true">+</span></button>
       <div class="faq-a"><p>Yes. We are Denver-based and most clients are in the metro, but we also work along the Front Range in Boulder, Longmont, Louisville, Lafayette, Erie and Superior, and take national clients remotely.</p><p>Local clients do have an edge on Google Maps work simply because we know these markets first-hand.</p></div></div>
 
+
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Can a Denver agency rank my business in another state?<span class="faq-ico" aria-hidden="true">+</span></button>
+      <div class="faq-a"><p>Yes for organic and AI-answer visibility, with one honest limit on Google Maps. Proximity is a real ranking factor in the local pack, and it favours <em>your</em> address rather than your agency's &mdash; so the map radius you own is set by where you are, not where we are.</p><p>Everything else is not distance-limited: organic rankings, AI Overview and generative-answer citations, content, technical health and conversion. We build those first, then maximise the profile radius you genuinely own.</p></div></div>
+
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How do you learn a market you have not worked in before?<span class="faq-ico" aria-hidden="true">+</span></button>
+      <div class="faq-a"><p>The first deliverable is research, not content &mdash; competitive density in your category, who holds the map pack today, which pages AI Overviews are citing for those queries, and what the top three competitors are doing that you are not.</p><p>That research happens before anything is written, and it is yours whether or not you continue. If the market is locked up by established competitors, you hear it in the audit rather than six months into an engagement.</p></div></div>
     </div>
 
     <div style="text-align:center;margin-top:38px;">
@@ -1008,7 +1518,11 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver SEO Agency since 2012" class="brand-logo" width="760" height="190" loading="lazy">
+        <!-- Footer logo uses the SAME .brand-logo rule as the header. The old
+             build hard-coded height:300px INLINE, which overrode the mobile
+             media query and left a 300px logo on phones. width/height attrs
+             match the rendered 300x102 box. -->
+        <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver SEO Agency since 2012" class="brand-logo" width="300" height="102" loading="lazy">
         <p>Denver's SEO authority for modern search since 2012 — Google, AI Overviews, agentic AI, local maps, and conversion. Serving Denver and surrounding Colorado.</p>
         <address>
           Eye To Ad Media<br>
@@ -1016,52 +1530,72 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
           Denver, CO 80204<br>
           <a href="tel:17202496588">(720) 249-6588</a><br>
           <a href="tel:18004818638">1-800-481-8638</a><br>
-          <a href="https://eyetoad.com">eyetoad.com</a>
+          <a class="eml" data-u="info" data-d="eyetoad.com" href="#">info&#64;eyetoad&#46;com</a>
         </address>
       </div>
+      <!-- ============================================================
+        FOOTER — PORTABLE BY DESIGN (Sept 2026). Read before editing.
+
+        THE LABELS DELIBERATELY DO NOT SAY "DENVER". This same footer ships
+        on out-of-state pages (Dallas, Phoenix, Charlotte...). A Dallas page
+        carrying "Dentist SEO Denver / Roofing SEO Denver / Denver SEO
+        Pricing" in its footer reads wrong to a human and pushes a Denver
+        signal on a page trying to rank for Dallas. DESTINATIONS ARE
+        UNCHANGED — every one of these is still the Denver page it always
+        was, and each of those pages carries "Denver" in its own title, H1,
+        content and schema, which is where it actually counts. This also
+        matches the anchor-diversity decision already made for the
+        Industries mega-menu, which dropped the geo suffix for the same
+        reason.
+
+        LOCATIONS IS ONE LINK. An earlier pass had four links here pointing
+        at the same hub via anchors that did not exist. Cities live in the
+        Locations mega-menu and on /locations/ — never as a sitewide list,
+        which is the keyword-stuffed footer pattern spam systems look for.
+        ============================================================ -->
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="/denver-seo-services/">Denver SEO Services</a>
-        <a href="/local-seo-denver/">Local SEO Denver</a>
+        <a href="/denver-seo-services/">SEO Services</a>
+        <a href="/local-seo-denver/">Local SEO &amp; Maps</a>
         <a href="/seo-systems/">SEO Systems</a>
         <a href="/aio-seo-system/">AIO SEO System</a>
         <a href="/generative-engine-optimization-system/">GEO System</a>
         <a href="/conversion-optimization/">Conversion Optimization</a>
-        <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+        <a href="/denver-seo-pricing/">Pricing</a>
         <a href="/free-seo-audit/">Free SEO Audit</a>
       </div>
       <div class="footer-col">
         <h4>Industries</h4>
-        <a href="/contractor-seo-denver/">Contractor SEO Denver</a>
-        <a href="/dentist-seo-denver/">Dentist SEO Denver</a>
-        <a href="/law-firm-seo-denver/">Law Firm SEO Denver</a>
-        <a href="/med-spa-seo-denver/">Med Spa SEO Denver</a>
-        <a href="/fitness-marketing-denver/">Fitness Marketing</a>
-        <a href="/roofing-seo-denver/">Roofing SEO Denver</a>
-        <a href="/hvac-seo-denver/">HVAC SEO Denver</a>
-        <a href="/industries/">All Industries →</a>
+        <a href="/contractor-seo-denver/">Contractor SEO</a>
+        <a href="/dentist-seo-denver/">Dentist SEO</a>
+        <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+        <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+        <a href="/roofing-seo-denver/">Roofing SEO</a>
+        <a href="/hvac-seo-denver/">HVAC SEO</a>
+        <a href="/industries/">All Industries &rarr;</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="/marketing-subscription/" style="color:#FBBF24;font-weight:700;">⚡ VIP Marketing Subscription</a>
+        <a href="/locations/">Service Locations</a>
         <a href="/about/">About Us</a>
-        <a href="/best-denver-seo-company/">Best Denver SEO Company</a>
-        <a href="/vip-marketing/" style="color:#FB923C;font-weight:600;">✨ VIP Marketing — NFC</a>
         <a href="/case-studies/">Case Studies</a>
-        <a href="/ad-lab/">⚗️ Ad Lab</a>
-        <a href="/ad-lab/rpg/" style="padding-left:14px;font-size:.82rem;opacity:.75;">↳ SEO Quest RPG</a>
-        <a href="/blog/">SEO Blog</a>
+        <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+        <a href="/blog/">Blog</a>
+        <a href="/marketing-subscription/">VIP Membership</a>
+        <a href="/grow-my-business/">Grow My Business</a>
         <a href="/contact/">Contact</a>
-        <a href="/locations/">Locations</a>
-        <a href="https://www.buyweburl.com" target="_blank" rel="noopener sponsored">🔍 Search Domain Names</a>
         <h4 style="margin-top:16px;">Legal</h4>
         <a href="/privacy-policy/">Privacy Policy</a>
+        <!-- KNOWN INCONSISTENCY: /terms.html is the only non-trailing-slash
+             URL on the site. Rename to /terms/index.html AND update every
+             link sitewide in ONE commit, or it 404s. -->
         <a href="/terms.html">Terms of Service</a>
         <a href="/accessibility/">Accessibility</a>
       </div>
+      
     </div>
     <div class="footer-bot">
-      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-07-28">July 28, 2026</time>.</p>
+      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-09-10">September 10, 2026</time>.</p>
       <div class="footer-links">
         <a href="/privacy-policy/">Privacy</a>
         <a href="/terms.html">Terms</a>
@@ -1074,36 +1608,74 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 </footer>
 
 <script>
-/* ===== CORE UI (identical behaviour to the homepage) ===== */
+/* ============================================================
+   CORE UI
+   ============================================================ */
 (function(){
   var hdr=document.getElementById('hdr');
   var burger=document.getElementById('burger');
   var mobNav=document.getElementById('mobNav');
-  window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>30);},{passive:true});
-  function measureHeader(){var r=hdr.getBoundingClientRect();mobNav.style.top=Math.max(0,r.bottom)+'px';}
+
+  window.addEventListener('scroll',function(){
+    hdr.classList.toggle('scrolled',window.scrollY>30);
+  },{passive:true});
+
+  /* Mobile nav offset is MEASURED, never hard-coded. The old build pinned
+     .mob-nav to top:300px, which had to be kept in sync with
+     .hdr-inner{height:300px} by hand — and wasn't.
+     This is also why the HEADER FIT breakpoints needed no JS change: the
+     menu position is derived from the rendered header, whatever size it
+     happens to be at that viewport width. */
+  function measureHeader(){
+    var r=hdr.getBoundingClientRect();
+    mobNav.style.top=Math.max(0,r.bottom)+'px';
+  }
   window.addEventListener('resize',measureHeader);
   window.addEventListener('scroll',measureHeader,{passive:true});
   measureHeader();
+
   burger.addEventListener('click',function(){
     measureHeader();
     var o=mobNav.classList.toggle('open');
     burger.classList.toggle('open',o);
     burger.setAttribute('aria-expanded',o);
+    document.body.classList.toggle('nav-open',o);
     document.body.style.overflow=o?'hidden':'';
+    if(o)mobNav.scrollTop=0;
   });
+
+  /* dedicated close button inside the menu — the burger can sit behind a
+     sticky header on some phones, so the menu owns a way out of itself */
+  var mobClose=document.getElementById('mobClose');
+  if(mobClose)mobClose.addEventListener('click',function(){burger.click();});
+  /* accordion: one section at a time, collapsed on open */
+  mobNav.querySelectorAll('.mob-acc').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var grp=document.getElementById(btn.getAttribute('aria-controls'));
+      var isOpen=btn.getAttribute('aria-expanded')==='true';
+      mobNav.querySelectorAll('.mob-acc').forEach(function(b){
+        b.setAttribute('aria-expanded','false');
+        var g=document.getElementById(b.getAttribute('aria-controls'));
+        if(g)g.classList.remove('open');
+      });
+      if(!isOpen){btn.setAttribute('aria-expanded','true');if(grp)grp.classList.add('open');}
+    });
+  });
+
   mobNav.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click',function(){
-      mobNav.classList.remove('open');burger.classList.remove('open');
-      burger.setAttribute('aria-expanded',false);document.body.style.overflow='';
+      mobNav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded',false);
+      document.body.classList.remove('nav-open');
+      document.body.style.overflow='';
     });
   });
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'&&mobNav.classList.contains('open')){burger.click();}
   });
-})();
 
-/* ===== FAQ ACCORDION ===== */
-(function(){
+  /* FAQ accordion — one open at a time */
   document.querySelectorAll('.faq-q').forEach(function(btn){
     btn.addEventListener('click',function(){
       var item=btn.closest('.faq-item');
@@ -1115,9 +1687,352 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
       if(!wasOpen){item.classList.add('open');btn.setAttribute('aria-expanded',true);}
     });
   });
+
+  /* Hero video deferred until after first paint so the poster is the LCP
+     element. Skipped entirely on save-data, slow connections and when the
+     visitor has asked for reduced motion. */
+  function deferHero(){
+    var v=document.getElementById('heroVideo');
+    if(!v)return;
+    var c=navigator.connection||{};
+    /* MOBILE (Sept 2026): the hero video is skipped entirely under 900px.
+       The subject is unreadable at phone size behind the gradient, so the MP4
+       was pure download cost on the connection least able to afford it. The
+       poster image is already the LCP element, so nothing visual is lost. */
+    if(window.innerWidth<900)return;
+    if(c.saveData===true)return;
+    if(c.effectiveType&&/2g/.test(c.effectiveType))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    v.src=v.getAttribute('data-src');
+    v.load();
+    v.addEventListener('canplay',function(){v.classList.add('ready');v.play().catch(function(){});},{once:true});
+  }
+  if('requestIdleCallback' in window){requestIdleCallback(deferHero,{timeout:2500});}
+  else{window.addEventListener('load',function(){setTimeout(deferHero,900);});}
+
+  /* Email links are assembled at runtime so the address is not in the raw
+     source as a harvestable string. The JSON-LD address stays plain on
+     purpose — that is the channel we WANT machines to read. */
+  window.bindEmails=function(){
+    document.querySelectorAll('a.eml').forEach(function(a){
+      if(a.dataset.bound)return; a.dataset.bound='1';
+      a.href='mailto:'+a.getAttribute('data-u')+String.fromCharCode(64)+a.getAttribute('data-d');
+    });
+  };
+  window.bindEmails();
+
+  /* REMOVED Sep 2 2026: the .ask-copy clipboard handler for the
+     "Ask an AI Engine" section. That whole section is gone — see the
+     removal note where it used to sit, above the Agentic AI block. */
 })();
 
+/* FORM STACK — validation, submit guards, AJAX delivery. Three rules, none
+   revertable: the endpoint is assembled at submit time and is never an action
+   attribute in the raw HTML; field names are exact and renaming one silently
+   disables the filtering it depends on; delivery is reported honestly as
+   sent / could not confirm / failed, because the old build redirected whether
+   or not the POST succeeded and a lost lead looked identical to a won one.
+   NOTE: the /ajax/ endpoint activates separately from the regular one. Point a
+   form at a NEW address and you must submit once through the regular endpoint
+   and approve the confirmation email, or every AJAX send falls back to
+   "unsure". */
+(function(){
+  var AJAX='https://formsubmit.co/ajax/';
+  var PLAIN='https://formsubmit.co/';
+  var PHONE='1-800-481-8638';
 
+  function buildAction(form,ajax){
+    var to=form.getAttribute('data-fs')||'info@eyetoad.com';
+    return (ajax?AJAX:PLAIN)+to;
+  }
+  function serialize(form){
+    var out={},els=form.elements,i,el;
+    for(i=0;i<els.length;i++){
+      el=els[i];
+      if(!el.name||el.disabled||el.type==='submit')continue;
+      out[el.name]=el.value;
+    }
+    return out;
+  }
+  function toParams(o){
+    var a=[],k;
+    for(k in o){if(Object.prototype.hasOwnProperty.call(o,k))a.push(encodeURIComponent(k)+'='+encodeURIComponent(o[k]));}
+    return a.join('&');
+  }
+  /* Hidden-iframe POST to the REGULAR endpoint. No CORS, no preflight.
+     Used only as a second chance when the AJAX call fails. */
+  function postViaIframe(form,data){
+    try{
+      var name='fs_sink_'+Date.now();
+      var ifr=document.createElement('iframe');
+      ifr.name=name;ifr.style.display='none';
+      document.body.appendChild(ifr);
+      var f=document.createElement('form');
+      f.method='POST';f.action=buildAction(form,false);f.target=name;f.style.display='none';
+      for(var k in data){
+        if(!Object.prototype.hasOwnProperty.call(data,k))continue;
+        var i=document.createElement('input');
+        i.type='hidden';i.name=k;i.value=data[k];
+        f.appendChild(i);
+      }
+      document.body.appendChild(f);
+      f.submit();
+      setTimeout(function(){try{f.remove();ifr.remove();}catch(e){}},20000);
+      return true;
+    }catch(e){return false;}
+  }
+  function send(form,data){
+    if(!window.fetch){
+      return Promise.resolve(postViaIframe(form,data)?'unsure':'failed');
+    }
+    return fetch(buildAction(form,true),{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},
+      body:toParams(data)
+    }).then(function(r){
+      if(r.ok)return 'sent';
+      return postViaIframe(form,data)?'unsure':'failed';
+    }).catch(function(){
+      return postViaIframe(form,data)?'unsure':'failed';
+    });
+  }
+
+  /* ---------- shared validation ---------- */
+  var SPAM=/\b(viagra|casino|crypto|bitcoin|loan|SEO guarantee|buy followers|cheap traffic|make money fast|click here|free money)\b/i;
+  function badName(v){return v.length<2||/[<>{}|\\]|https?:\/\//i.test(v);}
+  function badPhone(v){return v.replace(/\D/g,'').length<10;}
+  function badEmail(v){return !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);}
+
+  /* ---------- HERO FORM ---------- */
+  var form=document.getElementById('hero-lead-form');
+  if(form){
+    var lt=document.getElementById('_loadtime');
+    var pu=document.getElementById('hero-page-url');
+    var box=document.getElementById('hero-form-msg');
+    var btn=document.getElementById('hero-fsub');
+    var last=0;
+    lt.value=Date.now();
+    pu.value=location.href;
+
+    function show(kind,html){
+      box.className='fmsg show fmsg-'+kind;
+      box.innerHTML=html;
+      box.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+    function reset(){box.className='fmsg';box.innerHTML='';}
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      reset();
+
+      if(document.getElementById('_honey').value!=='')return;
+      if(document.getElementById('website_url').value!=='')return;
+
+      if(Date.now()-parseInt(lt.value||'0',10)<4000){
+        show('err','Please take a moment to fill out the form.');return;
+      }
+      if(last&&(Date.now()-last)<60000){
+        show('err','Please wait a moment before submitting again.');return;
+      }
+      var name=document.getElementById('hero-name').value.trim();
+      if(badName(name)){show('err','Please enter a valid name.');return;}
+      var phone=document.getElementById('hero-phone').value;
+      if(badPhone(phone)){show('err','Please enter a valid phone number with area code.');return;}
+      var email=document.getElementById('hero-email').value.trim();
+      if(email&&badEmail(email)){show('err','Please check that email address.');return;}
+      if(SPAM.test(document.getElementById('hero-message').value))return;
+
+      last=Date.now();
+      btn.disabled=true;
+      btn.textContent='Sending…';
+
+      send(form,serialize(form)).then(function(state){
+        if(state==='sent'){
+          form.style.display='none';
+          show('ok','<strong>Sent.</strong> Thanks '+name.split(' ')[0]+" — we'll be in touch within one business day. Need it sooner? Call <a href=\"tel:18004818638\">"+PHONE+'</a>.');
+          return;
+        }
+        if(state==='unsure'){
+          form.style.display='none';
+          show('warn','<strong>Sent.</strong> We could not get a delivery receipt back from here, so to be safe: if you have not heard from us within one business day, call <a href="tel:18004818638">'+PHONE+'</a> and mention the website form. We will find it.');
+          return;
+        }
+        btn.disabled=false;
+        btn.textContent='Get Free SEO Strategy →';
+        if(window.bindEmails)setTimeout(window.bindEmails,0);
+        show('err','That did not go through, and we are not going to pretend otherwise. Please call <a href="tel:18004818638">'+PHONE+'</a> or email <a class="eml" data-u="info" data-d="eyetoad.com" href="#">info&#64;eyetoad&#46;com</a>.');
+      });
+    });
+  }
+
+  /* ---------- FOOTER CALLBACK FORM ---------- */
+  var mForm=document.getElementById('mini-cta-form');
+  if(mForm){
+    var mlt=document.getElementById('_mini_loadtime');
+    var mpu=document.getElementById('mini-page-url');
+    var mBox=document.getElementById('mini-msg');
+    var mBtn=document.getElementById('mini-submit');
+    var mLast=0;
+    mlt.value=Date.now();
+    mpu.value=location.href;
+
+    function mShow(kind,html){
+      mBox.className='fcta-mini-msg show '+kind;
+      mBox.innerHTML=html;
+    }
+
+    mForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      mBox.className='fcta-mini-msg';
+
+      if(document.getElementById('_honey_mini').value!=='')return;
+      if(document.getElementById('_contact_email_mini').value!=='')return;
+
+      if(Date.now()-parseInt(mlt.value||'0',10)<4000){
+        mShow('err','Please take a moment before submitting.');return;
+      }
+      if(mLast&&(Date.now()-mLast)<60000){
+        mShow('err','Please wait before submitting again.');return;
+      }
+      var name=document.getElementById('mini-name').value.trim();
+      if(badName(name)){mShow('err','Please enter a valid name.');return;}
+      if(badPhone(document.getElementById('mini-phone').value)){
+        mShow('err','Please enter a valid phone number with area code.');return;
+      }
+
+      mLast=Date.now();
+      mBtn.disabled=true;
+      mBtn.textContent='Sending…';
+
+      send(mForm,serialize(mForm)).then(function(state){
+        if(state==='sent'){
+          mForm.querySelector('.fcta-mini-row').style.display='none';
+          mShow('ok','<strong>Got it.</strong> We will call you within one business day.');
+          return;
+        }
+        if(state==='unsure'){
+          mForm.querySelector('.fcta-mini-row').style.display='none';
+          mShow('warn','<strong>Sent</strong> — but we could not confirm delivery from here. If you have not heard from us within one business day, call <a href="tel:18004818638">'+PHONE+'</a>.');
+          return;
+        }
+        mBtn.disabled=false;
+        mBtn.textContent='Call Me →';
+        mShow('err','That did not go through. Please call <a href="tel:18004818638">'+PHONE+'</a>.');
+      });
+    });
+  }
+})();
+
+/* ============================================================
+   SCRATCH-OFF PRIZE WIDGET
+   Canvas work is deferred until the section is near the viewport via
+   IntersectionObserver, so moving the section down the page required
+   no JS change at all.
+   PRIZE DECK RULE: 15% is the MAXIMUM percentage discount that may
+   appear here. Everything else is a fixed-dollar credit, a free
+   membership period, or member pricing. A scratch card must never
+   give away more than the VIP membership does, or the membership
+   stops being worth paying for.
+   ============================================================ */
+(function(){
+  var canvas=document.getElementById('scratch-canvas');
+  if(!canvas)return;
+  var prizes=[
+    {emoji:'🏆',text:'15% Off SEO + AIO Optimization for the Life of Your Campaign',fine:'New clients · cannot be combined'},
+    {emoji:'⚡',text:'2 Months FREE VIP Marketing Subscription',fine:'$139.98 value · new members'},
+    {emoji:'🎨',text:'$100 Off a Custom Logo Design',fine:'One per business'},
+    {emoji:'🎬',text:'$300 Off a Viral Video Production',fine:'New video projects'},
+    {emoji:'🎟️',text:'VIP Member Pricing on Your First Campaign — Membership Fee Waived',fine:'New clients · first 3 months'},
+    {emoji:'📞',text:'FREE 30-Minute Business Growth Strategy Session',fine:'No obligation'}
+  ];
+  var prizeBox=document.getElementById('scratch-prize');
+  var hint=document.getElementById('scratch-hint');
+  var claim=document.getElementById('scratch-claim');
+  var resetBtn=document.getElementById('scratch-reset');
+  var skipBtn=document.getElementById('scratch-skip');
+  var ctx,scratching=false,revealed=false,booted=false;
+
+  function pickPrize(){
+    var p=prizes[Math.floor(Math.random()*prizes.length)];
+    document.getElementById('sp-emoji').textContent=p.emoji;
+    document.getElementById('sp-text').textContent=p.text;
+    document.getElementById('sp-fine').textContent=p.fine;
+  }
+  function sizeCanvas(){
+    var rect=prizeBox.getBoundingClientRect();
+    canvas.width=rect.width;canvas.height=rect.height;
+  }
+  function paintCover(){
+    ctx=canvas.getContext('2d');
+    var g=ctx.createLinearGradient(0,0,canvas.width,canvas.height);
+    g.addColorStop(0,'#c0c0c8');g.addColorStop(.5,'#e6e6ee');g.addColorStop(1,'#b8b8c2');
+    ctx.fillStyle=g;ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='rgba(120,120,135,.5)';
+    ctx.font="bold 15px Inter, sans-serif";ctx.textAlign='center';
+    ctx.fillText('★ ★ ★  SCRATCH TO REVEAL  ★ ★ ★',canvas.width/2,canvas.height/2);
+    ctx.globalCompositeOperation='destination-out';
+  }
+  function pos(e){
+    var rect=canvas.getBoundingClientRect();
+    return {x:(e.touches?e.touches[0].clientX:e.clientX)-rect.left,
+            y:(e.touches?e.touches[0].clientY:e.clientY)-rect.top};
+  }
+  function scratch(e){
+    if(!scratching||revealed)return;
+    var p=pos(e);
+    ctx.beginPath();ctx.arc(p.x,p.y,24,0,Math.PI*2);ctx.fill();
+    if(hint)hint.style.opacity='0';
+    checkReveal();
+  }
+  function checkReveal(){
+    var data=ctx.getImageData(0,0,canvas.width,canvas.height).data;
+    var cleared=0;
+    for(var i=3;i<data.length;i+=4*40){if(data[i]===0)cleared++;}
+    var total=data.length/(4*40);
+    if(cleared/total>0.45){doReveal();}
+  }
+  function doReveal(){
+    revealed=true;
+    canvas.style.transition='opacity .4s';canvas.style.opacity='0';
+    setTimeout(function(){canvas.style.display='none';},420);
+    if(hint)hint.style.display='none';
+    if(skipBtn)skipBtn.style.display='none';
+    claim.classList.add('show');
+  }
+  function reset(){
+    revealed=false;scratching=false;pickPrize();
+    canvas.style.display='block';canvas.style.opacity='1';
+    claim.classList.remove('show');
+    if(hint){hint.style.display='block';hint.style.opacity='1';}
+    if(skipBtn)skipBtn.style.display='block';
+    sizeCanvas();paintCover();
+  }
+  function boot(){
+    if(booted)return;booted=true;
+    pickPrize();sizeCanvas();paintCover();
+    window.addEventListener('resize',function(){if(!revealed){sizeCanvas();paintCover();}});
+    canvas.addEventListener('mousedown',function(e){scratching=true;scratch(e);});
+    canvas.addEventListener('mousemove',scratch);
+    window.addEventListener('mouseup',function(){scratching=false;});
+    canvas.addEventListener('touchstart',function(e){scratching=true;scratch(e);e.preventDefault();},{passive:false});
+    canvas.addEventListener('touchmove',function(e){scratch(e);e.preventDefault();},{passive:false});
+    canvas.addEventListener('touchend',function(){scratching=false;});
+    resetBtn.addEventListener('click',reset);
+    /* Dragging a canvas is impossible with a keyboard or a screen reader, so
+       there has to be a non-drag path to the same reward. */
+    if(skipBtn)skipBtn.addEventListener('click',function(){if(!revealed)doReveal();});
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){boot();io.disconnect();}});
+    },{rootMargin:'300px'});
+    io.observe(canvas);
+  }else{window.addEventListener('load',boot);}
+})();
+</script>
+
+
+<script>
 /* ===== FAQ ACCORDION ===== */
 (function(){
   document.querySelectorAll('.faq-q').forEach(function(btn){
@@ -1227,385 +2142,56 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){e.preventDefault();show('Please enter a valid email address.');return;}
 
     /* Endpoint assembled here, never present in the raw HTML. */
-    form.action=['https:','','formsubmit.co',form.getAttribute('data-fs')||'info@eyetoad.com'].join('/');
+    /* AJAX, no redirect. The old build navigated to /thank-you/ whether or not
+       the POST succeeded, so a lost lead looked identical to a won one. */
+    e.preventDefault();
     last=now;
     btn.disabled=true;
     btn.textContent='Sending...';
+    var to=form.getAttribute('data-fs')||'info@eyetoad.com';
+    var data={};
+    Array.prototype.forEach.call(form.elements,function(el){
+      if(el.name&&!el.disabled&&el.type!=='submit')data[el.name]=el.value;
+    });
+    var done=false;
+    function finish(state){
+      if(done)return; done=true;
+      if(state==='sent'){
+        form.style.display='none';
+        err.style.display='block';err.style.color='#027A48';err.style.background='#ECFDF3';err.style.borderColor='#A6F4C5';
+        err.innerHTML='<strong>Sent.</strong> We will come back to you within one business day.';
+        return;
+      }
+      if(state==='unsure'){
+        form.style.display='none';
+        err.style.display='block';err.style.color='#B54708';err.style.background='#FFFAEB';err.style.borderColor='#FEDF89';
+        err.innerHTML='<strong>Sent</strong> &mdash; but we could not confirm delivery from here. If you have not heard back within one business day, call 1-800-481-8638.';
+        return;
+      }
+      btn.disabled=false;btn.textContent='Get My Free Local Audit \u2192';
+      show('That did not go through. Please call 1-800-481-8638.');
+    }
+    var guard=setTimeout(function(){finish('unsure');},8000);
+    try{
+      fetch('https://formsubmit.co/ajax/'+to,{method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(j){clearTimeout(guard);finish(j&&(j.success===true||j.success==='true')?'sent':'unsure');})
+      .catch(function(){clearTimeout(guard);finish('unsure');});
+    }catch(ex){clearTimeout(guard);finish('failed');}
   });
 })();
+
 </script>
 
+<!-- IRIS + MASCOT. Single files at the repo root that inject their own styles
+  and markup, so these two lines are the whole integration. ORDER MATTERS:
+  mascot loads AFTER iris so window.openIris exists before its button can call
+  it. The old inline chatbot that used to live here is gone for good. -->
+<script src="/iris.js" defer></script>
+<script src="/mascot.js" data-right="104" data-max="1" defer></script>
 
-<!-- Eye To Ad Media Chatbot Widget (v5 — VIP Subscription aware) -->
-<style>
-#etad{position:fixed;right:20px;bottom:20px;z-index:999999;font-family:'Inter',Arial,sans-serif}
-#etad *{box-sizing:border-box;margin:0;padding:0}
-#etad-fab{width:62px;height:62px;border-radius:50%;border:none;background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(249,115,22,.45);animation:etad-pulse 3s infinite;position:relative}
-#etad-fab:hover{transform:scale(1.08)}
-#etad-fab.open{animation:none;background:#475569;font-size:20px}
-@keyframes etad-pulse{0%,100%{box-shadow:0 8px 32px rgba(249,115,22,.45),0 0 0 0 rgba(249,115,22,.4)}50%{box-shadow:0 8px 32px rgba(249,115,22,.45),0 0 0 10px rgba(249,115,22,0)}}
-#etad-dot{position:absolute;top:3px;right:3px;width:13px;height:13px;background:#22c55e;border-radius:50%;border:2px solid #fff;display:none}
-#etad-dot.on{display:block;animation:etad-blink 2s infinite}
-@keyframes etad-blink{0%,100%{opacity:1}50%{opacity:.3}}
-#etad-panel{position:absolute;right:0;bottom:76px;width:370px;max-width:calc(100vw - 24px);height:600px;max-height:calc(100vh - 120px);background:#0b1220;border:1px solid rgba(255,255,255,.1);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.55);display:none;flex-direction:column;overflow:hidden}
-#etad-panel.open{display:flex}
-#etad-head{padding:14px 16px 12px;background:linear-gradient(135deg,#0f1e35,#111827);border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
-#etad-head-row{display:flex;align-items:center;justify-content:space-between}
-#etad-head-l{display:flex;align-items:center;gap:10px}
-#etad-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f97316,#f59e0b);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-#etad-title{font-size:14px;font-weight:700;color:#f1f5f9}
-#etad-live{font-size:11px;color:#22c55e;display:flex;align-items:center;gap:4px;margin-top:2px}
-#etad-live-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;display:inline-block}
-#etad-sub{font-size:11px;color:#94a3b8;margin-top:7px;line-height:1.5}
-#etad-xbtn{border:none;background:rgba(255,255,255,.08);color:#94a3b8;font-size:16px;cursor:pointer;border-radius:7px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-#etad-xbtn:hover{background:rgba(255,255,255,.15);color:#fff}
-#etad-prog{height:3px;background:rgba(255,255,255,.08);display:none;flex-shrink:0}
-#etad-prog-fill{height:100%;background:linear-gradient(90deg,#f97316,#f59e0b);transition:width .4s;width:0}
-#etad-msgs{flex:1;overflow-y:auto;padding:16px 14px;background:#0b1220}
-#etad-msgs::-webkit-scrollbar{width:3px}
-#etad-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
-.em-bot,.em-usr{max-width:88%;padding:10px 13px;border-radius:16px;font-size:13px;line-height:1.55;white-space:pre-line;margin-bottom:9px}
-.em-bot{background:#1a2333;border:1px solid rgba(255,255,255,.1);color:#f1f5f9;border-top-left-radius:4px;align-self:flex-start}
-.em-usr{background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;border-top-right-radius:4px;align-self:flex-end;font-weight:500}
-.em-wrap{display:flex;flex-direction:column}
-.em-typing{display:flex;align-items:center;gap:5px;padding:11px 14px;background:#1a2333;border:1px solid rgba(255,255,255,.1);border-radius:16px;border-top-left-radius:4px;width:fit-content;margin-bottom:9px}
-.em-typing span{width:6px;height:6px;background:#94a3b8;border-radius:50%;animation:etad-bounce .9s infinite}
-.em-typing span:nth-child(2){animation-delay:.15s}
-.em-typing span:nth-child(3){animation-delay:.3s}
-@keyframes etad-bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
-.em-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.em-chip{border:1px solid rgba(249,115,22,.35);background:rgba(249,115,22,.08);color:#fbd5b5;padding:7px 12px;font-size:12px;border-radius:999px;cursor:pointer;font-family:inherit;transition:all .15s}
-.em-chip:hover{background:rgba(249,115,22,.22);border-color:#f97316;color:#fff}
-#etad-foot{border-top:1px solid rgba(255,255,255,.1);padding:11px 13px 9px;background:rgba(0,0,0,.2);flex-shrink:0}
-#etad-irow{display:flex;gap:7px}
-#etad-inp{flex:1;padding:10px 13px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:11px;color:#f1f5f9;font-size:13px;font-family:inherit;outline:none}
-#etad-inp:focus{border-color:#f97316}
-#etad-inp::placeholder{color:#94a3b8}
-#etad-sbtn{min-width:48px;height:40px;border:none;border-radius:11px;background:linear-gradient(135deg,#f97316,#f59e0b);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-#etad-sbtn:hover{transform:scale(1.05)}
-#etad-sbtn:disabled{opacity:.5;cursor:not-allowed}
-#etad-fmeta{display:flex;justify-content:space-between;margin-top:7px}
-#etad-ftel{font-size:10px;color:#94a3b8;line-height:1.5}
-#etad-ftel a{color:#f97316;text-decoration:none}
-#etad-fstat{font-size:10px;color:#38bdf8}
-@media(max-width:600px){
-  #etad{right:14px;bottom:14px}
-  #etad-panel{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0;z-index:999998}
-}
-</style>
-
-<div id="etad">
-  <div id="etad-panel" aria-hidden="true">
-    <div id="etad-head">
-      <div id="etad-head-row">
-        <div id="etad-head-l">
-          <div id="etad-av">&#127919;</div>
-          <div>
-            <div id="etad-title">Eye To Ad Media</div>
-            <div id="etad-live"><span id="etad-live-dot"></span>Live Assistant</div>
-          </div>
-        </div>
-        <button id="etad-xbtn" aria-label="Close">&#x2715;</button>
-      </div>
-      <div id="etad-sub">SEO &middot; AIO &middot; GEO &middot; Agentic AI &middot; Web Design &middot; PPC &middot; Conversion &middot; Branding &middot; VIP Membership</div>
-    </div>
-    <div id="etad-prog"><div id="etad-prog-fill"></div></div>
-    <div id="etad-msgs"></div>
-    <div id="etad-foot">
-      <div id="etad-irow">
-        <input id="etad-inp" type="text" placeholder="Ask about SEO, ads, membership..." autocomplete="off" maxlength="300"/>
-        <button id="etad-sbtn" type="button" aria-label="Send">&#10148;</button>
-      </div>
-      <div id="etad-fmeta">
-        <div id="etad-ftel"><a href="tel:18004818638">1-800-481-8638</a> &middot; <a href="tel:17202496588">(720) 249-6588</a><br>Denver, CO &middot; Serving Businesses Nationwide</div>
-        <div id="etad-fstat"></div>
-      </div>
-    </div>
-  </div>
-  <button id="etad-fab" aria-label="Chat with Eye To Ad Media" aria-expanded="false">&#128172;<span id="etad-dot"></span></button>
-</div>
-
-<script>
-(function(){
-'use strict';
-var FSURL='https://formsubmit.co/ajax/sales@eyetoad.com';
-var fab=document.getElementById('etad-fab');
-var dot=document.getElementById('etad-dot');
-var panel=document.getElementById('etad-panel');
-var xbtn=document.getElementById('etad-xbtn');
-var msgs=document.getElementById('etad-msgs');
-var inp=document.getElementById('etad-inp');
-var sbtn=document.getElementById('etad-sbtn');
-var fstat=document.getElementById('etad-fstat');
-var prog=document.getElementById('etad-prog');
-var progf=document.getElementById('etad-prog-fill');
-
-var S={open:false,ready:false,capture:false,field:null,
-  lead:{name:'',company:'',phone:'',email:'',website:'',industry:'',service:'',budget:'',notes:''}};
-
-function setprog(){
-  if(!S.capture){prog.style.display='none';return;}
-  prog.style.display='block';
-  var ff=['name','company','phone','email','website','industry','service','budget'];
-  var done=ff.filter(function(f){return S.lead[f];}).length;
-  progf.style.width=Math.round(done/ff.length*100)+'%';
-}
-function scrl(){msgs.scrollTop=msgs.scrollHeight;}
-function addmsg(text,who){
-  var w=document.createElement('div');w.className='em-wrap';
-  var m=document.createElement('div');m.className='em-'+who;
-  m.textContent=text;w.appendChild(m);msgs.appendChild(w);scrl();
-}
-function showtyping(){
-  var el=document.createElement('div');el.className='em-typing';el.id='etad-typing';
-  el.innerHTML='<span></span><span></span><span></span>';
-  msgs.appendChild(el);scrl();return el;
-}
-function botmsg(text,delay){
-  delay=delay||1100;
-  return new Promise(function(res){
-    var el=showtyping();
-    setTimeout(function(){
-      if(el.parentNode)el.parentNode.removeChild(el);
-      addmsg(text,'bot');scrl();res();
-    },delay);
-  });
-}
-function chips(labels){
-  msgs.querySelectorAll('.em-chips').forEach(function(el){el.parentNode.removeChild(el);});
-  var wrap=document.createElement('div');wrap.className='em-chips';
-  labels.forEach(function(lbl){
-    var b=document.createElement('button');b.type='button';b.className='em-chip';b.textContent=lbl;
-    b.addEventListener('click',function(){
-      msgs.querySelectorAll('.em-chips').forEach(function(el){el.parentNode.removeChild(el);});
-      handle(lbl);
-    });
-    wrap.appendChild(b);
-  });
-  msgs.appendChild(wrap);scrl();
-}
-function openchat(){
-  S.open=true;panel.classList.add('open');panel.setAttribute('aria-hidden','false');
-  fab.classList.add('open');fab.setAttribute('aria-expanded','true');
-  fab.innerHTML='&#x2715;';if(dot)dot.style.display='none';
-  if(!S.ready){S.ready=true;init();}
-  setTimeout(function(){inp.focus();},150);
-}
-function closechat(){
-  S.open=false;panel.classList.remove('open');panel.setAttribute('aria-hidden','true');
-  fab.classList.remove('open');fab.setAttribute('aria-expanded','false');
-  fab.innerHTML='&#128172;<span id="etad-dot"></span>';
-  dot=document.getElementById('etad-dot');
-}
-function norm(s){return(s||'').toLowerCase();}
-function has(t,keys){var n=norm(t);for(var i=0;i<keys.length;i++){if(n.indexOf(keys[i])!==-1)return true;}return false;}
-
-var KB=[
-  {k:['vip','membership','subscription','member pricing','69.99','monthly plan','join'],
-   a:'The VIP Marketing Subscription is our monthly marketing membership.\n\n$69.99/month. No contract. Cancel anytime.\n\nMembership unlocks member pricing on:\n- SEO\n- AI Optimization (AIO)\n- Logo Design\n- Video Production\n- Graphic Design\n- Print Design\n- Landing Pages\n- Google Business Profile Optimization\n- Website Updates\n- NFC Marketing\n\nPlus:\n- Priority scheduling ahead of non-members\n- VIP support\n- Monthly reporting\n- Member-only perks as we add them\n\nThink of it like a warehouse club: one monthly fee unlocks better pricing on the whole catalog.',
-   c:['See Membership Page','Get a Quote','Talk to a Human']},
-  {k:['seo','search engine','rankings','rank on','organic','google ranking'],
-   a:'Eye To Ad Media specializes in conversion-first SEO -- we engineer the entire path from first click to closed deal.\n\nOur SEO covers:\n- Technical SEO (site health, crawlability, Core Web Vitals)\n- On-page optimization and keyword targeting\n- Content strategy built around buyer intent\n- Local SEO / Google Maps domination\n- National and e-commerce SEO\n- AI Overview optimization (AIO)\n- Generative Engine Optimization (GEO)\n- Agentic AI optimization\n- Link authority and entity building\n- Conversion audits after traffic arrives\n\nNo cookie-cutter packages. Custom-quoted based on your market and goals.',
-   c:['Get a Free SEO Audit','Local SEO / Maps','AIO & GEO','VIP Membership','Pricing / Quote']},
-  {k:['agentic','ai agent','autonomous ai','deep research'],
-   a:'Agentic AI optimization is our newest and most forward-looking service.\n\nAgentic AI systems -- like ChatGPT deep research, Perplexity autonomous agents, and emerging Google AI agents -- research and recommend businesses on behalf of users, without those users performing a traditional search.\n\nIf your entity signals, structured content, and authority patterns are not built for agentic AI, you simply will not appear in their recommendations.\n\nWe build:\n- Entity clarity and consistency across the web\n- Citation-worthy authority content\n- Structured data and schema signals\n- Review velocity and brand mention patterns\n- Real-time web presence signals',
-   c:['Get a Quote','AIO & GEO','Talk to a Human']},
-  {k:['aio','ai optimization','ai overview','ai search','chatgpt','perplexity','answer engine'],
-   a:'AI Overview Optimization (AIO) is one of our core differentiators.\n\nGoogle AI Overviews now appear above traditional results for millions of searches. If your content is not structured to win those placements, you are invisible to a growing share of your audience.\n\nWe help with:\n- Structured content built for AI answer selection\n- Entity clarity and topical authority\n- FAQ and schema markup strategy\n- Visibility in ChatGPT, Perplexity, Gemini, and Google AIO\n- Positioning your brand as the trusted answer source',
-   c:['GEO Strategy','Agentic AI','Get a Quote','Talk to a Human']},
-  {k:['geo','generative engine'],
-   a:'Generative Engine Optimization (GEO) positions your brand to be cited by AI engines -- not just ranked by traditional algorithms.\n\nWhen someone asks ChatGPT or Perplexity who to call for your service, we make sure your name comes up.\n\n- Citation-worthy authority content\n- Semantic entity consistency across the web\n- Structured service pages with expertise signals\n- Schema and structured data\n- Content designed to be quoted by AI engines',
-   c:['AIO Strategy','Agentic AI','Get a Custom Quote','Talk to a Human']},
-  {k:['local seo','google maps','map pack','google business','near me'],
-   a:'Local SEO is one of our flagship services.\n\nWe help your business dominate the Google Map Pack with:\n- Google Business Profile optimization\n- Map pack ranking strategy\n- City and service-area landing pages\n- Hyperlocal content targeting\n- Citation building and cleanup\n- Review generation strategy\n- Local schema markup\n- Competitor gap analysis',
-   c:['Get a Local SEO Audit','Pricing / Quote','Talk to a Human']},
-  {k:['domain','buy a domain','register domain','url','web address'],
-   a:'You can search and register domain names right through us.\n\nUse the "Search Domain Names" link at the very top of any page -- it opens our domain storefront where you can check availability and register in a couple of minutes.\n\nOnce you have the domain, we can build the site, host it, and run the SEO on it.',
-   c:['Website / Funnel','VIP Membership','Talk to a Human']},
-  {k:['website','web design','landing page','funnel','wordpress','shopify'],
-   a:'Eye To Ad Media builds conversion-optimized websites that generate leads -- not just pretty sites.\n\nWe work with:\n- Custom-coded static HTML (fast, secure, SEO-ready)\n- WordPress development and redesign\n- Shopify stores and e-commerce optimization\n- Landing pages and sales funnels\n- UX and conversion rate optimization\n- Mobile-first responsive design\n- Trust signal and CTA optimization',
-   c:['Get a Website Quote','Conversion Optimization','VIP Membership']},
-  {k:['conversion','cro','leads','lead gen'],
-   a:'Conversion optimization is our foundation.\n\nTraffic without conversion is just an expense. We fix the full funnel:\n- CTA strategy and placement\n- Trust signal audit and repair\n- Form design and friction reduction\n- Offer and headline testing\n- Mobile conversion issues\n- Sales page and funnel architecture\n\nMost businesses lose 60-80% of potential leads due to fixable problems.',
-   c:['Get a Conversion Audit','Website Review','Pricing / Quote']},
-  {k:['ppc','google ads','paid search','paid advertising'],
-   a:'Paid search management is part of our full-funnel approach.\n\nWe handle:\n- Google Ads campaign setup and management\n- Keyword research and negative keyword strategy\n- Ad copy testing and optimization\n- Conversion tracking and ROI reporting\n- Landing page alignment so clicks convert\n- Shopping campaigns for e-commerce',
-   c:['Get a PPC Quote','Remarketing','Talk to a Human']},
-  {k:['remarketing','retargeting','display','programmatic'],
-   a:'Remarketing and programmatic display keep your brand in front of your audience at every stage of the buying cycle.\n\n- Google remarketing and display campaigns\n- Programmatic display advertising\n- Facebook and Instagram remarketing\n- Dynamic product retargeting\n- Full-funnel audience segmentation\n- OTT and Connected TV advertising',
-   c:['Get a Remarketing Quote','TV / Streaming Ads','Talk to a Human']},
-  {k:['social','facebook','instagram','tiktok'],
-   a:'Social media marketing is part of our full-stack approach.\n\n- Organic social media strategy and content\n- Paid social campaigns (Facebook, Instagram, LinkedIn, TikTok)\n- Audience targeting and lookalike strategy\n- Facebook Marketplace marketing\n- Short-form video content strategy\n- Social proof and brand trust building',
-   c:['Facebook Ads Quote','Full Marketing Strategy','Talk to a Human']},
-  {k:['tv','streaming','ctv','ott'],
-   a:'TV and streaming advertising is available through our full-service marketing stack.\n\n- Over-the-Top (OTT) streaming TV advertising (Hulu, Roku, Pluto)\n- Connected TV (CTV) campaign management\n- Video ad production consulting\n- Audience targeting by geography and demographics\n- Full-funnel integration with your digital campaigns',
-   c:['Get a TV Quote','Video Marketing','Talk to a Human']},
-  {k:['branding','logo','brand','print','graphic design'],
-   a:'Branding and creative are available through Eye To Ad Media.\n\n- Logo design and brand identity\n- Graphic design and print design\n- Brand voice and positioning strategy\n- Ad creative development\n- Messaging frameworks that convert\n\nAll of these are included at member pricing with the VIP Marketing Subscription.',
-   c:['VIP Membership','Get a Branding Quote','Talk to a Human']},
-  {k:['nfc','tap card','business card tap'],
-   a:'NFC marketing turns a physical tap into a digital experience.\n\nWe program NFC cards, stickers and stands that instantly open your menu, offer page, review link or booking form.\n\nGreat for restaurants, contractors, trade shows and storefront windows -- and included at member pricing with the VIP Marketing Subscription.',
-   c:['VIP Membership','Get an NFC Quote','Talk to a Human']},
-  {k:['email','drip','newsletter'],
-   a:'Email marketing remains one of the highest-ROI channels when done correctly.\n\n- Email list strategy and segmentation\n- Drip campaign and automation setup\n- Lead nurture sequences\n- Promotional campaign design\n- Email copywriting optimized for conversion',
-   c:['Email Marketing Quote','Full Funnel Strategy','Talk to a Human']},
-  {k:['audit','site audit','analyze'],
-   a:'We perform comprehensive audits that reveal exactly what is costing you leads and revenue.\n\n- SEO audit (technical, on-page, local, content gaps)\n- Conversion audit (why visitors are not converting)\n- Google Business Profile audit\n- AI visibility check (are you showing up in ChatGPT and AI Overviews?)\n- Competitor gap analysis',
-   c:['Request a Free Audit','Get a Quote','Talk to a Human']},
-  {k:['pricing','cost','how much','rates','packages','monthly'],
-   a:'Eye To Ad Media does not use cookie-cutter packages -- every market and business is different.\n\nCustom quotes are based on:\n- Your industry and competition level\n- Geographic market (local vs. national)\n- Current website health\n- Goals and timeline\n\nMost local SEO programs run $500-$3,000/mo.\n\nIf you want everything at member rates, the VIP Marketing Subscription is $69.99/mo and unlocks member pricing across every service.',
-   c:['VIP Membership','Get a Custom Quote','Talk to a Human']},
-  {k:['about','who are you','eye to ad','founded','zach','bbb'],
-   a:'Eye To Ad Media was founded by Zach Wennstedt in 2012 and is based in Denver, Colorado.\n\nWe are A+ BBB Accredited, 5-star rated, with a conversion-first philosophy focused on real ROI -- not vanity metrics.\n\nWe are also one of the first Denver agencies offering agentic AI optimization.',
-   c:['Our Services','VIP Membership','Get a Quote']},
-  {k:['contact','phone','address','hours','reach'],
-   a:'You can reach Eye To Ad Media here:\n\nPhone: 1-800-481-8638\nPhone: (720) 249-6588\nEmail: sales@eyetoad.com\nOffice: 1001 Bannock St, Suite 660, Denver CO 80204\nHours: Monday-Friday, 8AM-6PM MT\n\nWould you like to leave your info for a callback or quote?',
-   c:['Yes, request a callback','No thanks, just browsing']},
-  {k:['results','guarantee','how long','timeline','roi','how fast'],
-   a:'We do not make unrealistic promises, but here is what we can tell you:\n\nMost SEO campaigns show meaningful movement within 60-90 days, with strong momentum building from months 3-6. Local campaigns often move faster.\n\nWhat makes us different:\n- We focus on revenue outcomes, not ranking reports\n- We fix conversion issues before driving more traffic\n- We work with a limited number of clients so every account gets real attention',
-   c:['Book a Strategy Call','Get a Quote','Talk to a Human']}
-];
-
-var SERVICES=['SEO / Local SEO','AIO / GEO','Agentic AI Optimization','VIP Marketing Subscription','Website Design','Landing Pages / Funnels',
-  'Conversion Optimization','Google Ads / PPC','Remarketing / Display','Social Media',
-  'NFC Marketing','TV / Streaming Ads','Email Marketing','Branding / Logo',
-  'Video Marketing','E-commerce / Shopify','Full Marketing Strategy','Not Sure Yet'];
-
-var BUDGETS=['Under $1,000/mo','$1,000-$2,000/mo','$2,000-$4,000/mo',
-  '$4,000-$7,500/mo','$7,500+/mo','One-time project','Just the $69.99 membership','Not sure yet'];
-
-function init(){
-  botmsg('Hey there! I am the Eye To Ad Media assistant.\n\nI can help you with:\n- SEO, AIO, and GEO strategy\n- Agentic AI optimization\n- Local SEO and Google Maps\n- The VIP Marketing Subscription ($69.99/mo)\n- Website design and landing pages\n- Conversion optimization\n- Google Ads, remarketing, display\n- Social, TV, video, branding, NFC\n- Custom audits and strategy quotes\n\nWhat brings you here today?',1000).then(function(){
-    chips(['SEO / AIO / GEO','⚡ VIP Membership','Agentic AI','Website / Funnel','Paid Ads','Get a Free Audit','Pricing / Quote']);
-  });
-}
-function startcap(hint){
-  S.capture=true;if(hint&&!S.lead.service)S.lead.service=hint;setprog();
-  botmsg('Perfect -- let me collect a few details so we can put together a custom quote or strategy call.\n\nThis takes about 60 seconds. What is your name?',900).then(function(){S.field='name';});
-}
-function asknext(){
-  var l=S.lead;setprog();
-  if(!l.name){botmsg('What is your name?',900).then(function(){S.field='name';});return;}
-  if(!l.company){botmsg('What company or business are you with?',900).then(function(){S.field='company';});return;}
-  if(!l.phone){botmsg('Best phone number to reach you?',900).then(function(){S.field='phone';});return;}
-  if(!l.email){botmsg('And your email address?',900).then(function(){S.field='email';});return;}
-  if(!l.website){botmsg('What is your website URL? (Type none if you do not have one)',900).then(function(){S.field='website';});return;}
-  if(!l.industry){botmsg('What industry is your business in?',900).then(function(){S.field='industry';});return;}
-  if(!l.service){botmsg('Which service are you most interested in?',900).then(function(){S.field='service';chips(SERVICES);});return;}
-  if(!l.budget){botmsg('What monthly budget range are you working with?',900).then(function(){S.field='budget';chips(BUDGETS);});return;}
-  if(!l.notes){botmsg('Last one -- anything else we should know about your goals or timeline? (Type skip to skip)',900).then(function(){S.field='notes';});return;}
-  S.field=null;submitlead();
-}
-function capfield(raw){
-  var v=raw.trim();
-  if(S.field==='phone'&&v.replace(/\D/g,'').length<10){addmsg(v,'usr');botmsg('Please enter a valid phone number with at least 10 digits.',900);return;}
-  if(S.field==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){addmsg(v,'usr');botmsg('Please enter a valid email address.',900);return;}
-  if(S.field==='notes'&&v.toLowerCase()==='skip'){addmsg('(skipped)','usr');S.lead.notes='N/A';asknext();return;}
-  addmsg(v,'usr');S.lead[S.field]=v;asknext();
-}
-function submitlead(){
-  S.capture=false;setprog();var l=S.lead;
-  fstat.textContent='Sending...';sbtn.disabled=true;
-  fetch(FSURL,{method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({
-      _subject:'New Chatbot Lead -- eyetoad.com -- '+l.name,
-      _template:'table',_captcha:'false',
-      Name:l.name,Company:l.company,Phone:l.phone,Email:l.email,
-      Website:l.website,Industry:l.industry,Service:l.service,
-      Budget:l.budget,Notes:l.notes,Source:'eyetoad.com chatbot'
-    })
-  }).then(function(r){return r.json();})
-  .then(function(){
-    botmsg('Done! You are all set, '+l.name+'.\n\nYour information has been sent to the Eye To Ad Media team. Expect to hear back within 1 business day -- often much sooner.\n\nIn the meantime you can also call:\n1-800-481-8638\n(720) 249-6588\n\nIs there anything else I can help you with?',900).then(function(){
-      chips(['Ask Another Question','Our Services','VIP Membership','Call Now']);
-    });
-  }).catch(function(){
-    botmsg('I had a problem sending your request. Please reach out directly:\nPhone: 1-800-481-8638\nEmail: sales@eyetoad.com\n\nYour info: '+l.name+' | '+l.phone+' | '+l.email,900);
-  }).finally(function(){
-    fstat.textContent='';sbtn.disabled=false;
-    S.lead={name:'',company:'',phone:'',email:'',website:'',industry:'',service:'',budget:'',notes:''};
-    S.capture=false;S.field=null;
-  });
-}
-function humanroute(){
-  botmsg('Happy to connect you with the team!\n\nPhone: 1-800-481-8638\nPhone: (720) 249-6588\nEmail: sales@eyetoad.com\nHours: Monday-Friday, 8AM-6PM MT\n\nOr I can collect your info for a callback right now.',700).then(function(){
-    chips(['Yes, collect my info','No thanks, just browsing']);
-  });
-}
-function services(){
-  botmsg('Eye To Ad Media offers a comprehensive marketing stack.\n\n- SEO (local, national, technical, content)\n- AIO -- AI Overview Optimization\n- GEO -- Generative Engine Optimization\n- Agentic AI Optimization\n- Local SEO / Google Maps\n- Website design (custom, WordPress, Shopify)\n- Landing pages and funnels\n- Conversion Rate Optimization\n- Google Ads / PPC\n- Remarketing and programmatic display\n- Social media (organic + paid)\n- NFC marketing\n- TV and streaming (OTT/CTV) advertising\n- Email marketing\n- Branding, logo, graphic and print design\n- Video marketing and YouTube ads\n- E-commerce optimization\n\nEverything is custom-scoped -- and every one of these is available at member pricing with the VIP Marketing Subscription.',1000).then(function(){
-    chips(['VIP Membership','Get a Free Audit','Pricing / Quote','SEO / AIO / GEO','Talk to a Human']);
-  });
-}
-function route(text){
-  var t=norm(text);
-  if(has(t,['see membership page','membership page'])){addmsg(text,'usr');window.location.href='/marketing-subscription/';return;}
-  if(has(t,['audit','free audit','audit my site'])){addmsg(text,'usr');startcap('SEO / Conversion Audit');return;}
-  if(has(t,['quote','i want','i need','help me','help with','interested in','ready to start','get started','hire','work with you','sign up'])){
-    addmsg(text,'usr');startcap();return;
-  }
-  if(has(t,['talk to a human','speak to someone','book a call','callback','request a callback'])){addmsg(text,'usr');humanroute();return;}
-  if(has(t,['call now','call us'])){
-    addmsg(text,'usr');
-    botmsg('Call us anytime:\n\n1-800-481-8638\n(720) 249-6588\n\nMonday-Friday, 8AM-6PM MT.',700).then(function(){chips(['Get a Quote','Our Services']);});
-    return;
-  }
-  if(has(t,['services','what do you do','show services'])){addmsg(text,'usr');services();return;}
-  if(has(t,['yes, collect my info','yes collect','yes start','yes, request a callback'])){addmsg(text,'usr');startcap();return;}
-  if(has(t,['no thanks','just browsing'])){
-    addmsg(text,'usr');
-    botmsg('No problem! Feel free to ask anything whenever you are ready.',700).then(function(){
-      chips(['SEO / AIO / GEO','VIP Membership','Website / Funnel','Paid Ads','Pricing / Quote']);
-    });
-    return;
-  }
-  if(has(t,['ask another','more questions'])){
-    addmsg(text,'usr');
-    botmsg('Of course! Ask me anything about SEO, AIO, GEO, agentic AI, the VIP membership, web design, ads, social media, TV, branding, or anything marketing-related.',700).then(function(){
-      chips(['SEO / AIO / GEO','VIP Membership','Paid Ads','Website / Funnel','Get a Quote']);
-    });
-    return;
-  }
-  if(has(t,['seo / aio / geo'])){addmsg(text,'usr');lookupkb('seo');return;}
-  if(has(t,['website / funnel'])){addmsg(text,'usr');lookupkb('website');return;}
-  if(has(t,['paid ads'])){addmsg(text,'usr');lookupkb('ppc');return;}
-  if(has(t,['aio & geo','geo strategy','aio strategy'])){addmsg(text,'usr');lookupkb('geo');return;}
-  if(has(t,['local seo / maps'])){addmsg(text,'usr');lookupkb('local seo');return;}
-  if(has(t,['conversion optimization'])){addmsg(text,'usr');lookupkb('conversion');return;}
-  for(var i=0;i<KB.length;i++){
-    if(has(t,KB[i].k)){
-      addmsg(text,'usr');
-      (function(item){botmsg(item.a,1000).then(function(){if(item.c)chips(item.c);});})(KB[i]);
-      return;
-    }
-  }
-  addmsg(text,'usr');
-  botmsg('I can help with SEO, AIO, GEO, agentic AI optimization, the VIP Marketing Subscription, web design, ads, social media, TV advertising, branding, NFC, email, and custom audits.\n\nType what you need or choose an option below.',800).then(function(){
-    chips(['SEO / AIO / GEO','VIP Membership','Agentic AI','Website / Funnel','Paid Ads','Get a Free Audit','Talk to a Human']);
-  });
-}
-function lookupkb(term){
-  for(var i=0;i<KB.length;i++){
-    if(has(term,KB[i].k)){
-      (function(item){botmsg(item.a,1000).then(function(){if(item.c)chips(item.c);});})(KB[i]);
-      return;
-    }
-  }
-}
-function handle(raw){
-  var v=(raw||'').trim();if(!v)return;
-  fstat.textContent='';inp.value='';inp.focus();
-  if(S.capture&&S.field){capfield(v);}else{route(v);}
-}
-fab.addEventListener('click',function(){S.open?closechat():openchat();});
-xbtn.addEventListener('click',closechat);
-sbtn.addEventListener('click',function(){handle(inp.value);});
-inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();handle(inp.value);}});
-setTimeout(function(){if(!S.ready&&!S.open&&dot)dot.classList.add('on');},14000);
-})();
-</script>
-<!-- End Eye To Ad Media Chatbot Widget -->
 
 </body>
 </html>
