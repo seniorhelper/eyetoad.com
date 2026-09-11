@@ -221,7 +221,13 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    outline that reads as a utility link, which is what it is. */
 .ubar-dom{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);padding:7px 15px;border-radius:8px;transition:all .18s;white-space:nowrap}
 .ubar-dom:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.32)}
-.ubar-txt{font-size:.78rem;color:rgba(255,255,255,.5);white-space:nowrap}
+.ubar-txt b{color:#FDBA74;font-weight:700}
+.ubar-txt{font-size:.78rem;color:rgba(255,255,255,.55);white-space:nowrap}
+.ubar-ic{width:13px;height:13px;flex:none;color:#FDBA74}
+.ubar-go{font-size:1.05rem;line-height:1;color:#FDBA74;margin-left:1px;transition:transform .18s}
+.ubar-dom:hover .ubar-go{transform:translateX(3px)}
+.ubar-dom:hover .ubar-txt{color:rgba(255,255,255,.8)}
+.ubar-dom:focus-visible{outline:2px solid #FDBA74;outline-offset:2px}
 .ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
 .ubar-link:hover{color:var(--orange)}
 /* PHONE NUMBER — deliberately the loudest text in the chrome (Sept 2026).
@@ -355,8 +361,12 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   .hdr-vip{font-size:.78rem;padding:8px 13px}
 }
 @media(max-width:1150px){
-  /* the VIP pill is duplicated in the utility bar too */
-  .hdr-vip{display:none}
+  /* The utility bar no longer carries a VIP duplicate, so hiding the pill here
+     would strand the link between 1024 and 1150px. Shrink it instead — it
+     survives down to 1024, where .hdr-right goes entirely and the mobile menu
+     (which has its own VIP entry) takes over. */
+  .hdr-vip{font-size:.72rem;padding:7px 11px;letter-spacing:-.01em}
+  .nl{font-size:.74rem;padding:8px 5px}
 }
 @media(max-width:1024px){
   /* MOBILE NAV SWITCH — all three rules are required. Omitting any one
@@ -453,6 +463,13 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .mob-dom2{display:block!important;margin:0 0 14px;padding:13px 16px!important;text-align:center;
   background:rgba(249,115,22,.1);border:1.5px solid rgba(249,115,22,.4)!important;border-radius:var(--r12);
   color:#FDBA74!important;font-weight:700!important;border-bottom:1.5px solid rgba(249,115,22,.4)!important}
+.hero-pitch{margin:14px 0 0;font-size:.93rem}
+.hero-pitch a{color:#9DC7F5;font-weight:500;border-bottom:none;padding-bottom:0}
+.hero-pitch a .hero-pitch-go{color:#CFE6FF;font-weight:700;
+  border-bottom:1.5px solid rgba(207,230,255,.5);padding-bottom:2px}
+.hero-pitch a:hover{color:#CFE6FF}
+.hero-pitch a:hover .hero-pitch-go{color:#fff;border-bottom-color:#fff}
+.hero-pitch a:focus-visible{outline:2px solid #CFE6FF;outline-offset:3px;border-radius:4px}
 .mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
 .mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
 .mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
@@ -532,6 +549,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 
 /* proof row */
 .hero-trust{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.ht .stars{margin-right:2px}
 .ht{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:6px 12px;border-radius:20px;backdrop-filter:blur(6px)}
 .ht-dot{width:5px;height:5px;border-radius:50%;background:#86EFAC;flex-shrink:0}
 
@@ -608,6 +626,15 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .tbi{display:flex;align-items:center;gap:10px;padding:8px 26px;border-right:1px solid var(--border);font-size:.9rem;font-weight:600;color:var(--ink)}
 .tbi:last-child{border-right:none}
 .tbi-icon{font-size:1.3rem;flex-shrink:0}
+/* FIVE STARS, drawn (Sept 2026). A single ⭐ next to the words "5.0 from 60
+   Reviews" was asking the reader to take the rating on trust. Five filled
+   stars is the shape people actually scan for, and it reads at a glance in a
+   way a numeral never does. SVG rather than emoji so it renders identically
+   on every platform — the ⭐ glyph is yellow on Android, orange on iOS and
+   flat grey on some Windows builds. */
+.stars{display:inline-flex;gap:1px;flex-shrink:0;line-height:0}
+.stars svg{width:15px;height:15px;display:block}
+.stars-lg svg{width:18px;height:18px}
 .tbi-sub{font-size:.74rem;font-weight:400;color:var(--muted);display:block}
 
 /* ===== SLANT SECTIONS ===== */
@@ -671,6 +698,8 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .si4{background:#FDF4FF;border:1px solid #E9D5FF}
 .si5{background:#FFF1F2;border:1px solid #FECDD3}
 .si6{background:#F0F9FF;border:1px solid #BAE6FD}
+.si7{background:#F5F3FF;border:1px solid #DDD6FE}
+.si8{background:#ECFEFF;border:1px solid #A5F3FC}
 .svc-card h3{color:var(--ink);margin-bottom:8px}
 .svc-card p{font-size:.92rem;margin-bottom:16px;flex:1}
 .svc-link{font-size:.87rem;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:5px;transition:gap .18s}
@@ -991,6 +1020,55 @@ table.cmp .yes{color:#059669;font-weight:700}
 @media(min-width:581px){.footer-bot{padding-bottom:34px}}
 @media(max-width:580px){.footer-bot{padding-bottom:78px}}
 
+/* HERO PITCH LINK — wrapping fix (Sept 11 2026).
+   The old copy ran "Not ready to talk to anyone? Walk the 10-minute pitch
+   yourself →" and on a phone it broke after "pitch", stranding "yourself →"
+   alone on a second line with a wide empty gap beside it. That gap reads as a
+   missing button, not as text.
+   Two changes: the copy is shorter, and the action half is an inline-block
+   with the arrow bound to it by a non-breaking space, so the arrow can never
+   separate from the words it belongs to. It still wraps on a very narrow
+   screen — it just wraps as two complete phrases instead of orphaning a word.
+   Do not add white-space:nowrap to the whole link; below ~360px that causes
+   horizontal overflow, which is worse than an ugly wrap. */
+.hero-pitch-go{display:inline-block}
+
+/* ── FREE TOOLS STRIP ── */
+.tools-sec{background:#fff}
+.tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:880px;margin:0 auto}
+.tool-card{display:flex;flex-direction:column;background:var(--off);border:1.5px solid var(--border);
+  border-radius:var(--r16);padding:28px 24px;transition:all .22s;text-decoration:none}
+.tool-card:hover{border-color:#BFDBFE;box-shadow:var(--sh-lg);transform:translateY(-4px)}
+.tool-ic{font-size:1.9rem;line-height:1;margin-bottom:12px}
+.tool-card h3{color:var(--ink);margin:0 0 8px;font-size:1.12rem}
+.tool-card p{color:var(--muted);font-size:.92rem;line-height:1.6;margin:0 0 16px;flex:1}
+.tool-go{color:var(--blue);font-weight:700;font-size:.92rem}
+@media(max-width:640px){.tools-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ── SPEED CHECK (PageSpeed deep link) ── */
+.psi-sec{background:var(--off)}
+.psi-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);
+  padding:34px 30px;max-width:820px;margin:0 auto;box-shadow:var(--sh-lg)}
+.psi-head{text-align:center;margin-bottom:22px}
+.psi-sub{color:var(--muted);max-width:600px;margin:10px auto 0;font-size:.95rem;line-height:1.6}
+.psi-sub b{color:var(--ink)}
+.psi-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch;justify-content:center}
+.psi-lab{position:absolute;left:-9999px}
+.psi-inp{flex:1 1 260px;min-width:0;font:inherit;font-size:1rem;padding:14px 16px;
+  border:2px solid var(--border);border-radius:11px;background:#fff;color:var(--ink)}
+.psi-inp:focus{outline:none;border-color:var(--blue)}
+.psi-btn{flex:0 0 auto;white-space:nowrap}
+.psi-note{text-align:center;font-size:.8rem;color:var(--muted);margin:12px 0 0}
+.psi-after{margin-top:26px;padding-top:24px;border-top:1.5px solid var(--border)}
+.psi-after h3{font-size:1.12rem;margin:0 0 10px}
+.psi-after p{color:var(--muted);font-size:.94rem;line-height:1.65;margin:0 0 14px}
+.psi-list{margin:0 0 20px;padding-left:20px;color:var(--muted);font-size:.94rem;line-height:1.9}
+.psi-list b{color:var(--ink)}
+@media(max-width:560px){
+  .psi-card{padding:26px 20px}
+  .psi-btn{width:100%}
+}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .hero-layout{grid-template-columns:minmax(0,1fr);gap:34px}
@@ -1074,7 +1152,7 @@ table.cmp .yes{color:#059669;font-weight:700}
   sameAs and hasMap; add the BBB profile URL; #svc-agentic points at a homepage
   fragment and needs a real page. Do not invent any of those URLs. -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://eyetoad.com/#org","name":"Eye To Ad Media","alternateName":["Eye To Ad","eyetoad.com"],"url":"https://eyetoad.com","logo":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png","width":760,"height":190},"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","foundingDate":"2012","founder":{"@id":"https://eyetoad.com/#zach"},"slogan":"Denver SEO Built for Google, AI Overviews, Agentic AI & Real Conversions","knowsAbout":["Search Engine Optimization","Local SEO","Google Business Profile Optimization","AI Overview Optimization","Generative Engine Optimization","Agentic AI Optimization","Conversion Rate Optimization","Schema Markup","Denver Colorado local search"],"description":"Eye To Ad Media is a Denver SEO agency founded in 2012, specializing in SEO, AIO, GEO, agentic AI optimization, local SEO, and conversion optimization for Colorado businesses and brands nationwide.","address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},"contactPoint":[{"@type":"ContactPoint","@id":"https://eyetoad.com/#contact-sales","contactType":"sales","telephone":"+18004818638","email":"info@eyetoad.com","availableLanguage":["en"],"areaServed":["US"],"hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}},{"@type":"ContactPoint","@id":"https://eyetoad.com/#contact-local","contactType":"customer support","telephone":"+17202496588","email":"info@eyetoad.com","availableLanguage":["en"],"areaServed":["US"],"hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}}],"areaServed":[{"@type":"City","name":"Denver","sameAs":"https://www.wikidata.org/wiki/Q16554"},{"@type":"City","name":"Arvada"},{"@type":"City","name":"Lakewood"},{"@type":"City","name":"Aurora"},{"@type":"City","name":"Littleton"},{"@type":"City","name":"Westminster"},{"@type":"City","name":"Broomfield"},{"@type":"City","name":"Centennial"},{"@type":"City","name":"Highlands Ranch"},{"@type":"City","name":"Thornton"},{"@type":"City","name":"Parker"},{"@type":"City","name":"Wheat Ridge"},{"@type":"City","name":"Castle Rock"},{"@type":"City","name":"Colorado Springs","addressRegion":"CO"},{"@type":"City","name":"Fort Collins","addressRegion":"CO"},{"@type":"City","name":"Cheyenne","addressRegion":"WY"},{"@type":"City","name":"Salt Lake City","addressRegion":"UT"},{"@type":"City","name":"Boise","addressRegion":"ID"},{"@type":"City","name":"Albuquerque","addressRegion":"NM"},{"@type":"City","name":"Phoenix","addressRegion":"AZ"},{"@type":"City","name":"Omaha","addressRegion":"NE"},{"@type":"City","name":"Fayetteville","addressRegion":"AR"},{"@type":"City","name":"Dallas","addressRegion":"TX"},{"@type":"City","name":"Charlotte","addressRegion":"NC"},{"@type":"State","name":"Colorado","sameAs":"https://www.wikidata.org/wiki/Q1261"},{"@type":"Country","name":"United States"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Denver SEO Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Denver SEO Services","url":"https://eyetoad.com/denver-seo-services/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Local SEO Denver","url":"https://eyetoad.com/local-seo-denver/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AIO SEO System","url":"https://eyetoad.com/aio-seo-system/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Generative Engine Optimization","url":"https://eyetoad.com/generative-engine-optimization-system/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Agentic AI Optimization","url":"https://eyetoad.com/#agentic"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conversion Optimization","url":"https://eyetoad.com/conversion-optimization/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Denver SEO Pricing","url":"https://eyetoad.com/denver-seo-pricing/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Free SEO Audit","url":"https://eyetoad.com/free-seo-audit/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"VIP Marketing Subscription","url":"https://eyetoad.com/marketing-subscription/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Multi-Market Local SEO","url":"https://eyetoad.com/locations/"}}]},"sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/EyeToAd/","https://share.google/t4wEpsdoJFyFEWa4H"]},{"@type":"LocalBusiness","@id":"https://eyetoad.com/#biz","name":"Eye To Ad Media","url":"https://eyetoad.com","parentOrganization":{"@id":"https://eyetoad.com/#org"},"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","priceRange":"$$-$$$","foundingDate":"2012","currenciesAccepted":"USD","paymentAccepted":"Cash, Credit Card, Check","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],"description":"Denver SEO company founded in 2012, specializing in SEO, AIO, GEO, agentic AI optimization, local SEO, and conversion optimization for Colorado businesses.","address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},"image":"https://eyetoad.com/images/images/denver-seo-services-hero.png","hasMap":"https://share.google/t4wEpsdoJFyFEWa4H","sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/EyeToAd/","https://share.google/t4wEpsdoJFyFEWa4H"]},{"@type":"Person","@id":"https://eyetoad.com/#zach","name":"Zach Wennstedt","givenName":"Zach","familyName":"Wennstedt","jobTitle":"Founder & CEO","worksFor":{"@id":"https://eyetoad.com/#org"},"description":"Zach Wennstedt is the founder of Eye To Ad Media, a Denver SEO company he started in 2012. He works directly with clients on search engine optimization, local search, AI search optimization and conversion strategy.","knowsAbout":["Search Engine Optimization","Local SEO","Google Business Profile Optimization","AI Overview Optimization","Generative Engine Optimization","Agentic AI Optimization","Conversion Rate Optimization","Denver Colorado local search"],"homeLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Denver","addressRegion":"CO","addressCountry":"US"}}},{"@type":"Product","@id":"https://eyetoad.com/#vip-subscription","name":"VIP Marketing Subscription","brand":{"@id":"https://eyetoad.com/#org"},"description":"A monthly marketing membership from Eye To Ad Media. Members unlock member pricing on SEO, AI optimization, logo design, video production, graphic design, print design, landing pages, Google Business Profile optimization, website updates and NFC marketing — plus priority scheduling and VIP support.","url":"https://eyetoad.com/marketing-subscription/","category":"Marketing Membership","offers":{"@type":"Offer","price":"79.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://eyetoad.com/marketing-subscription/","priceSpecification":{"@type":"UnitPriceSpecification","price":"79.99","priceCurrency":"USD","billingIncrement":1,"unitCode":"MON","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitCode":"MON"}},"seller":{"@id":"https://eyetoad.com/#org"}}},{"@type":"WebSite","@id":"https://eyetoad.com/#web","url":"https://eyetoad.com","name":"Eye To Ad Media","publisher":{"@id":"https://eyetoad.com/#org"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://eyetoad.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://eyetoad.com/#page","url":"https://eyetoad.com/","name":"Denver SEO | Eye To Ad Media","isPartOf":{"@id":"https://eyetoad.com/#web"},"about":{"@id":"https://eyetoad.com/#biz"},"inLanguage":"en-US","datePublished":"2012-06-01","dateModified":"2026-09-10","primaryImageOfPage":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/denver-seo-services-hero.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","#intro-h2","#about-h2","#faq-h2","#agentic-h2","#denver-auth-h2","#wis-h2","#shift-h2","#mem-h2"]},"description":"Eye To Ad Media is Denver's authority SEO company since 2012. SEO, AIO, GEO, agentic AI optimization, local search and conversion optimization built for real rankings and qualified leads."},{"@type":"ItemList","@id":"https://eyetoad.com/#industries","name":"Denver SEO by Industry","itemListElement":[{"@type":"ListItem","position":1,"name":"Contractor SEO Denver","url":"https://eyetoad.com/contractor-seo-denver/"},{"@type":"ListItem","position":2,"name":"Dentist SEO Denver","url":"https://eyetoad.com/dentist-seo-denver/"},{"@type":"ListItem","position":3,"name":"Law Firm SEO Denver","url":"https://eyetoad.com/law-firm-seo-denver/"},{"@type":"ListItem","position":4,"name":"Med Spa SEO Denver","url":"https://eyetoad.com/med-spa-seo-denver/"},{"@type":"ListItem","position":5,"name":"Fitness Marketing Denver","url":"https://eyetoad.com/fitness-marketing-denver/"},{"@type":"ListItem","position":6,"name":"Real Estate Marketing Denver","url":"https://eyetoad.com/real-estate-marketing-denver/"},{"@type":"ListItem","position":7,"name":"Chiropractor SEO Denver","url":"https://eyetoad.com/chiropractor-seo-denver/"},{"@type":"ListItem","position":8,"name":"Roofing SEO Denver","url":"https://eyetoad.com/roofing-seo-denver/"},{"@type":"ListItem","position":9,"name":"HVAC SEO Denver","url":"https://eyetoad.com/hvac-seo-denver/"}]},{"@type":"DefinedTermSet","@id":"https://eyetoad.com/#glossary","name":"Denver SEO Glossary","description":"Key Denver SEO terms explained by Eye To Ad Media.","hasDefinedTerm":[{"@type":"DefinedTerm","name":"SEO","description":"Search Engine Optimization — the practice of improving a website so it ranks higher in Google and Bing for the terms customers search."},{"@type":"DefinedTerm","name":"Local SEO","description":"Optimization focused on ranking in a specific geographic market like Denver, including Google Maps and the local pack."},{"@type":"DefinedTerm","name":"AIO","description":"AI Optimization — structuring content so it appears inside Google's AI Overviews and other AI-generated answers."},{"@type":"DefinedTerm","name":"GEO","description":"Generative Engine Optimization — earning citations and recommendations from AI engines like ChatGPT and Perplexity."},{"@type":"DefinedTerm","name":"Agentic AI","description":"Autonomous AI systems that research and recommend businesses on behalf of users without a traditional search."},{"@type":"DefinedTerm","name":"Local Pack","description":"The map-and-three-listings block Google shows at the top of local search results."},{"@type":"DefinedTerm","name":"Google Business Profile","description":"The free Google listing that powers your visibility in Maps and the local pack."},{"@type":"DefinedTerm","name":"Schema Markup","description":"Structured data code that helps search engines and AI understand your page content and business entity."},{"@type":"DefinedTerm","name":"E-E-A-T","description":"Experience, Expertise, Authoritativeness, Trust — Google's framework for evaluating content quality."},{"@type":"DefinedTerm","name":"SERP","description":"Search Engine Results Page — the page of results returned for a query."},{"@type":"DefinedTerm","name":"Backlink","description":"A link from another website to yours; a core trust and authority signal for ranking."},{"@type":"DefinedTerm","name":"Core Web Vitals","description":"Google's measures of page speed, responsiveness, and visual stability that affect rankings."},{"@type":"DefinedTerm","name":"Entity","description":"A uniquely identifiable thing — a business, person or place — that search engines and AI models track independently of any single web page."},{"@type":"DefinedTerm","name":"Citation Authority","description":"How often and how credibly a business is referenced across the web, which AI engines weigh when deciding whom to recommend."}]},{"@type":"Service","@id":"https://eyetoad.com/#svc-seo","serviceType":"Search Engine Optimization","name":"Denver SEO Services","url":"https://eyetoad.com/denver-seo-services/","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":[{"@type":"City","name":"Denver"},{"@type":"State","name":"Colorado"},{"@type":"Country","name":"United States"}],"description":"Technical, on-page and off-page search engine optimization for Denver businesses competing in Google and Bing organic results."},{"@type":"Service","@id":"https://eyetoad.com/#svc-local","serviceType":"Local SEO","name":"Local SEO Denver","url":"https://eyetoad.com/local-seo-denver/","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":[{"@type":"City","name":"Denver"},{"@type":"State","name":"Colorado"}],"description":"Google Business Profile optimization, local citation building and Google Maps local pack ranking for Denver metro businesses."},{"@type":"Service","@id":"https://eyetoad.com/#svc-aio","serviceType":"AI Overview Optimization","name":"AIO SEO System","url":"https://eyetoad.com/aio-seo-system/","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":{"@type":"Country","name":"United States"},"description":"Structuring content, schema and extractable facts so a business appears inside Google's AI Overviews and AI Mode answers."},{"@type":"Service","@id":"https://eyetoad.com/#svc-geo","serviceType":"Generative Engine Optimization","name":"Generative Engine Optimization","url":"https://eyetoad.com/generative-engine-optimization-system/","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":{"@type":"Country","name":"United States"},"description":"Earning citation inside generative answers from ChatGPT, Perplexity, Gemini and Claude through entity consistency and citation authority."},{"@type":"Service","@id":"https://eyetoad.com/#svc-agentic","serviceType":"Agentic AI Optimization","name":"Agentic AI Optimization","url":"https://eyetoad.com/#agentic","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":{"@type":"Country","name":"United States"},"description":"Structured entity signals, machine-readable business facts and verifiable credentials so autonomous AI research agents surface and shortlist the business."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Denver SEO?","acceptedAnswer":{"@type":"Answer","text":"Denver SEO is the practice of optimizing a business's online presence to rank for searches performed in the Denver, Colorado market. It combines traditional search engine optimization, Google Maps and local pack optimization, and modern AI search optimization (AIO and GEO) — so your business is found wherever your customers are searching: Google, Google Maps, AI Overviews, ChatGPT, and Perplexity."}},{"@type":"Question","name":"What is the VIP Marketing Subscription?","acceptedAnswer":{"@type":"Answer","text":"It's our monthly marketing membership — $79.99 per month, cancel anytime. Members unlock member pricing on SEO, AI optimization, logo design, video production, graphic design, print design, landing pages, Google Business Profile optimization, website updates and NFC marketing, plus priority scheduling and VIP support. It works like a warehouse club: one monthly fee unlocks better pricing on the whole catalog. See everything included →"}},{"@type":"Question","name":"How much does the Eye To Ad Media marketing membership cost?","acceptedAnswer":{"@type":"Answer","text":"The VIP Marketing Subscription is $79.99 per month and you can cancel anytime. Members receive member pricing across every Eye To Ad Media service, priority scheduling ahead of non-members, and direct VIP support. Full details are on the VIP Marketing Subscription page."}},{"@type":"Question","name":"How does Denver SEO influence my business growth?","acceptedAnswer":{"@type":"Answer","text":"Denver SEO captures high-intent local searchers at the moment they are ready to buy. Higher rankings produce more qualified traffic, more calls, and more booked jobs — and because rankings compound, the effect builds month over month. Local searches tend to come from people ready to act rather than browse, so ranking in the top results shapes your revenue trajectory, not just your visibility. See our pricing guide for what a fair investment looks like."}},{"@type":"Question","name":"What's the difference between SEO, AIO, GEO and agentic AI optimization?","acceptedAnswer":{"@type":"Answer","text":"SEO targets ranked blue links in Google and Bing. AIO targets inclusion inside Google's AI Overviews. GEO targets citation inside generative answers from ChatGPT, Perplexity and Gemini. Agentic AI optimization targets autonomous AI agents that research and shortlist businesses on a buyer's behalf before the buyer ever sees a search result. That's four distinct surfaces — five if you count Google Maps and the local pack, which ranks on different signals again. A complete Denver SEO strategy in 2026 has to address all of them."}},{"@type":"Question","name":"How long does it take for Denver SEO to work?","acceptedAnswer":{"@type":"Answer","text":"Most businesses see meaningful ranking movement within 3 to 6 months. Highly competitive keywords can take 6 to 12 months. Google Maps rankings often move faster — sometimes within 30 to 60 days. The timeline depends on your current site authority, competition level, and how aggressively we execute."}},{"@type":"Question","name":"What does a Denver SEO company actually do?","acceptedAnswer":{"@type":"Answer","text":"A Denver SEO company researches the keywords your customers search, then optimizes your website's technical health, content, and authority to rank for those terms. Beyond blue links, we also optimize for Google Maps visibility and AI-generated search results. The end goal is more high-quality visitors finding your business first — not your competitors."}},{"@type":"Question","name":"What is AIO SEO and why does it matter now?","acceptedAnswer":{"@type":"Answer","text":"AIO stands for AI Optimization. Traditional SEO targets Google's blue links. AIO SEO means your content is structured to appear inside Google's AI Overviews, ChatGPT answers, and Perplexity results. As AI search grows, visibility in those results is becoming as important as page one — and most Denver agencies aren't even thinking about this yet."}},{"@type":"Question","name":"Which Denver neighborhoods and suburbs do you serve?","acceptedAnswer":{"@type":"Answer","text":"We work with businesses across central Denver — Capitol Hill, Cherry Creek, LoDo, RiNo, Highlands, Wash Park and Five Points — and throughout the metro in Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Westminster, Thornton, Broomfield, Centennial, Highlands Ranch, Parker and Castle Rock. Each market has its own competitive density, so location pages and Google Business Profile targeting are built per area. See all service locations →"}},{"@type":"Question","name":"What makes Eye To Ad Media different from other Denver SEO agencies?","acceptedAnswer":{"@type":"Answer","text":"Most agencies chase vanity metrics — impressions, clicks, sessions. We focus on qualified leads and revenue. Operating since 2012, we're also one of the only Denver SEO companies actively building AIO, GEO, and agentic AI optimization strategies alongside traditional SEO, future-proofing your visibility across Google, AI Overviews, ChatGPT, and Perplexity simultaneously."}},{"@type":"Question","name":"Can SEO help my Google Maps / local pack ranking?","acceptedAnswer":{"@type":"Answer","text":"Yes — this is one of the highest-ROI moves for local Denver businesses. Local SEO and Google Business Profile optimization directly impact your Maps and Local Pack rankings. We optimize your GBP, build local citations, earn reviews, and create location-specific content — all proven ranking factors in the map pack."}},{"@type":"Question","name":"Do you only work with Denver businesses?","acceptedAnswer":{"@type":"Answer","text":"Our home base is Denver and we specialize in Colorado local SEO across Denver, Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Broomfield, and Castle Rock. For the right national SEO clients, we also work remotely across all 50 states. See our full service area here."}},{"@type":"Question","name":"What industries does Eye To Ad Media specialize in?","acceptedAnswer":{"@type":"Answer","text":"We specialize in contractors, dentists, law firms, med spas, fitness businesses, real estate, chiropractors, roofers, and HVAC companies. Each industry has unique search behavior, so we build tailored strategies instead of copying a generic template."}},{"@type":"Question","name":"How much does Denver SEO cost?","acceptedAnswer":{"@type":"Answer","text":"Denver SEO pricing depends on competition level, keyword targets, site complexity, and scope. Full-service local SEO campaigns typically range from $500 to $3,000 per month. Build-your-own plans start at $100 per month for a single focused deliverable. See our transparent Denver SEO pricing guide, or call 1-800-481-8638 for a no-pressure quote."}},{"@type":"Question","name":"How do I get started with Eye To Ad Media?","acceptedAnswer":{"@type":"Answer","text":"Call us at 1-800-481-8638 or (720) 249-6588, or request a free SEO audit. We'll review your site, your competitive landscape, and walk you through exactly what we'd do. The audit itself carries no contract, no obligation and no card. No pressure — just a real conversation about your goals."}},{"@type":"Question","name":"Do you require a long-term contract?","acceptedAnswer":{"@type":"Answer","text":"Terms are set per engagement. Month-to-month is available and is what most clients run on. Some engagements, particularly larger builds with significant upfront production, are structured with a defined term so both sides know what is committed. You would know which applies before signing anything rather than after. The free audit itself carries no contract and no obligation at all."}},{"@type":"Question","name":"Why should I hire Eye To Ad Media for Denver SEO?","acceptedAnswer":{"@type":"Answer","text":"Eye To Ad Media has provided Denver SEO since 2012, holds a 5.0 rating from 60 Google reviews and A+ BBB accreditation, and covers traditional SEO, Google Maps and the local pack, AIO, GEO and agentic AI optimization from a single team. The founder works on accounts directly rather than handing them to a junior. If you are still comparing providers rather than ready to hire, our guide to how to choose a Denver SEO company walks through seven checks you can run on any agency, including this one."}},{"@type":"Question","name":"Does Eye To Ad Media help businesses rank in ChatGPT and AI search results?","acceptedAnswer":{"@type":"Answer","text":"Yes — this is one of our core differentiators. Our AIO and GEO services are specifically designed to optimize your business for AI-generated answers, including Google's AI Overviews, ChatGPT Search, and Perplexity. This includes structured content creation, entity optimization, schema markup, and authority signal building — the exact factors AI systems use when recommending businesses to users."}},{"@type":"Question","name":"What is agentic AI and how does it affect my Denver business's visibility?","acceptedAnswer":{"@type":"Answer","text":"Agentic AI refers to autonomous AI systems — like ChatGPT's deep research mode, Perplexity's autonomous agent, and emerging Google AI agents — that research businesses on behalf of users without those users performing a traditional search. When a consumer asks an AI agent to find the best roofing company in Denver, the agent consults structured entity signals, authority content, review data, and citation patterns to generate its recommendation. If your business lacks these signals, you won't appear."}},{"@type":"Question","name":"How competitive is the Denver SEO market?","acceptedAnswer":{"@type":"Answer","text":"Denver is one of the more competitive local SEO markets in the Mountain West, particularly in law, home services, healthcare, and real estate. However, most competitors are still running outdated strategies, which creates a real window of opportunity for businesses that invest in modern approaches — especially AIO, GEO, and agentic AI optimization — before those channels get crowded."}},{"@type":"Question","name":"Do Denver businesses benefit from voice search optimization?","acceptedAnswer":{"@type":"Answer","text":"Yes, particularly for local service businesses. Voice searches tend to be conversational, longer, and heavily intent-driven — phrases like who is the best HVAC company near me in Denver, or find a dentist in Arvada open Saturday. Ranking for these queries requires structuring content around natural language questions, targeting featured snippet positions, and ensuring your Google Business Profile is fully optimized."}},{"@type":"Question","name":"What happens to my Denver business if I don't invest in SEO?","acceptedAnswer":{"@type":"Answer","text":"Without active SEO investment, rankings stagnate or decline as competitors earn links, publish new content, and optimize their technical foundation. In Denver's growing, competitive market, standing still means falling behind. There is also a compounding risk most owners don't yet see: as agentic AI and AI-driven search grow, businesses without structured entity signals and AI-ready content will become increasingly invisible to the AI systems that now influence millions of buying decisions."}}]}]}</script>
+{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://eyetoad.com/#org","name":"Eye To Ad Media","alternateName":["Eye To Ad","eyetoad.com"],"url":"https://eyetoad.com","logo":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png","width":760,"height":190},"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","foundingDate":"2012","founder":{"@id":"https://eyetoad.com/#zach"},"slogan":"Denver SEO Built for Google, AI Overviews, Agentic AI & Real Conversions","knowsAbout":["Search Engine Optimization","Local SEO","Google Business Profile Optimization","AI Overview Optimization","Generative Engine Optimization","Agentic AI Optimization","Conversion Rate Optimization","Answer Engine Optimization","Custom Website Design","AI Chatbot Development","Schema Markup","Denver Colorado local search"],"description":"Eye To Ad Media is a Denver SEO agency founded in 2012, specializing in SEO, AIO, GEO, agentic AI optimization, local SEO, and conversion optimization for Colorado businesses and brands nationwide.","address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},"contactPoint":[{"@type":"ContactPoint","@id":"https://eyetoad.com/#contact-sales","contactType":"sales","telephone":"+18004818638","email":"info@eyetoad.com","availableLanguage":["en"],"areaServed":["US"],"hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}},{"@type":"ContactPoint","@id":"https://eyetoad.com/#contact-local","contactType":"customer support","telephone":"+17202496588","email":"info@eyetoad.com","availableLanguage":["en"],"areaServed":["US"],"hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}}],"areaServed":[{"@type":"City","name":"Denver","sameAs":"https://www.wikidata.org/wiki/Q16554"},{"@type":"City","name":"Arvada"},{"@type":"City","name":"Lakewood"},{"@type":"City","name":"Aurora"},{"@type":"City","name":"Littleton"},{"@type":"City","name":"Westminster"},{"@type":"City","name":"Broomfield"},{"@type":"City","name":"Centennial"},{"@type":"City","name":"Highlands Ranch"},{"@type":"City","name":"Thornton"},{"@type":"City","name":"Parker"},{"@type":"City","name":"Wheat Ridge"},{"@type":"City","name":"Castle Rock"},{"@type":"City","name":"Colorado Springs","addressRegion":"CO"},{"@type":"City","name":"Fort Collins","addressRegion":"CO"},{"@type":"City","name":"Cheyenne","addressRegion":"WY"},{"@type":"City","name":"Salt Lake City","addressRegion":"UT"},{"@type":"City","name":"Boise","addressRegion":"ID"},{"@type":"City","name":"Albuquerque","addressRegion":"NM"},{"@type":"City","name":"Phoenix","addressRegion":"AZ"},{"@type":"City","name":"Omaha","addressRegion":"NE"},{"@type":"City","name":"Fayetteville","addressRegion":"AR"},{"@type":"City","name":"Dallas","addressRegion":"TX"},{"@type":"City","name":"Charlotte","addressRegion":"NC"},{"@type":"State","name":"Colorado","sameAs":"https://www.wikidata.org/wiki/Q1261"},{"@type":"Country","name":"United States"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Denver SEO Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Services","url":"https://eyetoad.com/seo-systems/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI SEO Services","url":"https://eyetoad.com/aio-seo-system/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Generative Engine Optimization","url":"https://eyetoad.com/generative-engine-optimization-system/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Local SEO and Google Maps Optimization","url":"https://eyetoad.com/local-seo-services/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conversion Optimization","url":"https://eyetoad.com/conversion-optimization/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Website Design","url":"https://eyetoad.com/custom-website-design/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Chatbot for Business","url":"https://eyetoad.com/ai-chatbot-for-business/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Free SEO Audit","url":"https://eyetoad.com/free-seo-audit/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Agentic AI Optimization","url":"https://eyetoad.com/#agentic"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Denver SEO Services","url":"https://eyetoad.com/denver-seo-services/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Denver SEO Pricing","url":"https://eyetoad.com/denver-seo-pricing/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"VIP Marketing Subscription","url":"https://eyetoad.com/marketing-subscription/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Multi-Market Local SEO","url":"https://eyetoad.com/locations/"}}]},"sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/EyeToAd/","https://share.google/t4wEpsdoJFyFEWa4H"]},{"@type":"LocalBusiness","@id":"https://eyetoad.com/#biz","name":"Eye To Ad Media","url":"https://eyetoad.com","parentOrganization":{"@id":"https://eyetoad.com/#org"},"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","priceRange":"$$-$$$","foundingDate":"2012","currenciesAccepted":"USD","paymentAccepted":"Cash, Credit Card, Check","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],"description":"Denver SEO company founded in 2012, specializing in SEO, AIO, GEO, agentic AI optimization, local SEO, and conversion optimization for Colorado businesses.","address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},"image":"https://eyetoad.com/images/images/denver-seo-services-hero.png","hasMap":"https://share.google/t4wEpsdoJFyFEWa4H","sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/EyeToAd/","https://share.google/t4wEpsdoJFyFEWa4H"]},{"@type":"Person","@id":"https://eyetoad.com/#zach","name":"Zach Wennstedt","givenName":"Zach","familyName":"Wennstedt","jobTitle":"Founder & CEO","worksFor":{"@id":"https://eyetoad.com/#org"},"description":"Zach Wennstedt is the founder of Eye To Ad Media, a Denver SEO company he started in 2012. He works directly with clients on search engine optimization, local search, AI search optimization and conversion strategy.","knowsAbout":["Search Engine Optimization","Local SEO","Google Business Profile Optimization","AI Overview Optimization","Generative Engine Optimization","Agentic AI Optimization","Conversion Rate Optimization","Denver Colorado local search"],"homeLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Denver","addressRegion":"CO","addressCountry":"US"}}},{"@type":"Product","@id":"https://eyetoad.com/#vip-subscription","name":"VIP Marketing Subscription","brand":{"@id":"https://eyetoad.com/#org"},"description":"A monthly marketing membership from Eye To Ad Media. Members unlock member pricing on SEO, AI optimization, logo design, video production, graphic design, print design, landing pages, Google Business Profile optimization, website updates and NFC marketing — plus priority scheduling and VIP support.","url":"https://eyetoad.com/marketing-subscription/","category":"Marketing Membership","offers":{"@type":"Offer","price":"79.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://eyetoad.com/marketing-subscription/","priceSpecification":{"@type":"UnitPriceSpecification","price":"79.99","priceCurrency":"USD","billingIncrement":1,"unitCode":"MON","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitCode":"MON"}},"seller":{"@id":"https://eyetoad.com/#org"}}},{"@type":"WebSite","@id":"https://eyetoad.com/#web","url":"https://eyetoad.com","name":"Eye To Ad Media","publisher":{"@id":"https://eyetoad.com/#org"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://eyetoad.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://eyetoad.com/#page","url":"https://eyetoad.com/","name":"Denver SEO | Eye To Ad Media","isPartOf":{"@id":"https://eyetoad.com/#web"},"about":{"@id":"https://eyetoad.com/#biz"},"inLanguage":"en-US","datePublished":"2012-06-01","dateModified":"2026-09-10","primaryImageOfPage":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/denver-seo-services-hero.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","#intro-h2","#about-h2","#faq-h2","#agentic-h2","#denver-auth-h2","#wis-h2","#shift-h2","#mem-h2"]},"description":"Eye To Ad Media is Denver's authority SEO company since 2012. SEO, AIO, GEO, agentic AI optimization, local search and conversion optimization built for real rankings and qualified leads."},{"@type":"ItemList","@id":"https://eyetoad.com/#industries","name":"Denver SEO by Industry","itemListElement":[{"@type":"ListItem","position":1,"name":"Contractor SEO Denver","url":"https://eyetoad.com/contractor-seo-denver/"},{"@type":"ListItem","position":2,"name":"Dentist SEO Denver","url":"https://eyetoad.com/dentist-seo-denver/"},{"@type":"ListItem","position":3,"name":"Law Firm SEO Denver","url":"https://eyetoad.com/law-firm-seo-denver/"},{"@type":"ListItem","position":4,"name":"Med Spa SEO Denver","url":"https://eyetoad.com/med-spa-seo-denver/"},{"@type":"ListItem","position":5,"name":"Fitness Marketing Denver","url":"https://eyetoad.com/fitness-marketing-denver/"},{"@type":"ListItem","position":6,"name":"Real Estate Marketing Denver","url":"https://eyetoad.com/real-estate-marketing-denver/"},{"@type":"ListItem","position":7,"name":"Chiropractor SEO Denver","url":"https://eyetoad.com/chiropractor-seo-denver/"},{"@type":"ListItem","position":8,"name":"Roofing SEO Denver","url":"https://eyetoad.com/roofing-seo-denver/"},{"@type":"ListItem","position":9,"name":"HVAC SEO Denver","url":"https://eyetoad.com/hvac-seo-denver/"}]},{"@type":"DefinedTermSet","@id":"https://eyetoad.com/#glossary","name":"Denver SEO Glossary","description":"Key Denver SEO terms explained by Eye To Ad Media.","hasDefinedTerm":[{"@type":"DefinedTerm","name":"SEO","description":"Search Engine Optimization — the practice of improving a website so it ranks higher in Google and Bing for the terms customers search."},{"@type":"DefinedTerm","name":"Local SEO","description":"Optimization focused on ranking in a specific geographic market like Denver, including Google Maps and the local pack."},{"@type":"DefinedTerm","name":"AIO","description":"AI Optimization — structuring content so it appears inside Google's AI Overviews and other AI-generated answers."},{"@type":"DefinedTerm","name":"GEO","description":"Generative Engine Optimization — earning citations and recommendations from AI engines like ChatGPT and Perplexity."},{"@type":"DefinedTerm","name":"Agentic AI","description":"Autonomous AI systems that research and recommend businesses on behalf of users without a traditional search."},{"@type":"DefinedTerm","name":"Local Pack","description":"The map-and-three-listings block Google shows at the top of local search results."},{"@type":"DefinedTerm","name":"Google Business Profile","description":"The free Google listing that powers your visibility in Maps and the local pack."},{"@type":"DefinedTerm","name":"Schema Markup","description":"Structured data code that helps search engines and AI understand your page content and business entity."},{"@type":"DefinedTerm","name":"E-E-A-T","description":"Experience, Expertise, Authoritativeness, Trust — Google's framework for evaluating content quality."},{"@type":"DefinedTerm","name":"SERP","description":"Search Engine Results Page — the page of results returned for a query."},{"@type":"DefinedTerm","name":"Backlink","description":"A link from another website to yours; a core trust and authority signal for ranking."},{"@type":"DefinedTerm","name":"Core Web Vitals","description":"Google's measures of page speed, responsiveness, and visual stability that affect rankings."},{"@type":"DefinedTerm","name":"Entity","description":"A uniquely identifiable thing — a business, person or place — that search engines and AI models track independently of any single web page."},{"@type":"DefinedTerm","name":"Citation Authority","description":"How often and how credibly a business is referenced across the web, which AI engines weigh when deciding whom to recommend."}]},{"@type":"Service","@id":"https://eyetoad.com/#svc-seo","serviceType":"Search Engine Optimization","name":"Denver SEO Services","url":"https://eyetoad.com/denver-seo-services/","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":[{"@type":"City","name":"Denver"},{"@type":"State","name":"Colorado"},{"@type":"Country","name":"United States"}],"description":"Technical, on-page and off-page search engine optimization for Denver businesses competing in Google and Bing organic results."},{"@type":"Service","@id":"https://eyetoad.com/#svc-local","serviceType":"Local SEO","name":"Local SEO Denver","url":"https://eyetoad.com/local-seo-denver/","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":[{"@type":"City","name":"Denver"},{"@type":"State","name":"Colorado"}],"description":"Google Business Profile optimization, local citation building and Google Maps local pack ranking for Denver metro businesses."},{"@type":"Service","@id":"https://eyetoad.com/#svc-aio","serviceType":"AI Overview Optimization","name":"AIO SEO System","url":"https://eyetoad.com/aio-seo-system/","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":{"@type":"Country","name":"United States"},"description":"Structuring content, schema and extractable facts so a business appears inside Google's AI Overviews and AI Mode answers."},{"@type":"Service","@id":"https://eyetoad.com/#svc-geo","serviceType":"Generative Engine Optimization","name":"Generative Engine Optimization","url":"https://eyetoad.com/generative-engine-optimization-system/","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":{"@type":"Country","name":"United States"},"description":"Earning citation inside generative answers from ChatGPT, Perplexity, Gemini and Claude through entity consistency and citation authority."},{"@type":"Service","@id":"https://eyetoad.com/#svc-agentic","serviceType":"Agentic AI Optimization","name":"Agentic AI Optimization","url":"https://eyetoad.com/#agentic","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":{"@type":"Country","name":"United States"},"description":"Structured entity signals, machine-readable business facts and verifiable credentials so autonomous AI research agents surface and shortlist the business."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Denver SEO?","acceptedAnswer":{"@type":"Answer","text":"Denver SEO is the practice of optimizing a business's online presence to rank for searches performed in the Denver, Colorado market. It combines traditional search engine optimization, Google Maps and local pack optimization, and modern AI search optimization (AIO and GEO) — so your business is found wherever your customers are searching: Google, Google Maps, AI Overviews, ChatGPT, and Perplexity."}},{"@type":"Question","name":"What is the VIP Marketing Subscription?","acceptedAnswer":{"@type":"Answer","text":"It's our monthly marketing membership — $79.99 per month, cancel anytime. Members unlock member pricing on SEO, AI optimization, logo design, video production, graphic design, print design, landing pages, Google Business Profile optimization, website updates and NFC marketing, plus priority scheduling and VIP support. It works like a warehouse club: one monthly fee unlocks better pricing on the whole catalog. See everything included →"}},{"@type":"Question","name":"How much does the Eye To Ad Media marketing membership cost?","acceptedAnswer":{"@type":"Answer","text":"The VIP Marketing Subscription is $79.99 per month and you can cancel anytime. Members receive member pricing across every Eye To Ad Media service, priority scheduling ahead of non-members, and direct VIP support. Full details are on the VIP Marketing Subscription page."}},{"@type":"Question","name":"How does Denver SEO influence my business growth?","acceptedAnswer":{"@type":"Answer","text":"Denver SEO captures high-intent local searchers at the moment they are ready to buy. Higher rankings produce more qualified traffic, more calls, and more booked jobs — and because rankings compound, the effect builds month over month. Local searches tend to come from people ready to act rather than browse, so ranking in the top results shapes your revenue trajectory, not just your visibility. See our pricing guide for what a fair investment looks like."}},{"@type":"Question","name":"What's the difference between SEO, AIO, GEO and agentic AI optimization?","acceptedAnswer":{"@type":"Answer","text":"SEO targets ranked blue links in Google and Bing. AIO targets inclusion inside Google's AI Overviews. GEO targets citation inside generative answers from ChatGPT, Perplexity and Gemini. Agentic AI optimization targets autonomous AI agents that research and shortlist businesses on a buyer's behalf before the buyer ever sees a search result. That's four distinct surfaces — five if you count Google Maps and the local pack, which ranks on different signals again. A complete Denver SEO strategy in 2026 has to address all of them."}},{"@type":"Question","name":"How long does it take for Denver SEO to work?","acceptedAnswer":{"@type":"Answer","text":"Most businesses see meaningful ranking movement within 3 to 6 months. Highly competitive keywords can take 6 to 12 months. Google Maps rankings often move faster — sometimes within 30 to 60 days. The timeline depends on your current site authority, competition level, and how aggressively we execute."}},{"@type":"Question","name":"What does a Denver SEO company actually do?","acceptedAnswer":{"@type":"Answer","text":"A Denver SEO company researches the keywords your customers search, then optimizes your website's technical health, content, and authority to rank for those terms. Beyond blue links, we also optimize for Google Maps visibility and AI-generated search results. The end goal is more high-quality visitors finding your business first — not your competitors."}},{"@type":"Question","name":"What is AIO SEO and why does it matter now?","acceptedAnswer":{"@type":"Answer","text":"AIO stands for AI Optimization. Traditional SEO targets Google's blue links. AIO SEO means your content is structured to appear inside Google's AI Overviews, ChatGPT answers, and Perplexity results. As AI search grows, visibility in those results is becoming as important as page one — and most Denver agencies aren't even thinking about this yet."}},{"@type":"Question","name":"Which Denver neighborhoods and suburbs do you serve?","acceptedAnswer":{"@type":"Answer","text":"We work with businesses across central Denver — Capitol Hill, Cherry Creek, LoDo, RiNo, Highlands, Wash Park and Five Points — and throughout the metro in Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Westminster, Thornton, Broomfield, Centennial, Highlands Ranch, Parker and Castle Rock. Each market has its own competitive density, so location pages and Google Business Profile targeting are built per area. See all service locations →"}},{"@type":"Question","name":"What makes Eye To Ad Media different from other Denver SEO agencies?","acceptedAnswer":{"@type":"Answer","text":"Most agencies chase vanity metrics — impressions, clicks, sessions. We focus on qualified leads and revenue. Operating since 2012, we're also one of the only Denver SEO companies actively building AIO, GEO, and agentic AI optimization strategies alongside traditional SEO, future-proofing your visibility across Google, AI Overviews, ChatGPT, and Perplexity simultaneously."}},{"@type":"Question","name":"Can SEO help my Google Maps / local pack ranking?","acceptedAnswer":{"@type":"Answer","text":"Yes — this is one of the highest-ROI moves for local Denver businesses. Local SEO and Google Business Profile optimization directly impact your Maps and Local Pack rankings. We optimize your GBP, build local citations, earn reviews, and create location-specific content — all proven ranking factors in the map pack."}},{"@type":"Question","name":"Do you only work with Denver businesses?","acceptedAnswer":{"@type":"Answer","text":"Our home base is Denver and we specialize in Colorado local SEO across Denver, Arvada, Lakewood, Aurora, Littleton, Wheat Ridge, Broomfield, and Castle Rock. For the right national SEO clients, we also work remotely across all 50 states. See our full service area here."}},{"@type":"Question","name":"What industries does Eye To Ad Media specialize in?","acceptedAnswer":{"@type":"Answer","text":"We specialize in contractors, dentists, law firms, med spas, fitness businesses, real estate, chiropractors, roofers, and HVAC companies. Each industry has unique search behavior, so we build tailored strategies instead of copying a generic template."}},{"@type":"Question","name":"How much does Denver SEO cost?","acceptedAnswer":{"@type":"Answer","text":"Denver SEO pricing depends on competition level, keyword targets, site complexity, and scope. Full-service local SEO campaigns typically range from $500 to $3,000 per month. Build-your-own plans start at $100 per month for a single focused deliverable. See our transparent Denver SEO pricing guide, or call 1-800-481-8638 for a no-pressure quote."}},{"@type":"Question","name":"How do I get started with Eye To Ad Media?","acceptedAnswer":{"@type":"Answer","text":"Call us at 1-800-481-8638 or (720) 249-6588, or request a free SEO audit. We'll review your site, your competitive landscape, and walk you through exactly what we'd do. The audit itself carries no contract, no obligation and no card. No pressure — just a real conversation about your goals."}},{"@type":"Question","name":"Do you require a long-term contract?","acceptedAnswer":{"@type":"Answer","text":"Terms are set per engagement. Month-to-month is available and is what most clients run on. Some engagements, particularly larger builds with significant upfront production, are structured with a defined term so both sides know what is committed. You would know which applies before signing anything rather than after. The free audit itself carries no contract and no obligation at all."}},{"@type":"Question","name":"Why should I hire Eye To Ad Media for Denver SEO?","acceptedAnswer":{"@type":"Answer","text":"Eye To Ad Media has provided Denver SEO since 2012, holds a 5.0 rating from 60 Google reviews and A+ BBB accreditation, and covers traditional SEO, Google Maps and the local pack, AIO, GEO and agentic AI optimization from a single team. The founder works on accounts directly rather than handing them to a junior. If you are still comparing providers rather than ready to hire, our guide to how to choose a Denver SEO company walks through seven checks you can run on any agency, including this one."}},{"@type":"Question","name":"Does Eye To Ad Media help businesses rank in ChatGPT and AI search results?","acceptedAnswer":{"@type":"Answer","text":"Yes — this is one of our core differentiators. Our AIO and GEO services are specifically designed to optimize your business for AI-generated answers, including Google's AI Overviews, ChatGPT Search, and Perplexity. This includes structured content creation, entity optimization, schema markup, and authority signal building — the exact factors AI systems use when recommending businesses to users."}},{"@type":"Question","name":"What is agentic AI and how does it affect my Denver business's visibility?","acceptedAnswer":{"@type":"Answer","text":"Agentic AI refers to autonomous AI systems — like ChatGPT's deep research mode, Perplexity's autonomous agent, and emerging Google AI agents — that research businesses on behalf of users without those users performing a traditional search. When a consumer asks an AI agent to find the best roofing company in Denver, the agent consults structured entity signals, authority content, review data, and citation patterns to generate its recommendation. If your business lacks these signals, you won't appear."}},{"@type":"Question","name":"How competitive is the Denver SEO market?","acceptedAnswer":{"@type":"Answer","text":"Denver is one of the more competitive local SEO markets in the Mountain West, particularly in law, home services, healthcare, and real estate. However, most competitors are still running outdated strategies, which creates a real window of opportunity for businesses that invest in modern approaches — especially AIO, GEO, and agentic AI optimization — before those channels get crowded."}},{"@type":"Question","name":"Do Denver businesses benefit from voice search optimization?","acceptedAnswer":{"@type":"Answer","text":"Yes, particularly for local service businesses. Voice searches tend to be conversational, longer, and heavily intent-driven — phrases like who is the best HVAC company near me in Denver, or find a dentist in Arvada open Saturday. Ranking for these queries requires structuring content around natural language questions, targeting featured snippet positions, and ensuring your Google Business Profile is fully optimized."}},{"@type":"Question","name":"What happens to my Denver business if I don't invest in SEO?","acceptedAnswer":{"@type":"Answer","text":"Without active SEO investment, rankings stagnate or decline as competitors earn links, publish new content, and optimize their technical foundation. In Denver's growing, competitive market, standing still means falling behind. There is also a compounding risk most owners don't yet see: as agentic AI and AI-driven search grow, businesses without structured entity signals and AI-ready content will become increasingly invisible to the AI systems that now influence millions of buying decisions."}}]}]}</script>
 
 </head>
 
@@ -1118,12 +1196,34 @@ table.cmp .yes{color:#059669;font-weight:700}
   ============================================================ -->
 <div class="ubar">
   <div class="wrap ubar-inner">
+    <!-- CLICK AFFORDANCE (Sept 11 2026). Two problems here: the strapline was
+         display:none below 768px so mobile saw a bare unlabelled chip, and on
+         desktop it sat OUTSIDE the anchor, so the sentence explaining the
+         button was not part of the button. Both fixed by moving the strapline
+         inside the link and giving the chip a magnifier plus a chevron.
+         The strapline stays hidden on mobile — the bar is a single row and the
+         phone number needs the width — but the icon and chevron now carry the
+         affordance on their own at that size. -->
     <div class="ubar-left">
-      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored" aria-label="Search for an available domain name">Search Domains</a>
-      <span class="ubar-txt">Find &amp; register your perfect .com</span>
+      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored"
+         aria-label="Search and register an available domain name at our domain storefront">
+        <svg class="ubar-ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M13.4 13.4 L17.5 17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="ubar-dom-t">Search Domains</span>
+        <span class="ubar-txt">&mdash; find &amp; register your perfect <b>.com</b>, <b>.ai</b> or <b>.io</b></span>
+        <span class="ubar-go" aria-hidden="true">&rsaquo;</span>
+      </a>
     </div>
     <div class="ubar-right">
-      <a href="/marketing-subscription/" class="ubar-link">VIP Membership</a>
+      <!-- VIP REMOVED FROM THIS BAR (Sept 11 2026). It sat about 60px above an
+           identical VIP pill in the header — two links to the same page, one
+           almost directly under the other. The header copy wins because it is
+           styled as a CTA and sits beside Free Audit where the eye already
+           goes. The breakpoint that used to hide the header pill at 1150px
+           (because this bar carried a duplicate) has been changed to shrink it
+           instead — see HEADER FIT. Do not re-add it here. -->
       <a href="tel:18004818638" class="ubar-tel"><span class="ubar-tel-lbl">Call</span>1-800-481-8638</a>
     </div>
   </div>
@@ -1173,14 +1273,23 @@ table.cmp .yes{color:#059669;font-weight:700}
     </a>
     <nav class="nav" aria-label="Main navigation">
       <div class="ni">
-        <a href="/denver-seo-services/" class="nl">Services &#9662;</a>
+        <a href="/services/" class="nl">Services &#9662;</a>
+        <!-- SERVICES MENU v7 (Sept 11 2026). Eight items, each with a
+             Planner-verified primary keyword, and NO city in any label —
+             eyetoad.com now targets multiple states and these labels ship
+             on out-of-state pages. The three removed items are NOT deleted:
+             /denver-seo-services/ and /local-seo-denver/ are linked from the
+             services grid copy and the FAQ, /denver-seo-pricing/ lives in
+             the footer and under the grid. The parent is /services/ — the
+             hub, which is the only gateway a visitor can reach from chrome. -->
         <div class="drop">
-          <a href="/local-seo-denver/">Local SEO Denver</a>
-          <a href="/seo-systems/">SEO Systems</a>
-          <a href="/aio-seo-system/">AIO SEO System</a>
-          <a href="/generative-engine-optimization-system/">GEO System</a>
+          <a href="/seo-systems/">SEO Services</a>
+          <a href="/aio-seo-system/">AI SEO Services</a>
+          <a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>
+          <a href="/local-seo-services/">Local SEO &amp; Google Maps</a>
           <a href="/conversion-optimization/">Conversion Optimization</a>
-          <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+          <a href="/custom-website-design/">Custom Website Design</a>
+          <a href="/ai-chatbot-for-business/">AI Chatbots</a>
           <a href="/free-seo-audit/">Free SEO Audit</a>
         </div>
       </div>
@@ -1252,12 +1361,13 @@ table.cmp .yes{color:#059669;font-weight:700}
           <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
           <a href="/grow-my-business/">Grow My Business Tool</a>
           <a href="/ad-lab/">Ad Lab</a>
-          <a href="/ad-lab/rpg/">SEO Quest RPG</a>
+          <a href="/free-seo-tools/">Free SEO Tools</a>
           <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
         </div>
       </div>
       <a href="/about/" class="nl">About</a>
       <a href="/contact/" class="nl">Contact</a>
+      <a href="/sell-myself/" class="nl">See the Pitch</a>
       <a href="https://www.buyweburl.com" class="nl nl-dom" target="_blank" rel="noopener sponsored">Search Domains</a>
     </nav>
     <div class="hdr-right">
@@ -1289,17 +1399,19 @@ table.cmp .yes{color:#059669;font-weight:700}
   <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Search Domain Names</a>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-services">
-    <a href="/denver-seo-services/">Denver SEO Services</a>
-    <a href="/local-seo-denver/">Local SEO Denver</a>
-    <a href="/seo-systems/">SEO Systems</a>
-    <a href="/aio-seo-system/">AIO SEO System</a>
-    <a href="/generative-engine-optimization-system/">GEO System</a>
+    <a href="/services/" class="mob-hub">All Services &rarr;</a>
+    <a href="/seo-systems/">SEO Services</a>
+    <a href="/aio-seo-system/">AI SEO Services</a>
+    <a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>
+    <a href="/local-seo-services/">Local SEO &amp; Google Maps</a>
     <a href="/conversion-optimization/">Conversion Optimization</a>
-    <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+    <a href="/custom-website-design/">Custom Website Design</a>
+    <a href="/ai-chatbot-for-business/">AI Chatbots</a>
     <a href="/free-seo-audit/">Free SEO Audit</a>
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-industries">Industries<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-industries">
+    <a href="/industries/" class="mob-hub">All 17 Industries &rarr;</a>
     <div class="mob-sub">Home &amp; Trade</div>
     <a href="/contractor-seo-denver/">Contractor SEO</a>
     <a href="/electrician-seo-denver/">Electrician SEO</a>
@@ -1320,10 +1432,10 @@ table.cmp .yes{color:#059669;font-weight:700}
     <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
     <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
     <a href="/restaurant-seo-denver/">Restaurant SEO</a>
-    <a href="/industries/">Compare all 17 industries &rarr;</a>
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-locations">Locations<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-locations">
+    <a href="/locations/" class="mob-hub">All 24 Service Areas &rarr;</a>
     <div class="mob-sub">Colorado</div>
     <a href="/">Denver</a>
     <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
@@ -1339,14 +1451,13 @@ table.cmp .yes{color:#059669;font-weight:700}
     <a href="/locations/charlotte-seo/">Charlotte</a>
     <a href="/locations/omaha-seo/">Omaha</a>
     <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
-    <a href="/locations/">All 24 service areas &rarr;</a>
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-resources">
     <a href="/case-studies/">Case Studies</a>
     <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
     <a href="/grow-my-business/">Grow My Business Tool</a>
-    <a href="/ad-lab/rpg/">SEO Quest RPG</a>
+    <a href="/free-seo-tools/">Free SEO Tools</a>
     <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
   </div>
   <!-- FLAT LINKS: single destinations, not categories. A collapsible section
@@ -1355,6 +1466,7 @@ table.cmp .yes{color:#059669;font-weight:700}
   <a href="/ad-lab/" class="mob-flat">Ad Lab</a>
   <a href="/about/" class="mob-flat">About</a>
   <a href="/contact/" class="mob-flat">Contact</a>
+  <a href="/sell-myself/" class="mob-flat">See the Pitch &mdash; 10 Minutes, No Salesperson</a>
   <a href="/marketing-subscription/" class="mob-flat">VIP Marketing Subscription</a>
   <p class="mob-proof"><b>5.0</b> from 60 Google Reviews &middot; <b>A+</b> BBB Accredited<br>Denver-based since 2012 &middot; Answers in 1 business day</p>
 </nav>
@@ -1403,6 +1515,12 @@ table.cmp .yes{color:#059669;font-weight:700}
             <a href="tel:18004818638" class="cta-primary">📞 Call 1-800-481-8638</a>
             <a href="/free-seo-audit/" class="cta-secondary">Get My Free SEO Audit →</a>
           </div>
+          <!-- SELF-GUIDED PITCH (Sept 2026): deliberately the THIRD and lightest
+               CTA. It is for the visitor who is not ready to call or hand over an
+               email — they walk the presentation and close themselves. Styled as a
+               text link, not a button, so it never competes with the pair above. -->
+          <p class="hero-pitch"><a href="/sell-myself/">Not ready to talk?
+            <span class="hero-pitch-go">Walk the pitch yourself&nbsp;<span aria-hidden="true">→</span></span></a></p>
           <!-- CLAIM NOTE (Aug 5 2026): this used to read "No contracts to start",
                which is an absolute claim and inaccurate — terms are set per
                engagement. It now refers ONLY to the audit, which genuinely
@@ -1412,10 +1530,17 @@ table.cmp .yes{color:#059669;font-weight:700}
           <p class="cta-note"><b>✓ Free audit</b> · No contract, no obligation · Answer in 1 business day</p>
 
           <div class="hero-trust">
-            <span class="ht"><span class="ht-dot"></span>5.0 from 60 Google Reviews</span>
+            <span class="ht"><span class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg></span>5.0 from 60 Google Reviews</span>
             <span class="ht"><span class="ht-dot"></span>A+ BBB Accredited</span>
             <span class="ht"><span class="ht-dot"></span>Denver-Based Since 2012</span>
-            <span class="ht"><span class="ht-dot"></span>Serving Colorado Statewide</span>
+            <!-- was "Serving Colorado Statewide" — understated and now simply
+                 inaccurate. The locations network already runs to Phoenix,
+                 Dallas, Charlotte, Omaha and Northwest Arkansas, and the
+                 agency runs site networks in Belize, Costa Rica, the Dominican
+                 Republic and Hawaii. The schema, the FAQ and Iris all already
+                 said worldwide; this chip was the one place still saying
+                 Colorado. -->
+            <span class="ht"><span class="ht-dot"></span>Serving Clients Nationwide &amp; Worldwide</span>
           </div>
 
           <!-- VIP PASS — second focal point in the hero, links to the money page -->
@@ -1486,7 +1611,7 @@ table.cmp .yes{color:#059669;font-weight:700}
 <div class="tbar">
   <div class="wrap">
     <div class="tbar-items">
-      <div class="tbi"><span class="tbi-icon">⭐</span><div><strong>5.0 from 60 Reviews</strong><span class="tbi-sub">Verified Google Business Profile</span></div></div>
+      <div class="tbi"><span class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg></span><div><strong>5.0 from 60 Reviews</strong><span class="tbi-sub">Verified Google Business Profile</span></div></div>
       <div class="tbi"><span class="tbi-icon">🏆</span><div><strong>A+ Accredited</strong><span class="tbi-sub">Better Business Bureau</span></div></div>
       <div class="tbi"><span class="tbi-icon">📍</span><div><strong>Denver, Colorado</strong><span class="tbi-sub">1001 Bannock St #660</span></div></div>
       <div class="tbi"><span class="tbi-icon">🤖</span><div><strong>SEO + Local + AIO + GEO + Agentic</strong><span class="tbi-sub">Modern search, fully covered</span></div></div>
@@ -1651,19 +1776,107 @@ table.cmp .yes{color:#059669;font-weight:700}
     <div class="tc">
       <span class="chip chip-white" style="margin:0 auto 12px;">Core Services</span>
       <h2 id="svc-h2" style="color:#fff;">Denver SEO Services Built for Modern Search and Real Conversions</h2>
-      <p style="color:rgba(255,255,255,.7);max-width:560px;margin:10px auto 0;">Every service works together as a system. SEO without conversion is wasted traffic. Conversion without SEO is an expensive dependency on paid ads.</p>
+      <p style="color:rgba(255,255,255,.7);max-width:560px;margin:10px auto 0;">Every service works together as a system. SEO without conversion is wasted traffic. Conversion without SEO is an expensive dependency on paid ads. And a site that ranks on Google but is invisible to ChatGPT is half-finished.</p>
     </div>
     <div class="svc-grid" style="margin-top:36px;">
-      <div class="svc-card"><div class="svc-ic si1">🔍</div><h3>Denver SEO Services</h3><p>Full-service <a href="/denver-seo-services/" style="color:var(--blue);font-weight:600;">search engine optimization for Denver businesses</a> — technical SEO, on-page optimization, content strategy, and link authority building tied to measurable ranking outcomes.</p><a href="/denver-seo-services/" class="svc-link">View Denver SEO Services →</a></div>
-      <div class="svc-card"><div class="svc-ic si2">📍</div><h3>Local SEO Denver</h3><p>Get found in Google Maps, the local pack, and neighborhood-specific searches. We optimize your Google Business Profile, build local citations, and create <a href="/local-seo-denver/" style="color:var(--blue);">location-based content</a> that ranks and converts local buyers.</p><a href="/local-seo-denver/" class="svc-link">View Local SEO Denver →</a></div>
-      <div class="svc-card"><div class="svc-ic si3">🤖</div><h3>AIO SEO System</h3><p>Search is shifting to AI-generated answers. We optimize your content to appear in Google's AI Overviews, ChatGPT, and Perplexity. Our <a href="/aio-seo-system/" style="color:var(--blue);">AIO SEO system</a> prepares your business for where buyers are already searching next.</p><a href="/aio-seo-system/" class="svc-link">View AIO SEO System →</a></div>
-      <div class="svc-card"><div class="svc-ic si4">🌐</div><h3>Generative Engine Optimization</h3><p>GEO builds entity clarity, structured content, and authority signals that make your business the trusted answer AI systems cite. Our <a href="/generative-engine-optimization-system/" style="color:var(--blue);">GEO system</a> goes beyond keywords to how AI understands and recommends your brand.</p><a href="/generative-engine-optimization-system/" class="svc-link">View GEO System →</a></div>
+      <div class="svc-card"><div class="svc-ic si1">🔍</div><h3>SEO Services</h3><p>Technical SEO, on-page optimization, content strategy and link authority — built as a system that compounds rather than a one-time cleanup. Denver businesses can also start with our <a href="/denver-seo-services/" style="color:var(--blue);font-weight:600;">Denver SEO services</a> page.</p><a href="/seo-systems/" class="svc-link">View SEO Services →</a></div>
+      <div class="svc-card"><div class="svc-ic si3">🤖</div><h3>AI SEO Services</h3><p>Search is shifting to AI-generated answers. Our <a href="/aio-seo-system/" style="color:var(--blue);">AI SEO system</a> structures your content and entity signals to appear inside Google's AI Overviews, ChatGPT and Perplexity — where buyers are already looking.</p><a href="/aio-seo-system/" class="svc-link">View AI SEO Services →</a></div>
+      <div class="svc-card"><div class="svc-ic si4">🌐</div><h3>Generative Engine Optimization</h3><p>GEO and answer engine optimization build the entity clarity, structured content and authority signals that make your business the source an AI <em>cites</em> — not just one it has heard of.</p><a href="/generative-engine-optimization-system/" class="svc-link">View GEO Services →</a></div>
+      <div class="svc-card"><div class="svc-ic si2">📍</div><h3>Local SEO &amp; Google Maps</h3><p>Get found in Google Maps, the local pack and neighborhood searches. We optimize your Google Business Profile, build citations and create location content that converts. See how it works in <a href="/local-seo-denver/" style="color:var(--blue);">our Denver market</a>.</p><a href="/local-seo-services/" class="svc-link">View Local SEO &amp; Maps →</a></div>
       <div class="svc-card"><div class="svc-ic si5">📈</div><h3>Conversion Optimization</h3><p>Rankings that don't produce calls are a waste of budget. <a href="/conversion-optimization/" style="color:var(--blue);">Conversion optimization</a> means stronger CTAs, better trust signals, faster pages, and mobile-first UX that turns visitors into paying customers.</p><a href="/conversion-optimization/" class="svc-link">View Conversion Optimization →</a></div>
-      <div class="svc-card"><div class="svc-ic si6">⚙️</div><h3>SEO Systems</h3><p>One-time fixes don't compound. Our <a href="/seo-systems/" style="color:var(--blue);">ongoing SEO systems</a> build content, links, technical health, and local authority month after month — so your rankings grow while competitors stand still.</p><a href="/seo-systems/" class="svc-link">View SEO Systems →</a></div>
+      <div class="svc-card"><div class="svc-ic si7">💻</div><h3>Custom Website Design</h3><p>Hand-coded websites built to rank from the first line — no WordPress bloat, no page-builder drag. Custom architecture, schema and speed baked into the build instead of retrofitted after launch.</p><a href="/custom-website-design/" class="svc-link">View Custom Website Design →</a></div>
+      <div class="svc-card"><div class="svc-ic si8">💬</div><h3>AI Chatbots</h3><p>An AI chatbot for your business that answers real questions, qualifies the visitor and hands you the lead — trained on your services, your pricing logic and your market. Ours is on this page right now.</p><a href="/ai-chatbot-for-business/" class="svc-link">View AI Chatbots →</a></div>
+      <div class="svc-card"><div class="svc-ic si6">⚙️</div><h3>Free SEO Audit</h3><p>A real look at your rankings, your competitors and what is actually holding the site back — in plain English, with no contract, no obligation and no card. Answer inside one business day.</p><a href="/free-seo-audit/" class="svc-link">Get My Free SEO Audit →</a></div>
     </div>
-    <div class="tc" style="margin-top:38px;"><a href="/denver-seo-pricing/" class="btn btn-orange">See Denver SEO Pricing →</a></div>
+    <div class="tc" style="margin-top:38px;"><a href="/denver-seo-pricing/" class="btn btn-orange">See Denver SEO Pricing →</a> <a href="/services/" class="btn btn-ghost-white" style="margin-left:8px;">Compare All Services →</a></div>
   </div>
 </div>
+
+<!-- ============================================================
+  SPEED CHECK — PageSpeed Insights deep link (Sept 11 2026)
+  WHY A DEEP LINK AND NOT AN API: this site is static on GitHub Pages, so
+  there is no server to hide a key on. The PageSpeed Insights API can be
+  called keyless but is rate limited per IP and would fail unpredictably in
+  public. A deep link to pagespeed.web.dev/analysis?url= is free, has no
+  quota, cannot break, and runs Google's own test — which is far more
+  persuasive than our score would be, because it isn't ours.
+  THE CONVERSION: the test opens in a NEW TAB so this page survives, and the
+  moment they run it we reveal the honest follow-up below. Most sites score
+  badly on mobile; the panel says so before they see their number, which
+  turns a bad result into "he warned me" instead of "this is a gotcha".
+  The URL they typed is carried into the audit link so the form arrives
+  pre-filled.
+  ============================================================ -->
+<section class="section psi-sec" aria-labelledby="psi-h2" id="speed-check">
+  <div class="wrap">
+    <div class="psi-card">
+      <div class="psi-head">
+        <span class="chip chip-blue" style="margin-bottom:10px;">Free &middot; 30 seconds &middot; No email</span>
+        <h2 id="psi-h2">How Fast Is Your Site, Really?</h2>
+        <p class="psi-sub">Google abandons <b>53% of mobile visits</b> that take longer than three
+          seconds. Run your own site through Google's official speed test and find out where you
+          stand. We don't see the result unless you tell us.</p>
+      </div>
+      <div class="psi-row">
+        <label class="psi-lab" for="psi-url">Your website</label>
+        <input class="psi-inp" id="psi-url" type="text" inputmode="url" autocomplete="url"
+               placeholder="yoursite.com" aria-describedby="psi-note">
+        <button class="btn btn-orange psi-btn" id="psi-go" type="button">Run the free speed test →</button>
+      </div>
+      <p class="psi-note" id="psi-note">Opens Google PageSpeed Insights in a new tab. Nothing is sent to us.</p>
+
+      <div class="psi-after" id="psi-after" hidden>
+        <h3>Before you look &mdash; here's what the number means.</h3>
+        <p>Fewer than half of mobile sites pass all three of Google's Core Web Vitals, so a low
+          score puts you with the majority, not on your own. It also isn't the whole picture:
+          the score measures <b>speed</b>, not whether the page actually turns visitors into calls.</p>
+        <ul class="psi-list">
+          <li><b>90&ndash;100</b> &mdash; genuinely fast. Your problem is somewhere else, and we'd tell you that.</li>
+          <li><b>50&ndash;89</b> &mdash; typical. Usually images, page-builder bloat, and scripts nobody remembers adding.</li>
+          <li><b>Under 50</b> &mdash; costing you customers today. Worth fixing before you spend another dollar on traffic.</li>
+        </ul>
+        <a href="/free-seo-audit/" class="btn btn-blue" id="psi-audit">Get the full free audit &mdash; speed, rankings and conversions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  FREE TOOLS STRIP (Sept 11 2026)
+  /grow-my-business/ was reachable from the desktop nav, the mobile nav and
+  the footer — and from nowhere in the body of the homepage. Chrome links are
+  navigation; they are not promotion. Nobody opens a dropdown to discover a
+  tool they have never heard of. This strip is the discovery path.
+  ONLY LIST TOOLS THAT EXIST. /free-seo-tools/ belongs here the moment it is
+  built; until then a card pointing at it is a 404 with a nice heading.
+  ============================================================ -->
+<section class="section tools-sec" aria-labelledby="tools-h2">
+  <div class="wrap">
+    <div class="tc" style="margin-bottom:28px;">
+      <span class="chip chip-blue" style="margin:0 auto 10px;">Free &middot; No signup</span>
+      <h2 id="tools-h2">Use Our Tools Without Hiring Us</h2>
+      <p style="color:var(--muted);max-width:580px;margin:10px auto 0;">We built these for our own
+        clients and then left them open. No email wall, no trial, no catch.</p>
+    </div>
+    <div class="tools-grid">
+      <a href="/grow-my-business/" class="tool-card">
+        <span class="tool-ic">📈</span>
+        <h3>Grow My Business</h3>
+        <p>Answer a few questions about where your business is stuck and get a prioritised plan
+          back &mdash; what to fix first, what it typically costs, and what to ignore for now.
+          It's the same diagnostic we run on a first call.</p>
+        <span class="tool-go">Open the business assistant &rarr;</span>
+      </a>
+      <a href="/ad-lab/" class="tool-card">
+        <span class="tool-ic">🧪</span>
+        <h3>Ad Lab</h3>
+        <p>Test headlines, offers and ad copy against the patterns that actually move click-through
+          rates, and see why one version beats another instead of guessing.</p>
+        <span class="tool-go">Open the Ad Lab &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- MID CTA -->
 <div class="mid-cta">
@@ -2183,7 +2396,7 @@ table.cmp .yes{color:#059669;font-weight:700}
              you have it. Same TODO as the entity fact sheet and the sameAs
              arrays in the JSON-LD. -->
         <div class="badges">
-          <div class="badge"><span class="badge-ic">⭐</span><div><div class="badge-t"><a href="https://share.google/t4wEpsdoJFyFEWa4H" target="_blank" rel="noopener">5.0 from 60 Reviews</a></div><div class="badge-s">Google Business Profile</div></div></div>
+          <div class="badge"><span class="stars stars-lg" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.4l2.5 5.6 6.1.6-4.6 4.1 1.3 6-5.3-3.1-5.3 3.1 1.3-6L1.4 7.6l6.1-.6z" fill="#F59E0B" stroke="#B45309" stroke-width="1" stroke-linejoin="round"/></svg></span><div><div class="badge-t"><a href="https://share.google/t4wEpsdoJFyFEWa4H" target="_blank" rel="noopener">5.0 from 60 Reviews</a></div><div class="badge-s">Google Business Profile</div></div></div>
           <div class="badge"><span class="badge-ic">🏆</span><div><div class="badge-t">A+ Rating</div><div class="badge-s">BBB Accredited Business</div></div></div>
           <div class="badge"><span class="badge-ic">📍</span><div><div class="badge-t">Denver-Based</div><div class="badge-s">Serving Denver since 2012</div></div></div>
         </div>
@@ -2560,7 +2773,50 @@ table.cmp .yes{color:#059669;font-weight:700}
     if(e.key==='Escape'&&mobNav.classList.contains('open')){burger.click();}
   });
 
-  /* FAQ accordion — one open at a time */
+  /* ── SPEED CHECK behaviour ──
+   Normalises what people type (they will type "yoursite.com", not a URL with
+   a scheme), opens Google's test in a new tab, and reveals the honest
+   framing panel. The typed domain is appended to the audit link so the form
+   on the other end can pre-fill it. */
+(function(){
+  var go = document.getElementById('psi-go');
+  if (!go) return;
+  var inp = document.getElementById('psi-url');
+  var after = document.getElementById('psi-after');
+  var auditLink = document.getElementById('psi-audit');
+
+  function tidy(v){
+    v = String(v || '').trim();
+    if (!v) return '';
+    v = v.replace(/^\s*https?:\/\//i, '').replace(/\/+$/, '');
+    if (v.indexOf('.') === -1) return '';          // not a domain at all
+    return 'https://' + v;
+  }
+  function run(){
+    var url = tidy(inp.value);
+    if (!url){
+      inp.focus();
+      inp.style.borderColor = '#C0392B';
+      setTimeout(function(){ inp.style.borderColor = ''; }, 1600);
+      return;
+    }
+    try {
+      window.open('https://pagespeed.web.dev/analysis?url=' + encodeURIComponent(url),
+                  '_blank', 'noopener');
+    } catch (e) {}
+    if (after && after.hasAttribute('hidden')){
+      after.removeAttribute('hidden');
+      if (auditLink) auditLink.href = '/free-seo-audit/?site=' + encodeURIComponent(url);
+      setTimeout(function(){
+        try { after.scrollIntoView({behavior:'smooth', block:'nearest'}); } catch(e){}
+      }, 120);
+    }
+  }
+  go.addEventListener('click', run);
+  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') run(); });
+})();
+
+/* FAQ accordion — one open at a time */
   document.querySelectorAll('.faq-q').forEach(function(btn){
     btn.addEventListener('click',function(){
       var item=btn.closest('.faq-item');
