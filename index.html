@@ -434,6 +434,18 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    If you add a nav section, give it a .mob-acc button and wrap its links
    in a .mob-group div — the JS binds by class, so nothing else changes.
    ============================================================ */
+/* menu close row — always reachable, never scrolls away */
+.mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-top img{width:190px;height:66px;object-fit:cover;object-position:center 44%;max-width:none}
+.mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
+.mob-x:hover{background:rgba(255,255,255,.16)}
+/* phone: dark with a bright white number so only ONE solid orange block
+   exists in the menu — the audit button, which is the primary action */
+.mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
+.mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
+.mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
+.mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
 .mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
 .mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
@@ -451,6 +463,9 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mob-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:16px 20px 40px;-webkit-overflow-scrolling:touch}
 .mob-nav.open{display:block}
+/* Iris injects #etad at the document root; hide it while the menu is open so
+   its nudge bubble cannot overlap the navigation. Same for the mascot. */
+body.nav-open #etad,body.nav-open #etaMascot{display:none!important}
 .mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .mob-nav a:hover{color:var(--orange)}
 .mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
@@ -1411,8 +1426,12 @@ table.cmp .yes{color:#059669;font-weight:700}
      a sitewide mobile menu is every URL on the site. Both chrome links now
      say the same thing. Destination unchanged. -->
 <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
-  <a href="/free-seo-audit/" class="mob-cta" style="margin:4px 0 10px;">Get a Free SEO Audit</a>
-  <a href="/marketing-subscription/" class="mob-vip">VIP Marketing Subscription</a>
+  <div class="mob-top">
+    <a href="/" aria-label="Eye To Ad Media home"><img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media" width="190" height="66" loading="lazy"></a>
+    <button class="mob-x" id="mobClose" type="button" aria-label="Close menu">&#x2715;</button>
+  </div>
+  <a href="/free-seo-audit/" class="mob-cta" style="margin:0 0 10px;">Get a Free SEO Audit</a>
+  <a href="tel:18004818638" class="mob-tel"><span>Call us</span>1-800-481-8638</a>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-services">
     <a href="/denver-seo-services/">Denver SEO Services</a>
@@ -1469,21 +1488,21 @@ table.cmp .yes{color:#059669;font-weight:700}
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-resources">
-    <a href="/blog/">SEO Blog</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
     <a href="/grow-my-business/">Grow My Business Tool</a>
-    <a href="/ad-lab/">Ad Lab</a>
     <a href="/ad-lab/rpg/">SEO Quest RPG</a>
     <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
     <a href="https://www.buyweburl.com" target="_blank" rel="noopener sponsored">Search Domain Names</a>
   </div>
-  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-company">Company<span class="ico" aria-hidden="true">+</span></button>
-  <div class="mob-group" id="mg-company">
-    <a href="/about/">About Eye To Ad Media</a>
-    <a href="/contact/">Contact Us</a>
-  </div>
-  <a href="tel:18004818638" class="mob-cta">Call 1-800-481-8638</a>
+  <!-- FLAT LINKS: single destinations, not categories. A collapsible section
+       holding one or two links is worse than no section at all. -->
+  <a href="/blog/" class="mob-flat">Blog</a>
+  <a href="/ad-lab/" class="mob-flat">Ad Lab</a>
+  <a href="/about/" class="mob-flat">About</a>
+  <a href="/contact/" class="mob-flat">Contact</a>
+  <a href="/marketing-subscription/" class="mob-flat">VIP Marketing Subscription</a>
+  <p class="mob-proof"><b>5.0</b> from 60 Google Reviews &middot; <b>A+</b> BBB Accredited<br>Denver-based since 2012 &middot; Answers in 1 business day</p>
 </nav>
 
 <!-- AI STRIP REMOVED (Sept 2026): it was a FOURTH chrome band above the
@@ -2664,8 +2683,15 @@ table.cmp .yes{color:#059669;font-weight:700}
     var o=mobNav.classList.toggle('open');
     burger.classList.toggle('open',o);
     burger.setAttribute('aria-expanded',o);
+    document.body.classList.toggle('nav-open',o);
     document.body.style.overflow=o?'hidden':'';
+    if(o)mobNav.scrollTop=0;
   });
+
+  /* dedicated close button inside the menu — the burger can sit behind a
+     sticky header on some phones, so the menu owns a way out of itself */
+  var mobClose=document.getElementById('mobClose');
+  if(mobClose)mobClose.addEventListener('click',function(){burger.click();});
   /* accordion: one section at a time, collapsed on open */
   mobNav.querySelectorAll('.mob-acc').forEach(function(btn){
     btn.addEventListener('click',function(){
@@ -2685,6 +2711,7 @@ table.cmp .yes{color:#059669;font-weight:700}
       mobNav.classList.remove('open');
       burger.classList.remove('open');
       burger.setAttribute('aria-expanded',false);
+      document.body.classList.remove('nav-open');
       document.body.style.overflow='';
     });
   });
