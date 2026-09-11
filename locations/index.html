@@ -309,6 +309,9 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
+/* domain search promoted out of the utility bar into the nav proper */
+.nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
+.nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
 .ni{position:relative}
 .ni:hover .drop,.ni:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
 .drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
@@ -372,7 +375,9 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    ============================================================ */
 /* menu close row — always reachable, never scrolls away */
 .mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
-.mob-top img{width:190px;height:66px;object-fit:cover;object-position:center 44%;max-width:none}
+/* the sticky header logo is still visible above the open menu, so a second
+   logo in here was just the brand twice on one screen */
+.mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
 .mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
 .mob-x:hover{background:rgba(255,255,255,.16)}
 /* phone: dark with a bright white number so only ONE solid orange block
@@ -380,12 +385,19 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
 .mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
 .mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-dom2{display:block!important;margin:0 0 14px;padding:13px 16px!important;text-align:center;
+  background:rgba(249,115,22,.1);border:1.5px solid rgba(249,115,22,.4)!important;border-radius:var(--r12);
+  color:#FDBA74!important;font-weight:700!important;border-bottom:1.5px solid rgba(249,115,22,.4)!important}
 .mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
 .mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
 .mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
 .mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
 .mob-group{display:none;padding-bottom:6px}
+/* Tapping an accordion header only expands it, so each section carries an
+   explicit link to its own hub page. Desktop parents are already links. */
+.mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
+  padding:11px 0!important;border-bottom:1px solid rgba(147,197,253,.2)!important}
 .mob-group.open{display:block}
 .hdr-right{display:flex;align-items:center;gap:9px}
 /* VIP Marketing Subscription pill — inline with Free Audit, reads as a CTA */
@@ -436,7 +448,12 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .loc-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 
 
-/* ===== SERVICE-AREA MAP ===== */
+/* ===== SERVICE-AREA MAP =====
+   LABEL PLACEMENT IS PER PIN, not a global rule. Denver, Fort Collins,
+   Cheyenne and Colorado Springs sit within ~60px of each other, so labels
+   centred under every pin collided into an unreadable stack. Each pin now
+   carries its own dx/dy and text-anchor: the Colorado cluster fans left and
+   right, isolated pins sit below. Add a city, set its offset by eye. */
 .map-wrap{margin-top:30px;background:linear-gradient(160deg,#0B1626,#0F1D33);border:1px solid #22355C;
   border-radius:var(--r16);padding:18px 14px 12px;box-shadow:var(--sh-lg)}
 .usmap{display:block;width:100%;height:auto}
@@ -448,8 +465,8 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .pin-shine{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;opacity:.55}
 .pin-hole{fill:#3A0A03;opacity:.85}
 .pin-hub .pin-hole{fill:#5A3A04}
-.pin-label{fill:#C7D6EE;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;text-anchor:middle;
-  paint-order:stroke;stroke:#0B1626;stroke-width:4;stroke-linejoin:round;pointer-events:none}
+.pin-label{fill:#DCE7F8;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;
+  paint-order:stroke;stroke:#0A1424;stroke-width:4.5;stroke-linejoin:round;pointer-events:none}
 .pin-hub .pin-label{fill:#FDE68A;font-size:17px}
 .pin:hover .pin-body,.pin:focus .pin-body{transform:translateY(-7px) scale(1.12)}
 .pin:hover .pin-label,.pin:focus .pin-label{fill:#fff}
@@ -528,6 +545,12 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .lf-txt h2{color:#fff;margin-bottom:14px}
 .lf-txt p{color:rgba(255,255,255,.68);font-size:1.04rem;margin-bottom:10px}
 .lf-list{margin-top:16px}
+/* .lf-list was written for the DARK audit panel, so its text is white. Reusing
+   it inside a light section produced white-on-white text with only the tick
+   visible. Light sections get their own colour below — do not "simplify" this
+   by changing the base rule, which would break the dark panel. */
+.sec-white .lf-list li,.sec-off .lf-list li,.sec .lf-list li{color:var(--ink3)}
+.sec-white .lf-list li::before,.sec-off .lf-list li::before,.sec .lf-list li::before{color:var(--blue)}
 .lf-list li{font-size:.94rem;color:rgba(255,255,255,.8);padding-left:24px;position:relative;margin-bottom:8px;line-height:1.55}
 .lf-list li::before{content:'✓';position:absolute;left:0;color:#60A5FA;font-weight:900}
 .lf-card{background:#fff;border-radius:var(--r16);padding:26px 24px;box-shadow:0 24px 70px rgba(0,0,0,.5);border-top:5px solid var(--orange)}
@@ -785,6 +808,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
       </div>
       <a href="/about/" class="nl">About</a>
       <a href="/contact/" class="nl">Contact</a>
+      <a href="https://www.buyweburl.com" class="nl nl-dom" target="_blank" rel="noopener sponsored">Search Domains</a>
     </nav>
     <div class="hdr-right">
       <a href="/marketing-subscription/" class="hdr-vip">VIP Membership</a>
@@ -799,13 +823,15 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 <!-- MOBILE NAV — top offset is set by JS (measureHeader), never hard-coded -->
 <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
   <div class="mob-top">
-    <a href="/" aria-label="Eye To Ad Media home"><img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media" width="190" height="66" loading="lazy"></a>
+    <span class="mob-top-lab">Menu</span>
     <button class="mob-x" id="mobClose" type="button" aria-label="Close menu">&#x2715;</button>
   </div>
   <a href="/free-seo-audit/" class="mob-cta" style="margin:0 0 10px;">Get a Free SEO Audit</a>
   <a href="tel:18004818638" class="mob-tel"><span>Call us</span>1-800-481-8638</a>
+  <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Search Domain Names</a>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-services">
+    <a href="/denver-seo-services/" class="mob-hub">Services overview &rarr;</a>
     <a href="/denver-seo-services/">Denver SEO Services</a>
     <a href="/local-seo-denver/">Local SEO Denver</a>
     <a href="/seo-systems/">SEO Systems</a>
@@ -817,6 +843,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-industries">Industries<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-industries">
+    <a href="/industries/" class="mob-hub">All industries &rarr;</a>
     <div class="mob-sub">Home &amp; Trade</div>
     <a href="/contractor-seo-denver/">Contractor SEO</a>
     <a href="/electrician-seo-denver/">Electrician SEO</a>
@@ -841,6 +868,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-locations">Locations<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-locations">
+    <a href="/locations/" class="mob-hub">All service areas &rarr;</a>
     <div class="mob-sub">Colorado</div>
     <a href="/locations/">Denver Metro</a>
     <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
@@ -860,6 +888,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-resources">
+    <a href="/blog/" class="mob-hub">SEO blog &rarr;</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
     <a href="/grow-my-business/">Grow My Business Tool</a>
@@ -939,10 +968,10 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
     <div class="sec-head">
       <span class="chip chip-blue" style="margin:0 auto 12px;">Where We Work</span>
       <h2 id="map-h2">24 Cities, 9 States, One Team</h2>
-      <p>Tap a pin to see how we approach that market. The cluster over Colorado is not decoration &mdash; that is where we have worked the longest.</p>
+      <p>Tap a pin for how we approach that market. The cluster over Colorado is fourteen years of work in one state.</p>
     </div>
     <div class="map-wrap">
-      <svg class="usmap" viewBox="0 0 1000 620" role="img" aria-label="Map of the United States showing the cities Eye To Ad Media serves">
+      <svg class="usmap" viewBox="50 40 860 500" role="img" aria-label="Map of the United States showing the cities Eye To Ad Media serves">
         <defs>
           <linearGradient id="mapLand" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stop-color="#1B2D4C"/><stop offset="1" stop-color="#122139"/>
@@ -959,128 +988,123 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
         </defs>
 
         <!-- simplified continental outline -->
-        <path class="land" d="M148 168 L196 150 L243 141 L300 133 L352 128 L404 124 L455 120 L505 118 L556 120 L604 126
-          L652 132 L700 130 L742 126 L782 134 L812 152 L836 176 L858 204 L880 236 L898 268 L912 300 L920 330
-          L906 356 L880 372 L856 392 L830 414 L806 438 L780 456 L752 470 L724 478 L694 482 L664 486 L634 494
-          L604 506 L574 516 L544 520 L514 516 L486 506 L458 494 L430 486 L402 482 L374 480 L346 474 L318 462
-          L292 446 L268 428 L246 408 L226 386 L208 362 L192 336 L178 308 L166 278 L156 246 L150 210 Z"
+        <path class="land" d="M112 88 L200 82 L300 78 L400 75 L500 72 L590 70 L668 68 L690 92 L706 76 L724 86 L734 118 L748 100 L752 126 L772 136 L792 122 L816 110 L842 96 L866 86 L872 112 L856 148 L846 176 L838 204 L830 232 L820 260 L808 288 L794 316 L780 344 L766 370 L752 394 L744 418 L750 446 L754 476 L746 506 L730 480 L718 450 L702 432 L664 428 L628 432 L598 440 L564 448 L538 456 L518 448 L496 468 L470 496 L440 470 L414 452 L392 432 L378 456 L358 428 L330 406 L318 392 L258 382 L198 372 L140 360 L128 352 L112 330 L96 300 L82 262 L78 230 L90 200 L100 160 L106 124 Z"
           fill="url(#mapLand)" stroke="#2C4470" stroke-width="2.5" stroke-linejoin="round"/>
         <!-- state-line suggestion, kept faint so it reads as texture not geography -->
-        <g class="statelines" stroke="#2C4470" stroke-width="1.6" fill="none" opacity=".55">
-          <path d="M243 141 L246 408 M352 128 L346 474 M455 120 L458 494 M556 120 L544 520 M652 132 L634 494 M742 126 L724 478"/>
-          <path d="M166 278 L912 300 M178 308 L906 356 M192 336 L880 372"/>
+        <g class="statelines" stroke="#2C4470" stroke-width="1.4" fill="none" opacity=".5">
+          <path d="M198 372 L200 82 M318 392 L300 78 M392 432 L400 75 M496 468 L500 72 M598 440 L590 70 M702 432 L668 68"/>
+          <path d="M86 230 L872 200 M100 300 L846 268 M140 360 L800 330 M330 406 L766 370"/>
         </g>
-        <circle cx="418" cy="300" r="66" fill="url(#hubGlow)"/>
-      <a class="pin pin-hub" href="/locations/" tabindex="0" aria-label="Denver SEO">
-        <ellipse class="pin-shadow" cx="418" cy="303" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(418,300)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <circle cx="352" cy="239" r="58" fill="url(#hubGlow)"/>
+      <a class="pin pin-mw" href="/locations/cheyenne-seo/" tabindex="0" aria-label="Cheyenne SEO">
+        <ellipse class="pin-shadow" cx="354" cy="217" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(354,214)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="418" y="318">Denver</text>
-      </a>
-      <a class="pin pin-co" href="/locations/colorado-springs-seo/" tabindex="0" aria-label="Colorado Springs SEO">
-        <ellipse class="pin-shadow" cx="424" cy="333" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(424,330)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
-        </g>
-        <text class="pin-label" x="424" y="348">Colorado Springs</text>
+        <text class="pin-label" x="354" y="168" text-anchor="middle">Cheyenne</text>
       </a>
       <a class="pin pin-co" href="/locations/fort-collins-seo/" tabindex="0" aria-label="Fort Collins SEO">
-        <ellipse class="pin-shadow" cx="414" cy="285" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(414,282)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="351" cy="227" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(351,224)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="414" y="300">Fort Collins</text>
+        <text class="pin-label" x="335" y="228" text-anchor="end">Fort Collins</text>
       </a>
-      <a class="pin pin-mw" href="/locations/cheyenne-seo/" tabindex="0" aria-label="Cheyenne SEO">
-        <ellipse class="pin-shadow" cx="409" cy="271" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(409,268)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+      <a class="pin pin-hub" href="/locations/" tabindex="0" aria-label="Denver SEO">
+        <ellipse class="pin-shadow" cx="352" cy="242" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(352,239)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="409" y="286">Cheyenne</text>
+        <text class="pin-label" x="370" y="243" text-anchor="start">Denver</text>
+      </a>
+      <a class="pin pin-co" href="/locations/colorado-springs-seo/" tabindex="0" aria-label="Colorado Springs SEO">
+        <ellipse class="pin-shadow" cx="354" cy="258" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(354,255)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
+        </g>
+        <text class="pin-label" x="372" y="277" text-anchor="start">Colorado Springs</text>
       </a>
       <a class="pin pin-mw" href="/locations/salt-lake-city-seo/" tabindex="0" aria-label="Salt Lake City SEO">
-        <ellipse class="pin-shadow" cx="305" cy="271" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(305,268)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="258" cy="224" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(258,221)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="305" y="286">Salt Lake City</text>
+        <text class="pin-label" x="242" y="225" text-anchor="end">Salt Lake City</text>
       </a>
       <a class="pin pin-mw" href="/locations/boise-seo/" tabindex="0" aria-label="Boise SEO">
-        <ellipse class="pin-shadow" cx="245" cy="208" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(245,205)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="199" cy="172" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(199,169)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="245" y="223">Boise</text>
+        <text class="pin-label" x="183" y="173" text-anchor="end">Boise</text>
       </a>
       <a class="pin pin-mw" href="/locations/albuquerque-seo/" tabindex="0" aria-label="Albuquerque SEO">
-        <ellipse class="pin-shadow" cx="382" cy="395" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(382,392)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="329" cy="326" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(329,323)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="382" y="410">Albuquerque</text>
+        <text class="pin-label" x="329" y="347" text-anchor="middle">Albuquerque</text>
       </a>
       <a class="pin pin-mw" href="/locations/phoenix-seo/" tabindex="0" aria-label="Phoenix SEO">
-        <ellipse class="pin-shadow" cx="283" cy="418" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(283,415)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="255" cy="355" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(255,352)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="283" y="433">Phoenix</text>
+        <text class="pin-label" x="239" y="356" text-anchor="end">Phoenix</text>
       </a>
       <a class="pin pin-nat" href="/locations/omaha-seo/" tabindex="0" aria-label="Omaha SEO">
-        <ellipse class="pin-shadow" cx="545" cy="271" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(545,268)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="476" cy="215" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(476,212)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="545" y="286">Omaha</text>
+        <text class="pin-label" x="492" y="216" text-anchor="start">Omaha</text>
       </a>
       <a class="pin pin-nat" href="/locations/northwest-arkansas-seo/" tabindex="0" aria-label="Northwest Arkansas SEO">
-        <ellipse class="pin-shadow" cx="576" cy="381" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(576,378)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="500" cy="309" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(500,306)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="576" y="396">Northwest Arkansas</text>
+        <text class="pin-label" x="516" y="310" text-anchor="start">Northwest Arkansas</text>
       </a>
       <a class="pin pin-nat" href="/locations/dallas-seo/" tabindex="0" aria-label="Dallas SEO">
-        <ellipse class="pin-shadow" cx="540" cy="445" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(540,442)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="464" cy="368" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(464,365)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="540" y="460">Dallas</text>
+        <text class="pin-label" x="464" y="389" text-anchor="middle">Dallas</text>
       </a>
       <a class="pin pin-nat" href="/locations/charlotte-seo/" tabindex="0" aria-label="Charlotte SEO">
-        <ellipse class="pin-shadow" cx="754" cy="363" rx="9" ry="3.4"/>
-        <g class="pin-body" transform="translate(754,360)">
-          <path class="pin-drop" d="M0 0 C-11 -14 -15 -21 -15 -28 A15 15 0 0 1 15 -28 C15 -21 11 -14 0 0 Z"/>
-          <path class="pin-shine" d="M-9 -33 A12 12 0 0 1 1 -39"/>
-          <circle class="pin-hole" cx="0" cy="-28" r="5.4"/>
+        <ellipse class="pin-shadow" cx="683" cy="324" rx="8" ry="3"/>
+        <g class="pin-body" transform="translate(683,321)">
+          <path class="pin-drop" d="M0 0 C-10 -13 -14 -19 -14 -26 A14 14 0 0 1 14 -26 C14 -19 10 -13 0 0 Z"/>
+          <path class="pin-shine" d="M-8 -31 A11 11 0 0 1 1 -36"/>
+          <circle class="pin-hole" cx="0" cy="-26" r="5"/>
         </g>
-        <text class="pin-label" x="754" y="378">Charlotte</text>
+        <text class="pin-label" x="699" y="325" text-anchor="start">Charlotte</text>
       </a>
       </svg>
-      <p class="map-note">Denver is home. Everything else we reached by being good at this, not by opening an office.</p>
     </div>
   </div>
 </section>
@@ -1366,30 +1390,30 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 <section class="sec sec-off" aria-labelledby="how-h2">
   <div class="wrap">
     <div class="sec-head">
-      <span class="chip chip-orange" style="margin:0 auto 12px;">Outside Colorado</span>
-      <h2 id="how-h2">What Happens When You Are Not in Denver</h2>
-      <p>A fair question, and the honest answer is more useful than a sales one.</p>
+      <span class="chip chip-orange" style="margin:0 auto 12px;">How We Work</span>
+      <h2 id="how-h2">How a New Market Gets Built</h2>
+      <p>Same process in every city. The research comes first, and it is yours either way.</p>
     </div>
     <div class="why-grid">
       <div class="why">
         <div class="why-ic">&#128269;</div>
-        <h3>The market gets studied before anything gets written</h3>
+        <h3>Your market gets studied before anything gets written</h3>
         <p>Competitive density in your category, who currently holds the map pack, which pages the AI Overviews are quoting for your service, and what the top three are doing that you are not. That research is the first deliverable, and it is yours whether or not you hire us.</p>
       </div>
       <div class="why">
         <div class="why-ic">&#128205;</div>
-        <h3>Proximity is a ranking factor, so we plan around it</h3>
-        <p>Your Google Business Profile ranks strongest nearest your own address. That is true everywhere and no agency changes it. What we build is the organic and AI-answer visibility that is not distance-limited, plus the profile work that maximises the radius you do own.</p>
+        <h3>Your address sets your map radius, so we plan around it</h3>
+        <p>Your Google Business Profile ranks strongest nearest your own address. That is true everywhere and no agency changes it. So we build the organic and AI-answer visibility that is not distance-limited, then maximise the map radius your address genuinely owns.</p>
       </div>
       <div class="why">
         <div class="why-ic">&#129302;</div>
-        <h3>AI answers do not care where the agency sits</h3>
-        <p>When someone asks an assistant for a recommendation in your city, it weighs entity consistency, citations and structured facts. None of those are geographic. This is the part of search where an out-of-state team is on equal footing, and it is growing fastest.</p>
+        <h3>AI answers are not geographic</h3>
+        <p>When someone asks an assistant for a recommendation in your city, it weighs entity consistency, citations and structured facts. None of those are distance-weighted, and this is the fastest-growing part of search. It is also the part almost nobody in your market is working on yet.</p>
       </div>
       <div class="why">
         <div class="why-ic">&#128222;</div>
         <h3>You get a person, not a ticket queue</h3>
-        <p>The founder works on accounts directly. That does not change with your area code. Phones are answered by a person Monday to Friday, 8AM to 6PM Mountain, and if you would rather meet face to face, that gets arranged.</p>
+        <p>The founder works on accounts directly &mdash; not a junior, not a queue. Phones are answered by a person Monday to Friday, 8AM to 6PM Mountain. If you would rather sit down in person, say so and it gets arranged.</p>
       </div>
       <div class="why">
         <div class="why-ic">&#9878;&#65039;</div>
