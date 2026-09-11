@@ -1750,11 +1750,6 @@ table.au-tbl td{color:var(--ink3)}
   </div>
 </nav>
 <main id="main">
-<nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><ol class="bc-list">
-<li><a href="/">Home</a></li><li><span class="bc-sep" aria-hidden="true">›</span></li>
-<li><a href="/denver-seo-services/">Services</a></li><li><span class="bc-sep" aria-hidden="true">›</span></li>
-<li aria-current="page">Free SEO Audit</li></ol></div></nav>
-
 <section class="au-hero">
   <div class="wrap au-hero-inner">
     <div>
@@ -2475,64 +2470,6 @@ table.au-tbl td{color:var(--ink3)}
     });
   });
 })();
-
-/* ============================================================
-   CHROME UI — header shadow, mobile nav, hamburger.
-   Mobile nav offset is MEASURED. The previous version hard-coded
-   .mob-nav{top:300px} to match a 300px header, which drifted the
-   moment the chrome changed.
-   ============================================================ */
-(function(){
-  var hdr=document.getElementById('hdr');
-  var burger=document.getElementById('burger');
-  var mobNav=document.getElementById('mobNav');
-  if(!hdr||!burger||!mobNav) return;
-
-  window.addEventListener('scroll',function(){
-    hdr.classList.toggle('scrolled',window.scrollY>30);
-  },{passive:true});
-
-  function measureHeader(){
-    var r=hdr.getBoundingClientRect();
-    mobNav.style.top=Math.max(0,r.bottom)+'px';
-  }
-  window.addEventListener('resize',measureHeader);
-  window.addEventListener('scroll',measureHeader,{passive:true});
-  measureHeader();
-
-  burger.addEventListener('click',function(){
-    measureHeader();
-    var o=mobNav.classList.toggle('open');
-    burger.classList.toggle('open',o);
-    burger.setAttribute('aria-expanded',o);
-    document.body.style.overflow=o?'hidden':'';
-  });
-  mobNav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      mobNav.classList.remove('open');burger.classList.remove('open');
-      burger.setAttribute('aria-expanded',false);document.body.style.overflow='';
-    });
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&mobNav.classList.contains('open')){burger.click();}
-  });
-})();
-
-/* ============================================================
-   FAQ ACCORDION
-   ============================================================ */
-document.querySelectorAll('.faq-q').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var item=btn.closest('.faq-item');
-    var wasOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(function(el){
-      el.classList.remove('open');
-      el.querySelector('.faq-q').setAttribute('aria-expanded',false);
-    });
-    if(!wasOpen){item.classList.add('open');btn.setAttribute('aria-expanded',true);}
-  });
-});
-
 /* ============================================================
    10-POINT WEIGHTED SELF-AUDIT
    Each unchecked box produces a specific, actionable fix, and the
@@ -2762,11 +2699,6 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
   inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') run(); });
 })();
 
-/* Visible email links are assembled at runtime from split attributes. The
-   display text is entity-encoded with zero-width breaks, so a scraper reading
-   the raw HTML finds no address. The JSON-LD copy stays plain ON PURPOSE —
-   that is the channel AI engines read, and hiding it there costs more than the
-   scraping does. */
 (function(){
   var links = document.querySelectorAll('a.eml[data-u][data-d]');
   for (var i = 0; i < links.length; i++){
