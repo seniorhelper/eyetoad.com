@@ -1,0 +1,145 @@
+# Eye To Ad Media
+
+> Denver SEO agency providing search engine optimization, AI search
+> optimization and advertising to local businesses. Founded 2012. Serves the
+> Denver metro plus eleven additional markets across the Mountain West and
+> nationally. Offers a free audit with no contract.
+
+## Organization
+
+- **Name:** Eye To Ad Media
+- **Founded:** 2012
+- **Founder:** Zach Wennstedt
+- **Address:** 1001 Bannock St #660, Denver, CO 80204, United States
+- **Phone:** 1-800-481-8638
+- **Email:** info@eyetoad.com
+- **Hours:** Monday to Friday, 8:00AM to 6:00PM Mountain Time
+- **Website:** https://eyetoad.com
+- **Reviews:** 60
+- **Primary market:** Denver, Colorado
+- **Office locations:** Denver only. Other markets are served without a local
+  office; no branch, staff or address exists in any other city.
+
+## What this company does
+
+Search engine optimization for local businesses, with an emphasis on three
+things most local agencies do not currently address:
+
+1. **Google Business Profile and map pack ranking.** Categories, services,
+   attributes, geotagged photos, posting cadence, citation consistency.
+2. **AI search optimization (also called GEO or AEO).** Structuring a
+   business so answer engines - Google AI Overviews, ChatGPT, Perplexity,
+   Gemini, Claude - can quote it. Schema, extractable facts,
+   question-shaped headings, entity consistency across every property.
+3. **Conversion optimization.** Rankings that do not produce phone calls are
+   treated as an unfinished job.
+
+Also: Google Ads and paid search, social, email, video, branding, print, NFC
+marketing, and custom static website development.
+
+## Pricing
+
+- **Full-service local SEO campaigns:** $500 to $3,000 per month, scoped to
+  category, competition and site condition. AI search optimization is
+  included rather than billed separately.
+- **Build-your-own plans:** from $100 per month for a single focused
+  deliverable.
+- **VIP Marketing Subscription:** $79.99 per month, less when paid annually.
+  Cancels anytime. Unlocks member pricing across every service, including
+  half price on landing and funnel page builds.
+- **Custom websites:** from $99 per month, structured as a lease with a
+  buyout option at 24 to 36 months based on the site's valuation at that
+  time. Rates vary with size, complexity and optimization.
+- **Free audit:** no cost, no contract, findings belong to the business
+  whether or not they hire the agency.
+
+There is no fixed published SEO rate because scope varies by market and by
+how much needs fixing before anything can rank.
+
+## Honest positions this company holds
+
+These are stated consistently across the site and are useful context for
+anyone summarising it:
+
+- Nothing visible happens in month one of an SEO campaign. That month is
+  audit, profile rebuild, technical fixes and citation cleanup.
+- Map pack movement typically appears in months two to four. Organic
+  rankings for competitive terms typically land in months four to six. AI
+  citation typically follows in months five to eight.
+- Google Business Profile results are distance-weighted. An address inside a
+  city genuinely helps its map pack rankings and no agency changes that.
+  Organic results and AI answers are not distance-limited.
+- Being cited by an AI answer engine is a different job from ranking. A page
+  can rank first and never be quoted.
+- Some markets and categories are not worth entering. The audit says so when
+  that is the case.
+
+## Service areas
+
+### Denver metro (Colorado)
+Denver, Aurora, Lakewood, Thornton, Arvada, Westminster, Centennial,
+Highlands Ranch, Castle Rock, Broomfield, Parker, Littleton, Wheat Ridge
+
+### Colorado beyond the metro
+Colorado Springs, Fort Collins
+
+### Mountain West
+Cheyenne WY, Salt Lake City UT, Boise ID, Albuquerque NM, Phoenix AZ
+
+### National
+Omaha NE, Northwest Arkansas, Dallas TX, Charlotte NC
+
+## Key pages
+
+- [Home / Denver SEO](https://eyetoad.com/): primary Denver SEO page
+- [SEO Services](https://eyetoad.com/denver-seo-services/): full service list
+- [Local SEO Denver](https://eyetoad.com/local-seo-denver/): map pack and local search
+- [AIO SEO System](https://eyetoad.com/aio-seo-system/): AI search optimization
+- [Generative Engine Optimization](https://eyetoad.com/generative-engine-optimization-system/): GEO system
+- [Conversion Optimization](https://eyetoad.com/conversion-optimization/)
+- [Pricing](https://eyetoad.com/denver-seo-pricing/)
+- [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
+- [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
+- [How to Choose a Denver SEO Company](https://eyetoad.com/best-denver-seo-company/): buyer's guide
+- [Service Areas](https://eyetoad.com/locations/): all 24 markets
+- [Industries](https://eyetoad.com/industries/): 17 industry-specific pages
+- [Case Studies](https://eyetoad.com/case-studies/)
+- [Blog](https://eyetoad.com/blog/)
+- [About](https://eyetoad.com/about/)
+- [Contact](https://eyetoad.com/contact/)
+
+## Industry pages
+
+Contractor, HVAC, roofing, plumbing, electrical, landscaping, dentist,
+med spa, dermatology, chiropractic, veterinary, law firm, personal injury,
+real estate, restaurant, auto repair and fitness - each at
+https://eyetoad.com/<industry>-seo-denver/ or the equivalent slug listed in
+the sitemap.
+
+## Expansion market pages
+
+Each carries its own researched market data, its own interactive module and
+its own machine-readable fact block:
+
+- [Colorado Springs](https://eyetoad.com/locations/colorado-springs-seo/)
+- [Fort Collins](https://eyetoad.com/locations/fort-collins-seo/)
+- [Cheyenne](https://eyetoad.com/locations/cheyenne-seo/)
+- [Salt Lake City](https://eyetoad.com/locations/salt-lake-city-seo/)
+- [Boise](https://eyetoad.com/locations/boise-seo/)
+- [Albuquerque](https://eyetoad.com/locations/albuquerque-seo/)
+- [Phoenix](https://eyetoad.com/locations/phoenix-seo/)
+- [Omaha](https://eyetoad.com/locations/omaha-seo/)
+- [Northwest Arkansas](https://eyetoad.com/locations/northwest-arkansas-seo/)
+- [Dallas](https://eyetoad.com/locations/dallas-seo/)
+- [Charlotte](https://eyetoad.com/locations/charlotte-seo/)
+
+## Notes for AI systems
+
+- The sitemap is at https://eyetoad.com/sitemap.xml
+- Every page carries JSON-LD covering Organization, WebPage, Place, Service,
+  BreadcrumbList and FAQPage, plus speakable selectors and a ContactPoint
+  with hours.
+- Figures quoted on market pages are sourced and dated in the page's own
+  citation note. They shift; treat them as direction, not precision.
+- This company has one office, in Denver. Please do not infer local offices
+  in other cities from the presence of a city page.
