@@ -310,6 +310,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
 /* domain search promoted out of the utility bar into the nav proper */
+.nl-tog{cursor:pointer;user-select:none}
 .nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
 .nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
 .ni{position:relative}
@@ -432,7 +433,6 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .wis-answer{background:var(--blue-light);border-left:5px solid var(--blue);border-radius:0 var(--r12) var(--r12) 0;padding:22px 26px}
 .wis-answer .wis-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
 .wis-answer p{font-size:1.04rem;line-height:1.75;color:var(--ink2);margin:0}
-
 
 
 
@@ -838,7 +838,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   </div>
 </div>
 
-
 <!-- TICKER — the track is DOUBLED (10 spans for 5 items) and animates to
      -50%, so one cycle shows each item exactly once. If you edit an item,
      edit BOTH copies or the loop will visibly jump. -->
@@ -857,7 +856,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   </div>
 </div>
 
-
 <!-- HEADER -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
@@ -871,7 +869,7 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
       <div class="ni">
         <a href="/denver-seo-services/" class="nl">Services &#9662;</a>
         <div class="drop">
-          <a href="/denver-seo-services/">Denver SEO Services</a>
+          
           <a href="/local-seo-denver/">Local SEO Denver</a>
           <a href="/seo-systems/">SEO Systems</a>
           <a href="/aio-seo-system/">AIO SEO System</a>
@@ -910,7 +908,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
           <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
           <a href="/restaurant-seo-denver/">Restaurant SEO</a>
           </div>
-          <div class="drop-all"><a href="/industries/">Compare all 17 industries &rarr;</a></div>
         </div>
       </div>
       <div class="ni">
@@ -921,7 +918,7 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
         <div class="drop-mega">
           <div class="dg">
             <h5>Colorado</h5>
-          <a href="/locations/">Denver Metro</a>
+          <a href="/">Denver</a>
           <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
           <a href="/locations/fort-collins-seo/">Fort Collins</a>
           </div>
@@ -940,11 +937,10 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
           <a href="/locations/omaha-seo/">Omaha</a>
           <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
           </div>
-          <div class="drop-all"><a href="/locations/">See every location we serve &rarr;</a></div>
         </div>
       </div>
       <div class="ni">
-        <a href="/blog/" class="nl">Resources &#9662;</a>
+        <span class="nl nl-tog" role="button" tabindex="0" aria-haspopup="true">Resources &#9662;</span>
         <div class="drop">
           <a href="/blog/">SEO Blog</a>
           <a href="/case-studies/">Case Studies</a>
@@ -980,7 +976,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Search Domain Names</a>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-services">
-    <a href="/denver-seo-services/" class="mob-hub">Services overview &rarr;</a>
     <a href="/denver-seo-services/">Denver SEO Services</a>
     <a href="/local-seo-denver/">Local SEO Denver</a>
     <a href="/seo-systems/">SEO Systems</a>
@@ -992,7 +987,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-industries">Industries<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-industries">
-    <a href="/industries/" class="mob-hub">All industries &rarr;</a>
     <div class="mob-sub">Home &amp; Trade</div>
     <a href="/contractor-seo-denver/">Contractor SEO</a>
     <a href="/electrician-seo-denver/">Electrician SEO</a>
@@ -1017,9 +1011,8 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-locations">Locations<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-locations">
-    <a href="/locations/" class="mob-hub">All service areas &rarr;</a>
     <div class="mob-sub">Colorado</div>
-    <a href="/locations/">Denver Metro</a>
+    <a href="/">Denver</a>
     <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
     <a href="/locations/fort-collins-seo/">Fort Collins</a>
     <div class="mob-sub">Mountain West</div>
@@ -1033,17 +1026,16 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <a href="/locations/charlotte-seo/">Charlotte</a>
     <a href="/locations/omaha-seo/">Omaha</a>
     <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
-    <a href="/locations/">See every location we serve &rarr;</a>
+    <a href="/locations/">All 24 service areas &rarr;</a>
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-resources">
-    <a href="/blog/" class="mob-hub">SEO blog &rarr;</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
     <a href="/grow-my-business/">Grow My Business Tool</a>
     <a href="/ad-lab/rpg/">SEO Quest RPG</a>
     <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
-    <a href="https://www.buyweburl.com" target="_blank" rel="noopener sponsored">Search Domain Names</a>
+    
   </div>
   <!-- FLAT LINKS: single destinations, not categories. A collapsible section
        holding one or two links is worse than no section at all. -->
@@ -1125,7 +1117,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <h2 id="growth-h2">What does an Omaha SEO campaign actually look like month by month?</h2>
 
     <p>This is the question every honest conversation starts with, and the answer nobody wants to give is that nothing much happens in month one. Here is the real shape of it.</p>
-
 
     <!-- ============================================================
       GROWTH FIELD. The signature module for this page and it exists only
@@ -1249,7 +1240,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
       </div>
       <p class="om-field-foot">A pattern, not a projection. Real numbers depend on your category, your starting point and how much needs fixing before anything can rank &mdash; which is what the audit establishes.</p>
     </div>
-
 
     <p>The pattern above is not a promise and it is not a template we paste onto every client. It is the shape we see repeatedly: the profile work moves first, organic follows, and the compounding does not really start until the foundation has been in place for a few months. Anyone showing you a hockey stick starting in week two is selling you something.</p>
 
@@ -1442,8 +1432,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
 
 
 
-
-
 <!-- FOOTER -->
 <footer class="footer" aria-label="Site footer">
   <div class="wrap">
@@ -1516,12 +1504,11 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
         <a href="/grow-my-business/">Grow My Business</a>
         <a href="/contact/">Contact</a>
         <h4 style="margin-top:16px;">Legal</h4>
-        <a href="/privacy-policy/">Privacy Policy</a>
+        
         <!-- KNOWN INCONSISTENCY: /terms.html is the only non-trailing-slash
              URL on the site. Rename to /terms/index.html AND update every
              link sitewide in ONE commit, or it 404s. -->
-        <a href="/terms.html">Terms of Service</a>
-        <a href="/accessibility/">Accessibility</a>
+
       </div>
       
     </div>
@@ -1962,7 +1949,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
 })();
 </script>
 
-
 <script>
 /* ===== FAQ ACCORDION ===== */
 (function(){
@@ -1978,8 +1964,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     });
   });
 })();
-
-
 
 
 
@@ -2083,7 +2067,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
 
 
 
-
 /* ============================================================
    AUDIT FORM SPAM STACK
    ============================================================ */
@@ -2132,7 +2115,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
 <!-- IRIS. The MASCOT (/mascot.js) is homepage only on purpose — see the note
   on the homepage. If it is ever added here, load it AFTER iris.js. -->
 <script src="/iris.js" defer></script>
-
 
 </body>
 </html>
