@@ -373,6 +373,9 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
+/* domain search promoted out of the utility bar into the nav proper */
+.nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
+.nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
 .ni{position:relative}
 .ni:hover .drop,.ni:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
 .drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
@@ -436,7 +439,9 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
    ============================================================ */
 /* menu close row — always reachable, never scrolls away */
 .mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
-.mob-top img{width:190px;height:66px;object-fit:cover;object-position:center 44%;max-width:none}
+/* the sticky header logo is still visible above the open menu, so a second
+   logo in here was just the brand twice on one screen */
+.mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
 .mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
 .mob-x:hover{background:rgba(255,255,255,.16)}
 /* phone: dark with a bright white number so only ONE solid orange block
@@ -444,12 +449,19 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
 .mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
 .mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-dom2{display:block!important;margin:0 0 14px;padding:13px 16px!important;text-align:center;
+  background:rgba(249,115,22,.1);border:1.5px solid rgba(249,115,22,.4)!important;border-radius:var(--r12);
+  color:#FDBA74!important;font-weight:700!important;border-bottom:1.5px solid rgba(249,115,22,.4)!important}
 .mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
 .mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
 .mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
 .mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
 .mob-group{display:none;padding-bottom:6px}
+/* Tapping an accordion header only expands it, so each section carries an
+   explicit link to its own hub page. Desktop parents are already links. */
+.mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
+  padding:11px 0!important;border-bottom:1px solid rgba(147,197,253,.2)!important}
 .mob-group.open{display:block}
 .hdr-right{display:flex;align-items:center;gap:9px}
 /* VIP Marketing Subscription pill — inline with Free Audit, reads as a CTA */
@@ -1406,6 +1418,7 @@ table.cmp .yes{color:#059669;font-weight:700}
       </div>
       <a href="/about/" class="nl">About</a>
       <a href="/contact/" class="nl">Contact</a>
+      <a href="https://www.buyweburl.com" class="nl nl-dom" target="_blank" rel="noopener sponsored">Search Domains</a>
     </nav>
     <div class="hdr-right">
       <a href="/marketing-subscription/" class="hdr-vip">VIP Membership</a>
@@ -1428,13 +1441,15 @@ table.cmp .yes{color:#059669;font-weight:700}
      say the same thing. Destination unchanged. -->
 <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
   <div class="mob-top">
-    <a href="/" aria-label="Eye To Ad Media home"><img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media" width="190" height="66" loading="lazy"></a>
+    <span class="mob-top-lab">Menu</span>
     <button class="mob-x" id="mobClose" type="button" aria-label="Close menu">&#x2715;</button>
   </div>
   <a href="/free-seo-audit/" class="mob-cta" style="margin:0 0 10px;">Get a Free SEO Audit</a>
   <a href="tel:18004818638" class="mob-tel"><span>Call us</span>1-800-481-8638</a>
+  <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Search Domain Names</a>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-services">
+    <a href="/denver-seo-services/" class="mob-hub">Services overview &rarr;</a>
     <a href="/denver-seo-services/">Denver SEO Services</a>
     <a href="/local-seo-denver/">Local SEO Denver</a>
     <a href="/seo-systems/">SEO Systems</a>
@@ -1446,6 +1461,7 @@ table.cmp .yes{color:#059669;font-weight:700}
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-industries">Industries<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-industries">
+    <a href="/industries/" class="mob-hub">All industries &rarr;</a>
     <div class="mob-sub">Home &amp; Trade</div>
     <a href="/contractor-seo-denver/">Contractor SEO</a>
     <a href="/electrician-seo-denver/">Electrician SEO</a>
@@ -1470,6 +1486,7 @@ table.cmp .yes{color:#059669;font-weight:700}
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-locations">Locations<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-locations">
+    <a href="/locations/" class="mob-hub">All service areas &rarr;</a>
     <div class="mob-sub">Colorado</div>
     <a href="/locations/">Denver Metro</a>
     <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
@@ -1489,6 +1506,7 @@ table.cmp .yes{color:#059669;font-weight:700}
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-resources">
+    <a href="/blog/" class="mob-hub">SEO blog &rarr;</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
     <a href="/grow-my-business/">Grow My Business Tool</a>
