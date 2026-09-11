@@ -223,22 +223,67 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
 .ir-orb-mote:nth-of-type(4){animation-delay:2.4s}
 @keyframes ir-mote{0%,100%{opacity:.2;transform:translateY(2px)}50%{opacity:.95;transform:translateY(-3px)}}
 
-/* POOF — the orb bursts and Iris is standing there. Runs once, ~700ms. */
-.ir-poof{position:absolute;inset:-18px;display:none;pointer-events:none;overflow:visible}
+/* ══ THE VANISH (v7.4) ══ 2.6 SECONDS, ON PURPOSE.
+   v7.3 ran the whole thing in 420ms, which meant the effect technically played
+   and nobody ever saw it. This is a three-beat sequence you can actually watch:
+
+     0.00-0.70s  the orb spins up and winds tight
+     0.45-1.90s  smoke spirals out of it in a vortex, rotating as it expands
+     1.55-2.55s  the smoke thins and Iris fades up through it
+
+   Each smoke plume rotates around the centre while it scales, which is what
+   makes it read as a vortex rather than a puff. Nothing flashes: every element
+   moves on a continuous opacity/transform curve, nothing toggles state.
+   If you shorten this, shorten the whole sequence proportionally — the
+   overlaps between the three beats are what stop it looking like three
+   separate animations played in a row. */
+.ir-poof{position:absolute;inset:-40px;display:none;pointer-events:none;overflow:visible}
 .ir-launch.ir-poofing .ir-poof{display:block}
-.ir-launch.ir-poofing .ir-orb-wrap{animation:ir-orb-burst .42s ease-in forwards}
-@keyframes ir-orb-burst{0%{opacity:1;transform:scale(1)}55%{opacity:.9;transform:scale(1.28)}
-  100%{opacity:0;transform:scale(.3)}}
-.ir-launch.ir-poofing .ir-fab > svg:not(.ir-orb){animation:ir-iris-arrive .6s cubic-bezier(.34,1.4,.64,1) .22s both}
-@keyframes ir-iris-arrive{0%{opacity:0;transform:scale(.55) translateY(8px)}
-  60%{opacity:1}100%{opacity:1;transform:scale(1) translateY(0)}}
-.ir-pf{transform-box:fill-box;transform-origin:center;animation:ir-pf-go .72s ease-out forwards}
-.ir-pf:nth-of-type(2){animation-delay:.04s}.ir-pf:nth-of-type(3){animation-delay:.08s}
-.ir-pf:nth-of-type(4){animation-delay:.02s}.ir-pf:nth-of-type(5){animation-delay:.1s}
-.ir-pf:nth-of-type(6){animation-delay:.06s}.ir-pf:nth-of-type(7){animation-delay:.12s}
-.ir-pf:nth-of-type(8){animation-delay:.09s}
-@keyframes ir-pf-go{0%{opacity:0;transform:scale(.2)}22%{opacity:.95}
-  100%{opacity:0;transform:scale(2.3)}}
+
+/* beat one — wind up, then collapse inward */
+.ir-launch.ir-poofing .ir-orb-wrap{animation:ir-orb-vanish 1.25s cubic-bezier(.55,0,.75,.2) forwards}
+@keyframes ir-orb-vanish{
+  0%{opacity:1;transform:scale(1) rotate(0deg)}
+  34%{opacity:1;transform:scale(1.14) rotate(150deg)}
+  62%{opacity:.85;transform:scale(.92) rotate(420deg)}
+  100%{opacity:0;transform:scale(.12) rotate(760deg)}
+}
+/* beat three — she comes up through the smoke, late and slow */
+.ir-launch.ir-poofing .ir-fab > svg:not(.ir-orb){
+  animation:ir-iris-arrive 1.0s cubic-bezier(.28,1.2,.5,1) 1.55s both}
+@keyframes ir-iris-arrive{
+  0%{opacity:0;transform:scale(.42) translateY(16px) rotate(-8deg);filter:blur(4px)}
+  45%{opacity:.7;filter:blur(1.5px)}
+  75%{opacity:1;transform:scale(1.06) translateY(-3px) rotate(2deg);filter:blur(0)}
+  100%{opacity:1;transform:scale(1) translateY(0) rotate(0);filter:blur(0)}
+}
+/* beat two — the vortex. Each plume spirals out on its own timing. */
+.ir-pf{transform-box:fill-box;transform-origin:60px 60px;
+  animation:ir-vortex 1.45s cubic-bezier(.2,.55,.4,1) .45s forwards}
+.ir-pf:nth-of-type(2){animation-delay:.53s;animation-duration:1.6s}
+.ir-pf:nth-of-type(3){animation-delay:.61s;animation-duration:1.38s}
+.ir-pf:nth-of-type(4){animation-delay:.49s;animation-duration:1.72s}
+.ir-pf:nth-of-type(5){animation-delay:.68s;animation-duration:1.5s}
+.ir-pf:nth-of-type(6){animation-delay:.57s;animation-duration:1.64s}
+.ir-pf:nth-of-type(7){animation-delay:.74s;animation-duration:1.42s}
+.ir-pf:nth-of-type(8){animation-delay:.65s;animation-duration:1.56s}
+.ir-pf:nth-of-type(9){animation-delay:.8s;animation-duration:1.68s}
+.ir-pf:nth-of-type(10){animation-delay:.47s;animation-duration:1.58s}
+@keyframes ir-vortex{
+  0%{opacity:0;transform:rotate(0deg) scale(.18)}
+  18%{opacity:.85}
+  55%{opacity:.6;transform:rotate(190deg) scale(1.5)}
+  100%{opacity:0;transform:rotate(340deg) scale(2.9)}
+}
+/* a soft flare behind the smoke so the corner brightens as she lands */
+.ir-pf-flare{transform-box:fill-box;transform-origin:center;
+  animation:ir-flare 2.3s ease-out .35s forwards}
+@keyframes ir-flare{
+  0%{opacity:0;transform:scale(.3)}
+  22%{opacity:.55;transform:scale(1)}
+  60%{opacity:.3;transform:scale(1.5)}
+  100%{opacity:0;transform:scale(2.1)}
+}
 
 /* ── full figure: she gets a proper entrance when the panel opens, then the
    conversation scrolls over her. Draws from the same <g id="irx-iris"> as the
@@ -361,16 +406,30 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
    is the whole point. Big rounded corners, generous tail, dark text for
    contrast (the old #cfe0f2 on navy was marginal at 13px). */
 .ir-bubble{
-  position:absolute;right:0;bottom:92px;width:286px;
+  position:absolute;right:0;bottom:104px;width:286px;
   background:#fff;border:3px solid #14305a;border-radius:26px;
   padding:16px 18px 15px;
   box-shadow:0 22px 52px rgba(6,16,34,.44),0 4px 12px rgba(6,16,34,.22);
   display:none;animation:ir-pop .38s cubic-bezier(.34,1.5,.64,1) forwards;color:#0F1B33;
 }
-/* tail: a rotated square patched over the border so it reads as one shape */
-.ir-bubble::after{content:'';position:absolute;right:30px;bottom:-13px;width:22px;height:22px;
-  background:#fff;border-right:3px solid #14305a;border-bottom:3px solid #14305a;
-  transform:rotate(45deg);border-bottom-right-radius:6px}
+/* CLEARANCE (v7.4). In orb mode the launcher is taller than it used to be —
+   88px ball, a 9px gap, then the two-line label pill underneath. bottom:104px
+   was measured against the OLD launcher and left the bubble sitting across the
+   ball and the unread badge. This raises it so the whole bubble, tail included,
+   finishes above the ball. If you ever change the pill or the fab size, this
+   number moves with it. */
+.ir-launch.ir-orb-mode .ir-bubble{bottom:164px}
+@media(max-width:400px){.ir-launch.ir-orb-mode .ir-bubble{bottom:158px}}
+
+/* TAIL (v7.4) — a real tapered point rather than a rotated square. Two stacked
+   triangles: the lower one is the border colour, the upper one is the fill sat
+   3px inside it, which is what gives a crisp outlined point. The old rotated
+   square read as a diamond stuck to the corner and its edges never quite met
+   the border radius. */
+.ir-bubble::before,.ir-bubble::after{content:'';position:absolute;right:34px;width:0;height:0;
+  border-left:13px solid transparent;border-right:13px solid transparent}
+.ir-bubble::before{bottom:-19px;border-top:19px solid #14305a}
+.ir-bubble::after{bottom:-14px;border-top:15px solid #fff}
 .ir-bub-head{display:flex;align-items:baseline;gap:8px;margin-bottom:7px;padding-right:22px}
 .ir-bub-name{font-size:14px;font-weight:800;color:#14305a;letter-spacing:-.01em}
 .ir-bub-role{font-size:10.5px;font-weight:700;color:#128a4a}
@@ -383,10 +442,18 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
 /* inline links inside a bot message (see fmt()) */
 .ir-lnk{color:#2563EB;font-weight:700;text-decoration:underline;text-underline-offset:2px}
 .ir-lnk:hover{color:#1D4ED8}
-.ir-bub-act{display:flex;gap:8px;margin-top:11px}
-.ir-bub-yes{flex:1;background:linear-gradient(140deg,#ff7a2f,#ff9f45);color:#fff;border:none;
-  border-radius:9px;padding:8px 10px;font-size:12.5px;font-weight:700;cursor:pointer;
-  font-family:'Outfit',sans-serif;transition:filter .16s}
+/* ACTION ROW (v7.4). The orange button used to sit flush to the padding edge
+   and read as though it had escaped the bubble. It now has its own inset and a
+   defined border, and the label is heavier — this is the primary action in the
+   whole widget and it was the lightest thing in it. */
+.ir-bub-act{display:flex;gap:9px;margin-top:13px;padding-top:12px;
+  border-top:1.5px solid rgba(20,48,90,.12)}
+.ir-bub-yes{flex:1;background:linear-gradient(140deg,#ff7a2f,#ff9f45);color:#fff;
+  border:2px solid #E0570F;
+  border-radius:10px;padding:10px 12px;font-size:13.5px;font-weight:800;cursor:pointer;
+  letter-spacing:.01em;box-shadow:0 3px 10px rgba(224,87,15,.32);
+  font-family:'Outfit',sans-serif;transition:filter .16s,transform .16s}
+.ir-bub-yes:active{transform:translateY(1px)}
 .ir-bub-yes:hover{filter:brightness(1.1)}
 .ir-bub-no{background:#EDF1F8;color:#5C6B85;border:1px solid #D7E0EE;
   border-radius:9px;padding:8px 12px;font-size:12.5px;font-weight:700;cursor:pointer;
@@ -576,6 +643,11 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
   .ir-glyph{animation:none!important}
   .ir-glyph:nth-of-type(6){opacity:.85!important}
   .ir-pill::after{display:none!important}
+  /* the vanish is 2.6s of spinning smoke — exactly what reduced-motion is for.
+     Iris simply appears instead; revealIris() shortens its own timer to match. */
+  .ir-launch.ir-poofing .ir-orb-wrap{animation:none!important;opacity:0!important}
+  .ir-launch.ir-poofing .ir-fab > svg:not(.ir-orb){animation:none!important;opacity:1!important}
+  .ir-pf,.ir-pf-flare{animation:none!important;opacity:0!important}
 }
 `;
 
@@ -1005,16 +1077,33 @@ var IRIS_HTML = `
       </span>
 
       <!-- poof: fires once, on the reveal click -->
+      <!-- THE VANISH: ten smoke plumes plus a flare. Blurred heavily and sat on
+           a shared rotation origin so they spiral rather than scatter. -->
       <span class="ir-poof" aria-hidden="true">
         <svg viewBox="0 0 120 120" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" focusable="false">
-          <circle class="ir-pf" cx="60" cy="60" r="13" fill="#fff" opacity=".9"/>
-          <circle class="ir-pf" cx="36" cy="44" r="9" fill="#EAFAFF"/>
-          <circle class="ir-pf" cx="84" cy="46" r="8" fill="#DCEEFF"/>
-          <circle class="ir-pf" cx="44" cy="82" r="10" fill="#F3E9FF"/>
-          <circle class="ir-pf" cx="80" cy="80" r="7" fill="#FFEBD3"/>
-          <circle class="ir-pf" cx="60" cy="30" r="6" fill="#fff"/>
-          <circle class="ir-pf" cx="26" cy="62" r="6" fill="#EAFAFF"/>
-          <circle class="ir-pf" cx="94" cy="62" r="5" fill="#F3E9FF"/>
+          <defs>
+            <filter id="irSmoke" x="-70%" y="-70%" width="240%" height="240%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4.2"/>
+            </filter>
+            <radialGradient id="irFlareG" cx=".5" cy=".5" r=".5">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity=".95"/>
+              <stop offset=".45" stop-color="#CFF0FF" stop-opacity=".5"/>
+              <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle class="ir-pf-flare" cx="60" cy="60" r="52" fill="url(#irFlareG)"/>
+          <g filter="url(#irSmoke)">
+            <ellipse class="ir-pf" cx="60" cy="40" rx="13" ry="9" fill="#FFFFFF" opacity=".85"/>
+            <ellipse class="ir-pf" cx="80" cy="52" rx="11" ry="8" fill="#EAFAFF"/>
+            <ellipse class="ir-pf" cx="84" cy="72" rx="10" ry="7" fill="#DCEEFF"/>
+            <ellipse class="ir-pf" cx="68" cy="86" rx="12" ry="8" fill="#F3E9FF"/>
+            <ellipse class="ir-pf" cx="46" cy="88" rx="9" ry="7" fill="#FFEBD3"/>
+            <ellipse class="ir-pf" cx="32" cy="74" rx="11" ry="8" fill="#FFFFFF"/>
+            <ellipse class="ir-pf" cx="28" cy="52" rx="10" ry="7" fill="#EAFAFF"/>
+            <ellipse class="ir-pf" cx="42" cy="34" rx="9" ry="6" fill="#F3E9FF"/>
+            <ellipse class="ir-pf" cx="60" cy="60" rx="14" ry="10" fill="#FFFFFF" opacity=".7"/>
+            <ellipse class="ir-pf" cx="72" cy="30" rx="8" ry="6" fill="#DCEEFF"/>
+          </g>
         </svg>
       </span>
 
@@ -2842,11 +2931,17 @@ function revealIris(then){
   markOrbSeen();
   $launch.classList.add('ir-poofing');
   setPillText('Grow your business');
+  /* Hold for the full 2.6s vanish before opening the panel — the whole point of
+     slowing it down was so it gets watched, and opening the chat over the top
+     of it hides the thing we just spent the time on. Under reduced-motion the
+     CSS skips the animation, so the wait drops to almost nothing. */
+  var reduced = false;
+  try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
   setTimeout(function(){
     $launch.classList.remove('ir-orb-mode');
     $launch.classList.remove('ir-poofing');
     if (then) then();
-  }, 460);
+  }, reduced ? 160 : 2600);
 }
 
 $fab.addEventListener('click', function(){
