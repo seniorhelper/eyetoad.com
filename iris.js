@@ -99,6 +99,20 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
 @keyframes ir-ping{0%{box-shadow:0 0 0 0 rgba(255,122,47,.5)}
   70%,100%{box-shadow:0 0 0 20px rgba(255,122,47,0)}}
 
+
+/* ── full figure: she gets a proper entrance when the panel opens, then the
+   conversation scrolls over her. Draws from the same <symbol> as the
+   launcher, so the artwork exists once in the file. ── */
+.ir-stage{display:flex;flex-direction:column;align-items:center;padding:6px 0 14px;
+  animation:ir-stage-in .55s cubic-bezier(.34,1.3,.64,1) both}
+.ir-stage-art{width:132px;height:auto;display:block;overflow:visible;
+  filter:drop-shadow(0 14px 26px rgba(0,0,0,.55))}
+.ir-stage-cap{margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#5d7896}
+@keyframes ir-stage-in{from{opacity:0;transform:translateY(16px) scale(.92)}
+  to{opacity:1;transform:none}}
+@media(max-height:640px){.ir-stage-art{width:104px}}
+
 /* ── Iris character animation (namespaced irx-*) ── */
 
 .irx-float{animation:irxFloat 5s ease-in-out infinite}
@@ -386,7 +400,11 @@ var IRIS_HTML = `
 
     <div class="ir-prog" id="ir-prog"><div class="ir-prog-f" id="ir-prog-f"></div></div>
 
-    <div class="ir-msgs" id="ir-msgs" role="log" aria-live="polite" aria-label="Conversation with Iris"></div>
+    <div class="ir-msgs" id="ir-msgs" role="log" aria-live="polite" aria-label="Conversation with Iris">
+    <div class="ir-stage" id="ir-stage">
+      <svg class="ir-stage-art" viewBox="0 0 170 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Iris, the Eye To Ad Media growth assistant"><use href="#irx-iris"/></svg>
+      <div class="ir-stage-cap">Iris &middot; growth assistant</div>
+    </div></div>
 
     <div class="ir-foot">
       <div class="ir-inrow">
@@ -407,26 +425,7 @@ var IRIS_HTML = `
     </div>
   </div>
 
-  <!-- ═══════════ PROACTIVE BUBBLE ═══════════ -->
-  <div class="ir-bubble" id="ir-bubble" role="status">
-    <button class="ir-bub-x" id="ir-bub-x" type="button" aria-label="Dismiss">&#10005;</button>
-    <div class="ir-bub-head"><span class="ir-bub-name">Iris</span><span class="ir-bub-role">Growth assistant</span></div>
-    <div class="ir-bub-txt">Most sites lose customers somewhere they can&rsquo;t see.
-      Tell me your website and I&rsquo;ll tell you where yours is leaking.</div>
-    <div class="ir-bub-act">
-      <button class="ir-bub-yes" id="ir-bub-yes" type="button">Let's talk</button>
-      <button class="ir-bub-no" id="ir-bub-no" type="button">Not now</button>
-    </div>
-  </div>
-
-  <!-- ═══════════ LAUNCHER ═══════════ -->
-  <div class="ir-launch" id="ir-launch">
-
-    <button class="ir-fab" id="ir-fab" type="button" aria-expanded="false"
-            aria-controls="ir-panel" aria-label="Open chat with Iris, growth assistant">
-      <!-- ── IRIS: target-bodied growth bot. Cloned into the header avatar at runtime. ── -->
-      <svg viewBox="16 4 138 138" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
-<defs>
+  <svg class="ir-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
         <linearGradient id="irxRobe" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#3358CC"/><stop offset=".5" stop-color="#1E3A8A"/><stop offset="1" stop-color="#122A63"/>
         </linearGradient>
@@ -436,8 +435,7 @@ var IRIS_HTML = `
         <radialGradient id="irxHalo" cx=".5" cy=".5" r=".5">
           <stop offset=".55" stop-color="#FF8438" stop-opacity=".4"/><stop offset="1" stop-color="#FF8438" stop-opacity="0"/>
         </radialGradient>
-      </defs>
-<g id="irx-art" class="irx-float">
+      </defs><symbol id="irx-iris" viewBox="0 0 170 320"><g id="irx-art" class="irx-float">
 
         <!-- ===== STAFF (behind) ===== -->
         <path d="M30 62 L27 300" stroke="#93A6C9" stroke-width="7" stroke-linecap="round"/>
@@ -619,8 +617,27 @@ var IRIS_HTML = `
         <circle cx="70" cy="58" r="5.5" fill="url(#irxEye)" stroke="#0B1626" stroke-width="2"/>
         <circle cx="70" cy="58" r="2" fill="#0B1626"/>
         <circle cx="72" cy="20" r="4.5" fill="#FBBF24" stroke="#0B1626" stroke-width="2.5" class="irx-glow"/>
-      </g>
-</svg>
+      </g></symbol></svg>
+
+  <!-- ═══════════ PROACTIVE BUBBLE ═══════════ -->
+  <div class="ir-bubble" id="ir-bubble" role="status">
+    <button class="ir-bub-x" id="ir-bub-x" type="button" aria-label="Dismiss">&#10005;</button>
+    <div class="ir-bub-head"><span class="ir-bub-name">Iris</span><span class="ir-bub-role">Growth assistant</span></div>
+    <div class="ir-bub-txt">Most sites lose customers somewhere they can&rsquo;t see.
+      Tell me your website and I&rsquo;ll tell you where yours is leaking.</div>
+    <div class="ir-bub-act">
+      <button class="ir-bub-yes" id="ir-bub-yes" type="button">Let's talk</button>
+      <button class="ir-bub-no" id="ir-bub-no" type="button">Not now</button>
+    </div>
+  </div>
+
+  <!-- ═══════════ LAUNCHER ═══════════ -->
+  <div class="ir-launch" id="ir-launch">
+
+    <button class="ir-fab" id="ir-fab" type="button" aria-expanded="false"
+            aria-controls="ir-panel" aria-label="Open chat with Iris, growth assistant">
+      <!-- ── IRIS: target-bodied growth bot. Cloned into the header avatar at runtime. ── -->
+      <svg viewBox="16 4 138 138" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use href="#irx-iris"/></svg>
       <span class="ir-badge" id="ir-badge" aria-hidden="true"></span>
     </button>
 
