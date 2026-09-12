@@ -425,6 +425,21 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
    fourth chrome band above the fold; its message lives in the ticker. This
    deleted .ai-strip / .ai-inner / .ai-badge / .ab-* and their two media
    query blocks — roughly 1.5KB of rules with nothing left to style. */
+
+/* Slow ridge parallax. Three layers drift at different rates so the range
+   reads as depth rather than a flat graphic. Held still under reduced
+   motion. Transform only — no layout, no repaint cost. */
+.sl-range svg{will-change:transform}
+.sl-ridge{transform-origin:center bottom}
+.sl-r1{animation:sl-drift-a 34s ease-in-out infinite}
+.sl-r2{animation:sl-drift-b 46s ease-in-out infinite}
+.sl-r3{animation:sl-drift-c 58s ease-in-out infinite}
+@keyframes sl-drift-a{0%,100%{transform:translateX(0)}50%{transform:translateX(-14px)}}
+@keyframes sl-drift-b{0%,100%{transform:translateX(0)}50%{transform:translateX(-26px)}}
+@keyframes sl-drift-c{0%,100%{transform:translateX(0)}50%{transform:translateX(-38px)}}
+@media(prefers-reduced-motion:reduce){
+  .sl-r1,.sl-r2,.sl-r3{animation:none!important}
+}
 </style>
 
 <style>
@@ -1064,8 +1079,8 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   <div class="wrap sl-hero-grid">
     <div>
       <span class="chip sl-chip">Salt Lake City &middot; Wasatch Front, Utah</span>
-      <h1 id="h1">Salt Lake City SEO for a Market Running <em>Two Economies at Once</em></h1>
-      <p>The fourth-ranked tech market in North America, outpacing Denver, Phoenix and San Francisco for job growth. And underneath it, a local service economy almost nobody is optimizing properly.</p>
+      <h1 id="h1">The City Is Booming.<br>Your Phone Should Be <em>Louder.</em></h1>
+      <p>Salt Lake runs two economies at once. On top, the fourth-ranked tech market in North America, outpacing Denver, Phoenix and San Francisco for job growth. <strong>Underneath it, a local service economy full of businesses who read those headlines and wonder why none of it reached them.</strong> That gap is not the market. It is visibility.</p>
       <div class="sl-stats">
         <div class="sl-stat"><b>67,500+</b><span>tech jobs in the metro</span></div>
         <div class="sl-stat"><b>$124.4B</b><span>metro GDP, 2026</span></div>
@@ -1076,7 +1091,7 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <div class="sl-form-card">
       <h3>Free Salt Lake City Audit</h3>
       <p class="sl-form-sub">Where you rank, who sits above you, and whether AI assistants name you. Back within one business day.</p>
-      <form id="sl-top-form" method="POST" novalidate data-fs="info@eyetoad.com">
+      <form id="sl-top-form" method="POST" novalidate data-x="aW5mbw==" data-y="ZXlldG9hZC5jb20=">
         <div class="sl-hp"><label>Leave blank<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
         <input type="text" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true" class="sl-hp2">
         <input type="hidden" name="_captcha" value="false">
@@ -1281,13 +1296,12 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <div class="lf-card">
       <h3>Free Salt Lake City SEO Audit</h3>
       <p class="lf-sub">Usually back within one business day.</p>
-      <form id="loc-form" method="POST" novalidate data-fs="info@eyetoad.com">
+      <form id="loc-form" method="POST" novalidate data-x="aW5mbw==" data-y="ZXlldG9hZC5jb20=">
         <input type="text" name="_honey" id="_honey_loc" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
         <input type="email" name="alt_contact_url" id="_decoy_loc" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
         <input type="hidden" name="_loadtime" id="_loadtime_loc" value="">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="Free SEO Audit Request — Salt Lake City page">
-        <input type="hidden" name="_next" value="https://eyetoad.com/thank-you/">
         <input type="hidden" name="form_source" value="Salt Lake City SEO location page">
 
         <label for="lf-name">Your name</label>
@@ -1598,13 +1612,20 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
    form at a NEW address and you must submit once through the regular endpoint
    and approve the confirmation email, or every AJAX send falls back to
    "unsure". */
+/* Destination is assembled at submit time from two encoded halves, so no
+   contiguous address exists anywhere in the served markup or script. */
+function etaTo(form){
+  try{
+    return atob(form.getAttribute('data-x'))+String.fromCharCode(64)+atob(form.getAttribute('data-y'));
+  }catch(e){ return ''; }
+}
 (function(){
   var AJAX='https://formsubmit.co/ajax/';
   var PLAIN='https://formsubmit.co/';
   var PHONE='1-800-481-8638';
 
   function buildAction(form,ajax){
-    var to=form.getAttribute('data-fs')||'info@eyetoad.com';
+    var to=etaTo(form);
     return (ajax?AJAX:PLAIN)+to;
   }
   function serialize(form){
@@ -1986,7 +2007,7 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     if(f.elements['phone'].value.replace(/\D/g,'').length<10){show('err','Please enter a valid phone number with area code.');return;}
     btn.disabled=true; btn.textContent='Sending...';
     var data={}; Array.prototype.forEach.call(f.elements,function(el){if(el.name&&el.type!=='submit')data[el.name]=el.value;});
-    var to=f.getAttribute('data-fs')||'info@eyetoad.com', done=false;
+    var to=etaTo(f), done=false;
     function finish(state){
       if(done)return; done=true;
       if(state==='sent'){f.style.display='none';show('ok','<strong>Sent.</strong> We will come back to you within one business day.');return;}
@@ -2043,12 +2064,86 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     var email=document.getElementById('lf-email').value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){e.preventDefault();show('Please enter a valid email address.');return;}
 
-    /* Endpoint assembled here, never present in the raw HTML. */
-    form.action=['https:','','formsubmit.co',form.getAttribute('data-fs')||'info@eyetoad.com'].join('/');
+    /* Endpoint assembled here; no contiguous address exists in the markup. */
+    form.action=['https:','','formsubmit.co',etaTo(form)].join('/');
     last=now;
     btn.disabled=true;
     btn.textContent='Sending...';
   });
+})();
+
+
+/* ============================================================
+   HERO STAT COUNT-UP
+   Animates the figures already present in the hero stat blocks.
+   No new markup: it reads whatever is in each <b>, splits off any
+   prefix/suffix, counts the numeric part and rebuilds the string
+   exactly as authored (commas and decimals preserved).
+   Runs once, on view. Skipped entirely under reduced motion, where
+   the authored value simply stays put.
+   ============================================================ */
+(function(){
+  var nodes = document.querySelectorAll('.sl-stat b');
+  if(!nodes.length) return;
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+
+  function parse(raw){
+    var m = raw.match(/^([^0-9]*)([0-9][0-9,]*(?:\.[0-9]+)?)(.*)$/);
+    if(!m) return null;
+    var digits = m[2];
+    return {
+      pre: m[1],
+      post: m[3],
+      target: parseFloat(digits.replace(/,/g,'')),
+      grouped: digits.indexOf(',') > -1,
+      decimals: (digits.split('.')[1] || '').length
+    };
+  }
+
+  function render(p, val){
+    var s = p.decimals ? val.toFixed(p.decimals) : String(Math.round(val));
+    if(p.grouped){
+      var bits = s.split('.');
+      bits[0] = bits[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      s = bits.join('.');
+    }
+    return p.pre + s + p.post;
+  }
+
+  function run(el){
+    if(el.dataset.counted) return;
+    var p = parse((el.textContent||'').trim());
+    if(!p){ el.dataset.counted = '1'; return; }
+    el.dataset.counted = '1';
+
+    var DUR = 1100, start = null;
+    /* fixed width while counting so the row does not reflow */
+    el.style.display = 'inline-block';
+    el.style.minWidth = el.getBoundingClientRect().width + 'px';
+
+    function step(ts){
+      if(start === null) start = ts;
+      var t = Math.min(1, (ts - start) / DUR);
+      var eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = render(p, p.target * eased);
+      if(t < 1){ requestAnimationFrame(step); }
+      else { el.textContent = render(p, p.target); el.style.minWidth = ''; }
+    }
+    requestAnimationFrame(step);
+  }
+
+  if(!('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(nodes, run);
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ run(e.target); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.4});
+  Array.prototype.forEach.call(nodes, function(n){ io.observe(n); });
 })();
 
 </script>
