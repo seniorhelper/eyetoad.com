@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Website Design Built to Convert | Eye To Ad Media</title>
+<meta name="description" content="Custom website design, hand-coded for conversion, speed and AI citation. No templates, no page-builder bloat. Free build plan. Call 1-800-481-8638.">
+<link rel="canonical" href="https://eyetoad.com/custom-website-design/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Eye To Ad Media">
+<meta property="og:title" content="Custom Website Design Built to Convert | Eye To Ad Media">
+<meta property="og:description" content="Custom website design, hand-coded for conversion, speed and AI citation. No templates, no page-builder bloat.">
+<meta property="og:url" content="https://eyetoad.com/custom-website-design/">
+<meta property="og:image" content="https://eyetoad.com/images/images/denver-seo-services-hero.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Eye To Ad Media — custom website design">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Custom Website Design Built to Convert | Eye To Ad Media">
+<meta name="twitter:description" content="Custom website design, hand-coded for conversion, speed and AI citation. No templates, no page-builder bloat.">
+<meta name="twitter:image" content="https://eyetoad.com/images/images/denver-seo-services-hero.png">
+<meta name="theme-color" content="#08060F">
+
+<link rel="shortcut icon" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://formsubmit.co">
+<!-- Outfit is in this request because iris.js needs it. Do not remove it. -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="/images/images/eye-to-ad-media-logo-denver-seo.png" fetchpriority="high">
+
+<style>
+/* ===== TOKENS ===== */
+:root{
+  --ink:#101828;
+  --ink2:#1D2939;
+  --ink3:#344054;
+  --blue:#2563EB;
+  --blue2:#1D4ED8;
+  --blue-light:#EFF6FF;
+  --orange:#F97316;
+  --orange2:#EA580C;
+  --orange-light:#FFF7ED;
+  --white:#FFFFFF;
+  --off:#F9FAFB;
+  --border:#E4E7EC;
+  --muted:#667085;
+  --r8:8px;--r12:12px;--r16:16px;--r24:24px;
+  --sh:0 4px 16px rgba(0,0,0,.09);
+  --sh-lg:0 16px 48px rgba(0,0,0,.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;max-width:100%}
+
+/* ============================================================
+   OVERFLOW CONTROL — Aug 5 2026 REWRITE.
+   The old rule was:  *{max-width:100%;word-break:break-word}
+   Applied to EVERY element, `word-break:break-word` splits ordinary
+   prose mid-word on narrow screens — "optimiza-\ntion" — which looks
+   like a rendering bug and is what the audit flagged.
+   The replacement does the same containment job without touching
+   normal text: `overflow-wrap:anywhere` only breaks a word when it
+   genuinely cannot fit (long URLs, email addresses, unspaced
+   strings), and max-width is scoped to the elements that actually
+   overflow. Do not reinstate the universal selector.
+   ============================================================ */
+img,svg,video,canvas,iframe,table,pre,blockquote{max-width:100%}
+body,p,li,h1,h2,h3,h4,td,th,dd,dt,figcaption,address{overflow-wrap:anywhere}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'Inter',sans-serif;color:var(--ink3);background:var(--white);line-height:1.7;font-size:16px}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+/* ===== TYPE ===== */
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:900;line-height:1.1;color:var(--ink)}
+h1{font-size:clamp(1.85rem,5vw,3.2rem)}
+h2{font-size:clamp(1.65rem,3.5vw,2.4rem)}
+h3{font-size:clamp(1.1rem,2vw,1.35rem);font-weight:700}
+h4{font-size:1rem;font-weight:700}
+p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
+
+/* ===== LAYOUT ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;width:100%}
+.section{padding:84px 0}
+.tc{text-align:center}
+.skip{position:absolute;left:-9999px;top:0;background:var(--orange);color:#fff;padding:12px 18px;font-weight:700;z-index:99999}
+.skip:focus{left:8px;top:8px}
+
+/* ===== CHIPS / LABELS ===== */
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 13px;border-radius:20px;margin-bottom:12px}
+.chip-blue{color:var(--blue);background:var(--blue-light);border:1px solid #BFDBFE}
+.chip-orange{color:var(--orange2);background:var(--orange-light);border:1px solid #FED7AA}
+.chip-dark{color:rgba(255,255,255,.6);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
+.chip-white{color:var(--ink2);background:rgba(255,255,255,.9);border:1px solid var(--border)}
+.chip-purple{color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe}
+
+/* ===== BUTTONS =====
+   VALID MODIFIERS ONLY: btn-orange, btn-blue, btn-ghost-white,
+   btn-ghost-blue, btn-white, btn-lg. There is no btn-primary and no
+   btn-ghost-light — using one silently renders an unstyled button. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
+.btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
+.btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
+.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 20px rgba(37,99,235,.3)}
+.btn-blue:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-2px)}
+.btn-ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-ghost-blue{background:transparent;color:var(--blue);border-color:var(--blue)}
+.btn-ghost-blue:hover{background:var(--blue-light)}
+.btn-white{background:#fff;color:var(--ink);border-color:#fff}
+.btn-white:hover{background:var(--off)}
+.btn-lg{padding:17px 36px;font-size:1.08rem}
+
+/* ===== UTILITY BAR (very top — domain search + phone) ===== */
+.ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
+.ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:7px 0;flex-wrap:wrap}
+.ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+/* The left group may shrink; the right group may not. Without this the domain
+   pill forces the row wider than .wrap on narrow screens and the phone number
+   is pushed past the 20px gutter, last digit flush to the viewport edge. */
+.ubar-left{min-width:0;flex:0 1 auto;overflow:hidden}
+.ubar-right{flex:0 0 auto}
+/* DOMAIN PILL: was an orange-tinted pill competing with the CTA. Now a quiet
+   outline that reads as a utility link, which is what it is. */
+.ubar-dom{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);padding:7px 15px;border-radius:8px;transition:all .18s;white-space:nowrap}
+.ubar-dom:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.32)}
+.ubar-txt b{color:#FDBA74;font-weight:700}
+.ubar-txt{font-size:.78rem;color:rgba(255,255,255,.55);white-space:nowrap}
+.ubar-ic{width:13px;height:13px;flex:none;color:#FDBA74}
+.ubar-go{font-size:1.05rem;line-height:1;color:#FDBA74;margin-left:1px;transition:transform .18s}
+.ubar-dom:hover .ubar-go{transform:translateX(3px)}
+.ubar-dom:hover .ubar-txt{color:rgba(255,255,255,.8)}
+.ubar-dom:focus-visible{outline:2px solid #FDBA74;outline-offset:2px}
+.ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
+.ubar-link:hover{color:var(--orange)}
+/* PHONE NUMBER — deliberately the loudest text in the chrome (Sept 2026).
+   1.75rem is roughly 2.1x the old .82rem and is about the practical ceiling
+   for a single-row utility bar; past this the bar becomes the tallest thing
+   above the fold and pushes the hero down, which is the problem the AI-strip
+   removal just solved. If it needs to be bigger still, it has to move into
+   the header row on its own line rather than grow here. */
+.ubar-tel{font-size:1.75rem;font-weight:800;color:#fff;white-space:nowrap;padding-right:4px;letter-spacing:-.01em;line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.5);transition:color .18s}
+.ubar-tel:hover{color:var(--orange)}
+/* "Call" is set smaller than the number on purpose: it supplies the verb a
+   CTA needs without stealing size from the thing you actually want read and
+   tapped. Sentence case, not all-caps. */
+.ubar-tel-lbl{font-size:.52em;font-weight:600;color:rgba(255,255,255,.6);margin-right:7px;letter-spacing:.02em}
+.ubar-tel:hover .ubar-tel-lbl{color:rgba(249,115,22,.75)}
+@media(max-width:768px){
+  .ubar-txt,.ubar-link{display:none}
+  .ubar-inner{justify-content:space-between;min-height:38px;gap:8px;flex-wrap:nowrap}
+  .ubar-dom{font-size:.72rem;padding:6px 11px}
+  .ubar-tel{font-size:1.35rem;padding-right:2px}
+  .ubar-tel-lbl{margin-right:5px}
+}
+
+/* ===== TICKER ===== */
+/* TICKER (Sept 2026): was a full-width SOLID ORANGE band. Between it, the
+   orange CTA, the orange eyebrow and the gold VIP card, the first screen had
+   four competing warm blocks — the "circus" problem. The band is now dark and
+   sits with the utility bar, header and hero as one continuous dark field, so
+   ORANGE APPEARS EXACTLY ONCE ABOVE THE FOLD: the primary CTA. Keep it that
+   way. If you need to accent something up here, use the separator diamonds. */
+.ticker{background:linear-gradient(90deg,#080E1A 0%,#16233E 50%,#080E1A 100%);border-top:1px solid rgba(249,115,22,.22);border-bottom:1px solid rgba(249,115,22,.22);padding:8px 0;overflow:hidden;position:relative;z-index:1001}
+.ticker-track{display:flex;animation:tick 28s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{white-space:nowrap;padding:0 32px;font-size:.79rem;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:10px}
+.ticker-sep{color:var(--orange);opacity:.65}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Marquee speed. 21.6s desktop / 16.8s mobile. Lower = faster. The track is
+   DOUBLED (10 spans for 5 items) and animates to -50%, so one full cycle
+   shows each item exactly once. Keep both halves identical.
+   Slowed 20% on Aug 14 2026 (was 18s / 14s) — the previous pace was
+   marginally too fast to finish reading an item on a phone. */
+@media(max-width:768px){.ticker-track{animation-duration:22s}}
+
+/* ============================================================
+   HEADER
+   LOGO SIZE (locked July 2026 — do NOT reduce):
+     desktop 300x102 / mobile 250x88 / footer matches header
+   The old build set .hdr-inner{height:300px}, producing ~220px of
+   EMPTY padding on mobile and pushing the hero below the fold.
+   Header is now content-height. The logo itself was NOT shrunk.
+   .mob-nav top offset is set by JS (measureHeader), never hard-coded,
+   so header height and menu position cannot drift apart.
+   ============================================================ */
+.hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
+.hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
+.logo{display:flex;align-items:center;flex-shrink:0}
+/* ============================================================
+   LOGO SIZE — ONE PLACE.
+   ROOT CAUSE (July 28 2026): eye-to-ad-media-logo-denver-seo.png
+   contains a large amount of TRANSPARENT PADDING. The artwork occupies
+   only a horizontal band in the middle of a much taller canvas. That is
+   why height-based sizing shrank the visible mark, and why width-based
+   sizing produced a ~330px tall header full of empty space.
+   THE FIX: fixed WIDTH and fixed HEIGHT window, then `object-fit:cover`
+   scales to fill the width and crops the transparent bands off top and
+   bottom. Nothing is distorted — only empty pixels are cut.
+   TO TUNE: `width` controls apparent size. `height` controls the air
+   around it (raise if the mark looks cropped, lower if there is dead
+   space). `object-position` is 44% rather than centre because the
+   artwork sits slightly ABOVE centre — that is why only the TOP edge
+   was clipping. Change nothing else.
+   The <img> width/height ATTRIBUTES are 300x102 to match what CSS
+   renders. They used to be 760x190 (the raw file), which reserved a box
+   with the wrong aspect ratio and caused a layout shift on first paint.
+   PERMANENT FIX: crop the padding out of the PNG itself, then this
+   collapses to a plain `width` + `height:auto`.
+   Breakpoints MUST stay in descending order (largest first).
+   ============================================================ */
+.brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
+
+/* ============================================================
+   HEADER FIT — ADDED Sep 2 2026. This fixes a real clipping bug,
+   not a cosmetic one. Read before touching any breakpoint below.
+
+   ROOT CAUSE: at full size the header row needs roughly 1340px —
+   a 300px logo, seven nav items, and three right-hand CTAs, none
+   of which may shrink (flex-shrink:0) or wrap (white-space:nowrap).
+   Its container is .wrap, capped at 1180px. So the row ALWAYS
+   overflowed its container by ~160px, at every viewport width.
+
+   WHY NOBODY CAUGHT IT: on a wide monitor that overflow spills into
+   the empty margin outside .wrap and is invisible. Below roughly
+   1540px of CSS width the spill runs past the viewport edge instead
+   and the Free Audit button is sliced in half. A 1920x1080 laptop at
+   125% display scaling is 1536 CSS px, which is exactly on the wrong
+   side of that line — which is how this was finally found. The
+   "empty space on the left" is the same bug seen from the other end:
+   the container stays centred while the content spills right.
+
+   THE FIX: shrink the row in stages so it fits 1180 at every width.
+   The rejected alternative was giving the header its own wider
+   container; that works, but it puts the logo ~110px left of the
+   hero headline and breaks the vertical alignment of the whole page
+   against every section below it.
+
+   THE TWO ITEMS DROPPED at the narrow end — the phone number and
+   the VIP pill — are BOTH still present in the utility bar sitting
+   directly above the header, so nothing becomes unreachable at any
+   width. That is why those two were chosen and not, say, the Free
+   Audit button, which has no duplicate anywhere in the chrome.
+
+   The hamburger now takes over at 1024px rather than 768px. Between
+   roughly 770 and 1000px the seven-item desktop nav genuinely cannot
+   fit, and a tablet getting the mobile menu is a normal outcome
+   rather than a compromise. The 768px block further down in the
+   RESPONSIVE section still repeats those three rules; that is
+   harmless duplication, not a conflict — the values are identical.
+
+   ABOVE 1600px NOTHING CHANGES. The logo stays at its locked
+   300x102, so the July 2026 size lock is preserved on real desktop
+   widths.
+
+   BREAKPOINTS MUST STAY IN DESCENDING ORDER (largest first).
+   ============================================================ */
+@media(max-width:1600px){
+  .hdr-inner{gap:10px}
+  .hdr-right{gap:7px}
+  .brand-logo{width:265px;height:92px}
+  .nl{font-size:.78rem;padding:8px 6px}
+  .hdr-vip{font-size:.78rem;padding:8px 13px}
+}
+@media(max-width:1150px){
+  /* The utility bar no longer carries a VIP duplicate, so hiding the pill here
+     would strand the link between 1024 and 1150px. Shrink it instead — it
+     survives down to 1024, where .hdr-right goes entirely and the mobile menu
+     (which has its own VIP entry) takes over. */
+  .hdr-vip{font-size:.72rem;padding:7px 11px;letter-spacing:-.01em}
+  .nl{font-size:.74rem;padding:8px 5px}
+}
+@media(max-width:1024px){
+  /* MOBILE NAV SWITCH — all three rules are required. Omitting any one
+     removes the hamburger entirely and strands the whole menu. */
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+}
+@media(max-width:768px){
+  .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
+  .brand-logo{width:250px;height:88px}
+}
+@media(max-width:430px){.brand-logo{width:205px;height:74px}}
+.nav{display:flex;align-items:center;gap:2px}
+.nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
+.nl:hover{color:#fff;background:rgba(255,255,255,.07)}
+/* domain search promoted out of the utility bar into the nav proper */
+.nl-tog{cursor:pointer;user-select:none}
+.nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
+.nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
+.ni{position:relative}
+.ni:hover .drop,.ni:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
+.drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
+.drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
+.drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+/* ============================================================
+   INDUSTRIES MEGA-DROPDOWN — CHROME v5 (Sep 2 2026)
+
+   WHY THIS EXISTS: the site has SEVENTEEN live industry pages and
+   the v4 dropdown listed nine. The other eight — auto repair,
+   dermatology, electrician, landscaping, personal injury, plumber,
+   restaurant and veterinarian — had NO sitewide internal link at
+   all and were reachable only via the /industries/ hub. A sitewide
+   nav link is one of the strongest internal signals a page can
+   receive, so those eight were being starved of the one thing that
+   was cheapest to give them.
+
+   WHY IT IS NOT A FLAT LIST: seventeen items in one column is a
+   ~700px tall menu, which is worse UX than the problem it solves.
+   This is a three-column grouped panel — six, five and six — that
+   stays one screenful on any laptop.
+
+   IT IS DELIBERATELY NOT A .drop. If it shared that class, the
+   existing rule `.ni:hover .drop{transform:translateY(0)}` would
+   cancel the translateX(-50%) that centres this panel and it would
+   hang off the right edge of the viewport. Two classes, two hover
+   rules, no interference. Do not merge them.
+
+   LABELS ARE SHORTENED ("Dentist SEO", not "Dentist SEO Denver").
+   Seventeen sitewide links all reading "<Industry> SEO Denver" is a
+   lot of identical exact-match anchor text pointing at seventeen
+   pages from every URL on the site. The geo term is carried by each
+   page's own title, H1, content and schema; the nav does not need
+   to repeat it seventeen times. This is an anchor-diversity choice,
+   not an oversight.
+
+   IF YOU ADD AN INDUSTRY PAGE: add it to the right group HERE, in
+   the MOBILE NAV, and on the /industries/ hub — same commit.
+   ============================================================ */
+.drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
+.ni:hover .drop-mega,.ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
+.drop-mega a{display:block;padding:7px 9px;border-radius:6px;font-size:.85rem;line-height:1.35;color:rgba(255,255,255,.72);transition:all .15s}
+.drop-mega a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+.drop-mega a[aria-current="page"]{background:rgba(37,99,235,.22);color:#BFDBFE;font-weight:700}
+.drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+.drop-all a{color:#93C5FD;font-weight:700}
+@media(max-width:1150px){.drop-mega{width:540px;gap:2px 10px}.drop-mega a{font-size:.81rem;padding:6px 8px}}
+/* mobile nav group sub-labels — quieter than .mob-sec so the three
+   industry groups read as subdivisions of Industries, not as peers
+   of Services and Company */
+.mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
+/* ============================================================
+   MOBILE NAV ACCORDION (Sept 2026). The mobile menu used to be a flat
+   list of every link on the site — 45+ items in one scroll. The desktop
+   nav had dropdowns; mobile did not, so on a phone the restructure was
+   invisible. Sections are now collapsed by default and the whole menu
+   fits one screen. Tapping a header opens one section.
+   If you add a nav section, give it a .mob-acc button and wrap its links
+   in a .mob-group div — the JS binds by class, so nothing else changes.
+   ============================================================ */
+/* menu close row — always reachable, never scrolls away */
+.mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
+/* the sticky header logo is still visible above the open menu, so a second
+   logo in here was just the brand twice on one screen */
+.mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
+.mob-x:hover{background:rgba(255,255,255,.16)}
+/* phone: dark with a bright white number so only ONE solid orange block
+   exists in the menu — the audit button, which is the primary action */
+.mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
+.mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
+.mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-dom2{display:block!important;margin:0 0 14px;padding:13px 16px!important;text-align:center;
+  background:rgba(249,115,22,.1);border:1.5px solid rgba(249,115,22,.4)!important;border-radius:var(--r12);
+  color:#FDBA74!important;font-weight:700!important;border-bottom:1.5px solid rgba(249,115,22,.4)!important}
+.hero-pitch{margin:14px 0 0;font-size:.93rem}
+.hero-pitch a{color:#9DC7F5;font-weight:500;border-bottom:none;padding-bottom:0}
+.hero-pitch a .hero-pitch-go{color:#CFE6FF;font-weight:700;
+  border-bottom:1.5px solid rgba(207,230,255,.5);padding-bottom:2px}
+.hero-pitch a:hover{color:#CFE6FF}
+.hero-pitch a:hover .hero-pitch-go{color:#fff;border-bottom-color:#fff}
+.hero-pitch a:focus-visible{outline:2px solid #CFE6FF;outline-offset:3px;border-radius:4px}
+.mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
+.mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
+.mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
+.mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
+.mob-group{display:none;padding-bottom:6px}
+/* Tapping an accordion header only expands it, so each section carries an
+   explicit link to its own hub page. Desktop parents are already links. */
+.mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
+  padding:11px 0!important;border-bottom:1px solid rgba(147,197,253,.2)!important}
+.mob-group.open{display:block}
+.hdr-right{display:flex;align-items:center;gap:9px}
+/* VIP Marketing Subscription pill — inline with Free Audit, reads as a CTA */
+.hdr-vip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#0b1220;background:linear-gradient(135deg,#FBBF24,#F97316);padding:9px 16px;border-radius:22px;white-space:nowrap;box-shadow:0 4px 18px rgba(249,115,22,.4);transition:all .2s}
+.hdr-vip:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(249,115,22,.55)}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:7px;flex-shrink:0}
+.burger span{display:block;height:2px;background:#fff;border-radius:2px;transition:all .28s ease}
+.burger span:nth-child(2){width:75%}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:16px 20px 40px;-webkit-overflow-scrolling:touch}
+.mob-nav.open{display:block}
+/* Iris mounts at #irisw (the #etad id belongs to the OLD inline widget still
+   on some pages — both are covered). Hidden while the menu is open so the
+   nudge bubble cannot overlap the navigation. Same for the mascot. */
+body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!important}
+.mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.mob-nav a:hover{color:var(--orange)}
+.mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
+.mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
+
+/* AI STRIP CSS REMOVED (Sept 2026) along with its markup. The strip was a
+   fourth chrome band above the fold; its message lives in the ticker. This
+   deleted .ai-strip / .ai-inner / .ai-badge / .ab-* and their two media
+   query blocks — roughly 1.5KB of rules with nothing left to style. */
+/* ===== FAQ ===== */
+.faq-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:38px}
+.faq-item{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;transition:border-color .2s;align-self:start}
+.faq-item:hover{border-color:#BFDBFE}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.4}
+.faq-ico{width:26px;height:26px;border-radius:50%;background:var(--off);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;color:var(--blue);transition:all .22s;margin-top:1px}
+.faq-item.open .faq-ico{background:var(--blue);color:#fff;transform:rotate(45deg);border-color:var(--blue)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 20px}
+.faq-item.open .faq-a{max-height:900px;padding:0 20px 18px}
+.faq-a p{font-size:.94rem;color:var(--muted);line-height:1.7}
+.faq-a a{color:var(--blue);font-weight:600}
+
+/* ===== FINAL CTA ===== */
+.fcta{position:relative;background:var(--ink);padding:96px 0;overflow:hidden}
+.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(37,99,235,.18) 0%,transparent 65%)}
+.fcta::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(249,115,22,.1) 0%,transparent 55%)}
+.fcta-inner{position:relative;z-index:2;text-align:center;max-width:660px;margin:0 auto}
+.fcta-inner h2{color:#fff;margin-bottom:14px}
+.fcta-inner p{color:rgba(255,255,255,.62);font-size:1.06rem;margin-bottom:34px}
+.fcta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.fcta-note{margin-top:15px;font-size:.8rem;color:rgba(255,255,255,.34);line-height:1.6;max-width:520px;margin-left:auto;margin-right:auto}
+.fcta-mini{margin-top:40px;border-top:1px solid rgba(255,255,255,.1);padding-top:36px;max-width:500px;margin-left:auto;margin-right:auto}
+.fcta-mini h3{color:#fff;font-size:1.1rem;margin-bottom:6px}
+.fcta-mini p{font-size:.84rem;color:rgba(255,255,255,.5);margin-bottom:18px}
+.fcta-mini-row{display:flex;gap:10px;flex-wrap:wrap}
+.fcta-mini input{flex:1;min-width:160px;padding:13px 14px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:var(--r8);color:#fff;font-family:'Inter',sans-serif;font-size:.95rem;outline:none}
+.fcta-mini input::placeholder{color:rgba(255,255,255,.38)}
+.fcta-mini input:focus{border-color:var(--orange)}
+.fcta-mini-btn{padding:13px 22px;background:var(--orange);color:#fff;border:none;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;white-space:nowrap;transition:background .2s}
+.fcta-mini-btn:hover{background:var(--orange2)}
+.footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:44px}
+.footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
+/* Footer logo tracks the header. The header shrinks at 1600 for the fit fix
+   above, so the footer follows at the same breakpoint to keep the two marks
+   the same size — the July 2026 note says the footer matches the header, and
+   this is what keeps that true. */
+@media(max-width:1600px){.footer-brand .brand-logo{width:265px;height:92px}}
+@media(max-width:768px){.footer-brand .brand-logo{width:260px;height:92px}}
+.footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
+.footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
+.footer-brand address a{color:#FB923C}
+.footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px}
+.footer-col a{display:block;font-size:.86rem;color:rgba(255,255,255,.75);padding:4px 0;transition:color .18s}
+.footer-col a:hover{color:var(--orange)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bot p{font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-links a:hover{color:var(--orange)}
+/* Iris sits bottom-right — keep the footer bottom row clear of it */
+@media(min-width:581px){.footer-bot{padding-bottom:34px}}
+@media(max-width:580px){.footer-bot{padding-bottom:78px}}
+/* HERO PITCH LINK — wrapping fix (Sept 11 2026).
+   The old copy ran "Not ready to talk to anyone? Walk the 10-minute pitch
+   yourself →" and on a phone it broke after "pitch", stranding "yourself →"
+   alone on a second line with a wide empty gap beside it. That gap reads as a
+   missing button, not as text.
+   Two changes: the copy is shorter, and the action half is an inline-block
+   with the arrow bound to it by a non-breaking space, so the arrow can never
+   separate from the words it belongs to. It still wraps on a very narrow
+   screen — it just wraps as two complete phrases instead of orphaning a word.
+   Do not add white-space:nowrap to the whole link; below ~360px that causes
+   horizontal overflow, which is worse than an ugly wrap. */
+.hero-pitch-go{display:inline-block}
+
+/* ── FREE TOOLS STRIP ── */
+.tools-sec{background:#fff}
+.tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:880px;margin:0 auto}
+.tool-card{display:flex;flex-direction:column;background:var(--off);border:1.5px solid var(--border);
+  border-radius:var(--r16);padding:28px 24px;transition:all .22s;text-decoration:none}
+.tool-card:hover{border-color:#BFDBFE;box-shadow:var(--sh-lg);transform:translateY(-4px)}
+.tool-ic{font-size:1.9rem;line-height:1;margin-bottom:12px}
+.tool-card h3{color:var(--ink);margin:0 0 8px;font-size:1.12rem}
+.tool-card p{color:var(--muted);font-size:.92rem;line-height:1.6;margin:0 0 16px;flex:1}
+.tool-go{color:var(--blue);font-weight:700;font-size:.92rem}
+@media(max-width:640px){.tools-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ── SPEED CHECK (PageSpeed deep link) ── */
+.psi-sec{background:var(--off)}
+.psi-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);
+  padding:34px 30px;max-width:820px;margin:0 auto;box-shadow:var(--sh-lg)}
+.psi-head{text-align:center;margin-bottom:22px}
+.psi-sub{color:var(--muted);max-width:600px;margin:10px auto 0;font-size:.95rem;line-height:1.6}
+.psi-sub b{color:var(--ink)}
+.psi-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch;justify-content:center}
+.psi-lab{position:absolute;left:-9999px}
+.psi-inp{flex:1 1 260px;min-width:0;font:inherit;font-size:1rem;padding:14px 16px;
+  border:2px solid var(--border);border-radius:11px;background:#fff;color:var(--ink)}
+.psi-inp:focus{outline:none;border-color:var(--blue)}
+.psi-btn{flex:0 0 auto;white-space:nowrap}
+.psi-note{text-align:center;font-size:.8rem;color:var(--muted);margin:12px 0 0}
+.psi-after{margin-top:26px;padding-top:24px;border-top:1.5px solid var(--border)}
+.psi-after h3{font-size:1.12rem;margin:0 0 10px}
+.psi-after p{color:var(--muted);font-size:.94rem;line-height:1.65;margin:0 0 14px}
+.psi-list{margin:0 0 20px;padding-left:20px;color:var(--muted);font-size:.94rem;line-height:1.9}
+.psi-list b{color:var(--ink)}
+@media(max-width:560px){
+  .psi-card{padding:26px 20px}
+  .psi-btn{width:100%}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .hero-layout{grid-template-columns:minmax(0,1fr);gap:34px}
+  .hform-card{max-width:520px;margin:0 auto}
+  .intro-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  .dom-grid{grid-template-columns:minmax(0,1fr);gap:44px}
+  .about-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  .agentic-grid{grid-template-columns:minmax(0,1fr);gap:44px}
+  .mem-top{grid-template-columns:minmax(0,1fr);gap:34px}
+  .auth-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .gloss-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .mid-cta-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:768px){
+  /* MOBILE NAV SWITCH — these three now also fire at 1024px in the HEADER FIT
+     block near the top of the file, because the desktop nav cannot fit
+     between roughly 770 and 1000px. They are repeated here deliberately:
+     identical values, no conflict, and removing either copy is how the
+     hamburger goes missing. */
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+  .svc-grid{grid-template-columns:minmax(0,1fr)}
+  .ind-grid{grid-template-columns:minmax(0,1fr)}
+  .rv-grid{grid-template-columns:minmax(0,1fr)}
+  .faq-cols{grid-template-columns:minmax(0,1fr)}
+  .gloss-grid{grid-template-columns:minmax(0,1fr)}
+  .mem-list{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+  .steps::before{display:none}
+  .pillars{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .auth-grid{grid-template-columns:minmax(0,1fr)}
+  .footer-grid{grid-template-columns:minmax(0,1fr)}
+  .footer-bot{flex-direction:column;text-align:center}
+  .tbar-items{gap:0}
+  .tbi{padding:8px 16px;font-size:.84rem}
+  .stats-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .stat-item:nth-child(3){border-right:1px solid var(--border)}
+  .stat-item{border-bottom:1px solid var(--border)}
+  .stat-item:last-child{border-bottom:none;border-right:none}
+  .section{padding:60px 0}
+  .mem-sec{padding:64px 0;margin:32px 0}
+  .ent-answer{padding:18px 18px}
+  .skew-dark,.skew-blue,.skew-orange,.skew-off,.skew-purple{margin:32px 0;padding:72px 0}
+  .skew-dark::before,.skew-dark::after,
+  .skew-blue::before,.skew-blue::after,
+  .skew-orange::before,.skew-orange::after,
+  .skew-off::before,.skew-off::after,
+  .skew-purple::before,.skew-purple::after{height:48px;top:-24px}
+  .skew-dark::after,.skew-blue::after,.skew-orange::after,.skew-off::after,.skew-purple::after{bottom:-24px;top:auto}
+}
+@media(max-width:540px){
+  .hero-cta{flex-direction:column;gap:10px}
+  .cta-primary,.cta-secondary{width:100%;flex:1 1 auto}
+  .fcta-btns{flex-direction:column;align-items:stretch}
+  .mem-btns{flex-direction:column}
+  .btn-gold{width:100%}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .pillars{grid-template-columns:minmax(0,1fr)}
+  .stats-grid{grid-template-columns:minmax(0,1fr)}
+  .stat-item{border-right:none!important;border-bottom:1px solid var(--border)}
+  .tbar-items{flex-direction:column;align-items:flex-start;padding:0 16px}
+  .tbi{border-right:none;border-bottom:1px solid var(--border);width:100%}
+  .tbi:last-child{border-bottom:none}
+  .mem-price .amt{font-size:2.5rem}
+}
+/* ============================================================
+   PAGE STYLES — /custom-website-design/
+   Palette is electric violet + cyan + acid yellow on near-black.
+   It exists only on this page.
+   MOTION RULE: every loop is 2.6s or longer, nothing blinks or
+   flashes, and everything stops under prefers-reduced-motion.
+   ============================================================ */
+:root{--cw-bg:#08060F;--cw-violet:#7C3AED;--cw-violet2:#A78BFA;--cw-cyan:#22D3EE;--cw-lime:#D9F99D;--cw-yellow:#FDE047;--cw-magenta:#F472B6;}
+
+/* ---- breadcrumb ---- */
+.breadcrumb{background:var(--off);border-bottom:1px solid var(--border);padding:11px 0}
+.bc-list{display:flex;flex-wrap:wrap;align-items:center;gap:7px;list-style:none;font-size:.8rem;color:var(--muted)}
+.bc-list a{color:var(--muted)}
+.bc-list a:hover{color:var(--blue)}
+.bc-sep{color:#C3C8D2}
+.bc-list li[aria-current]{color:var(--ink);font-weight:600}
+
+/* ---- hero ---- */
+.cw-hero{position:relative;background:var(--cw-bg);padding:70px 0 84px;overflow:hidden;isolation:isolate}
+.cw-shapes{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.cw-tri{position:absolute;right:-40px;bottom:-30px;width:min(460px,54vw);height:auto;opacity:.92;transform-origin:bottom right;animation:cw-lean 11s ease-in-out infinite}
+@keyframes cw-lean{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-1.4deg)}}
+.cw-orb{position:absolute;border-radius:50%;filter:blur(2px)}
+.cw-orb-a{left:-90px;top:-60px;width:320px;height:320px;background:radial-gradient(circle at 34% 32%,rgba(124,58,237,.55),rgba(124,58,237,0) 68%);animation:cw-drift 17s ease-in-out infinite}
+.cw-orb-b{right:22%;top:12%;width:200px;height:200px;background:radial-gradient(circle at 40% 36%,rgba(34,211,238,.4),rgba(34,211,238,0) 70%);animation:cw-drift 21s ease-in-out infinite reverse}
+@keyframes cw-drift{0%,100%{transform:translate(0,0)}50%{transform:translate(26px,-22px)}}
+.cw-ball{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--cw-yellow);opacity:.85;animation:cw-fall 7.5s cubic-bezier(.4,0,.7,1) infinite}
+.cw-ball.b2{background:var(--cw-cyan);width:11px;height:11px;animation-duration:9.2s;animation-delay:-3.1s}
+.cw-ball.b3{background:var(--cw-magenta);width:13px;height:13px;animation-duration:8.4s;animation-delay:-5.6s}
+@keyframes cw-fall{
+  0%{transform:translateY(-40px) scale(1);opacity:0}
+  8%{opacity:.85}
+  58%{transform:translateY(58vh) scale(1);opacity:.85}
+  66%{transform:translateY(62vh) scaleY(.72) scaleX(1.18)}
+  74%{transform:translateY(44vh) scale(1)}
+  86%{transform:translateY(62vh) scaleY(.86) scaleX(1.08)}
+  96%{transform:translateY(56vh) scale(1);opacity:.3}
+  100%{transform:translateY(62vh) scale(1);opacity:0}
+}
+.cw-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,400px);gap:48px;align-items:center}
+.cw-eyebrow{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cw-lime);border:1px solid rgba(217,249,157,.34);border-radius:20px;padding:5px 14px;margin-bottom:20px}
+.cw-hero h1{color:#fff;font-size:clamp(2.1rem,5.6vw,3.7rem);line-height:1.04;letter-spacing:-.025em;margin-bottom:18px}
+.cw-hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--cw-yellow),var(--cw-magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cw-lead{color:rgba(255,255,255,.78);font-size:1.08rem;line-height:1.7;max-width:520px;margin-bottom:24px}
+.cw-lead strong{color:#fff;font-weight:600}
+.cw-founder{border-left:3px solid var(--cw-violet);padding:12px 0 12px 16px;margin-bottom:26px;max-width:520px}
+.cw-founder p{color:rgba(255,255,255,.66);font-size:.95rem;line-height:1.7;font-style:italic}
+.cw-founder span{display:block;margin-top:7px;font-style:normal;font-size:.8rem;color:rgba(255,255,255,.44)}
+.btn-violet{background:var(--cw-violet);color:#fff;border-color:var(--cw-violet)}
+.btn-violet:hover{background:#6D28D9}
+.cw-trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.cw-trust span{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.68);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:6px 12px}
+
+/* ---- forms ---- */
+.cw-form{background:rgba(255,255,255,.055);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.15);border-radius:var(--r16);padding:26px}
+.cw-form h2,.cw-form h3{color:#fff;font-size:1.18rem;margin-bottom:6px}
+.cw-form .fsub{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:16px}
+.cw-form input,.cw-form textarea,.cw-form select{width:100%;padding:12px 13px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.16);border-radius:var(--r8);color:#fff;font-family:'Inter',sans-serif;font-size:.95rem;margin-bottom:11px;outline:none}
+.cw-form input::placeholder,.cw-form textarea::placeholder{color:rgba(255,255,255,.4)}
+.cw-form input:focus,.cw-form textarea:focus,.cw-form select:focus{border-color:var(--cw-cyan)}
+.cw-form textarea{resize:vertical;min-height:76px}
+.cw-form button{width:100%;padding:14px;background:var(--cw-violet);color:#fff;border:none;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:background .2s}
+.cw-form button:hover{background:#6D28D9}
+.cw-form button[disabled]{opacity:.6;cursor:not-allowed}
+.cw-call{display:block;text-align:center;border:1.5px solid rgba(255,255,255,.2);color:#fff;font-weight:700;padding:12px;border-radius:var(--r8);margin-bottom:12px}
+.cw-call:hover{border-color:var(--cw-cyan);color:var(--cw-cyan)}
+.cw-or{text-align:center;font-size:.74rem;color:rgba(255,255,255,.42);margin-bottom:12px}
+.cw-fine{font-size:.73rem;color:rgba(255,255,255,.42);margin-top:10px;line-height:1.55}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fmsg{display:none;margin-top:12px;padding:12px 14px;border-radius:var(--r8);font-size:.88rem;line-height:1.6}
+.fmsg.on{display:block}
+.fmsg-ok{background:rgba(16,185,129,.15);color:#A7F3D0;border:1px solid rgba(16,185,129,.4)}
+.fmsg-warn{background:rgba(245,158,11,.15);color:#FDE68A;border:1px solid rgba(245,158,11,.4)}
+.fmsg-err{background:rgba(239,68,68,.15);color:#FECACA;border:1px solid rgba(239,68,68,.4)}
+
+/* ---- three-promise strip ---- */
+.tri-sec{background:#0D0A19;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.tri-wrap{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:44px;align-items:center}
+.tri-wrap h2{color:#fff}
+.tri-wrap>div>p{color:rgba(255,255,255,.68);line-height:1.75;margin-top:12px}
+.tri-legend{display:grid;gap:14px;margin-top:22px}
+.tri-leg{display:flex;gap:13px;align-items:flex-start}
+.tri-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.tri-leg h3{color:#fff;font-size:1rem;margin-bottom:3px}
+.tri-leg p{color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.65;margin:0}
+.tri-svg{width:100%;height:auto}
+.tri-edge{stroke-dasharray:520;stroke-dashoffset:520;animation:cw-draw 3.4s ease forwards}
+@keyframes cw-draw{to{stroke-dashoffset:0}}
+
+/* ---- kinetic brochure ---- */
+.bro-sec{background:#fff;overflow:hidden}
+.bro-para{font-size:clamp(1.15rem,2.9vw,1.85rem);line-height:1.62;font-weight:600;color:var(--ink);max-width:820px;margin:0 auto;text-align:center}
+.bro-drop{display:inline}
+.bro-para .w{display:inline-block;transition:transform 1.3s cubic-bezier(.5,0,.75,0),opacity 1.1s ease;will-change:transform}
+.bro-sec.drop .bro-para .w.go{transform:translateY(220px) rotate(var(--r));opacity:0}
+.bro-keep{color:var(--cw-violet)}
+.bro-after{max-width:700px;margin:34px auto 0;text-align:center;color:var(--muted);line-height:1.75;opacity:0;transition:opacity .9s ease .7s}
+.bro-sec.drop .bro-after{opacity:1}
+
+/* ---- 24/7 ---- */
+.sev-sec{background:linear-gradient(160deg,#0D0A19 0%,#08060F 100%);position:relative;overflow:hidden}
+.sev-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:center}
+.sev-big{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(5rem,19vw,11rem);line-height:.84;letter-spacing:-.04em;background:linear-gradient(135deg,var(--cw-cyan),var(--cw-violet2),var(--cw-magenta));-webkit-background-clip:text;background-clip:text;color:transparent;transform:scale(.82);opacity:0;transition:transform 1.1s cubic-bezier(.2,1.3,.4,1),opacity .8s ease}
+.sev-sec.in .sev-big{transform:scale(1);opacity:1}
+.sev-sub{color:rgba(255,255,255,.72);font-size:1.05rem;line-height:1.7;margin-top:10px}
+.sev-sec h2{color:#fff}
+.sev-sec p.sv{color:rgba(255,255,255,.68);line-height:1.75;margin-top:12px}
+.sev-chart{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--r16);padding:22px}
+.sev-chart svg{width:100%;height:auto;display:block}
+.sv-line{fill:none;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900}
+.sev-sec.in .sv-line{animation:cw-draw 2.8s ease forwards}
+.sev-sec.in .sv-line.d2{animation-delay:.45s}
+.sv-key{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:.8rem;color:rgba(255,255,255,.62)}
+.sv-key i{display:inline-block;width:16px;height:3px;border-radius:2px;margin-right:7px;vertical-align:middle}
+
+/* ---- health meter ---- */
+.hm-sec{background:var(--off)}
+.hm{max-width:960px;margin:34px auto 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:34px;align-items:start}
+.hm-q{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden}
+.hm-item{display:flex;gap:13px;align-items:flex-start;padding:15px 20px;border-bottom:1px solid var(--border)}
+.hm-item:last-child{border-bottom:none}
+.hm-item input{margin-top:3px;width:18px;height:18px;accent-color:var(--cw-violet);flex-shrink:0}
+.hm-item label{font-size:.94rem;color:var(--ink3);line-height:1.6;cursor:pointer}
+.hm-panel{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);padding:24px;text-align:center;position:relative;overflow:hidden;transition:border-color .5s,background .5s}
+.hm-panel.broken{border-color:#FDA29B;background:#FFFBFA}
+.hm-gauge{width:100%;height:auto}
+.hm-needle{transform-origin:150px 132px;transition:transform 1.1s cubic-bezier(.3,1.25,.5,1)}
+.hm-score{font-size:2.5rem;font-weight:800;line-height:1;color:var(--ink);transition:color .5s}
+.hm-panel.broken .hm-score{color:#D92D20}
+.hm-band{font-size:.95rem;font-weight:700;margin-top:6px;color:var(--ink3)}
+.hm-note{font-size:.87rem;color:var(--muted);line-height:1.65;margin-top:10px;min-height:3.3em}
+.hm-crack{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .8s ease}
+.hm-panel.broken .hm-crack{opacity:1}
+.hm-cta{margin-top:16px}
+
+/* ---- speed / money ---- */
+.spd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:34px}
+.spd-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);padding:24px;text-align:center}
+.spd-n{font-size:2.2rem;font-weight:800;color:var(--cw-violet);line-height:1}
+.spd-t{font-size:.88rem;color:var(--ink3);margin-top:9px;line-height:1.6}
+.src{font-size:.76rem;color:var(--muted);line-height:1.6;margin-top:16px}
+.src a{color:var(--blue);font-weight:600}
+
+/* ---- build showcase ---- */
+.bld-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:36px}
+.bld{background:#0D0A19;border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:22px;transition:transform .25s,border-color .25s}
+.bld:hover{transform:translateY(-4px);border-color:rgba(124,58,237,.6)}
+.bld h3{color:#fff;font-size:1rem;margin-bottom:7px}
+.bld p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.65}
+.bld-ic{width:34px;height:34px;border-radius:9px;background:rgba(124,58,237,.22);border:1px solid rgba(167,139,250,.4);margin-bottom:13px}
+
+/* ---- live demo ---- */
+.demo{max-width:720px;margin:36px auto 0;background:#fff;border:2px dashed var(--cw-violet);border-radius:var(--r16);padding:28px;position:relative}
+.demo-tag{position:absolute;top:-12px;left:24px;background:var(--cw-violet);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:20px}
+.demo h3{font-size:1.15rem;margin-bottom:6px}
+.demo>p{font-size:.9rem;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.demo-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;margin-bottom:20px}
+.demo-f label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.demo-f input[type=range]{width:100%;accent-color:var(--cw-violet);height:26px}
+.demo-f .dv{font-size:1.3rem;font-weight:800;color:var(--cw-violet)}
+.demo-out{border-top:1.5px solid var(--border);padding-top:18px;text-align:center}
+.demo-big{font-size:clamp(1.9rem,6vw,2.8rem);font-weight:800;color:var(--ink);line-height:1.1}
+.demo-lab{font-size:.85rem;color:var(--muted);margin-top:7px;line-height:1.6}
+
+/* ---- funnel ---- */
+.fun{max-width:780px;margin:36px auto 0}
+.fun-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border);opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.3,1)}
+.fun.in .fun-step{opacity:1;transform:none}
+.fun.in .fun-step:nth-child(2){transition-delay:.12s}
+.fun.in .fun-step:nth-child(3){transition-delay:.24s}
+.fun.in .fun-step:nth-child(4){transition-delay:.36s}
+.fun.in .fun-step:nth-child(5){transition-delay:.48s}
+.fun-n{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:var(--cw-violet);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+.fun-step h3{font-size:1.05rem;margin-bottom:6px}
+.fun-step p{font-size:.93rem;color:var(--muted);line-height:1.7}
+
+/* ---- pricing / referral ---- */
+.pr-sec{background:#0D0A19;position:relative;overflow:hidden}
+.pr-sec h2,.pr-sec h3{color:#fff}
+.pr-sec p{color:rgba(255,255,255,.68);line-height:1.75}
+.pr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:34px}
+.pr-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:var(--r12);padding:26px}
+.pr-card.hi{border-color:var(--cw-lime);background:rgba(217,249,157,.07)}
+.pr-amt{font-size:1.9rem;font-weight:800;color:#fff;line-height:1.1}
+.pr-card.hi .pr-amt{color:var(--cw-lime)}
+.pr-amt small{display:block;font-size:.78rem;font-weight:500;color:rgba(255,255,255,.5);margin-top:5px}
+.pr-card p{font-size:.9rem;margin-top:12px}
+.ref{margin-top:40px;background:rgba(124,58,237,.14);border:1px solid rgba(167,139,250,.34);border-radius:var(--r16);padding:28px;display:grid;grid-template-columns:110px minmax(0,1fr);gap:22px;align-items:center}
+.ref-face{width:110px;height:auto}
+.ref-tongue{transform-origin:50px 62px;animation:cw-tongue 3.6s ease-in-out infinite}
+@keyframes cw-tongue{0%,72%,100%{transform:scaleY(1) rotate(0deg)}82%{transform:scaleY(1.22) rotate(-5deg)}92%{transform:scaleY(1.08) rotate(3deg)}}
+
+/* ---- rain divider ---- */
+.rain-sec{position:relative;background:#08060F;padding:78px 0;overflow:hidden}
+.rain{position:absolute;inset:0;pointer-events:none}
+.rain i{position:absolute;top:-14%;width:1.5px;height:58px;background:linear-gradient(to bottom,rgba(34,211,238,0),rgba(34,211,238,.55));animation:cw-rain 3.4s linear infinite}
+@keyframes cw-rain{0%{transform:translateY(-70px);opacity:0}12%{opacity:1}100%{transform:translateY(112vh);opacity:0}}
+.rain-in{position:relative;z-index:2;text-align:center;max-width:720px;margin:0 auto}
+.rain-in h2{color:#fff;font-size:clamp(1.6rem,4.2vw,2.4rem)}
+.rain-in p{color:rgba(255,255,255,.7);line-height:1.75;margin-top:14px}
+
+/* ---- fact block ---- */
+.fact{background:var(--ink);border-radius:var(--r16);padding:32px;max-width:900px;margin:0 auto}
+.fact h2{color:#fff;font-size:1.2rem;margin-bottom:6px}
+.fact-up{font-size:.74rem;color:rgba(255,255,255,.4);margin-bottom:20px}
+.fact-grid{display:grid;grid-template-columns:180px minmax(0,1fr);gap:1px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.09);border-radius:var(--r8);overflow:hidden}
+.fact-k{background:#0E1626;padding:11px 14px;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.55)}
+.fact-v{background:#121C2B;padding:11px 14px;font-size:.85rem;color:rgba(255,255,255,.86);line-height:1.6}
+.fact-v a{color:var(--cw-violet2)}
+
+/* ---- final band ---- */
+.cw-final{background:var(--cw-bg);position:relative;overflow:hidden}
+.cw-final-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:48px;align-items:center;position:relative;z-index:2}
+.cw-final h2{color:#fff;font-size:clamp(1.7rem,4.4vw,2.5rem)}
+.cw-final p{color:rgba(255,255,255,.7);line-height:1.75;margin-top:14px}
+
+@media(prefers-reduced-motion:reduce){
+  .cw-tri,.cw-orb-a,.cw-orb-b,.cw-ball,.ref-tongue,.rain i{animation:none!important}
+  .cw-ball{opacity:.6;transform:translateY(52vh)}
+  .rain i{opacity:.35;transform:translateY(40vh)}
+  .tri-edge,.sv-line{stroke-dashoffset:0;animation:none!important}
+  .bro-sec.drop .bro-para .w.go{transform:none;opacity:.16}
+  .sev-big{transform:none;opacity:1}
+  .fun-step{opacity:1;transform:none}
+  .hm-needle{transition:none}
+}
+
+@media(max-width:980px){
+  .cw-hero-inner,.tri-wrap,.sev-grid,.hm,.cw-final-grid{grid-template-columns:minmax(0,1fr)}
+  .cw-hero-inner,.sev-grid,.cw-final-grid{gap:34px}
+  .hm{gap:22px}
+  .cw-lead,.cw-founder{max-width:none}
+  .fact-grid{grid-template-columns:minmax(0,1fr)}
+  .fact-k{padding-bottom:2px}
+}
+@media(max-width:560px){
+  .cw-hero{padding:46px 0 58px}
+  .cw-tri{right:-70px;width:72vw;opacity:.7}
+  .ref{grid-template-columns:minmax(0,1fr);text-align:center;justify-items:center}
+  .demo,.fact{padding:22px 18px}
+}
+
+</style>
+
+<!-- Schema notes, brief on purpose:
+     1. Org / LocalBusiness / Person @ids match the homepage so this page
+        resolves to the same entity rather than a second one.
+     2. This page targets nationally. areaServed is the United States, NOT
+        a Colorado city list — city targeting for web design lives on a
+        separate property and must not be duplicated here.
+     3. FAQ parity: 12 questions here, 12 visible below, identical wording.
+     4. Offer nodes describe the lease entry point and are deliberately
+        ranged, because real quotes vary by scope. -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":["Organization","ProfessionalService"],"@id":"https://eyetoad.com/#org",
+"name":"Eye To Ad Media","alternateName":["Eye To Ad","eyetoad.com"],"url":"https://eyetoad.com",
+"logo":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png","width":760,"height":190},
+"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","foundingDate":"2012",
+"founder":{"@id":"https://eyetoad.com/#zach"},
+"knowsAbout":["Custom Website Design","Front-end Development","Conversion Rate Optimization","User Experience Design","Web Performance Optimization","Schema Markup","Generative Engine Optimization","AI Overview Optimization"],
+"description":"Eye To Ad Media is a marketing agency founded in 2012 that designs and hand-codes custom websites built for conversion, speed and visibility in both search engines and AI-generated answers.",
+"address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},
+"contactPoint":[{"@type":"ContactPoint","@id":"https://eyetoad.com/#contact-sales","contactType":"sales","telephone":"+18004818638","email":"info@eyetoad.com","availableLanguage":["en"],"areaServed":["US"],"hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}}],
+"sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/EyeToAd/"]},
+{"@type":"LocalBusiness","@id":"https://eyetoad.com/#biz","name":"Eye To Ad Media","url":"https://eyetoad.com",
+"parentOrganization":{"@id":"https://eyetoad.com/#org"},"telephone":["+17202496588","+18004818638"],
+"email":"info@eyetoad.com","priceRange":"$$-$$$","foundingDate":"2012",
+"address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"}},
+{"@type":"Person","@id":"https://eyetoad.com/#zach","name":"Zach Wennstedt","givenName":"Zach","familyName":"Wennstedt","jobTitle":"Founder & CEO","worksFor":{"@id":"https://eyetoad.com/#org"},
+"description":"Zach Wennstedt founded Eye To Ad Media in 2012 and has been building websites and marketing campaigns since, including a long run of early attempts that did not work."},
+{"@type":"Service","@id":"https://eyetoad.com/custom-website-design/#service","serviceType":"Custom Website Design","name":"Custom Website Design",
+"url":"https://eyetoad.com/custom-website-design/","provider":{"@id":"https://eyetoad.com/#org"},
+"description":"Hand-coded custom website design and development for businesses: conversion-focused layout and UX, fast page performance, structured data for search engines and AI answer engines, and custom interactive tools such as calculators, quote builders and booking flows.",
+"areaServed":{"@type":"Country","name":"United States"},
+"audience":{"@type":"BusinessAudience","name":"Business owners and marketing managers commissioning a new website"},
+"offers":{"@type":"Offer","priceCurrency":"USD","price":"99","priceSpecification":{"@type":"UnitPriceSpecification","price":"99","priceCurrency":"USD","minPrice":"99","unitCode":"MON","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitCode":"MON"}},"description":"Custom websites start at $99 per month on a lease with a buyout option at 24 to 36 months. Rates vary by size, complexity and level of optimization.","seller":{"@id":"https://eyetoad.com/#org"}}},
+{"@type":"BreadcrumbList","@id":"https://eyetoad.com/custom-website-design/#bc","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://eyetoad.com/"},
+{"@type":"ListItem","position":2,"name":"Services","item":"https://eyetoad.com/services/"},
+{"@type":"ListItem","position":3,"name":"Custom Website Design"}]},
+{"@type":"WebPage","@id":"https://eyetoad.com/custom-website-design/#page","url":"https://eyetoad.com/custom-website-design/",
+"name":"Custom Website Design Built to Convert","isPartOf":{"@id":"https://eyetoad.com/#web"},
+"about":{"@id":"https://eyetoad.com/custom-website-design/#service"},"breadcrumb":{"@id":"https://eyetoad.com/custom-website-design/#bc"},
+"inLanguage":"en-US","datePublished":"2026-09-11","dateModified":"2026-09-11",
+"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","#tri-h2","#sev-h2","#hm-h2","#bld-h2","#faq-h2"]},
+"description":"Custom website design that is hand-coded for conversion, speed and citation by both search engines and AI assistants."},
+{"@type":"FAQPage","@id":"https://eyetoad.com/custom-website-design/#faq","mainEntity":[
+{"@type":"Question","name":"What is custom website design?","acceptedAnswer":{"@type":"Answer","text":"Custom website design means the layout, the code and the content structure are built for one specific business rather than adapted from a template that thousands of other companies are also using. In practice the difference shows up in three places: the site is faster because nothing is loaded that the page does not need, it is structured around the actions you want a visitor to take instead of around what a theme happened to offer, and it can do things a template cannot, such as a quoting tool or a booking flow built for the way you actually sell."}},
+{"@type":"Question","name":"What is the real difference between a custom website and a template?","acceptedAnswer":{"@type":"Answer","text":"A template is a general-purpose shell that has to support every kind of business, so it ships with code for features you will never use, and that weight is carried by every visitor on every page load. A custom coded website contains only what your business needs. The visible result is usually speed and clarity. The invisible result is that you are not fighting the theme every time you want to change something, and you are not one plugin update away from a broken page."}},
+{"@type":"Question","name":"How much does a custom website cost?","acceptedAnswer":{"@type":"Answer","text":"It depends on scope, and honest ranges are wide. For context, Clutch data puts the average one-off web project at roughly $37,158, and plenty of agencies bill well above that. Our custom sites start at $99 per month on a lease, which is the entry point rather than the ceiling, and larger builds with more pages, more custom functionality and deeper optimization cost more. We quote after we understand what the site has to do, not before."}},
+{"@type":"Question","name":"Do you really lease websites for $99 a month?","acceptedAnswer":{"@type":"Answer","text":"Yes. The lease structure exists because a large upfront build cost is what stops most good businesses from getting a proper website at all. You pay monthly, the site is built and maintained, and there is a buyout option at 24 to 36 months based on what the site is worth at that point. Rates start at $99 per month and go up with size, complexity and the level of optimization involved."}},
+{"@type":"Question","name":"How long does a custom website take to build?","acceptedAnswer":{"@type":"Answer","text":"A focused site of a few pages is usually a matter of weeks rather than months. Larger builds with custom tools, many service pages or content that has to be written from scratch take longer. The honest variable is rarely our build time, it is how quickly we get photos, copy approvals and access from your side. We will tell you which stage is holding the project up rather than letting it drift."}},
+{"@type":"Question","name":"Do you use WordPress, Wix or Squarespace?","acceptedAnswer":{"@type":"Answer","text":"Not for these builds. Those platforms are reasonable choices for some projects and we are not going to pretend otherwise, but they solve a different problem: making a site editable by anyone at the cost of loading a large amount of general-purpose code. We hand-code instead, because performance and control are the two things that most directly affect whether a site converts and whether it gets cited."}},
+{"@type":"Question","name":"Will I be able to update the site myself?","acceptedAnswer":{"@type":"Answer","text":"For content you change often, yes, we set it up so you can. For structural changes, most owners would rather send a message than learn a build system, so updates are included in the arrangement. The thing we will not do is hand you a site you cannot maintain and then disappear, which is the single most common complaint we hear about previous developers."}},
+{"@type":"Question","name":"What does it actually mean for a website to be built for conversion?","acceptedAnswer":{"@type":"Answer","text":"It means every page has one obvious next action and nothing competing with it. A tappable phone number that does not require scrolling. Forms short enough to finish in one sitting. Proof placed where doubt appears rather than all collected on an about page. Load times fast enough that nobody leaves before seeing any of it. None of that is decoration, and it is the difference between a site that gets traffic and a site that produces customers."}},
+{"@type":"Question","name":"Can AI tools like ChatGPT actually find and cite my website?","acceptedAnswer":{"@type":"Answer","text":"They can, and increasingly they decide what a person sees before that person visits any website at all. AI assistants assemble answers from content they can read and verify, structured business data, and consistent information about your company across the web. A site built with clean markup, factual service descriptions and proper structured data can be cited. A site whose content only exists inside images, scripts or a page builder's rendered output often cannot be read well enough to be quoted."}},
+{"@type":"Question","name":"Do I own the website?","acceptedAnswer":{"@type":"Answer","text":"On a purchased build, yes, outright. On the lease, you are leasing the site during the term and you own it after the buyout, which is what the buyout is for. We will put whichever arrangement applies in writing before anything starts, because a surprise on this point years later is exactly the kind of thing that ruins a working relationship."}},
+{"@type":"Question","name":"What if I already have a website that mostly works?","acceptedAnswer":{"@type":"Answer","text":"Then we will tell you that instead of selling you a rebuild. Sometimes the honest answer is that the site is fine and the problem is that nobody is being sent to it, which is a different job entirely. Sometimes a few pages carry all the value and the rest is noise. We would rather fix the profitable part of a working site than replace something that did not need replacing."}},
+{"@type":"Question","name":"Do you work with businesses outside your home market?","acceptedAnswer":{"@type":"Answer","text":"Yes. Web design work is not bound by geography, and we build for businesses across the United States. Everything from the first conversation to launch happens by phone, email and screen share, and it has worked that way for years. If it matters to you, we are happy to get on a video call so you know exactly who is doing the work."}}
+]}]}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<div class="ubar">
+  <div class="wrap ubar-inner">
+    <!-- CLICK AFFORDANCE (Sept 11 2026). Two problems here: the strapline was
+         display:none below 768px so mobile saw a bare unlabelled chip, and on
+         desktop it sat OUTSIDE the anchor, so the sentence explaining the
+         button was not part of the button. Both fixed by moving the strapline
+         inside the link and giving the chip a magnifier plus a chevron.
+         The strapline stays hidden on mobile — the bar is a single row and the
+         phone number needs the width — but the icon and chevron now carry the
+         affordance on their own at that size. -->
+    <div class="ubar-left">
+      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored"
+         aria-label="Search and register an available domain name at our domain storefront">
+        <svg class="ubar-ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M13.4 13.4 L17.5 17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="ubar-dom-t">Search Domains</span>
+        <span class="ubar-txt">&mdash; find &amp; register your perfect <b>.com</b>, <b>.ai</b> or <b>.io</b></span>
+        <span class="ubar-go" aria-hidden="true">&rsaquo;</span>
+      </a>
+    </div>
+    <div class="ubar-right">
+      <!-- VIP REMOVED FROM THIS BAR (Sept 11 2026). It sat about 60px above an
+           identical VIP pill in the header — two links to the same page, one
+           almost directly under the other. The header copy wins because it is
+           styled as a CTA and sits beside Free Audit where the eye already
+           goes. The breakpoint that used to hide the header pill at 1150px
+           (because this bar carried a duplicate) has been changed to shrink it
+           instead — see HEADER FIT. Do not re-add it here. -->
+      <a href="tel:18004818638" class="ubar-tel"><span class="ubar-tel-lbl">Call</span>1-800-481-8638</a>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER — the track is DOUBLED (10 spans for 5 items) and animates to
+     -50%, so one cycle shows each item exactly once. If you edit an item,
+     edit BOTH copies or the loop will visibly jump. -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">NEW — VIP Marketing Subscription · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">5.0 from 60 Google Reviews · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">NEW — VIP Marketing Subscription · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">5.0 from 60 Google Reviews · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
+  </div>
+</div>
+
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-inner">
+    <a href="/" class="logo" aria-label="Eye To Ad Media — Denver SEO Home">
+      <!-- width/height MUST match what the CSS renders (300x102), not the raw
+           file's 760x190, or the browser reserves the wrong box and the page
+           visibly shifts on first paint. -->
+      <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media logo — Denver SEO Company" class="brand-logo" width="300" height="102" loading="eager" fetchpriority="high">
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="ni">
+        <a href="/services/" class="nl">Services &#9662;</a>
+        <!-- SERVICES MENU v7 (Sept 11 2026). Eight items, each with a
+             Planner-verified primary keyword, and NO city in any label —
+             eyetoad.com now targets multiple states and these labels ship
+             on out-of-state pages. The three removed items are NOT deleted:
+             /denver-seo-services/ and /local-seo-denver/ are linked from the
+             services grid copy and the FAQ, /denver-seo-pricing/ lives in
+             the footer and under the grid. The parent is /services/ — the
+             hub, which is the only gateway a visitor can reach from chrome. -->
+        <div class="drop">
+          <a href="/seo-systems/">SEO Services</a>
+          <a href="/aio-seo-system/">AI SEO Services</a>
+          <a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>
+          <a href="/local-seo-services/">Local SEO &amp; Google Maps</a>
+          <a href="/conversion-optimization/">Conversion Optimization</a>
+          <a href="/custom-website-design/" aria-current="page">Custom Website Design</a>
+          <a href="/ai-chatbot-for-business/">AI Chatbots</a>
+          <a href="/free-seo-audit/">Free SEO Audit</a>
+        </div>
+      </div>
+      <div class="ni">
+        <a href="/industries/" class="nl">Industries &#9662;</a>
+        <div class="drop-mega">
+          <div class="dg">
+            <h5>Home &amp; Trade</h5>
+          <a href="/contractor-seo-denver/">Contractor SEO</a>
+          <a href="/electrician-seo-denver/">Electrician SEO</a>
+          <a href="/hvac-seo-denver/">HVAC SEO</a>
+          <a href="/landscaping-seo-denver/">Landscaping SEO</a>
+          <a href="/plumber-seo-denver/">Plumber SEO</a>
+          <a href="/roofing-seo-denver/">Roofing SEO</a>
+          </div>
+          <div class="dg">
+            <h5>Health &amp; Wellness</h5>
+          <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+          <a href="/dentist-seo-denver/">Dentist SEO</a>
+          <a href="/dermatology-seo-denver/">Dermatology SEO</a>
+          <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+          <a href="/veterinarian-seo-denver/">Veterinarian SEO</a>
+          </div>
+          <div class="dg">
+            <h5>Professional &amp; Consumer</h5>
+          <a href="/auto-repair-seo-denver/">Auto Repair SEO</a>
+          <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+          <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+          <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
+          <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+          <a href="/restaurant-seo-denver/">Restaurant SEO</a>
+          </div>
+        </div>
+      </div>
+      <div class="ni">
+        <a href="/locations/" class="nl">Locations &#9662;</a>
+        <!-- LOCATIONS MEGA — reuses .drop-mega. Adding a city is ONE line here,
+             one line in the mobile nav, and one card on /locations/. The footer
+             deliberately lists HUBS ONLY so it never becomes a city keyword list. -->
+        <div class="drop-mega">
+          <div class="dg">
+            <h5>Colorado</h5>
+          <a href="/">Denver</a>
+          <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+          <a href="/locations/fort-collins-seo/">Fort Collins</a>
+          </div>
+          <div class="dg">
+            <h5>Mountain West</h5>
+          <a href="/locations/salt-lake-city-seo/">Salt Lake City</a>
+          <a href="/locations/boise-seo/">Boise</a>
+          <a href="/locations/albuquerque-seo/">Albuquerque</a>
+          <a href="/locations/cheyenne-seo/">Cheyenne</a>
+          <a href="/locations/phoenix-seo/">Phoenix</a>
+          </div>
+          <div class="dg">
+            <h5>National</h5>
+          <a href="/locations/dallas-seo/">Dallas</a>
+          <a href="/locations/charlotte-seo/">Charlotte</a>
+          <a href="/locations/omaha-seo/">Omaha</a>
+          <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
+          </div>
+        </div>
+      </div>
+      <div class="ni">
+        <span class="nl nl-tog" role="button" tabindex="0" aria-haspopup="true">Resources &#9662;</span>
+        <div class="drop">
+          <a href="/blog/">SEO Blog</a>
+          <a href="/case-studies/">Case Studies</a>
+          <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+          <a href="/grow-my-business/">Grow My Business Tool</a>
+          <a href="/ad-lab/">Ad Lab</a>
+          <a href="/free-seo-tools/">Free SEO Tools</a>
+          <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
+        </div>
+      </div>
+      <a href="/about/" class="nl">About</a>
+      <a href="/contact/" class="nl">Contact</a>
+      <a href="/sell-myself/" class="nl">See the Pitch</a>
+      <a href="https://www.buyweburl.com" class="nl nl-dom" target="_blank" rel="noopener sponsored">Search Domains</a>
+    </nav>
+    <div class="hdr-right">
+      <a href="/marketing-subscription/" class="hdr-vip">VIP Membership</a>
+      <a href="/free-seo-audit/" class="btn btn-orange" style="padding:10px 18px;font-size:.88rem;">Free Audit</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+     a sitewide mobile menu is every URL on the site. Both chrome links now
+     say the same thing. Destination unchanged. -->
+<nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
+  <div class="mob-top">
+    <span class="mob-top-lab">Menu</span>
+    <button class="mob-x" id="mobClose" type="button" aria-label="Close menu">&#x2715;</button>
+  </div>
+  <a href="/free-seo-audit/" class="mob-cta" style="margin:0 0 10px;">Get a Free SEO Audit</a>
+  <a href="tel:18004818638" class="mob-tel"><span>Call us</span>1-800-481-8638</a>
+  <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Search Domain Names</a>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-services">
+    <a href="/services/" class="mob-hub">All Services &rarr;</a>
+    <a href="/seo-systems/">SEO Services</a>
+    <a href="/aio-seo-system/">AI SEO Services</a>
+    <a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>
+    <a href="/local-seo-services/">Local SEO &amp; Google Maps</a>
+    <a href="/conversion-optimization/">Conversion Optimization</a>
+    <a href="/custom-website-design/" aria-current="page">Custom Website Design</a>
+    <a href="/ai-chatbot-for-business/">AI Chatbots</a>
+    <a href="/free-seo-audit/">Free SEO Audit</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-industries">Industries<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-industries">
+    <a href="/industries/" class="mob-hub">All 17 Industries &rarr;</a>
+    <div class="mob-sub">Home &amp; Trade</div>
+    <a href="/contractor-seo-denver/">Contractor SEO</a>
+    <a href="/electrician-seo-denver/">Electrician SEO</a>
+    <a href="/hvac-seo-denver/">HVAC SEO</a>
+    <a href="/landscaping-seo-denver/">Landscaping SEO</a>
+    <a href="/plumber-seo-denver/">Plumber SEO</a>
+    <a href="/roofing-seo-denver/">Roofing SEO</a>
+    <div class="mob-sub">Health &amp; Wellness</div>
+    <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+    <a href="/dentist-seo-denver/">Dentist SEO</a>
+    <a href="/dermatology-seo-denver/">Dermatology SEO</a>
+    <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+    <a href="/veterinarian-seo-denver/">Veterinarian SEO</a>
+    <div class="mob-sub">Professional &amp; Consumer</div>
+    <a href="/auto-repair-seo-denver/">Auto Repair SEO</a>
+    <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+    <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+    <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
+    <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+    <a href="/restaurant-seo-denver/">Restaurant SEO</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-locations">Locations<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-locations">
+    <a href="/locations/" class="mob-hub">All 24 Service Areas &rarr;</a>
+    <div class="mob-sub">Colorado</div>
+    <a href="/">Denver</a>
+    <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+    <a href="/locations/fort-collins-seo/">Fort Collins</a>
+    <div class="mob-sub">Mountain West</div>
+    <a href="/locations/salt-lake-city-seo/">Salt Lake City</a>
+    <a href="/locations/boise-seo/">Boise</a>
+    <a href="/locations/albuquerque-seo/">Albuquerque</a>
+    <a href="/locations/cheyenne-seo/">Cheyenne</a>
+    <a href="/locations/phoenix-seo/">Phoenix</a>
+    <div class="mob-sub">National</div>
+    <a href="/locations/dallas-seo/">Dallas</a>
+    <a href="/locations/charlotte-seo/">Charlotte</a>
+    <a href="/locations/omaha-seo/">Omaha</a>
+    <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-resources">
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+    <a href="/grow-my-business/">Grow My Business Tool</a>
+    <a href="/free-seo-tools/">Free SEO Tools</a>
+    <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
+  </div>
+  <!-- FLAT LINKS: single destinations, not categories. A collapsible section
+       holding one or two links is worse than no section at all. -->
+  <a href="/blog/" class="mob-flat">Blog</a>
+  <a href="/ad-lab/" class="mob-flat">Ad Lab</a>
+  <a href="/about/" class="mob-flat">About</a>
+  <a href="/contact/" class="mob-flat">Contact</a>
+  <a href="/sell-myself/" class="mob-flat">See the Pitch &mdash; 10 Minutes, No Salesperson</a>
+  <a href="/marketing-subscription/" class="mob-flat">VIP Marketing Subscription</a>
+  <p class="mob-proof"><b>5.0</b> from 60 Google Reviews &middot; <b>A+</b> BBB Accredited<br>Denver-based since 2012 &middot; Answers in 1 business day</p>
+</nav>
+
+<main id="main">
+
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><ol class="bc-list">
+<li><a href="/">Home</a></li><li><span class="bc-sep" aria-hidden="true">&#8250;</span></li>
+<li><a href="/services/">Services</a></li><li><span class="bc-sep" aria-hidden="true">&#8250;</span></li>
+<li aria-current="page">Custom Website Design</li></ol></div></nav>
+
+<section class="cw-hero">
+  <div class="cw-shapes" aria-hidden="true">
+    <span class="cw-orb cw-orb-a"></span>
+    <span class="cw-orb cw-orb-b"></span>
+    <svg class="cw-tri" viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="triG" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#FDE047"></stop>
+          <stop offset="60%" stop-color="#F472B6"></stop>
+          <stop offset="100%" stop-color="#7C3AED"></stop>
+        </linearGradient>
+      </defs>
+      <polygon points="200,10 390,350 10,350" fill="url(#triG)" opacity=".82"></polygon>
+      <polygon points="200,10 390,350 10,350" fill="none" stroke="#FDE047" stroke-width="2" opacity=".5"></polygon>
+    </svg>
+    <span class="cw-ball" style="left:18%"></span>
+    <span class="cw-ball b2" style="left:44%"></span>
+    <span class="cw-ball b3" style="left:63%"></span>
+  </div>
+
+  <div class="wrap cw-hero-inner">
+    <div>
+      <span class="cw-eyebrow">Custom Website Design</span>
+      <h1>How Many Websites<br>Have You <em>Quit On?</em></h1>
+      <p class="cw-lead">Most business owners are on their third one. Each time it started exciting and ended as a bill nobody wanted to talk about. <strong>That is a pattern, not bad luck &mdash; and it has a cause.</strong></p>
+      <div class="cw-founder">
+        <p>&ldquo;I built a lot of websites that did nothing before I built one that worked. Not because the code was broken. Because nobody had decided what the site was supposed to make happen.&rdquo;</p>
+        <span>Zach Wennstedt, founder &mdash; building sites since 2012</span>
+      </div>
+      <div class="cw-trust">
+        <span>Hand-coded, no page builders</span>
+        <span>Built for conversion first</span>
+        <span>Readable by AI assistants</span>
+        <span>From $99/mo</span>
+      </div>
+    </div>
+
+    <!-- Do not rename any field on this form, and do not add a redirect on
+         success: the confirmation states are deliberate and a redirect makes
+         a failed send look identical to a delivered one. -->
+    <div class="cw-form">
+      <h2>Let's end the streak</h2>
+      <p class="fsub">Three fields. We reply with a straight answer about what your site should actually do.</p>
+      <a href="tel:18004818638" class="cw-call">Call 1-800-481-8638</a>
+      <p class="cw-or">or send it over</p>
+      <form id="cwTop" method="POST" novalidate data-fs="info@eyetoad.com">
+        <div class="hp"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_loadtime" value="">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Custom website enquiry (hero) — eyetoad.com">
+        <input type="hidden" name="_template" value="table">
+        <label class="fsub" for="t-name" style="margin-bottom:4px;display:block;">Your name</label>
+        <input id="t-name" type="text" name="Name" autocomplete="name" placeholder="Name" required>
+        <label class="fsub" for="t-contact" style="margin-bottom:4px;display:block;">Phone or email</label>
+        <input id="t-contact" type="text" name="Contact" placeholder="Whichever you prefer" required>
+        <label class="fsub" for="t-site" style="margin-bottom:4px;display:block;">Current website (or "none")</label>
+        <input id="t-site" type="text" name="Website" placeholder="yourbusiness.com">
+        <button type="submit">Start the conversation</button>
+        <div class="fmsg" role="status" aria-live="polite"></div>
+        <p class="cw-fine">Used to reply to you. No list, no resale, no robocalls.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section tri-sec">
+  <div class="wrap tri-wrap">
+    <div>
+      <svg class="tri-svg" viewBox="0 0 320 290" role="img" aria-label="Diagram: a website sits at the centre of three jobs — converting visitors, being cited by AI assistants, and being found by Google.">
+        <defs>
+          <linearGradient id="edgeG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#22D3EE"></stop>
+            <stop offset="100%" stop-color="#F472B6"></stop>
+          </linearGradient>
+        </defs>
+        <polygon class="tri-edge" points="160,26 292,252 28,252" fill="rgba(124,58,237,.13)" stroke="url(#edgeG)" stroke-width="2.5" stroke-linejoin="round"></polygon>
+        <circle cx="160" cy="26" r="9" fill="#22D3EE"></circle>
+        <circle cx="292" cy="252" r="9" fill="#F472B6"></circle>
+        <circle cx="28" cy="252" r="9" fill="#FDE047"></circle>
+        <circle cx="160" cy="177" r="30" fill="#7C3AED"></circle>
+        <text x="160" y="182" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700">SITE</text>
+        <text x="160" y="16" text-anchor="middle" fill="rgba(255,255,255,.8)" font-family="Inter, sans-serif" font-size="12" font-weight="600">Converts</text>
+        <text x="292" y="274" text-anchor="middle" fill="rgba(255,255,255,.8)" font-family="Inter, sans-serif" font-size="12" font-weight="600">Cited by AI</text>
+        <text x="30" y="274" text-anchor="middle" fill="rgba(255,255,255,.8)" font-family="Inter, sans-serif" font-size="12" font-weight="600">Found by Google</text>
+      </svg>
+    </div>
+    <div>
+      <span class="cw-eyebrow">The whole job, in one picture</span>
+      <h2 id="tri-h2">We code websites that do three jobs at once</h2>
+      <p>Most sites are built for one of these and accidentally sabotage the other two. A beautiful site nobody can find. A site that ranks and converts nobody. A site an AI assistant cannot read a single fact from. All three have to be true at the same time, and they are decided at build time, not bolted on afterwards.</p>
+      <div class="tri-legend">
+        <div class="tri-leg">
+          <span class="tri-dot" style="background:#22D3EE"></span>
+          <div><h3>Built to convert</h3><p>Every page has one obvious next action, proof placed where the doubt is, and a phone number you never have to hunt for. UX that makes it easier to do business with you.</p></div>
+        </div>
+        <div class="tri-leg">
+          <span class="tri-dot" style="background:#F472B6"></span>
+          <div><h3>Built to be cited by AI</h3><p>Clean markup and real structured data, so assistants answering "who should I hire for this" can actually read, verify and name your business.</p></div>
+        </div>
+        <div class="tri-leg">
+          <span class="tri-dot" style="background:#FDE047"></span>
+          <div><h3>Built to be found by Google</h3><p>Fast, crawlable, correctly structured, and organized around what people search for rather than around your internal org chart.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bro-sec" id="bro">
+  <div class="wrap">
+    <div class="tc" style="max-width:720px;margin:0 auto 40px;">
+      <span class="chip chip-purple">The real problem</span>
+      <h2>Most websites are brochures with a URL</h2>
+    </div>
+    <p class="bro-para">
+      <span class="bro-drop">Your site lists what you do, shows a photo of the building, and waits patiently for somebody who had already decided to call you.</span>
+      <span class="bro-keep">It has never sold anyone anything.</span>
+    </p>
+    <p class="bro-after">A brochure sitting in a drawer costs you nothing but the printing. A brochure sitting on the internet costs you every visitor who arrived ready to buy and left because nothing on the page helped them do it. That is not a design problem or a copy problem. It is a job description problem: nobody ever told the website what it was for.</p>
+  </div>
+</section>
+
+<section class="section sev-sec" id="sev">
+  <div class="wrap sev-grid">
+    <div>
+      <div class="sev-big">24/7</div>
+      <p class="sev-sub">The hours your website is on duty, whether or not anyone is in the building.</p>
+    </div>
+    <div>
+      <span class="cw-eyebrow">Proactive, not passive</span>
+      <h2 id="sev-h2">A site should be working the shift you are not</h2>
+      <p class="sv">Your phone stops being answered at six. Your website does not stop being visited. Somebody is comparing three businesses at 11pm on a Sunday, and whichever one made it easiest to take the next step right then is the one that gets the job on Monday.</p>
+      <p class="sv">That is the difference between a page that describes your business and a page that works for it: quote tools that answer the money question at midnight, booking that does not require a human on the other end, content that keeps earning citations while you sleep, and forms that reach you before the lead has cooled.</p>
+      <div class="sev-chart" style="margin-top:26px;">
+        <svg viewBox="0 0 420 190" role="img" aria-label="Illustration comparing a passive brochure site, which only produces activity during business hours, with a site built to work around the clock.">
+          <line x1="30" y1="160" x2="410" y2="160" stroke="rgba(255,255,255,.18)" stroke-width="1"></line>
+          <line x1="30" y1="20" x2="30" y2="160" stroke="rgba(255,255,255,.18)" stroke-width="1"></line>
+          <path class="sv-line" d="M30 155 L90 152 L140 150 L180 96 L230 74 L280 88 L320 146 L370 154 L410 156" stroke="rgba(255,255,255,.38)"></path>
+          <path class="sv-line d2" d="M30 118 L70 108 L110 112 L150 78 L195 52 L240 44 L285 58 L330 62 L370 84 L410 96" stroke="#22D3EE"></path>
+          <text x="30" y="178" fill="rgba(255,255,255,.4)" font-family="Inter, sans-serif" font-size="10">12am</text>
+          <text x="196" y="178" fill="rgba(255,255,255,.4)" font-family="Inter, sans-serif" font-size="10">12pm</text>
+          <text x="382" y="178" fill="rgba(255,255,255,.4)" font-family="Inter, sans-serif" font-size="10">12am</text>
+          <text x="8" y="26" fill="rgba(255,255,255,.4)" font-family="Inter, sans-serif" font-size="10" transform="rotate(-90 8 26)">activity</text>
+        </svg>
+        <div class="sv-key">
+          <span><i style="background:rgba(255,255,255,.38)"></i>Brochure site &mdash; awake when you are</span>
+          <span><i style="background:#22D3EE"></i>Site built to work &mdash; never off</span>
+        </div>
+        <p class="src" style="color:rgba(255,255,255,.42);margin-top:12px;">Illustrative of the pattern, not measured data from any one account. The shape is the point: the passive site collapses to nothing outside office hours, and those hours are when a lot of people research.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hm-sec" id="health">
+  <div class="wrap">
+    <div class="tc" style="max-width:740px;margin:0 auto;">
+      <span class="chip chip-orange">Interactive</span>
+      <h2 id="hm-h2">If your business had a health meter, this would be it</h2>
+      <p style="color:var(--muted);line-height:1.75;margin-top:12px;">Your website is the one asset that touches every marketing dollar you spend. Ads point at it. Search points at it. Referrals check it before they call. Answer honestly &mdash; nothing is sent anywhere, this runs entirely in your browser.</p>
+    </div>
+
+    <div class="hm">
+      <div class="hm-q" id="hmQ">
+        <div class="hm-item"><input type="checkbox" id="h1"><label for="h1">It loads in under three seconds on a phone using cellular data.</label></div>
+        <div class="hm-item"><input type="checkbox" id="h2"><label for="h2">Your phone number is tappable and visible without scrolling.</label></div>
+        <div class="hm-item"><input type="checkbox" id="h3"><label for="h3">It was built for your business, not adapted from a template hundreds of others also bought.</label></div>
+        <div class="hm-item"><input type="checkbox" id="h4"><label for="h4">A visitor can buy, book or inquire without leaving the site or phoning during office hours.</label></div>
+        <div class="hm-item"><input type="checkbox" id="h5"><label for="h5">It has been meaningfully updated in the last twelve months.</label></div>
+        <div class="hm-item"><input type="checkbox" id="h6"><label for="h6">It has real structured data, so AI assistants can read what you do and who you serve.</label></div>
+        <div class="hm-item"><input type="checkbox" id="h7"><label for="h7">You can tell which pages actually produce leads, not just which get traffic.</label></div>
+      </div>
+
+      <div class="hm-panel" id="hmPanel">
+        <svg class="hm-gauge" viewBox="0 0 300 200" role="img" aria-label="Gauge showing your website health score.">
+          <path d="M50,132 A100,100 0 0 1 91.22,51.10" fill="none" stroke="#F04438" stroke-width="16" stroke-linecap="round"></path>
+          <path d="M91.22,51.10 A100,100 0 0 1 174.87,35.14" fill="none" stroke="#F79009" stroke-width="16"></path>
+          <path d="M174.87,35.14 A100,100 0 0 1 240.48,89.42" fill="none" stroke="#EAAA08" stroke-width="16"></path>
+          <path d="M240.48,89.42 A100,100 0 0 1 250,132" fill="none" stroke="#17B26A" stroke-width="16" stroke-linecap="round"></path>
+          <g class="hm-needle" id="hmNeedle" transform="rotate(-90 150 132)">
+            <polygon points="150,44 155,132 145,132" fill="#101828"></polygon>
+          </g>
+          <circle cx="150" cy="132" r="11" fill="#101828"></circle>
+          <circle cx="150" cy="132" r="4" fill="#fff"></circle>
+          <text x="50" y="160" text-anchor="middle" fill="#98A2B3" font-family="Inter, sans-serif" font-size="11">Critical</text>
+          <text x="250" y="160" text-anchor="middle" fill="#98A2B3" font-family="Inter, sans-serif" font-size="11">Healthy</text>
+        </svg>
+        <svg class="hm-crack" viewBox="0 0 300 200" aria-hidden="true">
+          <g stroke="#D92D20" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <polyline points="150,132 138,104 152,86 132,58"></polyline>
+            <polyline points="150,132 176,116 168,92 190,70"></polyline>
+            <polyline points="150,132 128,146 104,140"></polyline>
+            <polyline points="152,86 170,74"></polyline>
+          </g>
+        </svg>
+        <div class="hm-score" id="hmScore">0</div>
+        <div class="hm-band" id="hmBand">Critical</div>
+        <p class="hm-note" id="hmNote">Check the statements that are true of your site today.</p>
+        <div class="hm-cta"><a href="#start" class="btn btn-violet">Get a straight assessment</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;">
+  <div class="wrap">
+    <div class="tc" style="max-width:760px;margin:0 auto;">
+      <span class="chip chip-blue">Why speed is a revenue number</span>
+      <h2>One tenth of a second is worth real money</h2>
+      <p style="color:var(--muted);line-height:1.75;margin-top:12px;">This is the part most owners treat as a technical detail for the developer to worry about. It is not a technical detail. It is the cheapest revenue increase available to most businesses, and it is measurable.</p>
+    </div>
+    <div class="spd-grid">
+      <div class="spd-card"><div class="spd-n">+8.4%</div><div class="spd-t">retail conversion rate from a <b>0.1 second</b> mobile speed improvement</div></div>
+      <div class="spd-card"><div class="spd-n">+9.2%</div><div class="spd-t">average order value, from that same tenth of a second</div></div>
+      <div class="spd-card"><div class="spd-n">+32%</div><div class="spd-t">bounce probability as load time moves from 1 second to 3</div></div>
+      <div class="spd-card"><div class="spd-n">+123%</div><div class="spd-t">bounce probability by the time a page takes 10 seconds</div></div>
+    </div>
+    <p class="src" style="max-width:820px;margin:18px auto 0;">Conversion and order value figures: Deloitte and Google, <em>Milliseconds Make Millions</em>, built on roughly 30 million mobile sessions across 37 retail, travel, luxury and lead-generation brands. Bounce figures: Google and SOASTA mobile page speed benchmarks. These are correlational studies rather than controlled experiments, which is worth knowing &mdash; though Rakuten 24 later measured a 33.1% higher conversion rate and 53.4% more revenue per visitor after passing all three Core Web Vitals, which is closer to a clean before-and-after.</p>
+    <p style="max-width:820px;margin:22px auto 0;color:var(--ink3);line-height:1.8;">You do not have to take our word for any of it. Run your own site through <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">Google's PageSpeed Insights</a> right now and look at the field data, not the lab score. If you want the underlying explanation of what those metrics mean, Google publishes it openly at <a href="https://web.dev/" target="_blank" rel="noopener">web.dev</a>, and the <a href="https://www.nngroup.com/" target="_blank" rel="noopener">Nielsen Norman Group</a> has decades of published usability research that is worth more than most agency blogs. None of those three is trying to sell you a website.</p>
+    <p style="max-width:820px;margin:16px auto 0;color:var(--ink3);line-height:1.8;">If your numbers come back poor, that is not a verdict on your business. It is usually the predictable result of a platform loading code written for thousands of other companies. That is the specific problem a <strong>custom coded website</strong> solves, and it is why we do not ship page-builder sites.</p>
+  </div>
+</section>
+
+<section class="section" style="background:#08060F;">
+  <div class="wrap">
+    <div class="tc" style="max-width:760px;margin:0 auto;">
+      <span class="cw-eyebrow">Show, don't tell</span>
+      <h2 id="bld-h2" style="color:#fff;">What we can actually build for you</h2>
+      <p style="color:rgba(255,255,255,.68);line-height:1.75;margin-top:12px;">If you can describe what it should do, it can almost certainly be coded. These are not future features on a roadmap &mdash; they are the kinds of things that live inside sites we build, and several of them are running on this page right now.</p>
+    </div>
+    <div class="bld-grid">
+      <div class="bld"><div class="bld-ic"></div><h3>Quote and pricing tools</h3><p>Answer the money question before the visitor leaves. The single highest-impact interactive element for most service businesses, because price anxiety is what stops the call.</p></div>
+      <div class="bld"><div class="bld-ic"></div><h3>Diagnostic scorecards</h3><p>Like the health meter above. The visitor learns something true about their own situation, which earns the right to ask for their number.</p></div>
+      <div class="bld"><div class="bld-ic"></div><h3>Configurators and builders</h3><p>Let someone assemble the thing they want, see it change, and send you the exact spec. Fewer discovery calls, better-qualified leads.</p></div>
+      <div class="bld"><div class="bld-ic"></div><h3>Booking and scheduling flows</h3><p>Take the appointment at 11pm without a receptionist. The most common single cause of a lost lead is asking someone to wait until morning.</p></div>
+      <div class="bld"><div class="bld-ic"></div><h3>Custom dashboards and portals</h3><p>Client logins, order status, document access, project visibility. The kind of thing that makes leaving you inconvenient.</p></div>
+      <div class="bld"><div class="bld-ic"></div><h3>Interactive maps and coverage tools</h3><p>Service-area checkers, location finders, territory maps. Cuts the out-of-area calls that waste your day.</p></div>
+      <div class="bld"><div class="bld-ic"></div><h3>Animated data and explainers</h3><p>Charts that build as you scroll, processes that reveal themselves in sequence. Complicated offers become understandable offers.</p></div>
+      <div class="bld"><div class="bld-ic"></div><h3>Games and quizzes</h3><p>Yes, really. Attention is the scarce resource. A well-placed game gets shared, gets remembered, and gets email addresses.</p></div>
+      <div class="bld"><div class="bld-ic"></div><h3>Chat assistants and lead routing</h3><p>Answer the common questions instantly, route the serious ones to a human, and never lose the transcript. See our <a href="/ai-chatbot-for-business/" style="color:var(--cw-violet2)">AI chatbot work</a>.</p></div>
+    </div>
+
+    <div class="demo">
+      <span class="demo-tag">Live demo &mdash; this is real, try it</span>
+      <h3>Instant build estimator</h3>
+      <p>The kind of tool we put on client sites, running here so you can see it work. Move the sliders.</p>
+      <div class="demo-row">
+        <div class="demo-f">
+          <label for="dPages">Pages</label>
+          <div class="dv" id="dPagesV">6</div>
+          <input type="range" id="dPages" min="1" max="30" step="1" value="6">
+        </div>
+        <div class="demo-f">
+          <label for="dTools">Custom interactive tools</label>
+          <div class="dv" id="dToolsV">1</div>
+          <input type="range" id="dTools" min="0" max="6" step="1" value="1">
+        </div>
+        <div class="demo-f">
+          <label for="dCopy">Pages we write from scratch</label>
+          <div class="dv" id="dCopyV">3</div>
+          <input type="range" id="dCopy" min="0" max="30" step="1" value="3">
+        </div>
+      </div>
+      <div class="demo-out">
+        <div class="demo-big" id="dOut">$220 &ndash; $290 / mo</div>
+        <div class="demo-lab" id="dLab">Estimated lease range. This is a starting estimate from three sliders, not a quote &mdash; a real number comes after we understand what the site has to do.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--off);">
+  <div class="wrap">
+    <div class="tc" style="max-width:740px;margin:0 auto;">
+      <span class="chip chip-purple">The walk-through</span>
+      <h2>What a site built to sell actually does, step by step</h2>
+      <p style="color:var(--muted);line-height:1.75;margin-top:12px;">Five stages. A brochure site handles the first one badly and the other four not at all.</p>
+    </div>
+    <div class="fun" id="fun">
+      <div class="fun-step">
+        <div class="fun-n">1</div>
+        <div><h3>They find you &mdash; or they find somebody else</h3><p>A search result, an AI assistant naming three companies, or a referral checking you out before they call. All three end at your site, and all three are decided by whether your pages are fast, readable and structured. This is where most of the invisible losses happen, because you never see the person who did not arrive.</p></div>
+      </div>
+      <div class="fun-step">
+        <div class="fun-n">2</div>
+        <div><h3>They decide in about five seconds whether you are serious</h3><p>Not consciously, and not fairly. A slow load, a stock photo of a handshake, a 2014 layout on a phone &mdash; the judgment is made before a word is read. You do not get to argue with it. You only get to not trigger it.</p></div>
+      </div>
+      <div class="fun-step">
+        <div class="fun-n">3</div>
+        <div><h3>They look for the answer to the thing they are actually worried about</h3><p>Usually price, sometimes whether you handle their specific situation, occasionally whether you are still in business. If the page makes them guess, they leave and go guess on a competitor's site instead. This is where a quote tool, an honest range or a real FAQ earns its cost several times over.</p></div>
+      </div>
+      <div class="fun-step">
+        <div class="fun-n">4</div>
+        <div><h3>They act &mdash; if acting is easy</h3><p>One obvious next step, a form short enough to finish standing up, a tappable number, a booking option that works at midnight. Every extra field is a percentage of people who stop. Every "contact us for more information" is a person who did not.</p></div>
+      </div>
+      <div class="fun-step">
+        <div class="fun-n">5</div>
+        <div><h3>You reach them before the interest cools</h3><p>The lead lands where you will actually see it, with the context you need to respond usefully. A form that sends to an inbox nobody checks is the same as no form at all, and we have found that exact situation on more inherited sites than we would like to admit.</p></div>
+      </div>
+    </div>
+    <p style="max-width:740px;margin:26px auto 0;text-align:center;color:var(--ink3);line-height:1.8;">If you read those five and recognized your own site failing at three of them, you already know what this call is about. Pairing the build with <a href="/conversion-optimization/">conversion optimization</a> and <a href="/seo-systems/">an SEO system</a> is what turns the site from a cost into the thing that pays for the rest of your marketing.</p>
+  </div>
+</section>
+
+<section class="rain-sec">
+  <div class="rain" id="rain" aria-hidden="true"></div>
+  <div class="wrap rain-in">
+    <h2>So what exactly are you waiting for?</h2>
+    <p>Under-capitalization is one of the most reliable ways a good business dies &mdash; not because the owner was bad at the work, but because revenue never arrived fast enough to outrun the costs. Marketing is one of the few line items that exists specifically to bring money in rather than send it out.</p>
+    <p>Every month the decision is deferred is a month of compounding you do not get back. Rankings build slowly. Reviews accumulate slowly. Citations in AI answers accumulate slowly. The business that started eighteen months ago is not smarter than you. It is just eighteen months ahead, and that gap widens on its own.</p>
+    <p style="margin-top:24px;"><a href="#start" class="btn btn-violet btn-lg">Start the conversation</a></p>
+  </div>
+</section>
+
+<section class="section pr-sec">
+  <div class="wrap">
+    <div class="tc" style="max-width:760px;margin:0 auto;">
+      <span class="cw-eyebrow">Straight talk about money</span>
+      <h2>What this costs, and what it costs elsewhere</h2>
+      <p style="margin-top:12px;">We are not the cheapest and we are not pretending to be the only good option &mdash; there is real talent out there and some of it is excellent. What we will do is show you the actual numbers so you can judge for yourself.</p>
+    </div>
+    <div class="pr-grid">
+      <div class="pr-card">
+        <div class="pr-amt">$37,158<small>average one-off web project, per Clutch data</small></div>
+        <p>That is the industry average for a single build, paid up front, before anyone has proven the thing will produce a customer.</p>
+      </div>
+      <div class="pr-card">
+        <div class="pr-amt">$10,000+<small>per month, at larger agencies</small></div>
+        <p>These retainers are real and sometimes justified. A meaningful share of that number is account managers, downtown office space and the layers between you and the person doing the work.</p>
+      </div>
+      <div class="pr-card hi">
+        <div class="pr-amt">From $99<small>per month, lease with buyout</small></div>
+        <p>Our entry point. Larger builds cost more &mdash; more pages, more custom tools, deeper optimization. Buyout available at 24 to 36 months based on what the site is worth then. We run campaigns at the $10,000 level too, for businesses at that scale. The difference is how much of your money reaches the work.</p>
+      </div>
+    </div>
+    <p style="max-width:820px;margin:26px auto 0;text-align:center;">The lease exists for a specific reason: a large upfront cost is the single most common thing that stops a business from getting a proper site at all. If cash flow is the reason you have put this off twice already, that is the objection this structure was designed to remove.</p>
+
+    <div class="ref">
+      <svg class="ref-face" viewBox="0 0 100 110" role="img" aria-label="Cartoon face with its tongue out, celebrating free advertising for referrals.">
+        <circle cx="50" cy="50" r="40" fill="#FDE047"></circle>
+        <circle cx="36" cy="42" r="5" fill="#101828"></circle>
+        <circle cx="64" cy="42" r="5" fill="#101828"></circle>
+        <path d="M30 60 Q50 78 70 60" fill="none" stroke="#101828" stroke-width="4" stroke-linecap="round"></path>
+        <path class="ref-tongue" d="M42 66 Q50 96 58 66 Z" fill="#F472B6" stroke="#101828" stroke-width="2.5" stroke-linejoin="round"></path>
+      </svg>
+      <div>
+        <h3>We give away free advertising. On purpose.</h3>
+        <p>Send us a referral and we will hand you marketing work for nothing &mdash; a landing page, a campaign, design work, whatever moves your business. We are not being noble about it. Referrals are the cheapest good clients any agency ever gets, and we would genuinely rather spend that budget on you than on ads. Ask about it on the call; the worst outcome is that you get something free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;">
+  <div class="wrap">
+    <div class="tc" style="max-width:740px;margin:0 auto;">
+      <span class="chip chip-blue">Straight answers</span>
+      <h2 id="faq-h2">Custom website design questions, answered honestly</h2>
+    </div>
+    <div class="faq-cols">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What is custom website design?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Custom website design means the layout, the code and the content structure are built for one specific business rather than adapted from a template that thousands of other companies are also using. In practice the difference shows up in three places: the site is faster because nothing is loaded that the page does not need, it is structured around the actions you want a visitor to take instead of around what a theme happened to offer, and it can do things a template cannot, such as a quoting tool or a booking flow built for the way you actually sell.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What is the real difference between a custom website and a template?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>A template is a general-purpose shell that has to support every kind of business, so it ships with code for features you will never use, and that weight is carried by every visitor on every page load. A custom coded website contains only what your business needs. The visible result is usually speed and clarity. The invisible result is that you are not fighting the theme every time you want to change something, and you are not one plugin update away from a broken page.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">How much does a custom website cost?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>It depends on scope, and honest ranges are wide. For context, Clutch data puts the average one-off web project at roughly $37,158, and plenty of agencies bill well above that. Our custom sites start at $99 per month on a lease, which is the entry point rather than the ceiling, and larger builds with more pages, more custom functionality and deeper optimization cost more. We quote after we understand what the site has to do, not before.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Do you really lease websites for $99 a month?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Yes. The lease structure exists because a large upfront build cost is what stops most good businesses from getting a proper website at all. You pay monthly, the site is built and maintained, and there is a buyout option at 24 to 36 months based on what the site is worth at that point. Rates start at $99 per month and go up with size, complexity and the level of optimization involved.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">How long does a custom website take to build?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>A focused site of a few pages is usually a matter of weeks rather than months. Larger builds with custom tools, many service pages or content that has to be written from scratch take longer. The honest variable is rarely our build time, it is how quickly we get photos, copy approvals and access from your side. We will tell you which stage is holding the project up rather than letting it drift.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Do you use WordPress, Wix or Squarespace?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Not for these builds. Those platforms are reasonable choices for some projects and we are not going to pretend otherwise, but they solve a different problem: making a site editable by anyone at the cost of loading a large amount of general-purpose code. We hand-code instead, because performance and control are the two things that most directly affect whether a site converts and whether it gets cited.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Will I be able to update the site myself?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>For content you change often, yes, we set it up so you can. For structural changes, most owners would rather send a message than learn a build system, so updates are included in the arrangement. The thing we will not do is hand you a site you cannot maintain and then disappear, which is the single most common complaint we hear about previous developers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What does it actually mean for a website to be built for conversion?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>It means every page has one obvious next action and nothing competing with it. A tappable phone number that does not require scrolling. Forms short enough to finish in one sitting. Proof placed where doubt appears rather than all collected on an about page. Load times fast enough that nobody leaves before seeing any of it. None of that is decoration, and it is the difference between a site that gets traffic and a site that produces customers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Can AI tools like ChatGPT actually find and cite my website?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>They can, and increasingly they decide what a person sees before that person visits any website at all. AI assistants assemble answers from content they can read and verify, structured business data, and consistent information about your company across the web. A site built with clean markup, factual service descriptions and proper structured data can be cited. A site whose content only exists inside images, scripts or a page builder's rendered output often cannot be read well enough to be quoted.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Do I own the website?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>On a purchased build, yes, outright. On the lease, you are leasing the site during the term and you own it after the buyout, which is what the buyout is for. We will put whichever arrangement applies in writing before anything starts, because a surprise on this point years later is exactly the kind of thing that ruins a working relationship.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What if I already have a website that mostly works?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Then we will tell you that instead of selling you a rebuild. Sometimes the honest answer is that the site is fine and the problem is that nobody is being sent to it, which is a different job entirely. Sometimes a few pages carry all the value and the rest is noise. We would rather fix the profitable part of a working site than replace something that did not need replacing.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Do you work with businesses outside your home market?<span class="faq-ico" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Yes. Web design work is not bound by geography, and we build for businesses across the United States. Everything from the first conversation to launch happens by phone, email and screen share, and it has worked that way for years. If it matters to you, we are happy to get on a video call so you know exactly who is doing the work.</p></div>
+      </div>
+    </div>
+    <p style="max-width:740px;margin:30px auto 0;text-align:center;color:var(--ink3);line-height:1.8;">Want the search side of this explained too? Start with <a href="/aio-seo-system/">AI SEO</a> and <a href="/generative-engine-optimization-system/">generative engine optimization</a>, or see everything we do on the <a href="/services/">services overview</a>. There is also a set of <a href="/free-seo-tools/">free tools</a> you can use on your own site with no signup.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--off);">
+  <div class="wrap">
+    <div class="fact">
+      <h2>Custom website design &mdash; fact sheet</h2>
+      <p class="fact-up">Plain, checkable facts for readers and for AI systems summarizing this page. Last updated September 11, 2026.</p>
+      <div class="fact-grid">
+        <div class="fact-k">Provider</div><div class="fact-v">Eye To Ad Media, operating since 2012</div>
+        <div class="fact-k">Service</div><div class="fact-v">Custom website design and development, hand-coded, no page builders or off-the-shelf themes</div>
+        <div class="fact-k">Built for</div><div class="fact-v">Conversion, page speed, search visibility, and citation by AI assistants</div>
+        <div class="fact-k">Platforms</div><div class="fact-v">Hand-coded HTML, CSS and JavaScript. Not WordPress, Wix or Squarespace.</div>
+        <div class="fact-k">Custom functionality</div><div class="fact-v">Quote tools, calculators, scorecards, configurators, booking flows, client portals, dashboards, interactive maps, chat assistants</div>
+        <div class="fact-k">Starting price</div><div class="fact-v">$99 per month on a lease; buyout option at 24&ndash;36 months based on the site's value at that time. Rates rise with size, complexity and optimization depth.</div>
+        <div class="fact-k">Service area</div><div class="fact-v">United States, worked remotely by phone, email and screen share</div>
+        <div class="fact-k">Typical timeline</div><div class="fact-v">Weeks for a focused site; longer for large builds or sites with custom tools and original copy</div>
+        <div class="fact-k">Ownership</div><div class="fact-v">Outright on a purchased build; after buyout on a lease. Put in writing before work starts.</div>
+        <div class="fact-k">Contact</div><div class="fact-v">1-800-481-8638 &middot; (720) 249-6588 &middot; <a class="eml" data-u="info" data-d="eyetoad.com" href="#">info&#64;eyetoad&#46;com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cw-final" id="start">
+  <div class="cw-shapes" aria-hidden="true">
+    <span class="cw-orb cw-orb-a" style="left:auto;right:-120px;top:auto;bottom:-90px"></span>
+  </div>
+  <div class="wrap cw-final-grid">
+    <div>
+      <span class="cw-eyebrow">Last step</span>
+      <h2>Let's make this the last website you ever have to replace</h2>
+      <p>Tell us what the business does and what the site has to accomplish. We will come back with a straight answer about what it needs, what it would cost, and whether you should even rebuild &mdash; because sometimes you should not, and we would rather say so now than take the money.</p>
+      <p>No contract to have the conversation. No card. If you would rather just talk it through, call <a href="tel:18004818638" style="color:var(--cw-cyan);font-weight:700;">1-800-481-8638</a> and you will get a person.</p>
+    </div>
+
+    <div class="cw-form">
+      <h3>Tell us about the project</h3>
+      <p class="fsub">We reply with a real assessment, not a brochure.</p>
+      <form id="cwBot" method="POST" novalidate data-fs="info@eyetoad.com">
+        <div class="hp"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_loadtime" value="">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Custom website enquiry (footer) — eyetoad.com">
+        <input type="hidden" name="_template" value="table">
+        <label class="fsub" for="b-name" style="margin-bottom:4px;display:block;">Your name</label>
+        <input id="b-name" type="text" name="Name" autocomplete="name" placeholder="Name" required>
+        <label class="fsub" for="b-biz" style="margin-bottom:4px;display:block;">Business</label>
+        <input id="b-biz" type="text" name="Business" autocomplete="organization" placeholder="Business name" required>
+        <label class="fsub" for="b-contact" style="margin-bottom:4px;display:block;">Phone or email</label>
+        <input id="b-contact" type="text" name="Contact" placeholder="Whichever you prefer" required>
+        <label class="fsub" for="b-site" style="margin-bottom:4px;display:block;">Current website (or "none")</label>
+        <input id="b-site" type="text" name="Website" placeholder="yourbusiness.com">
+        <label class="fsub" for="b-msg" style="margin-bottom:4px;display:block;">What does the site need to do? (optional)</label>
+        <textarea id="b-msg" name="Notes" placeholder="Sell, book, quote, explain — whatever the job is"></textarea>
+        <button type="submit">Send it over</button>
+        <div class="fmsg" role="status" aria-live="polite"></div>
+        <p class="cw-fine">Used to reply to you. No list, no resale, no robocalls.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" aria-label="Site footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <!-- Footer logo uses the SAME .brand-logo rule as the header. The old
+             build hard-coded height:300px INLINE, which overrode the mobile
+             media query and left a 300px logo on phones. width/height attrs
+             match the rendered 300x102 box. -->
+        <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver SEO Agency since 2012" class="brand-logo" width="300" height="102" loading="lazy">
+        <p>Denver's SEO authority for modern search since 2012 — Google, AI Overviews, agentic AI, local maps, and conversion. Serving Denver and surrounding Colorado.</p>
+        <address>
+          Eye To Ad Media<br>
+          1001 Bannock St #660<br>
+          Denver, CO 80204<br>
+          <a href="tel:17202496588">(720) 249-6588</a><br>
+          <a href="tel:18004818638">1-800-481-8638</a><br>
+          <a class="eml" data-u="info" data-d="eyetoad.com" href="#">info&#64;eyetoad&#46;com</a>
+        </address>
+      </div>
+      <!-- ============================================================
+        FOOTER — PORTABLE BY DESIGN (Sept 2026). Read before editing.
+
+        THE LABELS DELIBERATELY DO NOT SAY "DENVER". This same footer ships
+        on out-of-state pages (Dallas, Phoenix, Charlotte...). A Dallas page
+        carrying "Dentist SEO Denver / Roofing SEO Denver / Denver SEO
+        Pricing" in its footer reads wrong to a human and pushes a Denver
+        signal on a page trying to rank for Dallas. DESTINATIONS ARE
+        UNCHANGED — every one of these is still the Denver page it always
+        was, and each of those pages carries "Denver" in its own title, H1,
+        content and schema, which is where it actually counts. This also
+        matches the anchor-diversity decision already made for the
+        Industries mega-menu, which dropped the geo suffix for the same
+        reason.
+
+        LOCATIONS IS ONE LINK. An earlier pass had four links here pointing
+        at the same hub via anchors that did not exist. Cities live in the
+        Locations mega-menu and on /locations/ — never as a sitewide list,
+        which is the keyword-stuffed footer pattern spam systems look for.
+        ============================================================ -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/denver-seo-services/">SEO Services</a>
+        <a href="/local-seo-denver/">Local SEO &amp; Maps</a>
+        <a href="/seo-systems/">SEO Systems</a>
+        <a href="/aio-seo-system/">AIO SEO System</a>
+        <a href="/generative-engine-optimization-system/">GEO System</a>
+        <a href="/conversion-optimization/">Conversion Optimization</a>
+        <a href="/denver-seo-pricing/">Pricing</a>
+        <a href="/free-seo-audit/">Free SEO Audit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <a href="/contractor-seo-denver/">Contractor SEO</a>
+        <a href="/dentist-seo-denver/">Dentist SEO</a>
+        <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+        <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+        <a href="/roofing-seo-denver/">Roofing SEO</a>
+        <a href="/hvac-seo-denver/">HVAC SEO</a>
+        <a href="/industries/">All Industries &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/locations/">Service Locations</a>
+        <a href="/about/">About Us</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+        <a href="/blog/">Blog</a>
+        <a href="/marketing-subscription/">VIP Membership</a>
+        <a href="/grow-my-business/">Grow My Business</a>
+        <a href="/contact/">Contact</a>
+        <!-- Legal links live in the footer bottom bar, once each. /terms.html
+             is the only non-trailing-slash URL on the site: rename it to
+             /terms/index.html and update every link sitewide in ONE commit. -->
+      </div>
+      
+    </div>
+    <div class="footer-bot">
+      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-09-10">September 10, 2026</time>.</p>
+      <div class="footer-links">
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/accessibility/">Accessibility</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/robots.txt">Robots.txt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CORE UI
+   ============================================================ */
+(function(){
+  var hdr=document.getElementById('hdr');
+  var burger=document.getElementById('burger');
+  var mobNav=document.getElementById('mobNav');
+
+  window.addEventListener('scroll',function(){
+    hdr.classList.toggle('scrolled',window.scrollY>30);
+  },{passive:true});
+
+  /* Mobile nav offset is MEASURED, never hard-coded. The old build pinned
+     .mob-nav to top:300px, which had to be kept in sync with
+     .hdr-inner{height:300px} by hand — and wasn't.
+     This is also why the HEADER FIT breakpoints needed no JS change: the
+     menu position is derived from the rendered header, whatever size it
+     happens to be at that viewport width. */
+  function measureHeader(){
+    var r=hdr.getBoundingClientRect();
+    mobNav.style.top=Math.max(0,r.bottom)+'px';
+  }
+  window.addEventListener('resize',measureHeader);
+  window.addEventListener('scroll',measureHeader,{passive:true});
+  measureHeader();
+
+  burger.addEventListener('click',function(){
+    measureHeader();
+    var o=mobNav.classList.toggle('open');
+    burger.classList.toggle('open',o);
+    burger.setAttribute('aria-expanded',o);
+    document.body.classList.toggle('nav-open',o);
+    document.body.style.overflow=o?'hidden':'';
+    if(o)mobNav.scrollTop=0;
+  });
+
+  /* dedicated close button inside the menu — the burger can sit behind a
+     sticky header on some phones, so the menu owns a way out of itself */
+  var mobClose=document.getElementById('mobClose');
+  if(mobClose)mobClose.addEventListener('click',function(){burger.click();});
+  /* accordion: one section at a time, collapsed on open */
+  mobNav.querySelectorAll('.mob-acc').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var grp=document.getElementById(btn.getAttribute('aria-controls'));
+      var isOpen=btn.getAttribute('aria-expanded')==='true';
+      mobNav.querySelectorAll('.mob-acc').forEach(function(b){
+        b.setAttribute('aria-expanded','false');
+        var g=document.getElementById(b.getAttribute('aria-controls'));
+        if(g)g.classList.remove('open');
+      });
+      if(!isOpen){btn.setAttribute('aria-expanded','true');if(grp)grp.classList.add('open');}
+    });
+  });
+
+  mobNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      mobNav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded',false);
+      document.body.classList.remove('nav-open');
+      document.body.style.overflow='';
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&mobNav.classList.contains('open')){burger.click();}
+  });
+
+
+/* FAQ accordion — one open at a time */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.closest('.faq-item');
+      var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el){
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded',false);
+      });
+      if(!wasOpen){item.classList.add('open');btn.setAttribute('aria-expanded',true);}
+    });
+  });
+
+
+  /* Email links are assembled at runtime so the address is not in the raw
+     source as a harvestable string. The JSON-LD address stays plain on
+     purpose — that is the channel we WANT machines to read. */
+  window.bindEmails=function(){
+    document.querySelectorAll('a.eml').forEach(function(a){
+      if(a.dataset.bound)return; a.dataset.bound='1';
+      a.href='mailto:'+a.getAttribute('data-u')+String.fromCharCode(64)+a.getAttribute('data-d');
+    });
+  };
+  window.bindEmails();
+
+  /* REMOVED Sep 2 2026: the .ask-copy clipboard handler for the
+     "Ask an AI Engine" section. That whole section is gone — see the
+     removal note where it used to sit, above the Agentic AI block. */
+})();
+
+/* ---------- reveal on scroll ---------- */
+(function(){
+  var targets=[['#sev','in'],['#fun','in'],['#bro','drop']];
+  function reveal(el,cls){el.classList.add(cls);}
+  targets.forEach(function(t){
+    var el=document.querySelector(t[0]);
+    if(!el) return;
+    if(!('IntersectionObserver' in window)){reveal(el,t[1]);return;}
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){reveal(el,t[1]);io.disconnect();} });
+    },{threshold:.3});
+    io.observe(el);
+  });
+})();
+
+/* ---------- brochure: split the sentence so the words can fall ---------- */
+(function(){
+  var drop=document.querySelector('.bro-drop');
+  if(!drop) return;
+  var words=drop.textContent.trim().split(/\s+/);
+  drop.textContent='';
+  words.forEach(function(w,i){
+    var s=document.createElement('span');
+    s.className='w go';
+    s.textContent=w;
+    s.style.setProperty('--r',((i%5)-2)*9+'deg');
+    s.style.transitionDelay=(i*0.045)+'s';
+    drop.appendChild(s);
+    drop.appendChild(document.createTextNode(' '));
+  });
+})();
+
+/* ---------- rain ---------- */
+(function(){
+  var r=document.getElementById('rain');
+  if(!r) return;
+  var n=window.innerWidth<600?18:34;
+  for(var i=0;i<n;i++){
+    var d=document.createElement('i');
+    d.style.left=(Math.random()*100)+'%';
+    d.style.animationDelay=(-Math.random()*3.4)+'s';
+    d.style.animationDuration=(2.9+Math.random()*1.8)+'s';
+    d.style.opacity=(0.3+Math.random()*0.5);
+    r.appendChild(d);
+  }
+})();
+
+/* ---------- health meter ---------- */
+(function(){
+  var q=document.getElementById('hmQ');
+  if(!q) return;
+  var boxes=q.querySelectorAll('input[type=checkbox]');
+  var needle=document.getElementById('hmNeedle'),scoreEl=document.getElementById('hmScore');
+  var bandEl=document.getElementById('hmBand'),noteEl=document.getElementById('hmNote'),panel=document.getElementById('hmPanel');
+  var bands=[
+    {max:29,name:'Critical',note:'This is the state most sites are in when we first see them. Nothing here is unfixable, but the site is currently costing you money rather than making it.'},
+    {max:57,name:'Poor',note:'The foundation exists and the finishing does not. Usually the fastest gains are speed and making the next step obvious on every page.'},
+    {max:85,name:'Fair',note:'Better than most. What is missing tends to be the machine-readable side and the measurement — you cannot improve what you cannot see.'},
+    {max:100,name:'Healthy',note:'Genuinely strong. At this point a rebuild is probably the wrong spend, and getting more people to the site is the right one.'}
+  ];
+  function upd(){
+    var c=0; boxes.forEach(function(b){if(b.checked)c++;});
+    var score=Math.round(c/boxes.length*100);
+    needle.setAttribute('transform','rotate('+((score/100*180)-90)+' 150 132)');
+    scoreEl.textContent=score;
+    var b=bands.find(function(x){return score<=x.max;});
+    bandEl.textContent=b.name;
+    noteEl.textContent=c===0?'Check the statements that are true of your site today.':b.note;
+    panel.classList.toggle('broken',c>0&&score<30);
+  }
+  boxes.forEach(function(b){b.addEventListener('change',upd);});
+  upd();
+})();
+
+/* ---------- live demo: build estimator ---------- */
+(function(){
+  var p=document.getElementById('dPages'),t=document.getElementById('dTools'),c=document.getElementById('dCopy');
+  if(!p||!t||!c) return;
+  var pv=document.getElementById('dPagesV'),tv=document.getElementById('dToolsV'),cv=document.getElementById('dCopyV');
+  var out=document.getElementById('dOut');
+  function calc(){
+    var pages=+p.value,tools=+t.value,copy=Math.min(+c.value,pages);
+    if(+c.value>pages){c.value=pages;copy=pages;}
+    pv.textContent=pages; tv.textContent=tools; cv.textContent=copy;
+    var base=99+(pages-1)*11+tools*46+copy*9;
+    var lo=Math.max(99,Math.floor(base/10)*10), hi=Math.round(base*1.28/10)*10;
+    out.textContent='$'+lo.toLocaleString('en-US')+' – $'+hi.toLocaleString('en-US')+' / mo';
+  }
+  [p,t,c].forEach(function(el){el.addEventListener('input',calc);});
+  calc();
+})();
+
+/* ---------- forms ---------- */
+(function(){
+  var forms=[document.getElementById('cwTop'),document.getElementById('cwBot')].filter(Boolean);
+  if(!forms.length) return;
+  var t0=Date.now();
+
+  function badName(v){return v.length<2||/[<>{}|\\]|https?:\/\//i.test(v);}
+  function badContact(v){
+    var digits=v.replace(/\D/g,'').length;
+    var email=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    return !(email||digits>=10);
+  }
+
+  forms.forEach(function(form){
+    var msg=form.querySelector('.fmsg');
+    var btn=form.querySelector('button[type=submit]');
+    var label=btn.textContent;
+    var lt=form.querySelector('input[name="_loadtime"]');
+    if(lt) lt.value=String(t0);
+    var done=false;
+
+    function show(kind,html){msg.className='fmsg on fmsg-'+kind;msg.innerHTML=html;}
+    function v(sel){var e=form.querySelector(sel);return e?e.value.trim():'';}
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(done) return;
+      if(form.querySelector('input[name="_honey"]').value!=='') return;
+      if(Date.now()-t0<3500){show('err','Give the page a second to finish loading, then send again.');return;}
+
+      var name=v('[name="Name"]'), contact=v('[name="Contact"]');
+      if(badName(name)){show('err','Please enter your name.');return;}
+      if(badContact(contact)){show('err','Please enter a phone number or an email address we can reach you on.');return;}
+
+      var data={};
+      form.querySelectorAll('input[name],textarea[name]').forEach(function(el){
+        if(el.name!=='_honey') data[el.name]=el.value;
+      });
+      data.Name=name; data.Contact=contact;
+
+      btn.disabled=true; btn.textContent='Sending...';
+      show('warn','Sending...');
+
+      fetch('https://formsubmit.co/ajax/'+form.getAttribute('data-fs'),{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)
+      }).then(function(res){
+        if(res.ok){
+          done=true;
+          show('ok','Got it. We will come back to you with a real assessment, usually the same business day.');
+          btn.textContent='Sent';
+        }else{
+          show('warn','We could not confirm that went through. Please call <a href="tel:18004818638">1-800-481-8638</a> so nothing is lost.');
+          btn.disabled=false; btn.textContent=label;
+        }
+      }).catch(function(){
+        show('err','That did not send. Please call <a href="tel:18004818638">1-800-481-8638</a> and we will pick it up from there.');
+        btn.disabled=false; btn.textContent=label;
+      });
+    });
+  });
+})();
+</script>
+
+<script src="/iris.js" defer></script>
+
+</body>
+</html>
