@@ -1144,7 +1144,7 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <div class="aq-form-card">
       <h3>Free Albuquerque Audit</h3>
       <p class="aq-form-sub">Usually back within one business day.</p>
-      <form id="aq-top-form" method="POST" novalidate data-fs="info@eyetoad.com">
+      <form id="aq-top-form" method="POST" novalidate data-x="aW5mbw==" data-y="ZXlldG9hZC5jb20=">
         <div class="aq-hp"><label>Leave blank<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
         <input type="text" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true" class="aq-hp2">
         <input type="hidden" name="_captcha" value="false">
@@ -1328,13 +1328,12 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <div class="lf-card">
       <h3>Free Albuquerque SEO Audit</h3>
       <p class="lf-sub">Usually back within one business day.</p>
-      <form id="loc-form" method="POST" novalidate data-fs="info@eyetoad.com">
+      <form id="loc-form" method="POST" novalidate data-x="aW5mbw==" data-y="ZXlldG9hZC5jb20=">
         <input type="text" name="_honey" id="_honey_loc" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
         <input type="email" name="alt_contact_url" id="_decoy_loc" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
         <input type="hidden" name="_loadtime" id="_loadtime_loc" value="">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="Free SEO Audit Request — Albuquerque page">
-        <input type="hidden" name="_next" value="https://eyetoad.com/thank-you/">
         <input type="hidden" name="form_source" value="Albuquerque SEO location page">
 
         <label for="lf-name">Your name</label>
@@ -1647,13 +1646,20 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
    form at a NEW address and you must submit once through the regular endpoint
    and approve the confirmation email, or every AJAX send falls back to
    "unsure". */
+/* Destination is assembled at submit time from two encoded halves, so no
+   contiguous address exists anywhere in the served markup or script. */
+function etaTo(form){
+  try{
+    return atob(form.getAttribute('data-x'))+String.fromCharCode(64)+atob(form.getAttribute('data-y'));
+  }catch(e){ return ''; }
+}
 (function(){
   var AJAX='https://formsubmit.co/ajax/';
   var PLAIN='https://formsubmit.co/';
   var PHONE='1-800-481-8638';
 
   function buildAction(form,ajax){
-    var to=form.getAttribute('data-fs')||'info@eyetoad.com';
+    var to=etaTo(form);
     return (ajax?AJAX:PLAIN)+to;
   }
   function serialize(form){
@@ -2020,7 +2026,7 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     if(f.elements['phone'].value.replace(/\D/g,'').length<10){show('err','Please enter a valid phone number with area code.');return;}
     btn.disabled=true; btn.textContent='Sending...';
     var data={}; Array.prototype.forEach.call(f.elements,function(el){if(el.name&&el.type!=='submit')data[el.name]=el.value;});
-    var to=f.getAttribute('data-fs')||'info@eyetoad.com', done=false;
+    var to=etaTo(f), done=false;
     function finish(state){
       if(done)return; done=true;
       if(state==='sent'){f.style.display='none';show('ok','<strong>Sent.</strong> We will come back to you within one business day.');return;}
@@ -2079,8 +2085,8 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     var email=document.getElementById('lf-email').value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){e.preventDefault();show('Please enter a valid email address.');return;}
 
-    /* Endpoint assembled here, never present in the raw HTML. */
-    form.action=['https:','','formsubmit.co',form.getAttribute('data-fs')||'info@eyetoad.com'].join('/');
+    /* Endpoint assembled here; no contiguous address exists in the markup. */
+    form.action=['https:','','formsubmit.co',etaTo(form)].join('/');
     last=now;
     btn.disabled=true;
     btn.textContent='Sending...';
