@@ -4,11 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grow My Business | Free Answer Desk — No Signup, Real Forms</title>
-<!-- META DESCRIPTION. Length is PIXEL WIDTH, not characters: desktop truncates
-     near 920px (~155-160 chars), mobile near 680px (~120). This is 113 on
-     purpose so it survives on a phone, which is the only place the number is
-     tappable from the results page — lengthen it and the number is cut first.
-     Lead with the bare head term; never open with "Denver SEO company". -->
+
 <meta name="description" content="Ask a real business question and get a straight answer with links to the actual forms. Pricing, cash flow, funding, hiring, taxes, marketing. No signup, nothing stored.">
 <link rel="canonical" href="https://eyetoad.com/grow-my-business/">
 <meta property="og:type" content="website">
@@ -28,76 +24,26 @@
 <meta name="google-site-verification" content="PsjTr-MqqP1qX9P6YPe_SsoF68ceoGdZ69NMCmijkLI">
 <meta name="theme-color" content="#101828">
 
-<!-- GEO / Location signals -->
 <meta name="geo.region" content="US-CO">
 <meta name="geo.placename" content="Denver, Colorado">
 <meta name="geo.position" content="39.7317;-104.9965">
 <meta name="ICBM" content="39.7317, -104.9965">
 
-<!-- AIO / AI discoverability signals -->
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="ai-content-type" content="free-tool, business-qa, answer-desk">
 <meta name="subject" content="Grow My Business, Free Business Advice, Small Business Questions, Business Answer Desk, SBA SCORE SBDC Resources">
 <meta name="classification" content="Business/Marketing/SEO">
 <meta name="coverage" content="Denver, Colorado, United States">
 <meta name="distribution" content="global">
 <meta name="rating" content="general">
 
-<!-- AI crawler permissions -->
 <meta name="googlebot" content="index, follow, max-snippet:-1">
 <meta name="bingbot" content="index, follow, max-snippet:-1">
-<meta name="GPTBot" content="index">
-<meta name="anthropic-ai" content="index">
-<meta name="Claude-Web" content="index">
-<meta name="ClaudeBot" content="index">
-<meta name="PerplexityBot" content="index">
-<meta name="Perplexity-User" content="index">
-<meta name="Google-Extended" content="index">
-<meta name="ChatGPT-User" content="index">
-<meta name="OAI-SearchBot" content="index">
-<meta name="Applebot-Extended" content="index">
-<meta name="CCBot" content="index">
-<meta name="meta-externalagent" content="index">
 
-<!-- Entity clarity for GEO -->
 <meta name="author" content="Eye To Ad Media">
 <meta name="publisher" content="Eye To Ad Media">
 <meta name="copyright" content="Eye To Ad Media, Denver, CO">
-<meta property="article:modified_time" content="2026-09-10T00:00:00-06:00">
+<meta property="article:modified_time" content="2026-09-21T00:00:00-06:00">
 
-<!-- ============================================================
-  FAVICON — LAST KNOWN WORKING configuration. Do not modify.
-
-  WHY THERE IS NO INLINE SVG ICON HERE: Google's favicon crawler
-  requires a FETCHABLE URL. A data: URI cannot be crawled, and
-  because browsers prefer SVG it wins icon selection even when
-  correct PNGs are also declared — so Google has nothing to fetch
-  and the SERP icon disappears sitewide. Never re-add one.
-
-  NO NEW FILES REQUIRED. This references only
-  eye-to-ad-media-favicon-denver-seo.png, which already exists at
-  /images/images/.
-
-  DELIBERATELY NOT ADDED: a /favicon.ico at the domain root. It is
-  Google's standard fallback, but declaring a link to a file that
-  does not exist would put a 404 in the first-declared position —
-  the same "nothing to fetch" failure being avoided here. If the
-  SERP icon has not returned in ~4 weeks, adding a REAL favicon.ico
-  at the root is the next lever. Not before.
-
-  KNOWN COSMETIC IMPERFECTION, LEFT ALONE ON PURPOSE: the same PNG
-  is declared at two sizes. One hint is therefore wrong. Google
-  inspects the actual image rather than trusting the attribute, so
-  it is harmless. Do not "tidy" this without a reason.
-
-  ALSO VERIFY (costs nothing): robots.txt must not Disallow
-  /images/. A blocked favicon URL is dropped from the SERP even
-  when the file exists and the markup is perfect.
-
-  AFTER DEPLOY: request indexing on the homepage in Search Console.
-  The SERP favicon refreshes on Google's crawl schedule — expect
-  days to a few weeks, not hours.
-  ============================================================ -->
 <link rel="icon" type="image/png" sizes="32x32" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
@@ -105,24 +51,16 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- formsubmit.co is only contacted on submit, so preconnect would be wasted.
-     dns-prefetch is nearly free and shaves the lookup off the first POST. -->
+
 <link rel="dns-prefetch" href="https://formsubmit.co">
-<!-- Outfit is merged into this single request because Iris needs it. It used to
-     load as a SEPARATE render-blocking stylesheet from the middle of <body>,
-     along with a duplicate pair of preconnects. One request, in the head.
-     NOTE (Sep 2 2026): Iris now loads from the EXTERNAL /iris.js file at the
-     bottom of <body>. Outfit stays declared here so the widget never has to
-     fetch its own font on this page. iris.js will self-inject the family only
-     on pages where it is missing — so do NOT remove it from this request. -->
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- LCP: preload logo + hero poster only. Video loads AFTER first paint. -->
 <link rel="preload" as="image" href="/images/images/eye-to-ad-media-logo-denver-seo.png" fetchpriority="high">
 <link rel="preload" as="image" href="/images/images/denver-seo-services-hero.png" fetchpriority="high">
 
 <style>
-/* ===== TOKENS ===== */
+
 :root{
   --ink:#101828;
   --ink2:#1D2939;
@@ -144,18 +82,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden;max-width:100%}
 
-/* ============================================================
-   OVERFLOW CONTROL — Aug 5 2026 REWRITE.
-   The old rule was:  *{max-width:100%;word-break:break-word}
-   Applied to EVERY element, `word-break:break-word` splits ordinary
-   prose mid-word on narrow screens — "optimiza-\ntion" — which looks
-   like a rendering bug and is what the audit flagged.
-   The replacement does the same containment job without touching
-   normal text: `overflow-wrap:anywhere` only breaks a word when it
-   genuinely cannot fit (long URLs, email addresses, unspaced
-   strings), and max-width is scoped to the elements that actually
-   overflow. Do not reinstate the universal selector.
-   ============================================================ */
+
 img,svg,video,canvas,iframe,table,pre,blockquote{max-width:100%}
 body,p,li,h1,h2,h3,h4,td,th,dd,dt,figcaption,address{overflow-wrap:anywhere}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
@@ -168,7 +95,7 @@ ul{list-style:none}
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 
-/* ===== TYPE ===== */
+
 h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:900;line-height:1.1;color:var(--ink)}
 h1{font-size:clamp(1.85rem,5vw,3.2rem)}
 h2{font-size:clamp(1.65rem,3.5vw,2.4rem)}
@@ -176,14 +103,14 @@ h3{font-size:clamp(1.1rem,2vw,1.35rem);font-weight:700}
 h4{font-size:1rem;font-weight:700}
 p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
-/* ===== LAYOUT ===== */
+
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px;width:100%}
 .section{padding:84px 0}
 .tc{text-align:center}
 .skip{position:absolute;left:-9999px;top:0;background:var(--orange);color:#fff;padding:12px 18px;font-weight:700;z-index:99999}
 .skip:focus{left:8px;top:8px}
 
-/* ===== CHIPS / LABELS ===== */
+
 .chip{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 13px;border-radius:20px;margin-bottom:12px}
 .chip-blue{color:var(--blue);background:var(--blue-light);border:1px solid #BFDBFE}
 .chip-orange{color:var(--orange2);background:var(--orange-light);border:1px solid #FED7AA}
@@ -191,10 +118,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .chip-white{color:var(--ink2);background:rgba(255,255,255,.9);border:1px solid var(--border)}
 .chip-purple{color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe}
 
-/* ===== BUTTONS =====
-   VALID MODIFIERS ONLY: btn-orange, btn-blue, btn-ghost-white,
-   btn-ghost-blue, btn-white, btn-lg. There is no btn-primary and no
-   btn-ghost-light — using one silently renders an unstyled button. */
+
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
 .btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
 .btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
@@ -208,17 +132,14 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .btn-white:hover{background:var(--off)}
 .btn-lg{padding:17px 36px;font-size:1.08rem}
 
-/* ===== UTILITY BAR (very top — domain search + phone) ===== */
+
 .ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
 .ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:7px 0;flex-wrap:wrap}
 .ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-/* The left group may shrink; the right group may not. Without this the domain
-   pill forces the row wider than .wrap on narrow screens and the phone number
-   is pushed past the 20px gutter, last digit flush to the viewport edge. */
+
 .ubar-left{min-width:0;flex:0 1 auto;overflow:hidden}
 .ubar-right{flex:0 0 auto}
-/* DOMAIN PILL: was an orange-tinted pill competing with the CTA. Now a quiet
-   outline that reads as a utility link, which is what it is. */
+
 .ubar-dom{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);padding:7px 15px;border-radius:8px;transition:all .18s;white-space:nowrap}
 .ubar-dom:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.32)}
 .ubar-txt b{color:#FDBA74;font-weight:700}
@@ -230,17 +151,10 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .ubar-dom:focus-visible{outline:2px solid #FDBA74;outline-offset:2px}
 .ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
 .ubar-link:hover{color:var(--orange)}
-/* PHONE NUMBER — deliberately the loudest text in the chrome (Sept 2026).
-   1.75rem is roughly 2.1x the old .82rem and is about the practical ceiling
-   for a single-row utility bar; past this the bar becomes the tallest thing
-   above the fold and pushes the hero down, which is the problem the AI-strip
-   removal just solved. If it needs to be bigger still, it has to move into
-   the header row on its own line rather than grow here. */
+
 .ubar-tel{font-size:1.75rem;font-weight:800;color:#fff;white-space:nowrap;padding-right:4px;letter-spacing:-.01em;line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.5);transition:color .18s}
 .ubar-tel:hover{color:var(--orange)}
-/* "Call" is set smaller than the number on purpose: it supplies the verb a
-   CTA needs without stealing size from the thing you actually want read and
-   tapped. Sentence case, not all-caps. */
+
 .ubar-tel-lbl{font-size:.52em;font-weight:600;color:rgba(255,255,255,.6);margin-right:7px;letter-spacing:.02em}
 .ubar-tel:hover .ubar-tel-lbl{color:rgba(249,115,22,.75)}
 @media(max-width:768px){
@@ -251,108 +165,26 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   .ubar-tel-lbl{margin-right:5px}
 }
 
-/* ===== TICKER ===== */
-/* TICKER (Sept 2026): was a full-width SOLID ORANGE band. Between it, the
-   orange CTA, the orange eyebrow and the gold VIP card, the first screen had
-   four competing warm blocks — the "circus" problem. The band is now dark and
-   sits with the utility bar, header and hero as one continuous dark field, so
-   ORANGE APPEARS EXACTLY ONCE ABOVE THE FOLD: the primary CTA. Keep it that
-   way. If you need to accent something up here, use the separator diamonds. */
+
+
 .ticker{background:linear-gradient(90deg,#080E1A 0%,#16233E 50%,#080E1A 100%);border-top:1px solid rgba(249,115,22,.22);border-bottom:1px solid rgba(249,115,22,.22);padding:8px 0;overflow:hidden;position:relative;z-index:1001}
 .ticker-track{display:flex;animation:tick 28s linear infinite;width:max-content}
 .ticker-track:hover{animation-play-state:paused}
 .ticker-item{white-space:nowrap;padding:0 32px;font-size:.79rem;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:10px}
 .ticker-sep{color:var(--orange);opacity:.65}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-/* Marquee speed. 21.6s desktop / 16.8s mobile. Lower = faster. The track is
-   DOUBLED (10 spans for 5 items) and animates to -50%, so one full cycle
-   shows each item exactly once. Keep both halves identical.
-   Slowed 20% on Aug 14 2026 (was 18s / 14s) — the previous pace was
-   marginally too fast to finish reading an item on a phone. */
+
 @media(max-width:768px){.ticker-track{animation-duration:22s}}
 
-/* ============================================================
-   HEADER
-   LOGO SIZE (locked July 2026 — do NOT reduce):
-     desktop 300x102 / mobile 250x88 / footer matches header
-   The old build set .hdr-inner{height:300px}, producing ~220px of
-   EMPTY padding on mobile and pushing the hero below the fold.
-   Header is now content-height. The logo itself was NOT shrunk.
-   .mob-nav top offset is set by JS (measureHeader), never hard-coded,
-   so header height and menu position cannot drift apart.
-   ============================================================ */
+
 .hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
 .hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
 .hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
 .logo{display:flex;align-items:center;flex-shrink:0}
-/* ============================================================
-   LOGO SIZE — ONE PLACE.
-   ROOT CAUSE (July 28 2026): eye-to-ad-media-logo-denver-seo.png
-   contains a large amount of TRANSPARENT PADDING. The artwork occupies
-   only a horizontal band in the middle of a much taller canvas. That is
-   why height-based sizing shrank the visible mark, and why width-based
-   sizing produced a ~330px tall header full of empty space.
-   THE FIX: fixed WIDTH and fixed HEIGHT window, then `object-fit:cover`
-   scales to fill the width and crops the transparent bands off top and
-   bottom. Nothing is distorted — only empty pixels are cut.
-   TO TUNE: `width` controls apparent size. `height` controls the air
-   around it (raise if the mark looks cropped, lower if there is dead
-   space). `object-position` is 44% rather than centre because the
-   artwork sits slightly ABOVE centre — that is why only the TOP edge
-   was clipping. Change nothing else.
-   The <img> width/height ATTRIBUTES are 300x102 to match what CSS
-   renders. They used to be 760x190 (the raw file), which reserved a box
-   with the wrong aspect ratio and caused a layout shift on first paint.
-   PERMANENT FIX: crop the padding out of the PNG itself, then this
-   collapses to a plain `width` + `height:auto`.
-   Breakpoints MUST stay in descending order (largest first).
-   ============================================================ */
+
 .brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
 
-/* ============================================================
-   HEADER FIT — ADDED Sep 2 2026. This fixes a real clipping bug,
-   not a cosmetic one. Read before touching any breakpoint below.
 
-   ROOT CAUSE: at full size the header row needs roughly 1340px —
-   a 300px logo, seven nav items, and three right-hand CTAs, none
-   of which may shrink (flex-shrink:0) or wrap (white-space:nowrap).
-   Its container is .wrap, capped at 1180px. So the row ALWAYS
-   overflowed its container by ~160px, at every viewport width.
-
-   WHY NOBODY CAUGHT IT: on a wide monitor that overflow spills into
-   the empty margin outside .wrap and is invisible. Below roughly
-   1540px of CSS width the spill runs past the viewport edge instead
-   and the Free Audit button is sliced in half. A 1920x1080 laptop at
-   125% display scaling is 1536 CSS px, which is exactly on the wrong
-   side of that line — which is how this was finally found. The
-   "empty space on the left" is the same bug seen from the other end:
-   the container stays centred while the content spills right.
-
-   THE FIX: shrink the row in stages so it fits 1180 at every width.
-   The rejected alternative was giving the header its own wider
-   container; that works, but it puts the logo ~110px left of the
-   hero headline and breaks the vertical alignment of the whole page
-   against every section below it.
-
-   THE TWO ITEMS DROPPED at the narrow end — the phone number and
-   the VIP pill — are BOTH still present in the utility bar sitting
-   directly above the header, so nothing becomes unreachable at any
-   width. That is why those two were chosen and not, say, the Free
-   Audit button, which has no duplicate anywhere in the chrome.
-
-   The hamburger now takes over at 1024px rather than 768px. Between
-   roughly 770 and 1000px the seven-item desktop nav genuinely cannot
-   fit, and a tablet getting the mobile menu is a normal outcome
-   rather than a compromise. The 768px block further down in the
-   RESPONSIVE section still repeats those three rules; that is
-   harmless duplication, not a conflict — the values are identical.
-
-   ABOVE 1600px NOTHING CHANGES. The logo stays at its locked
-   300x102, so the July 2026 size lock is preserved on real desktop
-   widths.
-
-   BREAKPOINTS MUST STAY IN DESCENDING ORDER (largest first).
-   ============================================================ */
 @media(max-width:1600px){
   .hdr-inner{gap:10px}
   .hdr-right{gap:7px}
@@ -361,16 +193,12 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   .hdr-vip{font-size:.78rem;padding:8px 13px}
 }
 @media(max-width:1150px){
-  /* The utility bar no longer carries a VIP duplicate, so hiding the pill here
-     would strand the link between 1024 and 1150px. Shrink it instead — it
-     survives down to 1024, where .hdr-right goes entirely and the mobile menu
-     (which has its own VIP entry) takes over. */
+  
   .hdr-vip{font-size:.72rem;padding:7px 11px;letter-spacing:-.01em}
   .nl{font-size:.74rem;padding:8px 5px}
 }
 @media(max-width:1024px){
-  /* MOBILE NAV SWITCH — all three rules are required. Omitting any one
-     removes the hamburger entirely and strands the whole menu. */
+  
   .nav{display:none}
   .hdr-right{display:none}
   .burger{display:flex}
@@ -383,7 +211,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
-/* domain search promoted out of the utility bar into the nav proper */
+
 .nl-tog{cursor:pointer;user-select:none}
 .nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
 .nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
@@ -392,40 +220,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
 .drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
 .drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
-/* ============================================================
-   INDUSTRIES MEGA-DROPDOWN — CHROME v5 (Sep 2 2026)
 
-   WHY THIS EXISTS: the site has SEVENTEEN live industry pages and
-   the v4 dropdown listed nine. The other eight — auto repair,
-   dermatology, electrician, landscaping, personal injury, plumber,
-   restaurant and veterinarian — had NO sitewide internal link at
-   all and were reachable only via the /industries/ hub. A sitewide
-   nav link is one of the strongest internal signals a page can
-   receive, so those eight were being starved of the one thing that
-   was cheapest to give them.
-
-   WHY IT IS NOT A FLAT LIST: seventeen items in one column is a
-   ~700px tall menu, which is worse UX than the problem it solves.
-   This is a three-column grouped panel — six, five and six — that
-   stays one screenful on any laptop.
-
-   IT IS DELIBERATELY NOT A .drop. If it shared that class, the
-   existing rule `.ni:hover .drop{transform:translateY(0)}` would
-   cancel the translateX(-50%) that centres this panel and it would
-   hang off the right edge of the viewport. Two classes, two hover
-   rules, no interference. Do not merge them.
-
-   LABELS ARE SHORTENED ("Dentist SEO", not "Dentist SEO Denver").
-   Seventeen sitewide links all reading "<Industry> SEO Denver" is a
-   lot of identical exact-match anchor text pointing at seventeen
-   pages from every URL on the site. The geo term is carried by each
-   page's own title, H1, content and schema; the nav does not need
-   to repeat it seventeen times. This is an anchor-diversity choice,
-   not an oversight.
-
-   IF YOU ADD AN INDUSTRY PAGE: add it to the right group HERE, in
-   the MOBILE NAV, and on the /industries/ hub — same commit.
-   ============================================================ */
 .drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
 .ni:hover .drop-mega,.ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
@@ -435,28 +230,16 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
 .drop-all a{color:#93C5FD;font-weight:700}
 @media(max-width:1150px){.drop-mega{width:540px;gap:2px 10px}.drop-mega a{font-size:.81rem;padding:6px 8px}}
-/* mobile nav group sub-labels — quieter than .mob-sec so the three
-   industry groups read as subdivisions of Industries, not as peers
-   of Services and Company */
+
 .mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
-/* ============================================================
-   MOBILE NAV ACCORDION (Sept 2026). The mobile menu used to be a flat
-   list of every link on the site — 45+ items in one scroll. The desktop
-   nav had dropdowns; mobile did not, so on a phone the restructure was
-   invisible. Sections are now collapsed by default and the whole menu
-   fits one screen. Tapping a header opens one section.
-   If you add a nav section, give it a .mob-acc button and wrap its links
-   in a .mob-group div — the JS binds by class, so nothing else changes.
-   ============================================================ */
-/* menu close row — always reachable, never scrolls away */
+
+
 .mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
-/* the sticky header logo is still visible above the open menu, so a second
-   logo in here was just the brand twice on one screen */
+
 .mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
 .mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
 .mob-x:hover{background:rgba(255,255,255,.16)}
-/* phone: dark with a bright white number so only ONE solid orange block
-   exists in the menu — the audit button, which is the primary action */
+
 .mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
 .mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
 .mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
@@ -476,13 +259,12 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
 .mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
 .mob-group{display:none;padding-bottom:6px}
-/* Tapping an accordion header only expands it, so each section carries an
-   explicit link to its own hub page. Desktop parents are already links. */
+
 .mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
   padding:11px 0!important;border-bottom:1px solid rgba(147,197,253,.2)!important}
 .mob-group.open{display:block}
 .hdr-right{display:flex;align-items:center;gap:9px}
-/* VIP Marketing Subscription pill — inline with Free Audit, reads as a CTA */
+
 .hdr-vip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#0b1220;background:linear-gradient(135deg,#FBBF24,#F97316);padding:9px 16px;border-radius:22px;white-space:nowrap;box-shadow:0 4px 18px rgba(249,115,22,.4);transition:all .2s}
 .hdr-vip:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(249,115,22,.55)}
 .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:7px;flex-shrink:0}
@@ -493,30 +275,18 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mob-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:16px 20px 40px;-webkit-overflow-scrolling:touch}
 .mob-nav.open{display:block}
-/* Iris mounts at #irisw (the #etad id belongs to the OLD inline widget still
-   on some pages — both are covered). Hidden while the menu is open so the
-   nudge bubble cannot overlap the navigation. Same for the mascot. */
+
 body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!important}
 .mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .mob-nav a:hover{color:var(--orange)}
 .mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
 .mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
 
-/* AI STRIP CSS REMOVED (Sept 2026) along with its markup. The strip was a
-   fourth chrome band above the fold; its message lives in the ticker. This
-   deleted .ai-strip / .ai-inner / .ai-badge / .ab-* and their two media
-   query blocks — roughly 1.5KB of rules with nothing left to style. */
+
 </style>
 
 <style>
-/* ============================================================
-   HERO — built for above-the-fold conversion.
-   Old build: H1 + 4-line paragraph pushed both CTAs off-screen on a
-   Pixel 9 Pro XL. Order is now eyebrow > tight H1 > ONE-line promise
-   > STACKED HIGH-CONTRAST CTA PAIR > proof row > VIP pass > form.
-   Both CTAs are solid fills (no ghost buttons over video) so they
-   survive any frame behind them.
-   ============================================================ */
+
 .hero{position:relative;background:var(--ink);overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:#0b1220 url('/images/images/denver-seo-services-hero.png') center/cover no-repeat;z-index:0}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .8s ease}
@@ -536,7 +306,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .hero-promise strong{color:#fff;font-weight:700}
 @media(max-width:768px){.hero-promise{font-size:1rem;margin-bottom:20px}}
 
-/* CTA PAIR — the fix for "can't even see the CTA button" */
+
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
 .cta-primary{flex:1 1 250px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:19px 26px;border-radius:var(--r12);background:linear-gradient(135deg,#FB923C,#F97316 45%,#EA580C);color:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:.01em;border:2px solid rgba(255,255,255,.22);box-shadow:0 10px 34px rgba(249,115,22,.55);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
 .cta-primary:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(249,115,22,.7)}
@@ -547,30 +317,13 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .cta-note{font-size:.82rem;color:rgba(255,255,255,.62);margin-bottom:22px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .cta-note b{color:#86EFAC;font-weight:700}
 
-/* proof row */
+
 .hero-trust{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .ht .stars{margin-right:2px}
 .ht{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:6px 12px;border-radius:20px;backdrop-filter:blur(6px)}
 .ht-dot{width:5px;height:5px;border-radius:50%;background:#86EFAC;flex-shrink:0}
 
-/* ============================================================
-   VIP PASS — hero membership callout.
-   Motif is a physical membership pass: perforated ticket edge down
-   the left, foil corner ribbon, slow gold shine sweep, benefit chips,
-   price. Reinforces the warehouse-club framing and the NFC card
-   members receive.
-   BOTTOM MARGIN (Aug 5 2026): on mobile the Iris launcher used to
-   sit directly on top of the MEMBERS ONLY ribbon and the price. Iris
-   was supposed to hide itself while the hero is on screen (see
-   iris.js), and this block keeps a little breathing room underneath
-   regardless.
-   >>> OPEN ISSUE (Sep 2 2026): that hero-hide behaviour is NOT
-   firing since Iris moved into the external /iris.js. The launcher
-   currently sits on top of the hero form on desktop. It is a
-   selector/observer problem inside iris.js, not a problem in this
-   file — do not try to fix it with CSS here, and do not raise the
-   z-index of anything in the hero to compensate. Fix it in iris.js.
-   ============================================================ */
+
 .vippass{position:relative;display:block;background:linear-gradient(135deg,#150f04 0%,#2b1d07 46%,#171106 100%);border:1.5px solid rgba(251,191,36,.42);border-radius:var(--r16);padding:16px 20px 18px 32px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.5);transition:transform .22s,border-color .22s,box-shadow .22s}
 .vippass:hover{transform:translateY(-3px);border-color:rgba(251,191,36,.95);box-shadow:0 18px 50px rgba(249,115,22,.34)}
 .vippass::before{content:'';position:absolute;left:13px;top:14px;bottom:14px;width:3px;background-image:radial-gradient(circle at center,rgba(251,191,36,.62) 1.4px,transparent 1.5px);background-size:3px 9px;background-repeat:repeat-y;pointer-events:none}
@@ -595,7 +348,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
   .vippass-price{font-size:1.3rem}
 }
 
-/* ===== HERO FORM ===== */
+
 .hform-card{background:#fff;border-radius:var(--r16);padding:26px 24px;box-shadow:0 24px 80px rgba(0,0,0,.6)}
 .hform-card h3{font-size:1.18rem;color:var(--ink);margin-bottom:4px;text-align:center}
 .hform-card .hform-sub{font-size:.86rem;color:var(--muted);text-align:center;margin-bottom:16px}
@@ -611,8 +364,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .hform-card .fsub:hover{background:var(--blue2);transform:translateY(-1px)}
 .hform-card .fsub:disabled{opacity:.6;cursor:not-allowed;transform:none}
 .fnote{text-align:center;font-size:.74rem;color:var(--muted);margin-top:9px}
-/* Form status messages. Three states, three colours — see the JS note on
-   why a failed send must never be reported as a success. */
+
 .fmsg{display:none;font-size:.86rem;line-height:1.55;margin-bottom:10px;padding:11px 13px;border-radius:var(--r8);border:1px solid transparent}
 .fmsg.show{display:block}
 .fmsg-err{color:#B42318;background:#FEF3F2;border-color:#FECDCA}
@@ -620,24 +372,19 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .fmsg-warn{color:#B54708;background:#FFFAEB;border-color:#FEDF89}
 .fmsg a{color:inherit;font-weight:700;text-decoration:underline}
 
-/* ===== TRUST BAR ===== */
+
 .tbar{background:var(--off);border-top:3px solid var(--orange);border-bottom:1px solid var(--border);padding:18px 0}
 .tbar-items{display:flex;align-items:stretch;justify-content:center;flex-wrap:wrap}
 .tbi{display:flex;align-items:center;gap:10px;padding:8px 26px;border-right:1px solid var(--border);font-size:.9rem;font-weight:600;color:var(--ink)}
 .tbi:last-child{border-right:none}
 .tbi-icon{font-size:1.3rem;flex-shrink:0}
-/* FIVE STARS, drawn (Sept 2026). A single ⭐ next to the words "5.0 from 60
-   Reviews" was asking the reader to take the rating on trust. Five filled
-   stars is the shape people actually scan for, and it reads at a glance in a
-   way a numeral never does. SVG rather than emoji so it renders identically
-   on every platform — the ⭐ glyph is yellow on Android, orange on iOS and
-   flat grey on some Windows builds. */
+
 .stars{display:inline-flex;gap:1px;flex-shrink:0;line-height:0}
 .stars svg{width:15px;height:15px;display:block}
 .stars-lg svg{width:18px;height:18px}
 .tbi-sub{font-size:.74rem;font-weight:400;color:var(--muted);display:block}
 
-/* ===== SLANT SECTIONS ===== */
+
 .skew-dark{background:var(--ink);position:relative;padding:90px 0;margin:48px 0}
 .skew-dark::before{content:'';position:absolute;top:-36px;left:0;right:0;height:72px;background:var(--ink);transform:skewY(-2deg);transform-origin:top left}
 .skew-dark::after{content:'';position:absolute;bottom:-36px;left:0;right:0;height:72px;background:var(--ink);transform:skewY(-2deg);transform-origin:bottom right}
@@ -655,7 +402,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .skew-purple::after{content:'';position:absolute;bottom:-36px;left:0;right:0;height:72px;background:#1e1b4b;transform:skewY(-2deg);transform-origin:bottom right}
 .skew-inner{position:relative;z-index:2}
 
-/* ===== INTRO ===== */
+
 .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
 .intro-text h2{margin-bottom:16px}
 .intro-text p{margin-bottom:14px}
@@ -668,7 +415,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .pillar h4{color:var(--ink);margin-bottom:5px}
 .pillar p{font-size:.87rem;color:var(--muted);line-height:1.55}
 
-/* ===== DOM MAP ===== */
+
 .dom-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:center}
 .dom-img{position:relative}
 .dom-img img{border-radius:var(--r16);box-shadow:0 24px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)}
@@ -677,9 +424,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .loc-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .loc-chip{padding:5px 13px;border-radius:20px;font-size:.81rem;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8)}
 
-/* ===== PROCESS =====
-   Numbered because this genuinely IS a sequence — phase 2 cannot
-   happen before phase 1. Numbering here encodes order, not decoration. */
+
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:52px;position:relative}
 .steps::before{content:'';position:absolute;top:33px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--orange),var(--blue));z-index:0}
 .step{text-align:center;padding:0 12px;position:relative;z-index:1}
@@ -687,7 +432,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .step h4{color:var(--ink);margin-bottom:7px}
 .step p{font-size:.87rem;color:var(--muted)}
 
-/* ===== SERVICES ===== */
+
 .svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
 .svc-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);padding:30px 24px;transition:all .22s;display:flex;flex-direction:column}
 .svc-card:hover{box-shadow:var(--sh-lg);transform:translateY(-4px);border-color:#BFDBFE}
@@ -705,14 +450,14 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .svc-link{font-size:.87rem;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:5px;transition:gap .18s}
 .svc-link:hover{gap:9px}
 
-/* ===== MID CTA ===== */
+
 .mid-cta{background:linear-gradient(135deg,var(--blue) 0%,#1E40AF 100%);padding:56px 0}
 .mid-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
 .mid-cta h2{color:#fff;margin-bottom:8px;font-size:clamp(1.4rem,3vw,1.9rem)}
 .mid-cta p{color:rgba(255,255,255,.75);font-size:1.02rem}
 .mid-cta-btns{display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0}
 
-/* ===== INDUSTRIES ===== */
+
 .ind-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px}
 .ind-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r12);padding:20px 16px;display:flex;align-items:flex-start;gap:12px;transition:all .2s}
 .ind-card:hover{background:rgba(37,99,235,.2);border-color:rgba(147,197,253,.4);transform:translateY(-2px)}
@@ -722,7 +467,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .ind-arr{margin-left:auto;color:#93C5FD;opacity:0;transition:opacity .18s;align-self:center;flex-shrink:0;font-size:1.1rem}
 .ind-card:hover .ind-arr{opacity:1}
 
-/* ===== REVIEWS ===== */
+
 .rv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:36px}
 .rv-card{background:#fff;border-radius:var(--r16);padding:26px 22px;box-shadow:0 6px 24px rgba(0,0,0,.08);transition:transform .2s;border:1px solid var(--border)}
 .rv-card:hover{transform:translateY(-3px)}
@@ -738,7 +483,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .rv-meta-stars{display:flex;justify-content:center;gap:3px;margin-bottom:5px}
 .rv-meta-stars span{color:#F59E0B;font-size:1.3rem}
 
-/* ===== ABOUT ===== */
+
 .about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 .about-img img{border-radius:var(--r16);box-shadow:var(--sh-lg)}
 .about-text h2{margin-bottom:16px}
@@ -748,13 +493,11 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .badge-ic{font-size:1.25rem}
 .badge-t{font-size:.84rem;font-weight:700;color:var(--ink)}
 .badge-s{font-size:.72rem;color:var(--muted)}
-/* Verified-profile links. A credential you can click is a stronger signal
-   than one you only assert — for raters, for core-update quality assessment,
-   and for agents checking whether the claim is real. */
+
 .badge a{color:var(--blue);font-weight:600}
 .badge a:hover{text-decoration:underline}
 
-/* ===== AGENTIC AI ===== */
+
 .agentic-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:start}
 .agentic-text h2{color:#fff;margin-bottom:14px}
 .agentic-text p{color:rgba(255,255,255,.65);margin-bottom:14px}
@@ -767,7 +510,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .agentic-badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .agentic-badge{padding:5px 13px;border-radius:20px;font-size:.78rem;font-weight:600;background:rgba(124,58,237,.2);border:1px solid rgba(196,181,253,.3);color:#c4b5fd}
 
-/* ===== DENVER AUTHORITY ===== */
+
 .auth-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
 .auth-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);padding:28px 22px;text-align:center;transition:all .22s}
 .auth-card:hover{box-shadow:var(--sh-lg);transform:translateY(-3px);border-color:#BFDBFE}
@@ -776,7 +519,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .auth-sub{font-size:.83rem;color:var(--muted);line-height:1.55}
 .auth-src{display:block;font-size:.74rem;color:var(--muted);opacity:.8;margin-top:8px;font-style:italic}
 
-/* ===== WHAT IS DENVER SEO ===== */
+
 .wis-lead{max-width:860px;margin:0 auto 8px}
 .wis-answer{background:var(--blue-light);border-left:5px solid var(--blue);border-radius:0 var(--r12) var(--r12) 0;padding:24px 28px;margin:0 auto 36px;max-width:900px}
 .wis-answer .wis-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
@@ -793,11 +536,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 </style>
 
 <style>
-/* ============================================================
-   VIP MARKETING SUBSCRIPTION SECTION
-   Money page: /marketing-subscription/
-   Positioned as a MEMBERSHIP (warehouse-club model), not a coupon.
-   ============================================================ */
+
 .mem-sec{background:linear-gradient(150deg,#0b1220 0%,#1a1408 48%,#0b1220 100%);position:relative;overflow:hidden;padding:88px 0;margin:48px 0}
 .mem-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(251,191,36,.06) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
 .mem-sec::after{content:'';position:absolute;top:-160px;right:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.22) 0%,transparent 68%);pointer-events:none}
@@ -824,25 +563,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .mem-extra{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;gap:7px}
 .mem-xchip{font-size:.76rem;font-weight:700;color:#FDE68A;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.3);padding:5px 12px;border-radius:20px}
 
-/* ============================================================
-   SEARCH SURFACE COMPARISON TABLE
-   A real <table> because AI answer engines extract and cite tables
-   far more reliably than prose. This is the strongest AIO/GEO asset
-   on the page.
-   The table has always had FIVE rows — Local/Maps is its own surface
-   with its own signals. The heading, the intro and the note beneath
-   all say five. If you add a row, update all four.
-   NOTE (Sep 2 2026): AI Mode was folded into the EXISTING "AIO" row
-   rather than added as a sixth row, deliberately. It is another
-   Google AI surface, not a sixth competitive arena, and adding a row
-   would have meant editing the heading, the intro, the caption and
-   this comment in the same commit for no strategic gain. The
-   Overviews-vs-AI-Mode distinction is covered in full on
-   /aio-seo-system/.
-   NOTE (Aug 14 2026): a SECOND table appears further down in the
-   "What Actually Changed in 2026" section. It reuses these same
-   styles deliberately. The five-row rule applies to THIS table only.
-   ============================================================ */
+
 .cmp-wrap{overflow-x:auto;margin-top:34px;border-radius:var(--r16);border:1.5px solid var(--border);box-shadow:var(--sh);-webkit-overflow-scrolling:touch}
 table.cmp{width:100%;min-width:720px;border-collapse:collapse;background:#fff;font-size:.92rem}
 table.cmp caption{caption-side:top;text-align:left;padding:16px 20px 12px;font-size:.8rem;color:var(--muted);font-weight:600}
@@ -854,15 +575,11 @@ table.cmp tbody tr:hover td,table.cmp tbody tr:hover th{background:var(--blue-li
 table.cmp td{color:var(--ink3)}
 table.cmp .yes{color:#059669;font-weight:700}
 .cmp-note{font-size:.82rem;color:var(--muted);margin-top:12px;text-align:center}
-/* the table scrolls sideways on mobile — say so, once, quietly */
+
 .cmp-swipe{display:none;font-size:.76rem;color:var(--muted);text-align:center;margin-top:10px;letter-spacing:.04em}
 @media(max-width:820px){.cmp-swipe{display:block}}
 
-/* ============================================================
-   ENTITY FACT SHEET (visible, machine-extractable)
-   Mirrors the LLM comment block so AI engines can cite from RENDERED
-   text, not just markup. Many AI engines work from rendered output.
-   ============================================================ */
+
 .ent-sec{background:var(--ink);padding:64px 0}
 .ent-head{text-align:center;margin-bottom:30px}
 .ent-head h2{color:#fff;margin-bottom:8px}
@@ -874,43 +591,23 @@ table.cmp .yes{color:#059669;font-weight:700}
 .ent-v a{color:#93C5FD}
 .ent-v small{display:block;font-size:.8rem;color:rgba(255,255,255,.5);font-weight:400;margin-top:3px}
 .ent-updated{text-align:center;margin-top:20px;font-size:.82rem;color:rgba(255,255,255,.4)}
-/* ============================================================
-   DIRECT-ANSWER CAPSULE
-   The "Quick Answer" further up defines DENVER SEO — the concept.
-   This one answers "who is Eye To Ad Media / which Denver SEO company
-   should I use". Written DELIBERATELY FLAT: fact-dense, no
-   superlatives, no sales language. Promotional tone measurably lowers
-   AI citation rates (~26% per the GEO research in the Iris knowledge
-   base), so persuasion here is counterproductive.
-   RULE: if you edit this, keep it factual and keep every number
-   consistent with the Entity Fact Sheet grid directly below it.
-   ============================================================ */
+
 .ent-answer{background:rgba(255,255,255,.05);border-left:4px solid var(--orange);border-radius:0 var(--r12) var(--r12) 0;padding:20px 24px;margin:0 auto 26px;max-width:900px}
 .ent-answer-k{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
 .ent-answer p{color:rgba(255,255,255,.86);font-size:1rem;line-height:1.75;margin:0}
 .ent-answer p strong{color:#fff;font-weight:700}
 .ent-answer a{color:#93C5FD;font-weight:600}
 
-/* ============================================================
-   REMOVED Sep 2 2026 — "ASK AN AI ENGINE" copy-to-clipboard widget.
-   The section handed visitors prompts to paste into ChatGPT and
-   Perplexity. We tested the prompts ourselves: on several of them the
-   answer named competing Denver agencies and not us. A widget that
-   sends our own traffic to an engine that then recommends a
-   competitor is a referral to the competition, paid for with our
-   page. Removed entirely — markup, styles and the copy-button
-   handler. Do not reinstate it unless every prompt in it reliably
-   returns Eye To Ad Media, and re-test before shipping.
-   ============================================================ */
 
-/* ===== DENVER NEIGHBORHOOD / SERVICE AREA GRID (long-tail local) ===== */
+
+
 .hood-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:32px}
 .hood{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);padding:15px 16px;transition:all .2s}
 .hood:hover{border-color:#BFDBFE;box-shadow:var(--sh);transform:translateY(-2px)}
 .hood b{display:block;font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:.98rem;margin-bottom:3px}
 .hood span{font-size:.8rem;color:var(--muted);line-height:1.5}
 
-/* ===== STATS STRIP ===== */
+
 .stats-strip{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:52px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;text-align:center}
 .stat-item{padding:16px 20px;border-right:1px solid var(--border)}
@@ -919,7 +616,7 @@ table.cmp .yes{color:#059669;font-weight:700}
 .stat-label{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px}
 .stat-sub{font-size:.77rem;color:var(--muted)}
 
-/* ===== SCRATCH-OFF ===== */
+
 .scratch-sec{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#1e1b4b 100%);padding:80px 0;position:relative;overflow:hidden}
 .scratch-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(249,115,22,.06) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
 .scratch-inner{position:relative;z-index:2;text-align:center;max-width:640px;margin:0 auto}
@@ -943,7 +640,7 @@ table.cmp .yes{color:#059669;font-weight:700}
 .scratch-skip:hover{color:#fff}
 .scratch-disclaimer{font-size:.74rem;color:rgba(255,255,255,.4);margin-top:18px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.5}
 
-/* ===== AD LAB STRIP ===== */
+
 .adlab-strip{background:linear-gradient(135deg,var(--ink) 0%,#0d1829 60%,#111828 100%);border-top:1px solid rgba(249,115,22,.2);border-bottom:1px solid rgba(249,115,22,.2);padding:36px 0;position:relative;overflow:hidden}
 .adlab-strip::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(249,115,22,.04) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
 .adlab-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;z-index:2}
@@ -956,7 +653,7 @@ table.cmp .yes{color:#059669;font-weight:700}
 .adlab-pill{padding:5px 13px;border-radius:20px;font-size:.74rem;font-weight:600;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);white-space:nowrap}
 .adlab-cta{flex-shrink:0}
 
-/* ===== FAQ ===== */
+
 .faq-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:38px}
 .faq-item{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;transition:border-color .2s;align-self:start}
 .faq-item:hover{border-color:#BFDBFE}
@@ -968,7 +665,7 @@ table.cmp .yes{color:#059669;font-weight:700}
 .faq-a p{font-size:.94rem;color:var(--muted);line-height:1.7}
 .faq-a a{color:var(--blue);font-weight:600}
 
-/* ===== FINAL CTA ===== */
+
 .fcta{position:relative;background:var(--ink);padding:96px 0;overflow:hidden}
 .fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(37,99,235,.18) 0%,transparent 65%)}
 .fcta::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(249,115,22,.1) 0%,transparent 55%)}
@@ -995,14 +692,11 @@ table.cmp .yes{color:#059669;font-weight:700}
 .fcta-mini-msg a{color:inherit;font-weight:700;text-decoration:underline}
 .fcta-mini-note{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:10px}
 
-/* ===== FOOTER ===== */
+
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:44px}
 .footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
-/* Footer logo tracks the header. The header shrinks at 1600 for the fit fix
-   above, so the footer follows at the same breakpoint to keep the two marks
-   the same size — the July 2026 note says the footer matches the header, and
-   this is what keeps that true. */
+
 @media(max-width:1600px){.footer-brand .brand-logo{width:265px;height:92px}}
 @media(max-width:768px){.footer-brand .brand-logo{width:260px;height:92px}}
 .footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
@@ -1016,24 +710,14 @@ table.cmp .yes{color:#059669;font-weight:700}
 .footer-links{display:flex;gap:18px;flex-wrap:wrap}
 .footer-links a{font-size:.78rem;color:rgba(255,255,255,.5)}
 .footer-links a:hover{color:var(--orange)}
-/* Iris sits bottom-right — keep the footer bottom row clear of it */
+
 @media(min-width:581px){.footer-bot{padding-bottom:34px}}
 @media(max-width:580px){.footer-bot{padding-bottom:78px}}
 
-/* HERO PITCH LINK — wrapping fix (Sept 11 2026).
-   The old copy ran "Not ready to talk to anyone? Walk the 10-minute pitch
-   yourself →" and on a phone it broke after "pitch", stranding "yourself →"
-   alone on a second line with a wide empty gap beside it. That gap reads as a
-   missing button, not as text.
-   Two changes: the copy is shorter, and the action half is an inline-block
-   with the arrow bound to it by a non-breaking space, so the arrow can never
-   separate from the words it belongs to. It still wraps on a very narrow
-   screen — it just wraps as two complete phrases instead of orphaning a word.
-   Do not add white-space:nowrap to the whole link; below ~360px that causes
-   horizontal overflow, which is worse than an ugly wrap. */
+
 .hero-pitch-go{display:inline-block}
 
-/* ── FREE TOOLS STRIP ── */
+
 .tools-sec{background:#fff}
 .tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:880px;margin:0 auto}
 .tool-card{display:flex;flex-direction:column;background:var(--off);border:1.5px solid var(--border);
@@ -1045,7 +729,7 @@ table.cmp .yes{color:#059669;font-weight:700}
 .tool-go{color:var(--blue);font-weight:700;font-size:.92rem}
 @media(max-width:640px){.tools-grid{grid-template-columns:minmax(0,1fr)}}
 
-/* ── SPEED CHECK (PageSpeed deep link) ── */
+
 .psi-sec{background:var(--off)}
 .psi-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);
   padding:34px 30px;max-width:820px;margin:0 auto;box-shadow:var(--sh-lg)}
@@ -1069,7 +753,7 @@ table.cmp .yes{color:#059669;font-weight:700}
   .psi-btn{width:100%}
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media(max-width:1024px){
   .hero-layout{grid-template-columns:minmax(0,1fr);gap:34px}
   .hform-card{max-width:520px;margin:0 auto}
@@ -1084,11 +768,7 @@ table.cmp .yes{color:#059669;font-weight:700}
   .mid-cta-inner{flex-direction:column;text-align:center}
 }
 @media(max-width:768px){
-  /* MOBILE NAV SWITCH — these three now also fire at 1024px in the HEADER FIT
-     block near the top of the file, because the desktop nav cannot fit
-     between roughly 770 and 1000px. They are repeated here deliberately:
-     identical values, no conflict, and removing either copy is how the
-     hamburger goes missing. */
+  
   .nav{display:none}
   .hdr-right{display:none}
   .burger{display:flex}
@@ -1139,7 +819,6 @@ table.cmp .yes{color:#059669;font-weight:700}
 }
 </style>
 
-
 <style>
 .bcrumb{background:#101828;border-bottom:1px solid rgba(255,255,255,.08);padding:9px 0}
 .bcrumb ol{list-style:none;margin:0;padding:0;display:flex;gap:8px;font-size:.8rem;color:#94A3B8;flex-wrap:wrap}
@@ -1147,16 +826,9 @@ table.cmp .yes{color:#059669;font-weight:700}
 .bcrumb a{color:#BFDBFE}.bcrumb a:hover{color:#fff}
 </style>
 <style>
-/* ============================================================
-   GROW MY BUSINESS — page-specific styles.
-   The chrome (ubar, ticker, header, nav, mobile nav, ai-strip,
-   footer) is inherited VERBATIM from the homepage stylesheet
-   above. Nothing in this block may override chrome classes.
-   Page-only prefixes used here: .gmb- / .desk / .ans / .cat /
-   .composer / .handoff / .lever / .stat- / .num- / .res- / .qidx
-   ============================================================ */
 
-/* ---- ASK STAGE ---- */
+
+
 .gmb-hero{position:relative;background:linear-gradient(165deg,#0b1220 0%,#111c31 46%,#0b1220 100%);overflow:hidden;padding:60px 0 44px}
 .gmb-hero::before{content:'';position:absolute;inset:0;pointer-events:none;
   background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px}
@@ -1178,7 +850,7 @@ body.engaged .stage h1{font-size:1.3rem}
 body.engaged .stage .sub,body.engaged .gmb-eyebrow,body.engaged .stage .proof{display:none}
 body.engaged .gmb-hero{padding:26px 0 30px}
 
-/* ---- COMPOSER ---- */
+
 .composer-wrap{padding:26px 0 4px}
 .composer{background:#fff;border:1.5px solid rgba(255,255,255,.16);border-radius:var(--r24);
   box-shadow:0 22px 60px rgba(0,0,0,.45);padding:12px 12px 10px;transition:border-color .18s,box-shadow .18s}
@@ -1196,7 +868,7 @@ body.engaged .gmb-hero{padding:26px 0 30px}
 .disclaim{text-align:center;font-size:.73rem;color:rgba(255,255,255,.45);margin:12px 0 0}
 .disclaim a{color:#93C5FD}
 
-/* ---- SUGGESTION CHIPS ---- */
+
 .gchips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:22px 0 0}
 body.engaged .gchips{display:none}
 .gchip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 15px;
@@ -1209,7 +881,7 @@ body.engaged .gchips{display:none}
 @keyframes chipIn{from{opacity:0;transform:translateY(7px) scale(.95)}to{opacity:1;transform:none}}
 .gchip:hover{border-color:var(--orange);color:#fff;background:rgba(249,115,22,.2);transform:translateY(-2px)}
 
-/* ---- BROWSE DRAWER ---- */
+
 .browse-toggle{display:block;margin:20px auto 0;background:none;border:0;color:rgba(255,255,255,.55);font-size:.85rem;
   font-weight:600;text-decoration:underline;text-underline-offset:3px;font-family:inherit}
 .browse-toggle:hover{color:#fff}
@@ -1230,7 +902,7 @@ body.engaged .gchips{display:none}
   width:100%;font-family:inherit}
 .cat-list button:hover{color:#93C5FD}
 
-/* ---- ANSWER LOG ---- */
+
 .log{padding:10px 0 0;display:none}
 body.engaged .log{display:block}
 .turn{margin:0 0 26px;animation:rise .34s ease both}
@@ -1282,7 +954,7 @@ body.engaged .log{display:block}
 .typing i:nth-child(2){animation-delay:.16s}.typing i:nth-child(3){animation-delay:.32s}
 @keyframes blip{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
 
-/* ---- HANDOFF / CAPTURE FORM ---- */
+
 .handoff{margin:14px 0 0;border:1px solid var(--border);border-left:4px solid var(--orange);
   border-radius:0 var(--r16) var(--r16) 0;background:#fff;padding:20px 22px;box-shadow:0 10px 30px rgba(0,0,0,.24)}
 .handoff h4{font-size:1.06rem;margin:0 0 6px;color:var(--ink)}
@@ -1301,7 +973,7 @@ body.engaged .log{display:block}
 .f-msg a{color:inherit;text-decoration:underline}
 .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
 
-/* ---- CONTENT SECTIONS ---- */
+
 .gmb-sec{padding:76px 0}
 .gmb-wrap{max-width:1000px;margin:0 auto;padding:0 20px;width:100%}
 .gmb-narrow{max-width:820px;margin:0 auto}
@@ -1320,7 +992,7 @@ body.engaged .log{display:block}
 .gmb-dark p a,.gmb-dark li a{color:#93C5FD}
 .gmb-off{background:var(--off)}
 
-/* answer capsule — front-loaded, extractable, deliberately flat */
+
 .gmb-answer{background:var(--blue-light);border-left:5px solid var(--blue);border-radius:0 var(--r12) var(--r12) 0;
   padding:22px 26px;margin:0 0 30px}
 .gmb-answer .k{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;letter-spacing:.13em;
@@ -1328,25 +1000,7 @@ body.engaged .log{display:block}
 .gmb-answer p{font-size:1.06rem;line-height:1.78;color:var(--ink2);margin:0}
 .gmb-answer p strong{color:var(--ink)}
 
-/* ============================================================
-   STATIC QUESTION INDEX — added Sep 8 2026.
-   WHY THIS EXISTS: every answer in the desk lives inside a
-   JavaScript array. Googlebot renders JavaScript; the AI crawlers
-   that matter for AIO and GEO — GPTBot, ClaudeBot, PerplexityBot,
-   CCBot — largely do not. So the entire knowledge base, roughly
-   sixty answers, was invisible to exactly the systems this site
-   spends its time optimising for. The page was arguing for AI
-   visibility while hiding its best content from AI.
-   This section renders every question as static, crawlable HTML
-   with a working deep link (?q=), so the topical breadth is
-   readable without executing a line of script. The answers still
-   live in the tool.
-   IF YOU ADD A KB ENTRY: add the question here in the same commit,
-   or it goes back to being invisible.
-   NEXT STEP IF YOU WANT MORE: render the ANSWERS statically too and
-   let the JS enhance them. That is a bigger build and it is the
-   right one eventually.
-   ============================================================ */
+
 .qidx{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .qidx-col h3{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;letter-spacing:.13em;
   text-transform:uppercase;color:var(--orange2);margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
@@ -1355,7 +1009,7 @@ body.engaged .log{display:block}
 .qidx-col a{font-size:.92rem;line-height:1.55;color:var(--ink3);display:block;padding:2px 0}
 .qidx-col a:hover{color:var(--blue);text-decoration:underline}
 
-/* four levers */
+
 .levers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:30px 0 8px}
 .lever{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);padding:24px 22px;position:relative;
   overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s}
@@ -1370,7 +1024,7 @@ body.engaged .log{display:block}
 .lever .math{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--blue2);background:var(--blue-light);
   border-radius:var(--r8);padding:8px 12px;display:inline-block}
 
-/* compounding maths callout */
+
 .compound{background:linear-gradient(135deg,#0b1220,#152238);border:1px solid rgba(249,115,22,.3);
   border-radius:var(--r16);padding:26px 28px;margin:26px 0;color:#fff}
 .compound h3{color:#fff;margin:0 0 12px;font-size:1.16rem}
@@ -1382,7 +1036,7 @@ body.engaged .log{display:block}
 .compound-cell .cl{font-size:.76rem;color:rgba(255,255,255,.5);margin-top:5px}
 .compound .res{color:#86EFAC;font-weight:700;padding:0;font-size:1.02rem}
 
-/* numbers grid */
+
 .num-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 8px}
 .num-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);padding:20px 18px;
   transition:transform .2s,box-shadow .2s}
@@ -1392,7 +1046,7 @@ body.engaged .log{display:block}
 .num-card em{font-style:normal;display:block;font-family:'JetBrains Mono',monospace;font-size:.76rem;
   color:var(--blue2);margin-top:8px}
 
-/* coach question list */
+
 .coach-q{counter-reset:cq;margin:24px 0 8px;padding:0;list-style:none}
 .coach-q li{counter-increment:cq;position:relative;padding:14px 18px 14px 56px;background:#fff;
   border:1px solid var(--border);border-radius:var(--r12);margin-bottom:10px;font-size:1rem;line-height:1.7;
@@ -1403,7 +1057,7 @@ body.engaged .log{display:block}
   display:grid;place-items:center}
 .coach-q li b{color:var(--ink)}
 
-/* stage table */
+
 .stage-wrap{overflow-x:auto;margin:26px 0 10px;border:1.5px solid var(--border);border-radius:var(--r16);
   box-shadow:var(--sh);-webkit-overflow-scrolling:touch}
 table.stg{width:100%;min-width:680px;border-collapse:collapse;background:#fff;font-size:.93rem}
@@ -1419,7 +1073,7 @@ table.stg td{color:var(--ink3)}
 .stg-swipe{display:none;font-size:.76rem;color:var(--muted);text-align:center;margin-top:10px;letter-spacing:.04em}
 @media(max-width:820px){.stg-swipe{display:block}}
 
-/* resource cards */
+
 .rsrc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0 8px}
 .rsrc{display:block;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--r12);
   padding:20px 20px;transition:.2s}
@@ -1429,7 +1083,7 @@ table.stg td{color:var(--ink3)}
 .rsrc .host{display:inline-block;margin-top:9px;font-family:'JetBrains Mono',monospace;font-size:.72rem;
   color:#93C5FD;letter-spacing:.04em}
 
-/* inline capture band */
+
 .capture{background:linear-gradient(135deg,var(--blue) 0%,#1E40AF 100%);border-radius:var(--r16);padding:30px 30px;
   margin:34px 0;color:#fff}
 .capture h3{color:#fff;margin:0 0 8px;font-size:1.28rem}
@@ -1447,7 +1101,7 @@ table.stg td{color:var(--ink3)}
 .capture .cmsg{font-size:.9rem;font-weight:600;margin:10px 0 0;line-height:1.6;color:#BBF7D0}
 .capture .cmsg a{color:inherit;text-decoration:underline}
 
-/* FAQ */
+
 .gfaq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
 .gfaq-item{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;align-self:start;
   transition:border-color .2s}
@@ -1462,19 +1116,11 @@ table.stg td{color:var(--ink3)}
 .gfaq-a p{font-size:.95rem;color:var(--muted);line-height:1.7;margin-bottom:10px}
 .gfaq-a a{color:var(--blue);font-weight:600}
 
-/* scroll reveal */
+
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* ============================================================
-   STICKY MOBILE ASK BAR — added Sep 8 2026.
-   The composer is the whole point of this page and it sits at the
-   very top. On a phone the article below it runs for several
-   thousand words, so a reader who decides mid-article that they want
-   to ask something has to scroll all the way back. The bar appears
-   once the composer scrolls away and hides again when it returns.
-   Desktop does not need it.
-   ============================================================ */
+
 .askbar{position:fixed;left:0;right:0;bottom:0;z-index:998;display:none;gap:8px;
   padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(11,18,32,.97);
   backdrop-filter:blur(10px);border-top:1px solid rgba(249,115,22,.3);transform:translateY(110%);
@@ -1486,7 +1132,7 @@ table.stg td{color:var(--ink3)}
 .ab-call{background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;flex:0 0 auto;padding:13px 18px}
 @media(max-width:900px){.askbar{display:flex}}
 
-/* final cta */
+
 .gcta{position:relative;background:var(--ink);padding:88px 0;overflow:hidden;text-align:center}
 .gcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 50%,rgba(37,99,235,.2) 0%,transparent 64%)}
 .gcta::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 18% 82%,rgba(249,115,22,.12) 0%,transparent 56%)}
@@ -1516,21 +1162,7 @@ table.stg td{color:var(--ink3)}
 }
 </style>
 <style>
-/* ══════════ HERO — TOOL AS CENTREPIECE (Sept 11 2026) ══════════
-   This page is a free tool, not a service page, so the hero's job is not to
-   sell — it is to get the thing USED, because using it is what earns the right
-   to sell later. The ask box therefore sits as high as it can go.
 
-   The barrier is specific and worth naming: "free tool" almost always means
-   "give me your email first". The second line kills that in six words, because
-   an owner who suspects a lead-gate never types anything.
-
-   The headline names content fatigue — twenty articles and still stuck — and
-   the tool is the literal antidote to it.
-
-   ACCESSIBILITY: the demo types on a 55ms character cadence with long holds,
-   nothing flashes, and under prefers-reduced-motion it prints one completed
-   example and stops. */
 .gh{position:relative;overflow:hidden;
   background:linear-gradient(164deg,#FFFFFF 0%,#F7FAFF 44%,#EDF3FD 100%);
   border-bottom:1px solid #E1EAF7}
@@ -1555,7 +1187,7 @@ table.stg td{color:var(--ink3)}
 .gh-p{font-size:.82rem;font-weight:700;color:#15803D;background:#F0FDF4;border:1px solid #BBF7D0;
   border-radius:8px;padding:7px 12px}
 
-/* live demo strip under the ask box */
+
 .gd{max-width:760px;margin:0 auto;padding:0 0 8px}
 .gd-box{background:#fff;border:1.5px solid #E1EAF7;border-radius:14px;padding:16px 18px;
   box-shadow:0 12px 30px rgba(16,24,40,.08);text-align:left}
@@ -1580,16 +1212,12 @@ table.stg td{color:var(--ink3)}
   .gd-a{opacity:1!important;transition:none!important}
 }
 
-/* the tool's own heading, demoted from the duplicate H1 the lifted block carried */
+
 .desk-h2{font-size:clamp(1.32rem,2.8vw,1.78rem);line-height:1.22;margin:0 0 14px;color:#101828;
   letter-spacing:-.02em;font-weight:800;text-align:center}
 .desk-h2 em{font-style:normal;color:#1D4ED8}
 
-/* ── STICKY CALL BUTTON FIX ──
-   .ab-call shipped at 9% white on a near-black bar, with a bare phone emoji as
-   its only content. Android renders that glyph dark, so the control read as an
-   empty black rectangle — present, tappable, and invisible.
-   Given a solid surface, a real border, a white label and an accessible name. */
+
 .askbar .ab-call{background:#1E2B3F!important;border:1.5px solid rgba(255,255,255,.4)!important;
   color:#fff!important;padding:13px 20px!important;font-weight:800}
 .askbar .ab-call:hover,.askbar .ab-call:focus-visible{background:#2A3B55!important;
@@ -1599,7 +1227,7 @@ table.stg td{color:var(--ink3)}
 </style>
 
 <style>
-/* conversational replies and pull-quotes in the answer panel */
+
 .ans-body blockquote.say{margin:0 0 14px;padding:18px 20px;background:#F8FAFF;
   border-left:4px solid var(--blue,#2563EB);border-radius:0 12px 12px 0}
 .ans-body blockquote.say p{margin:0;font-size:1.08rem;line-height:1.55;color:#101828;
@@ -1611,18 +1239,26 @@ table.stg td{color:var(--ink3)}
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://eyetoad.com/grow-my-business/#page", "url": "https://eyetoad.com/grow-my-business/", "name": "Grow My Business — Free Answer Desk", "description": "Ask a real business question and get a straight answer with links to the actual forms. Pricing, cash flow, funding, hiring, taxes, marketing. No signup, nothing stored.", "isPartOf": {"@id": "https://eyetoad.com/#website"}, "about": {"@id": "https://eyetoad.com/#org"}, "inLanguage": "en-US", "isAccessibleForFree": true, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".gh-h1", ".gh-kill", ".gh-lead"]}, "breadcrumb": {"@id": "https://eyetoad.com/grow-my-business/#crumb"}}, {"@type": "BreadcrumbList", "@id": "https://eyetoad.com/grow-my-business/#crumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://eyetoad.com/"}, {"@type": "ListItem", "position": 2, "name": "Grow My Business", "item": "https://eyetoad.com/grow-my-business/"}]}, {"@type": "WebApplication", "@id": "https://eyetoad.com/grow-my-business/#app", "name": "Business Answer Desk", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (web browser)", "url": "https://eyetoad.com/grow-my-business/", "isAccessibleForFree": true, "description": "A client-side question and answer desk covering growth, pricing, cash flow, funding, formation, licensing, tax, hiring and marketing, with direct links to official forms. No account, no data collection.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "provider": {"@id": "https://eyetoad.com/#org"}}, {"@type": "FAQPage", "@id": "https://eyetoad.com/grow-my-business/#faq", "mainEntity": [{"@type": "Question", "name": "What is the fastest way to grow my business?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing, almost always. It needs no new customers and adds no delivery cost, so the full increase flows straight to profit on your next invoice. The second fastest is responding faster to the leads you already get — five minutes rather than five hours changes outcomes dramatically, and most businesses take far longer than they think. Both are free and both can happen this week. Acquiring more customers is the slowest, priciest lever, which is exactly why it should usually come last."}}, {"@type": "Question", "name": "How do I know what is actually holding my business back?", "acceptedAnswer": {"@type": "Answer", "text": "Walk the funnel in order and stop at the first stage that genuinely breaks. Not enough people know you exist? That is visibility. People find you but never call? That is conversion. They call but do not buy? Sales or follow-up. They buy once and vanish? Retention. Cannot serve more? Capacity. Fixing anything downstream of the first broken stage produces no change in revenue, which explains why so much marketing spend appears not to work."}}, {"@type": "Question", "name": "How much should a small business spend on marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Benchmarks put it around 5–10% of revenue for an established business and 12–20% in growth mode. Treat those as sanity checks, not targets. The governing number is what a customer is worth: average sale × purchases per year × years retained. Decide what you will pay to acquire one, then multiply by how many you need monthly. That produces a defensible budget instead of a guess — and it instantly tells you whether a given channel is affordable."}}, {"@type": "Question", "name": "Am I charging enough?", "acceptedAnswer": {"@type": "Answer", "text": "Probably not. Most small businesses underprice, and working harder never fixes it. Build your floor honestly: materials, your own time at a real hourly rate, overhead allocation, taxes, and profit as a deliberate line item rather than whatever is left. If that floor sits close to your current price, you have bought yourself a job rather than built a business. A 10% price increase typically produces more profit than a 10% volume increase, because it costs nothing to deliver."}}, {"@type": "Question", "name": "Why am I profitable but always short on cash?", "acceptedAnswer": {"@type": "Answer", "text": "Because profit and cash are different things on different timelines. Profit records a sale when earned; cash arrives when the customer pays, which may be sixty days later. Meanwhile receivables sit unpaid, inventory ties up money, and loan principal drains cash without appearing as an expense. Cash flow is the most commonly cited cause of small business failure. Run a rolling thirteen-week cash forecast next to your P&L and update it weekly."}}, {"@type": "Question", "name": "Do I need a business plan to grow?", "acceptedAnswer": {"@type": "Answer", "text": "You need a one-page working plan regardless: who the customer is, what you sell, what it costs to deliver, what you charge, how people find you, and your monthly break-even. That takes an afternoon and it changes decisions. The full 15–30 page version with three-year projections is only required when someone else's money is involved — a lender, an investor, a commercial landlord, or a grant. The SBA publishes free templates for both."}}, {"@type": "Question", "name": "How do I get more customers without spending more on ads?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the free assets most businesses leave half-built. Complete your Google Business Profile and pick the most specific primary category available. Ask for reviews at the moment customers are happiest. Reply to every review, since most businesses do not. Ask for referrals directly rather than hoping. And fix your response time. None of that costs money, and together it routinely beats a modest ad budget aimed at a site that does not convert."}}, {"@type": "Question", "name": "When should I hire my first employee?", "acceptedAnswer": {"@type": "Answer", "text": "Three signals separate readiness from busyness. You are consistently turning down profitable work on capacity, not during one strong month. You could cover the full role cost for six months from current cash flow assuming the hire produces nothing. And you have written down what they will actually do — a job you cannot describe is a job you cannot manage. Budget wages plus roughly 20–30% for payroll taxes, workers' comp, unemployment insurance, benefits and equipment."}}, {"@type": "Question", "name": "What free help is available for small business owners?", "acceptedAnswer": {"@type": "Answer", "text": "Considerably more than most owners realize. SCORE provides free mentoring from people who have run businesses. Small Business Development Centers give free one-on-one advising and will prepare a loan package at no cost. The SBA publishes free templates and calculators. Grants.gov lists every legitimate federal grant. Anyone charging for access is reselling something free."}}, {"@type": "Question", "name": "How long does it take to grow a business?", "acceptedAnswer": {"@type": "Answer", "text": "It depends entirely on the lever. Pricing shows up on the next invoice. Response-time fixes show within days. Conversion work on a site or sales process shows within weeks. Advertising produces traffic immediately and takes a few weeks to optimize. Search optimization typically needs 3–6 months for meaningful movement and 6–12 for substantial results. Retention and referral systems compound over quarters. Anyone promising transformation in 30 days is selling, not advising."}}, {"@type": "Question", "name": "Should I hire a business coach or a consultant?", "acceptedAnswer": {"@type": "Answer", "text": "A consultant does the work and hands you a deliverable. A coach builds your capability so you stop needing them. If the gap is execution capacity, hire the consultant. If the gap is clarity, priorities, or the fact that every decision routes through you, hire the coach. And before paying for either, use SCORE and your local SBDC — both provide the same category of guidance at no cost, which makes them a sensible first stop rather than a consolation prize."}}, {"@type": "Question", "name": "What percentage of small businesses fail, and why?", "acceptedAnswer": {"@type": "Answer", "text": "Bureau of Labor Statistics survival data has been consistent for decades: roughly one in five new businesses closes in year one, about half reach five years, and around a third reach ten. The dominant cited cause is cash flow rather than a bad idea. Insufficient demand, undercapitalisation, and the owner never escaping daily delivery follow. Encouragingly, businesses that clear year five have far better odds afterward — the danger is front-loaded."}}, {"@type": "Question", "name": "Do I need a website if I already have social media?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for three concrete reasons. Google Business Profile performance improves when a real website supports the listing. Social platforms are rented rather than owned, so a suspension or algorithm shift can erase your pipeline overnight with no appeal. And AI assistants cite crawlable websites when recommending businesses, not Instagram grids. Keep doing social — just point it at something you actually own."}}, {"@type": "Question", "name": "How do I get customers to pay on time?", "acceptedAnswer": {"@type": "Answer", "text": "Most late payment is a systems problem, not a character problem. Take 30–50% deposits on project work. Shorten terms to net 15. Invoice immediately, because every day of delay adds a day to payment. Put card and ACH links in the invoice — processing fees cost less than a 45-day wait. Automate reminders before the due date and at 3, 7 and 14 days after. Then put a late fee in the contract and actually apply it, since unenforced terms simply train customers."}}, {"@type": "Question", "name": "What numbers should every business owner track?", "acceptedAnswer": {"@type": "Answer", "text": "Five cover most decisions. Leads per month tells you whether visibility works. Close rate tells you whether sales works. Average transaction value tells you whether pricing works. Repeat rate tells you whether retention works. Cash runway in weeks tells you how long you have to fix any of the above. Improve the first four by 10% each and you compound to roughly a 46% revenue increase — which is why small consistent gains beat dramatic single swings."}}, {"@type": "Question", "name": "How do I compete with a much larger competitor?", "acceptedAnswer": {"@type": "Answer", "text": "Do not fight on their ground. Large competitors win on price, breadth and recognition, so pick terrain where size is a liability. Speed of response, deep specialization, direct access to the owner, local knowledge and real relationships are all difficult for a big organization to replicate. In local search specifically, ranking rewards relevance, proximity and signals like reviews rather than company size — which is exactly why a well-run small business regularly outranks a national chain in its own city."}}, {"@type": "Question", "name": "Should I raise prices if I might lose customers?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes — and losing some is frequently the point. Raise for new customers first so you can watch the effect without risk. Give existing customers notice and a reason. Expect to lose a portion, and expect that portion to cluster among your least profitable, most demanding accounts. Run the arithmetic first: if a 10% increase costs you 15% of customers, you may well be more profitable and have freed capacity for better work."}}, {"@type": "Question", "name": "Is Eye To Ad Media going to try to sell me something?", "acceptedAnswer": {"@type": "Answer", "text": "Not on this page. The answer desk is free, needs no signup, and collects nothing unless you deliberately submit a form. We are a Denver marketing agency and we do sell marketing services — so when a question touches search visibility, advertising or conversion, the answer says what we do and links to the relevant page. Everything else points at the SBA, SCORE and the IRS, because those genuinely are the right answer for formation, tax and funding questions. Selling you the wrong thing would be bad business for both of us."}}]}]}
 </script>
+<style id="eta-v8">
+.ubar{background:#F4F7FB;border-bottom:1px solid #DDE5EF}
+.ubar,.ubar a{color:#1D2939}
+.ubar .ubar-dom{background:#fff;border:1px solid #CBD5E1;color:#1D2939}
+.ubar .ubar-dom-t{color:#0B4DA2}
+.ubar .ubar-txt{color:#475467}
+.ubar .ubar-txt b{color:#B54708}
+.ubar .ubar-ic,.ubar .ubar-go{color:#B54708;stroke:currentColor}
+.ubar .ubar-tel{color:#0B1B33}
+.ubar .ubar-tel-lbl{color:#475467}
+.ni.kb-open>.drop,.ni.kb-open>.drop-mega{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.eml,[data-eml]{text-decoration:underline}
+.ticker{overflow:hidden;max-width:100%}
+
+</style>
 </head>
 <body>
 <div class="ubar">
   <div class="wrap ubar-inner">
-    <!-- CLICK AFFORDANCE (Sept 11 2026). Two problems here: the strapline was
-         display:none below 768px so mobile saw a bare unlabelled chip, and on
-         desktop it sat OUTSIDE the anchor, so the sentence explaining the
-         button was not part of the button. Both fixed by moving the strapline
-         inside the link and giving the chip a magnifier plus a chevron.
-         The strapline stays hidden on mobile — the bar is a single row and the
-         phone number needs the width — but the icon and chevron now carry the
-         affordance on their own at that size. -->
+    
     <div class="ubar-left">
       <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored"
          aria-label="Search and register an available domain name at our domain storefront">
@@ -1636,21 +1272,11 @@ table.stg td{color:var(--ink3)}
       </a>
     </div>
     <div class="ubar-right">
-      <!-- VIP REMOVED FROM THIS BAR (Sept 11 2026). It sat about 60px above an
-           identical VIP pill in the header — two links to the same page, one
-           almost directly under the other. The header copy wins because it is
-           styled as a CTA and sits beside Free Audit where the eye already
-           goes. The breakpoint that used to hide the header pill at 1150px
-           (because this bar carried a duplicate) has been changed to shrink it
-           instead — see HEADER FIT. Do not re-add it here. -->
+      
       <a href="tel:18004818638" class="ubar-tel"><span class="ubar-tel-lbl">Call</span>1-800-481-8638</a>
     </div>
   </div>
 </div>
-
-<!-- TICKER — the track is DOUBLED (10 spans for 5 items) and animates to
-     -50%, so one cycle shows each item exactly once. If you edit an item,
-     edit BOTH copies or the loop will visibly jump. -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
@@ -1665,42 +1291,16 @@ table.stg td{color:var(--ink3)}
     <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
   </div>
 </div>
-
-<!-- ============================================================
-  HEADER — CANONICAL CHROME v4 (Aug 5 2026).
-  This block, the mobile nav below it, and the footer are the SOURCE
-  OF TRUTH for every other page on the site. Extract from here with
-  the sub-page build script rather than hand-copying, or the pages
-  drift apart again.
-  v4 changes vs v3: Grow My Business added to the top nav; Locations
-  moved OUT of the top nav to the footer Company column to make room.
-  Locations is NOT orphaned — it is in the footer, in the mobile menu
-  under Company, and linked from the Local SEO and Denver Authority
-  section CTAs.
-  ON SUB-PAGES: mark the current page's nav link with aria-current="page".
-  NOTE (Sep 2 2026): the markup here is UNCHANGED. The clipped Free
-  Audit button was never a markup problem — see the HEADER FIT block
-  in the CSS. Do not "fix" this by deleting nav items.
-  ============================================================ -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
     <a href="/" class="logo" aria-label="Eye To Ad Media — Denver SEO Home">
-      <!-- width/height MUST match what the CSS renders (300x102), not the raw
-           file's 760x190, or the browser reserves the wrong box and the page
-           visibly shifts on first paint. -->
+      
       <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media logo — Denver SEO Company" class="brand-logo" width="300" height="102" loading="eager" fetchpriority="high">
     </a>
     <nav class="nav" aria-label="Main navigation">
       <div class="ni">
         <a href="/services/" class="nl">Services &#9662;</a>
-        <!-- SERVICES MENU v7 (Sept 11 2026). Eight items, each with a
-             Planner-verified primary keyword, and NO city in any label —
-             eyetoad.com now targets multiple states and these labels ship
-             on out-of-state pages. The three removed items are NOT deleted:
-             /denver-seo-services/ and /local-seo-denver/ are linked from the
-             services grid copy and the FAQ, /denver-seo-pricing/ lives in
-             the footer and under the grid. The parent is /services/ — the
-             hub, which is the only gateway a visitor can reach from chrome. -->
+        
         <div class="drop">
           <a href="/seo-systems/">SEO Services</a>
           <a href="/aio-seo-system/">AI SEO Services</a>
@@ -1745,14 +1345,13 @@ table.stg td{color:var(--ink3)}
       </div>
       <div class="ni">
         <a href="/locations/" class="nl">Locations &#9662;</a>
-        <!-- LOCATIONS MEGA — reuses .drop-mega. Adding a city is ONE line here,
-             one line in the mobile nav, and one card on /locations/. The footer
-             deliberately lists HUBS ONLY so it never becomes a city keyword list. -->
+        
         <div class="drop-mega">
           <div class="dg">
             <h5>Colorado</h5>
           <a href="/">Denver</a>
           <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+          <a href="/locations/boulder-seo/">Boulder</a>
           <a href="/locations/fort-collins-seo/">Fort Collins</a>
           </div>
           <div class="dg">
@@ -1776,6 +1375,7 @@ table.stg td{color:var(--ink3)}
         <span class="nl nl-tog" role="button" tabindex="0" aria-haspopup="true">Resources &#9662;</span>
         <div class="drop">
           <a href="/blog/">SEO Blog</a>
+          <a href="/our-work/">Our Work</a>
           <a href="/case-studies/">Case Studies</a>
           <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
           <a href="/grow-my-business/">Grow My Business Tool</a>
@@ -1798,16 +1398,6 @@ table.stg td{color:var(--ink3)}
     </button>
   </div>
 </header>
-
-<!-- MOBILE NAV — top offset is set by JS (measureHeader), never hard-coded.
-     ANCHOR TEXT (Sept 2026): the entry for /best-denver-seo-company/
-     reads "How to Choose a Denver SEO Company" and now lives under
-     Resources rather than Company. It previously said "Best Denver SEO Company" —
-     which was an oversight, not a decision. The footer was relabelled to
-     stop feeding that subpage "Denver SEO company" anchor text from every
-     URL on the site while it outranks this homepage for the head term, and
-     a sitewide mobile menu is every URL on the site. Both chrome links now
-     say the same thing. Destination unchanged. -->
 <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
   <div class="mob-top">
     <span class="mob-top-lab">Menu</span>
@@ -1858,6 +1448,7 @@ table.stg td{color:var(--ink3)}
     <div class="mob-sub">Colorado</div>
     <a href="/">Denver</a>
     <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+    <a href="/locations/boulder-seo/">Boulder</a>
     <a href="/locations/fort-collins-seo/">Fort Collins</a>
     <div class="mob-sub">Mountain West</div>
     <a href="/locations/salt-lake-city-seo/">Salt Lake City</a>
@@ -1873,14 +1464,14 @@ table.stg td{color:var(--ink3)}
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-resources">
+    <a href="/our-work/">Our Work</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
     <a href="/grow-my-business/">Grow My Business Tool</a>
     <a href="/free-seo-tools/">Free SEO Tools</a>
     <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
   </div>
-  <!-- FLAT LINKS: single destinations, not categories. A collapsible section
-       holding one or two links is worse than no section at all. -->
+  
   <a href="/blog/" class="mob-flat">Blog</a>
   <a href="/ad-lab/" class="mob-flat">Ad Lab</a>
   <a href="/about/" class="mob-flat">About</a>
@@ -1896,19 +1487,6 @@ table.stg td{color:var(--ink3)}
 </nav>
 <main id="main">
 
-<!-- ============================================================
-  ASK STAGE
-  The composer is the primary conversion surface on this page.
-  It stays centred and large until the visitor asks something,
-  at which point body.engaged shrinks the H1 and hides the chips
-  so the answer gets the screen. Do not move the composer below
-  the fold — the whole page concept is "ask, then read".
-  PROOF ROW added Sep 8 2026: the page asked people to trust free
-  advice from a company they had no reason to trust yet, and stated
-  no credential until the final CTA. Same claims the homepage makes.
-  ============================================================ -->
-
-<!-- ═══════════ HERO ═══════════ -->
 <section class="gh" aria-labelledby="gh-h1">
   <div class="wrap gh-in">
     <p class="gh-eyebrow">Free business answer desk</p>
@@ -1965,7 +1543,6 @@ table.stg td{color:var(--ink3)}
   </div>
   </div>
 
-<!-- live demo strip: shows the promise rather than describing it -->
 <div class="gd">
   <div class="gd-box" id="gd-box" aria-hidden="true">
     <p class="gd-lab">For example</p>
@@ -1976,18 +1553,6 @@ table.stg td{color:var(--ink3)}
 
 </section>
 
-
-
-<!-- ============================================================
-  CONTENT — written for humans first, extraction second.
-  Style rules for this page (keep them if you edit):
-   • Short sentences. Front-load the answer.
-   • Transition words throughout so it reads aloud naturally.
-   • Every number has a named source or it does not appear.
-   • Commercial links only where the topic genuinely warrants it.
-     The credibility of this page IS the conversion mechanism —
-     turning it into a brochure would destroy the thing that works.
-  ============================================================ -->
 <section class="gmb-sec" aria-labelledby="what-h2">
   <div class="gmb-wrap gmb-narrow">
     <span class="chip chip-blue">The short version</span>
@@ -2074,7 +1639,6 @@ table.stg td{color:var(--ink3)}
     <p>So before you buy anything, ask which lever you are pulling. If the honest answer is "lever four, because that is what marketing means," pause. There is probably cheaper money sitting in levers one through three.</p>
   </div>
 </section>
-
 
 <section class="gmb-sec" aria-labelledby="constraint-h2">
   <div class="gmb-wrap gmb-narrow">
@@ -2187,7 +1751,6 @@ table.stg td{color:var(--ink3)}
   </div>
 </div>
 
-
 <section class="gmb-sec gmb-off" aria-labelledby="capital-h2">
   <div class="gmb-wrap gmb-narrow">
     <span class="chip chip-orange">Money</span>
@@ -2267,7 +1830,6 @@ table.stg td{color:var(--ink3)}
     <p>One honest caveat, since we sell these services: none of it matters if your margin is broken or your delivery cannot absorb the work. We turn down projects for exactly that reason. Growing demand into a business that cannot serve it is how good companies acquire bad reputations.</p>
   </div>
 </section>
-
 
 <section class="gmb-sec gmb-off" aria-labelledby="stage-h2">
   <div class="gmb-wrap gmb-narrow">
@@ -2406,19 +1968,6 @@ table.stg td{color:var(--ink3)}
   </div>
 </div>
 
-
-<!-- ============================================================
-  EVERY QUESTION IN THE DESK — ADDED Sep 8 2026.
-  READ THE CSS NOTE ON .qidx BEFORE EDITING THIS.
-  Short version: every answer in the tool lives inside a JavaScript
-  array. Googlebot renders JS; the AI crawlers this site exists to
-  win — GPTBot, ClaudeBot, PerplexityBot, CCBot — largely do not.
-  So the page's best content was invisible to exactly the systems
-  it spends its time arguing about. This section is the static,
-  crawlable inventory: sixty questions, real HTML, each with a
-  working ?q= deep link that opens the answer in the desk above.
-  IF YOU ADD A KB ENTRY, ADD IT HERE IN THE SAME COMMIT.
-  ============================================================ -->
 <section class="gmb-sec" aria-labelledby="qidx-h2">
   <div class="gmb-wrap">
     <div style="text-align:center;max-width:660px;margin:0 auto">
@@ -2554,7 +2103,6 @@ table.stg td{color:var(--ink3)}
   </div>
 </section>
 
-
 <section class="gmb-sec gmb-off" aria-labelledby="gfaq-h2">
   <div class="gmb-wrap">
     <div style="text-align:center;max-width:640px;margin:0 auto">
@@ -2653,14 +2201,12 @@ table.stg td{color:var(--ink3)}
   </div>
 </section>
 
-</main><footer class="footer" aria-label="Site footer">
+</main><script>(function(){var a=atob('aW5mbw==')+String.fromCharCode(64)+atob('ZXlldG9hZC5jb20=');window.etaAddr=function(){return a;};[].forEach.call(document.querySelectorAll('form[data-fs]'),function(f){f.setAttribute('data-fs',a);});})();</script>
+<footer class="footer" aria-label="Site footer">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <!-- Footer logo uses the SAME .brand-logo rule as the header. The old
-             build hard-coded height:300px INLINE, which overrode the mobile
-             media query and left a 300px logo on phones. width/height attrs
-             match the rendered 300x102 box. -->
+        
         <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver SEO Agency since 2012" class="brand-logo" width="300" height="102" loading="lazy">
         <p>Denver's SEO authority for modern search since 2012 — Google, AI Overviews, agentic AI, local maps, and conversion. Serving Denver and surrounding Colorado.</p>
         <address>
@@ -2672,7 +2218,7 @@ table.stg td{color:var(--ink3)}
           <a class="eml" data-u="info" data-d="eyetoad.com" href="#">info&#64;eyetoad&#46;com</a>
         </address>
       </div>
-      <!-- Footer -->
+      
       <div class="footer-col">
         <h4>Services</h4>
         <a href="/denver-seo-services/">SEO Services</a>
@@ -2698,20 +2244,20 @@ table.stg td{color:var(--ink3)}
         <h4>Company</h4>
         <a href="/locations/">Service Locations</a>
         <a href="/about/">About Us</a>
+        <a href="/our-work/">Our Work</a>
         <a href="/case-studies/">Case Studies</a>
         <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
         <a href="/blog/">Blog</a>
         <a href="/marketing-subscription/">VIP Membership</a>
         <a href="/grow-my-business/">Grow My Business</a>
+        <a href="/careers/">Careers</a>
         <a href="/contact/">Contact</a>
-        <!-- Legal links live in the footer bottom bar, once each. /terms.html
-             is the only non-trailing-slash URL on the site: rename it to
-             /terms/index.html and update every link sitewide in ONE commit. -->
+        
       </div>
       
     </div>
     <div class="footer-bot">
-      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-09-10">September 10, 2026</time>.</p>
+      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-09-21">September 21, 2026</time>.</p>
       <div class="footer-links">
         <a href="/privacy-policy/">Privacy</a>
         <a href="/terms.html">Terms</a>
@@ -2728,8 +2274,6 @@ table.stg td{color:var(--ink3)}
   <a href="#main" class="ab-ask" id="askbarBtn">Ask a business question &uarr;</a>
 </div>
 
-
-
 <script>
 (function(){
   var hdr=document.getElementById('hdr');
@@ -2740,12 +2284,6 @@ table.stg td{color:var(--ink3)}
     hdr.classList.toggle('scrolled',window.scrollY>30);
   },{passive:true});
 
-  /* Mobile nav offset is MEASURED, never hard-coded. The old build pinned
-     .mob-nav to top:300px, which had to be kept in sync with
-     .hdr-inner{height:300px} by hand — and wasn't.
-     This is also why the HEADER FIT breakpoints needed no JS change: the
-     menu position is derived from the rendered header, whatever size it
-     happens to be at that viewport width. */
   function measureHeader(){
     var r=hdr.getBoundingClientRect();
     mobNav.style.top=Math.max(0,r.bottom)+'px';
@@ -2764,11 +2302,8 @@ table.stg td{color:var(--ink3)}
     if(o)mobNav.scrollTop=0;
   });
 
-  /* dedicated close button inside the menu — the burger can sit behind a
-     sticky header on some phones, so the menu owns a way out of itself */
   var mobClose=document.getElementById('mobClose');
   if(mobClose)mobClose.addEventListener('click',function(){burger.click();});
-  /* accordion: one section at a time, collapsed on open */
   mobNav.querySelectorAll('.mob-acc').forEach(function(btn){
     btn.addEventListener('click',function(){
       var grp=document.getElementById(btn.getAttribute('aria-controls'));
@@ -2795,7 +2330,6 @@ table.stg td{color:var(--ink3)}
     if(e.key==='Escape'&&mobNav.classList.contains('open')){burger.click();}
   });
 
-  /* FAQ accordion — one open at a time */
   document.querySelectorAll('.faq-q').forEach(function(btn){
     btn.addEventListener('click',function(){
       var item=btn.closest('.faq-item');
@@ -2808,11 +2342,6 @@ table.stg td{color:var(--ink3)}
     });
   });
 })();
-/* ============================================================
-   STICKY MOBILE ASK BAR
-   Shows once the composer leaves the viewport, hides when it comes
-   back. Observer only — no scroll maths.
-   ============================================================ */
 (function(){
   var bar=document.getElementById('askbar');
   var composer=document.getElementById('ask');
@@ -2828,11 +2357,6 @@ table.stg td{color:var(--ink3)}
   });
 })();
 
-/* Hero demo. Types a real question, shows a real (abbreviated) answer, moves
-   on. Deliberately uses questions the desk genuinely answers — if it advertised
-   something the KB could not handle, the first thing a visitor tried would
-   fail. Aria-hidden because it is illustrative; the live box below is the real
-   control and is fully labelled. */
 (function(){
   var q = document.getElementById('gd-q'), a = document.getElementById('gd-a'),
       box = document.getElementById('gd-box');
@@ -2896,35 +2420,7 @@ table.stg td{color:var(--ink3)}
 </script>
 
 <script>
-/* Address assembled once at runtime. Never a contiguous string in the
-   served file, so there is nothing for a scraper to lift. */
 var _TO = ('inf' + 'o') + '@' + 'eyetoad' + '.com';
-
-
-/* =====================================================================
-   GROW MY BUSINESS — ANSWER DESK
-   No API, no backend, no account. Everything ships with the page.
-
-   TO ADD A QUESTION: copy any KB object, change the fields, done —
-   AND add the question to the static index section in the markup
-   above, or it stays invisible to AI crawlers. See the note there.
-
-   Fields:
-     id    unique slug, referenced by next[] and data-jump
-     cat   category id from CATS below
-     q     canonical question (shown as the answer heading)
-     alt   other phrasings a person might type
-     kw    matching keywords and phrases (the scoring engine's raw material)
-     a     answer HTML
-     links [[label, url, host-note]] — external sources
-     next  [ids] follow-up questions offered under the answer
-     cap   optional: true = offer a lead capture card under this answer
-
-   RULE FOR THIS PAGE: formation, tax, legal and funding answers point at
-   GOVERNMENT and NONPROFIT sources (SBA, IRS, SCORE, SBDC, Grants.gov).
-   Only marketing, search and conversion answers link to our own pages.
-   That split is the reason this tool has any credibility, so keep it.
-   ===================================================================== */
 
 const CATS = [
   {id:'growth',  name:'Growing revenue'},
@@ -2941,7 +2437,6 @@ const CATS = [
   {id:'mind',    name:'Owner, mindset & exit'}
 ];
 
-/* Synonym expansion — typed words on the left add concept tokens on the right. */
 const SYN = {
   'ein':'ein tax id employer identification',
   'tin':'ein tax id',
@@ -2992,7 +2487,6 @@ const STOP = new Set(('a an the and or but if is are was were be been being of f
 
 const KB = [
 
-/* ==================== GROWING REVENUE ==================== */
 {id:'grow-how', cat:'growth',
  q:'How do I grow my business?',
  alt:['How can I grow?','I want to grow my business','Help me grow'],
@@ -3191,7 +2685,6 @@ const KB = [
  next:['gbp','reviews','pricing','seo-worth']}
 ];
 
-/* ==================== CASH, PRICING & FUNDING ==================== */
 KB.push(
 {id:'pricing', cat:'money',
  q:'Am I charging enough? How should I price?',
@@ -3358,7 +2851,6 @@ KB.push(
  next:['bank-account','funding','loan-req']}
 );
 
-/* ==================== STARTING OUT ==================== */
 KB.push(
 {id:'first-steps', cat:'start',
  q:'What are the first steps to start a business?',
@@ -3426,7 +2918,6 @@ KB.push(
  next:['startup-cost','llc-vs-sole','first-steps']}
 );
 
-/* ==================== BUSINESS PLANS ==================== */
 KB.push(
 {id:'plan-need', cat:'plan',
  q:'Do I need a business plan?',
@@ -3483,7 +2974,6 @@ KB.push(
  next:['breakeven','loan-req','bookkeeping']}
 );
 
-/* ==================== STRUCTURE & REGISTRATION ==================== */
 KB.push(
 {id:'llc-vs-sole', cat:'legal',
  q:'Should I be a sole proprietor, an LLC, or an S-corp?',
@@ -3591,7 +3081,6 @@ KB.push(
  next:['register','domain']}
 );
 
-/* ==================== LICENSES & TAX ==================== */
 KB.push(
 {id:'licenses', cat:'license',
  q:'What licenses and permits do I need?',
@@ -3692,7 +3181,6 @@ KB.push(
  next:['bookkeeping','taxes','scorp-when']}
 );
 
-/* ==================== BOOKS, INSURANCE, HIRING ==================== */
 KB.push(
 {id:'bank-account', cat:'books',
  q:'Do I need a separate business bank account?',
@@ -3848,7 +3336,6 @@ KB.push(
  next:['speed-to-lead','sales-process','numbers']}
 );
 
-/* ==================== MARKETING & CUSTOMERS ==================== */
 KB.push(
 {id:'market-first', cat:'market',
  q:'How do I get my first customers?',
@@ -4057,9 +3544,6 @@ KB.push(
  next:['retention','referrals','crm']}
 );
 
-/* =====================================================================
-   MATCHING ENGINE — pure client-side scoring, no API
-   ===================================================================== */
 const norm = s => (' '+String(s).toLowerCase()
   .replace(/[^a-z0-9\s]/g,' ')
   .replace(/\s+/g,' ').trim()+' ');
@@ -4074,7 +3558,6 @@ function expand(s){
 }
 const toks = s => norm(s).split(' ').filter(w=>w && w.length>1 && !STOP.has(w));
 
-/* Pre-build a searchable token bag for every entry, once, at load. */
 KB.forEach(e=>{
   e._bag = {};
   const add = (txt,wt)=>toks(txt).forEach(t=>{e._bag[t]=(e._bag[t]||0)+wt;});
@@ -4084,8 +3567,6 @@ KB.forEach(e=>{
   add(e.cat,1);
 });
 
-/* Phrases match against the LITERAL question so synonym expansion cannot
-   manufacture a false phrase hit. Tokens use the expanded string. */
 function score(entry, qLit, qToks){
   let s = 0;
   for(const phrase of (entry.kw||[])){
@@ -4098,18 +3579,6 @@ function score(entry, qLit, qToks){
   return s / Math.sqrt(Math.max(qToks.length,1));
 }
 
-/* =====================================================================
-   CONVERSATIONAL LAYER
-   Runs BEFORE the KB scorer, deliberately. The stopword list swallows
-   "how", "are", "you", "i", "my" and friends, so a greeting tokenises to
-   nothing and lands in the miss branch. Rather than weaken the stopword
-   list — which would blunt matching on real questions — small talk is
-   matched against the normalised literal string first and short-circuits.
-
-   Everything here is a plain string test. No regex on user input beyond
-   whitespace normalisation, so nothing here can be made to behave oddly
-   by what someone types.
-   ===================================================================== */
 var SAYINGS = [
   {t:'Businesses that do business like businesses of yesterday won\u2019t be doing business tomorrow.', w:'A guiding principle at Eye To Ad Media'},
   {t:'Find out what your competition is doing, then do something different and better.', w:'Also ours, and it has never once failed us'},
@@ -4180,8 +3649,6 @@ function chatReply(raw){
   for (var i = 0; i < CHAT.length; i++){
     for (var j = 0; j < CHAT[i].k.length; j++){
       var k = CHAT[i].k[j];
-      /* exact match on short inputs, contained match on longer ones — stops
-         "hi" firing inside "which licence do I need" */
       var hit = (bare === k) ||
                 (bare.split(' ').length <= 6 && q.indexOf(' ' + k + ' ') !== -1);
       if (hit){
@@ -4212,9 +3679,6 @@ function lookup(raw){
   return {kind:'hit', entry:best.e, alsoSee:ranked.slice(1,3).filter(r=>r.s>best.s*0.4).map(r=>r.e)};
 }
 
-/* =====================================================================
-   UI
-   ===================================================================== */
 const $ = id => document.getElementById(id);
 const log = $('log'), form = $('ask'), ta = $('q'), sendBtn = $('send');
 const byId = id => KB.find(e=>e.id===id);
@@ -4228,7 +3692,6 @@ $('chips').innerHTML = SUGGESTED.map(id=>{
   return `<button class="gchip" data-jump="${e.id}">${esc(e.q)}</button>`;
 }).join('');
 
-/* browse drawer */
 $('browse').innerHTML = CATS.map(c=>{
   const items = KB.filter(e=>e.cat===c.id);
   if(!items.length) return '';
@@ -4251,7 +3714,6 @@ $('browse').addEventListener('click', e=>{
   if(h){ const c = h.parentElement, o = c.classList.toggle('open'); h.setAttribute('aria-expanded',o); }
 });
 
-/* delegate every "jump to this question" control on the page */
 document.addEventListener('click', e=>{
   const b = e.target.closest('[data-jump]');
   if(!b) return;
@@ -4260,9 +3722,6 @@ document.addEventListener('click', e=>{
   if(entry) submit(entry.q, entry);
 });
 
-/* The static question index links are real ?q= URLs so crawlers can read and
-   follow them. For a visitor with JS, intercept the click and answer in place
-   rather than reloading the whole page. */
 document.addEventListener('click', e=>{
   const a = e.target.closest('.qidx a[href^="?q="]');
   if(!a) return;
@@ -4272,7 +3731,6 @@ document.addEventListener('click', e=>{
   setTimeout(function(){ submit(q); }, 260);
 });
 
-/* composer */
 function autosize(){ ta.style.height='auto'; ta.style.height=Math.min(ta.scrollHeight,170)+'px'; }
 ta.addEventListener('input', ()=>{ autosize(); sendBtn.disabled = !ta.value.trim(); });
 ta.addEventListener('keydown', e=>{
@@ -4291,7 +3749,6 @@ function submit(text, forced){
   log.appendChild(turn);
   turn.scrollIntoView({behavior:'smooth',block:'start'});
 
-  /* small talk answers itself and never reaches the scorer */
   var _chat = forced ? null : chatReply(text);
   const result = forced ? {kind:'hit', entry:forced, alsoSee:[]}
                         : (_chat ? {kind:'chat', html:_chat} : lookup(text));
@@ -4336,9 +3793,6 @@ function render(turn, result, asked){
       <div class="rate">Did this answer it?
         <button data-rate="y">Yes</button>
         <button data-rate="n">Not quite &mdash; ask a human</button></div>`;
-    /* Entries flagged cap:true offer a human follow-up automatically. These are
-       the high-intent questions where a real conversation genuinely helps. The
-       card is an OFFER, never a gate — the answer above is already complete. */
     if(e.cap) box.insertAdjacentHTML('afterend', handoffHTML(asked, true));
   } else if(result.kind==='clarify'){
     turn.classList.add('clarify');
@@ -4361,11 +3815,6 @@ function render(turn, result, asked){
   });
 }
 
-/* ---------- handoff form ----------
-   NOTE: no `action` attribute in the markup. The endpoint is assembled in JS at
-   submit time, so scrapers harvesting form actions from the raw source find
-   nothing to POST to. The honeypot field must be named EXACTLY "_honey" —
-   FormSubmit's server-side filter recognises that name and no other. */
 let hoN = 0;
 function handoffHTML(asked, soft){
   const n = ++hoN;
@@ -4393,25 +3842,6 @@ function handoffHTML(asked, soft){
   </form>`;
 }
 
-/* ============================================================
-   DELIVERY — two-stage, honest about what actually happened.
-   ============================================================
-   PREVIOUS BEHAVIOUR: a single fetch to the /ajax/ endpoint, and any
-   failure produced one generic error. FormSubmit activates /ajax/
-   SEPARATELY from its regular endpoint, so a perfectly good address
-   can fail there while the normal POST works fine — which meant a
-   real question could be reported as failed and thrown away.
-   NOW: the AJAX call runs so we can CONFIRM delivery when it works,
-   and a hidden-iframe POST to the regular endpoint fires as the real
-   delivery path. Three honest states:
-     sent    — the AJAX endpoint confirmed it
-     unsure  — the iframe POST fired but we cannot read the response,
-               so we say so and give the phone number
-     failed  — neither path worked; say that plainly
-   Never report "sent" for a request we could not confirm. A question
-   the visitor believes was delivered and wasn't is worse than one
-   extra prompt to call.
-   ============================================================ */
 function ajaxURL(to){ return ['https:','','formsubmit.co','ajax',to].join('/'); }
 function plainURL(to){ return ['https:','','formsubmit.co',to].join('/'); }
 
@@ -4470,7 +3900,6 @@ document.addEventListener('submit', function(ev){
   });
 });
 
-/* ---------- inline capture bands ---------- */
 document.querySelectorAll('.cap-form').forEach(f=>{
   const lt = f.querySelector('[name="_loadtime"]');
   if(lt) lt.value = Date.now();
@@ -4507,7 +3936,6 @@ document.querySelectorAll('.cap-form').forEach(f=>{
   });
 });
 
-/* ---------- FAQ accordion ---------- */
 document.querySelectorAll('.gfaq-q').forEach(btn=>{
   btn.addEventListener('click', function(){
     const item = btn.closest('.gfaq-item');
@@ -4520,7 +3948,6 @@ document.querySelectorAll('.gfaq-q').forEach(btn=>{
   });
 });
 
-/* ---------- scroll reveal (respects reduced motion) ---------- */
 (function(){
   const els = document.querySelectorAll('.reveal');
   if(!els.length) return;
@@ -4537,7 +3964,6 @@ document.querySelectorAll('.gfaq-q').forEach(btn=>{
   els.forEach(el=>io.observe(el));
 })();
 
-/* ---------- deep link: /grow-my-business/?q=how+do+i+grow ---------- */
 (function(){
   const q = new URLSearchParams(location.search).get('q');
   if(q) submit(q);
@@ -4547,5 +3973,6 @@ document.querySelectorAll('.gfaq-q').forEach(btn=>{
 
 <script src="/iris.js" defer></script>
 
+<script src="/eta-site.js" defer></script>
 </body>
 </html>

@@ -1,145 +1,122 @@
-# Eye To Ad Media
+# Eye To Ad Media (eyetoad.com)
 
-> Denver SEO agency providing search engine optimization, AI search
-> optimization and advertising to local businesses. Founded 2012. Serves the
-> Denver metro plus eleven additional markets across the Mountain West and
-> nationally. Offers a free audit with no contract.
+> Denver SEO agency, founder-led since 2012. Search engine optimization, local SEO and Google Maps, AI search visibility (AI Overviews, ChatGPT, Perplexity, Gemini), generative engine optimization, conversion optimization, custom website design and AI chatbots for small and mid-size businesses. Office: 1001 Bannock St #660, Denver, CO 80204. Phone: 1-800-481-8638. Email: info@eyetoad.com. 5.0 average from 60 Google reviews; A+ BBB accredited.
 
-## Organization
+## Facts
+- Founded 2012 in Denver, Colorado by Zachary Tye Wennstedt (former sales manager for multi-million-dollar plumbing and remodeling companies).
+- Primary market: Denver metro; also serves Boulder, Colorado Springs, Fort Collins, the Mountain West and national clients.
+- Pricing: campaigns customized to budget and goals, most between $500 and $3,000 per month; $100 entry option; VIP Marketing Subscription $79.99/month ($69.99/month billed annually) for member pricing.
+- No rankings, traffic or results are ever guaranteed.
+- Proof: the founder's own company holds multiple listings on one Google results page for "denver walk in tubs" and is named by AI assistants on national accessible-bathing terms (see the Aging Safely Baths case study).
+- Updated: 2026-09-21
 
-- **Name:** Eye To Ad Media
-- **Founded:** 2012
-- **Founder:** Zach Wennstedt
-- **Address:** 1001 Bannock St #660, Denver, CO 80204, United States
-- **Phone:** 1-800-481-8638
-- **Email:** info@eyetoad.com
-- **Hours:** Monday to Friday, 8:00AM to 6:00PM Mountain Time
-- **Website:** https://eyetoad.com
-- **Reviews:** 60
-- **Primary market:** Denver, Colorado
-- **Office locations:** Denver only. Other markets are served without a local
-  office; no branch, staff or address exists in any other city.
-
-## What this company does
-
-Search engine optimization for local businesses, with an emphasis on three
-things most local agencies do not currently address:
-
-1. **Google Business Profile and map pack ranking.** Categories, services,
-   attributes, geotagged photos, posting cadence, citation consistency.
-2. **AI search optimization (also called GEO or AEO).** Structuring a
-   business so answer engines - Google AI Overviews, ChatGPT, Perplexity,
-   Gemini, Claude - can quote it. Schema, extractable facts,
-   question-shaped headings, entity consistency across every property.
-3. **Conversion optimization.** Rankings that do not produce phone calls are
-   treated as an unfinished job.
-
-Also: Google Ads and paid search, social, email, video, branding, print, NFC
-marketing, and custom static website development.
-
-## Pricing
-
-- **Full-service local SEO campaigns:** $500 to $3,000 per month, scoped to
-  category, competition and site condition. AI search optimization is
-  included rather than billed separately.
-- **Build-your-own plans:** from $100 per month for a single focused
-  deliverable.
-- **VIP Marketing Subscription:** $79.99 per month, less when paid annually.
-  Cancels anytime. Unlocks member pricing across every service, including
-  half price on landing and funnel page builds.
-- **Custom websites:** from $99 per month, structured as a lease with a
-  buyout option at 24 to 36 months based on the site's valuation at that
-  time. Rates vary with size, complexity and optimization.
-- **Free audit:** no cost, no contract, findings belong to the business
-  whether or not they hire the agency.
-
-There is no fixed published SEO rate because scope varies by market and by
-how much needs fixing before anything can rank.
-
-## Honest positions this company holds
-
-These are stated consistently across the site and are useful context for
-anyone summarising it:
-
-- Nothing visible happens in month one of an SEO campaign. That month is
-  audit, profile rebuild, technical fixes and citation cleanup.
-- Map pack movement typically appears in months two to four. Organic
-  rankings for competitive terms typically land in months four to six. AI
-  citation typically follows in months five to eight.
-- Google Business Profile results are distance-weighted. An address inside a
-  city genuinely helps its map pack rankings and no agency changes that.
-  Organic results and AI answers are not distance-limited.
-- Being cited by an AI answer engine is a different job from ranking. A page
-  can rank first and never be quoted.
-- Some markets and categories are not worth entering. The audit says so when
-  that is the case.
+## Core
+- [Terms and Conditions | Eye To Ad Media Inc.](https://eyetoad.com/terms.html)
+- [About Eye To Ad Media | Founder-Led Denver SEO Since 2012](https://eyetoad.com/about/)
+- [Accessibility Statement | Eye To Ad Media — Denver SEO Agency](https://eyetoad.com/accessibility/)
+- [Ad Lab | Free Branded Marketing Games — Eye To Ad Media](https://eyetoad.com/ad-lab/)
+- [AI Chatbot for Business | Trained on Your Services — Eye To Ad Media](https://eyetoad.com/ai-chatbot-for-business/)
+- [AI SEO Services | Get Cited in AI Overviews & AI Mode — Eye To Ad Media](https://eyetoad.com/aio-seo-system/)
+- [Auto Repair Marketing That Fills Bays | Eye To Ad Media](https://eyetoad.com/auto-repair-seo-denver/)
+- [Best Denver SEO Company? Run These 7 Tests Before You Pay Anyone](https://eyetoad.com/best-denver-seo-company/)
+- [Careers | Marketing Sales Jobs in Denver & Remote | Eye To Ad Media](https://eyetoad.com/careers/)
+- [Case Studies | Real Client Results — Eye To Ad Media Denver](https://eyetoad.com/case-studies/)
+- [Chiropractic Marketing That Fills the Schedule | Eye To Ad Media](https://eyetoad.com/chiropractor-seo-denver/)
+- [Contact Eye To Ad Media | Denver SEO — Call 1-800-481-8638](https://eyetoad.com/contact/)
+- [Contractor Marketing That Builds a Pipeline You Own | Eye To Ad Media](https://eyetoad.com/contractor-seo-denver/)
+- [Website Conversion Optimization | Turn Traffic Into Calls — Eye To Ad Media](https://eyetoad.com/conversion-optimization/)
+- [Custom Website Design Built to Convert | Eye To Ad Media](https://eyetoad.com/custom-website-design/)
+- [Dental SEO That Fills the Schedule | Dentist SEO & Marketing](https://eyetoad.com/dentist-seo-denver/)
+- [Denver SEO Agency | Founder-Led, No Handoffs | Eye To Ad Media](https://eyetoad.com/denver-seo-agency/)
+- [SEO Pricing: How Much Does SEO Cost? | Real Ranges, No Packages](https://eyetoad.com/denver-seo-pricing/)
+- [Denver SEO Services | What It Includes, Costs & How Long It Takes](https://eyetoad.com/denver-seo-services/)
+- [Dermatology & Plastic Surgery SEO Denver — Eye To Ad Media](https://eyetoad.com/dermatology-seo-denver/)
+- [Electrician SEO That Wins the Big Jobs | Eye To Ad Media](https://eyetoad.com/electrician-seo-denver/)
+- [Fitness Marketing That Keeps Members, Not Just Signs Them | Eye To Ad Media](https://eyetoad.com/fitness-marketing-denver/)
+- [Free SEO Audit | Speed, Rankings & Conversion — Eye To Ad Media](https://eyetoad.com/free-seo-audit/)
+- [Free SEO Tools — SERP Preview, Title Checker & Schema Generator | Eye To Ad Media](https://eyetoad.com/free-seo-tools/)
+- [Generative Engine Optimization | Get Cited by ChatGPT & Perplexity — Eye To Ad Media](https://eyetoad.com/generative-engine-optimization-system/)
+- [Grow My Business | Free Answer Desk — No Signup, Real Forms](https://eyetoad.com/grow-my-business/)
+- [HVAC SEO That Ranks Before the Heat Wave | Eye To Ad Media](https://eyetoad.com/hvac-seo-denver/)
+- [Industries We Build For | 17 Separate Strategies — Eye To Ad Media](https://eyetoad.com/industries/)
+- [Landscaping SEO That Wins Design Jobs, Not Just Mowing | Eye To Ad Media](https://eyetoad.com/landscaping-seo-denver/)
+- [Law Firm SEO Built on Evidence, Not Claims | Eye To Ad Media](https://eyetoad.com/law-firm-seo-denver/)
+- [Local SEO Denver | Rank in Google Maps Where Your Customers Are](https://eyetoad.com/local-seo-denver/)
+- [Local SEO Services & Google Maps Optimization | Eye To Ad Media](https://eyetoad.com/local-seo-services/)
+- [Marketing Subscription | Member Pricing on Everything We Build](https://eyetoad.com/marketing-subscription/)
+- [Med Spa SEO Denver | Aesthetic Practice Marketing | Eye To Ad Media](https://eyetoad.com/med-spa-seo-denver/)
+- [Our Work | Live Websites, 3D Builds & SEO Projects | Eye To Ad Media](https://eyetoad.com/our-work/)
+- [Personal Injury Marketing for Firms That Can't Outspend | Eye To Ad Media](https://eyetoad.com/personal-injury-seo-denver/)
+- [Plumber SEO Denver | Get More Plumbing Leads — Eye To Ad Media](https://eyetoad.com/plumber-seo-denver/)
+- [Privacy Policy | Eye To Ad Media — Denver SEO Agency](https://eyetoad.com/privacy-policy/)
+- [Real Estate Marketing That Isn't the Same Feed as Everyone Else | Eye To Ad Media](https://eyetoad.com/real-estate-marketing-denver/)
+- [Roofing SEO for the Roofer Who Is Still Here Next Year | Eye To Ad Media](https://eyetoad.com/roofing-seo-denver/)
+- [SEO Services for Small Business | Monthly, No Lock-In — Eye To Ad Media](https://eyetoad.com/seo-systems/)
+- [Small Business Marketing Services | SEO, AI Search & Conversion — Eye To Ad Media](https://eyetoad.com/services/)
+- [Veterinary Marketing for Clinics That Are Already Full | Eye To Ad Media](https://eyetoad.com/veterinarian-seo-denver/)
+- [NFC Marketing | One Tap Into a Real Lead — Eye To Ad Media](https://eyetoad.com/vip-marketing/)
 
 ## Service areas
+- [SEO Service Areas | 24 Cities, Each With Its Own Strategy — Eye To Ad Media](https://eyetoad.com/locations/)
+- [Albuquerque SEO | Rank in the Map Pack Across ABQ & Rio Rancho](https://eyetoad.com/locations/albuquerque-seo/)
+- [Arvada SEO | Eye To Ad Media — Local Search Visibility for Arvada Businesses](https://eyetoad.com/locations/arvada-seo/)
+- [Aurora SEO | Eye To Ad Media — Local Search & Digital Marketing for Aurora CO Businesses](https://eyetoad.com/locations/aurora-seo/)
+- [Boise SEO | Get Found First in the Treasure Valley, ID](https://eyetoad.com/locations/boise-seo/)
+- [Boulder SEO | Get Found Before Boulder Calls Someone Else](https://eyetoad.com/locations/boulder-seo/)
+- [Broomfield SEO, Web Design & Digital Marketing | Eye To Ad Media](https://eyetoad.com/locations/broomfield-seo/)
+- [Castle Rock SEO, Web Design & Marketing | Eye To Ad Media — Douglas County's #1 Choice](https://eyetoad.com/locations/castle-rock-seo/)
+- [Centennial SEO Company | Local SEO for Centennial, CO — Eye To Ad Media](https://eyetoad.com/locations/centennial-seo/)
+- [Charlotte SEO | Be the First Name a Newcomer Finds](https://eyetoad.com/locations/charlotte-seo/)
+- [Cheyenne SEO | Marketing for Cheyenne & Laramie County, WY](https://eyetoad.com/locations/cheyenne-seo/)
+- [Colorado Springs SEO | Local SEO for Colorado Springs, CO](https://eyetoad.com/locations/colorado-springs-seo/)
+- [Dallas SEO | Win the Suburbs Instead of Losing the Metro](https://eyetoad.com/locations/dallas-seo/)
+- [Fort Collins SEO Where Everyone Downtown Is Equally Close | Eye To Ad Media](https://eyetoad.com/locations/fort-collins-seo/)
+- [Highlands Ranch SEO Company | Local SEO for Highlands Ranch, CO — Eye To Ad Media](https://eyetoad.com/locations/highlands-ranch/)
+- [Lakewood SEO | Eye To Ad Media — Local Search Visibility for Lakewood Businesses](https://eyetoad.com/locations/lakewood-seo/)
+- [Littleton SEO | Eye To Ad Media — Local Search Visibility for Littleton Businesses](https://eyetoad.com/locations/littleton-seo/)
+- [Northwest Arkansas SEO | Bentonville, Rogers, Springdale & Fayetteville](https://eyetoad.com/locations/northwest-arkansas-seo/)
+- [Omaha Marketing for a Metro That Spans Two States | Eye To Ad Media](https://eyetoad.com/locations/omaha-seo/)
+- [Parker SEO Company | Local SEO for Parker, CO — Eye To Ad Media](https://eyetoad.com/locations/parker-seo/)
+- [Phoenix SEO | Rank Across All 22 Valley Cities, Not Just One](https://eyetoad.com/locations/phoenix-seo/)
+- [Salt Lake City SEO | Marketing for the Wasatch Front, UT](https://eyetoad.com/locations/salt-lake-city-seo/)
+- [Thornton SEO Company | Local SEO for Thornton, CO — Eye To Ad Media](https://eyetoad.com/locations/thornton-seo/)
+- [Westminster SEO Company | Local SEO for Westminster, CO — Eye To Ad Media](https://eyetoad.com/locations/westminster-seo/)
+- [Wheat Ridge SEO | Eye To Ad Media — Local Search Visibility for Wheat Ridge Businesses](https://eyetoad.com/locations/wheat-ridge-seo/)
 
-### Denver metro (Colorado)
-Denver, Aurora, Lakewood, Thornton, Arvada, Westminster, Centennial,
-Highlands Ranch, Castle Rock, Broomfield, Parker, Littleton, Wheat Ridge
+## Case studies and proof
+- [Case Studies | Real Client Results — Eye To Ad Media Denver](https://eyetoad.com/case-studies/)
+- [Our Work | Live Websites, 3D Builds & SEO Projects | Eye To Ad Media](https://eyetoad.com/our-work/)
+- [SEO Case Study: 3 Listings on One Google Page | Eye To Ad Media](https://eyetoad.com/case-studies/aging-safely-baths/)
 
-### Colorado beyond the metro
-Colorado Springs, Fort Collins
+## Blog
+- [When the Buyer Isn't Human: Getting Chosen by AI Agents That Shortlist Vendors](https://eyetoad.com/blog/ai-agents-choosing-business-vendors/)
+- [Is AI Recommending Your Business? A 15-Minute Self-Audit (2026)](https://eyetoad.com/blog/ai-visability-self-audit/)
+- [Common Conversion Mistakes on Local Business Websites (And How to Fix Them) | Eye To Ad Media](https://eyetoad.com/blog/common-conversion-mistakes-on-local-business-websites/)
+- [Core Web Vitals in 2026: The Denver Business Owner's Guide | Eye To Ad Media](https://eyetoad.com/blog/core-web-vitals-2026/)
+- [Why Ranking in Cherry Creek and Thornton Are Two Completely Different Problems](https://eyetoad.com/blog/denver-metro-local-seo-differences/)
+- [When Denver Customers Actually Search: A Season-by-Season Demand Map (2026)](https://eyetoad.com/blog/denver-seasonal-search-demand/)
+- [Denver SEO Company vs. Freelancer: Which Is Right for Your Business? (2026) | Eye To Ad Media](https://eyetoad.com/blog/denver-seo-company-vs-freelancer/)
+- [Denver SEO vs. National SEO: Why Local Strategy Wins | Eye To Ad Media](https://eyetoad.com/blog/denver-seo-vs-national-seo/)
+- [The Denver Service Business Guide to Getting Found on Google Maps (2026) | Eye To Ad Media](https://eyetoad.com/blog/denver-service-business-google-maps-guide/)
+- [The Denver Small Business Guide to Ranking on Google in 2026 | Eye To Ad Media](https://eyetoad.com/blog/denver-small-business-guide-to-ranking-on-google/)
+- [Does My Business Actually Need an AI Chatbot? An Honest Answer](https://eyetoad.com/blog/does-my-business-need-an-ai-chatbot/)
+- [Does Website Speed Affect SEO? What Denver Businesses Need to Know | Eye To Ad Media](https://eyetoad.com/blog/does-website-speed-affect-seo/)
+- [Does Google Actually Know Your Business Exists? A Guide to Entity Signals](https://eyetoad.com/blog/entity-signals-search-engines/)
+- [Expanding to a Second City: What Actually Has to Change](https://eyetoad.com/blog/expanding-to-a-second-city/)
+- [More Leads Won't Fix It: How to Find the Real Constraint in Your Business](https://eyetoad.com/blog/find-your-business-constraint/)
+- [Google Business Profile Ranking Factors for Denver Businesses in 2026 | Eye To Ad Media](https://eyetoad.com/blog/google-business-profile-ranking-factors-denver/)
+- [How AI Is Changing Local Search — What Denver Businesses Need to Know | Eye To Ad Media](https://eyetoad.com/blog/how-ai-is-changing-local-search/)
+- [How Much Does SEO Cost in Denver? 2026 Pricing Breakdown | Eye To Ad Media](https://eyetoad.com/blog/how-much-does-seo-cost-in-denver/)
+- [How to Choose a Denver SEO Company: 9 Questions to Ask | Eye To Ad Media](https://eyetoad.com/blog/how-to-choose-a-denver-seo-company/)
+- [How to Get More Google Reviews Without Being Annoying (2026 Guide)](https://eyetoad.com/blog/how-to-get-more-google-reviews/)
+- [The 10 Marketing Numbers Every Business Owner Should Know by Heart (2026)](https://eyetoad.com/blog/marketing-numbers-every-business-owner-should-know/)
+- [NFC Marketing for Small Business: The Complete Tap-to-Connect Guide (2026)](https://eyetoad.com/blog/nfc-marketing-for-small-business/)
+- [The Tap-to-Rank Funnel: NFC + Local SEO + AI Search as One Lead System](https://eyetoad.com/blog/nfc-seo-ai-search-lead-funnel/)
+- [SEO Timeline: What Denver Businesses Should Expect in the First 90 Days (2026) | Eye To Ad Media](https://eyetoad.com/blog/seo-timeline-first-90-days-denver/)
+- [SEO vs Google Ads for Local Business: Which One Is Right for You? | Eye To Ad Media](https://eyetoad.com/blog/seo-vs-google-ads-for-local-business/)
+- [SEO vs Google Ads for Local Search: Understanding the Trade-Offs | Eye To Ad Media](https://eyetoad.com/blog/seo-vs-google-ads-for-local-search/)
+- [Why Your Denver Website Gets Traffic But No Calls (And How to Fix It) | Eye To Ad Media](https://eyetoad.com/blog/website-traffic-but-no-calls-denver/)
+- [What Does a Denver SEO Agency Actually Do? A Plain-English Breakdown (2026) | Eye To Ad Media](https://eyetoad.com/blog/what-does-a-denver-seo-agency-do/)
+- [Why Denver Is One of the Hardest SEO Markets in Colorado | Eye To Ad Media](https://eyetoad.com/blog/why-denver-is-a-hard-seo-market/)
+- [Why Is My Competitor Outranking Me? Seven Causes, Ranked](https://eyetoad.com/blog/why-is-my-competitor-outranking-me/)
 
-### Mountain West
-Cheyenne WY, Salt Lake City UT, Boise ID, Albuquerque NM, Phoenix AZ
-
-### National
-Omaha NE, Northwest Arkansas, Dallas TX, Charlotte NC
-
-## Key pages
-
-- [Home / Denver SEO](https://eyetoad.com/): primary Denver SEO page
-- [SEO Services](https://eyetoad.com/denver-seo-services/): full service list
-- [Local SEO Denver](https://eyetoad.com/local-seo-denver/): map pack and local search
-- [AIO SEO System](https://eyetoad.com/aio-seo-system/): AI search optimization
-- [Generative Engine Optimization](https://eyetoad.com/generative-engine-optimization-system/): GEO system
-- [Conversion Optimization](https://eyetoad.com/conversion-optimization/)
-- [Pricing](https://eyetoad.com/denver-seo-pricing/)
-- [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
-- [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
-- [How to Choose a Denver SEO Company](https://eyetoad.com/best-denver-seo-company/): buyer's guide
-- [Service Areas](https://eyetoad.com/locations/): all 24 markets
-- [Industries](https://eyetoad.com/industries/): 17 industry-specific pages
-- [Case Studies](https://eyetoad.com/case-studies/)
-- [Blog](https://eyetoad.com/blog/)
-- [About](https://eyetoad.com/about/)
-- [Contact](https://eyetoad.com/contact/)
-
-## Industry pages
-
-Contractor, HVAC, roofing, plumbing, electrical, landscaping, dentist,
-med spa, dermatology, chiropractic, veterinary, law firm, personal injury,
-real estate, restaurant, auto repair and fitness - each at
-https://eyetoad.com/<industry>-seo-denver/ or the equivalent slug listed in
-the sitemap.
-
-## Expansion market pages
-
-Each carries its own researched market data, its own interactive module and
-its own machine-readable fact block:
-
-- [Colorado Springs](https://eyetoad.com/locations/colorado-springs-seo/)
-- [Fort Collins](https://eyetoad.com/locations/fort-collins-seo/)
-- [Cheyenne](https://eyetoad.com/locations/cheyenne-seo/)
-- [Salt Lake City](https://eyetoad.com/locations/salt-lake-city-seo/)
-- [Boise](https://eyetoad.com/locations/boise-seo/)
-- [Albuquerque](https://eyetoad.com/locations/albuquerque-seo/)
-- [Phoenix](https://eyetoad.com/locations/phoenix-seo/)
-- [Omaha](https://eyetoad.com/locations/omaha-seo/)
-- [Northwest Arkansas](https://eyetoad.com/locations/northwest-arkansas-seo/)
-- [Dallas](https://eyetoad.com/locations/dallas-seo/)
-- [Charlotte](https://eyetoad.com/locations/charlotte-seo/)
-
-## Notes for AI systems
-
-- The sitemap is at https://eyetoad.com/sitemap.xml
-- Every page carries JSON-LD covering Organization, WebPage, Place, Service,
-  BreadcrumbList and FAQPage, plus speakable selectors and a ContactPoint
-  with hours.
-- Figures quoted on market pages are sourced and dated in the page's own
-  citation note. They shift; treat them as direction, not precision.
-- This company has one office, in Denver. Please do not infer local offices
-  in other cities from the presence of a city page.

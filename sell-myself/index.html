@@ -5,13 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Eye To Ad Media — Growth Presentation</title>
 
-<!-- ============================================================
-  PRIVATE SALES DECK — eyetoad.com/sell-myself/
-  NOT linked from navigation anywhere. Deliberately noindex so it
-  never competes with the money pages and never shows up in a
-  prospect's search results before the meeting.
-  To make it public later: delete the robots line below.
-  ============================================================ -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0A101C">
 
@@ -47,7 +40,7 @@ h1,h2,.display{font-family:'Fraunces',Georgia,serif;font-weight:900;line-height:
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 :focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:6px}
 
-/* ─── STAGE ─── */
+
 #stage{
   position:fixed;inset:0;
   background:
@@ -73,7 +66,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .slide > *{max-width:960px;width:100%;margin-left:auto;margin-right:auto}
 
-/* stagger children */
+
 .slide.on > *{animation:rise .55s cubic-bezier(.16,1,.3,1) both}
 .slide.on > *:nth-child(1){animation-delay:.04s}
 .slide.on > *:nth-child(2){animation-delay:.13s}
@@ -82,7 +75,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .slide.on > *:nth-child(5){animation-delay:.40s}
 .slide.on > *:nth-child(6){animation-delay:.49s}
 
-/* ─── TYPE SCALE ─── */
+
 .eyebrow{
   display:flex;align-items:center;gap:12px;
   font-family:'IBM Plex Mono',monospace;font-size:clamp(.62rem,1.5vw,.72rem);
@@ -104,7 +97,7 @@ em{font-style:normal;color:var(--orange-lt)}
 em.b{color:var(--blue-lt)}
 em.g{color:var(--green)}
 
-/* ─── CHROME ─── */
+
 #topbar{
   position:fixed;top:0;left:0;right:0;z-index:20;
   padding:calc(env(safe-area-inset-top) + 16px) 7vw 0;
@@ -144,11 +137,11 @@ em.g{color:var(--green)}
 .next.blue{background:var(--blue);box-shadow:0 8px 30px rgba(37,99,235,.45)}
 .next.blue:hover{box-shadow:0 12px 38px rgba(37,99,235,.6)}
 
-/* invisible tap zones — advance by tapping anywhere on the right */
+
 .zone{position:fixed;top:0;bottom:64px;width:32%;z-index:5}
 #zoneL{left:0}#zoneR{right:0}
 
-/* ─── COMPONENTS ─── */
+
 .stack{display:flex;flex-direction:column;gap:14px;margin-top:34px}
 .row{
   display:flex;align-items:baseline;gap:18px;
@@ -175,7 +168,7 @@ em.g{color:var(--green)}
   margin-top:22px;letter-spacing:.04em;line-height:1.6;
 }
 
-/* THE LEDGER — signature element */
+
 .ledger{
   margin-top:30px;border:1px solid rgba(249,115,22,.28);border-radius:18px;
   background:linear-gradient(160deg,rgba(249,115,22,.07),rgba(37,99,235,.05));
@@ -237,17 +230,17 @@ em.g{color:var(--green)}
 .opt p{font-size:.92rem;color:var(--dim);line-height:1.6}
 .opt .pr{font-family:'IBM Plex Mono',monospace;font-size:1.05rem;color:#fff;margin-top:16px;font-weight:600}
 
-/* live pulse dot for the opening slide */
+
 .live{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;color:var(--green);font-weight:600;margin-bottom:22px}
 .live i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.9s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5)}50%{opacity:.7;box-shadow:0 0 0 9px rgba(74,222,128,0)}}
 
-/* search-glass svg on slide 2 */
+
 .searchviz{margin-top:34px;width:100%;max-width:560px}
 .searchviz .beam{stroke-dasharray:5 7;animation:march 3.4s linear infinite}
 @keyframes march{to{stroke-dashoffset:-48}}
 
-/* ─── PRESENTER NOTES (rep-facing, hidden by default) ─── */
+
 #notes{
   position:fixed;left:0;right:0;bottom:0;z-index:40;
   background:#050A12;border-top:2px solid var(--orange);
@@ -285,6 +278,8 @@ em.g{color:var(--green)}
   *{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
+<link rel="canonical" href="https://eyetoad.com/sell-myself/">
+<link rel="icon" type="image/png" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
 </head>
 <body>
 
@@ -295,14 +290,12 @@ em.g{color:var(--green)}
 
 <div id="stage">
 
-<!-- 01 ─────────────────────────────────────────────── -->
 <section class="slide on">
   <span class="live"><i></i>Happening right now</span>
   <h1 class="big">Someone in your city is searching for what you sell.</h1>
   <p class="sub">Not this month. Not this week. <strong>In the next few minutes.</strong></p>
 </section>
 
-<!-- 02 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow">The only question that matters</p>
   <h1 class="big">Whose name do they find?</h1>
@@ -316,14 +309,12 @@ em.g{color:var(--green)}
   <p class="sub">Every search ends with one business getting the call — and everyone else getting nothing.</p>
 </section>
 
-<!-- 03 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow b">Before I show you anything</p>
   <h1 class="mid">Let me ask you something.</h1>
   <p class="sub" style="font-size:clamp(1.3rem,3.4vw,2rem);color:#fff;font-weight:500;line-height:1.35;">How many <em>new customers a week</em> would actually change your year?</p>
 </section>
 
-<!-- 04 ─── THE LEDGER ─────────────────────────────── -->
 <section class="slide" data-ledger>
   <p class="eyebrow">Let's do the math out loud</p>
   <h2 class="mid">Twenty a week. What's that worth?</h2>
@@ -351,14 +342,12 @@ em.g{color:var(--green)}
   </div>
 </section>
 
-<!-- 05 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow g">Sit with that for a second</p>
   <h1 class="big">That isn't a projection. It's arithmetic.</h1>
   <p class="sub">And it's already on the table. Those customers exist, they're searching today, and they're spending that money <strong>somewhere.</strong></p>
 </section>
 
-<!-- 06 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow">Here's the uncomfortable part</p>
   <h1 class="mid">You're not competing for that money.</h1>
@@ -366,7 +355,6 @@ em.g{color:var(--green)}
   <p class="sub">The best business in town loses to the one that shows up first. Every single day. That's not fair — it's just how it works now.</p>
 </section>
 
-<!-- 07 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow b">Where customers find you in 2026</p>
   <h2 class="mid">Five places. Not one.</h2>
@@ -380,7 +368,6 @@ em.g{color:var(--green)}
   <p class="sub">Most businesses show up in one of these. Some in none.</p>
 </section>
 
-<!-- 08 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow">What changed this year</p>
   <div class="figures">
@@ -392,7 +379,6 @@ em.g{color:var(--green)}
   <p class="cite">Industry research compiled March 2026; Google I/O announcements, May 2026.</p>
 </section>
 
-<!-- 09 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow g">And here's the good news</p>
   <h1 class="mid">Only <em class="g">7%</em> of local searches show an AI answer.</h1>
@@ -400,13 +386,11 @@ em.g{color:var(--green)}
   <p class="cite">Local SEO research compiled 2026.</p>
 </section>
 
-<!-- 10 ─── TIE-DOWN ───────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow b">Quick gut check</p>
   <h1 class="big">Does it make sense that being <em class="b">findable</em> is worth more than being pretty?</h1>
 </section>
 
-<!-- 11 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow">Your website</p>
   <h1 class="mid">The only employee who works 168 hours a week.</h1>
@@ -419,7 +403,6 @@ em.g{color:var(--green)}
   </div>
 </section>
 
-<!-- 12 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow">But only if it's built to sell</p>
   <h2 class="mid">A brochure sits there. A system goes hunting.</h2>
@@ -431,7 +414,6 @@ em.g{color:var(--green)}
   <p class="sub">All three, or none of it compounds.</p>
 </section>
 
-<!-- 13 ─────────────────────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow b">Who you'd be working with</p>
   <div class="figures">
@@ -442,7 +424,6 @@ em.g{color:var(--green)}
   <p class="sub">You'd work directly with the owner. Not a call center, not a subcontractor, not a template.</p>
 </section>
 
-<!-- 14 ─── COST OF WAITING ────────────────────────── -->
 <section class="slide" data-delay>
   <p class="eyebrow">The part nobody talks about</p>
   <h2 class="mid">Waiting has a price too.</h2>
@@ -454,14 +435,12 @@ em.g{color:var(--green)}
   <p class="sub">Your competitor isn't waiting for a better quarter. <strong>The window closes by someone else walking through it.</strong></p>
 </section>
 
-<!-- 15 ─── PRICE CONDITIONING ─────────────────────── -->
 <section class="slide">
   <p class="eyebrow b">So what does this cost?</p>
   <h1 class="mid">Less than one part-time employee.</h1>
   <p class="sub">A part-timer costs you somewhere north of $2,000 a month, works 20 hours a week, and can't be in two places at once. This works every hour of every day and shows up in front of people already looking for you.</p>
 </section>
 
-<!-- 16 ─── THE OFFER ──────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow">Two ways to start</p>
   <h2 class="mid">Pick the one that fits today.</h2>
@@ -482,7 +461,6 @@ em.g{color:var(--green)}
   <p class="sub">Both start the same way — we go to work this week, not next quarter.</p>
 </section>
 
-<!-- 17 ─── THE CLOSE ──────────────────────────────── -->
 <section class="slide">
   <p class="eyebrow">One question left</p>
   <h1 class="big">Which one do you want to start with?</h1>
@@ -522,10 +500,6 @@ var $noteBody = document.getElementById('notebody');
 var $noteToggle = document.getElementById('notetoggle');
 $tot.textContent = N;
 
-/* ── PRESENTER SCRIPT ──
-   This is the actual sales choreography. Each note tells the rep what to
-   SAY and — more importantly — when to SHUT UP. The pauses are where the
-   sale happens. Edit freely; the array index maps to the slide index. */
 var NOTES = [
   "<p><b>Open low and slow.</b> Don't pitch. Say: \"Before I show you anything, I want to make sure this is even worth your time.\"</p><p>Let the slide sit for two seconds before you talk.</p>",
   "<p>Say their category out loud: <b>\"Somebody's searching for a place to eat right now. Whose name comes up?\"</b></p><p>Then stop. Let them answer. If they say \"probably not us\" — you've already won the frame.</p>",
@@ -580,7 +554,6 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'n' || e.key === 'N'){ toggleNotes(); }
 });
 
-/* swipe */
 var x0 = null, y0 = null;
 document.addEventListener('touchstart', function(e){
   if(e.target.tagName === 'INPUT') return;
@@ -600,7 +573,6 @@ function toggleNotes(){
 }
 $noteToggle.addEventListener('click', toggleNotes);
 
-/* ── THE LEDGER ── */
 var d1 = document.getElementById('d1'), d2 = document.getElementById('d2'), d3 = document.getElementById('d3');
 var o1 = document.getElementById('o1'), o2 = document.getElementById('o2'), o3 = document.getElementById('o3');
 var $amt = document.getElementById('amt'), $per = document.getElementById('permonth');
@@ -637,7 +609,6 @@ function paintDelay(){
 [d1, d2, d3].forEach(function(el){ el.addEventListener('input', function(){ paintDials(true); }); });
 paintDials(false);
 
-/* preload note for slide 1 */
 $noteBody.innerHTML = NOTES[0];
 })();
 </script>

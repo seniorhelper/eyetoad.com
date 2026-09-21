@@ -179,7 +179,6 @@
      is not the homepage), this is a no-op and he behaves as before. */
   function narrow(){ return window.innerWidth < 900; }
   function heroInView(){
-    if (!narrow()) return false;
     var h = document.querySelector('.hero');
     if (!h) return false;
     try {
