@@ -5,7 +5,7 @@
 User-agent: *
 Allow: /
 
-# AI retrieval / citation crawlers — welcome
+# AI retrieval / citation crawlers
 User-agent: OAI-SearchBot
 Allow: /
 User-agent: ChatGPT-User
@@ -21,7 +21,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Model training crawlers — allowed
+# Model training crawlers
 User-agent: GPTBot
 Allow: /
 User-agent: ClaudeBot
