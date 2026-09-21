@@ -24,7 +24,6 @@
 <meta name="ICBM" content="32.7767, -96.7970">
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="ai-content-type" content="local-business, service-area, seo-agency, city-guide">
 <meta name="subject" content="Dallas SEO, Fort Worth marketing, local search, AI search optimization">
 <meta name="classification" content="Business/Marketing/Local SEO">
 <meta name="coverage" content="Dallas-Fort Worth, Dallas, Collin, Denton and Tarrant counties, Texas">
@@ -35,18 +34,6 @@
 
 <meta name="googlebot" content="index, follow, max-snippet:-1">
 <meta name="bingbot" content="index, follow, max-snippet:-1">
-<meta name="GPTBot" content="index">
-<meta name="anthropic-ai" content="index">
-<meta name="Claude-Web" content="index">
-<meta name="ClaudeBot" content="index">
-<meta name="PerplexityBot" content="index">
-<meta name="Perplexity-User" content="index">
-<meta name="Google-Extended" content="index">
-<meta name="ChatGPT-User" content="index">
-<meta name="OAI-SearchBot" content="index">
-<meta name="Applebot-Extended" content="index">
-<meta name="CCBot" content="index">
-<meta name="meta-externalagent" content="index">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
@@ -59,7 +46,7 @@
 <link rel="preload" as="image" href="/images/images/eye-to-ad-media-logo-denver-seo.png" fetchpriority="high">
 
 <style>
-/* ===== TOKENS ===== */
+
 :root{
   --ink:#101828;
   --ink2:#1D2939;
@@ -81,17 +68,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden;max-width:100%}
 
-/* ============================================================
-   OVERFLOW CONTROL — Aug 5 2026 REWRITE.
-   The old rule was:     Applied to EVERY element, `word-break:break-word` splits ordinary
-   prose mid-word on narrow screens — "optimiza-\ntion" — which looks
-   like a rendering bug and is what the audit flagged.
-   The replacement does the same containment job without touching
-   normal text: `overflow-wrap:anywhere` only breaks a word when it
-   genuinely cannot fit (long URLs, email addresses, unspaced
-   strings), and max-width is scoped to the elements that actually
-   overflow. Do not reinstate the universal selector.
-   ============================================================ */
+
 img,svg,video,canvas,iframe,table,pre,blockquote{max-width:100%}
 body,p,li,h1,h2,h3,h4,td,th,dd,dt,figcaption,address{overflow-wrap:anywhere}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
@@ -104,7 +81,7 @@ ul{list-style:none}
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 
-/* ===== TYPE ===== */
+
 h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:900;line-height:1.1;color:var(--ink)}
 h1{font-size:clamp(1.85rem,5vw,3.2rem)}
 h2{font-size:clamp(1.65rem,3.5vw,2.4rem)}
@@ -112,14 +89,14 @@ h3{font-size:clamp(1.1rem,2vw,1.35rem);font-weight:700}
 h4{font-size:1rem;font-weight:700}
 p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
-/* ===== LAYOUT ===== */
+
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px;width:100%}
 .section{padding:84px 0}
 .tc{text-align:center}
 .skip{position:absolute;left:-9999px;top:0;background:var(--orange);color:#fff;padding:12px 18px;font-weight:700;z-index:99999}
 .skip:focus{left:8px;top:8px}
 
-/* ===== CHIPS / LABELS ===== */
+
 .chip{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 13px;border-radius:20px;margin-bottom:12px}
 .chip-blue{color:var(--blue);background:var(--blue-light);border:1px solid #BFDBFE}
 .chip-orange{color:var(--orange2);background:var(--orange-light);border:1px solid #FED7AA}
@@ -127,10 +104,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .chip-white{color:var(--ink2);background:rgba(255,255,255,.9);border:1px solid var(--border)}
 .chip-purple{color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe}
 
-/* ===== BUTTONS =====
-   VALID MODIFIERS ONLY: btn-orange, btn-blue, btn-ghost-white,
-   btn-ghost-blue, btn-white, btn-lg. There is no btn-primary and no
-   btn-ghost-light — using one silently renders an unstyled button. */
+
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
 .btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
 .btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
@@ -144,33 +118,23 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .btn-white:hover{background:var(--off)}
 .btn-lg{padding:17px 36px;font-size:1.08rem}
 
-/* ===== UTILITY BAR (very top — domain search + phone) ===== */
+
 .ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
 .ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:7px 0;flex-wrap:wrap}
 .ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-/* The left group may shrink; the right group may not. Without this the domain
-   pill forces the row wider than .wrap on narrow screens and the phone number
-   is pushed past the 20px gutter, last digit flush to the viewport edge. */
+
 .ubar-left{min-width:0;flex:0 1 auto;overflow:hidden}
 .ubar-right{flex:0 0 auto}
-/* DOMAIN PILL: was an orange-tinted pill competing with the CTA. Now a quiet
-   outline that reads as a utility link, which is what it is. */
+
 .ubar-dom{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);padding:7px 15px;border-radius:8px;transition:all .18s;white-space:nowrap}
 .ubar-dom:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.32)}
 .ubar-txt{font-size:.78rem;color:rgba(255,255,255,.5);white-space:nowrap}
 .ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
 .ubar-link:hover{color:var(--orange)}
-/* PHONE NUMBER — deliberately the loudest text in the chrome (Sept 2026).
-   1.75rem is roughly 2.1x the old .82rem and is about the practical ceiling
-   for a single-row utility bar; past this the bar becomes the tallest thing
-   above the fold and pushes the hero down, which is the problem the AI-strip
-   removal just solved. If it needs to be bigger still, it has to move into
-   the header row on its own line rather than grow here. */
+
 .ubar-tel{font-size:1.75rem;font-weight:800;color:#fff;white-space:nowrap;padding-right:4px;letter-spacing:-.01em;line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.5);transition:color .18s}
 .ubar-tel:hover{color:var(--orange)}
-/* "Call" is set smaller than the number on purpose: it supplies the verb a
-   CTA needs without stealing size from the thing you actually want read and
-   tapped. Sentence case, not all-caps. */
+
 .ubar-tel-lbl{font-size:.52em;font-weight:600;color:rgba(255,255,255,.6);margin-right:7px;letter-spacing:.02em}
 .ubar-tel:hover .ubar-tel-lbl{color:rgba(249,115,22,.75)}
 @media(max-width:768px){
@@ -181,108 +145,26 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   .ubar-tel-lbl{margin-right:5px}
 }
 
-/* ===== TICKER ===== */
-/* TICKER (Sept 2026): was a full-width SOLID ORANGE band. Between it, the
-   orange CTA, the orange eyebrow and the gold VIP card, the first screen had
-   four competing warm blocks — the "circus" problem. The band is now dark and
-   sits with the utility bar, header and hero as one continuous dark field, so
-   ORANGE APPEARS EXACTLY ONCE ABOVE THE FOLD: the primary CTA. Keep it that
-   way. If you need to accent something up here, use the separator diamonds. */
+
+
 .ticker{background:linear-gradient(90deg,#080E1A 0%,#16233E 50%,#080E1A 100%);border-top:1px solid rgba(249,115,22,.22);border-bottom:1px solid rgba(249,115,22,.22);padding:8px 0;overflow:hidden;position:relative;z-index:1001}
 .ticker-track{display:flex;animation:tick 28s linear infinite;width:max-content}
 .ticker-track:hover{animation-play-state:paused}
 .ticker-item{white-space:nowrap;padding:0 32px;font-size:.79rem;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:10px}
 .ticker-sep{color:var(--orange);opacity:.65}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-/* Marquee speed. 21.6s desktop / 16.8s mobile. Lower = faster. The track is
-   DOUBLED (10 spans for 5 items) and animates to -50%, so one full cycle
-   shows each item exactly once. Keep both halves identical.
-   Slowed 20% on Aug 14 2026 (was 18s / 14s) — the previous pace was
-   marginally too fast to finish reading an item on a phone. */
+
 @media(max-width:768px){.ticker-track{animation-duration:22s}}
 
-/* ============================================================
-   HEADER
-   LOGO SIZE (locked July 2026 — do NOT reduce):
-     desktop 300x102 / mobile 250x88 / footer matches header
-   The old build set .hdr-inner{height:300px}, producing ~220px of
-   EMPTY padding on mobile and pushing the hero below the fold.
-   Header is now content-height. The logo itself was NOT shrunk.
-   .mob-nav top offset is set by JS (measureHeader), never hard-coded,
-   so header height and menu position cannot drift apart.
-   ============================================================ */
+
 .hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
 .hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
 .hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
 .logo{display:flex;align-items:center;flex-shrink:0}
-/* ============================================================
-   LOGO SIZE — ONE PLACE.
-   ROOT CAUSE (July 28 2026): eye-to-ad-media-logo-denver-seo.png
-   contains a large amount of TRANSPARENT PADDING. The artwork occupies
-   only a horizontal band in the middle of a much taller canvas. That is
-   why height-based sizing shrank the visible mark, and why width-based
-   sizing produced a ~330px tall header full of empty space.
-   THE FIX: fixed WIDTH and fixed HEIGHT window, then `object-fit:cover`
-   scales to fill the width and crops the transparent bands off top and
-   bottom. Nothing is distorted — only empty pixels are cut.
-   TO TUNE: `width` controls apparent size. `height` controls the air
-   around it (raise if the mark looks cropped, lower if there is dead
-   space). `object-position` is 44% rather than centre because the
-   artwork sits slightly ABOVE centre — that is why only the TOP edge
-   was clipping. Change nothing else.
-   The <img> width/height ATTRIBUTES are 300x102 to match what CSS
-   renders. They used to be 760x190 (the raw file), which reserved a box
-   with the wrong aspect ratio and caused a layout shift on first paint.
-   PERMANENT FIX: crop the padding out of the PNG itself, then this
-   collapses to a plain `width` + `height:auto`.
-   Breakpoints MUST stay in descending order (largest first).
-   ============================================================ */
+
 .brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
 
-/* ============================================================
-   HEADER FIT — ADDED Sep 2 2026. This fixes a real clipping bug,
-   not a cosmetic one. Read before touching any breakpoint below.
 
-   ROOT CAUSE: at full size the header row needs roughly 1340px —
-   a 300px logo, seven nav items, and three right-hand CTAs, none
-   of which may shrink (flex-shrink:0) or wrap (white-space:nowrap).
-   Its container is .wrap, capped at 1180px. So the row ALWAYS
-   overflowed its container by ~160px, at every viewport width.
-
-   WHY NOBODY CAUGHT IT: on a wide monitor that overflow spills into
-   the empty margin outside .wrap and is invisible. Below roughly
-   1540px of CSS width the spill runs past the viewport edge instead
-   and the Free Audit button is sliced in half. A 1920x1080 laptop at
-   125% display scaling is 1536 CSS px, which is exactly on the wrong
-   side of that line — which is how this was finally found. The
-   "empty space on the left" is the same bug seen from the other end:
-   the container stays centred while the content spills right.
-
-   THE FIX: shrink the row in stages so it fits 1180 at every width.
-   The rejected alternative was giving the header its own wider
-   container; that works, but it puts the logo ~110px left of the
-   hero headline and breaks the vertical alignment of the whole page
-   against every section below it.
-
-   THE TWO ITEMS DROPPED at the narrow end — the phone number and
-   the VIP pill — are BOTH still present in the utility bar sitting
-   directly above the header, so nothing becomes unreachable at any
-   width. That is why those two were chosen and not, say, the Free
-   Audit button, which has no duplicate anywhere in the chrome.
-
-   The hamburger now takes over at 1024px rather than 768px. Between
-   roughly 770 and 1000px the seven-item desktop nav genuinely cannot
-   fit, and a tablet getting the mobile menu is a normal outcome
-   rather than a compromise. The 768px block further down in the
-   RESPONSIVE section still repeats those three rules; that is
-   harmless duplication, not a conflict — the values are identical.
-
-   ABOVE 1600px NOTHING CHANGES. The logo stays at its locked
-   300x102, so the July 2026 size lock is preserved on real desktop
-   widths.
-
-   BREAKPOINTS MUST STAY IN DESCENDING ORDER (largest first).
-   ============================================================ */
 @media(max-width:1600px){
   .hdr-inner{gap:10px}
   .hdr-right{gap:7px}
@@ -291,12 +173,11 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
   .hdr-vip{font-size:.78rem;padding:8px 13px}
 }
 @media(max-width:1150px){
-  /* the VIP pill is duplicated in the utility bar too */
+  
   .hdr-vip{display:none}
 }
 @media(max-width:1024px){
-  /* MOBILE NAV SWITCH — all three rules are required. Omitting any one
-     removes the hamburger entirely and strands the whole menu. */
+  
   .nav{display:none}
   .hdr-right{display:none}
   .burger{display:flex}
@@ -309,7 +190,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .nav{display:flex;align-items:center;gap:2px}
 .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
 .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
-/* domain search promoted out of the utility bar into the nav proper */
+
 .nl-tog{cursor:pointer;user-select:none}
 .nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
 .nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
@@ -318,40 +199,7 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
 .drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
 .drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
-/* ============================================================
-   INDUSTRIES MEGA-DROPDOWN — CHROME v5 (Sep 2 2026)
 
-   WHY THIS EXISTS: the site has SEVENTEEN live industry pages and
-   the v4 dropdown listed nine. The other eight — auto repair,
-   dermatology, electrician, landscaping, personal injury, plumber,
-   restaurant and veterinarian — had NO sitewide internal link at
-   all and were reachable only via the /industries/ hub. A sitewide
-   nav link is one of the strongest internal signals a page can
-   receive, so those eight were being starved of the one thing that
-   was cheapest to give them.
-
-   WHY IT IS NOT A FLAT LIST: seventeen items in one column is a
-   ~700px tall menu, which is worse UX than the problem it solves.
-   This is a three-column grouped panel — six, five and six — that
-   stays one screenful on any laptop.
-
-   IT IS DELIBERATELY NOT A .drop. If it shared that class, the
-   existing rule `.ni:hover .drop{transform:translateY(0)}` would
-   cancel the translateX(-50%) that centres this panel and it would
-   hang off the right edge of the viewport. Two classes, two hover
-   rules, no interference. Do not merge them.
-
-   LABELS ARE SHORTENED ("Dentist SEO", not "Dentist SEO Denver").
-   Seventeen sitewide links all reading "<Industry> SEO Denver" is a
-   lot of identical exact-match anchor text pointing at seventeen
-   pages from every URL on the site. The geo term is carried by each
-   page's own title, H1, content and schema; the nav does not need
-   to repeat it seventeen times. This is an anchor-diversity choice,
-   not an oversight.
-
-   IF YOU ADD AN INDUSTRY PAGE: add it to the right group HERE, in
-   the MOBILE NAV, and on the /industries/ hub — same commit.
-   ============================================================ */
 .drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
 .ni:hover .drop-mega,.ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
@@ -361,28 +209,16 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
 .drop-all a{color:#93C5FD;font-weight:700}
 @media(max-width:1150px){.drop-mega{width:540px;gap:2px 10px}.drop-mega a{font-size:.81rem;padding:6px 8px}}
-/* mobile nav group sub-labels — quieter than .mob-sec so the three
-   industry groups read as subdivisions of Industries, not as peers
-   of Services and Company */
+
 .mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
-/* ============================================================
-   MOBILE NAV ACCORDION (Sept 2026). The mobile menu used to be a flat
-   list of every link on the site — 45+ items in one scroll. The desktop
-   nav had dropdowns; mobile did not, so on a phone the restructure was
-   invisible. Sections are now collapsed by default and the whole menu
-   fits one screen. Tapping a header opens one section.
-   If you add a nav section, give it a .mob-acc button and wrap its links
-   in a .mob-group div — the JS binds by class, so nothing else changes.
-   ============================================================ */
-/* menu close row — always reachable, never scrolls away */
+
+
 .mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
-/* the sticky header logo is still visible above the open menu, so a second
-   logo in here was just the brand twice on one screen */
+
 .mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
 .mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
 .mob-x:hover{background:rgba(255,255,255,.16)}
-/* phone: dark with a bright white number so only ONE solid orange block
-   exists in the menu — the audit button, which is the primary action */
+
 .mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
 .mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
 .mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
@@ -395,13 +231,12 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
 .mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
 .mob-group{display:none;padding-bottom:6px}
-/* Tapping an accordion header only expands it, so each section carries an
-   explicit link to its own hub page. Desktop parents are already links. */
+
 .mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
   padding:11px 0!important;border-bottom:1px solid rgba(147,197,253,.2)!important}
 .mob-group.open{display:block}
 .hdr-right{display:flex;align-items:center;gap:9px}
-/* VIP Marketing Subscription pill — inline with Free Audit, reads as a CTA */
+
 .hdr-vip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#0b1220;background:linear-gradient(135deg,#FBBF24,#F97316);padding:9px 16px;border-radius:22px;white-space:nowrap;box-shadow:0 4px 18px rgba(249,115,22,.4);transition:all .2s}
 .hdr-vip:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(249,115,22,.55)}
 .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:7px;flex-shrink:0}
@@ -412,40 +247,24 @@ p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mob-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:16px 20px 40px;-webkit-overflow-scrolling:touch}
 .mob-nav.open{display:block}
-/* Iris mounts at #irisw (the #etad id belongs to the OLD inline widget still
-   on some pages — both are covered). Hidden while the menu is open so the
-   nudge bubble cannot overlap the navigation. Same for the mascot. */
+
 body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!important}
 .mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .mob-nav a:hover{color:var(--orange)}
 .mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
 .mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
 
-/* AI STRIP CSS REMOVED (Sept 2026) along with its markup. The strip was a
-   fourth chrome band above the fold; its message lives in the ticker. This
-   deleted .ai-strip / .ai-inner / .ai-badge / .ab-* and their two media
-   query blocks — roughly 1.5KB of rules with nothing left to style. */
+
 </style>
 
 <style>
 
-/* ===== DIRECT-ANSWER CAPSULE ===== */
+
 .wis-answer{background:var(--blue-light);border-left:5px solid var(--blue);border-radius:0 var(--r12) var(--r12) 0;padding:22px 26px}
 .wis-answer .wis-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
 .wis-answer p{font-size:1.04rem;line-height:1.75;color:var(--ink2);margin:0}
 
 
-
-
-
-
-
-
-/* ============================================================
-   DALLAS PAGE STYLES. Seventh distinct hero: a two-column competition
-   comparison rather than a radius map (Phoenix), a map pack (Albuquerque)
-   or a typed answer (Boise). Midnight-and-gold with a layered skyline.
-   ============================================================ */
 .dl-hero{position:relative;background:linear-gradient(180deg,#060A14 0%,#0B1220 44%,#141B2E 78%,#1E2438 100%);
   padding:44px 0 0;overflow:hidden;text-align:center}
 .dl-skyline{position:absolute;left:0;right:0;bottom:0;height:230px;pointer-events:none}
@@ -465,7 +284,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .dl-call{color:#E8C777;font-weight:700;font-size:.96rem}
 .dl-call:hover{color:#fff}
 
-/* competition comparison */
+
 .dl-vs{max-width:460px;margin:0 auto;background:rgba(10,16,28,.86);border:1px solid #2A3550;
   border-radius:var(--r16);padding:18px 16px 14px;display:grid;grid-template-columns:1fr 1px 1fr;gap:14px;
   box-shadow:0 22px 58px rgba(0,0,0,.55)}
@@ -481,7 +300,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .dl-vs-cap{position:relative;z-index:3;margin-top:12px;font-size:.8rem;color:rgba(255,255,255,.6);font-style:italic;
   max-width:460px;margin-left:auto;margin-right:auto}
 
-/* top form band */
+
 .dl-form-sec{background:linear-gradient(180deg,#1E2438,#0B1626);padding:40px 0}
 .dl-form-wrap{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:38px;align-items:center}
 .dl-form-copy h2{color:#fff;font-size:clamp(1.4rem,3vw,1.95rem);margin-bottom:12px}
@@ -527,14 +346,14 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 @media(max-width:560px){.dl-hero{padding:30px 0 0}.dl-hero h1{font-size:clamp(1.5rem,7vw,2rem)}.dl-skyline{height:170px}}
 @media (prefers-reduced-motion:reduce){.dl-stack span{transition:none}}
 
-/* ===== BREADCRUMB ===== */
+
 .breadcrumb{background:var(--off);border-bottom:1px solid var(--border);padding:12px 0}
 .bc-list{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);flex-wrap:wrap;list-style:none;margin:0;padding:0}
 .bc-list li{list-style:none}
 .bc-list a{color:var(--blue);font-weight:600}
 .bc-sep{color:#CBD5E1}
 
-/* ===== HERO ===== */
+
 .loc-hero{background:linear-gradient(135deg,#0b2545 0%,#0f172a 55%,#101828 100%);padding:56px 0 50px;position:relative;overflow:hidden}
 .loc-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(147,197,253,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
 .loc-glow{position:absolute;right:-90px;top:-110px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.24) 0%,transparent 66%);pointer-events:none}
@@ -547,7 +366,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .loc-stats b{color:#93C5FD;font-weight:800}
 .loc-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 
-/* ===== CITY FINDER ===== */
+
 .finder{background:#fff;border-bottom:1px solid var(--border);padding:20px 0;position:sticky;top:0;z-index:60;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .finder-in{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .fd-search{position:relative;flex:1 1 260px;min-width:210px}
@@ -563,7 +382,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .fd-count{font-size:.85rem;color:var(--muted);width:100%;margin-top:2px}
 .fd-count b{color:var(--ink);font-weight:700}
 
-/* ===== CITY GRID ===== */
+
 .reg-block{margin-bottom:38px}
 .reg-block.hide{display:none}
 .reg-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
@@ -590,14 +409,14 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .no-city.show{display:block}
 .no-city button{margin-top:14px;border:none;background:var(--ink);color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:var(--r8);cursor:pointer}
 
-/* ===== ALSO SERVE ===== */
+
 .also{background:var(--off);border:1.5px solid var(--border);border-radius:var(--r16);padding:26px 28px;margin-top:8px}
 .also h3{font-size:1.06rem;margin-bottom:8px}
 .also p{font-size:.94rem;margin-bottom:14px}
 .also-chips{display:flex;flex-wrap:wrap;gap:7px}
 .also-chips span{font-size:.8rem;font-weight:600;color:var(--ink3);background:#fff;border:1px solid var(--border);padding:5px 12px;border-radius:20px}
 
-/* ===== WHY SECTION ===== */
+
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:34px}
 .why{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);padding:26px 22px;transition:all .22s}
 .why:hover{box-shadow:var(--sh);transform:translateY(-3px);border-color:#BFDBFE}
@@ -605,17 +424,14 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .why h3{font-size:1.04rem;margin-bottom:8px}
 .why p{font-size:.92rem;line-height:1.68;margin:0}
 
-/* ===== FORM ===== */
+
 .loc-form-sec{background:linear-gradient(150deg,#0b2545 0%,#0f172a 60%,#101828 100%);padding:78px 0;position:relative;overflow:hidden}
 .loc-form-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(147,197,253,.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
 .loc-form-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 420px;gap:44px;align-items:center}
 .lf-txt h2{color:#fff;margin-bottom:14px}
 .lf-txt p{color:rgba(255,255,255,.68);font-size:1.04rem;margin-bottom:10px}
 .lf-list{margin-top:16px}
-/* .lf-list was written for the DARK audit panel, so its text is white. Reusing
-   it inside a light section produced white-on-white text with only the tick
-   visible. Light sections get their own colour below — do not "simplify" this
-   by changing the base rule, which would break the dark panel. */
+
 .sec-white .lf-list li,.sec-off .lf-list li,.sec .lf-list li{color:var(--ink3)}
 .sec-white .lf-list li::before,.sec-off .lf-list li::before,.sec .lf-list li::before{color:var(--blue)}
 .lf-list li{font-size:.94rem;color:rgba(255,255,255,.8);padding-left:24px;position:relative;margin-bottom:8px;line-height:1.55}
@@ -632,7 +448,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .lf-note{text-align:center;font-size:.74rem;color:var(--muted);margin-top:10px;line-height:1.6}
 .lf-err{display:none;color:#DC2626;font-size:.84rem;margin-bottom:10px;padding:9px 12px;background:#FEF2F2;border-radius:6px;border:1px solid #FECACA}
 
-/* ===== FAQ ===== */
+
 .faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
 .faq-item{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);overflow:hidden;transition:border-color .2s;align-self:start}
 .faq-item:hover{border-color:#BFDBFE}
@@ -644,7 +460,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .faq-a p{font-size:.94rem;color:var(--muted);line-height:1.72}
 .faq-a a{color:var(--blue);font-weight:600}
 
-/* ===== SECTIONS ===== */
+
 .sec{padding:78px 0}
 .sec-off{background:var(--off)}
 .sec-white{background:#fff}
@@ -652,7 +468,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .sec-head h2{margin-bottom:12px}
 .sec-head p{font-size:1.04rem}
 
-/* ===== FOOTER ===== */
+
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
 .footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
@@ -687,7 +503,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
   .finder{position:static;padding:16px 0}
 }
 
-/* ===== CITY PAGE EXTRAS ===== */
+
 .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:14px;margin:30px 0}
 .stat{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);padding:19px 17px;text-align:center}
 .stat b{display:block;font-family:'Fraunces',serif;font-weight:900;font-size:1.72rem;color:var(--ink);line-height:1.05}
@@ -742,14 +558,14 @@ table.data thead th{background:var(--ink);color:#fff;font-size:.78rem;font-weigh
 table.data tbody th{font-weight:700;color:var(--ink);background:var(--off);white-space:nowrap}
 table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-bottom:none}
 
-/* ZIP / area chips */
+
 .area-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px;margin-top:26px}
 .area{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);padding:19px}
 .area h4{font-size:1rem;margin-bottom:5px}
 .area .zip{font-size:.72rem;font-weight:800;color:var(--blue);letter-spacing:.05em;margin-bottom:8px}
 .area p{font-size:.87rem;color:var(--muted);line-height:1.6;margin:0}
 
-/* OPPORTUNITY CHECKER */
+
 .opp{background:#fff;border:1.5px solid var(--border);border-radius:var(--r24);overflow:hidden;margin:30px 0;box-shadow:var(--sh-lg)}
 .opp-head{background:linear-gradient(150deg,#0b2545 0%,#0f172a 60%,#101828 100%);padding:26px 28px;position:relative;overflow:hidden}
 .opp-head::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(147,197,253,.08) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
@@ -779,7 +595,7 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
 .opp-cta{margin-top:18px;text-align:center}
 .opp-foot{font-size:.76rem;color:var(--muted);text-align:center;padding:15px 22px;background:var(--off);border-top:1px solid var(--border);line-height:1.65}
 
-/* nearby cities */
+
 .near{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:26px}
 .nr-c{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);padding:18px;transition:all .2s}
 .nr-c:hover{border-color:#BFDBFE;box-shadow:var(--sh);transform:translateY(-2px)}
@@ -790,78 +606,47 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://eyetoad.com/#org","name":"Eye To Ad Media","url":"https://eyetoad.com","logo":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/eye-to-ad-media-logo-denver-seo.png"},"telephone":["+17202496588","+18004818638"],"email":"info@eyetoad.com","foundingDate":"2012","founder":{"@type":"Person","name":"Zach Wennstedt"},"address":{"@type":"PostalAddress","streetAddress":"1001 Bannock St #660","addressLocality":"Denver","addressRegion":"CO","postalCode":"80204","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"39.7317","longitude":"-104.9965"},"priceRange":"$$","sameAs":["https://www.linkedin.com/company/eye-to-ad-media","https://www.facebook.com/EyeToAd/","https://x.com/EyeToAdmedia"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+18004818638","email":"info@eyetoad.com","availableLanguage":["en"],"areaServed":["US"],"hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],"knowsAbout":["Search Engine Optimization","Local SEO","Multi-city local SEO","Generative Engine Optimization","AI Overview Optimization","Structured Data","Entity Optimization","Conversion Rate Optimization","Dallas Texas local search","Collin County Texas","Denton County Texas","Fort Worth Texas"],"areaServed":[{"@type":"City","name":"Dallas","addressRegion":"TX"},{"@type":"City","name":"Fort Worth","addressRegion":"TX"},{"@type":"City","name":"Plano","addressRegion":"TX"},{"@type":"City","name":"Frisco","addressRegion":"TX"},{"@type":"City","name":"McKinney","addressRegion":"TX"},{"@type":"City","name":"Allen","addressRegion":"TX"},{"@type":"City","name":"Prosper","addressRegion":"TX"},{"@type":"City","name":"Arlington","addressRegion":"TX"},{"@type":"City","name":"Irving","addressRegion":"TX"},{"@type":"City","name":"Denton","addressRegion":"TX"},{"@type":"City","name":"Lewisville","addressRegion":"TX"},{"@type":"City","name":"Flower Mound","addressRegion":"TX"},{"@type":"City","name":"Grapevine","addressRegion":"TX"},{"@type":"City","name":"Southlake","addressRegion":"TX"},{"@type":"City","name":"Garland","addressRegion":"TX"},{"@type":"City","name":"Mesquite","addressRegion":"TX"}]},{"@type":"WebPage","@id":"https://eyetoad.com/locations/dallas-seo/#page","url":"https://eyetoad.com/locations/dallas-seo/","name":"Dallas SEO | Win the Suburbs Instead of Losing the Metro","description":"SEO and AI search optimization for Dallas-Fort Worth, the number one U.S. metro for corporate headquarters relocations from 2018 to 2024.","inLanguage":"en-US","dateModified":"2026-09-10","isPartOf":{"@type":"WebSite","name":"Eye To Ad Media","url":"https://eyetoad.com"},"breadcrumb":{"@id":"https://eyetoad.com/locations/dallas-seo/#breadcrumb"},"about":{"@id":"https://eyetoad.com/locations/dallas-seo/#place"},"mainEntity":{"@id":"https://eyetoad.com/locations/dallas-seo/#service"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#h1","#answer-p","#why-h2","#suburbs-h2","#cost-h2","#faq-h2"]},"lastReviewed":"2026-09-10","primaryImageOfPage":{"@type":"ImageObject","url":"https://eyetoad.com/images/images/denver-seo-services-hero.png"}},{"@type":"Place","@id":"https://eyetoad.com/locations/dallas-seo/#place","name":"Dallas, Texas","description":"Dallas is the anchor of the Dallas-Fort Worth metroplex, which was the number one U.S. metro for corporate headquarters relocations from 2018 to 2024, attracting 100 new headquarters, and has led the nation in workforce growth this decade with roughly 450,000 net new jobs. Major employers and headquarters include AT&T, Toyota, Charles Schwab, JP Morgan, McKesson, CBRE, Caterpillar, Jacobs, Fluor and AECOM. Texas levies no state income tax.","address":{"@type":"PostalAddress","addressLocality":"Dallas","addressRegion":"TX","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"32.7767","longitude":"-96.7970"},"containedInPlace":{"@type":"AdministrativeArea","name":"Dallas County, Texas"}},{"@type":"Service","@id":"https://eyetoad.com/locations/dallas-seo/#service","name":"Dallas-Fort Worth SEO and Marketing","serviceType":"Search engine optimization, generative engine optimization and advertising","provider":{"@id":"https://eyetoad.com/#org"},"areaServed":[{"@type":"City","name":"Dallas","addressRegion":"TX"},{"@type":"City","name":"Fort Worth","addressRegion":"TX"},{"@type":"City","name":"Plano","addressRegion":"TX"},{"@type":"City","name":"Frisco","addressRegion":"TX"},{"@type":"City","name":"McKinney","addressRegion":"TX"},{"@type":"City","name":"Allen","addressRegion":"TX"},{"@type":"City","name":"Prosper","addressRegion":"TX"},{"@type":"City","name":"Arlington","addressRegion":"TX"},{"@type":"City","name":"Irving","addressRegion":"TX"},{"@type":"City","name":"Denton","addressRegion":"TX"},{"@type":"City","name":"Lewisville","addressRegion":"TX"},{"@type":"City","name":"Flower Mound","addressRegion":"TX"},{"@type":"City","name":"Grapevine","addressRegion":"TX"},{"@type":"City","name":"Southlake","addressRegion":"TX"},{"@type":"City","name":"Garland","addressRegion":"TX"},{"@type":"City","name":"Mesquite","addressRegion":"TX"}],"description":"SEO, AI search optimization and advertising for Dallas-Fort Worth businesses: Google Business Profile optimization, Google Maps and local pack rankings city by city, suburb-level content strategy across Collin, Denton, Tarrant and Dallas counties, structured data and entity consistency for AI citation, and conversion work.","hasOfferCatalog":{"@type":"OfferCatalog","name":"Dallas-Fort Worth services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Google Business Profile optimization"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Google Maps and local pack ranking by city"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Suburb-level content strategy"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Storm season and restoration campaigns"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Overview and generative engine optimization"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Entity consistency and structured data"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Review acquisition strategy"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conversion optimization"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Google Ads and paid search"}}]},"url":"https://eyetoad.com/locations/dallas-seo/","termsOfService":"https://eyetoad.com/terms.html","providerMobility":"dynamic"},{"@type":"BreadcrumbList","@id":"https://eyetoad.com/locations/dallas-seo/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eyetoad.com/"},{"@type":"ListItem","position":2,"name":"Service Areas","item":"https://eyetoad.com/locations/"},{"@type":"ListItem","position":3,"name":"Dallas","item":"https://eyetoad.com/locations/dallas-seo/"}]},{"@type":"FAQPage","@id":"https://eyetoad.com/locations/dallas-seo/#faq","mainEntity":[{"@type":"Question","name":"Is Dallas too competitive for a small business?","acceptedAnswer":{"@type":"Answer","text":"For the metro head terms, frequently yes, and it would be dishonest to say otherwise. DFW was the number one metro in the country for corporate headquarters relocations from 2018 to 2024, attracting 100 new headquarters. Those companies brought agencies and budgets with them. For the suburbs, no. Frisco, McKinney, Prosper, Little Elm, Flower Mound and dozens of others are winnable in months by businesses that build them a real page. Three suburbs you own beat one metro term you place eleventh for."}},{"@type":"Question","name":"Why focus on suburbs instead of Dallas itself?","acceptedAnswer":{"@type":"Answer","text":"Because that is where the growth and the money are moving. Collin and Denton counties capture a large share of the region's new residents, eight of the fifteen fastest-growing cities in the United States are in Texas, and Public Storage moved its headquarters to Frisco. These are high-income cities whose residents search exactly the way Dallas residents do &mdash; except far fewer businesses have built a page for them."}},{"@type":"Question","name":"How much does SEO cost in Dallas?","acceptedAnswer":{"@type":"Answer","text":"Our full-service campaigns run $500 to $3,000 per month, scoped to your category and how much needs fixing first, with AI search optimization included rather than sold as an upgrade. Build-your-own plans start at $100 per month for one focused deliverable. For reference: Ahrefs' survey of 439 providers found the average agency retainer at $3,209 per month, and Clutch puts the average one-off project at $37,158. We run lean, without the account layers and downtown lease a large agency carries."}},{"@type":"Question","name":"How long does SEO take in Dallas?","acceptedAnswer":{"@type":"Answer","text":"It depends entirely on which ground you picked. A well-chosen suburb in a category with thin competition often shows map pack movement between months two and four, with organic following around months four to six. Dallas metro head terms in a contested category realistically run twelve months or more and usually need paid search alongside while the organic compounds. Nothing visible happens in month one either way."}},{"@type":"Question","name":"Should I have a page for every city in the Metroplex?","acceptedAnswer":{"@type":"Answer","text":"No. Only for the cities you genuinely service and can realistically win, and each written for that city rather than find-and-replaced. Thin duplicate city pages are a known problem, not a strategy. Three to six cities is usually the right answer. The audit establishes which ones, based on where you already have footing and where the competition is thinnest."}},{"@type":"Question","name":"Is Fort Worth a separate market from Dallas?","acceptedAnswer":{"@type":"Answer","text":"Completely. Tarrant County has its own logistics, aerospace and defence base, its own competitors and its own search behaviour. A Dallas page does not rank in Fort Worth and never will. Plenty of businesses serve both and market to neither properly, because they treat the Metroplex as one place. Google does not."}},{"@type":"Question","name":"Do I need a Dallas address to rank here?","acceptedAnswer":{"@type":"Answer","text":"For the Google Maps local pack, proximity is a genuine ranking factor and your address sets your radius. Across a metroplex this wide that matters enormously. For organic results and AI-generated answers, no. Those are not distance-limited, which is why a DFW business should build both rather than relying on the map alone."}},{"@type":"Question","name":"What about hail season?","acceptedAnswer":{"@type":"Answer","text":"It is the regional fact that changes the maths for several categories. North Texas storm seasons drive roofing, siding, auto glass and restoration demand in waves, and the searches are urgent and high-value. Because rankings take months to build, being visible for the next storm season is a decision made well before it arrives, not during it."}},{"@type":"Question","name":"Which ZIP codes do you cover?","acceptedAnswer":{"@type":"Answer","text":"Dallas proper (75201, 75204, 75206, 75219, 75225), Collin County through Plano, Frisco, McKinney, Allen and Prosper (75024, 75034, 75070, 75013, 75078), Denton County (76201, 75067, 75028, 75068), Tarrant County and Fort Worth (76102, 76011, 76051, 76092, 76248), the Mid-Cities and Irving (75038, 75039, 76039) and the south and east suburbs (75150, 75040, 75088). They behave as genuinely separate markets with different competition and income levels."}},{"@type":"Question","name":"What is AI search optimization and is it extra?","acceptedAnswer":{"@type":"Answer","text":"It is the work of making your business quotable by answer engines &mdash; AI Overviews, ChatGPT, Perplexity, Gemini, Claude &mdash; through structured data, question-shaped headings, extractable facts and entity consistency. It is included in our campaigns. Of the agencies that raised prices in 2025 and 2026, 37% cited AI optimization as the reason, frequently billing it separately at $900 or more per month."}},{"@type":"Question","name":"Are there free resources for North Texas businesses?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Dallas Regional Chamber publishes the regional economic development research much of the data on this page comes from, including an annual economic development guide covering demographics, labour costs, real estate and incentives. If you are evaluating a move, a hire or an expansion inside the Metroplex, it is free and considerably more useful than anything an agency will hand you."}},{"@type":"Question","name":"Will you tell me if my market is not worth it?","acceptedAnswer":{"@type":"Answer","text":"Yes, and in Dallas it happens more than anywhere else we work. Some categories here are held by companies with a decade and serious budget behind them, and sometimes the honest read is that your money does better on conversion work, paid search, or a much narrower set of suburbs. You would hear that in the audit rather than after six months of invoices. It costs nothing and the findings are yours either way."}}]}]}</script>
 
+<style id="eta-v8">
+.ubar{background:#F4F7FB;border-bottom:1px solid #DDE5EF}
+.ubar,.ubar a{color:#1D2939}
+.ubar .ubar-dom{background:#fff;border:1px solid #CBD5E1;color:#1D2939}
+.ubar .ubar-dom-t{color:#0B4DA2}
+.ubar .ubar-txt{color:#475467}
+.ubar .ubar-txt b{color:#B54708}
+.ubar .ubar-ic,.ubar .ubar-go{color:#B54708;stroke:currentColor}
+.ubar .ubar-tel{color:#0B1B33}
+.ubar .ubar-tel-lbl{color:#475467}
+.ni.kb-open>.drop,.ni.kb-open>.drop-mega{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.eml,[data-eml]{text-decoration:underline}
+.ticker{overflow:hidden;max-width:100%}
+
+</style>
 </head>
 <body>
-<!--
-  DALLAS - MACHINE-READABLE PAGE FACTS   (verified 2026-09-10)
-  PAGE: https://eyetoad.com/locations/dallas-seo/
-  TARGET: "Dallas SEO" (primary). Secondary: Dallas SEO company, Fort Worth
-    SEO, Plano SEO, Frisco SEO, McKinney SEO, DFW marketing agency, Texas SEO
-    company, AI search optimization Dallas.
-  MARKET: DFW was the #1 US metro for corporate HQ relocations 2018-2024,
-    attracting 100 new corporate headquarters. Led the nation in workforce
-    growth this decade with ~450,000 net new jobs. Dallas Federal Reserve
-    projects Texas employment +1.9% in 2026, ~278,400 new jobs by December.
-    Eight of the 15 fastest-growing US cities are in Texas. No state income
-    tax. Collin and Denton counties capture a large share of new residents.
-  EMPLOYERS / HQs: AT&T (building a $1.35B Plano HQ campus), Toyota, Charles
-    Schwab, JP Morgan, McKesson, CBRE, Caterpillar, Jacobs, Fluor, AECOM,
-    ATI. Public Storage relocated its HQ to Frisco. Google has committed $40B
-    to Texas AI infrastructure. Fort Worth concentrates logistics, aerospace
-    and defence.
-  PAGE STRATEGY: this page deliberately argues AGAINST chasing the "Dallas"
-    head term and FOR winning suburbs in Collin and Denton counties. That is
-    the differentiator versus every competing agency page in this market. Do
-    not rewrite it into a generic "we rank you in Dallas" page.
-  PRICING ANCHORS (published third-party survey data, not claims about any
-    named competitor): Ahrefs poll of 439 providers - average agency retainer
-    $3,209/mo. Clutch - average project $37,158. GoodFirms - 48% in the
-    $1,500-$5,000 tier. 37% of agencies that raised prices cited AI
-    optimization, often billed separately at $900+/mo.
-  HERO MODULE: the two-column competition comparison is LABELLED illustrative
-    of the pattern, not a measured count. Keep that label.
-  PROVIDER: Eye To Ad Media, 1001 Bannock St #660, Denver CO 80204.
-    1-800-481-8638. NO Dallas office is claimed and none should be added.
--->
 
 <a class="skip" href="#main">Skip to main content</a>
 
-<!-- ============================================================
-  UTILITY BAR — very top of every page.
-  Domain search sends traffic to buyweburl.com (GoDaddy reseller
-  storefront, pl_id 497814). Kept OUT of the hero on purpose: a
-  domain-search widget in the hero of the page we are trying to
-  rank for "Denver SEO" dilutes the topical signal, and it competes
-  with the highest-margin CTA on the site.
-  ============================================================ -->
-<!-- ============================================================
-  UTILITY BAR — very top of every page.
-  Domain search sends traffic to buyweburl.com (GoDaddy reseller
-  storefront, pl_id 497814). Kept OUT of the hero on purpose: a
-  domain-search widget in the hero of the page we are trying to rank
-  for "Denver SEO" dilutes the topical signal, and it competes with
-  the highest-margin CTA on the site.
-  ALSO LOAD-BEARING FOR THE HEADER FIT: the phone number and the VIP
-  membership link here are the reason the header can safely drop its
-  own copies of both at narrow widths. If you ever remove either
-  from this bar, revisit the HEADER FIT breakpoints in the CSS first.
-  ============================================================ -->
 <div class="ubar">
   <div class="wrap ubar-inner">
+    
     <div class="ubar-left">
-      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored" aria-label="Search for an available domain name">Search Domains</a>
-      <span class="ubar-txt">Find &amp; register your perfect .com</span>
+      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored"
+         aria-label="Search and register an available domain name at our domain storefront">
+        <svg class="ubar-ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M13.4 13.4 L17.5 17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="ubar-dom-t">Search Domains</span>
+        <span class="ubar-txt">&mdash; find &amp; register your perfect <b>.com</b>, <b>.ai</b> or <b>.io</b></span>
+        <span class="ubar-go" aria-hidden="true">&rsaquo;</span>
+      </a>
     </div>
     <div class="ubar-right">
-      <a href="/marketing-subscription/" class="ubar-link">VIP Membership</a>
+      
       <a href="tel:18004818638" class="ubar-tel"><span class="ubar-tel-lbl">Call</span>1-800-481-8638</a>
     </div>
   </div>
 </div>
-
-<!-- TICKER — the track is DOUBLED (10 spans for 5 items) and animates to
-     -50%, so one cycle shows each item exactly once. If you edit an item,
-     edit BOTH copies or the loop will visibly jump. -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
@@ -876,26 +661,24 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
   </div>
 </div>
-
-<!-- HEADER -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
     <a href="/" class="logo" aria-label="Eye To Ad Media — Denver SEO Home">
-      <!-- width/height MUST match what the CSS renders (300x102), not the raw
-           file's 760x190, or the browser reserves the wrong box and the page
-           visibly shifts on first paint. -->
+      
       <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media logo — Denver SEO Company" class="brand-logo" width="300" height="102" loading="eager" fetchpriority="high">
     </a>
     <nav class="nav" aria-label="Main navigation">
       <div class="ni">
-        <a href="/denver-seo-services/" class="nl">Services &#9662;</a>
+        <a href="/services/" class="nl">Services &#9662;</a>
+        
         <div class="drop">
-          <a href="/local-seo-denver/">Local SEO Denver</a>
-          <a href="/seo-systems/">SEO Systems</a>
-          <a href="/aio-seo-system/">AIO SEO System</a>
-          <a href="/generative-engine-optimization-system/">GEO System</a>
+          <a href="/seo-systems/">SEO Services</a>
+          <a href="/aio-seo-system/">AI SEO Services</a>
+          <a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>
+          <a href="/local-seo-services/">Local SEO &amp; Google Maps</a>
           <a href="/conversion-optimization/">Conversion Optimization</a>
-          <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+          <a href="/custom-website-design/">Custom Website Design</a>
+          <a href="/ai-chatbot-for-business/">AI Chatbots</a>
           <a href="/free-seo-audit/">Free SEO Audit</a>
         </div>
       </div>
@@ -932,14 +715,13 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
       </div>
       <div class="ni">
         <a href="/locations/" class="nl">Locations &#9662;</a>
-        <!-- LOCATIONS MEGA — reuses .drop-mega. Adding a city is ONE line here,
-             one line in the mobile nav, and one card on /locations/. The footer
-             deliberately lists HUBS ONLY so it never becomes a city keyword list. -->
+        
         <div class="drop-mega">
           <div class="dg">
             <h5>Colorado</h5>
           <a href="/">Denver</a>
           <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+          <a href="/locations/boulder-seo/">Boulder</a>
           <a href="/locations/fort-collins-seo/">Fort Collins</a>
           </div>
           <div class="dg">
@@ -963,16 +745,18 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
         <span class="nl nl-tog" role="button" tabindex="0" aria-haspopup="true">Resources &#9662;</span>
         <div class="drop">
           <a href="/blog/">SEO Blog</a>
+          <a href="/our-work/">Our Work</a>
           <a href="/case-studies/">Case Studies</a>
           <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
           <a href="/grow-my-business/">Grow My Business Tool</a>
           <a href="/ad-lab/">Ad Lab</a>
-          <a href="/ad-lab/rpg/">SEO Quest RPG</a>
+          <a href="/free-seo-tools/">Free SEO Tools</a>
           <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
         </div>
       </div>
       <a href="/about/" class="nl">About</a>
       <a href="/contact/" class="nl">Contact</a>
+      <a href="/sell-myself/" class="nl">See the Pitch</a>
       <a href="https://www.buyweburl.com" class="nl nl-dom" target="_blank" rel="noopener sponsored">Search Domains</a>
     </nav>
     <div class="hdr-right">
@@ -984,8 +768,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     </button>
   </div>
 </header>
-
-<!-- MOBILE NAV — top offset is set by JS (measureHeader), never hard-coded -->
 <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
   <div class="mob-top">
     <span class="mob-top-lab">Menu</span>
@@ -996,17 +778,19 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Search Domain Names</a>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-services">
-    <a href="/denver-seo-services/">Denver SEO Services</a>
-    <a href="/local-seo-denver/">Local SEO Denver</a>
-    <a href="/seo-systems/">SEO Systems</a>
-    <a href="/aio-seo-system/">AIO SEO System</a>
-    <a href="/generative-engine-optimization-system/">GEO System</a>
+    <a href="/services/" class="mob-hub">All Services &rarr;</a>
+    <a href="/seo-systems/">SEO Services</a>
+    <a href="/aio-seo-system/">AI SEO Services</a>
+    <a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>
+    <a href="/local-seo-services/">Local SEO &amp; Google Maps</a>
     <a href="/conversion-optimization/">Conversion Optimization</a>
-    <a href="/denver-seo-pricing/">Denver SEO Pricing</a>
+    <a href="/custom-website-design/">Custom Website Design</a>
+    <a href="/ai-chatbot-for-business/">AI Chatbots</a>
     <a href="/free-seo-audit/">Free SEO Audit</a>
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-industries">Industries<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-industries">
+    <a href="/industries/" class="mob-hub">All 17 Industries &rarr;</a>
     <div class="mob-sub">Home &amp; Trade</div>
     <a href="/contractor-seo-denver/">Contractor SEO</a>
     <a href="/electrician-seo-denver/">Electrician SEO</a>
@@ -1027,13 +811,14 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
     <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
     <a href="/restaurant-seo-denver/">Restaurant SEO</a>
-    <a href="/industries/">Compare all 17 industries &rarr;</a>
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-locations">Locations<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-locations">
+    <a href="/locations/" class="mob-hub">All 24 Service Areas &rarr;</a>
     <div class="mob-sub">Colorado</div>
     <a href="/">Denver</a>
     <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+    <a href="/locations/boulder-seo/">Boulder</a>
     <a href="/locations/fort-collins-seo/">Fort Collins</a>
     <div class="mob-sub">Mountain West</div>
     <a href="/locations/salt-lake-city-seo/">Salt Lake City</a>
@@ -1046,22 +831,22 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     <a href="/locations/charlotte-seo/">Charlotte</a>
     <a href="/locations/omaha-seo/">Omaha</a>
     <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
-    <a href="/locations/">All 24 service areas &rarr;</a>
   </div>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-resources">
+    <a href="/our-work/">Our Work</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
     <a href="/grow-my-business/">Grow My Business Tool</a>
-    <a href="/ad-lab/rpg/">SEO Quest RPG</a>
+    <a href="/free-seo-tools/">Free SEO Tools</a>
     <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
   </div>
-  <!-- FLAT LINKS: single destinations, not categories. A collapsible section
-       holding one or two links is worse than no section at all. -->
+  
   <a href="/blog/" class="mob-flat">Blog</a>
   <a href="/ad-lab/" class="mob-flat">Ad Lab</a>
   <a href="/about/" class="mob-flat">About</a>
   <a href="/contact/" class="mob-flat">Contact</a>
+  <a href="/sell-myself/" class="mob-flat">See the Pitch &mdash; 10 Minutes, No Salesperson</a>
   <a href="/marketing-subscription/" class="mob-flat">VIP Marketing Subscription</a>
   <p class="mob-proof"><b>5.0</b> from 60 Google Reviews &middot; <b>A+</b> BBB Accredited<br>Denver-based since 2012 &middot; Answers in 1 business day</p>
 </nav>
@@ -1399,23 +1184,12 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
 </section>
 </main>
 
-
-
-
-
-
-
-
-
-<!-- FOOTER -->
+<script>(function(){var a=atob('aW5mbw==')+String.fromCharCode(64)+atob('ZXlldG9hZC5jb20=');window.etaAddr=function(){return a;};[].forEach.call(document.querySelectorAll('form[data-fs]'),function(f){f.setAttribute('data-fs',a);});})();</script>
 <footer class="footer" aria-label="Site footer">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <!-- Footer logo uses the SAME .brand-logo rule as the header. The old
-             build hard-coded height:300px INLINE, which overrode the mobile
-             media query and left a 300px logo on phones. width/height attrs
-             match the rendered 300x102 box. -->
+        
         <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver SEO Agency since 2012" class="brand-logo" width="300" height="102" loading="lazy">
         <p>Denver's SEO authority for modern search since 2012 — Google, AI Overviews, agentic AI, local maps, and conversion. Serving Denver and surrounding Colorado.</p>
         <address>
@@ -1427,26 +1201,7 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
           <a class="eml" data-u="info" data-d="eyetoad.com" href="#">info&#64;eyetoad&#46;com</a>
         </address>
       </div>
-      <!-- ============================================================
-        FOOTER — PORTABLE BY DESIGN (Sept 2026). Read before editing.
-
-        THE LABELS DELIBERATELY DO NOT SAY "DENVER". This same footer ships
-        on out-of-state pages (Dallas, Phoenix, Charlotte...). A Dallas page
-        carrying "Dentist SEO Denver / Roofing SEO Denver / Denver SEO
-        Pricing" in its footer reads wrong to a human and pushes a Denver
-        signal on a page trying to rank for Dallas. DESTINATIONS ARE
-        UNCHANGED — every one of these is still the Denver page it always
-        was, and each of those pages carries "Denver" in its own title, H1,
-        content and schema, which is where it actually counts. This also
-        matches the anchor-diversity decision already made for the
-        Industries mega-menu, which dropped the geo suffix for the same
-        reason.
-
-        LOCATIONS IS ONE LINK. An earlier pass had four links here pointing
-        at the same hub via anchors that did not exist. Cities live in the
-        Locations mega-menu and on /locations/ — never as a sitewide list,
-        which is the keyword-stuffed footer pattern spam systems look for.
-        ============================================================ -->
+      
       <div class="footer-col">
         <h4>Services</h4>
         <a href="/denver-seo-services/">SEO Services</a>
@@ -1472,20 +1227,20 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
         <h4>Company</h4>
         <a href="/locations/">Service Locations</a>
         <a href="/about/">About Us</a>
+        <a href="/our-work/">Our Work</a>
         <a href="/case-studies/">Case Studies</a>
         <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
         <a href="/blog/">Blog</a>
         <a href="/marketing-subscription/">VIP Membership</a>
         <a href="/grow-my-business/">Grow My Business</a>
+        <a href="/careers/">Careers</a>
         <a href="/contact/">Contact</a>
-        <!-- Legal links live in the footer bottom bar, once each. /terms.html
-             is the only non-trailing-slash URL on the site: rename it to
-             /terms/index.html and update every link sitewide in ONE commit. -->
+        
       </div>
       
     </div>
     <div class="footer-bot">
-      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-09-10">September 10, 2026</time>.</p>
+      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-09-21">September 21, 2026</time>.</p>
       <div class="footer-links">
         <a href="/privacy-policy/">Privacy</a>
         <a href="/terms.html">Terms</a>
@@ -1498,9 +1253,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
 </footer>
 
 <script>
-/* ============================================================
-   CORE UI
-   ============================================================ */
 (function(){
   var hdr=document.getElementById('hdr');
   var burger=document.getElementById('burger');
@@ -1510,12 +1262,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     hdr.classList.toggle('scrolled',window.scrollY>30);
   },{passive:true});
 
-  /* Mobile nav offset is MEASURED, never hard-coded. The old build pinned
-     .mob-nav to top:300px, which had to be kept in sync with
-     .hdr-inner{height:300px} by hand — and wasn't.
-     This is also why the HEADER FIT breakpoints needed no JS change: the
-     menu position is derived from the rendered header, whatever size it
-     happens to be at that viewport width. */
   function measureHeader(){
     var r=hdr.getBoundingClientRect();
     mobNav.style.top=Math.max(0,r.bottom)+'px';
@@ -1534,11 +1280,8 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     if(o)mobNav.scrollTop=0;
   });
 
-  /* dedicated close button inside the menu — the burger can sit behind a
-     sticky header on some phones, so the menu owns a way out of itself */
   var mobClose=document.getElementById('mobClose');
   if(mobClose)mobClose.addEventListener('click',function(){burger.click();});
-  /* accordion: one section at a time, collapsed on open */
   mobNav.querySelectorAll('.mob-acc').forEach(function(btn){
     btn.addEventListener('click',function(){
       var grp=document.getElementById(btn.getAttribute('aria-controls'));
@@ -1565,7 +1308,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     if(e.key==='Escape'&&mobNav.classList.contains('open')){burger.click();}
   });
 
-  /* FAQ accordion — one open at a time */
   document.querySelectorAll('.faq-q').forEach(function(btn){
     btn.addEventListener('click',function(){
       var item=btn.closest('.faq-item');
@@ -1578,17 +1320,10 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
     });
   });
 
-  /* Hero video deferred until after first paint so the poster is the LCP
-     element. Skipped entirely on save-data, slow connections and when the
-     visitor has asked for reduced motion. */
   function deferHero(){
     var v=document.getElementById('heroVideo');
     if(!v)return;
     var c=navigator.connection||{};
-    /* MOBILE (Sept 2026): the hero video is skipped entirely under 900px.
-       The subject is unreadable at phone size behind the gradient, so the MP4
-       was pure download cost on the connection least able to afford it. The
-       poster image is already the LCP element, so nothing visual is lost. */
     if(window.innerWidth<900)return;
     if(c.saveData===true)return;
     if(c.effectiveType&&/2g/.test(c.effectiveType))return;
@@ -1600,9 +1335,6 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   if('requestIdleCallback' in window){requestIdleCallback(deferHero,{timeout:2500});}
   else{window.addEventListener('load',function(){setTimeout(deferHero,900);});}
 
-  /* Email links are assembled at runtime so the address is not in the raw
-     source as a harvestable string. The JSON-LD address stays plain on
-     purpose — that is the channel we WANT machines to read. */
   window.bindEmails=function(){
     document.querySelectorAll('a.eml').forEach(function(a){
       if(a.dataset.bound)return; a.dataset.bound='1';
@@ -1611,23 +1343,8 @@ table.data tbody tr:last-child th,table.data tbody tr:last-child td{border-botto
   };
   window.bindEmails();
 
-  /* REMOVED Sep 2 2026: the .ask-copy clipboard handler for the
-     "Ask an AI Engine" section. That whole section is gone — see the
-     removal note where it used to sit, above the Agentic AI block. */
 })();
 
-/* FORM STACK — validation, submit guards, AJAX delivery. Three rules, none
-   revertable: the endpoint is assembled at submit time and is never an action
-   attribute in the raw HTML; field names are exact and renaming one silently
-   disables the filtering it depends on; delivery is reported honestly as
-   sent / could not confirm / failed, because the old build redirected whether
-   or not the POST succeeded and a lost lead looked identical to a won one.
-   NOTE: the /ajax/ endpoint activates separately from the regular one. Point a
-   form at a NEW address and you must submit once through the regular endpoint
-   and approve the confirmation email, or every AJAX send falls back to
-   "unsure". */
-/* Destination is assembled at submit time from two encoded halves, so no
-   contiguous address exists anywhere in the served markup or script. */
 function etaTo(form){
   try{
     return atob(form.getAttribute('data-x'))+String.fromCharCode(64)+atob(form.getAttribute('data-y'));
@@ -1656,8 +1373,6 @@ function etaTo(form){
     for(k in o){if(Object.prototype.hasOwnProperty.call(o,k))a.push(encodeURIComponent(k)+'='+encodeURIComponent(o[k]));}
     return a.join('&');
   }
-  /* Hidden-iframe POST to the REGULAR endpoint. No CORS, no preflight.
-     Used only as a second chance when the AJAX call fails. */
   function postViaIframe(form,data){
     try{
       var name='fs_sink_'+Date.now();
@@ -1694,13 +1409,11 @@ function etaTo(form){
     });
   }
 
-  /* ---------- shared validation ---------- */
   var SPAM=/\b(viagra|casino|crypto|bitcoin|loan|SEO guarantee|buy followers|cheap traffic|make money fast|click here|free money)\b/i;
   function badName(v){return v.length<2||/[<>{}|\\]|https?:\/\//i.test(v);}
   function badPhone(v){return v.replace(/\D/g,'').length<10;}
   function badEmail(v){return !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);}
 
-  /* ---------- HERO FORM ---------- */
   var form=document.getElementById('hero-lead-form');
   if(form){
     var lt=document.getElementById('_loadtime');
@@ -1762,7 +1475,6 @@ function etaTo(form){
     });
   }
 
-  /* ---------- FOOTER CALLBACK FORM ---------- */
   var mForm=document.getElementById('mini-cta-form');
   if(mForm){
     var mlt=document.getElementById('_mini_loadtime');
@@ -1820,17 +1532,6 @@ function etaTo(form){
   }
 })();
 
-/* ============================================================
-   SCRATCH-OFF PRIZE WIDGET
-   Canvas work is deferred until the section is near the viewport via
-   IntersectionObserver, so moving the section down the page required
-   no JS change at all.
-   PRIZE DECK RULE: 15% is the MAXIMUM percentage discount that may
-   appear here. Everything else is a fixed-dollar credit, a free
-   membership period, or member pricing. A scratch card must never
-   give away more than the VIP membership does, or the membership
-   stops being worth paying for.
-   ============================================================ */
 (function(){
   var canvas=document.getElementById('scratch-canvas');
   if(!canvas)return;
@@ -1915,8 +1616,6 @@ function etaTo(form){
     canvas.addEventListener('touchmove',function(e){scratch(e);e.preventDefault();},{passive:false});
     canvas.addEventListener('touchend',function(){scratching=false;});
     resetBtn.addEventListener('click',reset);
-    /* Dragging a canvas is impossible with a keyboard or a screen reader, so
-       there has to be a non-drag path to the same reward. */
     if(skipBtn)skipBtn.addEventListener('click',function(){if(!revealed)doReveal();});
   }
   if('IntersectionObserver' in window){
@@ -1929,7 +1628,6 @@ function etaTo(form){
 </script>
 
 <script>
-/* ===== FAQ ACCORDION ===== */
 (function(){
   document.querySelectorAll('.faq-q').forEach(function(btn){
     btn.addEventListener('click',function(){
@@ -1944,20 +1642,6 @@ function etaTo(form){
   });
 })();
 
-
-
-
-
-
-
-
-
-/* ============================================================
-   DALLAS COMPETITION COMPARISON
-   Builds two stacks of bars to make the metro-vs-suburb argument visible.
-   The counts are illustrative of the pattern and the caption says so; the
-   audit is what produces a real number for a real category.
-   ============================================================ */
 (function(){
   var A=document.getElementById('dlStackA'), B=document.getElementById('dlStackB');
   if(!A||!B)return;
@@ -2037,16 +1721,6 @@ function etaTo(form){
   });
 })();
 
-
-
-
-
-
-
-
-/* ============================================================
-   AUDIT FORM SPAM STACK
-   ============================================================ */
 (function(){
   var form=document.getElementById('loc-form');
   if(!form)return;
@@ -2079,7 +1753,6 @@ function etaTo(form){
     var email=document.getElementById('lf-email').value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){e.preventDefault();show('Please enter a valid email address.');return;}
 
-    /* Endpoint assembled here; no contiguous address exists in the markup. */
     var _to=etaTo(form);
     if(!_to){e.preventDefault();show('Something went wrong on our end. Please call 1-800-481-8638.');return;}
     form.action=['https:','','formsubmit.co',_to].join('/');
@@ -2091,9 +1764,8 @@ function etaTo(form){
 
 </script>
 
-<!-- IRIS. The MASCOT (/mascot.js) is homepage only on purpose — see the note
-  on the homepage. If it is ever added here, load it AFTER iris.js. -->
 <script src="/iris.js" defer></script>
 
+<script src="/eta-site.js" defer></script>
 </body>
 </html>
