@@ -229,6 +229,7 @@ its own machine-readable fact block:
 
 ## Blog
 - [When the Buyer Isn't Human: Getting Chosen by AI Agents That Shortlist Vendors](https://eyetoad.com/blog/ai-agents-choosing-business-vendors/)
+- [What Is AI SEO? A Plain-English Guide for Business Owners (2026)](https://eyetoad.com/blog/ai-seo-guide/)
 - [Is AI Recommending Your Business? A 15-Minute Self-Audit (2026)](https://eyetoad.com/blog/ai-visability-self-audit/)
 - [Common Conversion Mistakes on Local Business Websites (And How to Fix Them) | Eye To Ad Media](https://eyetoad.com/blog/common-conversion-mistakes-on-local-business-websites/)
 - [Core Web Vitals in 2026: The Denver Business Owner's Guide | Eye To Ad Media](https://eyetoad.com/blog/core-web-vitals-2026/)
@@ -258,6 +259,7 @@ its own machine-readable fact block:
 - [SEO vs Google Ads for Local Search: Understanding the Trade-Offs | Eye To Ad Media](https://eyetoad.com/blog/seo-vs-google-ads-for-local-search/)
 - [Why Your Denver Website Gets Traffic But No Calls (And How to Fix It) | Eye To Ad Media](https://eyetoad.com/blog/website-traffic-but-no-calls-denver/)
 - [What Does a Denver SEO Agency Actually Do? A Plain-English Breakdown (2026) | Eye To Ad Media](https://eyetoad.com/blog/what-does-a-denver-seo-agency-do/)
+- [What Is AI SEO? A Plain-English Guide for Business Owners (2026)](https://eyetoad.com/blog/what-is-ai-seo/)
 - [Why Denver Is One of the Hardest SEO Markets in Colorado | Eye To Ad Media](https://eyetoad.com/blog/why-denver-is-a-hard-seo-market/)
 - [Why Is My Competitor Outranking Me? Seven Causes, Ranked](https://eyetoad.com/blog/why-is-my-competitor-outranking-me/)
 
