@@ -82,4 +82,18 @@
         .catch(function(){say(form,'err','The message did not send. Please call 1-800-481-8638 and we will take it from there.');if(btn)btn.disabled=false;});
     });
   });
+
+  /* ---------- readability guard: repairs low-contrast text at runtime ---------- */
+  function etaContrast(){
+    function lum(c){var m=c&&c.match(/[\d.]+/g);if(!m)return null;var r=+m[0],g=+m[1],b=+m[2],a=m[3]===undefined?1:+m[3];if(a===0)return null;function f(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4);}return {l:.2126*f(r)+.7152*f(g)+.0722*f(b),a:a};}
+    function bg(e){var n=e;while(n&&n!==document.documentElement){var s=getComputedStyle(n),L=lum(s.backgroundColor);if(L&&L.a>.5)return L;var bi=s.backgroundImage;if(bi&&bi!=='none'){var g=bi.match(/rgba?\([^)]*\)|#[0-9a-f]{6}/i);if(g){var G=lum(g[0].charAt(0)==='#'?'rgb('+parseInt(g[0].slice(1,3),16)+','+parseInt(g[0].slice(3,5),16)+','+parseInt(g[0].slice(5,7),16)+')':g[0]);if(G&&G.a>.5)return G;}}n=n.parentElement;}return {l:1,a:1};}
+    var els=document.querySelectorAll('main p,main li,main h1,main h2,main h3,main h4,main span,main td,main th,main label,main summary,main button,main a:not(.np-btn):not(.btn):not(.h8-btn)');
+    for(var i=0;i<els.length;i++){var e=els[i];if(!e.textContent||e.textContent.trim().length<3)continue;var s=getComputedStyle(e);if(s.display==='none'||s.visibility==='hidden')continue;var op=1,n=e;while(n&&n!==document.body){op*=parseFloat(getComputedStyle(n).opacity)||1;n=n.parentElement;}if(op<.5)continue;
+      var fg=lum(s.color);if(!fg)continue;var B=bg(e);var eff=fg.a*op;var fl=fg.l*eff+B.l*(1-eff);var ratio=(Math.max(fl,B.l)+.05)/(Math.min(fl,B.l)+.05);
+      if(ratio<3){e.style.setProperty('color',B.l>.5?'#1D2939':'#EEF2F7','important');e.style.setProperty('opacity','1','important');}}
+  }
+  window.etaContrast=etaContrast;
+  function runC(){try{etaContrast();}catch(e){}}
+  if(document.readyState==='complete')runC();else window.addEventListener('load',runC);
+  setTimeout(runC,2500);setTimeout(runC,6000);
 })();

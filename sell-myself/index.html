@@ -2,616 +2,899 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Eye To Ad Media — Growth Presentation</title>
-
-<meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0A101C">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walk the Pitch Yourself | Eye To Ad Media</title>
+<meta name="description" content="A five-minute, self-guided sales conversation: your marketing failures, what more customers would change, how we do it, what it costs, and one yes-or-no question at the end.">
+<link rel="canonical" href="https://eyetoad.com/sell-myself/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Eye To Ad Media">
+<meta property="og:title" content="Walk the Pitch Yourself | Eye To Ad Media">
+<meta property="og:description" content="A five-minute, self-guided sales conversation: your marketing failures, what more customers would change, how we do it, what it costs, and one yes-or-no question at the end.">
+<meta property="og:url" content="https://eyetoad.com/sell-myself/">
+<meta property="og:image" content="https://eyetoad.com/images/images/denver-seo-services-hero.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Eye To Ad Media, Denver SEO">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Walk the Pitch Yourself | Eye To Ad Media">
+<meta name="twitter:description" content="A five-minute, self-guided sales conversation: your marketing failures, what more customers would change, how we do it, what it costs, and one yes-or-no question at the end.">
+<meta name="twitter:image" content="https://eyetoad.com/images/images/denver-seo-services-hero.png">
+<meta name="google-site-verification" content="PsjTr-MqqP1qX9P6YPe_SsoF68ceoGdZ69NMCmijkLI">
+<meta name="theme-color" content="#101828">
+<meta name="author" content="Eye To Ad Media">
+<meta property="article:modified_time" content="2026-09-21T00:00:00-06:00">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+<link rel="shortcut icon" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+
 :root{
-  --ink:#0A101C;
-  --ink2:#101828;
-  --ink3:#1A2436;
+  --ink:#101828;
+  --ink2:#1D2939;
+  --ink3:#344054;
   --blue:#2563EB;
-  --blue-lt:#60A5FA;
+  --blue2:#1D4ED8;
+  --blue-light:#EFF6FF;
   --orange:#F97316;
-  --orange-lt:#FDBA74;
-  --green:#4ADE80;
+  --orange2:#EA580C;
+  --orange-light:#FFF7ED;
   --white:#FFFFFF;
-  --dim:rgba(255,255,255,.56);
-  --dimmer:rgba(255,255,255,.34);
-  --line:rgba(255,255,255,.10);
+  --off:#F9FAFB;
+  --border:#E4E7EC;
+  --muted:#667085;
+  --r8:8px;--r12:12px;--r16:16px;--r24:24px;
+  --sh:0 4px 16px rgba(0,0,0,.09);
+  --sh-lg:0 16px 48px rgba(0,0,0,.14);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden;background:var(--ink)}
-body{
-  font-family:'Inter',system-ui,sans-serif;
-  color:var(--white);
-  -webkit-font-smoothing:antialiased;
-  -webkit-tap-highlight-color:transparent;
-  overscroll-behavior:none;
-}
-h1,h2,.display{font-family:'Fraunces',Georgia,serif;font-weight:900;line-height:1.02;letter-spacing:-.02em}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:6px}
+html,body{overflow-x:hidden;max-width:100%}
 
 
-#stage{
-  position:fixed;inset:0;
-  background:
-    radial-gradient(ellipse 120% 80% at 78% 8%, rgba(37,99,235,.20) 0%, transparent 62%),
-    radial-gradient(ellipse 100% 70% at 10% 96%, rgba(249,115,22,.13) 0%, transparent 60%),
-    var(--ink);
-}
-#stage::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:radial-gradient(circle,rgba(255,255,255,.045) 1px,transparent 1px);
-  background-size:30px 30px;
-}
-
-.slide{
-  position:absolute;inset:0;
-  display:none;
-  flex-direction:column;justify-content:center;
-  padding:calc(env(safe-area-inset-top) + 74px) 7vw calc(env(safe-area-inset-bottom) + 96px);
-  overflow-y:auto;
-  z-index:2;
-}
-.slide.on{display:flex;animation:rise .5s cubic-bezier(.16,1,.3,1) both}
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.slide > *{max-width:960px;width:100%;margin-left:auto;margin-right:auto}
-
-
-.slide.on > *{animation:rise .55s cubic-bezier(.16,1,.3,1) both}
-.slide.on > *:nth-child(1){animation-delay:.04s}
-.slide.on > *:nth-child(2){animation-delay:.13s}
-.slide.on > *:nth-child(3){animation-delay:.22s}
-.slide.on > *:nth-child(4){animation-delay:.31s}
-.slide.on > *:nth-child(5){animation-delay:.40s}
-.slide.on > *:nth-child(6){animation-delay:.49s}
-
-
-.eyebrow{
-  display:flex;align-items:center;gap:12px;
-  font-family:'IBM Plex Mono',monospace;font-size:clamp(.62rem,1.5vw,.72rem);
-  font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:26px;
-}
-.eyebrow::before{content:'';width:34px;height:2px;background:var(--orange);flex-shrink:0}
-.eyebrow.b{color:var(--blue-lt)}.eyebrow.b::before{background:var(--blue-lt)}
-.eyebrow.g{color:var(--green)}.eyebrow.g::before{background:var(--green)}
-
-.big{font-size:clamp(2.1rem,6.4vw,4.6rem)}
-.mid{font-size:clamp(1.75rem,4.8vw,3.4rem)}
-.sub{
-  font-size:clamp(1.02rem,2.4vw,1.4rem);line-height:1.55;
-  color:var(--dim);font-weight:400;margin-top:26px;max-width:720px;
-}
-.sub strong{color:var(--white);font-weight:600}
-em{font-style:normal;color:var(--orange-lt)}
-em.b{color:var(--blue-lt)}
-em.g{color:var(--green)}
-
-
-#topbar{
-  position:fixed;top:0;left:0;right:0;z-index:20;
-  padding:calc(env(safe-area-inset-top) + 16px) 7vw 0;
-  display:flex;align-items:center;justify-content:space-between;
-  pointer-events:none;
-}
-.mark{
-  font-family:'IBM Plex Mono',monospace;font-size:.66rem;font-weight:600;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--dimmer);
-}
-.count{font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:var(--dimmer);letter-spacing:.14em}
-.count b{color:var(--white);font-weight:600}
-
-#rail{position:fixed;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.07);z-index:20}
-#railfill{height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--blue-lt));transition:width .45s cubic-bezier(.16,1,.3,1)}
-
-#nav{
-  position:fixed;z-index:21;
-  bottom:calc(env(safe-area-inset-bottom) + 22px);
-  left:7vw;right:7vw;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-}
-.back{
-  font-size:.84rem;font-weight:600;color:var(--dimmer);padding:10px 4px;
-  transition:color .18s;
-}
-.back:hover{color:var(--white)}
-.back[hidden]{visibility:hidden;display:block}
-.next{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:15px 30px;border-radius:999px;
-  background:var(--orange);color:#fff;font-weight:700;font-size:1rem;
-  box-shadow:0 8px 30px rgba(249,115,22,.42);
-  transition:transform .18s,box-shadow .18s,background .18s;
-}
-.next:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(249,115,22,.58)}
-.next.blue{background:var(--blue);box-shadow:0 8px 30px rgba(37,99,235,.45)}
-.next.blue:hover{box-shadow:0 12px 38px rgba(37,99,235,.6)}
-
-
-.zone{position:fixed;top:0;bottom:64px;width:32%;z-index:5}
-#zoneL{left:0}#zoneR{right:0}
-
-
-.stack{display:flex;flex-direction:column;gap:14px;margin-top:34px}
-.row{
-  display:flex;align-items:baseline;gap:18px;
-  padding:16px 0;border-top:1px solid var(--line);
-}
-.row:last-child{border-bottom:1px solid var(--line)}
-.row .n{
-  font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dimmer);
-  flex-shrink:0;width:26px;letter-spacing:.1em;
-}
-.row .t{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.05rem,2.6vw,1.5rem);color:#fff}
-.row .d{font-size:.9rem;color:var(--dim);margin-left:auto;text-align:right;max-width:46%;line-height:1.45}
-.row.hot .t{color:var(--orange-lt)}
-
-.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2px;margin-top:34px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.fig{background:var(--ink);padding:24px 20px}
-.fig .v{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,5vw,3rem);line-height:1;color:var(--orange)}
-.fig .v.b{color:var(--blue-lt)}.fig .v.g{color:var(--green)}
-.fig .k{font-size:.9rem;font-weight:600;color:#fff;margin-top:10px}
-.fig .s{font-size:.78rem;color:var(--dimmer);margin-top:4px;line-height:1.45}
-
-.cite{
-  font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:var(--dimmer);
-  margin-top:22px;letter-spacing:.04em;line-height:1.6;
+img,svg,video,canvas,iframe,table,pre,blockquote{max-width:100%}
+body,p,li,h1,h2,h3,h4,td,th,dd,dt,figcaption,address{overflow-wrap:anywhere}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+body{font-family:'Inter',sans-serif;color:var(--ink3);background:var(--white);line-height:1.7;font-size:16px}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 
 
-.ledger{
-  margin-top:30px;border:1px solid rgba(249,115,22,.28);border-radius:18px;
-  background:linear-gradient(160deg,rgba(249,115,22,.07),rgba(37,99,235,.05));
-  padding:24px 24px 8px;
-}
-.dial{display:flex;align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
-.dial:last-of-type{border-bottom:none}
-.dial label{font-size:.88rem;color:var(--dim);flex:1;min-width:0}
-.dial .out{
-  font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1.02rem;
-  color:var(--orange-lt);width:82px;text-align:right;flex-shrink:0;
-}
-.dial input[type=range]{
-  -webkit-appearance:none;appearance:none;width:44%;max-width:230px;height:3px;
-  background:rgba(255,255,255,.16);border-radius:3px;outline:none;flex-shrink:0;
-}
-.dial input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:22px;height:22px;border-radius:50%;
-  background:var(--orange);cursor:grab;box-shadow:0 2px 10px rgba(249,115,22,.6);
-}
-.dial input[type=range]::-moz-range-thumb{
-  width:22px;height:22px;border:none;border-radius:50%;
-  background:var(--orange);cursor:grab;box-shadow:0 2px 10px rgba(249,115,22,.6);
-}
-.total{
-  margin:6px -24px 0;padding:24px;text-align:center;
-  border-top:1px solid rgba(249,115,22,.28);
-  background:rgba(0,0,0,.26);border-radius:0 0 17px 17px;
-}
-.total .lbl{
-  font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--dimmer);margin-bottom:10px;
-}
-.total .amt{
-  font-family:'Fraunces',serif;font-weight:900;
-  font-size:clamp(2.6rem,10vw,5rem);line-height:1;
-  color:var(--green);letter-spacing:-.03em;
-}
-.total .note{font-size:.8rem;color:var(--dimmer);margin-top:12px}
-
-.pill{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 16px;border-radius:999px;font-size:.8rem;font-weight:600;
-  background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--dim);
-}
-.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
-
-.choice{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:34px}
-.opt{
-  border:1px solid var(--line);border-radius:16px;padding:26px 24px;
-  background:rgba(255,255,255,.035);transition:border-color .2s,transform .2s;
-}
-.opt:hover{border-color:rgba(249,115,22,.5);transform:translateY(-3px)}
-.opt .tag{
-  font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--orange);margin-bottom:12px;
-}
-.opt h3{font-family:'Fraunces',serif;font-weight:900;font-size:1.4rem;margin-bottom:10px}
-.opt p{font-size:.92rem;color:var(--dim);line-height:1.6}
-.opt .pr{font-family:'IBM Plex Mono',monospace;font-size:1.05rem;color:#fff;margin-top:16px;font-weight:600}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:900;line-height:1.1;color:var(--ink)}
+h1{font-size:clamp(1.85rem,5vw,3.2rem)}
+h2{font-size:clamp(1.65rem,3.5vw,2.4rem)}
+h3{font-size:clamp(1.1rem,2vw,1.35rem);font-weight:700}
+h4{font-size:1rem;font-weight:700}
+p{font-size:1.05rem;line-height:1.75;color:var(--muted)}
 
 
-.live{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;color:var(--green);font-weight:600;margin-bottom:22px}
-.live i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.9s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5)}50%{opacity:.7;box-shadow:0 0 0 9px rgba(74,222,128,0)}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;width:100%}
+.section{padding:84px 0}
+.tc{text-align:center}
+.skip{position:absolute;left:-9999px;top:0;background:var(--orange);color:#fff;padding:12px 18px;font-weight:700;z-index:99999}
+.skip:focus{left:8px;top:8px}
 
 
-.searchviz{margin-top:34px;width:100%;max-width:560px}
-.searchviz .beam{stroke-dasharray:5 7;animation:march 3.4s linear infinite}
-@keyframes march{to{stroke-dashoffset:-48}}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 13px;border-radius:20px;margin-bottom:12px}
+.chip-blue{color:var(--blue);background:var(--blue-light);border:1px solid #BFDBFE}
+.chip-orange{color:var(--orange2);background:var(--orange-light);border:1px solid #FED7AA}
+.chip-dark{color:rgba(255,255,255,.6);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
+.chip-white{color:var(--ink2);background:rgba(255,255,255,.9);border:1px solid var(--border)}
+.chip-purple{color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe}
 
 
-#notes{
-  position:fixed;left:0;right:0;bottom:0;z-index:40;
-  background:#050A12;border-top:2px solid var(--orange);
-  padding:18px 7vw calc(env(safe-area-inset-bottom) + 18px);
-  display:none;max-height:46vh;overflow-y:auto;
-}
-#notes.on{display:block;animation:rise .3s ease both}
-#notes .hd{
-  font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--orange);margin-bottom:10px;
-}
-#notes p{font-size:.92rem;line-height:1.65;color:#D6E2F0;max-width:820px}
-#notes p + p{margin-top:9px}
-#notes b{color:var(--orange-lt)}
-#notetoggle{
-  position:fixed;z-index:41;right:calc(7vw - 8px);
-  bottom:calc(env(safe-area-inset-bottom) + 74px);
-  width:34px;height:34px;border-radius:50%;
-  background:rgba(255,255,255,.05);border:1px solid var(--line);
-  color:var(--dimmer);font-size:.7rem;font-weight:700;
-  display:flex;align-items:center;justify-content:center;transition:all .18s;
-}
-#notetoggle:hover,#notetoggle.on{color:var(--orange);border-color:rgba(249,115,22,.5)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
+.btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
+.btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
+.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 20px rgba(37,99,235,.3)}
+.btn-blue:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-2px)}
+.btn-ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-ghost-blue{background:transparent;color:var(--blue);border-color:var(--blue)}
+.btn-ghost-blue:hover{background:var(--blue-light)}
+.btn-white{background:#fff;color:var(--ink);border-color:#fff}
+.btn-white:hover{background:var(--off)}
+.btn-lg{padding:17px 36px;font-size:1.08rem}
 
-@media(max-width:640px){
-  .slide{padding:calc(env(safe-area-inset-top) + 64px) 7vw calc(env(safe-area-inset-bottom) + 92px)}
-  .row{flex-wrap:wrap;gap:6px}
-  .row .d{margin-left:0;text-align:left;max-width:100%;width:100%;padding-left:44px}
-  .dial{flex-wrap:wrap;gap:10px}
-  .dial label{flex:1 0 100%}
-  .dial input[type=range]{width:auto;flex:1}
-  .next{padding:14px 24px;font-size:.94rem}
+
+.ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
+.ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:7px 0;flex-wrap:wrap}
+.ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+.ubar-left{min-width:0;flex:0 1 auto;overflow:hidden}
+.ubar-right{flex:0 0 auto}
+
+.ubar-dom{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);padding:7px 15px;border-radius:8px;transition:all .18s;white-space:nowrap}
+.ubar-dom:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.32)}
+.ubar-txt b{color:#FDBA74;font-weight:700}
+.ubar-txt{font-size:.78rem;color:rgba(255,255,255,.55);white-space:nowrap}
+.ubar-ic{width:13px;height:13px;flex:none;color:#FDBA74}
+.ubar-go{font-size:1.05rem;line-height:1;color:#FDBA74;margin-left:1px;transition:transform .18s}
+.ubar-dom:hover .ubar-go{transform:translateX(3px)}
+.ubar-dom:hover .ubar-txt{color:rgba(255,255,255,.8)}
+.ubar-dom:focus-visible{outline:2px solid #FDBA74;outline-offset:2px}
+.ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
+.ubar-link:hover{color:var(--orange)}
+
+.ubar-tel{font-size:1.75rem;font-weight:800;color:#fff;white-space:nowrap;padding-right:4px;letter-spacing:-.01em;line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.5);transition:color .18s}
+.ubar-tel:hover{color:var(--orange)}
+
+.ubar-tel-lbl{font-size:.52em;font-weight:600;color:rgba(255,255,255,.6);margin-right:7px;letter-spacing:.02em}
+.ubar-tel:hover .ubar-tel-lbl{color:rgba(249,115,22,.75)}
+@media(max-width:768px){
+  .ubar-txt,.ubar-link{display:none}
+  .ubar-inner{justify-content:space-between;min-height:38px;gap:8px;flex-wrap:nowrap}
+  .ubar-dom{font-size:.72rem;padding:6px 11px}
+  .ubar-tel{font-size:1.35rem;padding-right:2px}
+  .ubar-tel-lbl{margin-right:5px}
 }
-@media(prefers-reduced-motion:reduce){
-  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+
+
+
+.ticker{background:linear-gradient(90deg,#080E1A 0%,#16233E 50%,#080E1A 100%);border-top:1px solid rgba(249,115,22,.22);border-bottom:1px solid rgba(249,115,22,.22);padding:8px 0;overflow:hidden;position:relative;z-index:1001}
+.ticker-track{display:flex;animation:tick 28s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{white-space:nowrap;padding:0 32px;font-size:.79rem;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:10px}
+.ticker-sep{color:var(--orange);opacity:.65}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+@media(max-width:768px){.ticker-track{animation-duration:22s}}
+
+
+.hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
+.hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
+.logo{display:flex;align-items:center;flex-shrink:0}
+
+.brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
+
+
+@media(max-width:1600px){
+  .hdr-inner{gap:10px}
+  .hdr-right{gap:7px}
+  .brand-logo{width:265px;height:92px}
+  .nl{font-size:.78rem;padding:8px 6px}
+  .hdr-vip{font-size:.78rem;padding:8px 13px}
 }
+@media(max-width:1150px){
+  
+  .hdr-vip{font-size:.72rem;padding:7px 11px;letter-spacing:-.01em}
+  .nl{font-size:.74rem;padding:8px 5px}
+}
+@media(max-width:1024px){
+  
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+}
+@media(max-width:768px){
+  .hdr-inner{min-height:72px;padding:8px 0;gap:10px}
+  .brand-logo{width:250px;height:88px}
+}
+@media(max-width:430px){.brand-logo{width:205px;height:74px}}
+.nav{display:flex;align-items:center;gap:2px}
+.nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
+.nl:hover{color:#fff;background:rgba(255,255,255,.07)}
+
+.nl-tog{cursor:pointer;user-select:none}
+.nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
+.nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
+.ni{position:relative}
+.ni:hover .drop,.ni:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
+.drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
+.drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
+.drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+
+.drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
+.ni:hover .drop-mega,.ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
+.drop-mega a{display:block;padding:7px 9px;border-radius:6px;font-size:.85rem;line-height:1.35;color:rgba(255,255,255,.72);transition:all .15s}
+.drop-mega a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+.drop-mega a[aria-current="page"]{background:rgba(37,99,235,.22);color:#BFDBFE;font-weight:700}
+.drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+.drop-all a{color:#93C5FD;font-weight:700}
+@media(max-width:1150px){.drop-mega{width:540px;gap:2px 10px}.drop-mega a{font-size:.81rem;padding:6px 8px}}
+
+.mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
+
+
+.mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
+
+.mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
+.mob-x:hover{background:rgba(255,255,255,.16)}
+
+.mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
+.mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
+.mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-dom2{display:block!important;margin:0 0 14px;padding:13px 16px!important;text-align:center;
+  background:rgba(249,115,22,.1);border:1.5px solid rgba(249,115,22,.4)!important;border-radius:var(--r12);
+  color:#FDBA74!important;font-weight:700!important;border-bottom:1.5px solid rgba(249,115,22,.4)!important}
+.hero-pitch{margin:14px 0 0;font-size:.93rem}
+.hero-pitch a{color:#9DC7F5;font-weight:500;border-bottom:none;padding-bottom:0}
+.hero-pitch a .hero-pitch-go{color:#CFE6FF;font-weight:700;
+  border-bottom:1.5px solid rgba(207,230,255,.5);padding-bottom:2px}
+.hero-pitch a:hover{color:#CFE6FF}
+.hero-pitch a:hover .hero-pitch-go{color:#fff;border-bottom-color:#fff}
+.hero-pitch a:focus-visible{outline:2px solid #CFE6FF;outline-offset:3px;border-radius:4px}
+.mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
+.mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
+.mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
+.mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
+.mob-group{display:none;padding-bottom:6px}
+
+.mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
+  padding:11px 0!important;border-bottom:1px solid rgba(147,197,253,.2)!important}
+.mob-group.open{display:block}
+.hdr-right{display:flex;align-items:center;gap:9px}
+
+.hdr-vip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#0b1220;background:linear-gradient(135deg,#FBBF24,#F97316);padding:9px 16px;border-radius:22px;white-space:nowrap;box-shadow:0 4px 18px rgba(249,115,22,.4);transition:all .2s}
+.hdr-vip:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(249,115,22,.55)}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:7px;flex-shrink:0}
+.burger span{display:block;height:2px;background:#fff;border-radius:2px;transition:all .28s ease}
+.burger span:nth-child(2){width:75%}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:16px 20px 40px;-webkit-overflow-scrolling:touch}
+.mob-nav.open{display:block}
+
+body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!important}
+.mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.mob-nav a:hover{color:var(--orange)}
+.mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
+.mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
+
+
 </style>
-<link rel="canonical" href="https://eyetoad.com/sell-myself/">
-<link rel="icon" type="image/png" href="/images/images/eye-to-ad-media-favicon-denver-seo.png">
+<style id="eta-chrome">
+.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb{
+  --ink:#101828;
+  --ink2:#1D2939;
+  --ink3:#344054;
+  --blue:#2563EB;
+  --blue2:#1D4ED8;
+  --blue-light:#EFF6FF;
+  --orange:#F97316;
+  --orange2:#EA580C;
+  --orange-light:#FFF7ED;
+  --white:#FFFFFF;
+  --off:#F9FAFB;
+  --border:#E4E7EC;
+  --muted:#667085;
+  --r8:8px;--r12:12px;--r16:16px;--r24:24px;
+  --sh:0 4px 16px rgba(0,0,0,.09);
+  --sh-lg:0 16px 48px rgba(0,0,0,.14);
+}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-blue{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 20px rgba(37,99,235,.3)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-blue:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-2px)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-ghost-blue{background:transparent;color:var(--blue);border-color:var(--blue)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-ghost-blue:hover{background:var(--blue-light)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-white{background:#fff;color:var(--ink);border-color:#fff}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-white:hover{background:var(--off)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-lg{padding:17px 36px;font-size:1.08rem}
+.ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
+.ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:7px 0;flex-wrap:wrap}
+.ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ubar-left{min-width:0;flex:0 1 auto;overflow:hidden}
+.ubar-right{flex:0 0 auto}
+.ubar-dom{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);padding:7px 15px;border-radius:8px;transition:all .18s;white-space:nowrap}
+.ubar-dom:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.32)}
+.ubar-txt b{color:#FDBA74;font-weight:700}
+.ubar-txt{font-size:.78rem;color:rgba(255,255,255,.55);white-space:nowrap}
+.ubar-ic{width:13px;height:13px;flex:none;color:#FDBA74}
+.ubar-go{font-size:1.05rem;line-height:1;color:#FDBA74;margin-left:1px;transition:transform .18s}
+.ubar-dom:hover .ubar-go{transform:translateX(3px)}
+.ubar-dom:hover .ubar-txt{color:rgba(255,255,255,.8)}
+.ubar-dom:focus-visible{outline:2px solid #FDBA74;outline-offset:2px}
+.ubar-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap}
+.ubar-link:hover{color:var(--orange)}
+.ubar-tel{font-size:1.75rem;font-weight:800;color:#fff;white-space:nowrap;padding-right:4px;letter-spacing:-.01em;line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.5);transition:color .18s}
+.ubar-tel:hover{color:var(--orange)}
+.ubar-tel-lbl{font-size:.52em;font-weight:600;color:rgba(255,255,255,.6);margin-right:7px;letter-spacing:.02em}
+.ubar-tel:hover .ubar-tel-lbl{color:rgba(249,115,22,.75)}
+@media(max-width:768px){.ubar-txt,.ubar-link{display:none}
+.ubar-inner{justify-content:space-between;min-height:38px;gap:8px;flex-wrap:nowrap}
+.ubar-dom{font-size:.72rem;padding:6px 11px}
+.ubar-tel{font-size:1.35rem;padding-right:2px}
+.ubar-tel-lbl{margin-right:5px}}
+.ticker{background:linear-gradient(90deg,#080E1A 0%,#16233E 50%,#080E1A 100%);border-top:1px solid rgba(249,115,22,.22);border-bottom:1px solid rgba(249,115,22,.22);padding:8px 0;overflow:hidden;position:relative;z-index:1001}
+.ticker-track{display:flex;animation:tick 28s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{white-space:nowrap;padding:0 32px;font-size:.79rem;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:10px}
+.ticker-sep{color:var(--orange);opacity:.65}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:768px){.ticker-track{animation-duration:22s}}
+.hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
+.hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .logo{display:flex;align-items:center;flex-shrink:0}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
+@media(max-width:1600px){.hdr-inner{gap:10px}
+.hdr-right{gap:7px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .brand-logo{width:265px;height:92px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl{font-size:.78rem;padding:8px 6px}
+.hdr-vip{font-size:.78rem;padding:8px 13px}}
+@media(max-width:1150px){.hdr-vip{font-size:.72rem;padding:7px 11px;letter-spacing:-.01em}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl{font-size:.74rem;padding:8px 5px}}
+@media(max-width:1024px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nav{display:none}
+.hdr-right{display:none}
+.burger{display:flex}}
+@media(max-width:768px){.hdr-inner{min-height:72px;padding:8px 0;gap:10px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .brand-logo{width:250px;height:88px}}
+@media(max-width:430px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .brand-logo{width:205px;height:74px}}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nav{display:flex;align-items:center;gap:2px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl-tog{cursor:pointer;user-select:none}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni{position:relative}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni:hover .drop,:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni:hover .drop-mega,:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega a{display:block;padding:7px 9px;border-radius:6px;font-size:.85rem;line-height:1.35;color:rgba(255,255,255,.72);transition:all .15s}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega a[aria-current="page"]{background:rgba(37,99,235,.22);color:#BFDBFE;font-weight:700}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-all a{color:#93C5FD;font-weight:700}
+@media(max-width:1150px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega{width:540px;gap:2px 10px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega a{font-size:.81rem;padding:6px 8px}}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-x:hover{background:rgba(255,255,255,.16)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-dom2{display:block!important;margin:0 0 14px;padding:13px 16px!important;text-align:center;
+  background:rgba(249,115,22,.1);border:1.5px solid rgba(249,115,22,.4)!important;border-radius:var(--r12);
+  color:#FDBA74!important;font-weight:700!important;border-bottom:1.5px solid rgba(249,115,22,.4)!important}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-group{display:none;padding-bottom:6px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
+  padding:11px 0!important;border-bottom:1px solid rgba(147,197,253,.2)!important}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-group.open{display:block}
+.hdr-right{display:flex;align-items:center;gap:9px}
+.hdr-vip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#0b1220;background:linear-gradient(135deg,#FBBF24,#F97316);padding:9px 16px;border-radius:22px;white-space:nowrap;box-shadow:0 4px 18px rgba(249,115,22,.4);transition:all .2s}
+.hdr-vip:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(249,115,22,.55)}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:7px;flex-shrink:0}
+.burger span{display:block;height:2px;background:#fff;border-radius:2px;transition:all .28s ease}
+.burger span:nth-child(2){width:75%}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);z-index:999;overflow-y:auto;padding:16px 20px 40px;-webkit-overflow-scrolling:touch}
+.mob-nav.open{display:block}
+body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!important}
+.mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.mob-nav a:hover{color:var(--orange)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:17px 30px;border-radius:var(--r12);background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220;font-family:'Inter',sans-serif;font-weight:800;font-size:1.06rem;border:2px solid rgba(255,255,255,.2);box-shadow:0 10px 32px rgba(249,115,22,.5);transition:all .2s}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(249,115,22,.68)}
+.footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:44px}
+.footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
+@media(max-width:1600px){.footer-brand .brand-logo{width:265px;height:92px}}
+@media(max-width:768px){.footer-brand .brand-logo{width:260px;height:92px}}
+.footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
+.footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
+.footer-brand address a{color:#FB923C}
+.footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px}
+.footer-col a{display:block;font-size:.86rem;color:rgba(255,255,255,.75);padding:4px 0;transition:color .18s}
+.footer-col a:hover{color:var(--orange)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bot p{font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-links a:hover{color:var(--orange)}
+@media(min-width:581px){.footer-bot{padding-bottom:34px}}
+@media(max-width:580px){.footer-bot{padding-bottom:78px}}
+@media(max-width:1024px){.footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:768px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nav{display:none}
+.hdr-right{display:none}
+.burger{display:flex}
+.footer-grid{grid-template-columns:minmax(0,1fr)}
+.footer-bot{flex-direction:column;text-align:center}}
+@media(max-width:540px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold{width:100%}}
+</style>
+<style id="eta-v8">
+.ubar{background:#F4F7FB;border-bottom:1px solid #DDE5EF}
+.ubar,.ubar a{color:#1D2939}
+.ubar .ubar-dom{background:#fff;border:1px solid #CBD5E1;color:#1D2939}
+.ubar .ubar-dom-t{color:#0B4DA2}
+.ubar .ubar-txt{color:#475467}
+.ubar .ubar-txt b{color:#B54708}
+.ubar .ubar-ic,.ubar .ubar-go{color:#B54708;stroke:currentColor}
+.ubar .ubar-tel{color:#0B1B33}
+.ubar .ubar-tel-lbl{color:#475467}
+.ni.kb-open>.drop,.ni.kb-open>.drop-mega{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.eml,[data-eml]{text-decoration:underline}
+.ticker{overflow:hidden;max-width:100%}
+#irisw .ir-bubble{max-width:min(330px,calc(100vw - 28px))!important;width:auto!important;height:auto!important;min-height:0!important;white-space:normal!important;overflow:visible!important;box-sizing:border-box}
+#irisw .ir-bubble *{white-space:normal!important;overflow-wrap:anywhere;word-break:normal}
+.ticker{overflow:hidden!important;max-width:100%;white-space:nowrap}.ticker-track{display:flex!important;width:max-content!important;flex-wrap:nowrap!important}.ticker-item{white-space:nowrap!important;flex:none}
+.hdr .brand-logo{max-width:none!important;object-fit:cover}.hdr-inner{overflow:visible}
+.hero.h8::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(29,78,216,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(29,78,216,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 30% 20%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 30% 20%,#000 20%,transparent 70%);pointer-events:none}
+.h8-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(2px);opacity:.55}
+.h8-orb.a{width:220px;height:220px;left:-60px;top:20%;background:radial-gradient(circle,#FDBA74,rgba(253,186,116,0) 70%)}
+.h8-orb.b{width:300px;height:300px;right:30%;bottom:-120px;background:radial-gradient(circle,#93C5FD,rgba(147,197,253,0) 70%)}
+.h8-orb.c{width:160px;height:160px;left:42%;top:-40px;background:radial-gradient(circle,#FDA4AF,rgba(253,164,175,0) 70%)}
+@media (prefers-reduced-motion:no-preference){.h8-orb.a{animation:orbA 18s ease-in-out infinite}.h8-orb.b{animation:orbB 24s ease-in-out infinite}.h8-orb.c{animation:orbA 21s ease-in-out infinite reverse}}
+@keyframes orbA{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}}@keyframes orbB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+.hero.h8 .wrap,.hero.h8 .h8-grid{position:relative;z-index:1}
+.hdr .logo{display:block!important;height:auto!important;line-height:0;overflow:visible!important}
+.hdr .logo .brand-logo{width:265px!important;height:92px!important;object-fit:cover;object-position:center 44%;max-width:none!important}
+@media (max-width:768px){.hdr .logo .brand-logo{width:250px!important;height:88px!important}}
+@media (max-width:430px){.hdr .logo .brand-logo{width:205px!important;height:74px!important}}
+
+#irisw .ir-bubble,#ir-bubble{width:min(370px,calc(100vw - 32px))!important;max-width:none!important;min-width:0!important;left:auto!important;right:16px!important;padding:18px 20px 16px!important;box-sizing:border-box!important;overflow:visible!important;border-radius:16px!important}
+#ir-bubble *{max-width:100%;box-sizing:border-box}#ir-bubble .ir-bub-txt{font-size:14px!important;line-height:1.55!important}#ir-bubble .ir-bub-head{padding-right:30px!important}
+.zipbox{max-height:150px;overflow:auto;border:1px solid #D0D5DD;border-radius:12px;padding:12px 14px;background:#fff;font-family:Menlo,Consolas,monospace;font-size:.86rem;line-height:1.9;color:#344054}
+.zipbox b{display:block;font-family:Inter,sans-serif;color:#101828;margin-bottom:4px}
+.holo{position:relative;width:150px;height:150px;perspective:700px;margin:0 auto}.holo .core{position:absolute;inset:0;transform-style:preserve-3d}
+.holo .face{position:absolute;inset:0;border-radius:50%;border:3px solid #38bdf8;box-shadow:0 0 22px #38bdf8,inset 0 0 22px rgba(56,189,248,.4);display:grid;place-items:center;font:900 44px 'Fraunces',Georgia,serif;color:#e0f2fe;text-shadow:0 0 12px #38bdf8;background:radial-gradient(circle,rgba(56,189,248,.15),rgba(56,189,248,0) 70%)}
+.holo .ring{position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(56,189,248,.55)}.holo .ring.r2{inset:-30px;border-style:dotted}
+.holo::after{content:'';position:absolute;inset:-34px;border-radius:50%;background:repeating-linear-gradient(0deg,rgba(56,189,248,.14) 0 2px,transparent 2px 6px);pointer-events:none;mask-image:radial-gradient(circle,#000 55%,transparent 72%);-webkit-mask-image:radial-gradient(circle,#000 55%,transparent 72%)}
+@media (prefers-reduced-motion:no-preference){.holo .core{animation:holospin 12s linear infinite}.holo .ring{animation:holospin 20s linear infinite reverse}.holo .ring.r2{animation-duration:30s;animation-direction:normal}}
+@keyframes holospin{from{transform:rotateY(0) rotateX(12deg)}to{transform:rotateY(360deg) rotateX(12deg)}}
+.holo-band{background:radial-gradient(120% 120% at 50% 0%,#0f2a4a,#0B1B33 60%);padding:34px 20px;text-align:center}.holo-band p{color:#9EC5FF;font:700 .8rem/1.3 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:16px 0 0}
+
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1D2939;background:#fff;line-height:1.65;font-size:17px;overflow-x:hidden;max-width:100%}
+img,svg{max-width:100%}a{color:#1D4ED8}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;width:100%}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px 14px;z-index:9999;border-radius:8px}
+.bcrumb{background:#F4F7FB;border-bottom:1px solid #E4E7EC;padding:10px 0}
+.bcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;font-size:.84rem;color:#475467}
+.bcrumb li+li::before{content:'/';margin-right:8px;color:#98A2B3}.bcrumb a{color:#1D4ED8}
+.np-hero{padding:64px 0 56px;position:relative;overflow:hidden}
+.np-eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+.np-hero h1{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:clamp(2.1rem,4.8vw,3.8rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 18px}
+.np-kw{display:block;font-family:'Inter',sans-serif;font-size:clamp(.98rem,1.4vw,1.15rem);font-weight:800;letter-spacing:.04em;margin-bottom:10px}
+.np-sub{font-size:clamp(1.05rem,1.45vw,1.24rem);max-width:36em;margin:0 0 26px;line-height:1.6}
+.np-cta{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 14px}
+.np-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:10px;font-weight:800;font-size:1.04rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.np-btn-a{background:#F97316;color:#fff;box-shadow:0 10px 26px rgba(234,88,12,.3)}.np-btn-a:hover{transform:translateY(-2px);color:#fff}
+.np-btn-b{background:transparent;border-color:currentColor;color:inherit}.np-btn-b:hover{transform:translateY(-2px)}
+.np-btn:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1D4ED8;outline-offset:3px}
+.np-note{font-size:.95rem;margin:0}.np-note a{font-weight:700}
+.np-sec{padding:68px 0}.np-sec.alt{background:#F9FAFB}.np-sec.dark{background:#0B1B33;color:#E6EDF7}.np-sec.dark h2,.np-sec.dark h3{color:#fff}.np-sec.dark a{color:#9EC5FF}
+.np-sec h2{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:clamp(1.65rem,3vw,2.45rem);line-height:1.15;color:#101828;margin:0 0 16px;letter-spacing:-.01em}
+.np-sec h3{font-size:1.2rem;color:#101828;margin:26px 0 8px;line-height:1.3}
+.np-sec p{margin:0 0 16px;max-width:46em}.np-sec ul,.np-sec ol{max-width:46em;padding-left:22px;margin:0 0 18px}.np-sec li{margin-bottom:8px}
+.np-answer{border-left:5px solid #F97316;background:#FFF7ED;padding:18px 22px;border-radius:0 12px 12px 0;margin:0 0 24px;max-width:48em;font-size:1.06rem;color:#1D2939}
+.np-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:24px 0}
+.np-card{border:1px solid #E4E7EC;border-radius:16px;padding:24px;background:#fff}
+.np-card h3{margin-top:0}.np-card p:last-child{margin-bottom:0}
+.np-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.98rem;min-width:560px}
+.np-table th,.np-table td{text-align:left;padding:12px 14px;border-bottom:1px solid #E4E7EC;vertical-align:top}
+.np-table th{background:#F4F7FB;color:#101828;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+.np-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.np-quote{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.25rem,2.2vw,1.7rem);line-height:1.35;color:#101828;border-left:5px solid #1D4ED8;padding:6px 0 6px 22px;margin:28px 0;max-width:34em}
+.np-quote cite{display:block;font:600 .92rem 'Inter',sans-serif;color:#475467;margin-top:10px;font-style:normal}
+.np-faq details{border:1px solid #E4E7EC;border-radius:12px;padding:0;margin:0 0 10px;background:#fff;max-width:52em}
+.np-faq summary{cursor:pointer;padding:18px 20px;font-weight:700;color:#101828;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:44px}
+.np-faq summary::-webkit-details-marker{display:none}.np-faq summary::after{content:'+';font-size:1.4rem;line-height:1;color:#F97316;transition:transform .25s}
+.np-faq details[open] summary::after{transform:rotate(45deg)}
+.np-faq .a{padding:0 20px 18px;color:#344054}.np-faq .a p{margin:0 0 10px}
+.np-form{background:#fff;border:1px solid #E4E7EC;border-radius:18px;padding:28px;box-shadow:0 22px 60px rgba(16,24,40,.12);color:#1D2939;max-width:560px}
+.np-form h2,.np-form h3{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;margin:0 0 6px;color:#101828}
+.np-form label{display:block;font-weight:700;font-size:.9rem;margin:14px 0 6px;color:#1D2939}
+.np-form input,.np-form select,.np-form textarea{width:100%;padding:13px 14px;border:1.5px solid #D0D5DD;border-radius:10px;font:inherit;font-size:1rem;background:#fff;color:#101828;min-height:48px}
+.np-form textarea{min-height:110px;resize:vertical}
+.np-form input:focus,.np-form select:focus,.np-form textarea:focus{outline:3px solid rgba(29,78,216,.35);border-color:#1D4ED8}
+.np-form .np-btn{width:100%;margin-top:18px}.np-form .fine{font-size:.85rem;color:#475467;margin:12px 0 0}
+.np-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.np-two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:48px;align-items:start}
+.np-more{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:22px}
+.np-more a{display:block;padding:18px 20px;border:1px solid #E4E7EC;border-radius:14px;text-decoration:none;color:#101828;font-weight:700;background:#fff}
+.np-more a span{display:block;font-weight:500;color:#475467;font-size:.92rem;margin-top:4px}.np-more a:hover{border-color:#F97316}
+@media (max-width:900px){.np-two{grid-template-columns:1fr;gap:32px}.np-sec{padding:48px 0}.np-hero{padding:40px 0 38px}.np-btn{flex:1 1 100%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style><style>
+.dk{background:#0B1B33;color:#E6EDF7;padding:0}.dk *{box-sizing:border-box}
+.slide{min-height:88vh;display:flex;align-items:center;padding:56px 0;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.slide .wrap{position:relative;z-index:1}.slide h2{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.06;color:#fff;margin:0 0 14px;letter-spacing:-.01em}.slide h2 em{font-style:normal;color:#FB923C}
+.slide p{font-size:clamp(1.02rem,1.5vw,1.2rem);color:#C7D3E3;max-width:38em;margin:0 0 14px;line-height:1.6}.slide .k{font:800 .76rem/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#FDBA74;margin:0 0 14px}
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}@media(max-width:900px){.two{grid-template-columns:1fr;gap:26px}.slide{min-height:0;padding:40px 0}}
+.pick{display:grid;gap:10px;margin:16px 0}.pick button{text-align:left;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);color:#fff;border-radius:12px;padding:14px 16px;font:700 1rem Inter,sans-serif;cursor:pointer;min-height:48px}.pick button[aria-pressed="true"]{border-color:#FB923C;background:rgba(251,146,60,.15)}
+.rev{margin-top:14px;border-left:4px solid #FB923C;padding:12px 16px;background:rgba(255,255,255,.05);border-radius:0 10px 10px 0;color:#E6EDF7;display:none}.rev.show{display:block}
+.led{background:#fff;color:#101828;border-radius:16px;padding:16px 18px;font-family:Menlo,Consolas,monospace;font-size:.9rem}.led .r{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #E4E7EC}.led .r b{color:#B42318}.led .tot{font-weight:900;color:#B42318;font-size:1.05rem;border:0;padding-top:10px}
+@media(prefers-reduced-motion:no-preference){.led .r{opacity:0;animation:ledin .5s ease-out forwards}.led .r:nth-child(1){animation-delay:.2s}.led .r:nth-child(2){animation-delay:.5s}.led .r:nth-child(3){animation-delay:.8s}.led .r:nth-child(4){animation-delay:1.1s}.led .r:nth-child(5){animation-delay:1.4s}.led .r:nth-child(6){animation-delay:1.7s}.led .r:nth-child(7){animation-delay:2s}}
+@keyframes ledin{to{opacity:1}}
+.calc{background:#fff;color:#101828;border-radius:18px;padding:22px 24px}.calc label{display:block;font-weight:700;font-size:.92rem;margin:12px 0 6px}.calc input[type=range]{width:100%;accent-color:#F97316}.calc .out{margin-top:16px;background:#0B1B33;color:#fff;border-radius:12px;padding:16px 18px}.calc .out b{display:block;font-family:'Fraunces',serif;font-size:2.4rem;color:#FDBA74;line-height:1}.calc .out small{color:#C7D3E3;display:block;margin-top:6px}
+.tie{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.tie button{min-height:52px;padding:0 22px;border-radius:12px;border:2px solid #fff;background:transparent;color:#fff;font:800 1.05rem Inter,sans-serif;cursor:pointer}.tie button.y{background:#F97316;border-color:#F97316}.tie-out{display:none;color:#FDBA74;font-weight:700;margin-top:6px}.tie-out.show{display:block}
+.orbit{position:relative;width:min(380px,100%);aspect-ratio:1;margin:0 auto}.orbit .c{position:absolute;left:50%;top:50%;width:120px;height:120px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#F97316,#B45309);display:grid;place-items:center;font:900 .95rem/1.15 Inter,sans-serif;color:#fff;text-align:center;box-shadow:0 0 40px rgba(249,115,22,.5)}
+.orbit .ring{position:absolute;inset:0;border-radius:50%;border:1.5px dashed rgba(255,255,255,.3)}.orbit .n{position:absolute;left:50%;top:50%;width:96px;margin:-48px 0 0 -48px;height:96px;border-radius:50%;background:#fff;color:#0B1B33;display:grid;place-items:center;text-align:center;font:800 .74rem/1.15 Inter,sans-serif;padding:8px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+@media(prefers-reduced-motion:no-preference){.orbit .ring{animation:spin 24s linear infinite}.orbit .n{animation:orb 24s linear infinite}.orbit .n span{display:block;animation:orb 24s linear infinite reverse}}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes orb{from{transform:rotate(var(--a)) translateX(150px) rotate(calc(-1*var(--a)))}to{transform:rotate(calc(var(--a) + 360deg)) translateX(150px) rotate(calc(-1*var(--a) - 360deg))}}
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}.proof div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px;text-align:center}.proof b{display:block;font-family:'Fraunces',serif;font-size:2rem;color:#FDBA74;line-height:1}.proof span{font-size:.85rem;color:#C7D3E3}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}.price div{border-radius:14px;padding:18px}.price .them{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14)}.price .us{background:#fff;color:#0B1B33}.price b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;line-height:1.05;margin-bottom:6px}.price .them b{color:#FDA29B}.price .us b{color:#B45708}.price small{display:block;font-size:.8rem;opacity:.8;margin-top:6px}@media(max-width:600px){.price{grid-template-columns:1fr}}
+.close{text-align:center;background:radial-gradient(120% 100% at 50% 0%,#1E3A8A,#0B1B33 60%)}.close h2{font-size:clamp(2rem,5vw,3.8rem)}.ab{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:26px 0 12px}
+.yes{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:300px;min-height:110px;padding:18px 34px;border-radius:18px;background:#F97316;color:#fff;text-decoration:none;box-shadow:0 18px 50px rgba(249,115,22,.45)}.yes b{font:900 1.5rem Inter,sans-serif}.yes span{font-size:.95rem;opacity:.95;margin-top:4px}
+@media(prefers-reduced-motion:no-preference){.yes{animation:glow 3s ease-in-out infinite}}@keyframes glow{0%,100%{box-shadow:0 18px 50px rgba(249,115,22,.45)}50%{box-shadow:0 18px 70px rgba(249,115,22,.75)}}
+.no{display:inline-flex;align-items:center;justify-content:center;min-width:260px;min-height:110px;padding:18px 28px;border-radius:18px;border:2px solid rgba(255,255,255,.4);color:#fff;font:800 1.1rem Inter,sans-serif;background:transparent;cursor:pointer}
+.excite{display:none;margin:18px auto 0;max-width:40em;font-family:'Fraunces',serif;font-size:1.5rem;color:#FDBA74}.excite.show{display:block}
+.cb{display:none;margin:20px auto 0;max-width:560px;text-align:left}.cb.show{display:block}
+.dots{position:sticky;bottom:12px;display:flex;gap:6px;justify-content:center;padding:10px;z-index:5}.dots a{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);display:block}.dots a.on{background:#F97316}
+.mini{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}.mini a{color:#9EC5FF}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://eyetoad.com/#org", "name": "Eye To Ad Media", "url": "https://eyetoad.com/", "telephone": "+1-800-481-8638"}, {"@type": "WebPage", "@id": "https://eyetoad.com/sell-myself/#page", "url": "https://eyetoad.com/sell-myself/", "name": "Walk the Pitch Yourself | Eye To Ad Media", "description": "A five-minute, self-guided sales conversation: your marketing failures, what more customers would change, how we do it, what it costs, and one yes-or-no question at the end.", "inLanguage": "en-US", "isPartOf": {"@id": "https://eyetoad.com/#website"}, "publisher": {"@id": "https://eyetoad.com/#org"}, "dateModified": "2026-09-21", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".np-answer", "h1"]}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://eyetoad.com/"}, {"@type": "ListItem", "position": 2, "name": "Walk the Pitch", "item": "https://eyetoad.com/sell-myself/"}]}]}</script>
 </head>
 <body>
-
-<div id="topbar">
-  <span class="mark">Eye To Ad Media</span>
-  <span class="count"><b id="cur">1</b> / <span id="tot">17</span></span>
+<a class="skip" href="#main">Skip to content</a>
+<div class="ubar">
+  <div class="wrap ubar-inner">
+    
+    <div class="ubar-left">
+      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored"
+         aria-label="Search and register an available domain name at our domain storefront">
+        <svg class="ubar-ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M13.4 13.4 L17.5 17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="ubar-dom-t">Search Domains</span>
+        <span class="ubar-txt">&mdash; find &amp; register your perfect <b>.com</b>, <b>.ai</b> or <b>.io</b></span>
+        <span class="ubar-go" aria-hidden="true">&rsaquo;</span>
+      </a>
+    </div>
+    <div class="ubar-right">
+      
+      <a href="tel:18004818638" class="ubar-tel"><span class="ubar-tel-lbl">Call</span>1-800-481-8638</a>
+    </div>
+  </div>
 </div>
-
-<div id="stage">
-
-<section class="slide on">
-  <span class="live"><i></i>Happening right now</span>
-  <h1 class="big">Someone in your city is searching for what you sell.</h1>
-  <p class="sub">Not this month. Not this week. <strong>In the next few minutes.</strong></p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow">The only question that matters</p>
-  <h1 class="big">Whose name do they find?</h1>
-  <svg class="searchviz" viewBox="0 0 560 150" fill="none" aria-hidden="true">
-    <circle cx="66" cy="75" r="27" stroke="#60A5FA" stroke-width="3"/>
-    <path d="M86 95 L108 117" stroke="#60A5FA" stroke-width="6" stroke-linecap="round"/>
-    <path class="beam" d="M140 75 H400" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
-    <rect x="418" y="46" width="118" height="58" rx="12" fill="rgba(249,115,22,.1)" stroke="#F97316" stroke-width="2"/>
-    <path d="M441 75 h72 M441 62 h50 M441 88 h60" stroke="#FDBA74" stroke-width="4" stroke-linecap="round" opacity=".75"/>
-  </svg>
-  <p class="sub">Every search ends with one business getting the call — and everyone else getting nothing.</p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow b">Before I show you anything</p>
-  <h1 class="mid">Let me ask you something.</h1>
-  <p class="sub" style="font-size:clamp(1.3rem,3.4vw,2rem);color:#fff;font-weight:500;line-height:1.35;">How many <em>new customers a week</em> would actually change your year?</p>
-</section>
-
-<section class="slide" data-ledger>
-  <p class="eyebrow">Let's do the math out loud</p>
-  <h2 class="mid">Twenty a week. What's that worth?</h2>
-  <div class="ledger">
-    <div class="dial">
-      <label for="d1">New customers per week</label>
-      <input type="range" id="d1" min="5" max="60" step="5" value="20">
-      <span class="out" id="o1">20</span>
-    </div>
-    <div class="dial">
-      <label for="d2">Average ticket</label>
-      <input type="range" id="d2" min="10" max="400" step="5" value="30">
-      <span class="out" id="o2">$30</span>
-    </div>
-    <div class="dial">
-      <label for="d3">Visits per year, once they're yours</label>
-      <input type="range" id="d3" min="1" max="24" step="1" value="6">
-      <span class="out" id="o3">6</span>
-    </div>
-    <div class="total">
-      <div class="lbl">Added revenue, year one</div>
-      <div class="amt" id="amt">$187,200</div>
-      <div class="note">Your numbers. Slide them to whatever's true.</div>
-    </div>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">NEW — VIP Marketing Subscription · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">5.0 from 60 Google Reviews · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">NEW — VIP Marketing Subscription · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">5.0 from 60 Google Reviews · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
   </div>
-</section>
-
-<section class="slide">
-  <p class="eyebrow g">Sit with that for a second</p>
-  <h1 class="big">That isn't a projection. It's arithmetic.</h1>
-  <p class="sub">And it's already on the table. Those customers exist, they're searching today, and they're spending that money <strong>somewhere.</strong></p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow">Here's the uncomfortable part</p>
-  <h1 class="mid">You're not competing for that money.</h1>
-  <p class="sub" style="font-size:clamp(1.2rem,3vw,1.7rem);color:#fff;font-weight:500;">You're competing to be <em>findable</em> at the moment someone decides.</p>
-  <p class="sub">The best business in town loses to the one that shows up first. Every single day. That's not fair — it's just how it works now.</p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow b">Where customers find you in 2026</p>
-  <h2 class="mid">Five places. Not one.</h2>
-  <div class="stack">
-    <div class="row"><span class="n">01</span><span class="t">Google search</span><span class="d">The crowded lane everyone knows about</span></div>
-    <div class="row"><span class="n">02</span><span class="t">Google Maps</span><span class="d">The three listings above the links</span></div>
-    <div class="row hot"><span class="n">03</span><span class="t">AI Overviews</span><span class="d">The answer <em>above</em> the results</span></div>
-    <div class="row hot"><span class="n">04</span><span class="t">ChatGPT &amp; Perplexity</span><span class="d">Where buyers now start</span></div>
-    <div class="row hot"><span class="n">05</span><span class="t">AI agents</span><span class="d">Shortlisting you without a human ever searching</span></div>
-  </div>
-  <p class="sub">Most businesses show up in one of these. Some in none.</p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow">What changed this year</p>
-  <div class="figures">
-    <div class="fig"><div class="v">48%</div><div class="k">of Google searches</div><div class="s">now return an AI-generated answer at the top</div></div>
-    <div class="fig"><div class="v b">1 billion</div><div class="k">monthly AI Mode users</div><div class="s">Google's own figure, announced May 2026</div></div>
-    <div class="fig"><div class="v">Agents</div><div class="k">now call businesses</div><div class="s">Google's assistant will phone you on a customer's behalf. If nobody answers, it moves on.</div></div>
-  </div>
-  <p class="sub">If the AI answer doesn't mention you, you were never in the running. There's no page two.</p>
-  <p class="cite">Industry research compiled March 2026; Google I/O announcements, May 2026.</p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow g">And here's the good news</p>
-  <h1 class="mid">Only <em class="g">7%</em> of local searches show an AI answer.</h1>
-  <p class="sub">When somebody searches for a place to eat near them, or a service near them, <strong>the map still decides.</strong> That's a fight you can win — and win faster than you'd think.</p>
-  <p class="cite">Local SEO research compiled 2026.</p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow b">Quick gut check</p>
-  <h1 class="big">Does it make sense that being <em class="b">findable</em> is worth more than being pretty?</h1>
-</section>
-
-<section class="slide">
-  <p class="eyebrow">Your website</p>
-  <h1 class="mid">The only employee who works 168 hours a week.</h1>
-  <p class="sub">It never calls in sick. Never has an off night. Never forgets to mention the special, the guarantee, or the phone number.</p>
-  <div class="pills">
-    <span class="pill">Open at 2am</span>
-    <span class="pill">Never negotiates</span>
-    <span class="pill">Costs less than one shift</span>
-    <span class="pill">Answers the same way every time</span>
-  </div>
-</section>
-
-<section class="slide">
-  <p class="eyebrow">But only if it's built to sell</p>
-  <h2 class="mid">A brochure sits there. A system goes hunting.</h2>
-  <div class="stack">
-    <div class="row"><span class="n">SEO</span><span class="t">Get found</span><span class="d">Google, Maps, and the searches that come with a credit card already out</span></div>
-    <div class="row"><span class="n">AI</span><span class="t">Get recommended</span><span class="d">AI Overviews, ChatGPT, Perplexity, and the agents doing the shortlisting</span></div>
-    <div class="row"><span class="n">WEB</span><span class="t">Get the call</span><span class="d">A site fast enough and clear enough that finding you turns into calling you</span></div>
-  </div>
-  <p class="sub">All three, or none of it compounds.</p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow b">Who you'd be working with</p>
-  <div class="figures">
-    <div class="fig"><div class="v b">2012</div><div class="k">Serving Denver since</div><div class="s">Fourteen years, every algorithm shift</div></div>
-    <div class="fig"><div class="v">5.0</div><div class="k">From 60 Google reviews</div><div class="s">Verified Google Business Profile</div></div>
-    <div class="fig"><div class="v g">A+</div><div class="k">BBB Accredited</div><div class="s">Better Business Bureau</div></div>
-  </div>
-  <p class="sub">You'd work directly with the owner. Not a call center, not a subcontractor, not a template.</p>
-</section>
-
-<section class="slide" data-delay>
-  <p class="eyebrow">The part nobody talks about</p>
-  <h2 class="mid">Waiting has a price too.</h2>
-  <div class="figures">
-    <div class="fig"><div class="v" id="permonth">$15,600</div><div class="k">Every month you wait</div><div class="s">Based on the numbers you set a minute ago</div></div>
-    <div class="fig"><div class="v b">3–6 mo</div><div class="k">Before rankings move</div><div class="s">The clock starts the day we start, not the day you decide</div></div>
-    <div class="fig"><div class="v g">Compounds</div><div class="k">Rankings build on rankings</div><div class="s">Starting later costs more to reach the same position</div></div>
-  </div>
-  <p class="sub">Your competitor isn't waiting for a better quarter. <strong>The window closes by someone else walking through it.</strong></p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow b">So what does this cost?</p>
-  <h1 class="mid">Less than one part-time employee.</h1>
-  <p class="sub">A part-timer costs you somewhere north of $2,000 a month, works 20 hours a week, and can't be in two places at once. This works every hour of every day and shows up in front of people already looking for you.</p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow">Two ways to start</p>
-  <h2 class="mid">Pick the one that fits today.</h2>
-  <div class="choice">
-    <div class="opt">
-      <div class="tag">Option A</div>
-      <h3>The full system</h3>
-      <p>Website, SEO, AI optimization and the conversion path — built together so each one makes the others work harder. This is the one that moves the number you set earlier.</p>
-      <div class="pr">$500 – $3,000 / month</div>
-    </div>
-    <div class="opt">
-      <div class="tag">Option B</div>
-      <h3>Start focused</h3>
-      <p>One deliverable, done properly. Usually your Google Business Profile and the map pack, because that's where the fastest movement lives for a local business.</p>
-      <div class="pr">From $100 / month</div>
-    </div>
-  </div>
-  <p class="sub">Both start the same way — we go to work this week, not next quarter.</p>
-</section>
-
-<section class="slide">
-  <p class="eyebrow">One question left</p>
-  <h1 class="big">Which one do you want to start with?</h1>
-</section>
-
 </div>
-
-<div id="zoneL" class="zone" aria-hidden="true"></div>
-<div id="zoneR" class="zone" aria-hidden="true"></div>
-
-<div id="rail"><div id="railfill"></div></div>
-
-<nav id="nav">
-  <button class="back" id="back" hidden>&larr; Back</button>
-  <button class="next" id="next">Next <span aria-hidden="true">&rarr;</span></button>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-inner">
+    <a href="/" class="logo" aria-label="Eye To Ad Media — Denver SEO Home">
+      
+      <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media logo — Denver SEO Company" class="brand-logo" width="300" height="102" loading="eager" fetchpriority="high">
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="ni">
+        <a href="/services/" class="nl">Services &#9662;</a>
+        
+        <div class="drop">
+          <a href="/seo-systems/">SEO Services</a>
+          <a href="/aio-seo-system/">AI SEO Services</a>
+          <a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>
+          <a href="/local-seo-services/">Local SEO &amp; Google Maps</a>
+          <a href="/conversion-optimization/">Conversion Optimization</a>
+          <a href="/custom-website-design/">Custom Website Design</a>
+          <a href="/ai-chatbot-for-business/">AI Chatbots</a>
+          <a href="/free-seo-audit/">Free SEO Audit</a>
+        </div>
+      </div>
+      <div class="ni">
+        <a href="/industries/" class="nl">Industries &#9662;</a>
+        <div class="drop-mega">
+          <div class="dg">
+            <h5>Home &amp; Trade</h5>
+          <a href="/contractor-seo-denver/">Contractor SEO</a>
+          <a href="/electrician-seo-denver/">Electrician SEO</a>
+          <a href="/hvac-seo-denver/">HVAC SEO</a>
+          <a href="/landscaping-seo-denver/">Landscaping SEO</a>
+          <a href="/plumber-seo-denver/">Plumber SEO</a>
+          <a href="/roofing-seo-denver/">Roofing SEO</a>
+          </div>
+          <div class="dg">
+            <h5>Health &amp; Wellness</h5>
+          <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+          <a href="/dentist-seo-denver/">Dentist SEO</a>
+          <a href="/dermatology-seo-denver/">Dermatology SEO</a>
+          <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+          <a href="/veterinarian-seo-denver/">Veterinarian SEO</a>
+          </div>
+          <div class="dg">
+            <h5>Professional &amp; Consumer</h5>
+          <a href="/auto-repair-seo-denver/">Auto Repair SEO</a>
+          <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+          <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+          <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
+          <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+          <a href="/restaurant-seo-denver/">Restaurant SEO</a>
+          </div>
+        </div>
+      </div>
+      <div class="ni">
+        <a href="/locations/" class="nl">Locations &#9662;</a>
+        
+        <div class="drop-mega">
+          <div class="dg">
+            <h5>Colorado</h5>
+          <a href="/">Denver</a>
+          <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+          <a href="/locations/boulder-seo/">Boulder</a>
+          <a href="/locations/fort-collins-seo/">Fort Collins</a>
+          </div>
+          <div class="dg">
+            <h5>Mountain West</h5>
+          <a href="/locations/salt-lake-city-seo/">Salt Lake City</a>
+          <a href="/locations/boise-seo/">Boise</a>
+          <a href="/locations/albuquerque-seo/">Albuquerque</a>
+          <a href="/locations/cheyenne-seo/">Cheyenne</a>
+          <a href="/locations/phoenix-seo/">Phoenix</a>
+          </div>
+          <div class="dg">
+            <h5>National</h5>
+          <a href="/locations/dallas-seo/">Dallas</a>
+          <a href="/locations/charlotte-seo/">Charlotte</a>
+          <a href="/locations/omaha-seo/">Omaha</a>
+          <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
+          </div>
+        </div>
+      </div>
+      <div class="ni">
+        <span class="nl nl-tog" role="button" tabindex="0" aria-haspopup="true">Resources &#9662;</span>
+        <div class="drop">
+          <a href="/blog/">SEO Blog</a>
+          <a href="/our-work/">Our Work</a>
+          <a href="/case-studies/">Case Studies</a>
+          <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+          <a href="/business-growth-accelerator/">Business Growth Accelerator</a>
+          <a href="/grow-my-business/">Grow My Business Tool</a>
+          <a href="/ad-lab/">Ad Lab</a>
+          <a href="/free-seo-tools/">Free SEO Tools</a>
+          <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
+        </div>
+      </div>
+      <a href="/about/" class="nl">About</a>
+      <a href="/contact/" class="nl">Contact</a>
+      <a href="/sell-myself/" class="nl">See the Pitch</a>
+      <a href="https://www.buyweburl.com" class="nl nl-dom" target="_blank" rel="noopener sponsored">Search Domains</a>
+    </nav>
+    <div class="hdr-right">
+      <a href="/marketing-subscription/" class="hdr-vip">VIP Membership</a>
+      <a href="/free-seo-audit/" class="btn btn-orange" style="padding:10px 18px;font-size:.88rem;">Free Audit</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
+  <div class="mob-top">
+    <span class="mob-top-lab">Menu</span>
+    <button class="mob-x" id="mobClose" type="button" aria-label="Close menu">&#x2715;</button>
+  </div>
+  <a href="/free-seo-audit/" class="mob-cta" style="margin:0 0 10px;">Get a Free SEO Audit</a>
+  <a href="tel:18004818638" class="mob-tel"><span>Call us</span>1-800-481-8638</a>
+  <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Search Domain Names</a>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-services">
+    <a href="/services/" class="mob-hub">All Services &rarr;</a>
+    <a href="/seo-systems/">SEO Services</a>
+    <a href="/aio-seo-system/">AI SEO Services</a>
+    <a href="/generative-engine-optimization-system/">Generative Engine Optimization</a>
+    <a href="/local-seo-services/">Local SEO &amp; Google Maps</a>
+    <a href="/conversion-optimization/">Conversion Optimization</a>
+    <a href="/custom-website-design/">Custom Website Design</a>
+    <a href="/ai-chatbot-for-business/">AI Chatbots</a>
+    <a href="/free-seo-audit/">Free SEO Audit</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-industries">Industries<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-industries">
+    <a href="/industries/" class="mob-hub">All 17 Industries &rarr;</a>
+    <div class="mob-sub">Home &amp; Trade</div>
+    <a href="/contractor-seo-denver/">Contractor SEO</a>
+    <a href="/electrician-seo-denver/">Electrician SEO</a>
+    <a href="/hvac-seo-denver/">HVAC SEO</a>
+    <a href="/landscaping-seo-denver/">Landscaping SEO</a>
+    <a href="/plumber-seo-denver/">Plumber SEO</a>
+    <a href="/roofing-seo-denver/">Roofing SEO</a>
+    <div class="mob-sub">Health &amp; Wellness</div>
+    <a href="/chiropractor-seo-denver/">Chiropractor SEO</a>
+    <a href="/dentist-seo-denver/">Dentist SEO</a>
+    <a href="/dermatology-seo-denver/">Dermatology SEO</a>
+    <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+    <a href="/veterinarian-seo-denver/">Veterinarian SEO</a>
+    <div class="mob-sub">Professional &amp; Consumer</div>
+    <a href="/auto-repair-seo-denver/">Auto Repair SEO</a>
+    <a href="/fitness-marketing-denver/">Fitness Marketing</a>
+    <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+    <a href="/personal-injury-seo-denver/">Personal Injury SEO</a>
+    <a href="/real-estate-marketing-denver/">Real Estate Marketing</a>
+    <a href="/restaurant-seo-denver/">Restaurant SEO</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-locations">Locations<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-locations">
+    <a href="/locations/" class="mob-hub">All 24 Service Areas &rarr;</a>
+    <div class="mob-sub">Colorado</div>
+    <a href="/">Denver</a>
+    <a href="/locations/colorado-springs-seo/">Colorado Springs</a>
+    <a href="/locations/boulder-seo/">Boulder</a>
+    <a href="/locations/fort-collins-seo/">Fort Collins</a>
+    <div class="mob-sub">Mountain West</div>
+    <a href="/locations/salt-lake-city-seo/">Salt Lake City</a>
+    <a href="/locations/boise-seo/">Boise</a>
+    <a href="/locations/albuquerque-seo/">Albuquerque</a>
+    <a href="/locations/cheyenne-seo/">Cheyenne</a>
+    <a href="/locations/phoenix-seo/">Phoenix</a>
+    <div class="mob-sub">National</div>
+    <a href="/locations/dallas-seo/">Dallas</a>
+    <a href="/locations/charlotte-seo/">Charlotte</a>
+    <a href="/locations/omaha-seo/">Omaha</a>
+    <a href="/locations/northwest-arkansas-seo/">Northwest Arkansas</a>
+  </div>
+  <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-resources">Resources<span class="ico" aria-hidden="true">+</span></button>
+  <div class="mob-group" id="mg-resources">
+    <a href="/our-work/">Our Work</a>
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+    <a href="/business-growth-accelerator/">Business Growth Accelerator</a>
+    <a href="/grow-my-business/">Grow My Business Tool</a>
+    <a href="/free-seo-tools/">Free SEO Tools</a>
+    <a href="/vip-marketing/">VIP Marketing &mdash; NFC Offer</a>
+  </div>
+  
+  <a href="/blog/" class="mob-flat">Blog</a>
+  <a href="/ad-lab/" class="mob-flat">Ad Lab</a>
+  <a href="/about/" class="mob-flat">About</a>
+  <a href="/contact/" class="mob-flat">Contact</a>
+  <a href="/sell-myself/" class="mob-flat">See the Pitch &mdash; 10 Minutes, No Salesperson</a>
+  <a href="/marketing-subscription/" class="mob-flat">VIP Marketing Subscription</a>
+  <p class="mob-proof"><b>5.0</b> from 60 Google Reviews &middot; <b>A+</b> BBB Accredited<br>Denver-based since 2012 &middot; Answers in 1 business day</p>
 </nav>
+<nav class="bcrumb" aria-label="Breadcrumb"><div class="wrap"><ol><li><a href="/">Home</a></li><li aria-current="page">Walk the Pitch</li></ol></div></nav>
+<main id="main">
 
-<button id="notetoggle" type="button" aria-label="Toggle presenter notes" title="Presenter notes (N)">N</button>
-<aside id="notes" aria-live="polite">
-  <div class="hd">Presenter note — client can't see this if you keep it closed</div>
-  <div id="notebody"></div>
-</aside>
+<div class="dk">
+<section class="slide" id="s1" aria-labelledby="t1"><div class="wrap two"><div><p class="k">A five-minute conversation, at your pace</p><h1 id="t1" style="font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.06;color:#fff;margin:0 0 14px"><span style="display:block;font:800 .8rem/1 Inter,sans-serif;letter-spacing:.14em;color:#9EC5FF;margin-bottom:10px">DENVER SEO, THE PITCH</span>Let&rsquo;s talk about <em style="font-style:normal;color:#FB923C">the phone.</em></h1><p>Not rankings, not traffic, not reports. The phone. How often it rings with a new customer is the only number that pays for everything else. This walks you through how we make it ring more, and ends with one question.</p><p>Every slide asks you something. Answer honestly; nothing here is recorded.</p><a class="np-btn np-btn-a" href="#s2">Start &rarr;</a></div>
+<div class="orbit" aria-label="Multi-channel marketing orbit"><div class="ring"></div><div class="c">YOUR<br>PHONE</div><div class="n" style="--a:0deg"><span>Google<br>search</span></div><div class="n" style="--a:60deg"><span>Google<br>Maps</span></div><div class="n" style="--a:120deg"><span>AI<br>answers</span></div><div class="n" style="--a:180deg"><span>Website<br>that converts</span></div><div class="n" style="--a:240deg"><span>Local<br>groups</span></div><div class="n" style="--a:300deg"><span>Reviews<br>&amp; trust</span></div></div></div></section>
 
+<section class="slide" id="s2" aria-labelledby="t2"><div class="wrap two"><div><p class="k">First question</p><h2 id="t2">Have you had a marketing failure? <em>Tell us about it.</em></h2><p>Pick the one closest to your story.</p>
+<div class="pick" role="group" aria-label="Your experience"><button type="button" data-k="paid">I paid an agency monthly and got nothing I could point to</button><button type="button" data-k="traffic">I get traffic, but the phone stays quiet</button><button type="button" data-k="diy">I do it myself and it eats my week</button><button type="button" data-k="none">I have never really tried</button></div>
+<div class="rev" id="rev"></div></div>
+<div class="led" aria-label="Illustration of twelve payments with no customers"><div class="r"><span>Jan &middot; agency invoice</span><b>&minus;$1,500</b></div><div class="r"><span>New customers from search</span><b>0</b></div><div class="r"><span>Feb &middot; agency invoice</span><b>&minus;$1,500</b></div><div class="r"><span>New customers from search</span><b>0</b></div><div class="r"><span>&hellip; ten more months &hellip;</span><b>&minus;$15,000</b></div><div class="r"><span>&ldquo;Rankings are improving&rdquo;</span><b>report</b></div><div class="r tot"><span>Year one, all in</span><b>&minus;$18,000 and the same phone</b></div></div></div></section>
+
+<section class="slide" id="s3" aria-labelledby="t3"><div class="wrap"><p class="k">Second question</p><h2 id="t3">How would you feel if you spent money on SEO every month <em>and got nothing for it?</em></h2><p>That happened to us, with real, top-rated Denver agencies. Roughly thirty thousand dollars, holidays our founder could barely provide for his kids, and a folder of reports. It is the reason this company is conversion-focused: the goal is not to rank you, it is to get you more customers. Ranking is how; customers are why.</p><p>So we built the thing we wish we had been sold: search that gets you found, a site that gets you the call, and reporting that counts the calls.</p><a class="np-btn np-btn-b" style="color:#fff;border-color:#fff" href="#s4">What would more customers change? &rarr;</a></div></section>
+
+<section class="slide" id="s4" aria-labelledby="t4"><div class="wrap two"><div><p class="k">Third question, the important one</p><h2 id="t4">What would an extra <em>20 to 30 customers a week</em> do for your bottom line?</h2><p>Move the sliders. This is your math, not ours, and nothing is sent anywhere. How many new customers a week do you actually want?</p><p>Then ask the harder version: what is every week without them costing you right now?</p></div>
+<div class="calc"><label for="pcN">New customers per week you want: <output id="pcNo">20</output></label><input id="pcN" type="range" min="2" max="60" value="20"><label for="pcV">Average value of one customer: $<output id="pcVo">600</output></label><input id="pcV" type="range" min="50" max="10000" step="50" value="600"><div class="out" role="status" aria-live="polite"><b id="pcOut">$0</b><small id="pcSub"></small></div></div></div></section>
+
+<section class="slide" id="s5" aria-labelledby="t5"><div class="wrap"><p class="k">Fourth question</p><h2 id="t5">Is it important to you to work with a company that has a <em>great reputation</em> and advanced SEO and AI-search skills?</h2>
+<div class="tie"><button type="button" class="y" data-t="Good. That is exactly what you are looking at.">Yes</button><button type="button" data-t="Fair enough. Then the proof below should do the talking, not us.">Not sure</button></div><p class="tie-out" id="tieOut"></p>
+<div class="proof"><div><b>5.0</b><span>from 60 Google reviews</span></div><div><b>A+</b><span>BBB accredited</span></div><div><b>2012</b><span>founder-led since</span></div><div><b>3</b><span>listings on one Google page for our own company</span></div></div>
+<p>Run the search yourself: our founder&rsquo;s own company holds the map pack, the first organic result and a third listing for a competitive Denver keyword, and is named by Gemini and Grok on national terms. <a href="/case-studies/aging-safely-baths/" style="color:#9EC5FF">The case study is here</a>, with the results pages recreated.</p></div></section>
+
+<section class="slide" id="s6" aria-labelledby="t6"><div class="wrap two"><div><p class="k">How we do it</p><h2 id="t6">Every channel a customer uses, <em>pointed at your phone.</em></h2><p>Google search and the Maps pack for people who search. AI answers for people who ask ChatGPT, Gemini or Perplexity instead. A website built to turn the visit into a call. Reviews and consistency so the machines and the humans both trust you. And, for members, a network of local groups with more than 200,000 people in them.</p><p>Multi-channel is not a buzzword here. It is just every door a customer can walk through, opened.</p><div class="mini"><a href="/seo-systems/">SEO</a> · <a href="/local-seo-services/">Maps</a> · <a href="/aio-seo-system/">AI SEO</a> · <a href="/generative-engine-optimization-system/">GEO</a> · <a href="/conversion-optimization/">Conversion</a> · <a href="/business-growth-accelerator/">Groups</a></div></div>
+<svg viewBox="0 0 520 320" width="100%" role="img" aria-label="Six channels funneling into one ringing phone"><defs><linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#1D4ED8"/><stop offset="1" stop-color="#F97316"/></linearGradient></defs><g><rect x="20" y="22" width="150" height="36" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)"/><text x="95" y="45" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fff">Google search</text><path d="M170 40 C 260 40, 300 160, 360 160" fill="none" stroke="url(#pg)" stroke-width="2.5" stroke-dasharray="6 6" class="flow"/></g><g><rect x="20" y="70" width="150" height="36" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)"/><text x="95" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fff">Google Maps</text><path d="M170 88 C 260 88, 300 160, 360 160" fill="none" stroke="url(#pg)" stroke-width="2.5" stroke-dasharray="6 6" class="flow"/></g><g><rect x="20" y="118" width="150" height="36" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)"/><text x="95" y="141" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fff">AI answers</text><path d="M170 136 C 260 136, 300 160, 360 160" fill="none" stroke="url(#pg)" stroke-width="2.5" stroke-dasharray="6 6" class="flow"/></g><g><rect x="20" y="166" width="150" height="36" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)"/><text x="95" y="189" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fff">Website conversion</text><path d="M170 184 C 260 184, 300 160, 360 160" fill="none" stroke="url(#pg)" stroke-width="2.5" stroke-dasharray="6 6" class="flow"/></g><g><rect x="20" y="214" width="150" height="36" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)"/><text x="95" y="237" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fff">Reviews & trust</text><path d="M170 232 C 260 232, 300 160, 360 160" fill="none" stroke="url(#pg)" stroke-width="2.5" stroke-dasharray="6 6" class="flow"/></g><g><rect x="20" y="262" width="150" height="36" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)"/><text x="95" y="285" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fff">Local groups</text><path d="M170 280 C 260 280, 300 160, 360 160" fill="none" stroke="url(#pg)" stroke-width="2.5" stroke-dasharray="6 6" class="flow"/></g><rect x="360" y="90" width="120" height="140" rx="18" fill="#101828" stroke="#FB923C" stroke-width="3"/><rect x="372" y="104" width="96" height="112" rx="6" fill="#fff"/><circle cx="420" cy="160" r="22" fill="#ECFDF3"/><path fill="#12B76A" d="M411.5 156.5a12 12 0 0 0 6 6l2-2a1 1 0 0 1 1-.2c1 .3 2 .5 3 .5a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1a15 15 0 0 1-15-15a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1c0 1 .2 2 .5 3a1 1 0 0 1-.2 1z"/><g stroke="#FB923C" stroke-width="2.5" fill="none" stroke-linecap="round" class="rings"><path d="M492 130a44 44 0 0 1 0 60"/><path d="M506 116a64 64 0 0 1 0 88"/></g><style>@media(prefers-reduced-motion:no-preference){{.flow{{animation:dash 1.6s linear infinite}}.rings{{animation:pulse 2.6s ease-in-out infinite}}}}@keyframes dash{{to{{stroke-dashoffset:-24}}}}@keyframes pulse{{0%,100%{{opacity:.3}}50%{{opacity:1}}}}</style></svg></div></section>
+
+<section class="slide" id="s7" aria-labelledby="t7"><div class="wrap"><p class="k">What it costs, honestly</p><h2 id="t7">Some agencies start at <em>$5,000 a month.</em> Ours start much lower.</h2>
+<div class="price"><div class="them"><b>$3,209 / mo</b>Average agency retainer across 439 providers (Ahrefs survey). Clutch reports a similar monthly average and a $37,158 average one-off project. Many agencies bill AI search optimization separately on top.<small>Published third-party figures. Checkable.</small></div><div class="us"><b>$500 &ndash; $3,000 / mo</b>Most of our campaigns, sized to your budget and market, with AI search work included. A $100 entry option for one monthly deliverable. VIP members get member pricing on everything we build.<small>Lean operation: no account-manager layers, no downtown lease in your invoice.</small></div></div>
+<p>We do not publish a package because a roofer in Arvada and a law firm downtown do not need the same thing. We quote after a twenty-minute call, and we will tell you if your budget cannot win your market. Full reasoning on <a href="/denver-seo-pricing/" style="color:#9EC5FF">the pricing page</a>.</p></div></section>
+
+<section class="slide" id="s8" aria-labelledby="t8"><div class="wrap"><p class="k">What we promise, and what we do not</p><h2 id="t8">A partnership to <em>surpass</em> your goals, not a vendor.</h2><p>We do not guarantee rankings, traffic or results. Nobody honest can, and Google says so in its own hiring guidance. What we do promise: we put your business first, we work on it as if it were our own company, we bring every tool and skill we have, and we genuinely try to grow it. Conversion is the goal every month, because more customers is your goal, so it is ours.</p><p>You keep the audit findings whether or not you hire us. There is no long contract to start. If we are not the right fit, we say so on the call.</p></div></section>
+
+<section class="slide close" id="s9" aria-labelledby="t9"><div class="wrap"><p class="k">Last question</p><h2 id="t9">If we can do all of this within your budget, <em>are you ready to get started now?</em></h2><p style="margin:0 auto">Yes or no. Getting started is fast and easy: one call, about twenty minutes.</p>
+<div class="ab"><a class="yes" href="tel:18004818638" id="abYes"><b>YES &middot; Call 1-800-481-8638</b><span>Tap to call. Let&rsquo;s dominate your industry.</span></a><button type="button" class="no" id="abNo">NOT YET &middot; Have someone call me</button></div>
+<p class="excite" id="excite">We&rsquo;re excited to help you dominate your industry. Ask for Zach.</p>
+<div class="cb" id="cb">{page.form('Sales pitch — call-back request','Call Me Back','Have us call you','Best time to reach you, and what you sell. A real person calls.','<label for="pt-time">Best time to call</label><input id="pt-time" name="best_time" type="text">','pt')}</div>
+</div></section>
+<nav class="dots" aria-label="Slides"><a href="#s1" aria-label="Slide 1"></a><a href="#s2" aria-label="Slide 2"></a><a href="#s3" aria-label="Slide 3"></a><a href="#s4" aria-label="Slide 4"></a><a href="#s5" aria-label="Slide 5"></a><a href="#s6" aria-label="Slide 6"></a><a href="#s7" aria-label="Slide 7"></a><a href="#s8" aria-label="Slide 8"></a><a href="#s9" aria-label="Slide 9"></a></nav>
+</div>
 <script>
-(function(){
-'use strict';
-
-var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
-var i = 0, N = slides.length;
-var $cur = document.getElementById('cur');
-var $tot = document.getElementById('tot');
-var $fill = document.getElementById('railfill');
-var $next = document.getElementById('next');
-var $back = document.getElementById('back');
-var $notes = document.getElementById('notes');
-var $noteBody = document.getElementById('notebody');
-var $noteToggle = document.getElementById('notetoggle');
-$tot.textContent = N;
-
-var NOTES = [
-  "<p><b>Open low and slow.</b> Don't pitch. Say: \"Before I show you anything, I want to make sure this is even worth your time.\"</p><p>Let the slide sit for two seconds before you talk.</p>",
-  "<p>Say their category out loud: <b>\"Somebody's searching for a place to eat right now. Whose name comes up?\"</b></p><p>Then stop. Let them answer. If they say \"probably not us\" — you've already won the frame.</p>",
-  "<p><b>This is the SPIN question. Ask it and go completely silent.</b></p><p>Do not fill the pause. Whatever number they say out loud is now <i>their</i> number, not yours. Write it down in front of them.</p>",
-  "<p>Hand them the phone or turn the laptop. <b>Let them move the sliders themselves.</b></p><p>Ask: \"What's your average ticket?\" and \"How often does a regular come back?\" Set it to their real numbers, not mine.</p><p>Say nothing while the total updates.</p>",
-  "<p><b>Trial close #1.</b> \"Is that number about right, or am I being conservative?\"</p><p>If they say conservative — go back and raise the slider. That moment does more selling than anything I could write.</p>",
-  "<p>This reframes the problem from \"my business isn't good enough\" to \"my business isn't visible enough.\" That's a much easier thing for an owner to admit.</p><p>Say: <b>\"This isn't about your food. It's about the people who never got to try it.\"</b></p>",
-  "<p>Point at rows 3, 4 and 5. Ask: <b>\"Have you ever checked whether you show up in any of those?\"</b></p><p>Almost nobody has. That's the gap.</p>",
-  "<p>Don't oversell the stats — read one, then stop. The agent-calls-you fact is the one that lands. Let it.</p>",
-  "<p><b>Relief slide. Deliberate.</b> You just made the problem feel big; now make it feel solvable.</p><p>\"This is fixable, and for a local business it's fixable faster than most people think.\"</p>",
-  "<p><b>The tie-down. Ask it, then wait for the yes.</b></p><p>Don't move to the next slide until they've actually said it. A verbal yes here makes every later yes easier.</p>",
-  "<p>Compare it to something they staff. \"What do you pay someone for a Friday night shift?\"</p><p>You're conditioning price before you ever say a number.</p>",
-  "<p>Tie-down #2: <b>\"Does that split make sense — found, recommended, then the call?\"</b></p>",
-  "<p>Credibility, delivered flatly. Don't brag. Read it and move.</p><p>If they ask about other clients, that's a buying signal — answer it and go straight to the next slide.</p>",
-  "<p><b>The cost of delay. This is the one-call close.</b></p><p>Point at the monthly number — it's their own arithmetic. \"That's what next month looks like if we don't start.\"</p><p>Then: \"It's not that it gets harder. It's that it gets more expensive to catch up.\"</p>",
-  "<p>Anchor is set. Now the real price feels small by comparison.</p><p>Do not apologize for the number. Say it, then be quiet.</p>",
-  "<p><b>Alternative-choice close.</b> Never \"do you want to do this?\" Always \"which one?\"</p><p>If they hesitate, take the pressure off: \"Option B is how most people start. We can always expand.\"</p>",
-  "<p><b>Ask it. Then say nothing at all.</b></p><p>The first person to speak loses. Let it be them. When they answer, get the start date on the calendar before you leave the table.</p>"
-];
-
-function go(n){
-  if(n < 0 || n >= N) return;
-  slides[i].classList.remove('on');
-  i = n;
-  slides[i].classList.add('on');
-  slides[i].scrollTop = 0;
-  $cur.textContent = i + 1;
-  $fill.style.width = ((i + 1) / N * 100) + '%';
-  $back.hidden = (i === 0);
-  if(i === N - 1){
-    $next.innerHTML = 'Start over';
-    $next.classList.add('blue');
-  } else {
-    $next.innerHTML = 'Next <span aria-hidden="true">&rarr;</span>';
-    $next.classList.remove('blue');
-  }
-  $noteBody.innerHTML = NOTES[i] || '';
-  if(slides[i].hasAttribute('data-delay')) paintDelay();
-}
-
-$next.addEventListener('click', function(){ (i === N - 1) ? go(0) : go(i + 1); });
-$back.addEventListener('click', function(){ go(i - 1); });
-document.getElementById('zoneR').addEventListener('click', function(){ if(i < N - 1) go(i + 1); });
-document.getElementById('zoneL').addEventListener('click', function(){ go(i - 1); });
-
-document.addEventListener('keydown', function(e){
-  if(e.target.tagName === 'INPUT') return;
-  if(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown'){ e.preventDefault(); go(i + 1); }
-  if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); go(i - 1); }
-  if(e.key === 'Home'){ go(0); }
-  if(e.key === 'End'){ go(N - 1); }
-  if(e.key === 'n' || e.key === 'N'){ toggleNotes(); }
-});
-
-var x0 = null, y0 = null;
-document.addEventListener('touchstart', function(e){
-  if(e.target.tagName === 'INPUT') return;
-  x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
-}, {passive:true});
-document.addEventListener('touchend', function(e){
-  if(x0 === null) return;
-  var dx = e.changedTouches[0].clientX - x0;
-  var dy = e.changedTouches[0].clientY - y0;
-  if(Math.abs(dx) > 56 && Math.abs(dx) > Math.abs(dy) * 1.6){ dx < 0 ? go(i + 1) : go(i - 1); }
-  x0 = null; y0 = null;
-}, {passive:true});
-
-function toggleNotes(){
-  var on = $notes.classList.toggle('on');
-  $noteToggle.classList.toggle('on', on);
-}
-$noteToggle.addEventListener('click', toggleNotes);
-
-var d1 = document.getElementById('d1'), d2 = document.getElementById('d2'), d3 = document.getElementById('d3');
-var o1 = document.getElementById('o1'), o2 = document.getElementById('o2'), o3 = document.getElementById('o3');
-var $amt = document.getElementById('amt'), $per = document.getElementById('permonth');
-var shown = 0;
-
-function fmt(n){ return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
-
-function annual(){
-  return (+d1.value) * 52 * (+d2.value) * (+d3.value);
-}
-function paintDials(animate){
-  o1.textContent = d1.value;
-  o2.textContent = '$' + d2.value;
-  o3.textContent = d3.value;
-  var target = annual();
-  if(animate === false){ shown = target; $amt.textContent = fmt(target); return; }
-  countTo(target);
-}
-function countTo(target){
-  var from = shown, start = null, dur = 620;
-  function step(ts){
-    if(!start) start = ts;
-    var p = Math.min(1, (ts - start) / dur);
-    var e = 1 - Math.pow(1 - p, 3);
-    shown = from + (target - from) * e;
-    $amt.textContent = fmt(shown);
-    if(p < 1) requestAnimationFrame(step); else shown = target;
-  }
-  requestAnimationFrame(step);
-}
-function paintDelay(){
-  $per.textContent = fmt(annual() / 12);
-}
-[d1, d2, d3].forEach(function(el){ el.addEventListener('input', function(){ paintDials(true); }); });
-paintDials(false);
-
-$noteBody.innerHTML = NOTES[0];
+(function(){var D={"paid": "You are not alone. Our founder paid a top-rated Denver agency roughly $30,000 and got reports instead of customers. That loss is why this company exists.", "traffic": "Traffic without calls is the most common problem we see. It is almost never a traffic problem. It is a page problem, and page problems are fixable fast.", "none": "Then you have never been burned, which means you are starting with a clean slate. The goal is to keep it that way: an honest plan, honest reporting, no lock-in.", "diy": "Doing it yourself works until it costs you the thing you are actually good at. The math on your time is usually the argument."};var rev=document.getElementById('rev');[].forEach.call(document.querySelectorAll('.pick button'),function(b){b.addEventListener('click',function(){[].forEach.call(document.querySelectorAll('.pick button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});rev.textContent=D[b.getAttribute('data-k')];rev.classList.add('show');});});
+var N=document.getElementById('pcN'),V=document.getElementById('pcV');function f(n){return '$'+Math.round(n).toLocaleString('en-US');}function go(){var n=+N.value,v=+V.value;document.getElementById('pcNo').textContent=n;document.getElementById('pcVo').textContent=v;var wk=n*v;document.getElementById('pcOut').textContent=f(wk*52)+' a year';document.getElementById('pcSub').textContent=f(wk)+' a week that you are either collecting, or someone easier to find is. Illustrative math on your own inputs.';}if(N){N.addEventListener('input',go);V.addEventListener('input',go);go();}
+var to=document.getElementById('tieOut');[].forEach.call(document.querySelectorAll('.tie button'),function(b){b.addEventListener('click',function(){to.textContent=b.getAttribute('data-t');to.classList.add('show');});});
+var y=document.getElementById('abYes'),ex=document.getElementById('excite'),no=document.getElementById('abNo'),cb=document.getElementById('cb');if(y)y.addEventListener('click',function(){ex.classList.add('show');});if(no)no.addEventListener('click',function(){cb.classList.add('show');ex.classList.remove('show');no.scrollIntoView({behavior:'smooth',block:'start'});});
+var dots=document.querySelectorAll('.dots a'),sl=document.querySelectorAll('.slide');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=[].indexOf.call(sl,e.target);dots.forEach(function(d,j){d.classList.toggle('on',i===j);});}});},{threshold:.5});sl.forEach(function(s){io.observe(s);});}
 })();
 </script>
-<section id="sm-close" style="font-family:Inter,system-ui,sans-serif;background:#0B1B33;color:#fff;padding:70px 20px;text-align:center"><div style="max-width:720px;margin:0 auto"><p style="font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#FDBA74;margin:0 0 12px">One question</p><h2 style="font-family:Fraunces,Georgia,serif;font-size:clamp(1.9rem,4vw,3rem);line-height:1.1;margin:0 0 14px">Do you want the phone to ring more?</h2><p style="color:#C7D3E3;font-size:1.1rem;margin:0 0 28px">Yes or no. That is the whole decision. Getting started is one call and takes about twenty minutes.</p><div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a href="tel:18004818638" style="display:inline-flex;align-items:center;justify-content:center;min-height:60px;padding:0 34px;border-radius:12px;background:#F97316;color:#fff;font-weight:800;font-size:1.15rem;text-decoration:none;box-shadow:0 12px 30px rgba(249,115,22,.4)">Yes. Call 1-800-481-8638</a><a href="/free-seo-audit/" style="display:inline-flex;align-items:center;justify-content:center;min-height:60px;padding:0 26px;border-radius:12px;border:2px solid rgba(255,255,255,.35);color:#fff;font-weight:700;text-decoration:none">Not yet. Send me the free audit first</a></div><p style="color:#98A9C0;font-size:.9rem;margin:22px 0 0">No contract to start. A real person answers. If we are not the right fit, we will tell you on the call.</p></div></section>
+
+</main>
+<script>(function(){var a=atob('aW5mbw==')+String.fromCharCode(64)+atob('ZXlldG9hZC5jb20=');window.etaAddr=function(){return a;};[].forEach.call(document.querySelectorAll('form[data-fs]'),function(f){f.setAttribute('data-fs',a);});})();</script>
+<footer class="footer" aria-label="Site footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        
+        <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" alt="Eye To Ad Media — Denver SEO Agency since 2012" class="brand-logo" width="300" height="102" loading="lazy">
+        <p>Denver's SEO authority for modern search since 2012 — Google, AI Overviews, agentic AI, local maps, and conversion. Serving Denver and surrounding Colorado.</p>
+        <address>
+          Eye To Ad Media<br>
+          1001 Bannock St #660<br>
+          Denver, CO 80204<br>
+          <a href="tel:17202496588">(720) 249-6588</a><br>
+          <a href="tel:18004818638">1-800-481-8638</a><br>
+          <a class="eml" data-u="info" data-d="eyetoad.com" href="#">info&#64;eyetoad&#46;com</a>
+        </address>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/denver-seo-services/">SEO Services</a>
+        <a href="/local-seo-denver/">Local SEO &amp; Maps</a>
+        <a href="/seo-systems/">SEO Systems</a>
+        <a href="/aio-seo-system/">AIO SEO System</a>
+        <a href="/generative-engine-optimization-system/">GEO System</a>
+        <a href="/conversion-optimization/">Conversion Optimization</a>
+        <a href="/denver-seo-pricing/">Pricing</a>
+        <a href="/free-seo-audit/">Free SEO Audit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <a href="/contractor-seo-denver/">Contractor SEO</a>
+        <a href="/dentist-seo-denver/">Dentist SEO</a>
+        <a href="/law-firm-seo-denver/">Law Firm SEO</a>
+        <a href="/med-spa-seo-denver/">Med Spa SEO</a>
+        <a href="/roofing-seo-denver/">Roofing SEO</a>
+        <a href="/hvac-seo-denver/">HVAC SEO</a>
+        <a href="/industries/">All Industries &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/locations/">Service Locations</a>
+        <a href="/about/">About Us</a>
+        <a href="/our-work/">Our Work</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/best-denver-seo-company/">How to Choose a Denver SEO Company</a>
+        <a href="/blog/">Blog</a>
+        <a href="/marketing-subscription/">VIP Membership</a>
+        <a href="/business-growth-accelerator/">Growth Accelerator</a>
+        <a href="/grow-my-business/">Grow My Business</a>
+        <a href="/careers/">Careers</a>
+        <a href="/contact/">Contact</a>
+        
+      </div>
+      
+    </div>
+    <div class="footer-bot">
+      <p>© 2026 Eye To Ad Media. All rights reserved. Denver, CO · Serving Denver since 2012. Page last updated <time datetime="2026-09-21">September 21, 2026</time>.</p>
+      <div class="footer-links">
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/accessibility/">Accessibility</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/robots.txt">Robots.txt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/eta-site.js" defer></script>
+
 </body>
 </html>

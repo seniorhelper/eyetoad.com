@@ -1,36 +1,75 @@
-# robots.txt — eyetoad.com (updated 2026-09-21)
-# Everything is crawlable on purpose. Do NOT add "Disallow: /images/": Google's
-# favicon crawler must fetch /images/images/eye-to-ad-media-favicon-denver-seo.png.
+# robots.txt — eyetoad.com
+# Updated 2026-09-11
+#
+# Everything is crawlable on purpose. There is no admin area, no cart, no
+# faceted navigation and no staging path on this site, so a Disallow rule
+# would only create ways to accidentally hide a page.
+#
+# IMPORTANT: do NOT add "Disallow: /images/". Google's favicon crawler has to
+# fetch /images/images/eye-to-ad-media-favicon-denver-seo.png, and blocking
+# that directory drops the icon from every search result even though the file
+# exists and the markup is correct. The favicon note in index.html explains
+# the rest.
 
 User-agent: *
 Allow: /
 
-# AI retrieval / citation crawlers
+# ---- AI and answer-engine crawlers ----
+# Explicitly allowed. The whole site is built to be quoted by these systems,
+# so blocking them would work directly against the strategy. They are named
+# individually rather than left to the wildcard because several of them read
+# their own token first and ignore User-agent: *.
+
+User-agent: GPTBot
+Allow: /
+
 User-agent: OAI-SearchBot
 Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
-User-agent: Claude-SearchBot
+
+User-agent: ClaudeBot
 Allow: /
-User-agent: Claude-User
+
+User-agent: Claude-Web
 Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
+
 User-agent: Perplexity-User
 Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
-# Model training crawlers
-User-agent: GPTBot
+User-agent: Applebot
 Allow: /
-User-agent: ClaudeBot
-Allow: /
-User-agent: CCBot
-Allow: /
-User-agent: Meta-ExternalAgent
-Allow: /
+
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# ---- Sitemap ----
 Sitemap: https://eyetoad.com/sitemap.xml

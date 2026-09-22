@@ -258,7 +258,7 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 
 </style>
 <style id="eta-chrome">
-:root{
+.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb{
   --ink:#101828;
   --ink2:#1D2939;
   --ink3:#344054;
@@ -276,18 +276,18 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
   --sh:0 4px 16px rgba(0,0,0,.09);
   --sh-lg:0 16px 48px rgba(0,0,0,.14);
 }
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
-.btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
-.btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
-.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 20px rgba(37,99,235,.3)}
-.btn-blue:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-2px)}
-.btn-ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-.btn-ghost-blue{background:transparent;color:var(--blue);border-color:var(--blue)}
-.btn-ghost-blue:hover{background:var(--blue-light)}
-.btn-white{background:#fff;color:var(--ink);border-color:#fff}
-.btn-white:hover{background:var(--off)}
-.btn-lg{padding:17px 36px;font-size:1.08rem}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r8);font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;text-align:center}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(249,115,22,.35)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-orange:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,115,22,.45)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-blue{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 20px rgba(37,99,235,.3)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-blue:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-2px)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-ghost-blue{background:transparent;color:var(--blue);border-color:var(--blue)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-ghost-blue:hover{background:var(--blue-light)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-white{background:#fff;color:var(--ink);border-color:#fff}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-white:hover{background:var(--off)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-lg{padding:17px 36px;font-size:1.08rem}
 .ubar{background:#060C18;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:1002}
 .ubar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:7px 0;flex-wrap:wrap}
 .ubar-left,.ubar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -323,62 +323,62 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .hdr{position:sticky;top:0;z-index:1000;background:rgba(16,24,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);transition:box-shadow .3s}
 .hdr.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5)}
 .hdr-inner{display:flex;align-items:center;justify-content:space-between;min-height:96px;gap:14px;padding:10px 0}
-.logo{display:flex;align-items:center;flex-shrink:0}
-.brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .logo{display:flex;align-items:center;flex-shrink:0}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .brand-logo{width:300px;height:102px;object-fit:cover;object-position:center 44%;max-width:none}
 @media(max-width:1600px){.hdr-inner{gap:10px}
 .hdr-right{gap:7px}
-.brand-logo{width:265px;height:92px}
-.nl{font-size:.78rem;padding:8px 6px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .brand-logo{width:265px;height:92px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl{font-size:.78rem;padding:8px 6px}
 .hdr-vip{font-size:.78rem;padding:8px 13px}}
 @media(max-width:1150px){.hdr-vip{font-size:.72rem;padding:7px 11px;letter-spacing:-.01em}
-.nl{font-size:.74rem;padding:8px 5px}}
-@media(max-width:1024px){.nav{display:none}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl{font-size:.74rem;padding:8px 5px}}
+@media(max-width:1024px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nav{display:none}
 .hdr-right{display:none}
 .burger{display:flex}}
 @media(max-width:768px){.hdr-inner{min-height:72px;padding:8px 0;gap:10px}
-.brand-logo{width:250px;height:88px}}
-@media(max-width:430px){.brand-logo{width:205px;height:74px}}
-.nav{display:flex;align-items:center;gap:2px}
-.nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
-.nl:hover{color:#fff;background:rgba(255,255,255,.07)}
-.nl-tog{cursor:pointer;user-select:none}
-.nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
-.nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
-.ni{position:relative}
-.ni:hover .drop,.ni:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
-.drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
-.drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
-.drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
-.drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
-.ni:hover .drop-mega,.ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
-.dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
-.drop-mega a{display:block;padding:7px 9px;border-radius:6px;font-size:.85rem;line-height:1.35;color:rgba(255,255,255,.72);transition:all .15s}
-.drop-mega a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
-.drop-mega a[aria-current="page"]{background:rgba(37,99,235,.22);color:#BFDBFE;font-weight:700}
-.drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
-.drop-all a{color:#93C5FD;font-weight:700}
-@media(max-width:1150px){.drop-mega{width:540px;gap:2px 10px}
-.drop-mega a{font-size:.81rem;padding:6px 8px}}
-.mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
-.mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
-.mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
-.mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
-.mob-x:hover{background:rgba(255,255,255,.16)}
-.mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
-.mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
-.mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
-.mob-dom2{display:block!important;margin:0 0 14px;padding:13px 16px!important;text-align:center;
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .brand-logo{width:250px;height:88px}}
+@media(max-width:430px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .brand-logo{width:205px;height:74px}}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nav{display:flex;align-items:center;gap:2px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);padding:8px 9px;border-radius:var(--r8);transition:all .18s;white-space:nowrap}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl:hover{color:#fff;background:rgba(255,255,255,.07)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl-tog{cursor:pointer;user-select:none}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl-dom{color:#FDBA74;border:1px solid rgba(249,115,22,.42);border-radius:8px;padding:8px 13px;margin-left:4px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nl-dom:hover{color:#fff;background:rgba(249,115,22,.18);border-color:var(--orange)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni{position:relative}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni:hover .drop,:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop{position:absolute;top:calc(100% + 10px);left:0;background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:8px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop a{display:block;padding:9px 14px;border-radius:6px;font-size:.88rem;color:rgba(255,255,255,.72);transition:all .15s}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-6px);background:var(--ink2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:16px 18px 12px;width:620px;max-width:calc(100vw - 40px);opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 20px 50px rgba(0,0,0,.55);z-index:200;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 16px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni:hover .drop-mega,:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .ni:focus-within .drop-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .dg h5{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:5px 9px 7px;font-family:'Inter',sans-serif}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega a{display:block;padding:7px 9px;border-radius:6px;font-size:.85rem;line-height:1.35;color:rgba(255,255,255,.72);transition:all .15s}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega a:hover{background:rgba(37,99,235,.15);color:#93C5FD}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega a[aria-current="page"]{background:rgba(37,99,235,.22);color:#BFDBFE;font-weight:700}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-all{grid-column:1 / -1;margin-top:9px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-all a{color:#93C5FD;font-weight:700}
+@media(max-width:1150px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega{width:540px;gap:2px 10px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .drop-mega a{font-size:.81rem;padding:6px 8px}}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-sub{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);padding:14px 0 2px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-top{display:flex;align-items:center;justify-content:space-between;padding:2px 0 14px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-top-lab{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-x{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font:400 22px/1 system-ui;cursor:pointer;display:grid;place-items:center}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-x:hover{background:rgba(255,255,255,.16)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-tel{display:block!important;margin:0 0 14px;padding:15px 16px!important;text-align:center;background:rgba(255,255,255,.06);border:1.5px solid rgba(249,115,22,.45)!important;border-radius:var(--r12);border-bottom:1.5px solid rgba(249,115,22,.45)!important;color:#fff!important;font-weight:800!important;font-size:1.3rem!important;letter-spacing:-.01em}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-tel span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-flat{border-bottom:1px solid rgba(255,255,255,.08)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-dom2{display:block!important;margin:0 0 14px;padding:13px 16px!important;text-align:center;
   background:rgba(249,115,22,.1);border:1.5px solid rgba(249,115,22,.4)!important;border-radius:var(--r12);
   color:#FDBA74!important;font-weight:700!important;border-bottom:1.5px solid rgba(249,115,22,.4)!important}
-.mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
-.mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
-.mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
-.mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
-.mob-group{display:none;padding-bottom:6px}
-.mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-proof{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.5);text-align:center}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-proof b{color:rgba(255,255,255,.8);font-weight:700}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-acc{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-acc .ico{font-size:1.15rem;color:rgba(255,255,255,.45);transition:transform .25s;line-height:1}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-acc[aria-expanded="true"] .ico{transform:rotate(45deg);color:var(--orange)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-group{display:none;padding-bottom:6px}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-hub{display:block!important;color:#93C5FD!important;font-weight:700!important;font-size:.92rem!important;
   padding:11px 0!important;border-bottom:1px solid rgba(147,197,253,.2)!important}
-.mob-group.open{display:block}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-group.open{display:block}
 .hdr-right{display:flex;align-items:center;gap:9px}
 .hdr-vip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#0b1220;background:linear-gradient(135deg,#FBBF24,#F97316);padding:9px 16px;border-radius:22px;white-space:nowrap;box-shadow:0 4px 18px rgba(249,115,22,.4);transition:all .2s}
 .hdr-vip:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(249,115,22,.55)}
@@ -393,10 +393,10 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!important}
 .mob-nav a{display:block;color:rgba(255,255,255,.8);font-size:1rem;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .mob-nav a:hover{color:var(--orange)}
-.mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
-.mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
-.btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:17px 30px;border-radius:var(--r12);background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220;font-family:'Inter',sans-serif;font-weight:800;font-size:1.06rem;border:2px solid rgba(255,255,255,.2);box-shadow:0 10px 32px rgba(249,115,22,.5);transition:all .2s}
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(249,115,22,.68)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-vip{display:block!important;margin:4px 0 8px;padding:15px 16px!important;text-align:center;background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220!important;font-weight:800!important;font-size:1rem!important;border-radius:var(--r12);border-bottom:none!important;box-shadow:0 6px 22px rgba(249,115,22,.4)}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:17px 30px;border-radius:var(--r12);background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220;font-family:'Inter',sans-serif;font-weight:800;font-size:1.06rem;border:2px solid rgba(255,255,255,.2);box-shadow:0 10px 32px rgba(249,115,22,.5);transition:all .2s}
+:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(249,115,22,.68)}
 .footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:44px}
 .footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
@@ -416,12 +416,12 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 @media(min-width:581px){.footer-bot{padding-bottom:34px}}
 @media(max-width:580px){.footer-bot{padding-bottom:78px}}
 @media(max-width:1024px){.footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
-@media(max-width:768px){.nav{display:none}
+@media(max-width:768px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nav{display:none}
 .hdr-right{display:none}
 .burger{display:flex}
 .footer-grid{grid-template-columns:minmax(0,1fr)}
 .footer-bot{flex-direction:column;text-align:center}}
-@media(max-width:540px){.btn-gold{width:100%}}
+@media(max-width:540px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold{width:100%}}
 </style>
 <style id="eta-v8">
 .ubar{background:#F4F7FB;border-bottom:1px solid #DDE5EF}
@@ -452,6 +452,18 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 .hdr .logo .brand-logo{width:265px!important;height:92px!important;object-fit:cover;object-position:center 44%;max-width:none!important}
 @media (max-width:768px){.hdr .logo .brand-logo{width:250px!important;height:88px!important}}
 @media (max-width:430px){.hdr .logo .brand-logo{width:205px!important;height:74px!important}}
+
+#irisw .ir-bubble,#ir-bubble{width:min(370px,calc(100vw - 32px))!important;max-width:none!important;min-width:0!important;left:auto!important;right:16px!important;padding:18px 20px 16px!important;box-sizing:border-box!important;overflow:visible!important;border-radius:16px!important}
+#ir-bubble *{max-width:100%;box-sizing:border-box}#ir-bubble .ir-bub-txt{font-size:14px!important;line-height:1.55!important}#ir-bubble .ir-bub-head{padding-right:30px!important}
+.zipbox{max-height:150px;overflow:auto;border:1px solid #D0D5DD;border-radius:12px;padding:12px 14px;background:#fff;font-family:Menlo,Consolas,monospace;font-size:.86rem;line-height:1.9;color:#344054}
+.zipbox b{display:block;font-family:Inter,sans-serif;color:#101828;margin-bottom:4px}
+.holo{position:relative;width:150px;height:150px;perspective:700px;margin:0 auto}.holo .core{position:absolute;inset:0;transform-style:preserve-3d}
+.holo .face{position:absolute;inset:0;border-radius:50%;border:3px solid #38bdf8;box-shadow:0 0 22px #38bdf8,inset 0 0 22px rgba(56,189,248,.4);display:grid;place-items:center;font:900 44px 'Fraunces',Georgia,serif;color:#e0f2fe;text-shadow:0 0 12px #38bdf8;background:radial-gradient(circle,rgba(56,189,248,.15),rgba(56,189,248,0) 70%)}
+.holo .ring{position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(56,189,248,.55)}.holo .ring.r2{inset:-30px;border-style:dotted}
+.holo::after{content:'';position:absolute;inset:-34px;border-radius:50%;background:repeating-linear-gradient(0deg,rgba(56,189,248,.14) 0 2px,transparent 2px 6px);pointer-events:none;mask-image:radial-gradient(circle,#000 55%,transparent 72%);-webkit-mask-image:radial-gradient(circle,#000 55%,transparent 72%)}
+@media (prefers-reduced-motion:no-preference){.holo .core{animation:holospin 12s linear infinite}.holo .ring{animation:holospin 20s linear infinite reverse}.holo .ring.r2{animation-duration:30s;animation-direction:normal}}
+@keyframes holospin{from{transform:rotateY(0) rotateX(12deg)}to{transform:rotateY(360deg) rotateX(12deg)}}
+.holo-band{background:radial-gradient(120% 120% at 50% 0%,#0f2a4a,#0B1B33 60%);padding:34px 20px;text-align:center}.holo-band p{color:#9EC5FF;font:700 .8rem/1.3 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:16px 0 0}
 
 </style>
 <style>
@@ -852,6 +864,70 @@ img,svg{max-width:100%}a{color:#1D4ED8}
   <tr><td>Tell you when your market is too competitive for the budget</td><td>Show you a screenshot and call it a guarantee</td></tr>
   </tbody></table></div>
   <p>Google states plainly in its own hiring guidance that no one can guarantee a number one ranking. Read it on <a href="https://developers.google.com/search/docs/fundamentals/do-i-need-seo" rel="noopener" target="_blank">Google Search Central</a> before you hire anyone, including us.</p>
+</div></section>
+
+
+<section class="np-sec" aria-labelledby="s35"><div class="wrap">
+  <h2 id="s35">The full results pages, recreated as closely as we can</h2>
+  <p>Close recreations of the incognito searches from September 21, 2026, with our listings outlined. Advertiser and competitor names are left off; their positions are kept. Then the same idea, applied to your business.</p>
+  <div class="cs-grid2">
+    <div><h3 style="margin:0 0 10px">Google &middot; &ldquo;denver walk in tubs&rdquo; &middot; Denver, CO</h3>
+    <div class="gpage"><div class="gtop"><div class="gsearch"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#667085" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="#667085" stroke-width="2" stroke-linecap="round"/></svg><span>denver walk in tubs</span></div></div>
+      <div class="gtabs"><span>AI Mode</span><span class="on">All</span><span>Images</span><span>Shopping</span><span>Videos</span><span>Maps</span></div>
+      <div class="gchips"><span>Online estimates</span><span>Open now</span><span>Top rated</span><span>Small business</span></div>
+      <div class="gbody">
+        <p class="glab">Sponsored results</p>
+        <div class="gad"><div class="site">Local remodeler &middot; ad</div><div class="ttl">Bathrooms Are All We Do | 75% Off Installation</div></div>
+        <div class="gad"><div class="site">National tub brand &middot; ad</div><div class="ttl">New Walk-In Tubs In Your Area</div></div>
+        <div class="gad"><div class="site">National tub brand &middot; ad</div><div class="ttl">Walk-In Tubs For Elderly &ndash; Installation Included</div></div>
+        <div class="gad"><div class="site">National remodeler &middot; ad</div><div class="ttl">Walk-In Bathtub &ndash; 12 Months No Interest</div></div>
+        <div class="gown" style="margin-top:14px"><svg class="garr" viewBox="0 0 40 26" aria-hidden="true"><path d="M2 13h30M22 4l10 9-10 9" fill="none" stroke="#D92D20" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tag">OURS &middot; 1ST ORGANIC</span><div style="font-size:.78rem;color:#5F6368">denverwalkintub.com</div><div style="color:#1A0DAB;font-size:1.05rem">Denver Walk in Tub</div><div style="font-size:.82rem;color:#4D5156">Our Denver walk-in tubs feature both air hydrotherapy and water jet hydrotherapy&hellip;</div></div>
+        <p class="glab">Places</p>
+        <div class="gmap"><i class="big" style="left:48%;top:52%"></i><i style="left:30%;top:40%"></i><i style="left:62%;top:35%"></i><i style="left:40%;top:70%"></i><i style="left:72%;top:66%"></i></div>
+        <div class="gown"><svg class="garr" viewBox="0 0 40 26" aria-hidden="true"><path d="M2 13h30M22 4l10 9-10 9" fill="none" stroke="#D92D20" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tag">OURS &middot; MAP #1</span><div class="gplace" style="border:0;padding:4px 0"><div><b>Aging Safely Walk In Bathtubs | Denver Walk in tubs &amp; Handicap showers</b><span class="st">4.9 &#9733;&#9733;&#9733;&#9733;&#9733;</span> (35) &middot; Bathroom remodeler<br>15+ years in business &middot; Open &middot; Closes 8 PM<br><span style="color:#5F6368">&ldquo;Some of the best prices and highest quality walk in tubs you will find!&rdquo;</span></div><div class="th"></div></div></div>
+        <div class="gplace"><div><b>Hot tub store</b>5.0 &#9733; (33) &middot; Hot tub store</div><div class="th"></div></div>
+        <div class="gplace"><div><b>Bathroom remodeler</b>4.9 &#9733; (65) &middot; Bathroom remodeler</div><div class="th"></div></div>
+        <p class="glab">People also ask</p>
+        <div class="gpaa"><span>How much will Medicare pay for a walk-in tub?</span><span>&#8964;</span></div><div class="gpaa"><span>What is the average cost of having a walk-in tub installed?</span><span>&#8964;</span></div>
+        <div class="gad" style="margin-top:8px"><div class="site">bbb.org &rsaquo; denver &rsaquo; category &rsaquo; walkin-tubs</div><div class="ttl">Walk-In Tubs near Denver, CO</div><div class="snip">Showing: 54 results for Walk-In Tubs near Denver, CO; <b>Aging Safely Walk in Tubs</b>. Walk-In Tubs, Bathroom Remodel&hellip;</div></div>
+        <div class="gown"><svg class="garr" viewBox="0 0 40 26" aria-hidden="true"><path d="M2 13h30M22 4l10 9-10 9" fill="none" stroke="#D92D20" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tag">OURS &middot; AGAIN</span><div style="font-size:.78rem;color:#5F6368">agingsafelybaths.com &rsaquo; locations &rsaquo; colorado&hellip;</div><div style="color:#1A0DAB;font-size:1.05rem">Walk in Tubs Denver Colorado</div><div style="font-size:.82rem;color:#4D5156">Call us today at (888) 779-2284&hellip; Bathe safely, comfortably, and confidently with professional walk-in tubs&hellip;</div></div>
+      </div></div>
+    </div>
+    <div><h3 style="margin:0 0 10px">Google &middot; &ldquo;bariatric walk in tubs&rdquo; &middot; national, incognito</h3>
+    <div class="gpage"><div class="gtop"><div class="gsearch"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#667085" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="#667085" stroke-width="2" stroke-linecap="round"/></svg><span>bariatric walk in tubs</span></div></div>
+      <div class="gtabs"><span>AI Mode</span><span class="on">All</span><span>Images</span><span>Shopping</span><span>Videos</span></div>
+      <div class="gchips"><span>With Jets</span><span>Walk-in</span><span>Nearby</span><span>For Sale</span><span>Price</span></div>
+      <div class="gbody"><p class="glab">Sponsored results</p>
+        <div class="gad"><div class="site">National tub brand &middot; ad</div><div class="ttl">Hybrid Walk-In Tubs &amp; Showers | Complete Installation Included</div></div>
+        <div class="gad"><div class="site">Consumer review site &middot; ad</div><div class="ttl">Extra Large Walk In Tub &ndash; 3 Best Walk In Tub For 2026</div></div>
+        <div class="gad"><div class="site">National tub brand &middot; ad</div><div class="ttl">Extra-Wide Easy-Entry Door | Walk-In Tubs Near&hellip;</div></div>
+        <div class="gad"><div class="site">Directory &middot; ad</div><div class="ttl">2026 Bariatric Walk-In Tubs</div></div>
+        <p class="glab" style="text-align:center;color:#5F6368">&#8963; Hide sponsored results</p>
+        <div class="gown"><svg class="garr" viewBox="0 0 40 26" aria-hidden="true"><path d="M2 13h30M22 4l10 9-10 9" fill="none" stroke="#D92D20" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tag">OURS &middot; 1ST ORGANIC</span><div style="font-size:.78rem;color:#5F6368">agingsafelybaths.com &rsaquo; &hellip; &rsaquo; Hydrodimensions</div><div style="color:#1A0DAB;font-size:1.05rem">Bariatric Walk In Tub | 35 x 55 Large Walk In Tub -Wide Seat</div><div style="font-size:.82rem;color:#4D5156"><b>Explore the 35 x 55 bariatric walk in tub</b> with extra wide seat and deeper soaking depth. Designed for larger bathers.</div></div>
+        <p class="glab">Popular products</p><div style="display:flex;gap:8px"><div style="flex:1;height:60px;border-radius:8px;background:#E4E7EC"></div><div style="flex:1;height:60px;border-radius:8px;background:#E4E7EC"></div><div style="flex:1;height:60px;border-radius:8px;background:#E4E7EC"></div></div>
+      </div></div>
+      <p class="cs-cap">A product page, first under four national ads, on a term with no city in it.</p>
+    </div>
+  </div>
+  <h3 style="margin:30px 0 10px">AI assistants, asked the way a customer asks</h3>
+  <div class="cs-grid2">
+    <div class="phone"><div class="stat"><span>3:16</span><span>Grok &middot; Ask</span><span>43%</span></div><div class="ub">West Virginia ada roll in showers</div>
+      <div style="color:#bbb;font-size:.75rem">Thought for 13s &rsaquo;</div>
+      <h4>Companies that serve West Virginia</h4><p style="margin:0 0 6px;color:#ccc">Several suppliers ship statewide and some offer installation or can work with your local plumber:</p>
+      <ul><li><mark>Showers4Less</mark> &mdash; Dedicated West Virginia page; ships ADA systems, roll-in pans, and low-threshold kits to all 55 counties. <span class="chip">Showers4less</span></li><li><mark>Aging Safely Baths</mark> &mdash; Walk-in tubs and ADA roll-in showers; serves every WV ZIP. Phone: (888) 779-2284. <span class="chip">Agingsafelybaths</span></li><li>Independent Home Products, LLC &mdash; Custom accessible tubs and showers with a WV number.</li></ul>
+      <div class="ask">Ask anything</div></div>
+    <div class="phone gem"><div class="stat"><span>3:21</span><span>Gemini Flash</span><span>41%</span></div><div class="ub">Roll in shower companies</div>
+      <p style="margin:0 0 8px;color:#ccc">Roll-in shower providers generally fall into two categories: <b>turnkey remodelers/installers</b> and <b>specialty manufacturers/distributors</b>&hellip;</p>
+      <h4>Full-Service Turnkey Installers</h4>
+      <ul><li>Lifeway Mobility: Specializes in home accessibility modifications&hellip;</li><li><mark>Aging Safely Baths:</mark> Focuses specifically on accessible bathing, providing zero-threshold, wheelchair-accessible roll-in showers and walk-in tubs with nationwide shipping and regional installation networks.</li><li>Bath Fitter: Best for fast turnarounds (often 1&ndash;2 day conversions)&hellip;</li></ul>
+      <div class="ask">Ask Gemini</div></div>
+    <div><div class="gpage"><div class="gtop"><div class="gsearch"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#667085" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="#667085" stroke-width="2" stroke-linecap="round"/></svg><span>handicap showers</span></div></div><div class="gtabs"><span>AI Mode</span><span class="on">All</span><span>Images</span><span>Shopping</span></div>
+      <div class="gbody"><p class="glab">&#10022; AI Overview</p><p style="font-size:.86rem;color:#4D5156;margin:0 0 10px">A handicap shower is an accessible, barrier-free bathing unit designed with a low or zero-threshold entry&hellip; <span style="background:#E8F0FE;color:#1967D2;border-radius:999px;padding:2px 8px;font-size:.72rem">national brand +2</span></p>
+      <p class="glab">Images</p><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative"><div style="aspect-ratio:1;border-radius:10px;background:#E4E7EC"></div><div style="aspect-ratio:1;border-radius:10px;background:#E4E7EC"></div><div class="gown" style="aspect-ratio:1;margin:0;padding:6px;display:flex;align-items:flex-end;font-size:.72rem;font-weight:700;color:#101828"><svg class="garr" viewBox="0 0 40 26" aria-hidden="true"><path d="M2 13h30M22 4l10 9-10 9" fill="none" stroke="#D92D20" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tag">OURS</span>Aging Safely Baths</div></div>
+      <p class="glab">People also ask</p><div class="gpaa"><span>Will Medicare pay for a handicap shower?</span><span>&#8964;</span></div></div></div>
+      <p class="cs-cap">The AI Overview and the first organic result on this search belong to a national manufacturer. We are the third image. We say so.</p></div>
+  </div>
+  <div class="cs-shout"><h3>We can do this same thing for your business.</h3><p>Results are never guaranteed, by us or by anyone honest. What we can promise is that we know what we are doing, and that we treat your business like it is our own, with the same care we put into these pages.</p><a class="np-btn np-btn-a" href="tel:18004818638">Call 1-800-481-8638</a> <a class="np-btn np-btn-b" href="#talk">Send us your keyword</a></div>
 </div></section>
 
 
