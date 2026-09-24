@@ -118,3 +118,13 @@
       bd.addEventListener('pointerup',end);bd.addEventListener('pointercancel',end);});}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){visor();band();});else{visor();band();}
 })();
+
+/* ===== v11: Iris continuity (etaIrisPolicy). Small on inner pages; remembers open/closed across pages; closed stays closed. ===== */
+(function(){var KEY='etaIris';function st(){try{return sessionStorage.getItem(KEY)||'';}catch(e){return '';}}function set(v){try{sessionStorage.setItem(KEY,v);}catch(e){}}
+ var home=location.pathname==='/'||location.pathname==='/index.html';
+ function ready(){var L=document.getElementById('ir-launch');if(!L)return false;var s=st();
+  if(!home||s==='closed')document.body.classList.add('ir-mini');
+  if(s==='open'){setTimeout(function(){if(!document.body.classList.contains('ir-panel-open')&&typeof window.openIris==='function')window.openIris();},900);}
+  var was=document.body.classList.contains('ir-panel-open');new MutationObserver(function(){var is=document.body.classList.contains('ir-panel-open');if(is&&!was)set('open');else if(!is&&was)set('closed');was=is;}).observe(document.body,{attributes:true,attributeFilter:['class']});
+  return true;}
+ var n=0;(function poll(){if(ready()||n++>240)return;setTimeout(poll,250);})();})();
