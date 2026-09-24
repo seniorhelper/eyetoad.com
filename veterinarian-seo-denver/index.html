@@ -853,52 +853,126 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 @keyframes holospin{from{transform:rotateY(0) rotateX(12deg)}to{transform:rotateY(360deg) rotateX(12deg)}}
 .holo-band{background:radial-gradient(120% 120% at 50% 0%,#0f2a4a,#0B1B33 60%);padding:34px 20px;text-align:center}.holo-band p{color:#9EC5FF;font:700 .8rem/1.3 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:16px 0 0}
 
+
+.ticker{display:none!important}
+.ubar.ubar2{background:#fff!important;border:0!important;position:relative;z-index:40}
+.ubar2 .ubar-inner{display:flex!important;align-items:center;justify-content:space-between;gap:6px;padding:8px 0 2px!important;min-height:0}
+.ubar2 .vr{width:233px;height:59px;flex:none;overflow:visible;animation:etaFloat 6s ease-in-out infinite}
+@keyframes etaFloat{0%,100%{transform:translateY(0) rotate(.3deg)}50%{transform:translateY(-1.5px) rotate(-.3deg)}}
+.ubar2 .vr .ln{cursor:pointer}.ubar2 .vr .ln:focus{outline:none}.ubar2 .vr .lg{transition:filter .2s}
+.ubar2 .vr .ln:hover .lg,.ubar2 .vr .ln:focus-visible .lg{filter:brightness(1.3) drop-shadow(0 0 2px rgba(255,255,255,.8))}
+.ubar2 .vr text.t{font-family:'SFMono-Regular',Menlo,Consolas,monospace;font-size:11px;font-weight:800;letter-spacing:.1px;paint-order:stroke;stroke:rgba(0,0,0,.92);stroke-width:2px}
+.ubar2 .vr .glare{animation:etaGlare 7s ease-in-out infinite}@keyframes etaGlare{0%,78%{transform:skewX(-18deg) translateX(0)}100%{transform:skewX(-18deg) translateX(250px)}}
+.ubar2 .vr .led,.ubar2 .vr .strip{animation:etaLed 2.4s ease-in-out infinite}@keyframes etaLed{50%{opacity:.25}}
+.ubar-tel2{display:inline-flex;align-items:center;gap:6px;background:#0B1B33;color:#fff!important;padding:0 14px;height:44px;font-weight:900;font-size:1rem;letter-spacing:.01em;text-decoration:none;white-space:nowrap;text-shadow:0 0 8px rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 6px 14px rgba(0,0,0,.22)}
+.ubar-tel2:hover{background:#12294D;color:#fff}
+@media (max-width:430px){.ubar2 .ubar-inner{padding:8px 4px 2px!important}.ubar-tel2{font-size:.72rem;padding:0 6px;height:38px;gap:4px}}
+@media (max-width:360px){.ubar2 .vr{width:196px;height:50px}.ubar-tel2{font-size:.66rem}}
+.hdr{background:#fff!important;border-bottom:0!important;box-shadow:none}
+.hdr .logo .brand-logo{width:auto!important;height:80px!important;max-width:none!important;object-fit:contain!important;object-position:center!important}
+@media (max-width:768px){.hdr .logo .brand-logo{height:64px!important}}
+@media (max-width:430px){.hdr .logo .brand-logo{height:56px!important;max-width:178px!important}}
+.hdr-right .btn,.hdr-right .btn-orange{border-radius:4px!important}
+.hdr .burger{background:transparent!important;box-shadow:none!important;border:0!important}
+.hdr .burger span{background:#000!important;height:4px!important;border-radius:2px!important}
+.cband{display:flex;height:10px;position:relative;touch-action:none;user-select:none;-webkit-user-select:none}
+.cband::before{content:'';position:absolute;left:0;right:0;top:-8px;bottom:-12px}
+.cband .cb{flex:1;position:relative;cursor:grab;transition:transform .22s,box-shadow .22s,height .15s}
+.cband:hover .cb{height:13px}
+.cband .cb.drag{cursor:grabbing;transition:none;z-index:2;box-shadow:0 8px 16px rgba(0,0,0,.28);height:16px!important;border-radius:2px}
+.cband .cb.settle{transition:transform .25s cubic-bezier(.2,1.4,.4,1)}
+.cband.win .cb{animation:etaBounce .6s ease-out both}.cband.win .cb:nth-child(2){animation-delay:.05s}.cband.win .cb:nth-child(3){animation-delay:.1s}.cband.win .cb:nth-child(4){animation-delay:.15s}.cband.win .cb:nth-child(5){animation-delay:.2s}.cband.win .cb:nth-child(6){animation-delay:.25s}
+@keyframes etaBounce{40%{transform:translateY(-7px)}70%{transform:translateY(2px)}}
+.eta-toast{position:fixed;left:50%;top:18px;z-index:9999;transform:translate(-50%,-10px);background:#0B1B33;color:#fff;font:700 .9rem Inter,system-ui,sans-serif;padding:10px 16px;opacity:0;transition:.35s;pointer-events:none}.eta-toast.show{opacity:1;transform:translate(-50%,0)}
+.hdr .nl{color:#1D2939!important;text-shadow:none!important}.hdr .nl:hover,.hdr .ni:hover>.nl{color:#EA580C!important}
+@media (max-width:1024px){.hdr-right{display:flex!important;align-items:center;gap:8px;margin-left:auto;margin-right:8px}.hdr-right .hdr-vip{display:none!important}.hdr-right .btn{padding:11px 10px!important;font-size:.8rem!important;white-space:nowrap}}
+@media (max-width:768px){.hdr .logo{margin-left:10px}.hdr-inner{gap:6px}}
+@media (min-width:1025px){.home-bub .hdr-inner{background:rgba(255,255,255,.84);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:14px;padding-left:14px;padding-right:14px;box-shadow:0 8px 24px rgba(11,27,51,.10)}}
+@media (prefers-reduced-motion:reduce){.ubar2 .vr,.ubar2 .vr *{animation:none!important}}
 </style>
 </head>
 <body class="vt-scope">
 
 <a href="#main" class="skip">Skip to content</a>
 
-<div class="ubar">
-  <div class="wrap ubar-inner">
-    
-    <div class="ubar-left">
-      <a href="https://www.buyweburl.com" class="ubar-dom" target="_blank" rel="noopener sponsored"
-         aria-label="Search and register an available domain name at our domain storefront">
-        <svg class="ubar-ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M13.4 13.4 L17.5 17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <span class="ubar-dom-t">Search Domains</span>
-        <span class="ubar-txt">&mdash; find &amp; register your perfect <b>.com</b>, <b>.ai</b> or <b>.io</b></span>
-        <span class="ubar-go" aria-hidden="true">&rsaquo;</span>
-      </a>
-    </div>
-    <div class="ubar-right">
-      
-      <a href="tel:18004818638" class="ubar-tel"><span class="ubar-tel-lbl">Call</span>1-800-481-8638</a>
-    </div>
-  </div>
-</div>
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">NEW — VIP Marketing Subscription · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">5.0 from 60 Google Reviews · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Denver SEO That Ranks in Google, AI Overviews &amp; Maps <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">NEW — VIP Marketing Subscription · Member Pricing on Everything <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">5.0 from 60 Google Reviews · A+ BBB Accredited · Since 2012 <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Optimizing for ChatGPT Search, Perplexity, Agentic AI &amp; Google AI <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Free SEO Audit — Call 1-800-481-8638 <span class="ticker-sep">◆</span></span>
-  </div>
-</div>
+<div class="ubar ubar2"><div class="wrap ubar-inner"><svg class="vr" focusable="false" viewBox="0 0 252 64" role="group" aria-label="Domain tools">
+<defs>
+ <linearGradient id="v1face" x1=".1" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#6B7A93"/><stop offset=".3" stop-color="#2A3547"/><stop offset=".75" stop-color="#0F172A"/><stop offset="1" stop-color="#030712"/></linearGradient>
+ <linearGradient id="v1sideU" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#475569"/><stop offset="1" stop-color="#1E293B"/></linearGradient>
+ <linearGradient id="v1sideL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#020617"/></linearGradient>
+ <linearGradient id="v1arm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#94A3B8"/><stop offset="1" stop-color="#1E293B"/></linearGradient>
+ <linearGradient id="v1rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8FAFC"/><stop offset=".35" stop-color="#64748B"/><stop offset=".6" stop-color="#E2E8F0"/><stop offset="1" stop-color="#475569"/></linearGradient>
+ <linearGradient id="v1lens" x1="0" y1="0" x2=".15" y2="1"><stop offset="0" stop-color="#E2E8F0"/><stop offset=".38" stop-color="#64748B"/><stop offset=".62" stop-color="#0B1220"/><stop offset="1" stop-color="#000000"/></linearGradient>
+ <linearGradient id="v1refl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".7" stop-color="#E0F2FE" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <linearGradient id="v1irid" x1="0" y1="0" x2="1" y2=".6"><stop offset="0" stop-color="#38BDF8"/><stop offset=".25" stop-color="#FDE047"/><stop offset=".5" stop-color="#FB923C"/><stop offset=".75" stop-color="#F43F5E"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+ <pattern id="v1scan" width="4" height="2.2" patternUnits="userSpaceOnUse"><rect width="4" height=".55" fill="#fff" opacity=".06"/></pattern>
+ <pattern id="v1foam" width="1.6" height="1.6" patternUnits="userSpaceOnUse"><rect width="1.6" height="1.6" fill="#27272A"/><circle cx=".8" cy=".8" r=".38" fill="#3F3F46"/></pattern>
+ <filter id="v1glow" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="1.25" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="v1sh" x="-10%" y="-60%" width="120%" height="220%"><feGaussianBlur stdDeviation="2.4"/></filter>
+ <clipPath id="v1cl"><path d="M18 15.4 L88 13 Q94 12.8 94 19 L94 42 Q94 47.6 88 47.6 L18 45.6 Q12 45.4 12 40 L12 21 Q12 15.6 18 15.4 Z"/></clipPath><clipPath id="v1cr"><path d="M108 12.6 L178 9.8 Q185 9.6 185 16.5 L185 44 Q185 50.8 178 50.6 L108 48.2 Q102 48 102 42 L102 18.6 Q102 12.8 108 12.6 Z"/></clipPath>
+</defs>
+<ellipse cx="104" cy="60" rx="96" ry="3" fill="#020617" opacity=".42" filter="url(#v1sh)"/>
+
+<path d="M201 24.2 L234 21.4 Q244.5 20.6 246.6 29 Q248.4 37 244.2 44.5" fill="none" stroke="#020617" stroke-width="3.6" stroke-linecap="round" opacity=".35" transform="translate(.4 1)"/>
+<path d="M201 24.2 L234 21.4 Q244.5 20.6 246.6 29" fill="none" stroke="url(#v1arm)" stroke-width="3" stroke-linecap="round"/>
+<path d="M201 23.2 L234 20.4 Q243 19.8 245.4 26" fill="none" stroke="#fff" stroke-width=".55" opacity=".6" stroke-linecap="round"/>
+<path d="M246.6 29 Q248.4 37 244.2 44.5" fill="none" stroke="#27272A" stroke-width="4" stroke-linecap="round"/>
+<path d="M246.2 31 Q247.6 37 244.6 42.6" fill="none" stroke="url(#v1foam)" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M214 22.8 v2.4 M220 22.3 v2.4 M226 21.8 v2.4" stroke="#020617" stroke-width=".35" opacity=".6"/>
+
+<path d="M192 6 L205 11.2 L206.4 30 L193.4 31 Q193.6 18 192 6 Z" fill="url(#v1sideU)"/>
+<path d="M193.4 31 L206.4 30 L204.6 50.4 L192 56 Q194 43 193.4 31 Z" fill="url(#v1sideL)"/>
+<path d="M193.4 31 L206.4 30" stroke="#fff" stroke-width=".35" opacity=".45"/>
+<path d="M192 6 L205 11.2" stroke="#fff" stroke-width=".6" opacity=".75"/>
+<path d="M205 11.2 L206.4 30 L204.6 50.4" stroke="url(#v1foam)" stroke-width="2.6" fill="none"/>
+<rect x="195.2" y="17.0" width="6" height="1.1" rx=".5" fill="#020617" opacity=".75"/><rect x="195.2" y="17.9" width="6" height=".3" fill="#fff" opacity=".15"/><rect x="195.2" y="19.6" width="6" height="1.1" rx=".5" fill="#020617" opacity=".75"/><rect x="195.2" y="20.5" width="6" height=".3" fill="#fff" opacity=".15"/><rect x="195.2" y="22.2" width="6" height="1.1" rx=".5" fill="#020617" opacity=".75"/><rect x="195.2" y="23.1" width="6" height=".3" fill="#fff" opacity=".15"/><rect x="195.2" y="24.8" width="6" height="1.1" rx=".5" fill="#020617" opacity=".75"/><rect x="195.2" y="25.7" width="6" height=".3" fill="#fff" opacity=".15"/>
+<rect class="strip" x="196" y="34.5" width="7.6" height="1.3" rx=".6" fill="#7CFF4F"/>
+<rect x="196.6" y="39" width="6" height="2.4" rx="1.1" fill="#020617" stroke="#64748B" stroke-width=".3"/>
+<path d="M195.8 44.5 L203 44 L202.8 47 L195.8 47.6 Z" fill="#0F172A" stroke="#94A3B8" stroke-width=".3"/>
+<circle cx="200" cy="13.8" r="1.1" fill="url(#v1rim)"/><path d="M199.3 13.8 h1.4" stroke="#1E293B" stroke-width=".3"/>
+<circle cx="199.6" cy="52" r="1" fill="url(#v1rim)"/>
+<circle cx="200.6" cy="24.4" r="2.3" fill="url(#v1rim)"/><circle cx="200.6" cy="24.4" r=".85" fill="#1E293B"/>
+
+<path d="M14 12 L180 6 Q192 6 192 18 L192 46 Q192 56 180 56 L112 53.2 Q98.5 44.5 86 51.2 L16 49 Q6 48.6 6 40 L6 22 Q6 12.4 14 12 Z" fill="url(#v1face)"/>
+<path d="M6 22 Q6 12.4 14 12 L180 6 Q192 6 192 18" stroke="#fff" stroke-width=".8" fill="none" opacity=".75"/>
+<path d="M15.5 14.3 L179.5 8.4 Q189.6 8.4 189.6 18.6 L189.6 45.4 Q189.6 53.6 180 53.6" stroke="#fff" stroke-width=".3" fill="none" opacity=".3"/>
+<path d="M112 53.2 Q98.5 44.5 86 51.2" stroke="#020617" stroke-width=".7" fill="none"/>
+<g fill="#020617" opacity=".6"><rect x="86.0" y="8.80" width="1" height="2.1" rx=".4"/><rect x="88.5" y="8.73" width="1" height="2.1" rx=".4"/><rect x="91.0" y="8.66" width="1" height="2.1" rx=".4"/><rect x="93.5" y="8.59" width="1" height="2.1" rx=".4"/><rect x="96.0" y="8.52" width="1" height="2.1" rx=".4"/><rect x="98.5" y="8.45" width="1" height="2.1" rx=".4"/><rect x="101.0" y="8.38" width="1" height="2.1" rx=".4"/><rect x="103.5" y="8.31" width="1" height="2.1" rx=".4"/><rect x="106.0" y="8.24" width="1" height="2.1" rx=".4"/></g>
+<circle cx="12" cy="17" r="1.05" fill="#1E1B4B" stroke="#818CF8" stroke-width=".35"/><circle cx="184" cy="12.4" r="1.1" fill="#1E1B4B" stroke="#818CF8" stroke-width=".35"/>
+<circle class="led" cx="176" cy="8.6" r=".95" fill="#7CFF4F"/>
+<path d="M94.6 13.4 L101.4 13 L101.4 30.5 Q98 33 94.6 30.8 Z" fill="#1E293B"/><path d="M94.6 13.4 L101.4 13" stroke="#CBD5E1" stroke-width=".4"/>
+<text x="98" y="22" font-family="Inter,sans-serif" font-size="2.3" font-weight="900" fill="#94A3B8" text-anchor="middle" transform="rotate(90 98 22)">ETA·VR</text>
+<a class="ln" href="https://www.buyweburl.com/" target="_blank" rel="noopener" aria-label="Domain Finder: check if a domain name is available"><g class="lg">
+ <path d="M18 15.4 L88 13 Q94 12.8 94 19 L94 42 Q94 47.6 88 47.6 L18 45.6 Q12 45.4 12 40 L12 21 Q12 15.6 18 15.4 Z" fill="url(#v1lens)"/>
+ <g clip-path="url(#v1cl)">
+  <rect x="0" y="0" width="200" height="64" fill="url(#v1irid)" opacity="0"/>
+  <path d="M0 8 H200 V29 Q100 25 0 31 Z" fill="url(#v1refl)" opacity="0.3"/>
+  <path d="M0 31 Q100 25 200 29" stroke="#fff" stroke-width=".35" opacity=".5" fill="none"/>
+  <rect x="0" y="0" width="200" height="64" fill="url(#v1scan)"/>
+  <rect class="glare" x="-30" y="0" width="10" height="64" fill="#fff" opacity=".28" transform="skewX(-18)"/>
+ </g>
+ <path d="M18 15.4 L88 13 Q94 12.8 94 19 L94 42 Q94 47.6 88 47.6 L18 45.6 Q12 45.4 12 40 L12 21 Q12 15.6 18 15.4 Z" fill="none" stroke="url(#v1rim)" stroke-width="1.2"/>
+ <path d="M18 15.4 L88 13 Q94 12.8 94 19 L94 42 Q94 47.6 88 47.6 L18 45.6 Q12 45.4 12 40 L12 21 Q12 15.6 18 15.4 Z" fill="none" stroke="#7CFF4F" stroke-width=".45" opacity=".85"/>
+ <g class="rd" fill="#7CFF4F" filter="url(#v1glow)"><g stroke="#7CFF4F" fill="none" stroke-width="1.2"><circle cx="21" cy="30.5" r="3.1"/><path d="M23.3 32.8 L26 35.5" stroke-linecap="round" stroke-width="1.4"/></g><text class="t" data-t="DOMAIN" x="57" y="29.6" text-anchor="middle"></text><text class="t" data-t="FINDER" x="57" y="40.2" text-anchor="middle"></text></g></g></a>
+<a class="ln" href="https://bestdomainsforbusiness.com/" target="_blank" rel="noopener" aria-label="Premium Domains: hand-picked domain names for sale"><g class="lg">
+ <path d="M108 12.6 L178 9.8 Q185 9.6 185 16.5 L185 44 Q185 50.8 178 50.6 L108 48.2 Q102 48 102 42 L102 18.6 Q102 12.8 108 12.6 Z" fill="url(#v1lens)"/>
+ <g clip-path="url(#v1cr)">
+  <rect x="0" y="0" width="200" height="64" fill="url(#v1irid)" opacity="0"/>
+  <path d="M0 8 H200 V29 Q100 25 0 31 Z" fill="url(#v1refl)" opacity="0.3"/>
+  <path d="M0 31 Q100 25 200 29" stroke="#fff" stroke-width=".35" opacity=".5" fill="none"/>
+  <rect x="0" y="0" width="200" height="64" fill="url(#v1scan)"/>
+  <rect class="glare" x="-30" y="0" width="10" height="64" fill="#fff" opacity=".28" transform="skewX(-18)"/>
+ </g>
+ <path d="M108 12.6 L178 9.8 Q185 9.6 185 16.5 L185 44 Q185 50.8 178 50.6 L108 48.2 Q102 48 102 42 L102 18.6 Q102 12.8 108 12.6 Z" fill="none" stroke="url(#v1rim)" stroke-width="1.2"/>
+ <path d="M108 12.6 L178 9.8 Q185 9.6 185 16.5 L185 44 Q185 50.8 178 50.6 L108 48.2 Q102 48 102 42 L102 18.6 Q102 12.8 108 12.6 Z" fill="none" stroke="#7CFF4F" stroke-width=".45" opacity=".85"/>
+ <g class="rd" fill="#7CFF4F" filter="url(#v1glow)"><path d="M108.6 27.6 h6 l1.8 2.4 -4.8 5.3 -4.8 -5.3 z" fill="none" stroke="#7CFF4F" stroke-width="1" stroke-linejoin="round"/><text class="t" data-t="PREMIUM" x="148" y="28.8" text-anchor="middle"></text><text class="t" data-t="NAMES" x="148" y="39.4" text-anchor="middle"></text></g></g></a>
+</svg><a href="tel:18004818638" class="ubar-tel2" aria-label="Call 1-800-481-8638"><span aria-hidden="true">&#9742;</span>1-800-481-8638</a></div></div>
+
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
     <a href="/" class="logo" aria-label="Eye To Ad Media — Denver SEO Home">
       
-      <img src="/images/images/eye-to-ad-media-logo-denver-seo.png" decoding="async" alt="Eye To Ad Media logo — Denver SEO Company" class="brand-logo" width="300" height="102" loading="eager" fetchpriority="high">
+      <img src="/images/images/eye-to-ad-media-logo-trim.png" decoding="async" alt="Eye To Ad Media logo, Denver SEO company" class="brand-logo" width="640" height="200" loading="eager" fetchpriority="high">
     </a>
     <nav class="nav" aria-label="Main navigation">
       <div class="ni">
@@ -991,17 +1065,16 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
       <a href="/about/" class="nl">About</a>
       <a href="/contact/" class="nl">Contact</a>
       <a href="/sell-myself/" class="nl">See the Pitch</a>
-      <a href="https://www.buyweburl.com" class="nl nl-dom" target="_blank" rel="noopener sponsored">Search Domains</a>
     </nav>
     <div class="hdr-right">
       <a href="/marketing-subscription/" class="hdr-vip">VIP Membership</a>
-      <a href="/free-seo-audit/" class="btn btn-orange" style="padding:10px 18px;font-size:.88rem;">Free Audit</a>
+      <a href="/free-seo-audit/" class="btn btn-orange" style="padding:10px 18px;font-size:.88rem;">Get SEO Audit</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobNav">
       <span></span><span></span><span></span>
     </button>
   </div>
-</header>
+<div class="cband" aria-hidden="true"><span class="cb" data-c="red" style="background:#EF5350"></span><span class="cb" data-c="yellow" style="background:#F5DF4D"></span><span class="cb" data-c="blue" style="background:#4658B8"></span><span class="cb" data-c="orange" style="background:#F2803A"></span><span class="cb" data-c="green" style="background:#27A366"></span><span class="cb" data-c="purple" style="background:#8E4FB5"></span></div></header>
 <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
   <div class="mob-top">
     <span class="mob-top-lab">Menu</span>
@@ -1009,7 +1082,8 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
   </div>
   <a href="/free-seo-audit/" class="mob-cta" style="margin:0 0 10px;">Get a Free SEO Audit</a>
   <a href="tel:18004818638" class="mob-tel"><span>Call us</span>1-800-481-8638</a>
-  <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Search Domain Names</a>
+  <a href="https://www.buyweburl.com" class="mob-dom2" target="_blank" rel="noopener sponsored">Domain Finder: check a name</a>
+  <a href="https://bestdomainsforbusiness.com/" class="mob-dom2" target="_blank" rel="noopener">Premium Domain Names for Sale</a>
   <button class="mob-acc" type="button" aria-expanded="false" aria-controls="mg-services">Services<span class="ico" aria-hidden="true">+</span></button>
   <div class="mob-group" id="mg-services">
     <a href="/services/" class="mob-hub">All Services &rarr;</a>

@@ -97,3 +97,24 @@
   if(document.readyState==='complete')runC();else window.addEventListener('load',runC);
   setTimeout(runC,2500);setTimeout(runC,6000);
 })();
+/* ===== v9: visor readout typing + draggable card band (etaVisor) ===== */
+(function(){
+  function visor(){var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    [].forEach.call(document.querySelectorAll('svg.vr'),function(sv){var ts=sv.querySelectorAll('text.t'),i=0;
+      [].forEach.call(ts,function(e){e.textContent=RM?e.getAttribute('data-t'):'';});if(RM)return;
+      function nx(){if(i>=ts.length)return;var e=ts[i++],s=e.getAttribute('data-t'),k=0;var t=setInterval(function(){k++;e.textContent=s.slice(0,k)+(k<s.length?'_':'');if(k>=s.length){clearInterval(t);setTimeout(nx,120);}},70);}
+      setTimeout(nx,400);});}
+  function band(){var RB=['red','orange','yellow','green','blue','purple'];
+    [].forEach.call(document.querySelectorAll('.cband'),function(bd){var d=null,sx=0;
+      function kids(){return [].slice.call(bd.children);}
+      bd.addEventListener('pointerdown',function(e){var t=e.target.closest&&e.target.closest('.cb');if(!t)return;d=t;sx=e.clientX;t.classList.add('drag');try{t.setPointerCapture(e.pointerId);}catch(_){}e.preventDefault();});
+      bd.addEventListener('pointermove',function(e){if(!d)return;var dx=e.clientX-sx;d.style.transform='translateX('+dx+'px)';var ks=kids(),i=ks.indexOf(d),w=d.offsetWidth,c=d.offsetLeft+w/2+dx,to=Math.max(0,Math.min(ks.length-1,Math.floor(c/w)));
+        if(to!==i){var old=d.offsetLeft;if(to>i)bd.insertBefore(d,ks[to].nextSibling);else bd.insertBefore(d,ks[to]);sx+=d.offsetLeft-old;d.style.transform='translateX('+(e.clientX-sx)+'px)';}});
+      function end(){if(!d)return;var el=d;d=null;el.classList.remove('drag');el.classList.add('settle');el.style.transform='';setTimeout(function(){el.classList.remove('settle');},260);
+        var o=kids().map(function(k){return k.getAttribute('data-c');}).join();
+        if(o===RB.join()||o===RB.slice().reverse().join()){bd.classList.remove('win');void bd.offsetWidth;bd.classList.add('win');
+          var t=document.querySelector('.eta-toast');if(!t){t=document.createElement('div');t.className='eta-toast';t.setAttribute('role','status');t.textContent='\uD83C\uDF08 You found the rainbow.';document.body.appendChild(t);}
+          t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}}
+      bd.addEventListener('pointerup',end);bd.addEventListener('pointercancel',end);});}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){visor();band();});else{visor();band();}
+})();
