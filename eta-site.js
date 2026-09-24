@@ -128,3 +128,6 @@
   var was=document.body.classList.contains('ir-panel-open');new MutationObserver(function(){var is=document.body.classList.contains('ir-panel-open');if(is&&!was)set('open');else if(!is&&was)set('closed');was=is;}).observe(document.body,{attributes:true,attributeFilter:['class']});
   return true;}
  var n=0;(function poll(){if(ready()||n++>240)return;setTimeout(poll,250);})();})();
+
+/* ===== v12: hard guard (etaMascotGuard): on the homepage Iris stays fully hidden until the mascot reports he is done. ===== */
+(function(){if(!document.querySelector('script[src="/mascot.js"]'))return;var n=0;(function g(){var w=document.getElementById('irisw');var done=!!window.__etaDone||n>300;if(w)w.style.display=done?'':'none';if(!done){n++;setTimeout(g,200);}})();})();
