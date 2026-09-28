@@ -324,3 +324,10 @@ its own machine-readable fact block:
   geo-targeted roofing site built in 2026.
 - **Blog feed (RSS):** https://eyetoad.com/blog/feed.xml
 - **Accreditation:** BBB Accredited Business, A+ rating (seal in the header and footer of every page).
+- **IndexNow:** enabled; key file at https://eyetoad.com/e7a3c9f1d2b84f6a9c1e5d7b3a2f8c4e.txt
+- **Rebuilt Sept 28 2026 (third pass):** /contact/, /ecommerce-seo/, /painting-contractor-seo/, /law-firm-website-design/
+## V5.5 (September 28, 2026)
+
+- **International and new city pages:** Toronto, Vancouver, Calgary (Canada); Sydney, Melbourne, Brisbane (Australia); Miami and Orlando (Florida) — https://eyetoad.com/locations/<city>-seo/. 43 cities in 3 countries. No local office in any of them; work is done from Denver by phone, billed in USD.
+- **Industry tools:** free calculators on the roofing, HVAC, dentist, restaurant and plumber pages (storm-season capacity, missed-call cost, system sizing rule of thumb, maintenance-plan revenue, no-show cost, new-patient lifetime value, table-turn revenue, menu contribution, repair-or-replace 50% rule, emergency-call capture). Each ends with a "what waiting costs" figure computed from the visitor's own inputs.
+- **Rebuilt:** /services/ (with a cost-of-waiting calculator and a service picker) and /business-growth-accelerator/.
