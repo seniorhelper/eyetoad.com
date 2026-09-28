@@ -131,3 +131,43 @@
 
 /* ===== v12: hard guard (etaMascotGuard): on the homepage Iris stays fully hidden until the mascot reports he is done. ===== */
 (function(){if(!document.querySelector('script[src="/mascot.js"]'))return;var n=0;(function g(){var w=document.getElementById('irisw');var done=!!window.__etaDone||n>300;if(w)w.style.display=done?'':'none';if(!done){n++;setTimeout(g,200);}})();})();
+
+/* ===== v13 (Sept 28 2026): Iris orb stub + lazy loader (etaIrisStub).
+   iris.js is 330 KB, so it is not fetched until the visitor moves (scroll, tap,
+   key) or a long fallback. Until then the page shows this lightweight stand-in:
+   on inner pages a static orb in the corner from the first paint; on the
+   homepage a slim "Ask Iris" tab on the right edge that stays out of the
+   mascot's way. Clicking either loads iris.js and opens the chat. When iris.js
+   is ready it fires `iris:ready` and the stub removes itself. Pages opt in by
+   setting window.__etaIris = 1 (the same one-liner that used to be the loader). */
+(function(){
+  if(!window.__etaIris)return;
+  var home=location.pathname==='/'||location.pathname==='/index.html';
+  var hasMascot=!!document.querySelector('script[src="/mascot.js"]');
+  function load(){if(window.__irisL)return;window.__irisL=1;var s=document.createElement('script');s.src='/iris.js';s.defer=true;document.body.appendChild(s);}
+  window.__etaLoadIris=load;
+  ['pointerdown','scroll','keydown','touchstart'].forEach(function(e){addEventListener(e,load,{once:true,passive:true});});
+  setTimeout(load,20000);
+  var st=document.createElement('style');st.textContent=
+   '#ir-stub{position:fixed;z-index:9990;right:22px;bottom:22px;width:92px;height:92px;border:0;padding:0;background:transparent;cursor:pointer;transition:opacity .4s}'+
+   '#ir-stub svg{width:100%;height:100%;display:block;overflow:visible}'+
+   '#ir-stub.tab{right:0;bottom:auto;top:46vh;width:38px;height:150px;background:linear-gradient(180deg,#5b4bd1,#7c3aed);color:#fff;border-radius:12px 0 0 12px;box-shadow:0 8px 24px rgba(30,20,90,.35)}'+
+   '#ir-stub.tab span{display:block;writing-mode:vertical-rl;transform:rotate(180deg);font:700 13px/38px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;width:38px;height:150px;text-align:center}'+
+   '#ir-stub.tab svg{display:none}#ir-stub:not(.tab) span{display:none}'+
+   '#ir-stub.hide{opacity:0;pointer-events:none}'+
+   'body.nav-open #ir-stub,body.ir-panel-open #ir-stub{display:none}'+
+   '@media(prefers-reduced-motion:no-preference){#ir-stub .orbf{animation:etaOrbF 5.2s ease-in-out infinite}@keyframes etaOrbF{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}}'+
+   '@media(max-width:900px){#ir-stub{width:76px;height:76px;right:14px;bottom:14px}#ir-stub.hero-on{opacity:0;pointer-events:none}}';
+  document.head.appendChild(st);
+  var b=document.createElement('button');b.id='ir-stub';b.type='button';b.setAttribute('aria-label','Chat with Iris, our growth assistant');
+  b.innerHTML='<span>Ask Iris</span><svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="etaSg" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".25" stop-color="#c7d2ff" stop-opacity=".9"/><stop offset=".6" stop-color="#6d5df0" stop-opacity=".92"/><stop offset="1" stop-color="#2b1f72" stop-opacity=".98"/></radialGradient><radialGradient id="etaSh" cx="50%" cy="50%" r="50%"><stop offset=".55" stop-color="#8b7cff" stop-opacity=".45"/><stop offset="1" stop-color="#8b7cff" stop-opacity="0"/></radialGradient></defs><g class="orbf"><circle cx="50" cy="52" r="48" fill="url(#etaSh)"/><circle cx="50" cy="50" r="34" fill="url(#etaSg)"/><ellipse cx="38" cy="36" rx="12" ry="7" fill="#fff" opacity=".55"/><circle cx="50" cy="50" r="34" fill="none" stroke="#fff" stroke-opacity=".5"/><circle cx="50" cy="52" r="6" fill="#ffd166"/><circle cx="50" cy="52" r="2.6" fill="#0b1626"/></g></svg>';
+  if(home&&hasMascot){b.classList.add('tab');}
+  document.body.appendChild(b);
+  b.addEventListener('click',function(){window.__irisAutoOpen=1;load();b.classList.add('hide');if(typeof window.openIris==='function')window.openIris();});
+  /* mobile hero collision guard, same rule iris.js applies */
+  var hero=document.querySelector('.hero,.h8,.page-hero');
+  if(hero&&'IntersectionObserver' in window){new IntersectionObserver(function(en){b.classList.toggle('hero-on',en[0].isIntersecting);},{threshold:0.15}).observe(hero);}
+  /* homepage: tab becomes the orb after the mascot has left and a beat has passed */
+  if(home&&hasMascot){var n=0;(function w(){if(window.__etaDone){setTimeout(function(){b.classList.remove('tab');},2600);return;}if(n++<400)setTimeout(w,300);})();}
+  document.addEventListener('iris:ready',function(){b.classList.add('hide');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);},500);});
+})();

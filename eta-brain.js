@@ -25,9 +25,9 @@ var CFG={
  cells:{N:8600,base:[120,200,255],fire:[255,255,255],flare:'rgba(200,245,255,',glow:'rgba(150,235,255,',cells:true,spin:true,flares:true,pulse:7},
  head:{N:4200,base:[160,190,255],fire:[255,120,235],flare:'rgba(255,140,240,',glow:'rgba(255,170,245,',head:true,sway:.22,flares:true,pulse:4},
  headnet:{N:4200,base:[130,225,255],fire:[255,255,255],flare:'rgba(210,250,255,',glow:'rgba(150,240,255,',head:true,strands:16,sway:.22,flares:true,pulse:5}};
-[].forEach.call(document.querySelectorAll('canvas[data-brain]'),function(cv){
+function BOOT(cv){
  var C=CFG[cv.dataset.brain],sec=cv.parentNode,spot=sec.querySelector('.spot'),ctx=cv.getContext('2d'),dpr=Math.min(1.25,window.devicePixelRatio||1),W,Hh,S,ox,oy,HS,hox,hoy,HB=null,HF=null;
- var STR=[],CELLS=[],BOK=[],PLX=[];
+ var STR=[],CELLS=[],BOK=[],PLX=[],FSC={};
  function size(){HB=null;HF=null;var r=cv.getBoundingClientRect(),sr=spot.getBoundingClientRect();W=r.width;Hh=r.height;cv.width=W*dpr;cv.height=Hh*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
   var cx=sr.left-r.left+sr.width/2,cy=sr.top-r.top+sr.height/2,m=Math.min(sr.width,sr.height);
   if(C.head){HS=sr.height/3.45;hox=cx-.14*HS;hoy=cy-.2*HS;S=HS*1.14;ox=hox+.02*HS;oy=hoy-.42*HS;}else{S=Math.min(m*.42,W*.36);ox=cx;oy=cy+.06*S;}
@@ -40,7 +40,7 @@ var CFG={
     CELLS.push({x:cx,y:cy,br:br,r:6+R()*4,o:R()*6});}}
   BOK=[];if(C.bokeh)for(var b=0;b<26;b++)BOK.push({x:R()*W,y:R()*Hh,r:6+R()*26,s:.15+R()*.35,o:R()*6,c:R()<.5?'150,180,255':'220,150,255'});
   PLX=[];if(C.mesh)for(var i=0;i<34;i++){var u=[R()*2-1,R()*2-1,R()*2-1],l=Math.hypot(u[0],u[1],u[2]),rr=1.15+R()*.35;PLX.push([u[0]/l*rr,u[1]/l*rr*.8,u[2]/l*rr]);}}
- var P=build(C.N),G=nbrs(P),F=[],FL=[],ang=R()*6,vis=true,last=0,ph=R()*6;
+ var P=build(Math.round(C.N*((window.innerWidth||1000)<700?.5:.72))),G=nbrs(P),F=[],FL=[],ang=R()*6,vis=true,last=0,ph=R()*6;
  size();
  function spawn(a){a=a!=null?a:G.idx[Math.floor(R()*G.idx.length)];var path=[a],seen={};seen[a]=1;for(var h=0;h<9+Math.floor(R()*7);h++){var L=(G.nb[path[path.length-1]]||[]).filter(function(n){return !seen[n];});if(!L.length)break;var n=L[Math.floor(R()*L.length)];seen[n]=1;path.push(n);}if(path.length>3)F.push({p:path,t:0,sp:.16+R()*.16});}
  function flare(){FL.push({i:G.idx[Math.floor(R()*G.idx.length)],t:0,d:.5+R()*.9,s:.6+R()*1.2});}
@@ -74,7 +74,7 @@ var CFG={
   ctx.globalCompositeOperation='lighter';var c=C.base;
   for(var i=0;i<P.length;i++){var p=P[i],q=proj(p.x,p.y,p.z),e=0;for(var h=0;h<heads.length;h++){var H0=heads[h],d2=(p.x-H0[0])*(p.x-H0[0])+(p.y-H0[1])*(p.y-H0[1])+(p.z-H0[2])*(p.z-H0[2]);e+=Math.exp(-d2/H0[3]);}e=Math.min(1,e);
    var ca=Math.cos(ang),sa=Math.sin(ang),nZ=-p.nx*sa+p.nz*ca,fz=Math.abs(p.ny*.179+nZ*.984),dep=(q[2]+1.1)/2.2,al=(.12+.55*dep)*(.45+Math.max(0,p.f)*1.2)*(p.k===2?.7:1)*(.22+.78*fz)+e*.85,sz=1.3*q[3];
-   ctx.fillStyle='rgba('+((c[0]+(C.fire[0]-c[0])*e)|0)+','+((c[1]+(C.fire[1]-c[1])*e)|0)+','+((c[2]+(C.fire[2]-c[2])*e)|0)+','+Math.min(1,al).toFixed(3)+')';ctx.fillRect(q[0]-sz/2,q[1]-sz/2,sz+e*1.5,sz+e*1.5);}
+   var eq=(e*10+.5)|0,aq=(Math.min(1,al)*30+.5)|0,fk=eq*64+aq,fs=FSC[fk];if(!fs){e=eq/10;fs=FSC[fk]='rgba('+((c[0]+(C.fire[0]-c[0])*e)|0)+','+((c[1]+(C.fire[1]-c[1])*e)|0)+','+((c[2]+(C.fire[2]-c[2])*e)|0)+','+(aq/30).toFixed(3)+')';}ctx.fillStyle=fs;ctx.fillRect(q[0]-sz/2,q[1]-sz/2,sz+e*1.5,sz+e*1.5);}
   if(C.mesh){ctx.lineWidth=.6;for(var a=0;a<PLX.length;a++){var A=proj(PLX[a][0],PLX[a][1],PLX[a][2]);for(var b=a+1;b<PLX.length;b++){var dd=Math.hypot(PLX[a][0]-PLX[b][0],PLX[a][1]-PLX[b][1],PLX[a][2]-PLX[b][2]);if(dd<.55){var B=proj(PLX[b][0],PLX[b][1],PLX[b][2]);ctx.strokeStyle='rgba(120,230,255,'+(.3*(1-dd/.55)).toFixed(2)+')';ctx.beginPath();ctx.moveTo(A[0],A[1]);ctx.lineTo(B[0],B[1]);ctx.stroke();}}ctx.fillStyle='rgba(170,240,255,.9)';ctx.beginPath();ctx.arc(A[0],A[1],1.5*A[3],0,6.283);ctx.fill();}}
   F.forEach(function(f){var k=Math.floor(f.t);ctx.lineWidth=1.5;for(var j=Math.max(0,k-4);j<Math.min(k+1,f.p.length-1);j++){var A=proj(P[f.p[j]].x,P[f.p[j]].y,P[f.p[j]].z),B=proj(P[f.p[j+1]].x,P[f.p[j+1]].y,P[f.p[j+1]].z),o=1-(k-j)/5;ctx.strokeStyle=C.glow+(o*.85).toFixed(2)+')';ctx.beginPath();ctx.moveTo(A[0],A[1]);ctx.lineTo(B[0],B[1]);ctx.stroke();}});
   heads.forEach(function(H0){var q=proj(H0[0],H0[1],H0[2]),big=H0[3]>.013,r=(big?Math.sqrt(H0[3])*S*.28:S*.034)*q[3];if(r<1)return;var g=ctx.createRadialGradient(q[0],q[1],0,q[0],q[1],r);g.addColorStop(0,'rgba(255,255,255,.95)');g.addColorStop(.22,(big?C.flare:C.glow)+'.75)');g.addColorStop(1,(big?C.flare:C.glow)+'0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(q[0],q[1],r,0,6.283);ctx.fill();});
@@ -82,7 +82,7 @@ var CFG={
  var RCTX=ctx;function cacheHead(){HB=document.createElement('canvas');HF=document.createElement('canvas');HB.width=HF.width=cv.width;HB.height=HF.height=cv.height;var b=HB.getContext('2d'),f=HF.getContext('2d');b.scale(dpr,dpr);f.scale(dpr,dpr);ctx=b;drawHeadBack();ctx=f;drawHeadFront();ctx=RCTX;}
  function draw(t){ctx.clearRect(0,0,W,Hh);if(C.bokeh)bokeh(t);if(STR.length)strands(t);if(C.cells)cells(t);if(C.head){if(!HB)cacheHead();ctx.drawImage(HB,0,0,W,Hh);ctx.save();headPath();ctx.clip();brain(t);ctx.restore();ctx.drawImage(HF,0,0,W,Hh);}else brain(t);}
  for(var i=0;i<C.pulse;i++)spawn();
- function step(t){if(vis&&!document.hidden&&t-last>33){var dt=Math.min(3,(t-last)/33);last=t;if(C.spin)ang+=.0105*dt;else ang=C.sway*Math.sin(t/5600+ph);
+ function step(t){if(vis&&!document.hidden&&t-last>40){var dt=Math.min(3,(t-last)/33);last=t;if(C.spin)ang+=.0105*dt;else ang=C.sway*Math.sin(t/5600+ph);
    F.forEach(function(f){f.t+=f.sp*dt;});F=F.filter(function(f){return f.t<f.p.length-1;});while(F.length<C.pulse)spawn();
    FL.forEach(function(fl){fl.t+=.033*dt;});FL=FL.filter(function(fl){return fl.t<fl.d;});while(FL.length<9)flare();draw(t);}requestAnimationFrame(step);}
  if(RM){ang=.5;draw(0);}else requestAnimationFrame(step);
@@ -90,5 +90,10 @@ var CFG={
  function touch(e){if(e.target.closest&&e.target.closest('a,button'))return;var r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,best=null,bd=1e9;for(var i=0;i<G.idx.length;i++){var p=P[G.idx[i]],q=proj(p.x,p.y,p.z),d=(q[0]-x)*(q[0]-x)+(q[1]-y)*(q[1]-y);if(d<bd){bd=d;best=G.idx[i];}}if(best==null||bd>150*150)return;FL.push({i:best,t:0,d:.9,s:1.6});spawn(best);spawn(best);var nb=G.nb[best]||[];for(var k=0;k<Math.min(3,nb.length);k++)FL.push({i:nb[k],t:0,d:.7,s:1});}
  var lastT=0;sec.addEventListener('pointerdown',touch);sec.addEventListener('pointermove',function(e){if(e.pointerType==='mouse'&&!e.buttons&&Math.random()>.35)return;var n=performance.now();if(n-lastT<90)return;lastT=n;touch(e);},{passive:true});
  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(size,200);});
-});
+}
+/* Lazy boot: the brain is below the fold on every page it appears on, so it is built only when it is about to scroll into view. Keeps its setup cost out of the initial load entirely. */
+(function(){var cvs=[].slice.call(document.querySelectorAll('canvas[data-brain]'));if(!cvs.length)return;
+ if(!('IntersectionObserver' in window)){cvs.forEach(BOOT);return;}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);BOOT(e.target);}});},{rootMargin:'520px 0px'});
+ cvs.forEach(function(c){io.observe(c);});})();
 })();

@@ -1,6 +1,12 @@
 /*!
 ================================================================================
-  IRIS — Eye To Ad Media Growth Assistant · v7.0
+  IRIS — Eye To Ad Media Growth Assistant · v8.0
+  v8.0 (Sept 28 2026): page-aware openers and proactive lines for every page type
+  (services, industries, cities, blog topics), never repeated within a session;
+  balloon waits for a scroll and never appears while the launcher is hidden;
+  3s gap after the mascot; takes over from the /eta-site.js orb stub; new KB
+  entries: what-you-get, assets, loyalty bonus, lead gen, AI marketing, Denver
+  marketing, our work.
   v7.0 (Sept 11 2026): CRYSTAL ORB launcher — before the first open the
   launcher is a glowing orb labelled "Meet the marketing wizard"; one click
   bursts it in a puff and Iris arrives, then the panel opens. Proactive bubble
@@ -1403,7 +1409,7 @@ var INTENTS = [];   // action routes
 KB.push(
 {id:'about', fam:'core',
  k:['who are you guys','eye to ad media','eyetoad','your agency','about the company','about the agency','tell me about you','tell me about your company','what is eye to ad','your company','who is this company','about you guys'],
- a:"Short version: we're a Denver-born growth agency that's mildly obsessed with conversions. 🎯\n\nEye To Ad Media — founded 2012 by Zach Wennstedt. BBB Accredited with an A+ rating, and " + CFG.REVIEWS + ". Powered by our parent company, Search Converts LLC.\n\n📍 " + CFG.ADDRESS + "\n🌎 US-based, serving clients across the United States, Canada and worldwide\n\nThe belief that drives everything: all the marketing in the world is pointless without conversions. We don't celebrate rankings — we celebrate your phone ringing.\n\nWe're not perfect. But we genuinely care about growing your business.",
+ a:"Short version: we're a Denver-born growth agency that's mildly obsessed with conversions. 🎯\n\nEye To Ad Media — founded 2012 by Zach Wennstedt. BBB Accredited with an A+ rating, and " + CFG.REVIEWS + ". \n\n📍 " + CFG.ADDRESS + "\n🌎 US-based, serving clients across the United States, Canada and worldwide\n\nThe belief that drives everything: all the marketing in the world is pointless without conversions. We don't celebrate rankings — we celebrate your phone ringing.\n\nWe're not perfect. But we genuinely care about growing your business.",
  c:['What do you do?','Why you over another agency?','*Free growth audit|i_audit','Talk to a human']},
 
 {id:'founder', fam:'core',
@@ -1452,9 +1458,9 @@ KB.push(
  c:['*Free growth audit|i_audit','Talk to a human','Why you over another agency?']},
 
 {id:'searchconverts', fam:'core',
- k:['search converts','searchconverts','parent company','related companies','other brands','sister company'],
- a:"Good eye. 👀\n\nEye To Ad Media is powered by our parent company, Search Converts LLC. Same team, same standards — Search Converts is the broader growth-systems arm, Eye To Ad Media is the brand most clients work with day to day.\n\nThe name isn't an accident, by the way. Search that converts. That's the entire thesis.",
- c:['About the agency','Our services','*Free growth audit|i_audit']},
+ k:['search converts','searchconverts','related companies','other brands','sister company','web design company','who builds your websites','video production','copywriting','logo design'],
+ a:"Good eye. \uD83D\uDC40\n\nEye To Ad Media is the search side: SEO, AI search, Google Maps, generative engine optimization and the agentic layer that gets a business chosen by AI.\n\nFor everything past search \u2014 web design, apps, chatbots, video, copywriting, branding and paid campaigns \u2014 the team works through **Search Converts**. Same people, same standard, one plan.\n\nExplore it at **searchconverts.com**.",
+ c:['What do you do?|services','Custom websites|website','*Free growth audit|i_audit']},
 
 {id:'services', fam:'core',
  k:['services','what do you offer','what do you do','full list','everything you do','full menu','capabilities','what can you help with','what can you do','list of services','all services','offerings'],
@@ -1969,6 +1975,45 @@ KB.push(
  k:['just do social media','social media is enough','instagram is enough','facebook is enough','only social','dont need a website social'],
  a:"Social is genuinely useful. It's just a rented audience on borrowed land. 📱\n\nWhat social does well: discovery, personality, community, visual proof, and staying present with people who already know you.\n\nWhat it does badly: capturing people at the moment of need. Nobody scrolling Instagram suddenly requires an emergency plumber. When they do, they search.\n\nAnd the structural risk: organic reach is set by a platform that can change it tomorrow, has done repeatedly, and owes you nothing. An account with 8,000 followers can reach a few hundred of them.\n\nThe combination that works: social for presence and personality, search for intent, and a website you own where both of them land.",
  c:['Social ads|socialads','SEO explained|seo','*Free growth audit|i_audit']}
+);
+
+
+/* ══════════ KB: WHAT YOU GET, ASSETS & LOYALTY (v8, Sept 28 2026) ══════════ */
+KB.push(
+{id:'whatyouget', fam:'core', w:1.1,
+ k:['what do i get','what is included','whats included','what do you actually do','deliverables','what will you do for me','itemized','line items','list of services included','what am i paying for','scope of work','what does the campaign include'],
+ a:"Fair question, and here's the honest shape of it. \uD83D\uDCD0\n\nEvery campaign works the same seven areas: **technical foundation, content, local & maps, authority & mentions, AI visibility, conversion, and reporting.** More budget doesn't unlock a secret eighth area \u2014 it mostly means more of the same work, done wider and faster. Larger campaigns do add a few things smaller ones can't carry.\n\nWhat we don't do is hand out a deliverables spreadsheet \u2014 '3 links a month, 4 schema a month.' Some of the method is proprietary, and search changes constantly, so strategy has to be able to change without notice.\n\nThe page that walks through it on a sliding scale: [What You Get](/what-you-get/)",
+ c:['Pricing|pricing','How do you report?|reporting','*Free growth audit|i_audit']},
+
+{id:'assets', fam:'core',
+ k:['your tools','your network','own websites','other sites you own','press release','press releases','pr distribution','business directory','directory listing','usabusinesssearch','distributepressreleases','pressreleaseforbusiness','advertisingforcontractors','restaurantsseo','what tools do you have','citations'],
+ a:"We own a stack of properties most agencies would have to rent. \uD83E\uDDF0\n\n\u2022 **Press release distribution** \u2014 distributepressreleases.com pushes a release to every open channel (IndexNow, feeds, podcast feeds, open social) with a public record of where it landed.\n\u2022 **A machine-readable newswire** \u2014 pressreleaseforbusiness.com publishes releases with structured markup so AI systems can quote them.\n\u2022 **A national business directory** \u2014 usabusinesssearch.com, free to list, no pay-to-rank.\n\u2022 **Vertical networks** \u2014 advertisingforcontractors.com for the trades and restaurantsseo.com for restaurants.\n\u2022 **Local buy/sell/trade groups** with over 200,000 members.\n\nClients get put through these as part of the work. It's one reason the same budget goes further here.",
+ c:['What you get|whatyouget','Local SEO|localseo','*Free growth audit|i_audit']},
+
+{id:'loyalty', fam:'core',
+ k:['free advertising','free marketing','bonus','what do you give away','give away','free stuff for clients','refer a client','referral bonus','above and beyond','treat my business like your own','loyalty'],
+ a:"Straight answer, because this gets misread. \uD83E\uDD1D\n\nWe go above and beyond for existing clients, and we're known for giving away bonus work \u2014 an extra page, a campaign, a tool \u2014 because clients who get treated like that stay for years and send their friends.\n\n**It is not a sign-up incentive.** Don't join expecting free marketing. Join expecting excellent work.\n\nThe one place it's explicit: refer us a good client (valued over $500/mo) and you'll get something real to help your business grow. The last client who did that got a $10,000 sales-trained chatbot at no charge \u2014 the client they referred got a fully geo-targeted, SEO/AIO-optimized roofing site.",
+ c:['Referral program|referral','What you get|whatyouget','Talk to a human|i_human']},
+
+{id:'leadgen', fam:'core', w:1.05,
+ k:['lead generation','lead gen','generate leads','more leads','get leads','lead generation agency','lead generation company','need leads','buy leads','leads for my business'],
+ a:"Leads are the whole point \u2014 rankings are just how we get there. \uD83D\uDCDE\n\nWe don't sell shared leads or a list. We build the machine you own: a site that gets found on Google, Google Maps and AI search, plus a conversion path that turns the visit into a call. The leads come to you, exclusively, and they keep coming after the invoice stops.\n\nThat's the difference between renting leads and owning the source of them.\n\n[Lead generation, explained](/lead-generation-agency/)",
+ c:['How much?|pricing','Local SEO|localseo','*Free lead audit|i_audit']},
+
+{id:'aimarketing', fam:'core',
+ k:['ai marketing','ai marketing agency','ai agency','use ai for marketing','artificial intelligence marketing','marketing with ai','ai automation marketing','ai agents marketing'],
+ a:"Two different things get called 'AI marketing', and we do both. \uD83E\uDD16\n\n**Being found by AI** \u2014 getting cited in ChatGPT, Perplexity, AI Overviews and AI Mode. That's AIO and GEO.\n\n**Using AI to market** \u2014 sales-trained chatbots on your site, agentic follow-up, content systems, and research at a scale a human team can't match.\n\nWhat we won't do is generic AI slop. Everything ships with a human who knows sales reading it first.\n\n[AI marketing agency page](/ai-marketing-agency/)",
+ c:['What is AIO?|aio','AI chatbots|chatbot','*Free AI visibility check|i_audit']},
+
+{id:'denvermarketing', fam:'core',
+ k:['denver marketing','denver marketing agency','denver marketing company','denver advertising agency','marketing agency in denver','advertising agency denver','local marketing agency'],
+ a:"Denver-born, Denver-based, since 2012. \uD83C\uDFD4\uFE0F\n\nWe're a search-first marketing agency: SEO, Google Maps, AI search and conversion. If you need the rest \u2014 creative, video, paid campaigns \u2014 it's all reachable through one plan.\n\nOffice: 1001 Bannock St #660. Call 1-800-481-8638.\n\n[Denver marketing agency](/denver-marketing-agency/)",
+ c:['Denver SEO|services','Our work|ourwork','*Free growth audit|i_audit']},
+
+{id:'ourwork', fam:'core',
+ k:['our work','portfolio','examples','show me your work','sites you built','case studies','proof','results','clients you have','who have you worked with'],
+ a:"Real sites, all live, all clickable. \uD83D\uDDA5\uFE0F\n\nClient work like the Atlanta roofing build (geo-targeted city pages, SEO/AIO/agentic-optimized) and the GLP-1 clinic site, plus our own properties: a 3D VR mall, a browser flight simulator, a national business directory and two press-release platforms.\n\n[See our work](/our-work/) \u00B7 [Case studies](/case-studies/)",
+ c:['Custom websites|website','What you get|whatyouget','*Free growth audit|i_audit']}
 );
 
 /* ══════════ KB: PRICING & FREE WINS ══════════ */
@@ -2642,24 +2687,68 @@ var S = {
 
 /* ── page awareness: Iris opens in context ── */
 var PAGE_MAP = [
-  { m:/\/best-denver-seo-company/i, ctx:"You're on our guide to choosing a Denver SEO company.", id:'why' },
-  { m:/\/local-seo-denver/i,        ctx:"You're reading about local SEO and Google Maps.",         id:'localseo' },
-  { m:/\/aio-seo-system/i,          ctx:"You're on the AIO / AI search page.",                     id:'aio' },
-  { m:/\/generative-engine/i,       ctx:"You're on the GEO page.",                                 id:'geo' },
-  { m:/\/conversion-optimization/i, ctx:"You're on the conversion optimization page.",             id:'cro' },
-  { m:/\/denver-seo-pricing/i,      ctx:"You're on the pricing page.",                             id:'pricing' },
-  { m:/\/free-seo-audit/i,          ctx:"You're on the free audit page.",                          id:'i_audit' },
-  { m:/\/marketing-subscription/i,  ctx:"You're on the VIP Marketing Subscription page.",          id:'pricing' },
-  { m:/\/(contractor|roofing|hvac)-seo/i, ctx:"You're on a home services page.",                   id:'v_home' },
-  { m:/\/dentist-seo/i,             ctx:"You're on the dental marketing page.",                    id:'v_dental' },
-  { m:/\/law-firm-seo/i,            ctx:"You're on the legal marketing page.",                     id:'v_legal' },
-  { m:/\/med-spa-seo/i,             ctx:"You're on the med spa marketing page.",                   id:'v_medspa' },
-  { m:/\/real-estate-marketing/i,   ctx:"You're on the real estate marketing page.",               id:'v_realestate' },
-  { m:/\/fitness-marketing/i,       ctx:"You're on the fitness marketing page.",                   id:'v_fitness' },
-  { m:/\/locations/i,               ctx:"You're browsing our service locations.",                  id:'servicearea' },
-  { m:/\/about/i,                   ctx:"You're on the about page.",                               id:'about' },
-  { m:/\/contact/i,                 ctx:"You're on the contact page.",                             id:'contact' }
+  { m:/^\/(index\.html)?$/i, id:'services', ctx:"You're on the home page.", open:["Most people land here from a Denver SEO search. If that's you, tell me what you sell and I'll say what I'd look at first.","Two ways to use me: ask anything about getting found, or tell me your website and I'll tell you what I'd check."], bub:["Denver businesses that rank on Google <b>and</b> get cited by AI don't wait for the phone. Want to see where yours stands?","Tell me your website and I'll say where it's <b>leaking customers</b> \u2014 no email, no pitch.","Ranking is step one. <b>Getting the call</b> is the job. Want a quick read on both?"] },
+  { m:/\/what-you-get/i, id:'whatyouget', ctx:"You're on What You Get.", open:["This page is the honest version of 'what's included' \u2014 a scale, not a spreadsheet. Ask me about any of the seven areas.","If you're weighing budgets, tell me the market and I'll say where on the scale most businesses like yours start."], bub:["More budget mostly buys <b>more of the same work, done wider</b>. Want me to explain where you'd start?","Curious what 'proprietary' means without the mystery? Ask me. I'll be straight."] },
+  { m:/\/lead-generation-agency/i, id:'leadgen', ctx:"You're on the lead generation page.", open:["The short version: we build the lead source you own instead of renting leads. Ask me how that works for your trade.","Tell me what a lead is worth to you and I'll do the math on what you're leaving on the table."], bub:["Rented leads stop when you stop paying. <b>Owned</b> ones don't. Want the difference explained for your business?","What's one new customer worth to you? Tell me and I'll show you the <b>math</b>."] },
+  { m:/\/ai-marketing-agency/i, id:'aimarketing', ctx:"You're on the AI marketing page.", open:["Two halves here: being found by AI, and using AI to market. Ask about either.","Want to know if ChatGPT would recommend you today? Give me your business type and city."], bub:["Ask ChatGPT for a business like yours in your city. <b>Did you come up?</b> If not, I can explain why.","AI search runs on <b>signals</b>, not luck. Want to see which ones you're missing?"] },
+  { m:/\/denver-marketing-agency/i, id:'denvermarketing', ctx:"You're on the Denver marketing agency page.", open:["Denver-based since 2012. Tell me your neighborhood and trade and I'll say how competitive your search is.","Ask me anything about marketing a Denver business \u2014 I'll keep it plain."], bub:["Denver is one of the <b>hardest local markets</b> in Colorado. Want to know why, and what works anyway?","Tell me your trade and neighborhood. I'll tell you who you're actually competing with."] },
+  { m:/\/denver-seo-agency/i, id:'why', ctx:"You're on the Denver SEO agency page.", open:["Founder-led, no handoffs \u2014 that's the pitch here. Ask me what that changes in practice.","Comparing Denver SEO agencies? Ask me the questions you'd ask any of them."], bub:["Comparing agencies? Ask me the <b>seven questions</b> that separate real SEO from a monthly invoice.","No account managers here \u2014 the founder works your account. Want to know what that <b>changes</b>?"] },
+  { m:/\/best-denver-seo-company/i, id:'why', ctx:"You're on our guide to choosing a Denver SEO company.", open:["This is the guide to choosing well. Ask me to run any of the tests against a company you're considering."], bub:["Seven tests, any company. Want me to walk you through the <b>first one</b> right now?"] },
+  { m:/\/denver-seo-services/i, id:'seo', ctx:"You're reading about Denver SEO services.", open:["Ask me what a Denver campaign actually involves for your trade, or what it costs."], bub:["What SEO includes depends on your <b>market</b>. Tell me yours and I'll be specific."] },
+  { m:/\/denver-seo-pricing|\/marketing-subscription|\/vip-marketing/i, id:'pricing', ctx:"You're on a pricing page.", open:["Pricing questions are welcome here \u2014 ask me anything and I'll give you real ranges."], bub:["Want real ranges instead of 'it depends'? Ask me for <b>pricing</b>."] },
+  { m:/\/local-seo/i, id:'localseo', ctx:"You're reading about local SEO and Google Maps.", open:["Ask me about the map pack \u2014 it's the fastest lever a local business has."], bub:["The map pack moves faster than organic. Want the <b>30-60 day</b> version?","Google Business Profile is free and it's the biggest local lever. Want a <b>checklist</b>?"] },
+  { m:/\/seo-systems|\/services\//i, id:'services', ctx:"You're on our services page.", open:["Ask me which service fits your situation \u2014 I'll tell you straight, including if it's not SEO."], bub:["Not sure which service you need? Tell me the <b>problem</b>, I'll name the fix."] },
+  { m:/\/aio-seo-system/i, id:'aio', ctx:"You're on the AI SEO page.", open:["Ask me how AI Overviews and AI Mode choose who to cite."], bub:["AI Overviews cite sources that are <b>clear and verifiable</b>. Want to know if yours qualifies?"] },
+  { m:/\/generative-engine/i, id:'geo', ctx:"You're on the GEO page.", open:["Ask me what generative engine optimization actually changes on a page."], bub:["ChatGPT doesn't rank pages \u2014 it <b>quotes</b> them. Want to know what makes a page quotable?"] },
+  { m:/\/conversion-optimization/i, id:'cro', ctx:"You're on the conversion optimization page.", open:["Traffic but no calls? That's my favorite problem. Tell me your site."], bub:["Traffic but no calls is a <b>conversion</b> problem, not a traffic one. Want a quick read?"] },
+  { m:/\/free-seo-audit/i, id:'i_audit', ctx:"You're on the free audit page.", open:["Drop your website here and I'll get the audit started."], bub:["The audit is free and you keep it. Want me to <b>start it</b>?"] },
+  { m:/\/free-seo-tools/i, id:'technical', ctx:"You're on the free tools page.", open:["Ask me how to read what the tools show you."], bub:["Ran a tool and not sure what the result means? <b>Ask me.</b>"] },
+  { m:/\/custom-website-design|\/law-firm-website-design|\/ecommerce-seo/i, id:'website', ctx:"You're on a website design page.", open:["Ask me about custom builds, the $99/mo lease, or whether you even need a new site."], bub:["A site that isn't found is worthless. One that doesn't <b>convert</b> is worse. Want a quick verdict on yours?"] },
+  { m:/\/ai-chatbot-for-business/i, id:'chatbot', ctx:"You're on the AI chatbot page.", open:["You're talking to one. Ask me what a sales-trained bot does on your site."], bub:["You're talking to a sales-trained bot right now. Want one that knows <b>your</b> business?"] },
+  { m:/\/our-work|\/case-studies/i, id:'ourwork', ctx:"You're looking at our work.", open:["Every site here is live. Ask me what was built and why."], bub:["Every site here is <b>live</b> \u2014 open them on your phone. Want to know what one like it would cost?"] },
+  { m:/\/business-growth-accelerator|\/grow-my-business/i, id:'growth', ctx:"You're on a growth tool page.", open:["Ask me what's actually holding your growth back \u2014 it's rarely 'more traffic'."], bub:["More leads won't fix a <b>leaky funnel</b>. Want to find the real constraint?"] },
+  { m:/\/creative-think-tank|\/ad-lab/i, id:'growth', ctx:"You're in the Ad Lab.", open:["Ask me about testing ideas before spending money on them."], bub:["Find out what the competition does, then do something <b>different and better</b>. Want an idea?"] },
+  { m:/\/careers/i, id:'contact', ctx:"You're on the careers page.", open:["Interested in sales? Ask me what the role actually looks like."], bub:["Sales is a craft here, not a script. Want to know what the <b>role</b> is like?"] },
+  { m:/\/(contractor|roofing|hvac|plumber|electrician|landscaping|painting)/i, id:'v_home', ctx:"You're on a home services page.", open:["Trades are our home turf \u2014 the founder ran remodeling sales teams. Ask me anything."], bub:["Your best competitor isn't better. They're <b>easier to find</b>. Want to close that gap?","What's a booked job worth to you? Tell me and I'll show you the <b>math</b>."] },
+  { m:/\/(dentist|dermatology|med-spa|chiropractor|veterinarian|fitness)/i, id:'v_health', ctx:"You're on a health & wellness marketing page.", open:["Ask me about filling the schedule with the right patients, not just more of them."], bub:["Full schedule, thin margin? That's a <b>mix</b> problem. Want to see how it's fixed?","Patients pick from the map pack. Want to know what puts you <b>in it</b>?"] },
+  { m:/\/(law-firm|personal-injury)/i, id:'v_legal', ctx:"You're on a legal marketing page.", open:["Ask me how firms that can't outspend still win the consultation."], bub:["You can't outspend the big firms. You can <b>out-answer</b> them. Want to see how?"] },
+  { m:/\/auto-repair/i, id:'v_auto', ctx:"You're on the auto repair marketing page.", open:["Ask me about filling bays, not just ranking."], bub:["Empty bays are a search problem before they're a service problem. Want the <b>fix</b>?"] },
+  { m:/\/real-estate/i, id:'v_realestate', ctx:"You're on the real estate marketing page.", open:["Ask me how agents get found before the portals do."], bub:["Every agent posts the same feed. Want to be the one the search <b>finds</b>?"] },
+  { m:/\/restaurant/i, id:'v_restaurant', ctx:"You're on the restaurant marketing page.", open:["Ask me about getting booked when the assistant, not the diner, picks the table."], bub:["AI assistants now book tables. Want to know if yours is <b>bookable</b>?"] },
+  { m:/\/industries/i, id:'services', ctx:"You're browsing industries.", open:["Tell me your industry and I'll point you at the right page."], bub:["17 industries, 17 different plans. Which one is <b>yours</b>?"] },
+  { m:/\/locations\/([a-z-]+)-seo/i, id:'servicearea', ctx:"You're on a city page.", open:["Ask me anything about ranking in {city} \u2014 I'll keep it specific to that market."], bub:["Ranking in <b>{city}</b> is its own game. Want to know what changes there?","Tell me your trade and I'll say how competitive {city} is for it."] },
+  { m:/\/locations/i, id:'servicearea', ctx:"You're browsing our service areas.", open:["Ask me about any city on the map."], bub:["24 markets, each with its own plan. Want to know about <b>yours</b>?"] },
+  { m:/\/blog\/.*(cost|pricing)/i, id:'pricing', ctx:"You're reading about SEO cost.", open:["Reading about cost? Ask me for real ranges."], bub:["Reading about cost? Ask me for <b>real ranges</b>, not a form."] },
+  { m:/\/blog\/.*(ai|chatgpt|entity|agents)/i, id:'aio', ctx:"You're reading about AI search.", open:["Ask me whether AI search is recommending you today."], bub:["Would ChatGPT recommend you today? Give me your trade and city and I'll <b>tell you</b>."] },
+  { m:/\/blog\/.*(maps|business-profile|local-seo|reviews)/i, id:'localseo', ctx:"You're reading about local search.", open:["Ask me about the map pack or your Business Profile."], bub:["The map pack is the fastest local lever. Want the <b>checklist</b>?"] },
+  { m:/\/blog\/.*(speed|vitals|rebuild|website|conversion|calls)/i, id:'cro', ctx:"You're reading about websites and conversion.", open:["Ask me whether your site needs fixing or rebuilding."], bub:["Fix it or rebuild it? Tell me the site and I'll give you an <b>honest test</b>."] },
+  { m:/\/blog\/.*(lead|response|constraint|numbers)/i, id:'growth', ctx:"You're reading about leads and growth.", open:["Ask me what's actually holding growth back."], bub:["The first hour decides who gets the customer. Want to know your <b>response time</b> fix?"] },
+  { m:/\/blog/i, id:'services', ctx:"You're reading the blog.", open:["Ask me anything the article raised \u2014 I'll keep it plain."], bub:["Reading something useful? Ask me how it applies to <b>your</b> business."] },
+  { m:/\/about/i, id:'about', ctx:"You're on the about page.", open:["Ask me about the founder, the story, or why the agency exists."], bub:["Founded 2012 by someone who got <b>burned by agencies</b> first. Want the short version?"] },
+  { m:/\/contact/i, id:'contact', ctx:"You're on the contact page.", open:["Fastest path is the phone: 1-800-481-8638. Or tell me here."], bub:["Fastest answer is a call: <b>1-800-481-8638</b>. Or tell me here."] }
 ];
+var GEN_BUB = [
+  "Google drops <b>53%</b> of mobile visitors before three seconds. Want to know where yours stands?",
+  "Tell me your website and I'll show you where it's <b>leaking customers</b>.",
+  "Ranked, cited by AI, and <b>converting</b> \u2014 want a quick read on all three?",
+  "What's one new customer worth to you? Tell me and I'll do the <b>math</b>.",
+  "Not sure what you need? Tell me the <b>problem</b> and I'll name the fix."
+];
+var SAID_KEY = 'irisSaid';
+function saidList(){ try { return JSON.parse(sessionStorage.getItem(SAID_KEY) || '[]'); } catch (e) { return []; } }
+function pickFresh(pool){
+  if (!pool || !pool.length) return '';
+  var said = saidList(), fresh = pool.filter(function(t){ return said.indexOf(t) < 0; });
+  var t = (fresh.length ? fresh : pool)[Math.floor(Math.random() * (fresh.length ? fresh : pool).length)];
+  try { said.push(t); sessionStorage.setItem(SAID_KEY, JSON.stringify(said.slice(-60))); } catch (e) {}
+  return t;
+}
+function cityFromPath(){
+  var m = location.pathname.match(/\/locations\/([a-z-]+?)(?:-seo)?\/?$/i);
+  if (!m) return '';
+  return m[1].split('-').map(function(w){ return w.charAt(0).toUpperCase() + w.slice(1); }).join(' ').replace('Northwest Arkansas','Northwest Arkansas');
+}
+function fillCity(t){ return t.replace(/\{city\}/g, cityFromPath() || 'your city'); }
 function pageCtx(){
   var p = location.pathname, i;
   for (i = 0; i < PAGE_MAP.length; i++){ if (PAGE_MAP[i].m.test(p)) return PAGE_MAP[i]; }
@@ -2885,7 +2974,7 @@ function closePanel(){
    this page and she stops waiting. No flags to keep in sync, no per-page
    config — include the file or don't.
    ══════════════════════════════════════════════════════════════════════════ */
-var ORB_SOLO_MS = 2600;   // wait before the orb appears on a page with no mascot
+var ORB_SOLO_MS = 0;       // the page shows a lightweight orb stub before this file loads, so she takes over at once   // wait before the orb appears on a page with no mascot
 var ORB_KEY = 'irisOrbSeen';
 function orbSeen(){
   try { return sessionStorage.getItem(ORB_KEY) === '1'; } catch (e) { return false; }
@@ -2909,19 +2998,26 @@ if (!orbSeen()){
    clear the other. */
 $launch.classList.add('ir-await');
 var relayTries = 0;
+var released = false;
 function releaseLauncher(){
+  if (released) return; released = true;
   $launch.classList.remove('ir-await');
+  try { document.dispatchEvent(new CustomEvent('iris:ready')); } catch (e) {}
+  if (window.__irisAutoOpen){ window.__irisAutoOpen = 0; setTimeout(function(){ revealIris(openPanel); }, 120); }
 }
+var MASCOT_GAP_MS = 3000;  // breathing room between his exit and her arrival
 function waitForMascot(){
+  /* The visitor asked for her (orb stub click): she comes out regardless. */
+  if (window.__irisAutoOpen){ releaseLauncher(); return; }
   /* No mascot script on this page: she is the only one here, so come out. */
   if (!window.__etaMascot){ setTimeout(releaseLauncher, ORB_SOLO_MS); return; }
   /* He is on this page. Wait for his exit, but never wait forever — if
      something goes wrong in his script she still needs to exist. */
-  if (window.__etaDone){ releaseLauncher(); return; }
+  if (window.__etaDone){ setTimeout(releaseLauncher, MASCOT_GAP_MS); return; }
   if (relayTries++ > 120){ releaseLauncher(); return; }   // ~60s ceiling
   setTimeout(waitForMascot, 500);
 }
-document.addEventListener('eta:done', function(){ releaseLauncher(); });
+document.addEventListener('eta:done', function(){ setTimeout(releaseLauncher, MASCOT_GAP_MS); });
 waitForMascot();
 /* revealIris(then) — burst the orb, land Iris, then run `then`. If the orb was
    already revealed it is a straight pass-through, so every caller can use it
@@ -2972,6 +3068,7 @@ document.addEventListener('keydown', function(e){
 function cornerBusy(){
   try {
     if (document.body.classList.contains('eta-mascot-live')) return true;
+    if ($launch.classList.contains('ir-await')) return true;  // not her turn yet — no balloon without the orb
     if ($launch.classList.contains('ir-gone')) return true;   // hero still on screen
   } catch (e) {}
   return false;
@@ -2980,8 +3077,21 @@ var bubbleTries = 0;
 function tryBubble(){
   if (S.open || S.bubbleShown) return;
   if (cornerBusy() && bubbleTries < 40){ bubbleTries++; setTimeout(tryBubble, 3000); return; }
+  if (!bubbleReady()) { setTimeout(tryBubble, 2500); return; }
   S.bubbleShown = true;
+  var pc = pageCtx(), pool = (pc && pc.bub && pc.bub.length) ? pc.bub.concat(GEN_BUB.slice(0,2)) : GEN_BUB;
+  var txt = document.querySelector('#ir-bubble .ir-bub-txt');
+  if (txt) txt.innerHTML = fillCity(pickFresh(pool));
   $bubble.classList.add('ir-show');
+}
+/* The bubble waits for two things: the base delay, and the visitor having
+   actually scrolled a little (or a long fallback). A balloon that opens over
+   the hero before anyone has moved is noise, not help. */
+var bubbleT0 = Date.now();
+function bubbleReady(){
+  var sc = (window.scrollY || 0), dh = Math.max(1, (document.documentElement.scrollHeight || 1) - window.innerHeight);
+  var scrolled = sc > 280 || sc / dh > 0.15;
+  return scrolled || (Date.now() - bubbleT0) > 70000;
 }
 setTimeout(tryBubble, CFG.BUBBLE_MS);
 setTimeout(function(){ if (!S.open) paintBadge(1); }, CFG.BADGE_MS);
@@ -2995,8 +3105,8 @@ function greet(){
   var ctx = pageCtx();
   var hello = greetByHour() + "! I'm **Iris**, the growth assistant here at Eye To Ad Media. \uD83D\uDC4B";
   var line2 = ctx
-    ? ctx.ctx + " Happy to go deeper on that, or anything else."
-    : "Ask me anything about getting more customers — or tell me what isn't working and I'll tell you straight what I'd look at first.";
+    ? ctx.ctx + " " + fillCity(pickFresh(ctx.open || ["Happy to go deeper on that, or anything else."]))
+    : pickFresh(["Ask me anything about getting more customers — or tell me what isn't working and I'll tell you straight what I'd look at first.","Tell me what you sell and where, and I'll say what I'd look at first.","If the phone isn't ringing enough, tell me the website and I'll tell you why I think that is."]);
   bot(hello, 380).then(function(){
     return bot(line2, 620);
   }).then(function(){
