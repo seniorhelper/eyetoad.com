@@ -296,13 +296,14 @@ var IRIS_CSS = `/* ══ ISOLATION ══ all:initial walls the widget off from
    launcher, so the artwork exists once in the file. ── */
 .ir-stage{display:flex;flex-direction:column;align-items:center;padding:6px 0 14px;
   animation:ir-stage-in .55s cubic-bezier(.34,1.3,.64,1) both}
-.ir-stage-art{width:132px;height:auto;display:block;overflow:visible;
+.ir-stage-art{width:96px;height:auto;display:block;overflow:visible;
   filter:drop-shadow(0 14px 26px rgba(0,0,0,.55))}
 .ir-stage-cap{margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.13em;
   text-transform:uppercase;color:#5d7896}
 @keyframes ir-stage-in{from{opacity:0;transform:translateY(16px) scale(.92)}
   to{opacity:1;transform:none}}
-@media(max-height:640px){.ir-stage-art{width:104px}}
+@media(max-height:640px){.ir-stage-art{width:72px}}
+@media(max-height:560px){.ir-stage{display:none}}
 
 /* ── Iris character animation (namespaced irx-*) ── */
 
@@ -2703,7 +2704,7 @@ var PAGE_MAP = [
   { m:/\/conversion-optimization/i, id:'cro', ctx:"You're on the conversion optimization page.", open:["Traffic but no calls? That's my favorite problem. Tell me your site."], bub:["Traffic but no calls is a <b>conversion</b> problem, not a traffic one. Want a quick read?"] },
   { m:/\/free-seo-audit/i, id:'i_audit', ctx:"You're on the free audit page.", open:["Drop your website here and I'll get the audit started."], bub:["The audit is free and you keep it. Want me to <b>start it</b>?"] },
   { m:/\/free-seo-tools/i, id:'technical', ctx:"You're on the free tools page.", open:["Ask me how to read what the tools show you."], bub:["Ran a tool and not sure what the result means? <b>Ask me.</b>"] },
-  { m:/\/custom-website-design|\/law-firm-website-design|\/ecommerce-seo/i, id:'website', ctx:"You're on a website design page.", open:["Ask me about custom builds, the $99/mo lease, or whether you even need a new site."], bub:["A site that isn't found is worthless. One that doesn't <b>convert</b> is worse. Want a quick verdict on yours?"] },
+  { m:/\/custom-website-design|\/law-firm-website-design|\/ecommerce-seo/i, id:'website', ctx:"You're on a website design page.", open:["Ask me about custom builds, the $99/mo subscribe-to-own program, or whether you even need a new site."], bub:["A site that isn't found is worthless. One that doesn't <b>convert</b> is worse. Want a quick verdict on yours?"] },
   { m:/\/ai-chatbot-for-business/i, id:'chatbot', ctx:"You're on the AI chatbot page.", open:["You're talking to one. Ask me what a sales-trained bot does on your site."], bub:["You're talking to a sales-trained bot right now. Want one that knows <b>your</b> business?"] },
   { m:/\/our-work|\/case-studies/i, id:'ourwork', ctx:"You're looking at our work.", open:["Every site here is live. Ask me what was built and why."], bub:["Every site here is <b>live</b> \u2014 open them on your phone. Want to know what one like it would cost?"] },
   { m:/\/business-growth-accelerator|\/grow-my-business/i, id:'growth', ctx:"You're on a growth tool page.", open:["Ask me what's actually holding your growth back \u2014 it's rarely 'more traffic'."], bub:["More leads won't fix a <b>leaky funnel</b>. Want to find the real constraint?"] },

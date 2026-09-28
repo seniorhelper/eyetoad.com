@@ -130,7 +130,7 @@
  var n=0;(function poll(){if(ready()||n++>240)return;setTimeout(poll,250);})();})();
 
 /* ===== v12: hard guard (etaMascotGuard): on the homepage Iris stays fully hidden until the mascot reports he is done. ===== */
-(function(){if(!document.querySelector('script[src="/mascot.js"]'))return;var n=0;(function g(){var w=document.getElementById('irisw');var done=!!window.__etaDone||n>300;if(w)w.style.display=done?'':'none';if(!done){n++;setTimeout(g,200);}})();})();
+(function(){if(!document.querySelector('script[src="/mascot.js"]'))return;var n=0;(function g(){var w=document.getElementById('irisw');var done=!!window.__etaDone||n>300||!!window.__irisAutoOpen||document.body.classList.contains('ir-panel-open');if(w)w.style.display=done?'':'none';if(!done){n++;setTimeout(g,200);}})();})();
 
 /* ===== v13 (Sept 28 2026): Iris orb stub + lazy loader (etaIrisStub).
    iris.js is 330 KB, so it is not fetched until the visitor moves (scroll, tap,
@@ -148,6 +148,10 @@
   window.__etaLoadIris=load;
   ['pointerdown','scroll','keydown','touchstart'].forEach(function(e){addEventListener(e,load,{once:true,passive:true});});
   setTimeout(load,20000);
+  /* warm the cache so a tap on the stub opens her instantly: a low-priority prefetch after the page is idle */
+  function warm(){if(window.__irisL)return;try{var l=document.createElement('link');l.rel='prefetch';l.as='script';l.href='/iris.js';document.head.appendChild(l);}catch(e){}}
+  function idleWarm(){if('requestIdleCallback' in window)requestIdleCallback(warm,{timeout:7000});else setTimeout(warm,4000);}
+  if(document.readyState==='complete')setTimeout(idleWarm,2500);else window.addEventListener('load',function(){setTimeout(idleWarm,2500);},{once:true});
   var st=document.createElement('style');st.textContent=
    '#ir-stub{position:fixed;z-index:9990;right:22px;bottom:22px;width:92px;height:92px;border:0;padding:0;background:transparent;cursor:pointer;transition:opacity .4s}'+
    '#ir-stub svg{width:100%;height:100%;display:block;overflow:visible}'+

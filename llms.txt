@@ -47,7 +47,7 @@ marketing, and custom static website development.
 - **VIP Marketing Subscription:** $79.99 per month, less when paid annually.
   Cancels anytime. Unlocks member pricing across every service, including
   half price on landing and funnel page builds.
-- **Custom websites:** from $99 per month, structured as a lease with a
+- **Custom websites:** from $99 per month, structured as a subscribe-to-own program with a
   buyout option at 24 to 36 months based on the site's valuation at that
   time. Rates vary with size, complexity and optimization.
 - **Free audit:** no cost, no contract, findings belong to the business
@@ -305,3 +305,20 @@ its own machine-readable fact block:
 - **New guides:** /blog/why-is-my-website-not-showing-up-on-google/,
   /blog/what-does-an-seo-company-do/, /blog/how-to-get-cited-by-chatgpt/,
   /blog/agentic-seo/, /blog/how-to-get-more-leads-for-my-business/
+
+## Added September 28, 2026 (second pass)
+
+- **New city pages:** Las Vegas, Houston, Atlanta, Tampa, Nashville, Kansas City,
+  Minneapolis, Oklahoma City, Tucson, Englewood CO and Golden CO, at
+  https://eyetoad.com/locations/<city>-seo/ (35 cities in 15 states). No local
+  office exists in any of them; work is done from Denver.
+- **New national industry pages:** /medical-marketing-agency/,
+  /pest-control-marketing/, /moving-company-marketing/, /solar-marketing/.
+- **Free SEO tools** now include ten tools plus a DIY-vs-professional cost
+  calculator: https://eyetoad.com/free-seo-tools/
+- **Website programs:** DIY website builder from $5.99/month and WordPress
+  hosting from $12.99/month at buyweburl.com (branded Eye To Ad Media); simple
+  custom sites quoted per project; subscribe-to-own custom-coded sites from
+  $99/month with a 24–36 month buyout option; outright builds $30,000–$100,000.
+- **Client proof:** Roof Solutions, metro Atlanta (bestroofersatlanta.com), a
+  geo-targeted roofing site built in 2026.
