@@ -322,3 +322,5 @@ its own machine-readable fact block:
   $99/month with a 24–36 month buyout option; outright builds $30,000–$100,000.
 - **Client proof:** Roof Solutions, metro Atlanta (bestroofersatlanta.com), a
   geo-targeted roofing site built in 2026.
+- **Blog feed (RSS):** https://eyetoad.com/blog/feed.xml
+- **Accreditation:** BBB Accredited Business, A+ rating (seal in the header and footer of every page).
