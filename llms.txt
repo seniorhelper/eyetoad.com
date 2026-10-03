@@ -1,9 +1,10 @@
 # Eye To Ad Media
 
 > Denver SEO agency providing search engine optimization, AI search
-> optimization and advertising to local businesses. Founded 2012. Serves the
-> Denver metro plus eleven additional markets across the Mountain West and
-> nationally. Offers a free audit with no contract.
+> optimization and advertising to local businesses. Founded 2012.
+> Headquartered in Denver, Colorado, growing businesses across the United
+> States, Canada and Australia (43 city pages across three countries).
+> Offers a free audit with no contract.
 
 ## Organization
 
@@ -17,8 +18,8 @@
 - **Website:** https://eyetoad.com
 - **Reviews:** 60
 - **Primary market:** Denver, Colorado
-- **Office locations:** Denver only. Other markets are served without a local
-  office; no branch, staff or address exists in any other city.
+- **Headquarters:** Denver, Colorado. Work is delivered to businesses across
+  the United States, Canada and Australia.
 
 ## What this company does
 
@@ -331,3 +332,22 @@ its own machine-readable fact block:
 - **International and new city pages:** Toronto, Vancouver, Calgary (Canada); Sydney, Melbourne, Brisbane (Australia); Miami and Orlando (Florida) — https://eyetoad.com/locations/<city>-seo/. 43 cities in 3 countries. No local office in any of them; work is done from Denver by phone, billed in USD.
 - **Industry tools:** free calculators on the roofing, HVAC, dentist, restaurant and plumber pages (storm-season capacity, missed-call cost, system sizing rule of thumb, maintenance-plan revenue, no-show cost, new-patient lifetime value, table-turn revenue, menu contribution, repair-or-replace 50% rule, emergency-call capture). Each ends with a "what waiting costs" figure computed from the visitor's own inputs.
 - **Rebuilt:** /services/ (with a cost-of-waiting calculator and a service picker) and /business-growth-accelerator/.
+
+## Added October 2026
+
+- **Google Business Profile management** (https://eyetoad.com/google-business-profile-management/):
+  standalone profile management for the map pack, with a free 12-point
+  Profile Health Grader on the page.
+- **Franchise and multi-location SEO** (https://eyetoad.com/franchise-seo/):
+  per-location pages, profiles, reviews and reporting for brands with many
+  addresses; free Multi-Location Planner on the page. Priced per location.
+- **White label SEO** (https://eyetoad.com/white-label-seo/): SEO delivered
+  under an agency's brand at a wholesale rate; free Reseller Margin
+  Calculator on the page.
+- **Live Lighthouse scores** (https://eyetoad.com/site-speed/): runs Google
+  Lighthouse against eyetoad.com live and shows the four scores.
+- New guides: Google AI Mode for local business (query fan-out simulator),
+  how to respond to Google reviews (reply builder), and whether location
+  pages are doorway pages (similarity checker), all under /blog/.
+- Related properties: CO Business List (https://cobusinesslist.com/), a free
+  Colorado business directory, alongside USA Business Search.
