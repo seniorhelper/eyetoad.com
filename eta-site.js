@@ -172,7 +172,7 @@
   function load(){if(window.__irisL)return;window.__irisL=1;var s=document.createElement('script');s.src='/iris.js';s.defer=true;document.body.appendChild(s);}
   window.__etaLoadIris=load;
   ['pointerdown','scroll','keydown','touchstart'].forEach(function(e){addEventListener(e,load,{once:true,passive:true});});
-  setTimeout(load,20000);
+  setTimeout(function(){if('requestIdleCallback' in window)requestIdleCallback(load,{timeout:4000});else load();},3000);
   /* warm the cache so a tap on the stub opens her instantly: a low-priority prefetch after the page is idle */
   function warm(){if(window.__irisL)return;try{var l=document.createElement('link');l.rel='prefetch';l.as='script';l.href='/iris.js';document.head.appendChild(l);}catch(e){}}
   function idleWarm(){if('requestIdleCallback' in window)requestIdleCallback(warm,{timeout:7000});else setTimeout(warm,4000);}
