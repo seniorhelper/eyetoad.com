@@ -1694,3 +1694,5 @@ document.querySelectorAll('.gfaq-q').forEach(btn=>{
 })();
 
 
+
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button.gq-link');if(b){location.href='?q='+b.getAttribute('data-q');}});
