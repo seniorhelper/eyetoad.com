@@ -248,6 +248,57 @@
       });
     });
   }
+
+  /* Locations gateway audit form (#loc-form): had no submit handler, so it posted to this page and the lead was lost */
+  var lForm=document.getElementById('loc-form');
+  if(lForm){
+    var llt=document.getElementById('_loadtime_loc');
+    var lErr=document.getElementById('err-loc');
+    var lBtn=document.getElementById('btn-loc');
+    var lLabel=lBtn?lBtn.textContent:'';
+    var lLast=0;
+    if(llt)llt.value=Date.now();
+    function lShow(html){lErr.innerHTML=html;lErr.style.display='block';}
+
+    lForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      lErr.style.display='none';
+
+      if(document.getElementById('_honey_loc').value!=='')return;
+      if(document.getElementById('_decoy_loc').value!=='')return;
+
+      if(Date.now()-parseInt((llt&&llt.value)||'0',10)<4000){lShow('Please take a moment to fill out the form.');return;}
+      if(lLast&&(Date.now()-lLast)<60000){lShow('Please wait a moment before submitting again.');return;}
+      var name=document.getElementById('lf-name').value.trim();
+      if(badName(name)){lShow('Please enter a valid name.');return;}
+      if(!document.getElementById('lf-city').value){lShow('Please choose your city.');return;}
+      if(document.getElementById('lf-website').value.trim().length<4){lShow('Please enter your website address.');return;}
+      if(badPhone(document.getElementById('lf-phone').value)){lShow('Please enter a valid phone number with area code.');return;}
+      if(badEmail(document.getElementById('lf-email').value.trim())){lShow('Please enter a valid email address.');return;}
+
+      lLast=Date.now();
+      lBtn.disabled=true;
+      lBtn.textContent='Sending…';
+      var data=serialize(lForm);
+      delete data._honey; delete data.alt_contact_url;
+      data.page_url=location.href;
+
+      send(lForm,data).then(function(state){
+        var ok='<p role="status" style="margin:0;padding:14px 16px;border-radius:8px;background:#ECFDF3;color:#054F31;border:1px solid #A6F4C5">';
+        if(state==='sent'){
+          lForm.innerHTML=ok+'<strong>Sent.</strong> Thanks '+name.split(' ')[0].replace(/[<>&"]/g,'')+' — we will be in touch within one business day. Need it sooner? Call <a href="tel:18004818638">'+PHONE+'</a>.</p>';
+          return;
+        }
+        if(state==='unsure'){
+          lForm.innerHTML=ok+'<strong>Sent.</strong> We could not get a delivery receipt back from here, so to be safe: if you have not heard from us within one business day, call <a href="tel:18004818638">'+PHONE+'</a>.</p>';
+          return;
+        }
+        lBtn.disabled=false;
+        lBtn.textContent=lLabel;
+        lShow('That did not go through. Please call <a href="tel:18004818638">'+PHONE+'</a>.');
+      });
+    });
+  }
 })();
 
 (function(){
