@@ -98,6 +98,7 @@ not part of the indexed site and should not be read as local offices.
 - [Generative Engine Optimization](https://eyetoad.com/generative-engine-optimization-system/): GEO system
 - [Conversion Optimization](https://eyetoad.com/conversion-optimization/)
 - [AI Agents for Business](https://eyetoad.com/ai-agents-for-business/): custom-coded AI agents for owner-run businesses, free Agent Audit
+- [Free AI Agent Plan](https://eyetoad.com/free-ai-agent-plan/): free 5-step planner that ranks the top 3 AI agents for a business, estimates hours and value returned, and scores readiness (runs in the browser; no signup)
 - [Pricing](https://eyetoad.com/denver-seo-pricing/)
 - [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
 - [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
@@ -130,6 +131,8 @@ Google Business Profile, Slack, Twilio, Shopify, WordPress).
   price after a free 30-minute workflow audit; running costs (hosting and AI
   model usage) are estimated separately with a monthly cap.
 - Page: https://eyetoad.com/ai-agents-for-business/
+- Free planner: https://eyetoad.com/free-ai-agent-plan/ (a plan of what to
+  build and why; it does not include prompts, code or setup steps)
 
 ## Industry pages
 
@@ -207,6 +210,7 @@ Each carries its own researched market data and its own FAQ:
 - [Electrician SEO That Wins the Big Jobs | Eye To Ad Media](https://eyetoad.com/electrician-seo-denver/)
 - [Fitness Marketing That Keeps Members, Not Just Signs Them](https://eyetoad.com/fitness-marketing-denver/)
 - [Franchise SEO & Multi-Location SEO Services](https://eyetoad.com/franchise-seo/)
+- [Free AI Agent Plan for Your Business | Eye To Ad Media](https://eyetoad.com/free-ai-agent-plan/)
 - [Free SEO Audit | Speed, Rankings & Conversion](https://eyetoad.com/free-seo-audit/)
 - [Free SEO Tools | 10 Generators & Checkers, No Signup](https://eyetoad.com/free-seo-tools/)
 - [Generative Engine Optimization | Get Cited by ChatGPT](https://eyetoad.com/generative-engine-optimization-system/)

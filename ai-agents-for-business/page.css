@@ -70,6 +70,13 @@
 .ag-data th,.ag-data td{border-bottom:1px solid #EAECF0;padding:6px 8px;text-align:left}
 .k-sec-ink .ag-data th,.k-sec-ink .ag-data td{border-color:rgba(255,255,255,.15);color:#E2E8F0}
 .ag-send{width:100%;margin-top:4px}
+/* free plan band */
+.ag-planband{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px 20px;align-items:center;margin-top:22px;padding:20px 22px;border-radius:12px;background:#0B1220;color:#E2E8F0}
+.ag-planband svg{color:#FDBA74}
+.ag-planband h3{margin:0 0 4px;color:#fff;font-size:1.1rem}
+.ag-planband p{margin:0;line-height:1.55;font-size:.94rem;color:#CBD5E1;max-width:70ch}
+.ag-planband .k-btn{white-space:nowrap;background:#C2410C}
+@media(max-width:900px){.ag-planband{grid-template-columns:1fr}.ag-planband .k-btn{white-space:normal}}
 /* why now charts */
 .ag-charts{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
 .ag-fig{margin:0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:20px}
