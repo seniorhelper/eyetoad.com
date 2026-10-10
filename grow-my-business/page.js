@@ -1588,12 +1588,17 @@ function postViaIframe(to, data){
     return true;
   }catch(e){ return false; }
 }
+/* forms carry data-u / data-d (never a full address in the HTML); assemble it here */
+function dest(f){ return f.dataset.fs || (f.dataset.u && f.dataset.d ? f.dataset.u + String.fromCharCode(64) + f.dataset.d : _TO); }
+/* AJAX first; the hidden-iframe POST is only a fallback, so a lead is never delivered twice */
 function deliver(to, fd){
-  var fired = postViaIframe(to, fd);
-  if(!window.fetch) return Promise.resolve(fired ? 'unsure' : 'failed');
-  return fetch(ajaxURL(to), {method:'POST', body:fd})
-    .then(function(r){ return r.ok ? 'sent' : (fired ? 'unsure' : 'failed'); })
-    .catch(function(){ return fired ? 'unsure' : 'failed'; });
+  if(!window.fetch) return Promise.resolve(postViaIframe(to, fd) ? 'unsure' : 'failed');
+  return fetch(ajaxURL(to), {method:'POST', headers:{'Accept':'application/json'}, body:fd})
+    .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){
+      if(r.ok && String(j && j.success) === 'true') return 'sent';
+      return postViaIframe(to, fd) ? 'unsure' : 'failed';
+    }); })
+    .catch(function(){ return postViaIframe(to, fd) ? 'unsure' : 'failed'; });
 }
 
 document.addEventListener('submit', function(ev){
@@ -1610,13 +1615,13 @@ document.addEventListener('submit', function(ev){
   if(val('question').trim().length < 8) return fail('Add a sentence or two about what you need.');
 
   btn.disabled = true; btn.textContent = 'Sending...';
-  deliver(f.dataset.fs, new FormData(f)).then(function(state){
+  deliver(dest(f), new FormData(f)).then(function(state){
     if(state === 'sent'){
       f.innerHTML = '<h4>Sent.</h4><p>We have your question and will reply by email, usually the same business day. Check the spam folder if you do not see it.</p>';
       return;
     }
     if(state === 'unsure'){
-      f.innerHTML = '<h4>Sent.</h4><p>Your question is on its way. We cannot get a delivery receipt back from here, so to be safe: if you have not heard from us within one business day, email <a href="mailto:${_TO}">${_TO}</a> or call (720) 249-6588 and mention the answer desk. We will find it.</p>';
+      f.innerHTML = '<h4>Sent.</h4><p>Your question is on its way. We cannot get a delivery receipt back from here, so to be safe: if you have not heard from us within one business day, email <a href="mailto:' + _TO + '">' + _TO + '</a> or call (720) 249-6588 and mention the answer desk. We will find it.</p>';
       return;
     }
     btn.disabled = false; btn.textContent = 'Send my question';
@@ -1645,13 +1650,13 @@ document.querySelectorAll('.cap-form').forEach(f=>{
     fd.append('_captcha','false');
     fd.append('_template','table');
     fd.append('page_url', location.href);
-    deliver(f.dataset.fs, fd).then(function(state){
+    deliver(dest(f), fd).then(function(state){
       if(state === 'sent'){
         f.innerHTML = '<h3 style="color:#fff;margin:0 0 6px">Sent &mdash; thank you.</h3><p style="color:rgba(255,255,255,.82);margin:0">We will be in touch by email, usually the same business day.</p>';
         return;
       }
       if(state === 'unsure'){
-        f.innerHTML = '<h3 style="color:#fff;margin:0 0 6px">Sent.</h3><p style="color:rgba(255,255,255,.82);margin:0">On its way &mdash; though we cannot confirm delivery from here. If you have not heard back within one business day, email ${_TO} or call (720) 249-6588.</p>';
+        f.innerHTML = '<h3 style="color:#fff;margin:0 0 6px">Sent.</h3><p style="color:rgba(255,255,255,.82);margin:0">On its way &mdash; though we cannot confirm delivery from here. If you have not heard back within one business day, email ' + _TO + ' or call (720) 249-6588.</p>';
         return;
       }
       btn.disabled=false; btn.textContent='Send it →';

@@ -199,6 +199,7 @@ if(_bEs)_bEs.addEventListener('click',function(){setLang('es');});
 
     send(form,serialize(form)).then(function(state){
       var first=name.split(' ')[0];
+      var vTo=(form.getAttribute('data-u')||'info')+String.fromCharCode(64)+(form.getAttribute('data-d')||'eyetoad.com');
       if(state==='sent'){
         form.style.display='none';
         show('ok',es()
@@ -216,7 +217,7 @@ if(_bEs)_bEs.addEventListener('click',function(){setLang('es');});
       btn.disabled=false;
       btn.textContent=es()?'Solicitar Mi Sistema NFC →':'Request My NFC System →';
       show('err',es()
-        ?'Eso no se envió, y no vamos a fingir lo contrario. Llama al <a href="tel:18004818638">'+PHONE+'</a> o escribe a <a href="mailto:'+to+'">'+to+'</a>.'
+        ?'Eso no se envió, y no vamos a fingir lo contrario. Llama al <a href="tel:18004818638">'+PHONE+'</a> o escribe a <a href="mailto:'+vTo+'">'+vTo+'</a>.'
         :'That did not go through, and we are not going to pretend otherwise. Please call <a href="tel:18004818638">'+PHONE+'</a>.');
     });
   });

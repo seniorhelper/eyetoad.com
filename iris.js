@@ -58,7 +58,7 @@
   its own version history, its claims policy, and every knowledge-base answer.
   Read those comments before editing anything in it.
 
-  LEADS GO TO: info@eyetoad.com — change LEAD_EMAIL / FS_POST / FS_AJAX in the
+  LEADS GO TO: info (at) eyetoad.com — change LEAD_EMAIL / FS_POST / FS_AJAX in the
   CONFIG block near the top of boot() and nothing else.
 ================================================================================
 */
@@ -1176,9 +1176,9 @@ function boot(){
 
 /* ─────────────── CONFIG — everything you'd ever change lives here ─────────────── */
 var CFG = {
-  LEAD_EMAIL   : 'info@eyetoad.com',              // ← flip to sales@eyetoad.com if you prefer
+  LEAD_EMAIL   : 'info' + String.fromCharCode(64) + 'eyetoad.com',   // ← flip to sales (at) eyetoad.com if you prefer (address assembled so scrapers cannot read it)
   /* THE AJAX ENDPOINT is now the PRIMARY path — it is confirmed active for
-     info@eyetoad.com, and it is the only one that can tell us whether the
+     info (at) eyetoad.com, and it is the only one that can tell us whether the
      lead actually arrived. FS_POST (the regular endpoint, submitted through a
      hidden iframe) is the FALLBACK, used only when the AJAX call fails.
      >>> v5.2 fired BOTH on every send, which delivered every Iris lead to the
@@ -1187,8 +1187,8 @@ var CFG = {
      endpoint first and approve FormSubmit's confirmation email — /ajax/ is
      activated separately, and until it is, every send falls back to the
      honest "could not confirm" state. */
-  FS_AJAX      : 'https://formsubmit.co/ajax/info@eyetoad.com',
-  FS_POST      : 'https://formsubmit.co/info@eyetoad.com',
+  FS_AJAX      : 'https://formsubmit.co/ajax/info' + String.fromCharCode(64) + 'eyetoad.com',
+  FS_POST      : 'https://formsubmit.co/info' + String.fromCharCode(64) + 'eyetoad.com',
   PHONE_MAIN   : '1-800-481-8638',
   PHONE_LOCAL  : '(720) 249-6588',
   WHATSAPP_NUM : '17202496588',
