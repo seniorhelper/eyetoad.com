@@ -97,6 +97,7 @@ not part of the indexed site and should not be read as local offices.
 - [AIO SEO System](https://eyetoad.com/aio-seo-system/): AI search optimization
 - [Generative Engine Optimization](https://eyetoad.com/generative-engine-optimization-system/): GEO system
 - [Conversion Optimization](https://eyetoad.com/conversion-optimization/)
+- [AI Agents for Business](https://eyetoad.com/ai-agents-for-business/): custom-coded AI agents for owner-run businesses, free Agent Audit
 - [Pricing](https://eyetoad.com/denver-seo-pricing/)
 - [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
 - [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
@@ -108,6 +109,27 @@ not part of the indexed site and should not be read as local offices.
 - [Blog](https://eyetoad.com/blog/)
 - [About](https://eyetoad.com/about/)
 - [Contact](https://eyetoad.com/contact/)
+
+## AI agents for business
+
+Eye To Ad Media custom-codes AI agents that take over repetitive business
+tasks: inbox triage and draft replies, lead follow-up, booking and
+reminders, quote drafting, spreadsheet and bookkeeping prep, CRM updates,
+review requests, weekly reporting and document data extraction. Agents are
+connected to tools the business already uses (Gmail/Outlook, Google
+Sheets/Excel, QuickBooks, Square, Stripe, HubSpot, GoHighLevel, Calendly,
+Google Business Profile, Slack, Twilio, Shopify, WordPress).
+
+- Positioning: an agent does not replace the owner or staff; it gives time
+  back. A person approves the decisions that matter (human-in-the-loop).
+- Safety: least-privilege access, an audit log of every action, a kill
+  switch, no training on client data, no patient health information without
+  a signed BAA, human approval on any money movement.
+- Ownership: the client owns the code, prompts and configuration.
+- Pricing: no published agent price yet. Each agent is quoted as one fixed
+  price after a free 30-minute workflow audit; running costs (hosting and AI
+  model usage) are estimated separately with a monthly cap.
+- Page: https://eyetoad.com/ai-agents-for-business/
 
 ## Industry pages
 
@@ -158,6 +180,7 @@ Each carries its own researched market data and its own FAQ:
 - [Accessibility Statement | Eye To Ad Media](https://eyetoad.com/accessibility/)
 - [Ad Lab | Free Branded Marketing Games — Eye To Ad Media](https://eyetoad.com/ad-lab/)
 - [SEO Quest RPG | Free Browser Game — Eye To Ad Media](https://eyetoad.com/ad-lab/rpg/)
+- [AI Agents for Business | Custom-Coded in Denver](https://eyetoad.com/ai-agents-for-business/)
 - [AI Chatbot for Business | Trained on Your Services](https://eyetoad.com/ai-chatbot-for-business/)
 - [AI Marketing Agency | Get Found by AI, Then Use AI](https://eyetoad.com/ai-marketing-agency/)
 - [AI SEO Services | Get Cited in AI Overviews & AI Mode](https://eyetoad.com/aio-seo-system/)
