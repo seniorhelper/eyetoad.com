@@ -1685,12 +1685,12 @@ document.querySelectorAll('.gfaq-q').forEach(btn=>{
     els.forEach(el=>el.classList.add('in'));
     return;
   }
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(en=>{
-      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-    });
-  },{rootMargin:'0px 0px -60px 0px', threshold:.08});
-  els.forEach(el=>io.observe(el));
+  var rvList = Array.prototype.slice.call(els), rvTick = false;
+  function rvCheck(){ rvTick = false; var line = window.innerHeight * 0.92, atEnd = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 4;
+    rvList = rvList.filter(function(el){ if(atEnd || el.getBoundingClientRect().top < line){ el.classList.add('in'); return false; } return true; });
+    if(!rvList.length){ window.removeEventListener('scroll', rvOnScroll); window.removeEventListener('resize', rvOnScroll); } }
+  function rvOnScroll(){ if(!rvTick){ rvTick = true; requestAnimationFrame(rvCheck); } }
+  if(rvList.length){ window.addEventListener('scroll', rvOnScroll, {passive:true}); window.addEventListener('resize', rvOnScroll); rvCheck(); }
 })();
 
 (function(){
