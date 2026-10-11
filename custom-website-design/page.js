@@ -78,7 +78,16 @@
 })();
 
 (function(){
-  var targets=[['#sev','in'],['#fun','in'],['#bro','drop']];
+  var rvCls={sev:'in',fun:'in'};
+  var rvList = Array.prototype.slice.call(document.querySelectorAll('#sev,#fun')), rvTick = false;
+  function rvCheck(){ rvTick = false; var line = window.innerHeight * 0.92, atEnd = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 4;
+    rvList = rvList.filter(function(el){ if(atEnd || el.getBoundingClientRect().top < line){ el.classList.add(rvCls[el.id]); return false; } return true; });
+    if(!rvList.length){ window.removeEventListener('scroll', rvOnScroll); window.removeEventListener('resize', rvOnScroll); } }
+  function rvOnScroll(){ if(!rvTick){ rvTick = true; requestAnimationFrame(rvCheck); } }
+  if(rvList.length){ window.addEventListener('scroll', rvOnScroll, {passive:true}); window.addEventListener('resize', rvOnScroll); rvCheck(); }
+})();
+(function(){
+  var targets=[['#bro','drop']];
   function reveal(el,cls){el.classList.add(cls);}
   targets.forEach(function(t){
     var el=document.querySelector(t[0]);

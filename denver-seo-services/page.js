@@ -69,16 +69,12 @@
 })();
 (function(){
   'use strict';
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
-      });
-    },{rootMargin:'0px 0px -8% 0px',threshold:.05});
-    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-  }else{
-    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
-  }
+  var rvList = Array.prototype.slice.call(document.querySelectorAll('.reveal')), rvTick = false;
+  function rvCheck(){ rvTick = false; var line = window.innerHeight * 0.92, atEnd = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 4;
+    rvList = rvList.filter(function(el){ if(atEnd || el.getBoundingClientRect().top < line){ el.classList.add('in'); return false; } return true; });
+    if(!rvList.length){ window.removeEventListener('scroll', rvOnScroll); window.removeEventListener('resize', rvOnScroll); } }
+  function rvOnScroll(){ if(!rvTick){ rvTick = true; requestAnimationFrame(rvCheck); } }
+  if(rvList.length){ window.addEventListener('scroll', rvOnScroll, {passive:true}); window.addEventListener('resize', rvOnScroll); rvCheck(); }
 
   var bar=document.getElementById('stickybar'),
       audit=document.getElementById('audit'),
