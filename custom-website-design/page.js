@@ -87,7 +87,7 @@
   if(rvList.length){ window.addEventListener('scroll', rvOnScroll, {passive:true}); window.addEventListener('resize', rvOnScroll); rvCheck(); }
 })();
 (function(){
-  var targets=[['#bro','drop']];
+  var targets=[['#bro','dropped']];
   function reveal(el,cls){el.classList.add(cls);}
   targets.forEach(function(t){
     var el=document.querySelector(t[0]);
