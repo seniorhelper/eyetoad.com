@@ -461,3 +461,64 @@
   })(links[i]);}
 })();
 
+
+/* Locations gateway: instant client-side filter (no network). */
+(function(){
+  var input=document.getElementById('locSearch');
+  var wrap=document.getElementById('locWrap');
+  if(!input||!wrap)return;
+  var clear=document.getElementById('locClear');
+  var count=document.getElementById('locCount');
+  var empty=document.getElementById('locEmpty');
+  var reset=document.getElementById('locReset');
+  var chips=[].slice.call(document.querySelectorAll('.lg-chip'));
+  var groups=[].slice.call(wrap.querySelectorAll('.loc-group'));
+  var cards=[].slice.call(wrap.querySelectorAll('.loc-card')).map(function(el){
+    return {el:el,region:el.getAttribute('data-region'),
+      hay:' '+(el.getAttribute('data-s')||'')+' ',
+      words:(el.getAttribute('data-s')||'').split(' '),
+      codes:(el.getAttribute('data-codes')||'').split(' ')};
+  });
+  var known={};
+  cards.forEach(function(c){c.codes.forEach(function(k){if(k)known[k]=1;});});
+  var total=cards.length, region='all', timer=null;
+
+  function norm(s){
+    s=String(s||'').toLowerCase();
+    if(s.normalize)s=s.normalize('NFD').replace(/[̀-ͯ]/g,'');
+    return s.replace(/&/g,' ').replace(/[.'ʻ’]/g,'').replace(/[^a-z0-9 \-]/g,' ').replace(/\s+/g,' ').trim();
+  }
+  function tokMatch(c,t){
+    if(t.length<=3&&known[t])return c.codes.indexOf(t)>-1;
+    if(t.length<3){for(var i=0;i<c.words.length;i++){if(c.words[i].indexOf(t)===0)return true;}return false;}
+    return c.hay.indexOf(t)>-1;
+  }
+  function run(){
+    var q=norm(input.value), toks=q?q.split(' '):[], n=0;
+    cards.forEach(function(c){
+      var ok=(region==='all'||c.region===region);
+      for(var i=0;ok&&i<toks.length;i++){if(!tokMatch(c,toks[i]))ok=false;}
+      c.el.hidden=!ok; if(ok)n++;
+    });
+    groups.forEach(function(g){g.hidden=!g.querySelector('.loc-card:not([hidden])');});
+    clear.hidden=!input.value;
+    empty.hidden=n>0;
+    if(!q&&region==='all')count.innerHTML='<b>'+total+'</b> location pages';
+    else count.innerHTML='<b>'+n+'</b> '+(n===1?'result':'results')+(n===0?' &mdash; see below':'');
+  }
+  function setRegion(r){
+    region=r;
+    chips.forEach(function(b){var on=b.getAttribute('data-chip')===r;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');});
+    run();
+  }
+  input.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,60);});
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&input.value){e.preventDefault();input.value='';run();}
+    if(e.key==='Enter'){e.preventDefault();clearTimeout(timer);run();}
+  });
+  clear.addEventListener('click',function(){input.value='';run();input.focus();});
+  chips.forEach(function(b){b.addEventListener('click',function(){setRegion(b.getAttribute('data-chip'));});});
+  reset.addEventListener('click',function(){input.value='';setRegion('all');input.focus();});
+  try{var q0=new URLSearchParams(location.search).get('q');if(q0)input.value=q0;}catch(e){}
+  run();
+})();

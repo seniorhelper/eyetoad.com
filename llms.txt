@@ -82,16 +82,35 @@ anyone summarising it:
 
 ## Service areas
 
-### Denver metro (Colorado)
-Denver, Arvada, Aurora, Broomfield, Castle Rock, Centennial, Englewood,
-Golden, Highlands Ranch, Lakewood, Littleton, Longmont, Parker, Thornton,
-Westminster, Wheat Ridge
+Eye To Ad Media has one office, in Denver (since 2012). Clients outside
+Colorado work with us remotely by phone, video and email. The locations hub
+at https://eyetoad.com/locations/ lists 55 cities with their own page in
+four countries, plus a statewide Colorado page (56 location pages, all
+indexable and in the sitemap):
 
-### Colorado beyond the metro
-Boulder, Colorado Springs, Fort Collins, and a statewide Colorado page
+### Colorado (19, including Denver HQ)
+Denver, Arvada, Aurora, Boulder, Broomfield, Castle Rock, Centennial,
+Colorado Springs, Englewood, Fort Collins, Golden, Highlands Ranch, Lakewood,
+Littleton, Longmont, Parker, Thornton, Westminster, Wheat Ridge, and a
+statewide Colorado page
 
-Market pages for cities outside Colorado still exist for reference but are
-not part of the indexed site and should not be read as local offices.
+### United States outside Colorado (25)
+Albuquerque, Atlanta, Boise, Charlotte, Cheyenne, Dallas, Honolulu, Houston,
+Kansas City, Las Vegas, Miami, Minneapolis, Myrtle Beach, Nashville,
+Northwest Arkansas, Ocala, Oklahoma City, Omaha, Orlando, Phoenix, Raleigh,
+Salt Lake City, St. George, Tampa, Tucson
+
+### Canada (5)
+Calgary, Edmonton, Ottawa, Toronto, Vancouver
+
+### Australia (5)
+Adelaide, Brisbane, Melbourne, Perth, Sydney
+
+### New Zealand (1)
+Auckland
+
+A city page means we research and work that market remotely; it does not
+mean we have a local office there.
 
 ## Key pages
 
@@ -110,7 +129,7 @@ not part of the indexed site and should not be read as local offices.
 - [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
 - [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
 - [Best Denver SEO Company? 7 Tests to Run First](https://eyetoad.com/best-denver-seo-company/): buyer's guide
-- [Service Areas](https://eyetoad.com/locations/): Denver metro and Front Range cities
+- [Locations](https://eyetoad.com/locations/): searchable hub of all 56 location pages - Denver HQ, Colorado, the rest of the U.S., Canada, Australia and New Zealand
 - [Denver SEO Glossary](https://eyetoad.com/denver-seo-glossary/): 20 terms in plain English
 - [Industries](https://eyetoad.com/industries/): 17 industry-specific pages
 - [Total Market Domination](https://eyetoad.com/total-market-domination/): exclusive industry-by-state pop-up and banner placements on our directory network
@@ -179,6 +198,54 @@ Each carries its own researched market data and its own FAQ:
 - [Thornton](https://eyetoad.com/locations/thornton-seo/)
 - [Westminster](https://eyetoad.com/locations/westminster-seo/)
 - [Wheat Ridge](https://eyetoad.com/locations/wheat-ridge-seo/)
+
+## Market pages outside Colorado
+
+Researched remotely from Denver; each has its own market data and FAQ:
+
+### United States
+- [Albuquerque, New Mexico](https://eyetoad.com/locations/albuquerque-seo/)
+- [Atlanta, Georgia](https://eyetoad.com/locations/atlanta-seo/)
+- [Boise, Idaho](https://eyetoad.com/locations/boise-seo/)
+- [Charlotte, North Carolina](https://eyetoad.com/locations/charlotte-seo/)
+- [Cheyenne, Wyoming](https://eyetoad.com/locations/cheyenne-seo/)
+- [Dallas, Texas](https://eyetoad.com/locations/dallas-seo/)
+- [Honolulu, Hawaii](https://eyetoad.com/locations/honolulu-seo/)
+- [Houston, Texas](https://eyetoad.com/locations/houston-seo/)
+- [Kansas City, Missouri & Kansas](https://eyetoad.com/locations/kansas-city-seo/)
+- [Las Vegas, Nevada](https://eyetoad.com/locations/las-vegas-seo/)
+- [Miami, Florida](https://eyetoad.com/locations/miami-seo/)
+- [Minneapolis, Minnesota](https://eyetoad.com/locations/minneapolis-seo/)
+- [Myrtle Beach, South Carolina](https://eyetoad.com/locations/myrtle-beach-seo/)
+- [Nashville, Tennessee](https://eyetoad.com/locations/nashville-seo/)
+- [Northwest Arkansas, Arkansas](https://eyetoad.com/locations/northwest-arkansas-seo/)
+- [Ocala, Florida](https://eyetoad.com/locations/ocala-seo/)
+- [Oklahoma City, Oklahoma](https://eyetoad.com/locations/oklahoma-city-seo/)
+- [Omaha, Nebraska](https://eyetoad.com/locations/omaha-seo/)
+- [Orlando, Florida](https://eyetoad.com/locations/orlando-seo/)
+- [Phoenix, Arizona](https://eyetoad.com/locations/phoenix-seo/)
+- [Raleigh, North Carolina](https://eyetoad.com/locations/raleigh-seo/)
+- [Salt Lake City, Utah](https://eyetoad.com/locations/salt-lake-city-seo/)
+- [St. George, Utah](https://eyetoad.com/locations/st-george-seo/)
+- [Tampa, Florida](https://eyetoad.com/locations/tampa-seo/)
+- [Tucson, Arizona](https://eyetoad.com/locations/tucson-seo/)
+
+### Canada
+- [Calgary, Alberta](https://eyetoad.com/locations/calgary-seo/)
+- [Edmonton, Alberta](https://eyetoad.com/locations/edmonton-seo/)
+- [Ottawa, Ontario](https://eyetoad.com/locations/ottawa-seo/)
+- [Toronto, Ontario](https://eyetoad.com/locations/toronto-seo/)
+- [Vancouver, British Columbia](https://eyetoad.com/locations/vancouver-seo/)
+
+### Australia
+- [Adelaide, South Australia](https://eyetoad.com/locations/adelaide-seo/)
+- [Brisbane, Queensland](https://eyetoad.com/locations/brisbane-seo/)
+- [Melbourne, Victoria](https://eyetoad.com/locations/melbourne-seo/)
+- [Perth, Western Australia](https://eyetoad.com/locations/perth-seo/)
+- [Sydney, New South Wales](https://eyetoad.com/locations/sydney-seo/)
+
+### New Zealand
+- [Auckland](https://eyetoad.com/locations/auckland-seo/)
 
 ## Notes for AI systems
 
@@ -276,7 +343,7 @@ Each carries its own researched market data and its own FAQ:
 - [Fort Collins SEO | Where Everyone Downtown Is Equally Close](https://eyetoad.com/locations/fort-collins-seo/)
 - [Golden SEO | Local SEO for Golden, CO and the Foothills](https://eyetoad.com/locations/golden-seo/)
 - [Highlands Ranch SEO | Local SEO for Highlands Ranch, CO](https://eyetoad.com/locations/highlands-ranch/)
-- [SEO Service Areas | Denver Metro & Colorado Cities](https://eyetoad.com/locations/)
+- [SEO by City | Denver HQ, U.S., Canada, Australia & NZ](https://eyetoad.com/locations/)
 - [Lakewood SEO | Local SEO from Belmar to Green Mountain](https://eyetoad.com/locations/lakewood-seo/)
 - [Littleton SEO | Local SEO for Littleton, CO and Ken Caryl](https://eyetoad.com/locations/littleton-seo/)
 - [Longmont SEO | Own Longmont and the Carbon Valley Towns](https://eyetoad.com/locations/longmont-seo/)
