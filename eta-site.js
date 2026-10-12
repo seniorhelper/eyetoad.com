@@ -43,6 +43,28 @@
     });
   }
 
+  /* ---------- desktop Services dropdown: hover, focus, click and Esc ---------- */
+  if(!window.__etaDrop){
+    window.__etaDrop=1;
+    [].forEach.call(document.querySelectorAll('.ni-svc'),function(ni){
+      var b=ni.querySelector('.nl-chev');if(!b)return;
+      var set=function(o){
+        ni.classList.toggle('kb-open',o);ni.classList.toggle('is-shut',!o);
+        b.setAttribute('aria-expanded',o?'true':'false');
+      };
+      b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(b.getAttribute('aria-expanded')!=='true');});
+      ni.addEventListener('mouseleave',function(){ni.classList.remove('is-shut');});
+      ni.addEventListener('focusout',function(e){
+        if(!e.relatedTarget||!ni.contains(e.relatedTarget)){ni.classList.remove('kb-open','is-shut');b.setAttribute('aria-expanded','false');}
+      });
+      ni.addEventListener('keydown',function(e){
+        if(e.key==='Escape'){e.stopPropagation();set(false);b.focus();}
+        else if(e.key==='ArrowDown'&&(e.target===b||e.target===ni.querySelector('.nl'))){e.preventDefault();set(true);var f=ni.querySelector('.drop-svc a');if(f)f.focus();}
+      });
+      document.addEventListener('click',function(e){if(!ni.contains(e.target)&&ni.classList.contains('kb-open'))set(false);});
+    });
+  }
+
   /* ---------- email links, assembled at runtime ---------- */
   [].forEach.call(document.querySelectorAll('[data-eml]'),function(a){
     var v=addr();if(!v)return;
