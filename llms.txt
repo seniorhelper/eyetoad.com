@@ -103,7 +103,7 @@ not part of the indexed site and should not be read as local offices.
 - [AIO SEO System](https://eyetoad.com/aio-seo-system/): AI search optimization
 - [Generative Engine Optimization](https://eyetoad.com/generative-engine-optimization-system/): GEO system
 - [Conversion Optimization](https://eyetoad.com/conversion-optimization/)
-- [AI Agents for Business](https://eyetoad.com/ai-agents-for-business/): custom-coded AI agents for owner-run businesses, free Agent Audit
+- [AI Agents for Business](https://eyetoad.com/ai-agents-for-business/): custom-coded AI agents for small businesses, with before-and-after examples (leads answered in under a minute, files sorted, data synced between apps, review requests sent, Monday report drafted); free Agent Audit
 - [Free AI Agent Plan](https://eyetoad.com/free-ai-agent-plan/): free 5-step planner that ranks the top 3 AI agents for a business, estimates hours and value returned, and scores readiness (runs in the browser; no signup)
 - [Pricing](https://eyetoad.com/denver-seo-pricing/)
 - [SEO à la carte](https://eyetoad.com/seo-a-la-carte/): pick foundational onsite SEO, AI search and tracking fixes at $100 a task; drag-and-drop order builder with Authorize.net checkout
@@ -141,6 +141,12 @@ Google Business Profile, Slack, Twilio, Shopify, WordPress).
 - Page: https://eyetoad.com/ai-agents-for-business/
 - Free planner: https://eyetoad.com/free-ai-agent-plan/ (a plan of what to
   build and why; it does not include prompts, code or setup steps)
+- Plain-English definition used on the site: an AI agent is a digital helper
+  that does a repetitive job for you and checks with you before anything
+  important.
+- AI agents for advertising (Google Ads, Meta ads, ad reporting) are covered
+  on the sister site https://aiagentforadvertising.com/, built by Eye To Ad
+  Media.
 
 ## Industry pages
 
@@ -191,7 +197,7 @@ Each carries its own researched market data and its own FAQ:
 - [Accessibility Statement | Eye To Ad Media](https://eyetoad.com/accessibility/)
 - [Ad Lab | Free Branded Marketing Games — Eye To Ad Media](https://eyetoad.com/ad-lab/)
 - [SEO Quest RPG | Free Browser Game — Eye To Ad Media](https://eyetoad.com/ad-lab/rpg/)
-- [AI Agents for Business | Custom-Coded in Denver](https://eyetoad.com/ai-agents-for-business/)
+- [AI Agents for Small Business | Custom-Coded in Denver](https://eyetoad.com/ai-agents-for-business/)
 - [AI Chatbot for Business | Trained on Your Services](https://eyetoad.com/ai-chatbot-for-business/)
 - [AI Marketing Agency | Get Found by AI, Then Use AI](https://eyetoad.com/ai-marketing-agency/)
 - [AI SEO Services | Get Cited in AI Overviews & AI Mode](https://eyetoad.com/aio-seo-system/)
