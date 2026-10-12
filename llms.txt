@@ -44,6 +44,12 @@ marketing, and custom static website development.
   included rather than billed separately.
 - **Build-your-own plans:** from $100 per month for a single focused
   deliverable.
+- **SEO à la carte:** foundational onsite SEO, AI search and tracking fixes
+  at $100 per task, one-time, up to 10 tasks per online order (meta tags,
+  schema, headings, alt text, internal links, llms.txt, FAQ schema, GA4,
+  Search Console, Bing Webmaster Tools and IndexNow). Done 24 to 72 hours
+  after website access. Not advanced SEO, link building or Google Business
+  Profile work.
 - **VIP Marketing Subscription:** $79.99 per month, less when paid annually.
   Cancels anytime. Unlocks member pricing across every service, including
   half price on landing and funnel page builds.
@@ -100,6 +106,7 @@ not part of the indexed site and should not be read as local offices.
 - [AI Agents for Business](https://eyetoad.com/ai-agents-for-business/): custom-coded AI agents for owner-run businesses, free Agent Audit
 - [Free AI Agent Plan](https://eyetoad.com/free-ai-agent-plan/): free 5-step planner that ranks the top 3 AI agents for a business, estimates hours and value returned, and scores readiness (runs in the browser; no signup)
 - [Pricing](https://eyetoad.com/denver-seo-pricing/)
+- [SEO à la carte](https://eyetoad.com/seo-a-la-carte/): pick foundational onsite SEO, AI search and tracking fixes at $100 a task; drag-and-drop order builder with Authorize.net checkout
 - [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
 - [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
 - [Best Denver SEO Company? 7 Tests to Run First](https://eyetoad.com/best-denver-seo-company/): buyer's guide
@@ -206,6 +213,7 @@ Each carries its own researched market data and its own FAQ:
 - [Denver SEO Glossary | 20 Terms in Plain English](https://eyetoad.com/denver-seo-glossary/)
 - [Denver SEO Pricing | What SEO Costs, Real Ranges](https://eyetoad.com/denver-seo-pricing/)
 - [Denver SEO Services | What's Included, Cost, Timeline](https://eyetoad.com/denver-seo-services/)
+- [SEO à la Carte | Foundational SEO Fixes, $100 a Task](https://eyetoad.com/seo-a-la-carte/)
 - [Dermatology Marketing & SEO | Fix the Mix, Not the Hours](https://eyetoad.com/dermatology-seo-denver/)
 - [Ecommerce SEO Agency | Rankings That Keep Selling](https://eyetoad.com/ecommerce-seo/)
 - [Electrician SEO That Wins the Big Jobs | Eye To Ad Media](https://eyetoad.com/electrician-seo-denver/)
