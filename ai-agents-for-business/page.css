@@ -156,3 +156,22 @@
 @media(max-width:900px){.ag-hgrid{grid-template-columns:1fr}.ag-uses,.ag-fleet{grid-template-columns:repeat(2,minmax(0,1fr))}.ag-calc,.ag-audit,.ag-cost2{grid-template-columns:1fr}.ag-charts,.ag-stats{grid-template-columns:1fr}}
 @media(max-width:640px){.ag-uses,.ag-fleet,.ag-steps,.ag-safe{grid-template-columns:1fr}.ag-row{grid-template-columns:1fr}.ag-calc{padding:16px}.ag-task{grid-template-columns:auto minmax(0,1fr) 70px;padding:8px}.k-hero .k-cta .k-btn{width:100%}}
 @media(prefers-reduced-motion:reduce){.ag-chart rect{transition:none}.ag-form textarea.flash{animation:none}}
+/* results-first hero + ads band (2026-10-12) */
+.ag-wins{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px;max-width:60ch}
+.ag-wins li{display:flex;gap:10px;align-items:flex-start;color:#E2E8F0;font-size:1.06rem;line-height:1.5;margin:0;padding:0}
+.ag-wins li::before{content:none}
+.ag-wins svg{flex:none;margin-top:3px}
+.ag-wins b{color:#fff}
+.ag-def1{margin:0 0 20px;color:#CBD5E1;line-height:1.6;max-width:60ch;font-size:1rem}
+.ag-def1 b{color:#FDBA74}
+.ag-call{margin:14px 0 0;color:#CBD5E1;font-size:.95rem}
+.ag-call a{color:#FDBA74;font-weight:700}
+.as-cta .ag-btn-ghost{background:#fff;color:#1D4ED8;border-color:#BFDBFE}
+.as-cta span{color:#475467}
+.ag-ads{display:flex;gap:16px;align-items:flex-start;margin-top:22px;padding:20px 22px;border-radius:12px;background:#0B1220;color:#CBD5E1}
+.ag-ads svg{flex:none;color:#FDBA74;margin-top:2px}
+.ag-ads h3{margin:0 0 6px;color:#fff;font-size:1.1rem;font-weight:800}
+.ag-ads p{margin:0;line-height:1.6}
+.k-sec .ag-ads a{color:#FDBA74;font-weight:700}
+.ag-trust{margin:8px 0 0;color:#94A3B8;font-size:.86rem;font-weight:600;letter-spacing:.01em}
+.ag-trust2{font-weight:700;color:#344054}
