@@ -2,12 +2,11 @@
 (function(){
 var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 var sc=false;window.addEventListener('scroll',function(){var s=(window.scrollY||0)>60;if(s!==sc){sc=s;document.body.classList.toggle('bub-scrolled',s);}},{passive:true});
-/* typed hero line: steady ~19 chars/sec, beats at punctuation, clock-timed */
+/* typed hero line: ~19 chars/sec with beats at punctuation. One class flip per character on a
+   timer; opacity only, so each step is a tiny style change (Oct 13 2026). */
 var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.querySelectorAll('.ch'));
  if(RM){cs.forEach(function(c){c.classList.add('on');});p.classList.add('kw-done');}
- else{var at=[],tt=0;cs.forEach(function(c,i){at.push(tt);tt+=52;if(/[.,]/.test(c.textContent)&&i<cs.length-1)tt+=c.textContent==='.'?320:160;});
-  var start=performance.now()+1300,shown=0;(function tick(now){var el=now-start;while(shown<cs.length&&at[shown]<=el){if(shown>0)cs[shown-1].classList.remove('cur');cs[shown].classList.add('on','cur');shown++;}
-   if(shown<cs.length)requestAnimationFrame(tick);else setTimeout(function(){cs[cs.length-1].classList.remove('cur');p.classList.add('kw-done');},500);})(performance.now());}}
+ else{var i=0;function nx(){if(i>=cs.length){setTimeout(function(){p.classList.add('kw-done');},500);return;}var c=cs[i++];c.classList.add('on');var g=52;if(/[.,]/.test(c.textContent)&&i<cs.length)g+=c.textContent==='.'?320:160;setTimeout(nx,g);}setTimeout(nx,1300);}}
 })();
 /* Homepage hero slider (2026-10-12). Vanilla, no libraries, no IntersectionObserver.
    Slide 1 is the original hero and always loads first. Without JS the slides are a
@@ -144,10 +143,11 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
 
   /* start on slide 1 (or on #hs-N if someone linked straight to a slide) */
   var m=/^#hs-(\d)$/.exec(location.hash||''),i0=m?Math.min(n,Math.max(1,+m[1]))-1:0;
-  track.scrollLeft=x(i0);
+  if(i0)track.scrollLeft=x(i0);
   setState(i0,false);
   if(i0)stop();
   if(stopped){pp.innerHTML=PLAY;pp.setAttribute('aria-label','Start automatic slide show');}
   setLive();
-  checkView();
+  /* first visibility check waits for an idle moment so startup forces no extra layout */
+  if('requestIdleCallback' in window)requestIdleCallback(checkView,{timeout:2500});else setTimeout(checkView,1200);
 })();
