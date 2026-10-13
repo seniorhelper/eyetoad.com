@@ -140,6 +140,7 @@ mean we have a local office there.
 
 ## Our own products
 
+- [NexGen Lead Groups](https://nexgenleadgroups.com/): free referral groups, built by Eye To Ad Media. Smart tech pairs a business with the trades that already talk to its next customer (the Power Pair board scores every pairing); no dues, one seat per trade, Colorado groups forming in Denver Metro.
 - [Vettley](https://vettley.com/): free business signal reports, built by Eye To Ad Media. A searchable directory that checks the public signals a business leaves online (secure website, a site that loads, a real address and phone, how long it has been online) so people can check before they hire. Vettley is our product, not an independent reviewer of Eye To Ad Media; our own listing is at https://www.vettley.com/colorado/denver/marketing/eye-to-ad-media/
 - Other live builds and directories we run are listed on [Our Work](https://eyetoad.com/our-work/).
 
