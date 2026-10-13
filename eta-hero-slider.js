@@ -8,9 +8,10 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
  if(RM){cs.forEach(function(c){c.classList.add('on');});p.classList.add('kw-done');}
  else{var i=0;function nx(){if(i>=cs.length){setTimeout(function(){p.classList.add('kw-done');},500);return;}var c=cs[i++];c.classList.add('on');var g=52;if(/[.,]/.test(c.textContent)&&i<cs.length)g+=c.textContent==='.'?320:160;setTimeout(nx,g);}setTimeout(nx,1300);}}
 })();
-/* Homepage hero slider (2026-10-12). Vanilla, no libraries, no IntersectionObserver.
-   Slide 1 is the original hero and always loads first. Without JS the slides are a
-   swipeable scroll-snap row and the dots are plain #anchor links. */
+/* Homepage hero slider v2 (Oct 13 2026). The track moves with one GPU transform instead of
+   native scroll-snap: no stickiness, mouse drag on desktop, finger swipe on phones (vertical
+   scroll still works), velocity decides the snap. Slide 1 is the original hero. Without JS
+   the track is a plain swipeable scroll-snap row and the dots are #anchor links. */
 (function(){
   var root=document.getElementById('hs'),track=document.getElementById('hs-track');
   if(!root||!track)return;
@@ -27,7 +28,18 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
 
   [prev,next,pp].forEach(function(b){b.hidden=false;});
   root.classList.add('hs-js');
+  track.scrollLeft=0;
 
+  function W(){return track.clientWidth||1;}
+  /* only the slides that can be seen are painted: the active one at rest, the pair during a move,
+     three while a finger or mouse drags. The others are skipped entirely (hs-off). */
+  var sweepT=null,dragging=false;
+  function show(list){slides.forEach(function(s,k){s.classList.toggle('hs-off',list.indexOf(k)<0);});}
+  function settle(ms){clearTimeout(sweepT);sweepT=setTimeout(function(){if(!dragging)show([cur]);},ms);}
+  function place(i,dx,anim,dur){
+    track.style.transitionDuration=anim?(dur||.62)+'s':'0s';
+    track.style.transform='translate3d(calc('+(-i*100)+'% + '+(dx||0)+'px),0,0)';
+  }
   function setState(i,announce){
     cur=i;
     slides.forEach(function(s,k){
@@ -39,14 +51,11 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
     checkFix();
     if(announce&&st)st.textContent='Slide '+(i+1)+' of '+n;
   }
-  function x(i){return i*track.clientWidth;}
-  var progScroll=false,psT=null;
-  function go(i,user){
+  function go(i,user,dur){
     i=(i+n)%n;
-    progScroll=true;clearTimeout(psT);psT=setTimeout(function(){progScroll=false;},1200);
-    var smooth=!RM;
-    if(track.scrollTo){try{track.scrollTo({left:x(i),behavior:smooth?'smooth':'auto'});}catch(e){track.scrollLeft=x(i);}}
-    else track.scrollLeft=x(i);
+    clearTimeout(sweepT);show(i===cur?[i]:[cur,i]);
+    place(i,0,!RM,dur);
+    if(RM)show([i]);else settle((dur||.62)*1000+80);
     setState(i,user||stopped);
     if(user)stop();else schedule();
   }
@@ -67,10 +76,9 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
   function schedule(){
     clearTimeout(timer);timer=null;
     if(stopped||hold||!inView||document.hidden){run(false);return;}
-    if(cur===0&&!firstDone)return; /* first advance waits for the typed subtitle (see below) */
+    if(cur===0&&!firstDone)return; /* first advance waits for the typed subtitle */
     timer=setTimeout(function(){go(cur+1,false);},DELAY);run(true,DELAY);
   }
-  /* first advance: a few seconds after the protected typing subtitle finishes */
   function armFirst(){
     if(firstDone)return;firstDone=true;
     if(stopped||cur!==0)return;
@@ -98,6 +106,63 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
     }
   });
 
+  /* drag / swipe: horizontal pointer moves drive the track, vertical ones scroll the page */
+  var sx=0,sy=0,dx=0,axis=null,pid=null,samples=[],suppress=false;
+  function onDown(e){
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    if(e.target.closest('.hs-ctrl'))return;
+    sx=e.clientX;sy=e.clientY;dx=0;axis=null;dragging=false;pid=e.pointerId;samples=[{t:e.timeStamp,x:e.clientX}];
+  }
+  function onMove(e){
+    if(pid!==e.pointerId||axis==='y')return;
+    var mx=e.clientX-sx,my=e.clientY-sy;
+    if(!axis){
+      if(Math.abs(mx)<7&&Math.abs(my)<7)return;
+      axis=Math.abs(mx)>Math.abs(my)?'x':'y';
+      if(axis==='y')return;
+      dragging=true;hold|=4;clearTimeout(timer);run(false);
+      clearTimeout(sweepT);show([cur-1,cur,cur+1]);
+      try{track.setPointerCapture(e.pointerId);}catch(err){}
+      track.classList.add('drag');
+    }
+    dx=mx;
+    if((cur===0&&dx>0)||(cur===n-1&&dx<0))dx*=.32; /* rubber band at the ends */
+    samples.push({t:e.timeStamp,x:e.clientX});if(samples.length>6)samples.shift();
+    place(cur,dx,false);
+    if(e.cancelable)e.preventDefault();
+  }
+  function onUp(e){
+    if(pid!==e.pointerId)return;
+    pid=null;
+    if(!dragging){axis=null;return;}
+    dragging=false;hold&=~4;track.classList.remove('drag');
+    var last=samples[samples.length-1],first=samples[0];
+    for(var k=samples.length-1;k>=0;k--){if(last.t-samples[k].t>=60){first=samples[k];break;}}
+    var v=(last.x-first.x)/Math.max(1,last.t-first.t); /* px per ms */
+    var w=W(),target=cur;
+    if(dx<-w*.16||v<-.45)target=cur+1;else if(dx>w*.16||v>.45)target=cur-1;
+    target=Math.max(0,Math.min(n-1,target));
+    var dist=Math.abs(target===cur?dx:(w-Math.abs(dx)));
+    var dur=Math.min(.6,Math.max(.28,dist/w*.45+.2));
+    suppress=true;setTimeout(function(){suppress=false;},60);
+    if(target===cur){place(cur,0,!RM,dur);stop();if(RM)show([cur]);else settle(dur*1000+80);}
+    else{go(target,true,dur);}
+    axis=null;
+  }
+  track.addEventListener('pointerdown',onDown);
+  track.addEventListener('pointermove',onMove);
+  track.addEventListener('pointerup',onUp);
+  track.addEventListener('pointercancel',onUp);
+  track.addEventListener('click',function(e){if(suppress){e.preventDefault();e.stopPropagation();}},true);
+  track.addEventListener('dragstart',function(e){e.preventDefault();});
+  /* trackpad: a horizontal two-finger swipe moves one slide */
+  var wT=0;
+  track.addEventListener('wheel',function(e){
+    if(Math.abs(e.deltaX)<=Math.abs(e.deltaY)||Math.abs(e.deltaX)<18)return;
+    e.preventDefault();var now=Date.now();if(now-wT<700)return;wT=now;
+    go(cur+(e.deltaX>0?1:-1),true);
+  },{passive:false});
+
   /* pause while the pointer or keyboard focus is in the hero */
   root.addEventListener('mouseenter',function(){hold|=1;schedule();});
   root.addEventListener('mouseleave',function(){hold&=~1;schedule();});
@@ -105,8 +170,7 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
   root.addEventListener('focusout',function(e){if(!root.contains(e.relatedTarget)){hold&=~2;schedule();}});
   document.addEventListener('visibilitychange',schedule);
 
-  /* once the slider has moved off slide 1, keep the controls on screen while the hero is
-     in view: the bar's slot below the hero keeps its height, only the bar itself is pinned */
+  /* once off slide 1, keep the controls on screen while the hero is in view */
   var cw=root.querySelector('.hs-cw'),bar=root.querySelector('.hs-ctrl'),fixed=false,fT=0;
   function checkFix(){
     var on=false;
@@ -116,8 +180,6 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
     }
     if(on!==fixed){fixed=on;root.classList.toggle('hs-fix',on);}
   }
-
-  /* only rotate while the hero is on screen (scroll position check, no IntersectionObserver) */
   var vT=null;
   function checkView(){
     var r=hero.getBoundingClientRect(),v=r.bottom>140&&r.top<(window.innerHeight||800)*0.6;
@@ -127,27 +189,15 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
     if(!fT)fT=requestAnimationFrame(function(){fT=0;checkFix();});
     if(vT)return;vT=setTimeout(function(){vT=null;checkView();},150);
   },{passive:true});
-
-  /* swipes and trackpad scrolls on the track */
-  var sT=null;
-  function settle(){
-    var i=Math.round(track.scrollLeft/Math.max(1,track.clientWidth));
-    if(i<0)i=0;if(i>n-1)i=n-1;
-    if(progScroll){progScroll=false;if(i===cur)return;}
-    if(i!==cur){setState(i,true);stop();}
-  }
-  track.addEventListener('scroll',function(){clearTimeout(sT);sT=setTimeout(settle,140);},{passive:true});
-
-  window.addEventListener('resize',function(){track.scrollLeft=x(cur);checkFix();});
+  window.addEventListener('resize',checkFix);
   if(mq.addEventListener)mq.addEventListener('change',function(e){RM=e.matches;if(RM)stop();});
 
-  /* start on slide 1 (or on #hs-N if someone linked straight to a slide) */
   var m=/^#hs-(\d)$/.exec(location.hash||''),i0=m?Math.min(n,Math.max(1,+m[1]))-1:0;
-  if(i0)track.scrollLeft=x(i0);
+  show([i0]);
+  place(i0,0,false);
   setState(i0,false);
   if(i0)stop();
   if(stopped){pp.innerHTML=PLAY;pp.setAttribute('aria-label','Start automatic slide show');}
   setLive();
-  /* first visibility check waits for an idle moment so startup forces no extra layout */
   if('requestIdleCallback' in window)requestIdleCallback(checkView,{timeout:2500});else setTimeout(checkView,1200);
 })();

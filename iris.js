@@ -2011,9 +2011,13 @@ KB.push(
  a:"Denver-born, Denver-based, since 2012. \uD83C\uDFD4\uFE0F\n\nWe're a search-first marketing agency: SEO, Google Maps, AI search and conversion. If you need the rest \u2014 creative, video, paid campaigns \u2014 it's all reachable through one plan.\n\nOffice: 1001 Bannock St #660. Call 1-800-481-8638.\n\n[Denver marketing agency](/denver-marketing-agency/)",
  c:['Denver SEO|services','Our work|ourwork','*Free growth audit|i_audit']},
 
+{id:'nexgen', fam:'core',
+ k:['referral group','referral groups','leads group','lead group','leads groups','lead groups','networking group','networking groups','bni','nexgen','nex gen','nexgen lead groups','power pair','referral network','leads club','referral partners','referral partner','leads groups reinvented'],
+ a:"That's ours. \uD83E\uDD1D NexGen Lead Groups is a free referral-group platform we built: smart tech pairs you with the business owners who already talk to your next customer (a marketing agency sits beside a web designer, a CPA and a sign shop), no dues, one seat per trade, and Colorado groups are forming now in Denver Metro.\n\nClaim a seat at nexgenleadgroups.com, or ask me how referral groups fit next to SEO.\n\n[See it on our work page](/our-work/)",
+ c:['Lead generation|ourwork','What you get|whatyouget','*Free growth audit|i_audit']},
 {id:'ourwork', fam:'core',
  k:['our work','portfolio','examples','show me your work','sites you built','case studies','proof','results','clients you have','who have you worked with'],
- a:"Real sites, all live, all clickable. \uD83D\uDDA5\uFE0F\n\nClient work like the Atlanta roofing build (geo-targeted city pages, SEO/AIO/agentic-optimized) and the GLP-1 clinic site, plus our own properties: a 3D VR mall, a browser flight simulator, a national business directory and two press-release platforms.\n\n[See our work](/our-work/) \u00B7 [Case studies](/case-studies/)",
+ a:"Real sites, all live, all clickable. \uD83D\uDDA5\uFE0F\n\nClient work like the Atlanta roofing build (geo-targeted city pages, SEO/AIO/agentic-optimized) and the GLP-1 clinic site, plus our own properties: a 3D VR mall, a browser flight simulator, a national business directory, two press-release platforms and NexGen Lead Groups, our free referral-group platform.\n\n[See our work](/our-work/) \u00B7 [Case studies](/case-studies/)",
  c:['Custom websites|website','What you get|whatyouget','*Free growth audit|i_audit']}
 );
 
