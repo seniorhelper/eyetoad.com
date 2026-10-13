@@ -169,8 +169,7 @@ Google Business Profile, Slack, Twilio, Shopify, WordPress).
   that does a repetitive job for you and checks with you before anything
   important.
 - AI agents for advertising (Google Ads, Meta ads, ad reporting) are covered
-  on the sister site https://aiagentforadvertising.com/, built by Eye To Ad
-  Media.
+  at https://aiagentforadvertising.com/, built by Eye To Ad Media.
 
 ## Industry pages
 

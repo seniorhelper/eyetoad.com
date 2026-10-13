@@ -94,6 +94,6 @@ function BOOT(cv){
 /* Lazy boot: the brain is below the fold on every page it appears on, so it is built only when it is about to scroll into view. Keeps its setup cost out of the initial load entirely. */
 (function(){var cvs=[].slice.call(document.querySelectorAll('canvas[data-brain]'));if(!cvs.length)return;
  if(!('IntersectionObserver' in window)){cvs.forEach(BOOT);return;}
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);BOOT(e.target);}});},{rootMargin:'520px 0px'});
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);BOOT(e.target);}});},{rootMargin:'160px 0px'});
  cvs.forEach(function(c){io.observe(c);});})();
 })();

@@ -177,7 +177,7 @@
  var n=0;(function poll(){if(ready()||n++>240)return;setTimeout(poll,250);})();})();
 
 /* ===== v12: hard guard (etaMascotGuard): on the homepage Iris stays fully hidden until the mascot reports he is done. ===== */
-(function(){if(!document.querySelector('script[src="/mascot.js"]'))return;var n=0;(function g(){var w=document.getElementById('irisw');var done=!!window.__etaDone||n>300||!!window.__irisAutoOpen||document.body.classList.contains('ir-panel-open');if(w)w.style.display=done?'':'none';if(!done){n++;setTimeout(g,200);}})();})();
+(function(){if(!document.querySelector('script[src^="/mascot.js"],script[data-mascot]'))return;var n=0;(function g(){var w=document.getElementById('irisw');var done=!!window.__etaDone||n>300||!!window.__irisAutoOpen||document.body.classList.contains('ir-panel-open');if(w)w.style.display=done?'':'none';if(!done){n++;setTimeout(g,200);}})();})();
 
 /* ===== v13 (Sept 28 2026): Iris orb stub + lazy loader (etaIrisStub).
    iris.js is 330 KB, so it is not fetched until the visitor moves (scroll, tap,
