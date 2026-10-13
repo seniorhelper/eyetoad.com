@@ -1,3 +1,14 @@
+/* Header shadow after scrolling + the typed hero line (moved here from eta-bubbles.js, Oct 13 2026; the bubble field is gone). */
+(function(){
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var sc=false;window.addEventListener('scroll',function(){var s=(window.scrollY||0)>60;if(s!==sc){sc=s;document.body.classList.toggle('bub-scrolled',s);}},{passive:true});
+/* typed hero line: steady ~19 chars/sec, beats at punctuation, clock-timed */
+var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.querySelectorAll('.ch'));
+ if(RM){cs.forEach(function(c){c.classList.add('on');});p.classList.add('kw-done');}
+ else{var at=[],tt=0;cs.forEach(function(c,i){at.push(tt);tt+=52;if(/[.,]/.test(c.textContent)&&i<cs.length-1)tt+=c.textContent==='.'?320:160;});
+  var start=performance.now()+1300,shown=0;(function tick(now){var el=now-start;while(shown<cs.length&&at[shown]<=el){if(shown>0)cs[shown-1].classList.remove('cur');cs[shown].classList.add('on','cur');shown++;}
+   if(shown<cs.length)requestAnimationFrame(tick);else setTimeout(function(){cs[cs.length-1].classList.remove('cur');p.classList.add('kw-done');},500);})(performance.now());}}
+})();
 /* Homepage hero slider (2026-10-12). Vanilla, no libraries, no IntersectionObserver.
    Slide 1 is the original hero and always loads first. Without JS the slides are a
    swipeable scroll-snap row and the dots are plain #anchor links. */
