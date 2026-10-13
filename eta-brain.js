@@ -82,7 +82,7 @@ function BOOT(cv){
  var RCTX=ctx;function cacheHead(){HB=document.createElement('canvas');HF=document.createElement('canvas');HB.width=HF.width=cv.width;HB.height=HF.height=cv.height;var b=HB.getContext('2d'),f=HF.getContext('2d');b.scale(dpr,dpr);f.scale(dpr,dpr);ctx=b;drawHeadBack();ctx=f;drawHeadFront();ctx=RCTX;}
  function draw(t){ctx.clearRect(0,0,W,Hh);if(C.bokeh)bokeh(t);if(STR.length)strands(t);if(C.cells)cells(t);if(C.head){if(!HB)cacheHead();ctx.drawImage(HB,0,0,W,Hh);ctx.save();headPath();ctx.clip();brain(t);ctx.restore();ctx.drawImage(HF,0,0,W,Hh);}else brain(t);}
  for(var i=0;i<C.pulse;i++)spawn();
- function step(t){if(vis&&!document.hidden&&t-last>40){var dt=Math.min(3,(t-last)/33);last=t;if(C.spin)ang+=.0105*dt;else ang=C.sway*Math.sin(t/5600+ph);
+ function step(t){if(vis&&!document.hidden&&!document.documentElement.classList.contains('hs-moving')&&t-last>40){var dt=Math.min(3,(t-last)/33);last=t;if(C.spin)ang+=.0105*dt;else ang=C.sway*Math.sin(t/5600+ph);
    F.forEach(function(f){f.t+=f.sp*dt;});F=F.filter(function(f){return f.t<f.p.length-1;});while(F.length<C.pulse)spawn();
    FL.forEach(function(fl){fl.t+=.033*dt;});FL=FL.filter(function(fl){return fl.t<fl.d;});while(FL.length<9)flare();draw(t);}requestAnimationFrame(step);}
  if(RM){ang=.5;draw(0);}else requestAnimationFrame(step);

@@ -33,11 +33,14 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
   function W(){return track.clientWidth||1;}
   /* only the slides that can be seen are painted: the active one at rest, the pair during a move,
      three while a finger or mouse drags. The others are skipped entirely (hs-off). */
-  var sweepT=null,dragging=false;
+  var sweepT=null,dragging=false,H=document.documentElement,PRE=!!window.__hsPre; /* idle pre-paint of the neighbours: measured no gain, off by default */
   function show(list){slides.forEach(function(s,k){s.classList.toggle('hs-off',list.indexOf(k)<0);});}
-  function settle(ms){clearTimeout(sweepT);sweepT=setTimeout(function(){if(!dragging)show([cur]);},ms);}
+  function moving(on){H.classList.toggle('hs-moving',!!on);}
+  /* at rest only the active slide is painted; once the move has settled the two neighbours are
+     prepared in idle time so the next move starts on the first frame */
+  function settle(ms){clearTimeout(sweepT);sweepT=setTimeout(function(){moving(false);if(dragging)return;show([cur]);if(PRE){var f=function(){if(!dragging)show([cur-1,cur,cur+1]);};if('requestIdleCallback' in window)requestIdleCallback(f,{timeout:900});else setTimeout(f,400);}},ms);}
   function place(i,dx,anim,dur){
-    track.style.transitionDuration=anim?(dur||.62)+'s':'0s';
+    track.style.transitionDuration=anim?(dur||.64)+'s':'0s';
     track.style.transform='translate3d(calc('+(-i*100)+'% + '+(dx||0)+'px),0,0)';
   }
   function setState(i,announce){
@@ -55,7 +58,7 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
     i=(i+n)%n;
     clearTimeout(sweepT);show(i===cur?[i]:[cur,i]);
     place(i,0,!RM,dur);
-    if(RM)show([i]);else settle((dur||.62)*1000+80);
+    if(RM)show([i]);else{moving(true);settle((dur||.64)*1000+80);}
     setState(i,user||stopped);
     if(user)stop();else schedule();
   }
@@ -121,7 +124,7 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
       axis=Math.abs(mx)>Math.abs(my)?'x':'y';
       if(axis==='y')return;
       dragging=true;hold|=4;clearTimeout(timer);run(false);
-      clearTimeout(sweepT);show([cur-1,cur,cur+1]);
+      clearTimeout(sweepT);show([cur-1,cur,cur+1]);moving(true);
       try{track.setPointerCapture(e.pointerId);}catch(err){}
       track.classList.add('drag');
     }
@@ -145,7 +148,7 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
     var dist=Math.abs(target===cur?dx:(w-Math.abs(dx)));
     var dur=Math.min(.6,Math.max(.28,dist/w*.45+.2));
     suppress=true;setTimeout(function(){suppress=false;},60);
-    if(target===cur){place(cur,0,!RM,dur);stop();if(RM)show([cur]);else settle(dur*1000+80);}
+    if(target===cur){place(cur,0,!RM,dur);stop();if(RM){moving(false);show([cur]);}else settle(dur*1000+80);}
     else{go(target,true,dur);}
     axis=null;
   }
@@ -196,6 +199,7 @@ var p=document.querySelector('.h8-sub.typer');if(p){var cs=[].slice.call(p.query
   show([i0]);
   place(i0,0,false);
   setState(i0,false);
+  if(PRE)settle(0);
   if(i0)stop();
   if(stopped){pp.innerHTML=PLAY;pp.setAttribute('aria-label','Start automatic slide show');}
   setLive();

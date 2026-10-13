@@ -1,0 +1,15 @@
+/* self-hosted latin subsets (OFL). The homepage injects these rules right after first paint; metric-matched local() fallbacks keep the layout still until they arrive. */
+@font-face{font-family:"DM Serif Display";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-400.woff2) format("woff2")}
+@font-face{font-family:"Caveat";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/caveat-700.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/fraunces-700.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:900;font-display:swap;src:url(/fonts/fraunces-900.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/inter-700.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/inter-800.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/outfit-400.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/outfit-500.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/outfit-600.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/outfit-700.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/outfit-800.woff2) format("woff2")}
