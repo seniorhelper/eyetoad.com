@@ -1,0 +1,7 @@
+{
+  "name": "eyetoad-build",
+  "private": true,
+  "type": "module",
+  "description": "Inlines a per-page trimmed copy of the shared stylesheet. Run: npm i && node inline-css.mjs",
+  "dependencies": { "purgecss": "^6.0.0" }
+}

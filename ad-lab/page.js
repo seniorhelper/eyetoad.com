@@ -650,7 +650,6 @@ raf=requestAnimationFrame(frame);
     requestAnimationFrame(measureHeader);
   },{passive:true});
   window.addEventListener('resize',measureHeader);
-  measureHeader();
 
   burger.addEventListener('click',function(){
     measureHeader();

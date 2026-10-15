@@ -131,7 +131,7 @@
         (function(s,a,v){var x=Math.cos(a)*v,y=Math.sin(a)*v-180,rot=Math.random()*720-360;
           s.animate([{transform:'translate(-50%,-50%) rotate(0deg)',opacity:1},{transform:'translate(calc(-50% + '+x+'px),calc(-50% + '+(y+420)+'px)) rotate('+rot+'deg)',opacity:0}],{duration:1500+Math.random()*900,easing:'cubic-bezier(.2,.7,.3,1)',fill:'forwards'});})(s,a,v);}
       var msg=document.createElement('div');msg.textContent='Happy birthday, Zach. 49 looks good on you.';
-      msg.style.cssText='position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#101828;color:#fff;font:700 15px Inter,sans-serif;padding:12px 18px;border-radius:14px;z-index:99999;box-shadow:0 12px 30px rgba(0,0,0,.3)';
+      msg.style.cssText='position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#101828;color:#fff;font:700 15px system-ui,-apple-system,Roboto,Arial,sans-serif;padding:12px 18px;border-radius:14px;z-index:99999;box-shadow:0 12px 30px rgba(0,0,0,.3)';
       document.body.appendChild(msg);
       setTimeout(function(){wrap.remove();msg.remove();window.location.href=h.href;},2600);
     });
@@ -211,7 +211,7 @@
    '#ir-stub img{width:100%;height:100%;display:block;object-fit:contain}'+
    '.ir-orb-glow,.ir-orb-wisp{display:none!important}'+/* the glass ball reads clean without the aura and steam layers */
    '#ir-stub.tab{right:0;bottom:auto;top:46vh;width:38px;height:150px;background:linear-gradient(180deg,#5b4bd1,#7c3aed);color:#fff;border-radius:12px 0 0 12px;box-shadow:0 8px 24px rgba(30,20,90,.35)}'+
-   '#ir-stub.tab span{display:block;writing-mode:vertical-rl;transform:rotate(180deg);font:700 13px/38px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;width:38px;height:150px;text-align:center}'+
+   '#ir-stub.tab span{display:block;writing-mode:vertical-rl;transform:rotate(180deg);font:700 13px/38px system-ui,-apple-system,Roboto,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;width:38px;height:150px;text-align:center}'+
    '#ir-stub.tab img{display:none}#ir-stub:not(.tab) span{display:none}'+
    '#ir-stub.hide{opacity:0;pointer-events:none}'+
    'body.nav-open #ir-stub,body.ir-panel-open #ir-stub{display:none}'+

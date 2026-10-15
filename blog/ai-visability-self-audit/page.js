@@ -6,7 +6,6 @@
   function measureHeader(){var r=hdr.getBoundingClientRect();mobNav.style.top=Math.max(0,r.bottom)+'px';}
   var _sc=null;window.addEventListener('scroll',function(){var s=window.scrollY>30;if(s===_sc)return;_sc=s;hdr.classList.toggle('scrolled',s);requestAnimationFrame(measureHeader);},{passive:true});
   window.addEventListener('resize',measureHeader);
-  measureHeader();
   burger.addEventListener('click',function(){
     measureHeader();
     var o=mobNav.classList.toggle('open');

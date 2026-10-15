@@ -15,7 +15,6 @@
     requestAnimationFrame(measureHeader);
   },{passive:true});
   window.addEventListener('resize',measureHeader);
-  measureHeader();
 
   burger.addEventListener('click',function(){
     measureHeader();
@@ -70,19 +69,28 @@
 
 
 (function(){
+  // Optional PageSpeed Insights API key (restrict it to the eyetoad.com referrer). Keyless requests get no quota,
+  // so with no key the orange button is a plain link that runs the test on pagespeed.web.dev.
+  var PSI_KEY='';
   var go=document.getElementById('sp-go'); if(!go) return;
   var st=document.getElementById('sp-status'),mob=document.getElementById('sp-mob'),desk=document.getElementById('sp-desk'),ext=document.getElementById('sp-ext');
   var strategy='mobile',busy=false;
   var R={perf:'sp-perf',a11y:'sp-a11y',bp:'sp-bp',seo:'sp-seo'};
+  function psiUrl(){return 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Feyetoad.com%2F&form_factor='+strategy;}
   function set(id,v){var c=document.getElementById(id+'-c'),n=document.getElementById(id+'-n');if(v==null){c.style.strokeDashoffset=314;n.textContent='–';return;}
     var s=Math.round(v*100);c.style.strokeDashoffset=314-314*s/100;c.style.stroke=s>=90?'#12B76A':s>=50?'#F79009':'#D92D20';n.textContent=s;}
   function reset(){Object.keys(R).forEach(function(k){set(R[k],null);});}
-  function pick(s){strategy=s;mob.setAttribute('aria-pressed',s==='mobile');desk.setAttribute('aria-pressed',s==='desktop');reset();st.textContent='Ready. Run the test for '+s+'.';ext.href='https://pagespeed.web.dev/analysis?url=https%3A%2F%2Feyetoad.com%2F&form_factor='+s;}
+  function ready(){st.textContent=PSI_KEY?'Ready. Run the test for '+strategy+'. It takes 20 to 60 seconds and runs on Google\u2019s infrastructure, not ours.':'Ready. The button opens Google\u2019s PageSpeed Insights in a new tab and runs the '+strategy+' test on eyetoad.com from Google\u2019s servers, not ours. It takes 20 to 60 seconds.';}
+  function pick(s){strategy=s;mob.setAttribute('aria-pressed',s==='mobile');desk.setAttribute('aria-pressed',s==='desktop');reset();ext.href=go.href=psiUrl();ready();}
   mob.addEventListener('click',function(){pick('mobile');});desk.addEventListener('click',function(){pick('desktop');});
-  go.addEventListener('click',function(){
-    if(busy) return; busy=true; reset(); go.disabled=true; go.textContent='Running on Google...';
+  go.href=ext.href=psiUrl();
+  if(!PSI_KEY) return;
+  go.textContent='Run Lighthouse on this page';ready();
+  go.addEventListener('click',function(e){
+    e.preventDefault();
+    if(busy) return; busy=true; reset(); go.setAttribute('aria-disabled','true'); go.textContent='Running on Google...';
     st.textContent='Asking Google to load eyetoad.com on a throttled '+(strategy==='mobile'?'phone':'desktop')+' and measure it. This usually takes 20 to 60 seconds.';
-    var u='https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url='+encodeURIComponent('https://eyetoad.com/')+'&strategy='+strategy+'&category=performance&category=accessibility&category=best-practices&category=seo';
+    var u='https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url='+encodeURIComponent('https://eyetoad.com/')+'&strategy='+strategy+'&category=performance&category=accessibility&category=best-practices&category=seo&key='+encodeURIComponent(PSI_KEY);
     var t0=Date.now();
     fetch(u).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();}).then(function(j){
       var c=(j.lighthouseResult&&j.lighthouseResult.categories)||{};
@@ -90,9 +98,10 @@
       var secs=Math.round((Date.now()-t0)/1000);
       st.textContent='Measured by Google just now ('+secs+'s). Lighthouse '+((j.lighthouseResult&&j.lighthouseResult.lighthouseVersion)||'')+', '+strategy+'. Run it again and the numbers will move a point or two; that is the test, not the site.';
       window.__etaToolSummary='Lighthouse '+strategy+' run from /site-speed/';
-    }).catch(function(e){
-      st.innerHTML='Google\u2019s free test quota is busy right now, which happens. <a href="'+ext.href+'" target="_blank" rel="noopener">Open the full report on pagespeed.web.dev</a> and it will run the identical test there.';
-    }).then(function(){busy=false;go.disabled=false;go.textContent='Run it again';});
+    }).catch(function(){
+      window.open(psiUrl(),'_blank','noopener');
+      st.innerHTML='Google\u2019s API did not answer, so the identical test is opening on pagespeed.web.dev. <a href="'+psiUrl()+'" target="_blank" rel="noopener">Open it here</a> if your browser blocked the new tab.';
+    }).then(function(){busy=false;go.removeAttribute('aria-disabled');go.textContent='Run it again';});
   });
 })();
 
