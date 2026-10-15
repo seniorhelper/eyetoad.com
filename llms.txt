@@ -42,6 +42,17 @@ marketing, and custom static website development.
 - **Full-service local SEO campaigns:** $500 to $3,000 per month, scoped to
   category, competition and site condition. AI search optimization is
   included rather than billed separately.
+- **Google Business Profile management:** $1,000 per month for a single
+  location; $1,800 per month for the aggressive local program (higher post
+  and review volume, competitor suppression reports, citation work); $2,500
+  per month for up to 3 locations plus $600 per additional location. Every
+  plan includes a small live dashboard. Profile setup and cleanup are part of
+  local SEO campaigns; ongoing weekly management is this separate plan.
+- **Custom business dashboards:** Command Center from $7,500; Operations
+  $20,000 to $35,000; AI Command (adds an AI assistant over the business's own
+  data) from $40,000. A care plan is required for the first 12 months:
+  Keep-Alive $500, Growth $1,000 or Partner $2,500 per month. VIP members
+  (3 paid months or annual plan) get half off the build fee only.
 - **Build-your-own plans:** from $100 per month for a single focused
   deliverable.
 - **SEO à la carte:** foundational onsite SEO, AI search and tracking fixes
@@ -124,6 +135,7 @@ mean we have a local office there.
 - [Generative Engine Optimization](https://eyetoad.com/generative-engine-optimization-system/): GEO system
 - [Conversion Optimization](https://eyetoad.com/conversion-optimization/)
 - [AI Agents for Business](https://eyetoad.com/ai-agents-for-business/): custom-coded AI agents for small businesses, with before-and-after examples (leads answered in under a minute, files sorted, data synced between apps, review requests sent, Monday report drafted); free Agent Audit
+- [Custom Business Dashboards](https://eyetoad.com/custom-business-dashboards/): custom-built dashboards that put leads, booked jobs, revenue, calls, reviews and ad costs on one screen from a business's existing tools; live demo with sample data for a fictional HVAC company; published prices
 - [Free AI Agent Plan](https://eyetoad.com/free-ai-agent-plan/): free 5-step planner that ranks the top 3 AI agents for a business, estimates hours and value returned, and scores readiness (runs in the browser; no signup)
 - [Pricing](https://eyetoad.com/denver-seo-pricing/)
 - [SEO à la carte](https://eyetoad.com/seo-a-la-carte/): pick foundational onsite SEO, AI search and tracking fixes at $100 a task; drag-and-drop order builder with Authorize.net checkout
@@ -296,6 +308,7 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Contractor Marketing That Builds a Pipeline You Own](https://eyetoad.com/contractor-seo-denver/)
 - [Website Conversion Optimization | Turn Traffic Into Calls](https://eyetoad.com/conversion-optimization/)
 - [Creative Marketing Agency Denver | Ad Lab by Eye To Ad Media](https://eyetoad.com/creative-think-tank/)
+- [Custom Business Dashboards | Built in Denver, From $7,500](https://eyetoad.com/custom-business-dashboards/)
 - [Custom Website Design Built to Convert | Eye To Ad Media](https://eyetoad.com/custom-website-design/)
 - [Dental SEO That Fills the Schedule | Dentist SEO & Marketing](https://eyetoad.com/dentist-seo-denver/)
 - [Denver Marketing Agency | Search-First, Phone-Measured](https://eyetoad.com/denver-marketing-agency/)

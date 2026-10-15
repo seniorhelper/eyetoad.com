@@ -129,7 +129,7 @@
 <g class="dp-door" style="animation-delay:.7s"><rect x="600" y="60" width="100" height="120" rx="6" fill="#0B1B33"/><circle cx="685" cy="122" r="4" fill="#F97316"/><rect x="600" y="40" width="100" height="18" rx="4" fill="#fff" stroke="#E4E7EC"/><text x="650" y="53">LITTLETON</text></g>
 </g>
 </svg><figcaption style="color:#667085;font-size:.8rem;margin-top:10px">Same door, different sign. Google can tell, and so can the person who opened it.</figcaption></figure>
-<p>Most businesses did not set out to build doorway pages. They were told to "build a page for every city you serve," which is good advice, and then a template was the only practical way to do it. The result is twenty pages that each say "We provide professional [service] in [City], [State]. Our experienced team serves [City] residents with..." Readers skim it, Google collapses it, and the pages compete with each other for whatever rank they do get. We see this on nearly every multi-location audit we run, which is why it is the first thing fixed in our <a href="/franchise-seo/">franchise and multi-location SEO</a> program.</p>
+<p>Most businesses did not set out to build doorway pages. They were told to "build a page for every city you serve," which is good advice, and then a template was the only practical way to do it. The result is twenty pages that each say "We provide professional [service] in [Town], [State]. Our experienced team serves [Town] residents with..." Readers skim it, Google collapses it, and the pages compete with each other for whatever rank they do get. We see this on nearly every multi-location audit we run, which is why it is the first thing fixed in our <a href="/franchise-seo/">franchise and multi-location SEO</a> program.</p>
 
 <h2 id="s2">The three-question test</h2>
 <p>You do not need a tool to spot the pattern. Open two of your location pages side by side and ask:</p>
@@ -177,7 +177,7 @@
 <tr><td>Questions specific to that place</td><td>Three to five FAQs that only make sense for that city</td><td>Even two is more than a template has</td></tr>
 <tr><td>Structured data</td><td>Service and area markup that ties the page to the profile and the service area</td><td>Our free <a href="/free-seo-tools/">schema generator</a> writes it</td></tr>
 </tbody></table>
-<p>Notice what is not on the list: a paragraph about how much you love serving [City], a bulleted list of every service you offer, and a map embed with nothing else. Those are the template's furniture.</p>
+<p>Notice what is not on the list: a paragraph about how much you love serving [Town], a bulleted list of every service you offer, and a map embed with nothing else. Those are the template's furniture.</p>
 
 <h2 id="s6">The rebuild, one page at a time</h2>
 <p>You do not have to fix twenty pages at once, and you should not. Rebuild in the order of revenue at stake, and let the thin pages stay thin until their turn comes rather than deleting them; an indexed page with a little rank is worth more than a redirect.</p>
@@ -244,7 +244,7 @@
       'This is the doorway pattern. With the city names removed these are the same page, and Google will rank them as one, if at all. Rebuild the higher-revenue one first.';
     var sb=sentences(norm(b,cities));var map={};sb.forEach(function(s){map[s]=1;});
     var shared=sentences(norm(a,cities)).filter(function(s){return map[s];});
-    if(shared.length){sh.hidden=false;sh.innerHTML='<b>Sentences that appear on both pages ('+shared.length+'):</b><br>'+shared.slice(0,12).map(function(s){return '<mark>'+esc(s.replace(/\{city\}/g,'[City]'))+'</mark>';}).join('<br>');}else sh.hidden=true;
+    if(shared.length){sh.hidden=false;sh.innerHTML='<b>Sentences that appear on both pages ('+shared.length+'):</b><br>'+shared.slice(0,12).map(function(s){return '<mark>'+esc(s.replace(/\{city\}/g,'[Town]'))+'</mark>';}).join('<br>');}else sh.hidden=true;
     warn.hidden=pct<30;warn.innerHTML='<b>What waiting costs:</b> every month these pages stay identical is a month each city search goes to a competitor with a page that knows the town. Start with the location that bills the most.';
     window.__etaToolSummary='Location page similarity '+pct+'%';
   }
