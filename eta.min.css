@@ -33,3 +33,5 @@
 @media(prefers-reduced-motion:reduce){.mob-nav .mob-svc,.mob-nav .mob-svc.open{transition:none}}
 
 @media (max-width:768px){.anet-seal,.AuthorizeNetSeal{display:none!important}}
+
+@media(min-width:1025px) and (max-width:1279px){.hdr-vip{display:none!important}.hdr .nl{padding:8px 6px}}

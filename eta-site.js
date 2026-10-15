@@ -142,13 +142,13 @@
   window.etaContrast=etaContrast;
   function runC(){try{etaContrast();}catch(e){}}
   function idleC(){if('requestIdleCallback' in window)requestIdleCallback(runC,{timeout:4000});else setTimeout(runC,1200);}
-  if(document.readyState==='complete')idleC();else window.addEventListener('load',idleC);
+  /* not run automatically any more: it read computed styles for every text node and blocked the main thread on phones. Fix contrast in CSS; call window.etaContrast() by hand to audit a page. */
 })();
 /* ===== v9: visor readout typing + draggable card band (etaVisor) ===== */
 (function(){
   function visor(){var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
     [].forEach.call(document.querySelectorAll('svg.vr'),function(sv){var ts=sv.querySelectorAll('text.t'),i=0;
-      [].forEach.call(ts,function(e){e.textContent=RM?e.getAttribute('data-t'):'';});if(RM)return;
+      [].forEach.call(ts,function(e){e.textContent=e.getAttribute('data-t');});return;/* static readout: the per-letter typing re-laid out the header 30+ times during load */
       function nx(){if(i>=ts.length)return;var e=ts[i++],s=e.getAttribute('data-t'),k=0;var t=setInterval(function(){k++;e.textContent=s.slice(0,k)+(k<s.length?'_':'');if(k>=s.length){clearInterval(t);setTimeout(nx,120);}},70);}
       setTimeout(nx,400);});}
   function band(){var RB=['red','orange','yellow','green','blue','purple'];
