@@ -201,17 +201,18 @@
   if(document.readyState==='complete')setTimeout(idleWarm,2500);else window.addEventListener('load',function(){setTimeout(idleWarm,2500);},{once:true});
   var st=document.createElement('style');st.textContent=
    '#ir-stub{position:fixed;z-index:9990;right:22px;bottom:22px;width:92px;height:92px;border:0;padding:0;background:transparent;cursor:pointer;transition:opacity .4s}'+
-   '#ir-stub svg{width:100%;height:100%;display:block;overflow:visible}'+
+   '#ir-stub img{width:100%;height:100%;display:block;object-fit:contain}'+
+   '.ir-orb-glow,.ir-orb-wisp{display:none!important}'+/* the glass ball reads clean without the aura and steam layers */
    '#ir-stub.tab{right:0;bottom:auto;top:46vh;width:38px;height:150px;background:linear-gradient(180deg,#5b4bd1,#7c3aed);color:#fff;border-radius:12px 0 0 12px;box-shadow:0 8px 24px rgba(30,20,90,.35)}'+
    '#ir-stub.tab span{display:block;writing-mode:vertical-rl;transform:rotate(180deg);font:700 13px/38px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;width:38px;height:150px;text-align:center}'+
-   '#ir-stub.tab svg{display:none}#ir-stub:not(.tab) span{display:none}'+
+   '#ir-stub.tab img{display:none}#ir-stub:not(.tab) span{display:none}'+
    '#ir-stub.hide{opacity:0;pointer-events:none}'+
    'body.nav-open #ir-stub,body.ir-panel-open #ir-stub{display:none}'+
    '@media(prefers-reduced-motion:no-preference){#ir-stub .orbf{animation:etaOrbF 5.2s ease-in-out infinite}@keyframes etaOrbF{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}}'+
    '@media(max-width:900px){#ir-stub{width:76px;height:76px;right:14px;bottom:14px}#ir-stub.hero-on{opacity:0;pointer-events:none}}';
   document.head.appendChild(st);
   var b=document.createElement('button');b.id='ir-stub';b.type='button';b.setAttribute('aria-label','Chat with Iris, our growth assistant');
-  b.innerHTML='<span>Ask Iris</span><svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="etaSg" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".25" stop-color="#c7d2ff" stop-opacity=".9"/><stop offset=".6" stop-color="#6d5df0" stop-opacity=".92"/><stop offset="1" stop-color="#2b1f72" stop-opacity=".98"/></radialGradient><radialGradient id="etaSh" cx="50%" cy="50%" r="50%"><stop offset=".55" stop-color="#8b7cff" stop-opacity=".45"/><stop offset="1" stop-color="#8b7cff" stop-opacity="0"/></radialGradient></defs><g class="orbf"><circle cx="50" cy="52" r="48" fill="url(#etaSh)"/><circle cx="50" cy="50" r="34" fill="url(#etaSg)"/><ellipse cx="38" cy="36" rx="12" ry="7" fill="#fff" opacity=".55"/><circle cx="50" cy="50" r="34" fill="none" stroke="#fff" stroke-opacity=".5"/><circle cx="50" cy="52" r="6" fill="#ffd166"/><circle cx="50" cy="52" r="2.6" fill="#0b1626"/></g></svg>';
+  b.innerHTML='<span>Ask Iris</span><img class="orbf" src="/images/iris-orb.webp" width="176" height="184" alt="" decoding="async">';
   if(home&&hasMascot){b.classList.add('tab');}
   document.body.appendChild(b);
   b.addEventListener('click',function(){window.__irisAutoOpen=1;load();b.classList.add('hide');if(typeof window.openIris==='function')window.openIris();});
