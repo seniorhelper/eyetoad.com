@@ -1029,7 +1029,10 @@ Denver, CO 80204<br>
 
 
 <script>window.__etaIris=1;</script>
-<script data-mascot="1">(function(){var q=[["/eta-agent-scenes.js?v=20261012"],["/eta-home.js?v=20261009"],["/eta-brain.js?v=20261014"],["/mascot.js?v=20261013b",{"data-right":"104","data-max":"1"}]],done=false;function go(){if(done)return;done=true;q.forEach(function(x){var s=document.createElement("script");s.src=x[0];s.defer=true;if(x[1])for(var k in x[1])s.setAttribute(k,x[1][k]);document.body.appendChild(s);});}["pointerdown","keydown","touchstart","scroll","mousemove"].forEach(function(e){addEventListener(e,go,{passive:true,once:true});});})();</script>
+<script data-mascot="1">(function(){var q=[["/eta-agent-scenes.js?v=20261012"],["/eta-home.js?v=20261009"],["/eta-brain.js?v=20261015"],["/mascot.js?v=20261013b",{"data-right":"104","data-max":"1"}]],done=false,ric=window.requestIdleCallback||function(f){return setTimeout(function(){f({timeRemaining:function(){return 8}})},120)};
+function load(){q.forEach(function(x){var s=document.createElement("script");s.src=x[0];s.defer=true;if(x[1])for(var k in x[1])s.setAttribute(k,x[1][k]);document.body.appendChild(s);});}
+function prep(){var s=[].slice.call(document.querySelectorAll('.home-bub main>*')).slice(1),i=0;function nx(){if(i>=s.length)return;s[i++].style.contentVisibility='visible';ric(nx,{timeout:900});}ric(nx,{timeout:900});}
+function go(){if(done)return;done=true;ric(load,{timeout:1500});setTimeout(prep,250);}["pointerdown","keydown","touchstart","scroll","mousemove"].forEach(function(e){addEventListener(e,go,{passive:true,once:true});});})();</script>
 
 <script src="/eta-site.js" defer></script>
 
