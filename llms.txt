@@ -358,6 +358,9 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Wheat Ridge SEO | Local SEO for Wheat Ridge, CO](https://eyetoad.com/locations/wheat-ridge-seo/)
 
 ## Blog
+- [Google's September 2026 Spam Update: What It Was, and a Checklist for Local Business Sites](https://eyetoad.com/blog/google-september-2026-spam-update/)
+- [Which Review Sites Matter When Customers Ask AI for a Recommendation?](https://eyetoad.com/blog/which-review-sites-matter-for-ai-search/)
+- [You Rank in the Google Maps 3-Pack. Why Doesn't AI Mode Mention You?](https://eyetoad.com/blog/google-maps-ranking-vs-ai-mode/)
 - [Agentic SEO Explained: Two Meanings, One That Matters](https://eyetoad.com/blog/agentic-seo/)
 - [When the Buyer Isn't Human](https://eyetoad.com/blog/ai-agents-choosing-business-vendors/)
 - [Is AI Recommending Your Business? A 15-Minute Self-Audit](https://eyetoad.com/blog/ai-visability-self-audit/)
