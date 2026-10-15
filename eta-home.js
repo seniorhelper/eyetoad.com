@@ -181,8 +181,9 @@
       headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},
       body:toParams(data)
     }).then(function(r){
-      if(r.ok)return 'sent';
-      return postViaIframe(form,data)?'unsure':'failed';
+      if(!r.ok)return postViaIframe(form,data)?'unsure':'failed';
+      /* FormSubmit can answer 200 with success:false; only call it sent when it says so */
+      return r.json().then(function(j){return j&&(j.success===true||j.success==='true')?'sent':'failed';},function(){return 'unsure';});
     }).catch(function(){
       return postViaIframe(form,data)?'unsure':'failed';
     });
@@ -200,7 +201,7 @@
     var box=document.getElementById('hero-form-msg');
     var btn=document.getElementById('hero-fsub');
     var last=0;
-    lt.value=Date.now();
+    if(!lt.value)lt.value=Date.now();
     pu.value=location.href;
 
     function show(kind,html){
@@ -214,8 +215,7 @@
       e.preventDefault();
       reset();
 
-      if(document.getElementById('_honey').value!=='')return;
-      if(document.getElementById('website_url').value!=='')return;
+      if(document.getElementById('_honey').value!==''||document.getElementById('website_url').value!==''){show('err','That did not go through. Please call <a href="tel:18004818638">'+PHONE+'</a>.');return;}
 
       if(Date.now()-parseInt(lt.value||'0',10)<4000){
         show('err','Please take a moment to fill out the form.');return;
@@ -261,7 +261,7 @@
     var mBox=document.getElementById('mini-msg');
     var mBtn=document.getElementById('mini-submit');
     var mLast=0;
-    mlt.value=Date.now();
+    if(!mlt.value)mlt.value=Date.now();
     mpu.value=location.href;
 
     function mShow(kind,html){
@@ -309,5 +309,6 @@
       });
     });
   }
+window.__etaHomeReady=1;
 })();
 
