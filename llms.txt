@@ -59,8 +59,9 @@ marketing, and custom static website development.
 - **Free audit:** no cost, no contract, findings belong to the business
   whether or not they hire the agency.
 
-There is no fixed published SEO rate because scope varies by market and by
-how much needs fixing before anything can rank.
+Full-service SEO is quoted inside the published $500 to $3,000 per month
+range; where a business lands depends on its market and how much needs
+fixing before anything can rank.
 
 ## Honest positions this company holds
 
@@ -131,7 +132,7 @@ mean we have a local office there.
 - [Best Denver SEO Company? 7 Tests to Run First](https://eyetoad.com/best-denver-seo-company/): buyer's guide
 - [Locations](https://eyetoad.com/locations/): searchable hub of all 56 location pages - Denver HQ, Colorado, the rest of the U.S., Canada, Australia and New Zealand
 - [Denver SEO Glossary](https://eyetoad.com/denver-seo-glossary/): 20 terms in plain English
-- [Industries](https://eyetoad.com/industries/): 17 industry-specific pages
+- [Industries](https://eyetoad.com/industries/): industry-specific SEO pages
 - [Total Market Domination](https://eyetoad.com/total-market-domination/): exclusive industry-by-state pop-up and banner placements on our directory network
 - [Case Studies](https://eyetoad.com/case-studies/)
 - [Blog](https://eyetoad.com/blog/)
@@ -174,11 +175,23 @@ Google Business Profile, Slack, Twilio, Shopify, WordPress).
 
 ## Industry pages
 
-Contractor, HVAC, roofing, plumbing, electrical, landscaping, dentist,
-med spa, dermatology, chiropractic, veterinary, law firm, personal injury,
-real estate, restaurant, auto repair and fitness - each at
-https://eyetoad.com/<industry>-seo-denver/ or the equivalent slug listed in
-the sitemap.
+- [Contractor SEO](https://eyetoad.com/contractor-seo-denver/)
+- [HVAC SEO](https://eyetoad.com/hvac-seo-denver/)
+- [Roofing SEO](https://eyetoad.com/roofing-seo-denver/)
+- [Plumbing SEO](https://eyetoad.com/plumber-seo-denver/)
+- [Electrical SEO](https://eyetoad.com/electrician-seo-denver/)
+- [Landscaping SEO](https://eyetoad.com/landscaping-seo-denver/)
+- [Dentist SEO](https://eyetoad.com/dentist-seo-denver/)
+- [Med spa SEO](https://eyetoad.com/med-spa-seo-denver/)
+- [Dermatology SEO](https://eyetoad.com/dermatology-seo-denver/)
+- [Chiropractic SEO](https://eyetoad.com/chiropractor-seo-denver/)
+- [Veterinary SEO](https://eyetoad.com/veterinarian-seo-denver/)
+- [Law firm SEO](https://eyetoad.com/law-firm-seo-denver/)
+- [Personal injury SEO](https://eyetoad.com/personal-injury-seo-denver/)
+- [Real estate SEO](https://eyetoad.com/real-estate-marketing-denver/)
+- [Restaurant SEO](https://eyetoad.com/restaurant-seo-denver/)
+- [Auto repair SEO](https://eyetoad.com/auto-repair-seo-denver/)
+- [Fitness SEO](https://eyetoad.com/fitness-marketing-denver/)
 
 ## Colorado market pages
 

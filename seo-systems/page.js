@@ -183,7 +183,7 @@
     var fd=new FormData(form);
     fd.append('page_url',location.href);
     fetch(buildAction(form.getAttribute('data-fs')||(window.etaAddr?window.etaAddr():'')),{method:'POST',body:fd})
-      .then(function(r){return r.ok?r.json():Promise.reject();})
+      .then(function(r){return r.ok?r.json().then(function(j){if(!(String(j&&j.success)==='true'))return Promise.reject();return j;}):Promise.reject();})
       .then(function(){
         form.style.display='none';
         if(note)note.style.display='none';

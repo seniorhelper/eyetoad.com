@@ -77,19 +77,26 @@
   ['keydown','pointerdown','touchstart'].forEach(function(ev){document.addEventListener(ev,function(){touched=true;},{passive:true,capture:true});});
   function say(form,kind,text){
     var m=form.querySelector('.eta-msg');
+    var fresh=!m;
     if(!m){m=document.createElement('div');m.className='eta-msg';m.setAttribute('role','status');m.setAttribute('aria-live','polite');form.appendChild(m);}
-    m.setAttribute('data-kind',kind);m.textContent=text;
+    m.setAttribute('data-kind',kind);
+    /* a live region has to exist before its text changes or screen readers skip the first message */
+    if(fresh){m.textContent='';setTimeout(function(){m.textContent=text;},60);}else m.textContent=text;
     m.style.cssText='margin-top:12px;padding:12px 14px;border-radius:8px;font-size:.95rem;line-height:1.45;'+
       (kind==='ok'?'background:#ECFDF3;color:#054F31;border:1px solid #A6F4C5':kind==='wait'?'background:#EFF8FF;color:#0B4A6F;border:1px solid #B2DDFF':'background:#FEF3F2;color:#7A271A;border:1px solid #FECDCA');
   }
   [].forEach.call(document.querySelectorAll('form[data-eta="lead"]'),function(form){
     form.removeAttribute('action');
     form.addEventListener('submit',function(e){
+      /* a page's own validator ran first and said no: respect it instead of sending anyway */
+      if(e.defaultPrevented)return;
       e.preventDefault();
-      var hp=form.querySelector('[name="_honey"]');
+      var hp=form.querySelector('[name="_honey"],[name="winnie"]');
       if(hp&&hp.value){return;}
       if(!touched||Date.now()-t0<3500){say(form,'err','Please take a moment to fill in the form, then press send again.');return;}
       if(form.checkValidity&&!form.checkValidity()){if(form.reportValidity)form.reportValidity();return;}
+      var tel=form.querySelector('input[type="tel"]');
+      if(tel&&tel.value.trim()&&tel.value.replace(/D/g,'').length<10){say(form,'err','Please enter a phone number with area code.');tel.focus();return;}
       var btn=form.querySelector('[type="submit"]');if(btn)btn.disabled=true;
       say(form,'wait','Sending your message...');
       var fd=new FormData(form);fd.delete('_next');fd.append('page_url',location.href);

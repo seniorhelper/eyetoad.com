@@ -513,7 +513,7 @@ KB.push(
  </ul>
  <div class="callout">Your local SBDC and SCORE will prepare your loan package at no cost. That is the highest-value free resource in this entire category and almost nobody uses it.</div>`,
  links:[['SBA loan programs','https://www.sba.gov/funding-programs/loans','sba.gov'],
-        ['SBA Lender Match','https://www.sba.gov/funding-programs/loans/lender-match','sba.gov'],
+        ['SBA Lender Match','https://www.sba.gov/loans/lender-match/','sba.gov'],
         ['Grants.gov','https://www.grants.gov/','grants.gov'],
         ['Find your local SBDC','https://americassbdc.org/','americassbdc.org']],
  next:['loan-req','grants','credit','cashflow']},
@@ -532,7 +532,7 @@ KB.push(
  <li><strong>What experience do you have?</strong> Industry track record carries real weight.</li>
  </ol>
  <p>Bring: business plan, three years of projections, personal and business tax returns, bank statements, a debt schedule, and your entity documents. An SBDC will help you assemble all of it free of charge.</p>`,
- links:[['SBA Lender Match','https://www.sba.gov/funding-programs/loans/lender-match','sba.gov'],
+ links:[['SBA Lender Match','https://www.sba.gov/loans/lender-match/','sba.gov'],
         ['Find your local SBDC','https://americassbdc.org/','americassbdc.org']],
  next:['funding','credit','plan-projections','plan-need']},
 

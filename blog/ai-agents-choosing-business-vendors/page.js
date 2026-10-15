@@ -126,7 +126,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
       fd.append('page_url',location.href);
 
       fetch(buildAction(f.dataset.fs||(window.etaAddr?window.etaAddr():'')),{method:'POST',body:fd})
-        .then(function(r){return r.ok?r.json():Promise.reject();})
+        .then(function(r){return r.ok?r.json().then(function(j){if(!(String(j&&j.success)==='true'))return Promise.reject();return j;}):Promise.reject();})
         .then(function(){
           f.innerHTML='<p style="color:#fff;font-family:Fraunces,serif;font-weight:900;font-size:1.1rem;margin:0 0 6px">Got it — thank you.</p>'+
                       '<p style="color:rgba(255,255,255,.82);margin:0;font-size:.96rem;line-height:1.7">We will take a look and reply by email, usually the same business day. Check the spam folder if you do not see it.</p>';

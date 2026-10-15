@@ -3422,7 +3422,7 @@ function postLeadAjax(data){
     method : 'POST',
     headers: { 'Content-Type':'application/x-www-form-urlencoded', 'Accept':'application/json' },
     body   : toParams(data)
-  }).then(function(r){ return !!r.ok; }).catch(function(){ return false; });
+  }).then(function(r){ return r.ok ? r.json().then(function(j){ return String(j&&j.success)==='true'; }, function(){ return false; }) : false; }).catch(function(){ return false; });
 }
 function sendLead(data, isRetry){
   postLeadAjax(data).then(function(ok){

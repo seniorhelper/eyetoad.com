@@ -149,7 +149,7 @@ function etaTo(form){
       headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},
       body:toParams(data)
     }).then(function(r){
-      if(r.ok)return 'sent';
+      if(r.ok)return r.json().then(function(j){return String(j&&j.success)==='true'?'sent':'failed';},function(){return 'unsure';});
       return postViaIframe(form,data)?'unsure':'failed';
     }).catch(function(){
       return postViaIframe(form,data)?'unsure':'failed';
@@ -454,7 +454,7 @@ function etaTo(form){
       fetch('https://formsubmit.co/ajax/'+to,{method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
       .then(function(r){return r.ok?r.json():null;})
-      .then(function(j){clearTimeout(guard);finish(j&&(j.success===true||j.success==='true')?'sent':'unsure');})
+      .then(function(j){clearTimeout(guard);finish(!j?'unsure':(j.success===true||j.success==='true')?'sent':'failed');})
       .catch(function(){clearTimeout(guard);finish('unsure');});
     }catch(ex){clearTimeout(guard);finish('failed');}
   });

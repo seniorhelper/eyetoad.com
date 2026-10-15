@@ -265,7 +265,7 @@
       headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},
       body:toParams(data)
     }).then(function(r){
-      if(r.ok)return 'sent';
+      if(r.ok)return r.json().then(function(j){return String(j&&j.success)==='true'?'sent':'failed';},function(){return 'unsure';});
       return postViaIframe(data)?'unsure':'failed';
     }).catch(function(){
       return postViaIframe(data)?'unsure':'failed';

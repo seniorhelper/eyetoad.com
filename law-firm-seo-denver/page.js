@@ -238,7 +238,7 @@
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(data)
-    }).then(function(res){
+    }).then(function(r0){return r0.ok?r0.json().then(function(j){return {ok:String(j&&j.success)==='true'};},function(){return {ok:false};}):{ok:false};}).then(function(res){
       if(res.ok){
         sent=true;
         show('ok','Received. We will review the firm and reply, usually the same business day.');

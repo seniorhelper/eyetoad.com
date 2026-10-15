@@ -172,7 +172,7 @@
     show('warn','Sending your request...');
 
     fetch(action(),{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-      .then(function(res){
+      .then(function(r0){return r0.ok?r0.json().then(function(j){return {ok:String(j&&j.success)==='true'};},function(){return {ok:false};}):{ok:false};}).then(function(res){
         sent=true;
         if(res.ok){
           show('ok','Got it. We will review your shop and get back to you, usually the same business day.');

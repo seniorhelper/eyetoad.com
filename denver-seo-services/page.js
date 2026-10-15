@@ -113,6 +113,7 @@
   }
 
   if(form){
+    var T0=Date.now(),lastSent=0;
     form.addEventListener('submit',function(e){
       e.preventDefault();
 
@@ -134,14 +135,13 @@
         em.focus();return;
       }
 
+      if(Date.now()-T0<3000){show('err','Please take a moment to fill out the form.');return;}
+      if(lastSent&&Date.now()-lastSent<60000){show('err','Your request is already on its way. Please give it a minute.');return;}
+      lastSent=Date.now();
       if(fbtn){fbtn.disabled=true;fbtn.textContent='Sending…';}
       var data=new FormData(form);
-
-      try{
-        form.setAttribute('action',ENDPOINT);
-        form.setAttribute('target','af-sink');
-        HTMLFormElement.prototype.submit.call(form);
-      }catch(err){}
+      /* one send only: AJAX first; the hidden-iframe post is the fallback when fetch itself fails */
+      function nativeFallback(){try{form.setAttribute('action',ENDPOINT);form.setAttribute('target','af-sink');HTMLFormElement.prototype.submit.call(form);return true;}catch(err){return false;}}
 
       fetch(AJAX,{method:'POST',body:data,headers:{'Accept':'application/json'}})
       .then(function(r){return r.json().catch(function(){return null})})
@@ -151,13 +151,14 @@
           show('ok','<strong>Got it — your audit request is in.</strong> We reply within one business day. If it is urgent, call <a href="tel:18004818638">1-800-481-8638</a>.');
           form.reset();
         }else{
-          show('warn','<strong>Your request was submitted.</strong> We could not get a delivery confirmation back, so if you do not hear from us within one business day, call <a href="tel:18004818638">1-800-481-8638</a> and we will pick it up straight away.');
-          form.reset();
+          lastSent=0;
+          show('err','That did not go through. Please call <a href="tel:18004818638">1-800-481-8638</a> and we will take your details by phone.');
         }
       })
       .catch(function(){
         if(fbtn){fbtn.disabled=false;fbtn.textContent='Send My Free Audit Request';}
-        show('warn','<strong>Your request was submitted, but we could not confirm it.</strong> The fastest route is a call: <a href="tel:18004818638">1-800-481-8638</a>,.');
+        if(nativeFallback())show('warn','<strong>Your request was sent, but we could not confirm it.</strong> If you do not hear from us within one business day, call <a href="tel:18004818638">1-800-481-8638</a>.');
+        else{lastSent=0;show('err','That did not go through. Please call <a href="tel:18004818638">1-800-481-8638</a>.');}
       });
     });
   }
