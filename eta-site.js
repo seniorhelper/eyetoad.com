@@ -184,7 +184,7 @@
  var n=0;(function poll(){if(ready()||n++>240)return;setTimeout(poll,250);})();})();
 
 /* ===== v12: hard guard (etaMascotGuard): on the homepage Iris stays fully hidden until the mascot reports he is done. ===== */
-(function(){if(!document.querySelector('script[src^="/mascot.js"],script[data-mascot]'))return;var n=0;(function g(){var w=document.getElementById('irisw');var done=!!window.__etaDone||n>300||!!window.__irisAutoOpen||document.body.classList.contains('ir-panel-open');if(w)w.style.display=done?'':'none';if(!done){n++;setTimeout(g,200);}})();})();
+(function(){if(!document.querySelector('script[src^="/mascot.js"],script[data-mascot],script[data-iris-hold]'))return;var n=0;(function g(){var w=document.getElementById('irisw');var done=!!window.__etaDone||n>300||!!window.__irisAutoOpen||document.body.classList.contains('ir-panel-open');if(w)w.style.display=done?'':'none';if(!done){n++;setTimeout(g,200);}})();})();
 
 /* ===== v13 (Sept 28 2026): Iris orb stub + lazy loader (etaIrisStub).
    iris.js is 330 KB, so it is not fetched until the visitor moves (scroll, tap,
@@ -201,7 +201,9 @@
   function load(){if(window.__irisL)return;window.__irisL=1;var s=document.createElement('script');s.src='/iris.js';s.defer=true;document.body.appendChild(s);}
   window.__etaLoadIris=load;
   ['pointerdown','scroll','keydown','touchstart'].forEach(function(e){addEventListener(e,load,{once:true,passive:true});});
-  setTimeout(function(){if('requestIdleCallback' in window)requestIdleCallback(load,{timeout:4000});else load();},3000);
+  /* a page that holds Iris back (the homepage) skips the idle autoload; she loads on the first interaction or when the hold ends */
+  if(window.__irisHold&&!window.__etaDone)document.addEventListener('eta:done',load,{once:true});
+  else setTimeout(function(){if('requestIdleCallback' in window)requestIdleCallback(load,{timeout:4000});else load();},3000);
   /* warm the cache so a tap on the stub opens her instantly: a low-priority prefetch after the page is idle */
   function warm(){if(window.__irisL)return;try{var l=document.createElement('link');l.rel='prefetch';l.as='script';l.href='/iris.js';document.head.appendChild(l);}catch(e){}}
   function idleWarm(){if('requestIdleCallback' in window)requestIdleCallback(warm,{timeout:7000});else setTimeout(warm,4000);}
@@ -209,7 +211,9 @@
   var st=document.createElement('style');st.textContent=
    '#ir-stub{position:fixed;z-index:9990;right:22px;bottom:22px;width:92px;height:92px;border:0;padding:0;background:transparent;cursor:pointer;transition:opacity .4s}'+
    '#ir-stub img{width:100%;height:100%;display:block;object-fit:contain}'+
-   '.ir-orb-glow,.ir-orb-wisp{display:none!important}'+/* the glass ball reads clean without the aura and steam layers */
+   '.ir-orb-wisp{display:none!important}'+/* steam stays off: it animates under an SVG blur filter, which repaints every frame */
+   '.ir-orb-glow{animation:none!important}'+/* the misty aura is back (cyan/violet, retuned in iris.js), held still so it costs no repaints */
+   '#ir-stub:not(.tab):before{content:"";position:absolute;inset:-36%;z-index:-1;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(103,232,249,.36),rgba(96,165,250,.24) 45%,rgba(129,140,248,.13) 70%,rgba(167,139,250,0))}'+
    '#ir-stub.tab{right:0;bottom:auto;top:46vh;width:38px;height:150px;background:linear-gradient(180deg,#5b4bd1,#7c3aed);color:#fff;border-radius:12px 0 0 12px;box-shadow:0 8px 24px rgba(30,20,90,.35)}'+
    '#ir-stub.tab span{display:block;writing-mode:vertical-rl;transform:rotate(180deg);font:700 13px/38px system-ui,-apple-system,Roboto,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;width:38px;height:150px;text-align:center}'+
    '#ir-stub.tab img{display:none}#ir-stub:not(.tab) span{display:none}'+
@@ -221,10 +225,12 @@
   var b=document.createElement('button');b.id='ir-stub';b.type='button';b.setAttribute('aria-label','Chat with Iris, our growth assistant');
   b.innerHTML='<span>Ask Iris</span><img class="orbf" src="/images/iris-orb.webp" width="176" height="184" alt="" decoding="async">';
   if(home&&hasMascot){b.classList.add('tab');}
+  /* phones: if a hero is already on screen, start hidden instead of showing and then fading out (no late flash) */
+  (function(){var h=document.querySelector('.hero,.h8,.page-hero,.hx');if(h&&innerWidth<=900){var r=h.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)b.classList.add('hero-on');}})();
   document.body.appendChild(b);
   b.addEventListener('click',function(){window.__irisAutoOpen=1;load();b.classList.add('hide');if(typeof window.openIris==='function')window.openIris();});
   /* mobile hero collision guard, same rule iris.js applies */
-  var hero=document.querySelector('.hero,.h8,.page-hero');
+  var hero=document.querySelector('.hero,.h8,.page-hero,.hx');
   if(hero&&'IntersectionObserver' in window){new IntersectionObserver(function(en){b.classList.toggle('hero-on',en[0].isIntersecting);},{threshold:0.15}).observe(hero);}
   /* homepage: tab becomes the orb after the mascot has left and a beat has passed */
   if(home&&hasMascot){var n=0;(function w(){if(window.__etaDone){setTimeout(function(){b.classList.remove('tab');},2600);return;}if(n++<400)setTimeout(w,300);})();}

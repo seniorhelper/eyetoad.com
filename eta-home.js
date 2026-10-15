@@ -309,6 +309,10 @@
       });
     });
   }
+  /* hero aurora drift and agent team scene: animate only once the visitor is here (this file loads on first
+     interaction) and only while each section is on screen */
+  if("IntersectionObserver" in window){[[".hx","hx-on"],[".bt","bt-on"]].forEach(function(p){var el=document.querySelector(p[0]);
+    if(el)new IntersectionObserver(function(en){el.classList.toggle(p[1],en[0].isIntersecting);}).observe(el);});}
 window.__etaHomeReady=1;
 })();
 

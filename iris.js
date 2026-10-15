@@ -743,13 +743,14 @@ var IRIS_HTML = `
              tail between .55 and 1 is what kills the ring — the light has
              somewhere to fade TO instead of stopping at an element boundary. -->
         <radialGradient id="irOrbAura" cx=".5" cy=".5" r=".5">
-          <stop offset=".26" stop-color="#F2FCFF" stop-opacity=".92"/>
-          <stop offset=".34" stop-color="#CFF0FF" stop-opacity=".62"/>
-          <stop offset=".45" stop-color="#9FD4FF" stop-opacity=".38"/>
-          <stop offset=".58" stop-color="#A78BFA" stop-opacity=".22"/>
-          <stop offset=".72" stop-color="#8FA8FF" stop-opacity=".12"/>
-          <stop offset=".86" stop-color="#FFC98A" stop-opacity=".05"/>
-          <stop offset="1" stop-color="#FFC98A" stop-opacity="0"/>
+          <!-- Oct 15 2026: tinted mist instead of the near-white core that read as haze -->
+          <stop offset=".26" stop-color="#7DD3FC" stop-opacity=".5"/>
+          <stop offset=".33" stop-color="#67E8F9" stop-opacity=".4"/>
+          <stop offset=".43" stop-color="#60A5FA" stop-opacity=".27"/>
+          <stop offset=".56" stop-color="#818CF8" stop-opacity=".17"/>
+          <stop offset=".71" stop-color="#A78BFA" stop-opacity=".08"/>
+          <stop offset=".86" stop-color="#C4B5FD" stop-opacity=".03"/>
+          <stop offset="1" stop-color="#C4B5FD" stop-opacity="0"/>
         </radialGradient>
         <filter id="irOrbBlur" x="-120%" y="-160%" width="340%" height="420%">
           <feGaussianBlur in="SourceGraphic" stdDeviation="3.6"/>
@@ -2789,7 +2790,7 @@ setInterval(paintStatus, 300000);
    while the hero is on screen and appears once it scrolls away. Desktop is
    unaffected: the hero form occupies that side of the layout there. */
 (function(){
-  var hero = document.querySelector('.hero');
+  var hero = document.querySelector('.hero,.hx');
   if (!hero || !('IntersectionObserver' in window)) return;
   function narrow(){ return window.innerWidth <= 900; }
   var io = new IntersectionObserver(function(en){
@@ -3015,11 +3016,11 @@ function waitForMascot(){
   /* The visitor asked for her (orb stub click): she comes out regardless. */
   if (window.__irisAutoOpen){ releaseLauncher(); return; }
   /* No mascot script on this page: she is the only one here, so come out. */
-  if (!window.__etaMascot){ setTimeout(releaseLauncher, ORB_SOLO_MS); return; }
+  if (!window.__etaMascot && !window.__irisHold){ setTimeout(releaseLauncher, ORB_SOLO_MS); return; }
   /* He is on this page. Wait for his exit, but never wait forever — if
      something goes wrong in his script she still needs to exist. */
   if (window.__etaDone){ setTimeout(releaseLauncher, MASCOT_GAP_MS); return; }
-  if (relayTries++ > 120){ releaseLauncher(); return; }   // ~60s ceiling
+  if (relayTries++ > 120 && !window.__irisHold){ releaseLauncher(); return; }   // ~60s ceiling (a page hold releases itself)
   setTimeout(waitForMascot, 500);
 }
 document.addEventListener('eta:done', function(){ setTimeout(releaseLauncher, MASCOT_GAP_MS); });
