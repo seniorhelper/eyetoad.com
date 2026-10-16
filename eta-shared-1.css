@@ -138,28 +138,28 @@ body.nav-open #irisw,body.nav-open #etad,body.nav-open #etaMascot{display:none!i
 :is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .mob-cta{display:block!important;margin-top:20px;padding:16px!important;text-align:center;background:var(--orange);color:#fff!important;font-weight:800!important;font-size:1.1rem!important;border-radius:var(--r8);border-bottom:none!important}
 :is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:17px 30px;border-radius:var(--r12);background:linear-gradient(135deg,#FBBF24,#F97316);color:#0b1220;font-family:'Inter',sans-serif;font-weight:800;font-size:1.06rem;border:2px solid rgba(255,255,255,.2);box-shadow:0 10px 32px rgba(249,115,22,.5);transition:all .2s}
 :is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(249,115,22,.68)}
-.footer{background:#060C18;border-top:1px solid rgba(255,255,255,.07);padding:60px 0 0}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:44px}
-.footer-brand .brand-logo{width:300px;height:102px;margin-bottom:16px}
-@media(max-width:1600px){.footer-brand .brand-logo{width:265px;height:92px}}
-@media(max-width:768px){.footer-brand .brand-logo{width:260px;height:92px}}
-.footer-brand p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:270px}
-.footer-brand address{font-style:normal;font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.9;margin-top:16px}
-.footer-brand address a{color:#FB923C}
-.footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px}
-.footer-col a{display:block;font-size:.86rem;color:rgba(255,255,255,.75);padding:4px 0;transition:color .18s}
-.footer-col a:hover{color:var(--orange)}
-.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.footer-bot p{font-size:.78rem;color:rgba(255,255,255,.5)}
-.footer-links{display:flex;gap:18px;flex-wrap:wrap}
-.footer-links a{font-size:.78rem;color:rgba(255,255,255,.5)}
-.footer-links a:hover{color:var(--orange)}
-@media(min-width:581px){.footer-bot{padding-bottom:34px}}
-@media(max-width:580px){.footer-bot{padding-bottom:78px}}
-@media(max-width:1024px){.footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media(max-width:768px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .nav{display:none}
 .hdr-right{display:none}
 .burger{display:flex}
-.footer-grid{grid-template-columns:minmax(0,1fr)}
-.footer-bot{flex-direction:column;text-align:center}}
+
+}
 @media(max-width:540px){:is(.ubar,.ticker,.hdr,.mob-nav,.footer,.bcrumb) .btn-gold{width:100%}}
