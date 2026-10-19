@@ -129,6 +129,10 @@ mean we have a local office there.
 - [Home](https://eyetoad.com/): Eye To Ad Media, Denver SEO company since 2012
 - [Denver SEO Company](https://eyetoad.com/denver-seo-company/): primary commercial page - what the work is, process, pricing, proof, how to compare Denver SEO companies
 - [Denver SEO Agency](https://eyetoad.com/denver-seo-agency/): founder-led, no handoffs
+- [Denver SEO Companies Compared](https://eyetoad.com/denver-seo-companies/): sixteen Denver SEO companies compared on founded year, HQ, Clutch reviews, published pricing and case numbers; read Oct 19, 2026; no paid placements
+- [AI SEO Agency](https://eyetoad.com/ai-seo-agency/): AI SEO / GEO / AEO agency services, published pricing $500-$3,000/mo, no guarantees
+- [AI Visibility Audit](https://eyetoad.com/ai-visibility-audit/): free six-prompt AI visibility self-check scored out of 24, plus the full audit
+- [National SEO Company](https://eyetoad.com/national-seo-company/): national and multi-market SEO from Denver, $1,500-$3,000/mo, AI search included
 - [SEO Services](https://eyetoad.com/denver-seo-services/): full service list
 - [Local SEO Denver](https://eyetoad.com/local-seo-denver/): map pack and local search
 - [AIO SEO System](https://eyetoad.com/aio-seo-system/): AI search optimization
@@ -384,6 +388,10 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Wheat Ridge SEO | Local SEO for Wheat Ridge, CO](https://eyetoad.com/locations/wheat-ridge-seo/)
 
 ## Blog
+- [Google’s AI Is Calling Denver Businesses for Quotes: How to Answer](https://eyetoad.com/blog/google-ai-calling-your-business/)
+- [31% Skip Under 4.5 Stars: 2026 Review Numbers for Denver Businesses](https://eyetoad.com/blog/review-thresholds-2026-denver/)
+- [Should You Opt Out of Google AI Overviews? The Search Console Toggle](https://eyetoad.com/blog/opt-out-of-google-ai-features/)
+- [Local Pack vs LSAs vs Google Ads: Where a Denver Contractor’s Budget Goes](https://eyetoad.com/blog/local-pack-vs-local-services-ads-denver/)
 - [Google's September 2026 Spam Update: What It Was, and a Checklist for Local Business Sites](https://eyetoad.com/blog/google-september-2026-spam-update/)
 - [Which Review Sites Matter When Customers Ask AI for a Recommendation?](https://eyetoad.com/blog/which-review-sites-matter-for-ai-search/)
 - [You Rank in the Google Maps 3-Pack. Why Doesn't AI Mode Mention You?](https://eyetoad.com/blog/google-maps-ranking-vs-ai-mode/)

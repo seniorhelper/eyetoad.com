@@ -31,7 +31,7 @@ const FONTS = '<style id="eta-fonts">' + [
   '@font-face{font-family:Outfit Fallback;src:local(Arial),local(Liberation Sans),local(Helvetica Neue),local(Helvetica),local(Roboto);size-adjust:100.16%;ascent-override:99.84%;descent-override:25.96%;line-gap-override:0%}' +
   '</style>';
 
-const VISOR = '<div class="vr vr-img" role="group" aria-label="Domain tools"><img src="/images/domain-tools-visor.webp" width="584" height="148" alt="" decoding="async" fetchpriority="low">' +
+const VISOR = '<div class="vr vr-img" role="group" aria-label="Domain tools"><img src="/images/domain-tools-visor.webp" srcset="/images/domain-tools-visor-400.webp 400w, /images/domain-tools-visor.webp 584w" sizes="(max-width:360px) 196px, (max-width:1024px) 252px, 292px" width="584" height="148" alt="" decoding="async" fetchpriority="low">' +
   '<a class="vr-l" style="left:4%;width:33.5%" href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener"><span class="sr">Domain finder (opens buyweburl.com)</span></a>' +
   '<a class="vr-l" style="left:40.5%;width:33.5%" href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener"><span class="sr">Premium domain names (opens bestdomainsforbusiness.com)</span></a></div>';
 const VISOR_CSS = '.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}' +
