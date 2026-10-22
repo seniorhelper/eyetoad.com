@@ -388,6 +388,8 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Wheat Ridge SEO | Local SEO for Wheat Ridge, CO](https://eyetoad.com/locations/wheat-ridge-seo/)
 
 ## Blog
+- [Google Business Profile Changes 2026: What’s Gone, What’s New](https://eyetoad.com/blog/google-business-profile-changes-2026/)
+- [Track AI Search Traffic and Leads in GA4 and Search Console](https://eyetoad.com/blog/track-ai-search-traffic-and-leads/)
 - [Google’s AI Is Calling Denver Businesses for Quotes: How to Answer](https://eyetoad.com/blog/google-ai-calling-your-business/)
 - [31% Skip Under 4.5 Stars: 2026 Review Numbers for Denver Businesses](https://eyetoad.com/blog/review-thresholds-2026-denver/)
 - [Should You Opt Out of Google AI Overviews? The Search Console Toggle](https://eyetoad.com/blog/opt-out-of-google-ai-features/)
