@@ -69,10 +69,11 @@ marketing, and custom static website development.
   time. Rates vary with size, complexity and optimization.
 - **AI search visibility audit:** $297 for the written report (5 business
   days) or $750 with the top fixes done for you. One-time, no contract.
-- **Local Launch Kit:** $497 setup, then $97 per month (cancel anytime
-  online). Directory listings, a press release, 3 SEO fixes, review
+- **Local Launch Kit:** $497 setup, then $97 per month (renews until cancelled
+  with 30 days written notice). Directory listings, a press release, 3 SEO fixes, review
   requests and instant lead replies. No lead or ranking guarantees.
-- **Review Booster:** $59 per month, no setup fee, cancel anytime online.
+- **Review Booster:** $59 per month, no setup fee, 30 days written notice
+  to cancel. All sales final on every package.
 - **Free audit:** no cost, no contract, findings belong to the business
   whether or not they hire the agency.
 
@@ -138,7 +139,7 @@ mean we have a local office there.
 - [Denver SEO Companies Compared](https://eyetoad.com/denver-seo-companies/): sixteen Denver SEO companies compared on founded year, HQ, Clutch reviews, published pricing and case numbers; read Oct 19, 2026; no paid placements
 - [AI SEO Agency](https://eyetoad.com/ai-seo-agency/): AI SEO / GEO / AEO agency services, published pricing $500-$3,000/mo, no guarantees
 - [AI Visibility Audit](https://eyetoad.com/ai-visibility-audit/): free six-prompt AI visibility self-check scored out of 24, plus the full audit
-- [AI Search Visibility Audit](https://eyetoad.com/ai-search-visibility-audit/): paid audit of whether ChatGPT, Google AI Overviews and AI Mode, Perplexity and Gemini name a business; $297 written report in 5 business days, or $750 with the top fixes done; report fee credited toward the upgrade or SEO tasks within 30 days
+- [AI Search Visibility Audit](https://eyetoad.com/ai-search-visibility-audit/): paid audit of whether ChatGPT, Google AI Overviews and AI Mode, Perplexity and Gemini name a business; $297 written report in 5 business days, or $750 with the top fixes done; one-time purchase, all sales final
 - [National SEO Company](https://eyetoad.com/national-seo-company/): national and multi-market SEO from Denver, $1,500-$3,000/mo, AI search included
 - [SEO Services](https://eyetoad.com/denver-seo-services/): full service list
 - [Local SEO Denver](https://eyetoad.com/local-seo-denver/): map pack and local search
@@ -149,8 +150,8 @@ mean we have a local office there.
 - [Custom Business Dashboards](https://eyetoad.com/custom-business-dashboards/): custom-built dashboards that put leads, booked jobs, revenue, calls, reviews and ad costs on one screen from a business's existing tools; live demo with sample data for a fictional HVAC company; published prices
 - [Free AI Agent Plan](https://eyetoad.com/free-ai-agent-plan/): free 5-step planner that ranks the top 3 AI agents for a business, estimates hours and value returned, and scores readiness (runs in the browser; no signup)
 - [Pricing](https://eyetoad.com/denver-seo-pricing/)
-- [Local Launch Kit](https://eyetoad.com/local-launch-kit/): $497 setup + $97/month for new and growing local businesses - verified and featured directory listings, 1 press release, 3 SEO fixes, review-request setup, instant web-lead reply; no lead guarantees, cancel anytime online
-- [Review Booster](https://eyetoad.com/review-booster/): $59/month review requests after every job with one reminder, reply drafted for every Google review, no review gating or incentives, cancel anytime online
+- [Local Launch Kit](https://eyetoad.com/local-launch-kit/): $497 setup + $97/month for new and growing local businesses - verified and featured directory listings, 1 press release, 3 SEO fixes, review-request setup, instant web-lead reply; no lead guarantees, 30 days written notice to cancel
+- [Review Booster](https://eyetoad.com/review-booster/): $59/month review requests after every job with one reminder, reply drafted for every Google review, no review gating or incentives, 30 days written notice to cancel
 - [SEO à la carte](https://eyetoad.com/seo-a-la-carte/): pick foundational onsite SEO, AI search and tracking fixes at $100 a task; drag-and-drop order builder with Authorize.net checkout
 - [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
 - [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
@@ -368,7 +369,8 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Small Business Marketing Services | SEO, Maps, AI, Sites](https://eyetoad.com/services/)
 - [How Fast Is This Website? Live Lighthouse Scores](https://eyetoad.com/site-speed/)
 - [Solar Marketing | We Build the Lead Source, Not Sell Leads](https://eyetoad.com/solar-marketing/)
-- [Terms and Conditions | Eye To Ad Media Inc.](https://eyetoad.com/terms.html)
+- [Terms and Conditions | Search Converts LLC (dba Eye To Ad Media)](https://eyetoad.com/terms.html)
+- [Online Purchase & Subscription Terms](https://eyetoad.com/purchase-terms/): automatic renewal, 30 days written notice to cancel (online at eyetoad.com/cancel/ or by email to info@eyetoad.com), all sales final, no guaranteed results
 - [Veterinary Marketing for Clinics That Are Already Full](https://eyetoad.com/veterinarian-seo-denver/)
 - [NFC Marketing | One Tap Into a Real Lead — Eye To Ad Media](https://eyetoad.com/vip-marketing/)
 - [What You Get With Eye To Ad Media SEO | How It Scales](https://eyetoad.com/what-you-get/)

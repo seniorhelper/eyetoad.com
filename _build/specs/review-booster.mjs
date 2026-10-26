@@ -6,9 +6,9 @@ export default {
   prefix: 'rvb',
   date: '2026-10-26',
   title: 'Review Booster | More Google Reviews for $59 a Month',
-  description: 'Every customer asked for a Google review after every job, one reminder, and a reply drafted for every review. $59 a month, no setup fee, cancel anytime.',
+  description: 'Every customer asked for a Google review after every job, one reminder, and a reply drafted for every review. $59 a month, no setup fee, 30-day cancellation notice.',
   crumbs: [['Services', 'https://eyetoad.com/services/']],
-  eyebrow: 'Review Booster &middot; $59 a month &middot; No setup fee &middot; Cancel anytime online',
+  eyebrow: 'Review Booster &middot; $59 a month &middot; No setup fee &middot; Cancel online with 30 days&rsquo; notice',
   h1: 'Review Booster: ask every customer, <em>every time, without thinking about it.</em>',
   kick: 'Most happy customers will leave a review. Most are never asked.',
   sub: 'Reviews are what people read before they call you, and recent reviews are one of the signals Google and AI assistants use to decide who to show. Review Booster sends a review request after every job, follows up once, and drafts a reply to every review you get. You stay focused on the work; the asking happens on its own.',
@@ -25,7 +25,7 @@ export default {
 <li>Monthly report: requests sent, reviews in, rating trend</li>
 </ul>
 ${BUY('REVIEW-M', 'Start Review Booster, $59/mo')}
-<p class="px-fine">$59 today, then $59 every month until you cancel. No setup fee, no contract. <a href="https://eyetoad.com/cancel/">Cancel anytime online</a>.</p>
+<p class="px-fine">$59 today, then $59 every month until cancelled. No setup fee. To cancel, give 30 days&rsquo; written notice <a href="https://eyetoad.com/cancel/">online</a> or by email to info@eyetoad.com; charges during the notice period still apply. All sales are final.</p>
 </div>
 <noscript><p class="px-fine"><b>Checkout needs JavaScript.</b> Call 1-800-481-8638 or email info@eyetoad.com and we will send a secure invoice.</p></noscript>
 </div>`,
@@ -78,8 +78,8 @@ ${BUY('REVIEW-M', 'Start Review Booster, $59/mo')}
   ],
   faqH2: 'About Review Booster.',
   faq: [
-    { q: 'How many reviews will I get?', a: 'We cannot promise a number, and you should be wary of anyone who does. It depends on how many customers you serve, how happy they are and how soon after the job they are asked. What we guarantee is the work: every customer you add gets a request within one business day and one reminder, and every new Google review gets a reply drafted within one business day.' },
-    { q: 'Is there a contract or setup fee?', a: 'No. It is $59 a month, starting the day you sign up, and it renews monthly until you cancel. There is no setup fee and no minimum term. Cancel anytime online at <a href="https://eyetoad.com/cancel/">eyetoad.com/cancel</a>, or email info@eyetoad.com. Your reviews, your review link and your QR card stay yours after you cancel.' },
+    { q: 'How many reviews will I get?', a: 'We cannot promise a number, and you should be wary of anyone who does. It depends on how many customers you serve, how happy they are and how soon after the job they are asked. What we commit to is the work: every customer you add gets a request within one business day and one reminder, and every new Google review gets a reply drafted within one business day.' },
+    { q: 'Is there a contract or setup fee?', a: 'There is no setup fee and no long-term contract. It is $59 a month, starting the day you sign up, and it renews monthly until cancelled. To cancel, give 30 days&rsquo; written notice online at <a href="https://eyetoad.com/cancel/">eyetoad.com/cancel</a> or by email to info@eyetoad.com; the cancellation takes effect 30 days after we receive it, and charges in that window still apply. All sales are final. Your reviews, your review link and your QR card stay yours after you cancel.' },
     { q: 'Do you post the replies for me?', a: 'By default we email you a drafted reply and you post it, so nothing goes out under your name without your say. If you would rather we post them, give us manager access to your Google Business Profile and we will post the replies for positive reviews and send you any negative ones to approve first.' },
     { q: 'What if a customer leaves a bad review?', a: 'You will hear about it the same day, with a calm, professional reply drafted for you. A thoughtful public answer to a bad review often does more for the next customer than another five-star review. We will not hide, filter or try to remove honest reviews. If a review breaks Google&rsquo;s rules, such as one from someone who was never a customer, we show you how to report it.' },
     { q: 'Can you text my customers?', a: 'Yes, once your business&rsquo;s texting registration is approved by the carriers, which usually takes one to three weeks. Until then, requests go by email. We only text customers who gave you their mobile number for the job, every text names your business, and anyone who replies STOP never gets another one.' },
@@ -91,7 +91,7 @@ ${BUY('REVIEW-M', 'Start Review Booster, $59/mo')}
     name: 'Review Booster', types: ['Review request service', 'Online review management'], alt: ['Google review requests', 'Review generation service'],
     area: { '@type': 'Country', name: 'United States' },
     offers: [
-      { '@type': 'Offer', name: 'Review Booster monthly plan', sku: 'REVIEW-M', price: '59', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://eyetoad.com/review-booster/', priceSpecification: { '@type': 'UnitPriceSpecification', price: '59', priceCurrency: 'USD', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' } }, description: 'Review requests after every job with one reminder, a one-tap Google review link and QR card, a reply drafted for every new review, up to 200 requests a month. No setup fee, cancel anytime online.' },
+      { '@type': 'Offer', name: 'Review Booster monthly plan', sku: 'REVIEW-M', price: '59', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://eyetoad.com/review-booster/', priceSpecification: { '@type': 'UnitPriceSpecification', price: '59', priceCurrency: 'USD', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' } }, description: 'Review requests after every job with one reminder, a one-tap Google review link and QR card, a reply drafted for every new review, up to 200 requests a month. No setup fee; renews monthly until cancelled with 30-day written notice.' },
     ],
   },
   script: "document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.sc-buy');if(b&&typeof window.gtag==='function'){try{window.gtag('event','sc_buy_click',{sku:b.getAttribute('data-sku'),page:location.pathname})}catch(x){}}});",

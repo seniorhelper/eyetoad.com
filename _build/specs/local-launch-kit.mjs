@@ -6,9 +6,9 @@ export default {
   prefix: 'llk',
   date: '2026-10-26',
   title: 'Local Launch Kit | Get Found, Own Your Leads, $497 + $97/mo',
-  description: 'Directory listings, a press release, 3 SEO fixes, review requests and instant lead replies for local businesses. $497 setup, $97/mo, cancel anytime.',
+  description: 'Directory listings, a press release, 3 SEO fixes, review requests and instant lead replies for local businesses. $497 setup, then $97/mo with a 30-day cancellation notice.',
   crumbs: [['Services', 'https://eyetoad.com/services/']],
-  eyebrow: 'Local Launch Kit &middot; $497 setup + $97/mo &middot; Cancel anytime online',
+  eyebrow: 'Local Launch Kit &middot; $497 setup + $97/mo &middot; Cancel online with 30 days&rsquo; notice',
   h1: 'Local Launch Kit: get found, get reviewed, <em>and keep your own leads.</em>',
   kick: 'The groundwork a local business needs in its first year, done for you in about two weeks, at a price posted on this page.',
   sub: 'You started a business to support your family, not to learn directory dashboards. The Launch Kit puts you in the places customers and AI assistants look, starts asking every customer for a review, and answers every web lead the moment it arrives. Every lead it produces comes to you, not to a marketplace that sells the same lead to three of your competitors.',
@@ -26,9 +26,9 @@ export default {
 <li>Instant reply to every web lead</li>
 </ul>
 ${BUY('LAUNCHKIT', 'Start my Launch Kit, $497')}
-<p class="px-fine">You pay $497 today. The $97 monthly plan starts 30 days later and renews monthly until you cancel. <a href="https://eyetoad.com/cancel/">Cancel anytime online</a>; no contract.</p>
+<p class="px-fine">You pay $497 today. The $97 monthly plan starts 30 days later and renews monthly until cancelled. To cancel, give 30 days&rsquo; written notice <a href="https://eyetoad.com/cancel/">online</a> or by email to info@eyetoad.com; charges during the notice period still apply. All sales are final.</p>
 </div>
-<p class="px-fine">No lead guarantees, no ranking promises. We guarantee the work and the dates below.</p>
+<p class="px-fine">No lead guarantees, no ranking promises. We commit to the work below; the dates are our honest estimates.</p>
 <noscript><p class="px-fine"><b>Checkout needs JavaScript.</b> Call 1-800-481-8638 or email info@eyetoad.com and we will send a secure invoice.</p></noscript>
 </div>`,
   capsule: 'The Local Launch Kit from Eye To Ad Media is a $497 setup plus $97 a month package for new and growing local businesses. Setup covers Verified and Featured directory listings, one press release, three SEO fixes on your site, review-request setup and an instant reply to every web lead. The monthly fee keeps the listings, review requests and lead replies running. It does not buy leads or promise rankings; it builds a lead source you own.',
@@ -79,8 +79,8 @@ ${BUY('LAUNCHKIT', 'Start my Launch Kit, $497')}
 <div class="k-chip">The fine print, up front</div>
 <h2 class="k-h" id="llk-h2d">Every fee, <em>in one place.</em></h2>
 <div class="k-grid2">
-<div class="k-card"><h3 class="k-h3">What you pay</h3><p>$497 once for setup, charged at checkout. $97 a month starting 30 days later, renewing monthly until you cancel. No contract, no setup fee to cancel, no charge per lead. Want more than three SEO fixes? Extra tasks are $100 each on the <a href="/seo-a-la-carte/">&agrave; la carte menu</a>.</p></div>
-<div class="k-card"><h3 class="k-h3">What we guarantee</h3><p>The work and the dates on this page. We do not guarantee a number of leads, calls or reviews, or a ranking position, because those depend on your market, your reviews and your customers. If we miss a date we promised, tell us and we credit that month&rsquo;s $97.</p></div>
+<div class="k-card"><h3 class="k-h3">What you pay</h3><p>$497 once for setup, charged at checkout. $97 a month starting 30 days later, renewing monthly until cancelled with 30 days&rsquo; written notice. No long-term contract, no cancellation fee, no charge per lead. All sales are final. Want more than three SEO fixes? Extra tasks are $100 each on the <a href="/seo-a-la-carte/">&agrave; la carte menu</a>.</p></div>
+<div class="k-card"><h3 class="k-h3">What we commit to</h3><p>The work on this page, on the timelines shown, which are our good-faith estimates. We do not guarantee a number of leads, calls or reviews, or a ranking position, because those depend on your market, your reviews and your customers. If a date slips, we tell you why and give you the new date.</p></div>
 </div>
 <p class="k-p">Not sure where you stand in AI search before you start? The <a href="/ai-search-visibility-audit/">AI search visibility audit</a> shows which assistants name you today. Already established and only need reviews? <a href="/review-booster/">Review Booster</a> is $59 a month on its own.</p>
 <script src="https://usabusinesssearch.com/secure-checkout/checkout.js" defer></script>
@@ -89,10 +89,10 @@ ${BUY('LAUNCHKIT', 'Start my Launch Kit, $497')}
   faqH2: 'About the Local Launch Kit.',
   faq: [
     { q: 'Who is the Local Launch Kit for?', a: 'New businesses in their first year, and established businesses that never did the groundwork: no directory listings, no review requests, a website form that sits unanswered until evening. It fits service businesses best (contractors, home services, salons, clinics, restaurants). If you already run a full SEO campaign with us, you have most of this already and do not need the kit.' },
-    { q: 'Will the Launch Kit guarantee me leads?', a: 'No, and be careful of anyone who guarantees leads for a fixed monthly price. The kit guarantees the work: listings verified and featured, a press release published, three SEO fixes made, review requests and lead replies running, all by the dates on this page. Those are the things that make a business easier to find and easier to choose, and every lead they produce comes straight to you.' },
+    { q: 'Will the Launch Kit guarantee me leads?', a: 'No, and be careful of anyone who guarantees leads for a fixed monthly price. The kit delivers the work: listings verified and featured, a press release published, three SEO fixes made, review requests and lead replies running, on the estimated timelines on this page. Those are the things that make a business easier to find and easier to choose, and every lead they produce comes straight to you.' },
     { q: 'How is this different from Angi, Thumbtack or Yelp?', a: 'Those marketplaces sell you access to customers they found, usually per lead or per click, and the same customer often hears from several of your competitors. The Launch Kit spends your money on things you keep: your listings, your reviews, your website and your own lead replies. Many businesses use both for a while. The kit is how you rely on the marketplaces less over time.' },
     { q: 'Which directories are included?', a: 'USABusinessSearch.com, our nationwide business directory, and COBusinessList.com, our Colorado directory. You get a Verified listing and a Featured (Boost) placement in your category, kept active while your $97 plan runs. COBusinessList.com only lists Colorado businesses, so outside Colorado we do a fourth SEO fix on your website in place of the second listing.' },
-    { q: 'Can I cancel the $97 a month?', a: 'Yes, anytime, online at <a href="https://eyetoad.com/cancel/">eyetoad.com/cancel</a>, or by emailing info@eyetoad.com. No phone call, no cancellation fee. When you cancel, the Featured placements and review requests stop at the end of that month. Your website fixes, the published press release and every review you earned stay yours.' },
+    { q: 'Can I cancel the $97 a month?', a: 'Yes. Give 30 days&rsquo; written notice, online at <a href="https://eyetoad.com/cancel/">eyetoad.com/cancel</a> or by email to info@eyetoad.com with the subject CANCEL. The cancellation takes effect 30 days after we receive your notice, and any charge in that window still applies. No phone call, no cancellation fee. All sales are final, so there are no refunds. After the effective date the Featured placements and review requests stop. Your website fixes, the published press release and every review you earned stay yours.' },
     { q: 'What does the AI Speed to Leads starter actually do?', a: 'It connects your website form so every new lead gets an instant reply under your business name within seconds, and you get an alert with the details on your phone. Leads who reach out at 9 pm hear back right away instead of the next morning. If you later want an AI phone call to qualified leads within a minute, that is a separate AI Speed to Leads plan you can add any time.' },
     { q: 'Do you need my passwords?', a: 'We need access to your website for the three SEO fixes, and to your website form for the instant reply. After checkout we email you a secure way to share it, or we work with your web person directly. Please never put a password in a form or an email. The directory listings and press release need no logins from you.' },
   ],
@@ -103,7 +103,7 @@ ${BUY('LAUNCHKIT', 'Start my Launch Kit, $497')}
     area: { '@type': 'Country', name: 'United States' },
     offers: [
       { '@type': 'Offer', name: 'Local Launch Kit setup', sku: 'LAUNCHKIT', price: '497', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://eyetoad.com/local-launch-kit/', description: 'One-time setup: directory listings verified and featured, one press release, three SEO fixes, review-request setup and instant lead reply.' },
-      { '@type': 'Offer', name: 'Local Launch Kit monthly plan', sku: 'LAUNCHKIT-M', price: '97', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://eyetoad.com/local-launch-kit/', priceSpecification: { '@type': 'UnitPriceSpecification', price: '97', priceCurrency: 'USD', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' } }, description: 'Keeps the directory listings featured, review requests and instant lead replies running, with a monthly report. Cancel anytime online.' },
+      { '@type': 'Offer', name: 'Local Launch Kit monthly plan', sku: 'LAUNCHKIT-M', price: '97', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: 'https://eyetoad.com/local-launch-kit/', priceSpecification: { '@type': 'UnitPriceSpecification', price: '97', priceCurrency: 'USD', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' } }, description: 'Keeps the directory listings featured, review requests and instant lead replies running, with a monthly report. Renews monthly until cancelled with 30-day written notice.' },
     ],
   },
   script: "document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.sc-buy');if(b&&typeof window.gtag==='function'){try{window.gtag('event','sc_buy_click',{sku:b.getAttribute('data-sku'),page:location.pathname})}catch(x){}}});",
