@@ -142,7 +142,7 @@ mean we have a local office there.
 - [Custom Business Dashboards](https://eyetoad.com/custom-business-dashboards/): custom-built dashboards that put leads, booked jobs, revenue, calls, reviews and ad costs on one screen from a business's existing tools; live demo with sample data for a fictional HVAC company; published prices
 - [Free AI Agent Plan](https://eyetoad.com/free-ai-agent-plan/): free 5-step planner that ranks the top 3 AI agents for a business, estimates hours and value returned, and scores readiness (runs in the browser; no signup)
 - [Pricing](https://eyetoad.com/denver-seo-pricing/)
-- [SEO à la carte](https://eyetoad.com/seo-a-la-carte/): pick foundational onsite SEO, AI search and tracking fixes at $100 a task; drag-and-drop order builder with Authorize.net checkout
+- [SEO à la carte](https://eyetoad.com/seo-a-la-carte/): pick foundational onsite SEO, AI search and tracking fixes at $100 a task; drag-and-drop order builder; send an order request and get a secure Authorize.net invoice by email (no card on the site)
 - [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
 - [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
 - [Best Denver SEO Company? 7 Tests to Run First](https://eyetoad.com/best-denver-seo-company/): buyer's guide
