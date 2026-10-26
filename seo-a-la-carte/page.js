@@ -1,21 +1,16 @@
-/* SEO a la carte — order builder. Cards are the source of truth for task names; LinkIds below map order size to Authorize.Net Simple Checkout buttons. */
+/* SEO a la carte — order builder. Cards are the source of truth for task names.
+   Payment runs through the network secure checkout engine (checkout.js, SKU SEO-TASK, qty = task count).
+   The engine has no order-note field, so the task list is emailed before checkout and confirmed with the
+   order number when the buyer returns paid (?sc=thanks&order=...&sku=SEO-TASK). This file must load
+   before checkout.js, which strips those return params from the URL. */
 (function(){
   'use strict';
-  var PRICE=100, CAP=10, KEY='eta_alacarte_v1';
-  var ANET='https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx';
-  var LINKS={
-    1:'b9b4d5cb-297c-4cc6-a0b5-5e4c435161bd', /* SEOF100 */
-    2:'0ac0577c-31e3-4ecf-a182-130d7e7f30b9', /* SEOF200 */
-    3:'b461eb72-bdc5-4a57-9717-66d08642d7bf', /* SEOF300 */
-    4:'57bf2b21-8ee0-4b88-b917-1b7acb177fe7', /* SEOF400 */
-    5:'c9f4c20b-5559-42e5-a282-a6e9281097de', /* SEOF500 */
-    6:'b3515324-324b-4afb-8a10-31fd6bc3d8ae', /* SEOF600 */
-    7:'1d513064-d736-4531-bf74-5f60d064f2e1', /* SEOF700 */
-    8:'3ccad50e-aff0-4798-8204-7f291a8d2cd9', /* SEOF800 */
-    9:'7aee05e8-b95e-47e9-94ff-29556b47f5cf', /* SEOF900 */
-    10:'4a25f63a-bfe6-45ec-b9e0-9c2b8d981548' /* SEOF1000 */
-  };
+  var PRICE=100, CAP=10, KEY='eta_alacarte_v1', SKU='SEO-TASK', SITE='eyetoad.com';
   function $(id){return document.getElementById(id);}
+  /* read the engine's return params now, before checkout.js removes them */
+  var RET=(function(q){var m=/[?&]sc=thanks(?:&|$)/.test(q),o=/[?&]order=([A-Z0-9]{16})(?:&|$)/.exec(q),k=/[?&]sku=([A-Z0-9-]{2,40})(?:&|$)/.exec(q);
+    return m&&k&&k[1]===SKU?{order:o?o[1]:''}:null;})(location.search||'');
+  function ga(ev,p){try{if(typeof window.gtag==='function')window.gtag('event',ev,p||{});}catch(e){}}
   var panel=$('ac-panel'); if(!panel) return;
 
   /* ---- task catalogue from the cards ---- */
@@ -164,7 +159,7 @@
     var n=count(),lines=S.lines.map(function(l,i){var t=T[l.id];return (i+1)+'. '+t.name+' ('+t.unit+')'+(l.q>1?' x '+l.q:'')+' - '+money(l.q*PRICE);});
     return ['SEO a la carte order - '+plural(n)+', '+money(n*PRICE),
       'Website: '+(det.website||''),'Name: '+(det.name||''),'Email: '+(det.email||''),'Phone: '+(det.phone||''),'Platform: '+(det.platform||'Not sure'),
-      '','Tasks:'].concat(lines).concat(['','Total: '+plural(n)+' - '+money(n*PRICE),'Checkout button: SEOF'+(n*PRICE),'Notes: '+(det.notes||'')]).join('\n');
+      '','Tasks:'].concat(lines).concat(['','Total: '+plural(n)+' - '+money(n*PRICE),'Checkout: '+SKU+' x '+n,'Notes: '+(det.notes||'')]).join('\n');
   }
   function addr(){try{if(window.etaAddr){var a=window.etaAddr();if(a)return a;}}catch(e){}try{return atob('aW5mbw==')+String.fromCharCode(64)+atob('ZXlldG9hZC5jb20=');}catch(e){return '';}}
   function host(u){return String(u||'').replace(/^https?:\/\//i,'').replace(/\/.*$/,'').slice(0,80);}
@@ -174,7 +169,7 @@
     fd.append('name',det.name||'');fd.append('email',det.email);fd.append('phone',det.phone||'');
     fd.append('website',det.website);fd.append('platform',det.platform||'Not sure');
     fd.append('tasks',S.lines.map(function(l){return T[l.id].name+' ('+T[l.id].unit+')'+(l.q>1?' x '+l.q:'');}).join('; '));
-    fd.append('task_count',String(n));fd.append('total',money(n*PRICE));fd.append('checkout_button','SEOF'+(n*PRICE));
+    fd.append('task_count',String(n));fd.append('total',money(n*PRICE));fd.append('checkout_sku',SKU+' x '+n);
     fd.append('order',txt);fd.append('notes',det.notes||'');
     fd.append('page_url',location.href);fd.append('_template','table');fd.append('_captcha','false');
     var ctl=null;try{ctl=new AbortController();}catch(e){}
@@ -184,11 +179,14 @@
       .catch(function(){return false;})
       .then(function(ok){clearTimeout(timer);return ok;});
   }
+  /* open the secure checkout engine for n tasks (SEO-TASK x n) */
   function checkout(n){
-    var lid=LINKS[n];if(!lid)return;
-    var f=document.createElement('form');f.method='post';f.action=ANET;f.style.display='none';
-    var i=document.createElement('input');i.type='hidden';i.name='LinkId';i.value=lid;f.appendChild(i);
-    document.body.appendChild(f);f.submit();
+    if(!(n>=1&&n<=CAP))return;
+    ga('sc_buy_click',{sku:SKU,qty:n,page:location.pathname,source:'builder'});
+    var api=window.SCCheckout;
+    pay.disabled=false;
+    if(api&&typeof api.open==='function'){api.open({sku:SKU,qty:n,site:SITE});return;}
+    msg('wait','Secure checkout is still loading. Give it a second and press "Continue to secure checkout" again, or call 1-800-481-8638.');
   }
   var status=$('ac-status');
   function msg(kind,text){status.innerHTML='';var m=document.createElement('div');m.className='eta-msg';m.setAttribute('data-kind',kind);m.textContent=text;
@@ -224,7 +222,7 @@
     pay.disabled=true;msg('wait','Sending your task list, then opening secure checkout...');
     var txt=orderText(det);
     sendLead(det,txt).then(function(ok){
-      if(ok){msg('ok','Task list received. Opening Authorize.net secure checkout...');checkout(n);}
+      if(ok){msg('ok','Task list received. Opening secure checkout on Authorize.net...');checkout(n);}
       else failBox(txt,n);
     });
   });
@@ -238,8 +236,44 @@
     $('ac-new').addEventListener('click',function(){S.lines=[];S.sent=0;commit();b.hidden=true;$('builder').scrollIntoView({block:'start'});});
   }
 
+  /* ---- after payment: tell us which tasks (linked to the order number) ---- */
+  function paidStep(){
+    var b=$('ac-back');if(!b||!RET)return;
+    var n=count(),order=RET.order;
+    var list=n?S.lines.map(function(l){var t=T[l.id];return t.name+' ('+t.unit+')'+(l.q>1?' x '+l.q:'');}).join('\n'):'';
+    b.innerHTML='<b>Payment received'+(order?' for order '+esc(order):'')+'. Thank you.</b> Last step: tell us which tasks. '+
+      (n?'We saved the list you built; check it and press Send.':'List the tasks you want (and the pages), then press Send.')+
+      '<div class="np-form"><label for="ac-pt">Tasks for this order</label><textarea id="ac-pt" maxlength="3000" placeholder="Example: meta tags for home, services and contact; image compression"></textarea>'+
+      '<label for="ac-pe">Email you paid with</label><input id="ac-pe" type="email" autocomplete="email">'+
+      '<label for="ac-pw">Website URL</label><input id="ac-pw" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com">'+
+      '</div><p style="margin:14px 0 0"><button type="button" id="ac-psend" style="min-height:44px;padding:0 18px;border-radius:8px;background:#054F31;color:#fff;text-decoration:none">Send my task list</button></p><div id="ac-pst" role="status" aria-live="polite"></div>';
+    b.hidden=false;
+    $('ac-pt').value=list;$('ac-pe').value=S.d.email||'';$('ac-pw').value=S.d.website||'';
+    var sent=false;
+    $('ac-psend').addEventListener('click',function(){
+      var btn=this,st=$('ac-pst'),tasks=$('ac-pt').value.trim(),em=$('ac-pe').value.trim(),web=$('ac-pw').value.trim();
+      if(sent)return;
+      if(!tasks){st.textContent='Please list at least one task.';$('ac-pt').focus();return;}
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){st.textContent='Please add the email you paid with.';$('ac-pe').focus();return;}
+      btn.disabled=true;st.textContent='Sending...';
+      var fd=new FormData();
+      fd.append('_subject','SEO à la carte PAID — order '+(order||'(no number)')+' — '+host(web));
+      fd.append('order_id',order);fd.append('email',em);fd.append('website',web);fd.append('tasks',tasks);
+      fd.append('task_count',String(n||''));fd.append('checkout_sku',SKU+(n?' x '+n:''));
+      fd.append('page_url',location.origin+location.pathname);fd.append('_template','table');fd.append('_captcha','false');
+      fetch('https://formsubmit.co/ajax/'+addr(),{method:'POST',headers:{'Accept':'application/json'},body:fd})
+        .then(function(r){return r.json().then(function(j){return r.ok&&j&&String(j.success)==='true';},function(){return false;});})
+        .catch(function(){return false;})
+        .then(function(ok){
+          if(ok){sent=true;st.textContent='Got it. We start within 1 business day and email you a secure way to share access.';ga('seo_tasks_confirmed',{order_id:order,qty:n});S.lines=[];S.sent=0;save();}
+          else{btn.disabled=false;st.textContent='Could not send. Reply to your receipt email with the list, or call 1-800-481-8638.';}
+        });
+    });
+    setTimeout(function(){try{$('details').scrollIntoView({block:'start'});$('ac-pt').focus({preventScroll:true});}catch(e){}},400);
+  }
+
   /* ---- init ---- */
   var simple=$('ac-simple');if(simple)simple.removeAttribute('open');
-  load();render();backNote();
+  load();render();if(RET)paidStep();else backNote();
   window.__acState=function(){return JSON.parse(JSON.stringify({lines:S.lines,count:count(),total:count()*PRICE}));};
 })();
