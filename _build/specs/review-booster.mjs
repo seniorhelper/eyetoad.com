@@ -25,7 +25,7 @@ export default {
 <li>Monthly report: requests sent, reviews in, rating trend</li>
 </ul>
 ${BUY('REVIEW-M', 'Start Review Booster, $59/mo')}
-<p class="px-fine">$59 today, then $59 every month until you cancel. No setup fee, no contract. Cancel anytime online.</p>
+<p class="px-fine">$59 today, then $59 every month until you cancel. No setup fee, no contract. <a href="https://eyetoad.com/cancel/">Cancel anytime online</a>.</p>
 </div>
 <noscript><p class="px-fine"><b>Checkout needs JavaScript.</b> Call 1-800-481-8638 or email info@eyetoad.com and we will send a secure invoice.</p></noscript>
 </div>`,
@@ -79,7 +79,7 @@ ${BUY('REVIEW-M', 'Start Review Booster, $59/mo')}
   faqH2: 'About Review Booster.',
   faq: [
     { q: 'How many reviews will I get?', a: 'We cannot promise a number, and you should be wary of anyone who does. It depends on how many customers you serve, how happy they are and how soon after the job they are asked. What we guarantee is the work: every customer you add gets a request within one business day and one reminder, and every new Google review gets a reply drafted within one business day.' },
-    { q: 'Is there a contract or setup fee?', a: 'No. It is $59 a month, starting the day you sign up, and it renews monthly until you cancel. There is no setup fee and no minimum term. Cancel anytime online with the link in your receipt email, or email info@eyetoad.com. Your reviews, your review link and your QR card stay yours after you cancel.' },
+    { q: 'Is there a contract or setup fee?', a: 'No. It is $59 a month, starting the day you sign up, and it renews monthly until you cancel. There is no setup fee and no minimum term. Cancel anytime online at <a href="https://eyetoad.com/cancel/">eyetoad.com/cancel</a>, or email info@eyetoad.com. Your reviews, your review link and your QR card stay yours after you cancel.' },
     { q: 'Do you post the replies for me?', a: 'By default we email you a drafted reply and you post it, so nothing goes out under your name without your say. If you would rather we post them, give us manager access to your Google Business Profile and we will post the replies for positive reviews and send you any negative ones to approve first.' },
     { q: 'What if a customer leaves a bad review?', a: 'You will hear about it the same day, with a calm, professional reply drafted for you. A thoughtful public answer to a bad review often does more for the next customer than another five-star review. We will not hide, filter or try to remove honest reviews. If a review breaks Google&rsquo;s rules, such as one from someone who was never a customer, we show you how to report it.' },
     { q: 'Can you text my customers?', a: 'Yes, once your business&rsquo;s texting registration is approved by the carriers, which usually takes one to three weeks. Until then, requests go by email. We only text customers who gave you their mobile number for the job, every text names your business, and anyone who replies STOP never gets another one.' },
