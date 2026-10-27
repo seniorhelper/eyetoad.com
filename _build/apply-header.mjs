@@ -39,7 +39,8 @@ function mouth() {
     '<span class="eh-eyes"><span class="eh-eye"><span class="eh-pupil"></span></span><span class="eh-eye"><span class="eh-pupil"></span></span></span>' +
     '<span class="eh-brows"><i class="st"></i><i class="st"></i>' + FLUFFY + '</span>' +
     '<span class="eh-cheek l"></span><span class="eh-cheek r"></span><canvas class="eh-wave"></canvas>' +
-    '<div class="eh-say" id="ehSay" role="status"><button class="eh-x" type="button" aria-label="Close">&times;</button><div class="txt"></div><button class="eh-hear" type="button" hidden>' + HEAR + 'Tap to hear me</button></div>' +
+    '<div class="eh-say" id="ehSay" role="status"><button class="eh-x" type="button" aria-label="Close">&times;</button><div class="txt"></div><button class="eh-hear" type="button" hidden>' + HEAR + 'Tap to hear me</button><button class="eh-zip" type="button" hidden aria-label="Zip it: mute Toad for this visit"><i></i>Zip it</button></div>' +
+    '<span class="eh-hint">Tap the lips to hear Toad</span>' +
     '</div></div>';
 }
 
@@ -119,7 +120,7 @@ for (const f of files) {
   else s = s.replace('</head>', style + '\n</head>');
   // header script
   // header script (bump HDR_V when eta-hdr.js changes) + the AI assistant (served from the eyetoad cPanel)
-  const HDR_V = 5, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
+  const HDR_V = 6, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
   s = s.replace(/\/eta-hdr\.js\?v=\d+/g, '/eta-hdr.js?v=' + HDR_V);
   if (!s.includes('/eta-hdr.js')) {
     const tag = `<script src="/eta-hdr.js?v=${HDR_V}" defer></script>`;

@@ -3,8 +3,8 @@ export default {
   path: '/locations/pueblo-seo/',
   prefix: 'pb',
   date: '2026-10-27',
-  title: "Pueblo SEO | Local Search for Southern Colorado's Largest City",
-  description: 'Pueblo, Colorado SEO: the Riverwalk and downtown, Pueblo West, the Belmont and University area, the north side and the Mesa. Google Maps, local search and AI answers for a value-conscious market, from a founder-led Denver agency since 2012.',
+  title: "Pueblo SEO | Local Search for Southern Colorado",
+  description: 'Pueblo, Colorado SEO: the Riverwalk and downtown, Pueblo West, Belmont and the university area, the north side. Maps, local search and AI answers.',
   crumbs: [['Locations', 'https://eyetoad.com/locations/']],
   eyebrow: 'Pueblo SEO &middot; Pueblo County &middot; Riverwalk to Pueblo West',
   h1: 'Pueblo SEO for a city that <em>Denver agencies forget.</em>',
@@ -19,7 +19,7 @@ export default {
     ['Typical campaign', '$500 to $3,000 per month, quoted to the market, month to month'],
   ],
   factsChip: 'Pueblo at a glance',
-  capsule: 'Pueblo SEO is local search optimization for businesses in Pueblo, Colorado, a city of about 112,000 with a downtown Riverwalk and Union Avenue district, a university and hospital cluster on the north and east sides, the Belmont and Mesa neighborhoods, and the large unincorporated community of Pueblo West across the river. Pueblo search is price-aware, review-driven and phone-first, with a significant Spanish-language share and less competition than any Front Range city its size. The work is a Google Business Profile set up for the district you serve, pages for the medical, trades, auto, dining and education searches that happen here, Spanish content where it fits, reviews that name Pueblo places, and structure AI assistants can quote. Eye To Ad Media runs it from Denver, founder-led, with campaigns from $500 to $3,000 a month.',
+  capsule: 'Pueblo SEO is local search optimization for businesses in Pueblo, Colorado, a city of about 112,000 with a downtown Riverwalk and Union Avenue district, a university and hospital cluster on the north and east sides, the Belmont and Mesa neighborhoods, and the large unincorporated community of Pueblo West across the river. Pueblo search is price-aware, review-driven and phone-first, with a significant Spanish-language share and less competition than any Front Range city its size. The work is a Google Business Profile set up for the district you serve, pages for the medical, trades, auto, dining and education searches that happen here, Spanish content where it fits, reviews that name Pueblo places, and structure AI assistants can quote. The work is done by Eye To Ad Media in Denver, founder-led, with monthly campaigns between $500 and $3,000.',
   sections: [
     `<div class="k-chip">Why Pueblo is different</div>
 <h2 class="k-h" id="pb-h2a">Less competition, more scrutiny, <em>and a river in the middle.</em></h2>
@@ -47,7 +47,7 @@ export default {
 <div class="k-card"><h3 class="k-h3">3. Prices and ranges on the page</h3><p>The Pueblo buyer compares before calling. Published ranges, financing notes and what is included remove the reason to call someone else first. We write them in plain words and keep them current.</p></div>
 <div class="k-card"><h3 class="k-h3">4. Spanish where the customers are</h3><p>A translated service page, a Spanish profile description and Spanish replies to Spanish reviews. Set up once, kept current.</p></div>
 <div class="k-card"><h3 class="k-h3">5. Reviews that name the job and the neighborhood</h3><p>A review that says &ldquo;fixed our furnace in Belmont&rdquo; or &ldquo;came out to Pueblo West the same day&rdquo; is a relevance signal and the thing the next caller reads. We set the ask up after every job and reply within a day.</p></div>
-<div class="k-card"><h3 class="k-h3">6. Measured in calls</h3><p>Call tracking, form tracking and a monthly note in plain English. The method is the one on our <a href="/denver-seo-company/">Denver SEO company</a> page; the statewide view is on <a href="/locations/colorado-seo/">Colorado SEO</a>.</p></div>
+<div class="k-card"><h3 class="k-h3">6. Measured in calls</h3><p>Every call and form is tracked, and the monthly report is a plain-English note rather than a dashboard dump. The approach is the one described on our <a href="/denver-seo-company/">Denver SEO company</a> page, and <a href="/locations/colorado-seo/">Colorado SEO</a> covers the statewide picture.</p></div>
 </div>
 </div></section>`,
 
@@ -67,7 +67,7 @@ export default {
     `<section class="k-sec" aria-labelledby="pb-h2e"><div class="wrap">
 <div class="k-chip">Honest expectations</div>
 <h2 class="k-h" id="pb-h2e">What we promise, <em>and what we don&rsquo;t.</em></h2>
-<p class="k-p">No ranking guarantees; nobody controls Google. What we can show is the method, our own businesses ranking on it, and the <a href="/case-studies/">case studies</a> with numbers attached. Because Pueblo packs are thinner than Denver&rsquo;s, map-pack movement for a completed profile often shows within one to two months; organic terms in medical and auto take longer. Everything is month to month with 30 days&rsquo; written notice, and you own the profile, the site and the analytics. We work Pueblo from Denver by phone and screen share, with the occasional drive down I-25; if you want a vendor who stops by the shop every week, we are not that, and we would rather say so. The nearest page to the north is <a href="/locations/colorado-springs-seo/">Colorado Springs SEO</a>, a different market with a different plan. Before you hire anyone, including us, run the <a href="/best-denver-seo-company/">seven tests</a>.</p>
+<p class="k-p">No ranking guarantees; nobody controls Google. What we can show is how we work, our own companies ranking on that method, and <a href="/case-studies/">case studies</a> that carry real numbers. Because Pueblo packs are thinner than Denver&rsquo;s, map-pack movement for a completed profile often shows within one to two months; organic terms in medical and auto take longer. There is no long contract: 30 days&rsquo; written notice ends a plan, and the profile, site and analytics accounts belong to you. We work Pueblo from Denver by phone and screen share, with the occasional drive down I-25; if you want a vendor who stops by the shop every week, we are not that, and we would rather say so. The nearest page to the north is <a href="/locations/colorado-springs-seo/">Colorado Springs SEO</a>, a different market with a different plan. Before you hire anyone, including us, run the <a href="/best-denver-seo-company/">seven tests</a>.</p>
 </div></section>`,
   ],
   faqChip: 'Questions people ask',

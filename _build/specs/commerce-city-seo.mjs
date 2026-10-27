@@ -3,8 +3,8 @@ export default {
   path: '/locations/commerce-city-seo/',
   prefix: 'cc',
   date: '2026-10-27',
-  title: 'Commerce City SEO | Trades, Logistics and Reunion-Side Home Services',
-  description: 'Commerce City SEO for an industrial south side, a fast-growing Reunion and Buffalo Run north side, and a bilingual customer base. Google Maps, local search and AI answers from a founder-led Denver agency since 2012.',
+  title: 'Commerce City SEO | Trades, Logistics and Home Services',
+  description: 'Commerce City SEO for the industrial south side, the Reunion north side and a bilingual customer base. Maps, local search and AI answers since 2012.',
   crumbs: [['Locations', 'https://eyetoad.com/locations/']],
   eyebrow: 'Commerce City SEO &middot; Adams County &middot; Derby to Reunion',
   h1: 'Commerce City SEO for a city <em>that is really two.</em>',
@@ -19,7 +19,7 @@ export default {
     ['Typical campaign', '$500 to $3,000 per month, quoted to the market, month to month'],
   ],
   factsChip: 'Commerce City at a glance',
-  capsule: 'Commerce City SEO is local search optimization for businesses in Commerce City, Colorado, an Adams County city of about 62,000 split by the Rocky Mountain Arsenal into an industrial, older south side (Derby, the rail and refinery district, the 72nd Avenue corridor) and a new-build north side (Reunion, Buffalo Run, the 104th Avenue and E-470 corridors). The work is a Google Business Profile set up for whichever half you serve, pages for the trades, logistics and home-services searches that happen here, Spanish-language content where the customer base calls for it, reviews that name the neighborhoods, and structure that AI assistants can quote. Eye To Ad Media runs it from Denver, founder-led, with campaigns from $500 to $3,000 a month.',
+  capsule: 'Commerce City SEO is local search optimization for businesses in Commerce City, Colorado, an Adams County city of about 62,000 split by the Rocky Mountain Arsenal into an industrial, older south side (Derby, the rail and refinery district, the 72nd Avenue corridor) and a new-build north side (Reunion, Buffalo Run, the 104th Avenue and E-470 corridors). The work is a Google Business Profile set up for whichever half you serve, pages for the trades, logistics and home-services searches that happen here, Spanish-language content where the customer base calls for it, reviews that name the neighborhoods, and structure that AI assistants can quote. Eye To Ad Media handles it from Denver, founder-led, at $500 to $3,000 a month depending on the trade and the territory.',
   sections: [
     `<div class="k-chip">Why Commerce City is different</div>
 <h2 class="k-h" id="cc-h2a">The Arsenal splits the city, <em>and the search results.</em></h2>

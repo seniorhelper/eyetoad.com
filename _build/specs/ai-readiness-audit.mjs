@@ -5,7 +5,7 @@ export default {
   prefix: 'ara',
   date: '2026-10-27',
   title: 'AI Readiness Audit + Fix | Free Scan, $297 Report, $750 Done',
-  description: 'Can ChatGPT, Gemini, Claude and Google AI Mode find, trust, quote and book your business? Free 10-second scan, a $297 written audit in 5 business days, or $750 with the top fixes done. No contract, all sales final.',
+  description: 'Can ChatGPT, Gemini, Claude and AI Mode find, trust, quote and book your business? Free scan, $297 written audit, or $750 with the top fixes done.',
   crumbs: [['Services', 'https://eyetoad.com/services/']],
   eyebrow: 'AI readiness audit &middot; Found, trusted, quoted, booked &middot; Denver and nationwide',
   h1: 'AI readiness audit: can an assistant find, trust, quote <em>and book your business?</em>',
@@ -67,7 +67,7 @@ export default {
 <li class="k-step"><div><h3>The fixes (days 5 to 15, done-for-you option)</h3><p>Identity cleanup across listings, price ranges on service pages, the schema set, the credentials strip, robots.txt and the Search Console toggle. Anything outside the top fixes (new service pages, a booking endpoint, a review system) is quoted before we touch it.</p></div></li>
 <li class="k-step"><div><h3>The re-check (day 35 to 45)</h3><p>We run the same questions again and send you the before and after. If the assistants still will not quote or book you, the report says why and what the next step costs, in plain words.</p></div></li>
 </ol>
-<p class="k-p">Dates count from the day we receive your intake and, for done for you, site access. If something on our side slips, we tell you before the date, not after.</p>
+<p class="k-p">Dates count from the day we receive your intake and, for done for you, site access. If a deadline on our side is at risk, you hear about it before the date, not after.</p>
 </div></section>`,
 
     `<section class="k-sec k-sec-off" aria-labelledby="ara-h2d"><div class="wrap">

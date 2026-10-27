@@ -3,8 +3,8 @@ export default {
   path: '/locations/loveland-seo/',
   prefix: 'lv',
   date: '2026-10-27',
-  title: 'Loveland SEO | Local Search from Downtown to Centerra and the I-25 Corridor',
-  description: 'Loveland, Colorado SEO: downtown and the Sweetheart City brand, Centerra and the I-25/US 34 retail hub, the Fort Collins overlap and the Big Thompson side. Google Maps, local search and AI answers from a founder-led Denver agency since 2012.',
+  title: 'Loveland SEO | Downtown, Centerra and the I-25 Corridor',
+  description: 'Loveland, Colorado SEO: downtown, Centerra, the Fort Collins overlap and the Big Thompson side. Maps, local search and AI answers since 2012.',
   crumbs: [['Locations', 'https://eyetoad.com/locations/']],
   eyebrow: 'Loveland SEO &middot; Larimer County &middot; Downtown, Centerra, US 34',
   h1: 'Loveland SEO for the city between <em>Fort Collins and everyone else.</em>',
@@ -19,7 +19,7 @@ export default {
     ['Typical campaign', '$500 to $3,000 per month, quoted to the market, month to month'],
   ],
   factsChip: 'Loveland at a glance',
-  capsule: 'Loveland SEO is local search optimization for businesses in Loveland, Colorado, a Larimer County city of about 76,000 whose Centerra district at I-25 and US 34 draws shoppers and patients from across Northern Colorado, while its downtown and west-side neighborhoods search like a mid-sized hometown. The work is a Google Business Profile set up for the Centerra and downtown map packs, pages for the retail, medical, manufacturing and home-services searches that happen here, reviews that name Loveland places, and structure that AI assistants can quote, so Loveland searches stop defaulting to Fort Collins providers. Eye To Ad Media runs it from Denver, founder-led, with campaigns from $500 to $3,000 a month.',
+  capsule: 'Loveland SEO is local search optimization for businesses in Loveland, Colorado, a Larimer County city of about 76,000 whose Centerra district at I-25 and US 34 draws shoppers and patients from across Northern Colorado, while its downtown and west-side neighborhoods search like a mid-sized hometown. The work is a Google Business Profile set up for the Centerra and downtown map packs, pages for the retail, medical, manufacturing and home-services searches that happen here, reviews that name Loveland places, and structure that AI assistants can quote, so Loveland searches stop defaulting to Fort Collins providers. Eye To Ad Media does the work from Denver, founder-run, on campaigns priced from $500 to $3,000 a month.',
   sections: [
     `<div class="k-chip">Why Loveland is different</div>
 <h2 class="k-h" id="lv-h2a">Two search markets, one city, <em>and a neighbor that keeps winning both.</em></h2>
@@ -67,7 +67,7 @@ export default {
     `<section class="k-sec" aria-labelledby="lv-h2e"><div class="wrap">
 <div class="k-chip">Honest expectations</div>
 <h2 class="k-h" id="lv-h2e">What we promise, <em>and what we don&rsquo;t.</em></h2>
-<p class="k-p">No ranking guarantees; nobody controls Google. What we can show is the method, our own businesses ranking on it, and the <a href="/case-studies/">case studies</a> with numbers attached. Map-pack movement for a well-set-up Loveland profile usually shows within one to three months; competitive organic terms against established Fort Collins and Centerra firms take longer. Everything is month to month with 30 days&rsquo; written notice, and you own the profile, the site and the analytics. We work Loveland from Denver, by phone, screen share and the occasional drive up I-25; if you want a vendor who will stop by the shop every week, we are not that, and we would rather say so. Neighbors with their own pages: <a href="/locations/fort-collins-seo/">Fort Collins</a>, <a href="/locations/longmont-seo/">Longmont</a> and <a href="/locations/boulder-seo/">Boulder</a>. Before you hire anyone, including us, run the <a href="/best-denver-seo-company/">seven tests</a>.</p>
+<p class="k-p">No ranking guarantees; nobody controls Google. What we can show is the method, our own businesses ranking on it, and the <a href="/case-studies/">case studies</a> with numbers attached. Map-pack movement for a well-set-up Loveland profile usually shows within one to three months; competitive organic terms against established Fort Collins and Centerra firms take longer. Plans run month to month and end with 30 days&rsquo; written notice; the profile, the site and the analytics stay yours. We work Loveland from Denver, by phone, screen share and the occasional drive up I-25; if you want a vendor who will stop by the shop every week, we are not that, and we would rather say so. Neighbors with their own pages: <a href="/locations/fort-collins-seo/">Fort Collins</a>, <a href="/locations/longmont-seo/">Longmont</a> and <a href="/locations/boulder-seo/">Boulder</a>. Before you hire anyone, including us, run the <a href="/best-denver-seo-company/">seven tests</a>.</p>
 </div></section>`,
   ],
   faqChip: 'Questions people ask',
