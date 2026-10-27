@@ -6,7 +6,7 @@
   window.etaAddr=addr;
 
   /* ---------- navigation ---------- */
-  var hdr=document.getElementById('hdr'),burger=document.getElementById('burger'),mob=document.getElementById('mobNav');
+  var hdr=document.getElementById('hdr')||document.createElement('div'),burger=document.getElementById('burger')||document.createElement('div'),mob=document.getElementById('mobNav');
   if(hdr&&burger&&mob&&!window.__etaNav){
     window.__etaNav=1;
     var measure=function(){mob.style.top=Math.max(0,hdr.getBoundingClientRect().bottom)+'px';};

@@ -1,10 +1,10 @@
 
 // Header scroll shadow
-const hdr=document.getElementById('hdr');
+const hdr=document.getElementById('hdr')||document.createElement('div');
 window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>30),{passive:true});
 
 // Mobile nav
-const burger=document.getElementById('burger'),mobNav=document.getElementById('mobNav');
+const burger=document.getElementById('burger')||document.createElement('div'),mobNav=document.getElementById('mobNav')||document.createElement('div');
 burger.addEventListener('click',()=>{const o=mobNav.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
 mobNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobNav.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded',false);document.body.style.overflow='';}));
 

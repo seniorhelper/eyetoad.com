@@ -2218,7 +2218,7 @@ function playBeep(freq=440,dur=80,type='square',vol=.04){
 
 // ── HEADER ────────────────────────────────────────────────
 window.addEventListener('scroll',()=>{document.getElementById('hdr').style.boxShadow=window.scrollY>20?'0 4px 26px rgba(0,0,0,.7)':'';},{passive:true});
-const burger=document.getElementById('burger'),mobNav=document.getElementById('mobNav');
+const burger=document.getElementById('burger')||document.createElement('div'),mobNav=document.getElementById('mobNav')||document.createElement('div');
 burger.addEventListener('click',()=>{const o=mobNav.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
 mobNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobNav.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
 

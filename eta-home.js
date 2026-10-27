@@ -1,7 +1,7 @@
 (function(){
-  var hdr=document.getElementById('hdr');
-  var burger=document.getElementById('burger');
-  var mobNav=document.getElementById('mobNav');
+  var hdr=document.getElementById('hdr')||document.createElement('div');
+  var burger=document.getElementById('burger')||document.createElement('div');
+  var mobNav=document.getElementById('mobNav')||document.createElement('div');
 
   function measureHeader(){
     var r=hdr.getBoundingClientRect();
