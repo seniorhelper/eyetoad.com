@@ -14,11 +14,12 @@
 .eh-logo{display:block;line-height:0;justify-self:start}
 .eh-logo img{display:block;width:364px;max-width:none;height:auto}
 .eh-bbb{display:block;justify-self:center;line-height:0;background:#fff;border-radius:8px;padding:3px 5px}
-.eh-bbb img{display:block;width:118px;height:auto;max-width:none}
+.eh-bbb img{display:block;width:154px;height:auto;max-width:none}
 .eh-act{display:flex;align-items:center;gap:14px;justify-self:end}
 .eh-cta{display:inline-flex;align-items:center;justify-content:center;background:var(--eh-cta);color:var(--eh-ink)!important;font:700 15px/1 Outfit,system-ui,sans-serif;padding:14px 18px;border-radius:12px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.16)}
 .eh-cta:hover{filter:brightness(1.06)}
 .eh-cta,.eh-bar a,.eh-bar button{position:relative;overflow:hidden}
+.eh-bar,.eh-bar .eh-bar-call{overflow:visible}
 .eh-rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);pointer-events:none;animation:eh-rip .55s ease-out forwards}
 @keyframes eh-rip{to{transform:scale(1);opacity:0}}
 .eh-menu{display:none;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;font:600 14px/1 Outfit,system-ui,sans-serif;padding:12px;border-radius:10px;cursor:pointer}
@@ -150,7 +151,7 @@
   .eh-wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   .eh-logo img{width:250px}
   .eh-top{gap:8px;padding-top:12px;padding-bottom:4px}
-  .eh-bbb{padding:2px 4px}.eh-bbb img{width:84px}
+  .eh-bbb{padding:2px 4px}.eh-bbb img{width:116px}
   .eh-ct b{font-size:26px}
   .eh-ic{width:34px;height:34px}.eh-ic svg{width:17px;height:17px}
   .eh-mouthline{height:88px}
@@ -162,8 +163,8 @@
   .eh-callbar{display:block}
   .eh-dock{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 }
-@media (max-width:420px){.eh-logo img{width:214px}.eh-menu{font-size:0;gap:0;padding:13px 12px}.eh-bbb img{width:76px}}
-@media (max-width:360px){.eh-logo img{width:196px}.eh-ct b{font-size:23px}}
+@media (max-width:420px){.eh-logo img{width:214px}.eh-bbb img{width:112px}}
+@media (max-width:360px){.eh-logo img{width:190px}.eh-ct b{font-size:23px}.eh-bbb img{width:92px}}
 @media (prefers-reduced-motion:reduce){.eh-sheen,.eh-ic::after,.eh-pupil{animation:none!important}.eh-mini-in,.eh-dock,.eh-callbar,.eh-brows,.eh-eyes,.eh-cheek,.eh-say{transition:none!important}}
 
 /* AI chat panel (only when the brain script is on the page: html.eh-ai) */
