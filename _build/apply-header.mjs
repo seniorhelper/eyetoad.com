@@ -72,8 +72,11 @@ ${links.join('')}
 <li><button class="eh-nl" type="button" data-eh-drop aria-expanded="false" aria-controls="ehDom">Domains ${CHEV}</button><div class="eh-drop" id="ehDom">${DOMAINS}</div></li>
 <li class="eh-navcta"><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></li>
 </ul></div></nav>
-<nav class="eh-sheet" id="ehSheet" aria-label="Mobile menu" hidden><div class="eh-wrap"><ul>
-<li><a href="/services/">Services</a></li>${sheetLinks}<li><a href="/case-studies/">Case Studies</a></li><li><a href="/blog/">Blog</a></li><li><a href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener">Domain Finder</a></li><li><a href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener">Premium Names</a></li><li><a href="https://www.buyweburl.com/products/cpanel" target="_blank" rel="nofollow noopener">Hosting</a></li>
+<nav class="eh-sheet" id="ehSheet" aria-label="Mobile menu" hidden><div class="eh-wrap">
+<ul>
+<li><button class="eh-acc" type="button" aria-expanded="false" aria-controls="ehSvcM">Services <span>Show all</span></button><div class="eh-accp" id="ehSvcM" hidden>${megaSrc}</div></li>
+<li><a href="/our-work/">Our Work</a></li><li><a href="/case-studies/">Case Studies</a></li><li><a href="/industries/">Industries</a></li><li><a href="/locations/">Locations</a></li><li><a href="/denver-seo-pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li>
+<li><button class="eh-acc" type="button" aria-expanded="false" aria-controls="ehDomM">Domains &amp; Hosting <span>Show</span></button><div class="eh-accp" id="ehDomM" hidden>${DOMAINS}</div></li>
 </ul><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></div></nav>
 <div class="eh-wrap eh-phone">${call()}</div>
 ${mouth()}
@@ -120,7 +123,7 @@ for (const f of files) {
   else s = s.replace('</head>', style + '\n</head>');
   // header script
   // header script (bump HDR_V when eta-hdr.js changes) + the AI assistant (served from the eyetoad cPanel)
-  const HDR_V = 6, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
+  const HDR_V = 7, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
   s = s.replace(/\/eta-hdr\.js\?v=\d+/g, '/eta-hdr.js?v=' + HDR_V);
   if (!s.includes('/eta-hdr.js')) {
     const tag = `<script src="/eta-hdr.js?v=${HDR_V}" defer></script>`;

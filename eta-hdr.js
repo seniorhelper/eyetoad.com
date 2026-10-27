@@ -1,6 +1,6 @@
 /* Eye To Ad Media universal header (Oct 2026 v3): menus, phone sheet, compact bar on scroll,
    the waveform mouth (canvas) with its moments, and the AI assistant hookup.
-   Load with: <script src="/eta-hdr.js?v=6" defer></script> */
+   Load with: <script src="/eta-hdr.js?v=7" defer></script> */
 (function(){
   'use strict';
   var eh=document.getElementById('eh');
@@ -51,6 +51,12 @@
       mb.setAttribute('aria-expanded',open?'true':'false');
     });
   }
+
+  /* ---------- phone menu accordions ---------- */
+  [].forEach.call(document.querySelectorAll('.eh-acc'),function(b){
+    var p=document.getElementById(b.getAttribute('aria-controls'));if(!p)return;
+    b.addEventListener('click',function(){var open=p.hidden;p.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');});
+  });
 
   /* ---------- bottom bar (phones/tablets) ---------- */
   var barSvc=document.querySelector('.eh-bar-svc'),barToad=document.querySelector('.eh-bar-toad');
