@@ -72,6 +72,31 @@
 <style id="hx-swipe">.hx{background:#fff}.hx:before,.hx:after{display:none}.hx-pun-line{width:fit-content;max-width:100%;margin:12px 0 6px;font-size:clamp(1.55rem,3.1vw,2.3rem);line-height:1.12}.hx-ord{position:relative;display:inline-block;white-space:nowrap;font-size:1.75em;line-height:1;margin:0 .06em;vertical-align:-.1em}.hx-x{background:none;color:#667085}.hx-xw{position:absolute;left:12%;top:31%;width:76%;height:40%;overflow:hidden;pointer-events:none;transform-origin:center;transform:rotate(-26deg) scaleX(0);animation:hxDrawA .26s cubic-bezier(.2,.8,.3,1) .5s forwards}.hx-xw.b{transform:rotate(26deg) scaleX(0);animation:hxDrawB .26s cubic-bezier(.2,.8,.3,1) .82s forwards}.hx-xs{position:absolute;inset:0;width:100%;height:100%;overflow:visible}@keyframes hxDrawA{to{transform:rotate(-26deg) scaleX(1)}}@keyframes hxDrawB{to{transform:rotate(26deg) scaleX(1)}}.hx-pun{display:table;margin:22px auto 0;font:800 .74em/1 Outfit,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#C8102E;border:4px double #C8102E;border-radius:8px;padding:9px 14px 8px;transform:rotate(-6deg);mix-blend-mode:multiply;opacity:.92;animation:hxStamp .38s cubic-bezier(.2,1.3,.5,1) 1.25s both}@keyframes hxStamp{0%{transform:rotate(-6deg) scale(2.2);opacity:0}65%{transform:rotate(-6deg) scale(.95);opacity:1}100%{transform:rotate(-6deg) scale(1);opacity:.92}}@media (prefers-reduced-motion:reduce){.hx-xw{transform:rotate(-26deg) scaleX(1);animation:none}.hx-xw.b{transform:rotate(26deg) scaleX(1)}.hx-pun{animation:none}}</style>
 <style id="hx-fixes">.hx-them .hx-co{color:#5B6472}@media (min-width:861px){.hx-grid{align-items:start}.hx-vis{margin-top:34px}}</style>
 <style id="hx-mobile-center">@media (max-width:700px){.hx-copy{text-align:center}.hx-eye{margin-left:auto;margin-right:auto}.hx h1{text-wrap:balance}.hx-pun-line{margin-left:auto;margin-right:auto}.hx-sub{margin-left:auto;margin-right:auto}.hx-cta,.hx-trust{justify-content:center}.hx-note{text-align:center}}</style>
+<style id="hx-employee">@font-face{font-family:"Inter";font-style:normal;font-weight:800;font-display:optional;src:url(/fonts/inter-800.woff2) format("woff2")}
+.hx h1{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.045em!important;line-height:.98!important;font-size:clamp(2.5rem,5.6vw,4.4rem)!important}
+.hx-pun-line{font-family:Outfit,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-weight:600!important;font-size:clamp(1.15rem,2.2vw,1.6rem)!important;line-height:1.25!important;color:#344054!important;margin:14px 0 0!important}
+.hx-best{color:#101828;font-weight:800;background:linear-gradient(transparent 58%,rgba(250,204,21,.55) 58%);padding:0 2px}
+.fcta-ord{margin:22px auto 6px;font:700 clamp(1.1rem,2vw,1.4rem)/1.2 "Caveat Hero",Caveat,"Caveat Fallback",cursive;color:#FED7AA;text-align:center}
+.fcta-ord s{color:#FDBA74;text-decoration-color:#DC2626;text-decoration-thickness:3px}
+.fcta-ord em{font-style:normal;color:#fff;display:inline-block;transform:rotate(-2deg);padding:2px 10px;border:2px solid #fff;border-radius:4px;margin-left:6px}
+/* bento: stacked rows */
+.bx h2{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.04em!important;line-height:1!important;font-size:clamp(2rem,4.4vw,3.4rem)!important}
+.bx h2 em{font-style:normal!important;color:#D1001F!important}
+.bx-grid{display:grid;grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
+.bx-c{grid-column:auto!important;border-radius:8px!important;padding:30px 32px 30px 40px!important;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:12px 36px;align-items:center;border:1px solid rgba(16,24,40,.08)}
+.bx-c::after{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(180deg,#DC2626,#F97316,#FACC15,#16A34A,#2563EB,#7C3AED)}
+.bx-c:hover{transform:none!important}
+.bx-c > .bx-l,.bx-c > h3,.bx-c > p,.bx-c > .bx-a{grid-column:1;margin:0}
+.bx-c > h3{margin:4px 0 10px!important}
+.bx-c > p{margin:0 0 12px!important}
+.bx-c > .bx-chat,.bx-c > .bx-rows,.bx-c > .bx-tix{grid-column:2;grid-row:1/span 5;align-self:center;margin:0!important}
+.bx-c:nth-child(even){direction:rtl}.bx-c:nth-child(even) > *{direction:ltr;text-align:left}
+.bx-c h3{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-weight:800!important;font-size:clamp(1.45rem,2.6vw,2.1rem)!important;letter-spacing:-.035em!important;line-height:1.04!important}
+.bx-l{font-size:.74rem!important}
+.bx-c .bx-txt{min-width:0}
+.bx-wld .bx-in{position:relative;z-index:1}
+@media (max-width:900px){.bx-c{grid-template-columns:minmax(0,1fr)!important;direction:ltr!important;padding:24px 20px 22px 26px!important}.bx-c > *{grid-column:1!important;grid-row:auto!important}}
+</style>
 </head>
 
 <body class="home-bub">
@@ -128,7 +153,7 @@
 <div class="hx-copy">
 <p class="hx-eye"><span class="pin" aria-hidden="true"></span>Denver SEO &middot; Since 2012</p>
 <h1 id="h1">Denver SEO that makes the phone ring.</h1>
-<p class="hx-pun-line" aria-label="Looking for ordinary advertising? Call our competitor.">Looking for <span class="hx-ord"><s class="hx-x">ordinary</s><span class="hx-xw a" aria-hidden="true"><svg class="hx-xs" viewBox="0 0 300 60" preserveAspectRatio="none" focusable="false"><defs><linearGradient id="hxg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF3B30"/><stop offset=".38" stop-color="#E10600"/><stop offset=".8" stop-color="#C40000"/><stop offset="1" stop-color="#9E0000"/></linearGradient></defs><path d="M5 34 C 60 30, 130 26, 200 21 C 240 18, 272 16, 296 13 C 301 17, 301 25, 295 27 C 270 29, 240 32, 200 35 C 130 41, 60 46, 9 48 C 1 47, 0 37, 5 34 Z" fill="url(#hxg)"/><path d="M24 34 C 90 30, 170 24, 280 15 C 284 16, 284 18, 281 19 C 170 28, 90 33, 26 37 Z" fill="#FF8F87"/></svg></span><span class="hx-xw b" aria-hidden="true"><svg class="hx-xs" viewBox="0 0 300 60" preserveAspectRatio="none" focusable="false"><path d="M5 34 C 60 30, 130 26, 200 21 C 240 18, 272 16, 296 13 C 301 17, 301 25, 295 27 C 270 29, 240 32, 200 35 C 130 41, 60 46, 9 48 C 1 47, 0 37, 5 34 Z" fill="url(#hxg)"/><path d="M24 34 C 90 30, 170 24, 280 15 C 284 16, 284 18, 281 19 C 170 28, 90 33, 26 37 Z" fill="#FF8F87"/></svg></span></span> advertising? <span class="hx-pun">Call our competitor.</span></p>
+<p class="hx-pun-line" aria-label="What if your website was your best employee? It can be.">What if your website was your <span class="hx-best">best employee</span>? <span class="hx-pun">It can be.</span></p>
 <p class="hx-sub">Everyone else sells the same basic package. We make your business the <b>obvious</b> choice on <b>Google</b>, <b>Google Maps</b> and <b>AI search</b>, then turn being found into booked calls.</p>
 <div class="hx-cta">
 <a href="tel:18004818638" class="hx-btn hx-call"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></svg>Call 1-800-481-8638</a>
@@ -929,6 +954,7 @@
 <a href="/free-seo-audit/" class="btn btn-ghost-white btn-lg">Get a Free SEO Audit</a>
 </div>
 
+<p class="fcta-ord" aria-label="Looking for ordinary advertising? Call our competitor.">Looking for <s>ordinary</s> advertising? <em>Call our competitor.</em></p>
 <p class="fcta-note">The audit is free with no contract and no obligation. Engagement terms are set per project — month-to-month is available and is what most clients run on.</p>
 
 <div class="fcta-mini">
