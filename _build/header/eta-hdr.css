@@ -9,7 +9,7 @@
 .eh-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;padding-top:16px;padding-bottom:16px}
 .eh-logo{display:block;line-height:0;justify-self:start}
 .eh-logo img{display:block;width:364px;max-width:none;height:auto}
-.eh-mouth{display:flex;align-items:center;justify-content:center;justify-self:center;height:62px;width:150px}
+.eh-mouth{position:relative;display:flex;align-items:center;justify-content:center;justify-self:center;height:62px;width:150px}
 .eh-bars{display:flex;align-items:center;justify-content:center;gap:5px;height:100%;width:100%}
 .eh-bars i{display:block;flex:none;width:6px;height:100%;border-radius:6px;background:linear-gradient(180deg,#fff 0%,var(--c) 18%,var(--c) 82%,#fff 100%);box-shadow:0 0 10px var(--c),0 0 1px 1px rgba(255,255,255,.55);transform:scaleY(.2);will-change:transform;animation:eh-breathe 3.4s ease-in-out infinite;animation-delay:calc(var(--i) * 90ms)}
 @keyframes eh-breathe{0%,100%{transform:scaleY(calc(var(--p) * .2))}50%{transform:scaleY(calc(var(--p) * .44))}}
@@ -116,4 +116,41 @@
 @media (max-width:420px){.eh-logo img{width:250px}.eh-menu{font-size:0;gap:0;padding:13px 12px}}
 @media (max-width:360px){.eh-logo img{width:220px}.eh-callrow .eh-ct b{font-size:19px}}
 @media (prefers-reduced-motion:reduce){.eh-bars i,.eh-ic::after{animation:none!important}.eh-mini-in,.eh-dock,.eh-callbar{transition:none!important}}
+/* AI assistant (only when the brain script is on the page: html.eh-ai) */
+.eh-ai .eh .eh-mouth{cursor:pointer;border-radius:12px;position:relative}
+.eh-ai .eh .eh-mouth:hover .eh-bars i{box-shadow:0 0 14px var(--c),0 0 1px 1px rgba(255,255,255,.75)}
+.eh-talk .eh-bars i{animation:none}
+.eh-m-rainbow .eh-bars,.eh-m-promo .eh-bars{animation:eh-hue 2.2s linear infinite}
+@keyframes eh-hue{to{filter:hue-rotate(360deg)}}
+.eh-m-tip .eh-bars i{--c:#FACC15}
+.eh-m-cheeks .eh-bars i{--c:#FF8FA6}
+.eh .eh-mouth::before,.eh .eh-mouth::after,.eh-dock::before,.eh-dock::after{content:"";position:absolute;top:50%;width:34px;height:24px;margin-top:-12px;border-radius:50%;background:radial-gradient(closest-side,#FF5A78,rgba(255,90,120,0));opacity:0;transition:opacity .6s;pointer-events:none}
+.eh .eh-mouth::before,.eh-dock::before{left:-26px}.eh .eh-mouth::after,.eh-dock::after{right:-26px}
+.eh-m-cheeks .eh .eh-mouth::before,.eh-m-cheeks .eh .eh-mouth::after,.eh-m-cheeks .eh-dock::before,.eh-m-cheeks .eh-dock::after{opacity:.9}
+.eh-chat{position:fixed;z-index:1001;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(84px + env(safe-area-inset-bottom,0px));width:min(380px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 120px));display:flex;flex-direction:column;background:#fff;color:#101828;border-radius:18px;box-shadow:0 30px 70px rgba(16,24,40,.35);overflow:hidden;font-family:Outfit,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.eh-chat[hidden]{display:none!important}
+.eh-chat::before{content:"";flex:none;height:5px;background:linear-gradient(90deg,#DC2626,#F97316,#FACC15,#16A34A,#2563EB,#7C3AED)}
+.eh-chat-x{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;border:0;background:#F2F4F7;color:#101828;font:400 22px/1 system-ui,sans-serif;cursor:pointer;z-index:2}
+.eh-chat-body{display:flex;flex-direction:column;min-height:0;flex:1}
+.eh-chat .eta-chat{display:flex;flex-direction:column;min-height:0;flex:1}
+.eh-chat .eta-log{flex:1;min-height:180px;overflow-y:auto;padding:18px 16px 8px;display:flex;flex-direction:column;gap:10px}
+.eh-chat .eta-msg{max-width:88%;padding:10px 13px;border-radius:14px;font-size:15px;line-height:1.45;overflow-wrap:anywhere}
+.eh-chat .eta-assistant{align-self:flex-start;background:#EEF2FF;color:#101828;border-top-left-radius:4px}
+.eh-chat .eta-user{align-self:flex-end;background:#1D4ED8;color:#fff;border-top-right-radius:4px}
+.eh-chat .eta-msg a{color:#1D4ED8;font-weight:600;text-decoration:underline}
+.eh-chat .eta-user a{color:#fff}
+.eh-chat .eta-buywrap{margin-top:8px;display:grid;gap:4px}
+.eh-chat .eta-buy{background:#D1001F;color:#fff;border:0;border-radius:10px;padding:10px 12px;font:700 14px/1.2 Outfit,system-ui,sans-serif;cursor:pointer}
+.eh-chat .eta-buywrap small{font-size:12px;color:#475467}
+.eh-chat .eta-form{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #E4E7EC}
+.eh-chat .eta-in{flex:1;min-width:0;border:1.5px solid #D0D5DD;border-radius:10px;padding:11px 12px;font:400 15px/1.2 Outfit,system-ui,sans-serif;color:#101828;background:#fff}
+.eh-chat .eta-in:focus{outline:2px solid #1D4ED8;outline-offset:0;border-color:#1D4ED8}
+.eh-chat .eta-send,.eh-chat .eta-talk{border:0;border-radius:10px;padding:0 14px;font:700 14px/1 Outfit,system-ui,sans-serif;cursor:pointer}
+.eh-chat .eta-send{background:#1D4ED8;color:#fff}
+.eh-chat .eta-talk{background:#FACC15;color:#101828}
+.eh-chat .eta-talk[aria-pressed="true"]{background:#D1001F;color:#fff}
+.eh-chat .eta-note{margin:0;padding:0 14px 12px;font-size:12px;line-height:1.35;color:#475467}
+.eh-chat .eta-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.eh-chat :focus-visible{outline:2px solid #1D4ED8;outline-offset:2px}
+@media (max-width:700px){.eh-chat{bottom:calc(150px + env(safe-area-inset-bottom,0px))}}
 @media print{.eh-mini,.eh-dock,.eh-callbar{display:none!important}}
