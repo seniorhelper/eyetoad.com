@@ -105,10 +105,14 @@ for (const f of files) {
   if (s.includes('<style id="eta-hdr">')) s = s.replace(/<style id="eta-hdr">[\s\S]*?<\/style>/, () => style);
   else s = s.replace('</head>', style + '\n</head>');
   // header script
+  // header script (bump HDR_V when eta-hdr.js changes) + the AI assistant (served from the eyetoad cPanel)
+  const HDR_V = 2, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
+  s = s.replace(/\/eta-hdr\.js\?v=\d+/g, '/eta-hdr.js?v=' + HDR_V);
   if (!s.includes('/eta-hdr.js')) {
-    const tag = '<script src="/eta-hdr.js?v=1" defer></script>';
+    const tag = `<script src="/eta-hdr.js?v=${HDR_V}" defer></script>`;
     s = s.includes('</body>') ? s.replace(/<\/body>/, tag + '\n</body>') : s + tag;
   }
+  if (!s.includes('clients.eyetoad.com/ai/eta-ai.js')) s = s.replace(/(<script src="\/eta-hdr\.js\?v=\d+" defer><\/script>)/, '$1\n' + AI_TAG);
   // Iris, the wizard cameo and the old orb stay off (the docked mouth replaces them)
   s = s.replace(/<script>window\.__etaIris=1;<\/script>\r?\n?/g, '');
   s = s.replace(/<script>\/\* caped-hero cameo:[\s\S]*?<\/script>\r?\n?/g, '');
