@@ -28,8 +28,12 @@ function mix(t, w) {
 }
 function bars(n) {
   const c = (n - 1) / 2; let out = '';
-  for (let i = 0; i < n; i++) { const d = Math.abs(i - c) / c; out += `<i style="--i:${i};--p:${(1 - .66 * d * d).toFixed(2)};--c:${mix(i / (n - 1), .28)}"></i>`; }
+  for (let i = 0; i < n; i++) { const d = Math.abs(i - c) / c; out += `<i style="--i:${i};--p:${(1 - .62 * d * d).toFixed(2)}"></i>`; }
   return `<span class="eh-bars">${out}</span>`;
+}
+// the voice box: red LED bars in a dark housing, with cheeks, eyebrows and glasses that only show in moments
+function mouth(n, full) {
+  return `<span class="eh-mouth" aria-hidden="true">${full ? '<span class="eh-eyes"><i></i><i></i></span><span class="eh-brows"><i></i><i></i></span>' : ''}<span class="eh-vb"><span class="eh-cheek l"></span>${bars(n)}<span class="eh-cheek r"></span></span></span>`;
 }
 
 // Services mega menu: same links as the old menu, restyled
@@ -39,35 +43,37 @@ const NAV = [
   ['/our-work/', 'Our Work'], ['/industries/', 'Industries'], ['/locations/', 'Locations'],
   ['/denver-seo-pricing/', 'Pricing'], ['/about/', 'About'], ['/contact/', 'Contact'],
 ];
-const DOMAINS = `<a href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener">Domain Finder<small>buyweburl.com</small></a><a href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener">Premium Names<small>bestdomainsforbusiness.com</small></a>`;
-const call = cls => `<a class="eh-call${cls ? ' ' + cls : ''}" href="tel:18004818638" aria-label="Call 1-800-481-8638"><span class="eh-ic">${PHONE_SVG}</span><span class="eh-ct"><small>Call</small><b>1-800-481-8638</b></span></a>`;
+const DOMAINS = `<a href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener">Domain Finder<small>buyweburl.com</small></a><a href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener">Premium Names<small>bestdomainsforbusiness.com</small></a><a href="https://www.buyweburl.com/products/cpanel" target="_blank" rel="nofollow noopener">Hosting<small>cPanel, WordPress and VPS plans</small></a>`;
+const call = cls => `<a class="eh-call${cls ? ' ' + cls : ''}" href="tel:18004818638" aria-label="Call 1-800-481-8638"><span class="eh-ic">${PHONE_SVG}</span><span class="eh-ct"><b>1-800-481-8638</b></span></a>`;
 const bbb = w => `<a class="eh-bbb" href="${BBB_URL}" target="_blank" rel="nofollow noopener" aria-label="BBB Accredited Business, A+ rating (opens BBB profile)"><img src="${BBB_IMG}" width="200" height="65" alt="BBB Accredited Business, A+ rating" decoding="async"${w ? ' loading="lazy"' : ''}></a>`;
 
 function header(urlPath) {
   const cur = href => (urlPath === href || (href !== '/' && urlPath.startsWith(href))) ? ' aria-current="page"' : '';
-  const links = NAV.map(([h, t]) => `<li><a class="eh-nl" href="${h}"${cur(h)}>${t}</a></li>`).join('');
+  const links = NAV.map(([h, t]) => `<li><a class="eh-nl" href="${h}"${cur(h)}>${t}</a></li>`);
   return `<!--eh:start-->
 <header class="eh" id="eh">
 <div class="eh-wrap eh-top">
 <a class="eh-logo" href="/" aria-label="Eye To Ad Media home"><img src="/images/images/eye-to-ad-media-logo-530.webp" srcset="/images/images/eye-to-ad-media-logo-265.webp 265w, /images/images/eye-to-ad-media-logo-530.webp 530w" sizes="(max-width:360px) 220px, (max-width:420px) 250px, (max-width:700px) 260px, 364px" width="530" height="166" alt="Eye To Ad Media" fetchpriority="high" decoding="async"></a>
-<span class="eh-mouth" aria-hidden="true">${bars(13)}</span>
 <div class="eh-act">${bbb()}${call()}<a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a><button class="eh-menu" type="button" aria-expanded="false" aria-controls="ehSheet">Menu <i aria-hidden="true"></i></button></div>
 </div>
-<div class="eh-wrap eh-callrow"><span class="eh-mouth" aria-hidden="true">${bars(9)}</span>${call()}</div>
+<div class="eh-wrap eh-callrow">${bbb(true)}${call()}</div>
 <nav class="eh-nav" aria-label="Main navigation"><div class="eh-wrap"><ul class="eh-ul">
 <li class="eh-svc"><a class="eh-nl" href="/services/"${cur('/services/')}>Services</a><button class="eh-chev" type="button" data-eh-drop aria-expanded="false" aria-controls="ehSvc" aria-label="Show services menu">${CHEV}</button><div class="eh-drop eh-mega" id="ehSvc">${megaSrc}</div></li>
-${links}
+${links.slice(0, 3).join('')}
+<li class="eh-gap" aria-hidden="true"></li>
+${links.slice(3).join('')}
 <li><button class="eh-nl" type="button" data-eh-drop aria-expanded="false" aria-controls="ehDom">Domains ${CHEV}</button><div class="eh-drop" id="ehDom">${DOMAINS}</div></li>
 <li class="eh-navcta"><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></li>
 </ul></div></nav>
 <nav class="eh-sheet" id="ehSheet" aria-label="Mobile menu" hidden><div class="eh-wrap"><ul>
 <li><a href="/services/">Services</a></li>${NAV.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}<li><a href="/case-studies/">Case Studies</a></li><li><a href="/blog/">Blog</a></li><li><a href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener">Domain Finder</a></li><li><a href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener">Premium Names</a></li>
 </ul><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></div></nav>
+<div class="eh-mouthrow" aria-hidden="true"></div>
 <div class="eh-ribbon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="eh-trust"><div class="eh-wrap">${bbb(true)}</div></div>
+${mouth(19, true)}
 </header>
 <div class="eh-mini" aria-hidden="true"><div class="eh-mini-in"><div class="eh-wrap"><ul class="eh-ul"><li><a class="eh-nl" href="/services/" tabindex="-1">Services</a></li>${NAV.map(([h, t]) => `<li><a class="eh-nl" href="${h}" tabindex="-1">${t}</a></li>`).join('')}</ul>${bbb(true).replace('<a ', '<a tabindex="-1" ')}${call().replace('<a ', '<a tabindex="-1" ')}<a class="eh-cta" href="/free-seo-audit/" tabindex="-1">Get SEO Audit</a></div></div></div>
-<a class="eh-dock" href="/contact/" aria-label="Contact Eye To Ad Media">${bars(9)}</a>
+<a class="eh-dock" href="/contact/" aria-label="Contact Eye To Ad Media">${mouth(9, false)}</a>
 <div class="eh-callbar"><a href="tel:18004818638">${PHONE_SVG}Call 1-800-481-8638</a></div>
 <!--eh:end-->`;
 }
@@ -106,7 +112,7 @@ for (const f of files) {
   else s = s.replace('</head>', style + '\n</head>');
   // header script
   // header script (bump HDR_V when eta-hdr.js changes) + the AI assistant (served from the eyetoad cPanel)
-  const HDR_V = 2, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
+  const HDR_V = 3, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
   s = s.replace(/\/eta-hdr\.js\?v=\d+/g, '/eta-hdr.js?v=' + HDR_V);
   if (!s.includes('/eta-hdr.js')) {
     const tag = `<script src="/eta-hdr.js?v=${HDR_V}" defer></script>`;

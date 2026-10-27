@@ -61,6 +61,19 @@
   addEventListener('resize',update,{passive:true});
   update();
 
+  /* small signs of life while idle: a raised eyebrow, a glance through the glasses, a rare blush.
+     Pure CSS classes on <html>; paused in background tabs; skipped for reduced motion. */
+  var reducedMotion=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var moments=['eh-mo-brow','eh-mo-brow','eh-mo-glance','eh-mo-brow','eh-mo-cheeks'],moTimer=0;
+  function moment(){
+    moTimer=setTimeout(moment,25000+Math.random()*40000);
+    if(document.hidden||reducedMotion||root.classList.contains('eh-talk'))return;
+    var m=moments[Math.floor(Math.random()*moments.length)];
+    root.classList.add(m);
+    setTimeout(function(){root.classList.remove(m);},m==='eh-mo-cheeks'?2800:m==='eh-mo-glance'?2000:1300);
+  }
+  moTimer=setTimeout(moment,9000+Math.random()*9000);
+
   /* AI assistant hookup: only runs when the brain script (window.ETABrain) is on the page.
      Its talking level drives the bars, its mode tints them, and the mouths open the chat panel. */
   function hook(B){
@@ -91,8 +104,8 @@
     }
     panel.querySelector('.eh-chat-x').addEventListener('click',closeChat);
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)closeChat();});
-    [].forEach.call(document.querySelectorAll('.eh .eh-mouth'),function(m){
-      m.removeAttribute('aria-hidden');m.setAttribute('role','button');m.tabIndex=0;
+    [].forEach.call(document.querySelectorAll('.eh .eh-vb'),function(m){
+      m.parentNode.removeAttribute('aria-hidden');m.setAttribute('role','button');m.tabIndex=0;
       m.setAttribute('aria-label','Chat with our AI assistant');
       m.addEventListener('click',function(){openChat(m);});
       m.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openChat(m);}});
@@ -123,6 +136,11 @@
     B.on('mode',function(d){
       root.classList.remove('eh-m-rainbow','eh-m-promo','eh-m-tip','eh-m-cheeks');
       if(d.mode&&d.mode!=='normal')root.classList.add('eh-m-'+d.mode);
+    });
+    /* thinking raises the eyebrows; listening (voice) keeps them up */
+    B.on('state',function(d){
+      root.classList.toggle('eh-think',d.state==='thinking'||d.state==='connecting');
+      root.classList.toggle('eh-listen',d.state==='listening');
     });
   }
   if(window.ETABrain)hook(window.ETABrain);
