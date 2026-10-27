@@ -1,6 +1,6 @@
 /* Eye To Ad Media universal header (Oct 2026 v3): menus, phone sheet, compact bar on scroll,
    the waveform mouth (canvas) with its moments, and the AI assistant hookup.
-   Load with: <script src="/eta-hdr.js?v=4" defer></script> */
+   Load with: <script src="/eta-hdr.js?v=5" defer></script> */
 (function(){
   'use strict';
   var eh=document.getElementById('eh');
@@ -52,6 +52,22 @@
     });
   }
 
+  /* ---------- bottom bar (phones/tablets) ---------- */
+  var barSvc=document.querySelector('.eh-bar-svc'),barToad=document.querySelector('.eh-bar-toad');
+  if(barSvc&&sheet){
+    barSvc.addEventListener('click',function(){var open=sheet.hidden;sheet.hidden=!open;barSvc.setAttribute('aria-expanded',open?'true':'false');});
+    document.addEventListener('click',function(e){if(!sheet.hidden&&!e.target.closest('.eh-sheet')&&!e.target.closest('.eh-bar-svc')){sheet.hidden=true;barSvc.setAttribute('aria-expanded','false');}});
+  }
+  var cur=location.pathname;
+  [].forEach.call(document.querySelectorAll('.eh-bar a[href^="/"]'),function(x){if(cur.indexOf(x.getAttribute('href'))===0&&x.getAttribute('href')!=='/contact/')x.setAttribute('aria-current','page');});
+
+  /* ---------- ripple on the yellow button and the bar ---------- */
+  document.addEventListener('pointerdown',function(e){
+    var b=e.target.closest&&e.target.closest('.eh-cta,.eh-bar a,.eh-bar button');if(!b||reduced)return;
+    var r=b.getBoundingClientRect(),s=Math.max(r.width,r.height)*2,i=document.createElement('i');i.className='eh-rip';
+    i.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(e.clientX-r.left-s/2)+'px;top:'+(e.clientY-r.top-s/2)+'px';b.appendChild(i);setTimeout(function(){i.remove();},600);
+  },{passive:true});
+
   /* ---------- header off screen: compact bar slides in, mouth docks, phone call bar shows ---------- */
   var ticking=false,on=null;
   function update(){
@@ -69,14 +85,15 @@
   var BRAND=['#DC2626','#F97316','#FACC15','#16A34A','#2563EB','#7C3AED'];
   function makeWave(canvas,small){
     var ctx=canvas.getContext('2d');if(!ctx)return null;
-    var W=0,H=0,dpr=1,level=0,target=0,mode='idle',t0=performance.now(),raf=0,visible=true,last=0,grad=null;
+    var W=0,H=0,dpr=1,level=0,target=0,mode='idle',t0=performance.now(),raf=0,visible=true,last=0,grad=null,lean=0,leanT=0;
     var seeds=[[1.0,0,1],[1.6,1.7,.72],[2.3,3.1,.5]];
     function size(){dpr=Math.min(2,window.devicePixelRatio||1);var r=canvas.getBoundingClientRect();W=r.width;H=r.height;canvas.width=Math.max(1,W*dpr);canvas.height=Math.max(1,H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);grad=ctx.createLinearGradient(0,0,W,0);BRAND.forEach(function(c,j){grad.addColorStop(j/(BRAND.length-1),c);});}
     if('ResizeObserver' in window)new ResizeObserver(size).observe(canvas);size();
     if('IntersectionObserver' in window)new IntersectionObserver(function(e){visible=e[0].isIntersecting;if(visible&&!raf)raf=requestAnimationFrame(frame);}).observe(canvas);
     function frame(now){
       raf=0;if(!visible||!W)return;
-      var talking=target>0||mode!=='idle';
+      lean+=(leanT-lean)*.08;
+      var talking=target>0||mode!=='idle'||Math.abs(lean-leanT)>.01||Math.abs(lean)>.01;
       if(!talking&&now-last<32){raf=requestAnimationFrame(frame);return;}
       last=now;
       var t=(now-t0)/1000;
@@ -103,6 +120,7 @@
           y+=Math.sin(u2*Math.PI*(4+2*i)*k2+t*(2.2+f)+ph)*a;
           y+=Math.sin(u2*Math.PI*11*k2-t*(3.5+f*1.3))*a*.35;
           if(tongue>=0){var d=u2-tongue;y+=Math.exp(-d*d*180)*1.1*(i===0?1:.5);}
+          if(lean)y+=Math.exp(-Math.pow((u2-(.5+lean*.4))*4,2))*Math.abs(lean)*.9*(i===0?1:.5);
           if(mode==='shiver')y+=(Math.random()-.5)*.55;
           if(mode==='think')y*=.5;
           ctx.lineTo(x,mid+y*amp*env2);
@@ -117,10 +135,16 @@
       if(!reduced||talking)raf=requestAnimationFrame(frame);
     }
     raf=requestAnimationFrame(frame);
-    return {set:function(v){target=Math.max(0,Math.min(1,+v||0));if(!raf)raf=requestAnimationFrame(frame);},mode:function(m){mode=m;if(!raf)raf=requestAnimationFrame(frame);}};
+    return {set:function(v){target=Math.max(0,Math.min(1,+v||0));if(!raf)raf=requestAnimationFrame(frame);},mode:function(m){mode=m;if(!raf)raf=requestAnimationFrame(frame);},lean:function(v){leanT=v;if(!raf)raf=requestAnimationFrame(frame);}};
   }
+  var mouth=document.getElementById('ehMouth');
   var waves=[].slice.call(document.querySelectorAll('.eh-wave')).map(function(c){return makeWave(c,c.closest('.eh-dock')!==null);}).filter(Boolean);
   function setLevel(v){waves.forEach(function(w){w.set(v);});}
+  /* Toad's wave leans toward the mouse (desktop, pointer only) */
+  if(mouth&&window.matchMedia&&matchMedia('(hover:hover)').matches&&!reduced){
+    eh.addEventListener('mousemove',function(e){var r=mouth.getBoundingClientRect();var u=(e.clientX-r.left)/r.width-.5;waves.forEach(function(w){w.lean(Math.max(-1,Math.min(1,u*2)));});});
+    eh.addEventListener('mouseleave',function(){waves.forEach(function(w){w.lean(0);});});
+  }
   function setMode(m){waves.forEach(function(w){w.mode(m);});}
 
   /* ---------- moments: signs of life while idle (visual only) ---------- */
@@ -146,7 +170,7 @@
   moTimer=setTimeout(schedule,8000);
 
   /* ---------- first-visit greeting (Zach's line, shown once per visitor) ---------- */
-  var say=document.getElementById('ehSay'),mouth=document.getElementById('ehMouth');
+  var say=document.getElementById('ehSay');
   var sayTimer=0,sayRaf=0;
   function hideSay(){if(say){say.classList.remove('on');}cancelAnimationFrame(sayRaf);clearTimeout(sayTimer);setLevel(0);root.classList.remove('eh-talk');}
   function speakLine(text,withHear){
@@ -201,6 +225,7 @@
       mouth.addEventListener('click',function(){openChat(mouth);});
       mouth.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openChat(mouth);}});
     }
+    if(barToad){barToad.addEventListener('click',function(e){e.preventDefault();if(panel.hidden)openChat(barToad);else closeChat();});}
     var dock=document.querySelector('.eh-dock');
     if(dock){
       dock.setAttribute('aria-label','Chat with our AI assistant');

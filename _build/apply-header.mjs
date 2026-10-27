@@ -63,7 +63,7 @@ function header(urlPath) {
 <div class="eh-wrap eh-top">
 <a class="eh-logo" href="/" aria-label="Eye To Ad Media home"><img src="/images/images/eye-to-ad-media-logo-530.webp" srcset="/images/images/eye-to-ad-media-logo-265.webp 265w, /images/images/eye-to-ad-media-logo-530.webp 530w" sizes="(max-width:360px) 196px, (max-width:420px) 214px, (max-width:700px) 250px, 364px" width="530" height="166" alt="Eye To Ad Media" fetchpriority="high" decoding="async"></a>
 ${bbb()}
-<div class="eh-act"><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a><button class="eh-menu" type="button" aria-expanded="false" aria-controls="ehSheet">Menu <i aria-hidden="true"></i></button></div>
+<div class="eh-act"><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></div>
 </div>
 <nav class="eh-nav" aria-label="Main navigation"><div class="eh-wrap"><ul class="eh-ul">
 <li class="eh-svc"><a class="eh-nl" href="/services/"${cur('/services/')}>Services</a><button class="eh-chev" type="button" data-eh-drop aria-expanded="false" aria-controls="ehSvc" aria-label="Show services menu">${CHEV}</button><div class="eh-drop eh-mega" id="ehSvc">${megaSrc}</div></li>
@@ -80,6 +80,7 @@ ${mouth()}
 </header>
 <div class="eh-mini" aria-hidden="true"><div class="eh-mini-in"><div class="eh-wrap"><ul class="eh-ul"><li><a class="eh-nl" href="/services/" tabindex="-1">Services</a></li>${NAV.map(([h, t]) => `<li><a class="eh-nl" href="${h}" tabindex="-1">${t}</a></li>`).join('')}</ul>${bbb(true).replace('<a ', '<a tabindex="-1" ')}${call().replace('<a ', '<a tabindex="-1" ')}<a class="eh-cta" href="/free-seo-audit/" tabindex="-1">Get SEO Audit</a></div></div></div>
 <a class="eh-dock" href="/contact/" aria-label="Contact Eye To Ad Media"><canvas class="eh-wave" aria-hidden="true"></canvas></a>
+<nav class="eh-bar" aria-label="Quick menu"><button type="button" class="eh-bar-svc" aria-expanded="false" aria-controls="ehSheet"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Services</button><a href="/our-work/"><svg viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v12H4zM8 21h8M12 17v4"/></svg>Work</a><a class="eh-bar-call" href="tel:18004818638" aria-label="Call 1-800-481-8638"><span><svg viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg></span>Call</a><a href="/denver-seo-pricing/"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Pricing</a><a class="eh-bar-toad" href="/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h3l2-6 3 12 3-9 2 3h5"/></svg>Toad</a></nav>
 <div class="eh-callbar"><a href="tel:18004818638">${PHONE_SVG}Call 1-800-481-8638</a></div>
 <!--eh:end-->`;
 }
@@ -118,7 +119,7 @@ for (const f of files) {
   else s = s.replace('</head>', style + '\n</head>');
   // header script
   // header script (bump HDR_V when eta-hdr.js changes) + the AI assistant (served from the eyetoad cPanel)
-  const HDR_V = 4, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
+  const HDR_V = 5, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
   s = s.replace(/\/eta-hdr\.js\?v=\d+/g, '/eta-hdr.js?v=' + HDR_V);
   if (!s.includes('/eta-hdr.js')) {
     const tag = `<script src="/eta-hdr.js?v=${HDR_V}" defer></script>`;
