@@ -1,13 +1,15 @@
-/* Eye To Ad Media universal header (Oct 2026): menus, phone sheet, compact bar + docked mouth on scroll.
-   Load with: <script src="/eta-hdr.js?v=1" defer></script> */
+/* Eye To Ad Media universal header (Oct 2026 v3): menus, phone sheet, compact bar on scroll,
+   the waveform mouth (canvas) with its moments, and the AI assistant hookup.
+   Load with: <script src="/eta-hdr.js?v=4" defer></script> */
 (function(){
   'use strict';
   var eh=document.getElementById('eh');
   if(!eh||window.__etaHdr)return;
   window.__etaHdr=1;
   var root=document.documentElement;
+  var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* dropdowns: Services (chevron) and Domains */
+  /* ---------- dropdowns: Services (chevron) and Domains ---------- */
   var btns=[].slice.call(eh.querySelectorAll('[data-eh-drop]'));
   function closeAll(except){
     btns.forEach(function(b){
@@ -40,7 +42,7 @@
     closeAll();if(open)open.focus();
   });
 
-  /* phone menu */
+  /* ---------- phone menu ---------- */
   var mb=eh.querySelector('.eh-menu'),sheet=document.getElementById('ehSheet');
   if(mb&&sheet){
     mb.addEventListener('click',function(){
@@ -50,7 +52,7 @@
     });
   }
 
-  /* header off screen: compact bar slides in, mouth docks, phone call bar shows */
+  /* ---------- header off screen: compact bar slides in, mouth docks, phone call bar shows ---------- */
   var ticking=false,on=null;
   function update(){
     ticking=false;
@@ -61,30 +63,119 @@
   addEventListener('resize',update,{passive:true});
   update();
 
-  /* small signs of life while idle: a raised eyebrow, a glance through the glasses, a rare blush.
-     Pure CSS classes on <html>; paused in background tabs; skipped for reduced motion. */
-  var reducedMotion=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var moments=['eh-mo-brow','eh-mo-brow','eh-mo-glance','eh-mo-brow','eh-mo-cheeks'],moTimer=0;
-  function moment(){
-    moTimer=setTimeout(moment,25000+Math.random()*40000);
-    if(document.hidden||reducedMotion||root.classList.contains('eh-talk'))return;
-    var m=moments[Math.floor(Math.random()*moments.length)];
-    root.classList.add(m);
-    setTimeout(function(){root.classList.remove(m);},m==='eh-mo-cheeks'?2800:m==='eh-mo-glance'?2000:1300);
+  /* ---------- the waveform mouth ----------
+     Three layered lines on a canvas, colored across the six brand colors, driven by a level (0..1)
+     and a few moment modes. Runs at 30fps while idle, 60 while talking, and not at all off screen. */
+  var BRAND=['#DC2626','#F97316','#FACC15','#16A34A','#2563EB','#7C3AED'];
+  function makeWave(canvas,small){
+    var ctx=canvas.getContext('2d');if(!ctx)return null;
+    var W=0,H=0,dpr=1,level=0,target=0,mode='idle',t0=performance.now(),raf=0,visible=true,last=0,grad=null;
+    var seeds=[[1.0,0,1],[1.6,1.7,.72],[2.3,3.1,.5]];
+    function size(){dpr=Math.min(2,window.devicePixelRatio||1);var r=canvas.getBoundingClientRect();W=r.width;H=r.height;canvas.width=Math.max(1,W*dpr);canvas.height=Math.max(1,H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);grad=ctx.createLinearGradient(0,0,W,0);BRAND.forEach(function(c,j){grad.addColorStop(j/(BRAND.length-1),c);});}
+    if('ResizeObserver' in window)new ResizeObserver(size).observe(canvas);size();
+    if('IntersectionObserver' in window)new IntersectionObserver(function(e){visible=e[0].isIntersecting;if(visible&&!raf)raf=requestAnimationFrame(frame);}).observe(canvas);
+    function frame(now){
+      raf=0;if(!visible||!W)return;
+      var talking=target>0||mode!=='idle';
+      if(!talking&&now-last<32){raf=requestAnimationFrame(frame);return;}
+      last=now;
+      var t=(now-t0)/1000;
+      level+=(target-level)*(mode==='shiver'?.6:.18);
+      ctx.clearRect(0,0,W,H);
+      var mid=H/2,amp=(small?.34:.46)*H;
+      if(mode==='pulse'){
+        /* the dramatic moment: an equalizer burst */
+        var n=small?12:28,gap=small?3:5,bw=(W-gap*(n-1))/n;
+        for(var k=0;k<n;k++){
+          var u=k/(n-1),env=Math.sin(Math.PI*u),h=(0.15+0.85*Math.abs(Math.sin(t*9+k*.9))*Math.abs(Math.sin(t*3.1+k*.3)))*amp*2*Math.max(.35,env);
+          ctx.fillStyle=BRAND[k%6];ctx.shadowColor=BRAND[k%6];ctx.shadowBlur=small?6:12;
+          ctx.fillRect(k*(bw+gap),mid-h/2,bw,h);
+        }
+        ctx.shadowBlur=0;raf=requestAnimationFrame(frame);return;
+      }
+      var tongue=mode==='tongue'?((t*1.1)%1.6):-1;
+      for(var i=0;i<3;i++){
+        var f=seeds[i][0],ph=seeds[i][1],k2=seeds[i][2];
+        ctx.beginPath();
+        for(var x=0;x<=W;x+=2){
+          var u2=x/W,env2=Math.sin(Math.PI*u2),y=0;
+          var idle=.17+.07*Math.sin(t*1.3+i),a=Math.max(idle,level);
+          y+=Math.sin(u2*Math.PI*(4+2*i)*k2+t*(2.2+f)+ph)*a;
+          y+=Math.sin(u2*Math.PI*11*k2-t*(3.5+f*1.3))*a*.35;
+          if(tongue>=0){var d=u2-tongue;y+=Math.exp(-d*d*180)*1.1*(i===0?1:.5);}
+          if(mode==='shiver')y+=(Math.random()-.5)*.55;
+          if(mode==='think')y*=.5;
+          ctx.lineTo(x,mid+y*amp*env2);
+        }
+        ctx.strokeStyle=grad;ctx.lineCap='round';
+        ctx.lineWidth=i===0?(small?2.6:5):(small?1.4:2.2);
+        ctx.shadowColor='rgba(255,255,255,.9)';ctx.shadowBlur=i===0?(small?10:22):9;ctx.globalAlpha=i===0?1:.72;
+        ctx.stroke();
+        if(i===0){ctx.shadowBlur=0;ctx.globalAlpha=.9;ctx.strokeStyle='#fff';ctx.lineWidth=small?1:1.8;ctx.stroke();}
+      }
+      ctx.globalAlpha=1;ctx.shadowBlur=0;
+      if(!reduced||talking)raf=requestAnimationFrame(frame);
+    }
+    raf=requestAnimationFrame(frame);
+    return {set:function(v){target=Math.max(0,Math.min(1,+v||0));if(!raf)raf=requestAnimationFrame(frame);},mode:function(m){mode=m;if(!raf)raf=requestAnimationFrame(frame);}};
   }
-  moTimer=setTimeout(moment,9000+Math.random()*9000);
+  var waves=[].slice.call(document.querySelectorAll('.eh-wave')).map(function(c){return makeWave(c,c.closest('.eh-dock')!==null);}).filter(Boolean);
+  function setLevel(v){waves.forEach(function(w){w.set(v);});}
+  function setMode(m){waves.forEach(function(w){w.mode(m);});}
 
-  /* AI assistant hookup: only runs when the brain script (window.ETABrain) is on the page.
-     Its talking level drives the bars, its mode tints them, and the mouths open the chat panel. */
+  /* ---------- moments: signs of life while idle (visual only) ---------- */
+  var brows=eh.querySelector('.eh-brows'),moTimer=0,moClear=0;
+  function moment(name,ms){
+    if(moClear)clearTimeout(moClear);
+    if(name==='brow'){brows.classList.toggle('fluffy',Math.random()<.45);}
+    var cls={brow:'eh-mo-brow',eyes:'eh-mo-eyes',cheeks:'eh-mo-cheeks'}[name];
+    if(cls)root.classList.add(cls);
+    if(name==='tongue'||name==='shiver'||name==='pulse')setMode(name);
+    moClear=setTimeout(function(){root.classList.remove('eh-mo-brow','eh-mo-eyes','eh-mo-cheeks');setMode('idle');},ms);
+  }
+  var idleMoments=['brow','brow','tongue','shiver','brow','pulse','cheeks','eyes','tongue'];
+  function schedule(){
+    moTimer=setTimeout(function(){
+      if(!document.hidden&&!reduced&&!root.classList.contains('eh-talk')&&!root.classList.contains('eh-on')){
+        var m=idleMoments[Math.floor(Math.random()*idleMoments.length)];
+        moment(m,m==='pulse'?2600:m==='cheeks'?3000:m==='eyes'?2600:m==='tongue'?3200:m==='shiver'?1500:1400);
+      }
+      schedule();
+    },22000+Math.random()*38000);
+  }
+  moTimer=setTimeout(schedule,8000);
+
+  /* ---------- first-visit greeting (Zach's line, shown once per visitor) ---------- */
+  var say=document.getElementById('ehSay'),mouth=document.getElementById('ehMouth');
+  var sayTimer=0,sayRaf=0;
+  function hideSay(){if(say){say.classList.remove('on');}cancelAnimationFrame(sayRaf);clearTimeout(sayTimer);setLevel(0);root.classList.remove('eh-talk');}
+  function speakLine(text,withHear){
+    if(!say||reduced&&false)return;
+    var words=text.split(' '),box=say.querySelector('.txt');
+    box.innerHTML=words.map(function(w){return '<span class="w">'+w+'</span>';}).join(' ');
+    var spans=[].slice.call(box.querySelectorAll('.w')),hear=say.querySelector('.eh-hear');
+    hear.hidden=!withHear;
+    say.classList.add('on');root.classList.add('eh-talk');
+    moment('brow',1400);
+    var sched=[],t=0;words.forEach(function(w){var d=110+48*w.replace(/[^\w]/g,'').length;sched.push([t,t+d]);t+=d+(/[.,?!:]$/.test(w)?230:45);});
+    var total=t,t0=performance.now();
+    function step(now){var el=now-t0,env=0;for(var k=0;k<sched.length;k++){if(el>=sched[k][0])spans[k].classList.add('lit');if(el>=sched[k][0]&&el<sched[k][1]){var x=(el-sched[k][0])/(sched[k][1]-sched[k][0]);env=Math.sin(Math.PI*x)*(.7+.3*Math.sin(el/37+k));}}
+      setLevel(reduced?0:env);
+      if(el<total+150)sayRaf=requestAnimationFrame(step);else{setLevel(0);root.classList.remove('eh-talk');sayTimer=setTimeout(hideSay,9000);}}
+    sayRaf=requestAnimationFrame(step);
+  }
+  if(say){
+    say.querySelector('.eh-x').addEventListener('click',function(e){e.stopPropagation();hideSay();try{sessionStorage.setItem('ehGreeted','1');}catch(x){}});
+    say.addEventListener('click',function(e){e.stopPropagation();});
+  }
+  var GREETING='Pretty high tech right? We can easily build everything you see and more for your business!';
+  var greeted=false;try{greeted=!!sessionStorage.getItem('ehGreeted');}catch(x){}
+
+  /* ---------- AI assistant hookup: only when the brain script (window.ETABrain) is on the page ---------- */
   function hook(B){
     if(!B||root.classList.contains('eh-ai'))return;
     root.classList.add('eh-ai');
-    var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var sets=[].slice.call(document.querySelectorAll('.eh-bars')).map(function(s){
-      return [].slice.call(s.children).map(function(b,i){return {el:b,p:+b.style.getPropertyValue('--p')||1,f:1.7+i*.37,ph:(i*2.39)%6.28};});
-    });
 
-    /* chat panel, opened from the header mouth or the docked mouth */
     var panel=document.createElement('div');
     panel.className='eh-chat';panel.id='ehChat';panel.hidden=true;
     panel.setAttribute('role','dialog');panel.setAttribute('aria-label','Chat with the Eye To Ad Media AI assistant');
@@ -92,7 +183,7 @@
     document.body.appendChild(panel);
     var mounted=false,opener=null;
     function openChat(from){
-      opener=from||null;
+      opener=from||null;hideSay();
       if(!mounted){B.mount(panel.querySelector('.eh-chat-body'));mounted=true;}
       panel.hidden=false;root.classList.add('eh-chat-open');
       var inp=panel.querySelector('input:not([aria-hidden])');if(inp)inp.focus();
@@ -104,45 +195,48 @@
     }
     panel.querySelector('.eh-chat-x').addEventListener('click',closeChat);
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)closeChat();});
-    [].forEach.call(document.querySelectorAll('.eh .eh-vb'),function(m){
-      m.parentNode.removeAttribute('aria-hidden');m.setAttribute('role','button');m.tabIndex=0;
-      m.setAttribute('aria-label','Chat with our AI assistant');
-      m.addEventListener('click',function(){openChat(m);});
-      m.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openChat(m);}});
-    });
+    if(mouth){
+      mouth.removeAttribute('aria-hidden');mouth.setAttribute('role','button');mouth.tabIndex=0;
+      mouth.setAttribute('aria-label','Chat with our AI assistant');
+      mouth.addEventListener('click',function(){openChat(mouth);});
+      mouth.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openChat(mouth);}});
+    }
     var dock=document.querySelector('.eh-dock');
     if(dock){
       dock.setAttribute('aria-label','Chat with our AI assistant');
       dock.addEventListener('click',function(e){e.preventDefault();if(panel.hidden)openChat(dock);else closeChat();});
     }
+    /* "Tap to hear me": opens the chat and starts voice from the tap */
+    var hear=say&&say.querySelector('.eh-hear');
+    if(hear)hear.addEventListener('click',function(e){e.stopPropagation();openChat(mouth);if(B.startVoice)B.startVoice();});
 
-    /* talking: the brain's level (0..1) moves every set of bars */
-    var level=0,raf=0;
-    function rest(){sets.forEach(function(set){set.forEach(function(b){b.el.style.transform='';});});}
-    function frame(now){
-      raf=0;
-      if(!B.speaking){rest();return;}
-      sets.forEach(function(set){set.forEach(function(b){
-        var h=.16+level*b.p*(.7+.3*Math.sin(now/1000*b.f*6+b.ph));
-        b.el.style.transform='scaleY('+Math.min(1,h).toFixed(3)+')';
-      });});
-      if(B.speaking&&!reduced)raf=requestAnimationFrame(frame);
-    }
-    B.on('level',function(d){level=d.v;if(!raf&&!reduced)raf=requestAnimationFrame(frame);});
-    B.on('speaking',function(d){
-      root.classList.toggle('eh-talk',d.on);
-      if(!d.on){if(raf)cancelAnimationFrame(raf);raf=0;rest();}
-    });
+    /* talking level moves the lines; modes and states drive the moments */
+    B.on('level',function(d){setLevel(d.v);});
+    B.on('speaking',function(d){root.classList.toggle('eh-talk',d.on);if(!d.on)setLevel(0);});
     B.on('mode',function(d){
-      root.classList.remove('eh-m-rainbow','eh-m-promo','eh-m-tip','eh-m-cheeks');
-      if(d.mode&&d.mode!=='normal')root.classList.add('eh-m-'+d.mode);
+      root.classList.remove('eh-m-rainbow','eh-m-promo','eh-m-tip','eh-m-cheeks','eh-m-eyes');
+      if(d.mode==='cheeks')root.classList.add('eh-m-cheeks');
+      else if(d.mode==='eyes'||d.mode==='joke')root.classList.add('eh-m-eyes');
+      else if(d.mode==='promo'||d.mode==='rainbow')moment('pulse',2600);
+      else if(d.mode==='tip')moment('brow',2000);
     });
-    /* thinking raises the eyebrows; listening (voice) keeps them up */
     B.on('state',function(d){
       root.classList.toggle('eh-think',d.state==='thinking'||d.state==='connecting');
       root.classList.toggle('eh-listen',d.state==='listening');
+      if(d.state==='thinking')brows.classList.remove('fluffy');
     });
+    /* googly eyes when it says something worth a look */
+    B.on('message',function(d){
+      if(d.role!=='assistant')return;
+      if(/\b(look|see this|check this|wow|whoa|ta-da|tada|joke|funny|ha ha|haha)\b/i.test(d.text||'')){root.classList.add('eh-m-eyes');setTimeout(function(){root.classList.remove('eh-m-eyes');},3200);}
+    });
+    /* first visit: the greeting, with "Tap to hear me" when voice is available */
+    if(!greeted&&say){
+      B.ready().then(function(r){setTimeout(function(){if(!root.classList.contains('eh-chat-open'))speakLine(GREETING,!!r.voice);},1200);try{sessionStorage.setItem('ehGreeted','1');}catch(x){}});
+    }
   }
   if(window.ETABrain)hook(window.ETABrain);
   else document.addEventListener('eta:ready',function(e){hook(e.detail||window.ETABrain);});
+  /* no brain on the page (or it failed to load): still greet once, silently */
+  setTimeout(function(){if(!root.classList.contains('eh-ai')&&!greeted&&say){speakLine(GREETING,false);try{sessionStorage.setItem('ehGreeted','1');}catch(x){}}},2500);
 })();

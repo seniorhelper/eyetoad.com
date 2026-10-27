@@ -31,12 +31,18 @@ function bars(n) {
   for (let i = 0; i < n; i++) { const d = Math.abs(i - c) / c; out += `<i style="--i:${i};--p:${(1 - .62 * d * d).toFixed(2)}"></i>`; }
   return `<span class="eh-bars">${out}</span>`;
 }
-// the voice box: red LED bars in a dark housing, with cheeks, eyebrows and glasses that only show in moments
-function mouth(n, full) {
-  return `<span class="eh-mouth" aria-hidden="true">${full ? '<span class="eh-eyes"><i></i><i></i></span><span class="eh-brows"><i></i><i></i></span>' : ''}<span class="eh-vb"><span class="eh-cheek l"></span>${bars(n)}<span class="eh-cheek r"></span></span></span>`;
+// the mouth: a canvas waveform drawn by eta-hdr.js, with cheeks, two kinds of eyebrows and googly eyes for moments
+const FLUFFY = '<svg viewBox="0 0 190 30" aria-hidden="true" focusable="false"><g class="lb" style="transform-origin:40px 16px"><path d="M8 20 C 22 8, 50 6, 72 14" stroke="#3B2A1A" stroke-width="9" stroke-linecap="round" fill="none"/><path d="M10 18 C 24 9, 48 8, 70 13" stroke="#6B4A2B" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="3 4"/><path d="M12 22 C 26 12, 50 10, 68 17" stroke="#2A1C10" stroke-width="2.5" stroke-linecap="round" fill="none" stroke-dasharray="2 5"/></g><g style="transform-origin:150px 16px"><path d="M182 20 C 168 8, 140 6, 118 14" stroke="#3B2A1A" stroke-width="9" stroke-linecap="round" fill="none"/><path d="M180 18 C 166 9, 142 8, 120 13" stroke="#6B4A2B" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="3 4"/><path d="M178 22 C 164 12, 140 10, 122 17" stroke="#2A1C10" stroke-width="2.5" stroke-linecap="round" fill="none" stroke-dasharray="2 5"/></g></svg>';
+const HEAR = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z"/></svg>';
+function mouth() {
+  return '<div class="eh-mouthline"><div class="eh-mouth" id="ehMouth" aria-hidden="true">' +
+    '<span class="eh-eyes"><span class="eh-eye"><span class="eh-pupil"></span></span><span class="eh-eye"><span class="eh-pupil"></span></span></span>' +
+    '<span class="eh-brows"><i class="st"></i><i class="st"></i>' + FLUFFY + '</span>' +
+    '<span class="eh-cheek l"></span><span class="eh-cheek r"></span><canvas class="eh-wave"></canvas>' +
+    '<div class="eh-say" id="ehSay" role="status"><button class="eh-x" type="button" aria-label="Close">&times;</button><div class="txt"></div><button class="eh-hear" type="button" hidden>' + HEAR + 'Tap to hear me</button></div>' +
+    '</div></div>';
 }
 
-// Services mega menu: same links as the old menu, restyled
 const megaSrc = fs.readFileSync('_build/header/services-menu.html', 'utf8').trim();
 
 const NAV = [
@@ -50,30 +56,30 @@ const bbb = w => `<a class="eh-bbb" href="${BBB_URL}" target="_blank" rel="nofol
 function header(urlPath) {
   const cur = href => (urlPath === href || (href !== '/' && urlPath.startsWith(href))) ? ' aria-current="page"' : '';
   const links = NAV.map(([h, t]) => `<li><a class="eh-nl" href="${h}"${cur(h)}>${t}</a></li>`);
+  const sheetLinks = NAV.map(([h, t]) => '<li><a href="' + h + '">' + t + '</a></li>').join('');
   return `<!--eh:start-->
 <header class="eh" id="eh">
+<div class="eh-sheen" aria-hidden="true"></div>
 <div class="eh-wrap eh-top">
-<a class="eh-logo" href="/" aria-label="Eye To Ad Media home"><img src="/images/images/eye-to-ad-media-logo-530.webp" srcset="/images/images/eye-to-ad-media-logo-265.webp 265w, /images/images/eye-to-ad-media-logo-530.webp 530w" sizes="(max-width:360px) 220px, (max-width:420px) 250px, (max-width:700px) 260px, 364px" width="530" height="166" alt="Eye To Ad Media" fetchpriority="high" decoding="async"></a>
-<div class="eh-act">${bbb()}${call()}<a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a><button class="eh-menu" type="button" aria-expanded="false" aria-controls="ehSheet">Menu <i aria-hidden="true"></i></button></div>
+<a class="eh-logo" href="/" aria-label="Eye To Ad Media home"><img src="/images/images/eye-to-ad-media-logo-530.webp" srcset="/images/images/eye-to-ad-media-logo-265.webp 265w, /images/images/eye-to-ad-media-logo-530.webp 530w" sizes="(max-width:360px) 196px, (max-width:420px) 214px, (max-width:700px) 250px, 364px" width="530" height="166" alt="Eye To Ad Media" fetchpriority="high" decoding="async"></a>
+${bbb()}
+<div class="eh-act"><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a><button class="eh-menu" type="button" aria-expanded="false" aria-controls="ehSheet">Menu <i aria-hidden="true"></i></button></div>
 </div>
-<div class="eh-wrap eh-callrow">${bbb(true)}${call()}</div>
 <nav class="eh-nav" aria-label="Main navigation"><div class="eh-wrap"><ul class="eh-ul">
 <li class="eh-svc"><a class="eh-nl" href="/services/"${cur('/services/')}>Services</a><button class="eh-chev" type="button" data-eh-drop aria-expanded="false" aria-controls="ehSvc" aria-label="Show services menu">${CHEV}</button><div class="eh-drop eh-mega" id="ehSvc">${megaSrc}</div></li>
-${links.slice(0, 3).join('')}
-<li class="eh-gap" aria-hidden="true"></li>
-${links.slice(3).join('')}
+${links.join('')}
 <li><button class="eh-nl" type="button" data-eh-drop aria-expanded="false" aria-controls="ehDom">Domains ${CHEV}</button><div class="eh-drop" id="ehDom">${DOMAINS}</div></li>
 <li class="eh-navcta"><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></li>
 </ul></div></nav>
 <nav class="eh-sheet" id="ehSheet" aria-label="Mobile menu" hidden><div class="eh-wrap"><ul>
-<li><a href="/services/">Services</a></li>${NAV.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}<li><a href="/case-studies/">Case Studies</a></li><li><a href="/blog/">Blog</a></li><li><a href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener">Domain Finder</a></li><li><a href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener">Premium Names</a></li>
+<li><a href="/services/">Services</a></li>${sheetLinks}<li><a href="/case-studies/">Case Studies</a></li><li><a href="/blog/">Blog</a></li><li><a href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener">Domain Finder</a></li><li><a href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener">Premium Names</a></li><li><a href="https://www.buyweburl.com/products/cpanel" target="_blank" rel="nofollow noopener">Hosting</a></li>
 </ul><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></div></nav>
-<div class="eh-mouthrow" aria-hidden="true"></div>
+<div class="eh-wrap eh-phone">${call()}</div>
+${mouth()}
 <div class="eh-ribbon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-${mouth(19, true)}
 </header>
 <div class="eh-mini" aria-hidden="true"><div class="eh-mini-in"><div class="eh-wrap"><ul class="eh-ul"><li><a class="eh-nl" href="/services/" tabindex="-1">Services</a></li>${NAV.map(([h, t]) => `<li><a class="eh-nl" href="${h}" tabindex="-1">${t}</a></li>`).join('')}</ul>${bbb(true).replace('<a ', '<a tabindex="-1" ')}${call().replace('<a ', '<a tabindex="-1" ')}<a class="eh-cta" href="/free-seo-audit/" tabindex="-1">Get SEO Audit</a></div></div></div>
-<a class="eh-dock" href="/contact/" aria-label="Contact Eye To Ad Media">${mouth(9, false)}</a>
+<a class="eh-dock" href="/contact/" aria-label="Contact Eye To Ad Media"><canvas class="eh-wave" aria-hidden="true"></canvas></a>
 <div class="eh-callbar"><a href="tel:18004818638">${PHONE_SVG}Call 1-800-481-8638</a></div>
 <!--eh:end-->`;
 }
@@ -112,7 +118,7 @@ for (const f of files) {
   else s = s.replace('</head>', style + '\n</head>');
   // header script
   // header script (bump HDR_V when eta-hdr.js changes) + the AI assistant (served from the eyetoad cPanel)
-  const HDR_V = 3, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
+  const HDR_V = 4, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
   s = s.replace(/\/eta-hdr\.js\?v=\d+/g, '/eta-hdr.js?v=' + HDR_V);
   if (!s.includes('/eta-hdr.js')) {
     const tag = `<script src="/eta-hdr.js?v=${HDR_V}" defer></script>`;
