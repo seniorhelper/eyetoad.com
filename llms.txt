@@ -421,6 +421,7 @@ Researched remotely from Denver; each has its own market data and FAQ:
 
 - [Google Automated Calls: The Business Profile Settings Guide](https://eyetoad.com/blog/google-business-profile-automated-calls-settings/)
 - [Reserve with Google by Trade: Which Scheduler Fits (2026)](https://eyetoad.com/blog/reserve-with-google-scheduler-guide-denver/)
+- [Your Website's Job Description: 9 Jobs While You Sleep](https://eyetoad.com/blog/website-job-description/)
 - [Publish Your Prices: Why "Call for a Quote" Loses AI Jobs](https://eyetoad.com/blog/publish-price-ranges-ai-search/)
 - [AI Agents Now Book Local Businesses. Is Yours Bookable?](https://eyetoad.com/blog/ai-agents-booking-denver-service-businesses/)
 - [AI Readiness Checklist: 15 Checks Before an Agent Books You](https://eyetoad.com/blog/ai-readiness-checklist-local-business-2026/)
