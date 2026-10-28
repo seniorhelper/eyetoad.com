@@ -97,25 +97,35 @@
 .bx-wld .bx-in{position:relative;z-index:1}
 @media (max-width:900px){.bx-c{grid-template-columns:minmax(0,1fr)!important;direction:ltr!important;padding:24px 20px 22px 26px!important}.bx-c > *{grid-column:1!important;grid-row:auto!important}}
 </style>
+<link rel="preload" as="image" type="image/avif" imagesrcset="/images/hero/hero-ai-hand-800.avif 800w, /images/hero/hero-ai-hand-1280.avif 1280w, /images/hero/hero-ai-hand-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
 <style id="hv-css">
 /* Home hero: small SEO H1, a typed "best employee" line, and a live feed of the work a site can do */
 :root{--hv-ink:#0B1220;--hv-mut:#475467;--hv-red:#DC2626;--hv-org:#F97316;--hv-line:#E4E7EC}
-.hv{position:relative;overflow:hidden;isolation:isolate;background:#fff;color:var(--hv-ink);padding:30px 0 24px}
-.hv::before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(37,99,235,.16) 1px,transparent 1.3px);background-size:22px 22px;-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 80%);mask-image:linear-gradient(180deg,#000 0%,transparent 80%)}
+.hx.hv{position:relative;overflow:hidden;isolation:isolate;background:#060B16;color:#fff;padding:40px 0 30px}
+/* photo: AI hand reaching into a network; solid dark on the text side so every word stays sharp */
+.hv-bg{position:absolute;inset:0;z-index:-1;margin:0}
+.hv-bg img{width:100%;height:100%;object-fit:cover;object-position:62% 40%;display:block}
+.hv-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#060B16 0%,rgba(6,11,22,.94) 34%,rgba(6,11,22,.55) 62%,rgba(6,11,22,.25) 100%),linear-gradient(0deg,#060B16 0%,transparent 28%)}
+@media (max-width:900px){.hv-bg img{object-position:50% 30%}.hv-bg::after{background:linear-gradient(180deg,rgba(6,11,22,.78) 0%,rgba(6,11,22,.9) 45%,#060B16 100%)}}
 .hv-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:40px;align-items:center}
-.hx.hv h1.hv-h1{display:inline-flex;align-items:center;gap:9px;margin:0 0 16px;padding:6px 13px;border-radius:99px;border:1px solid var(--hv-line);background:#F8FAFC;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:.92rem!important;font-weight:700!important;line-height:1.2!important;letter-spacing:0!important;color:var(--hv-mut);text-wrap:wrap}
+.hx.hv h1.hv-h1{display:inline-flex;align-items:center;gap:9px;margin:0 0 16px;padding:6px 13px;border-radius:99px;border:1px solid rgba(255,255,255,.22);background:rgba(6,11,22,.6);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:.92rem!important;font-weight:700!important;line-height:1.2!important;letter-spacing:0!important;color:#E4E7EC!important;text-wrap:wrap}
 .hv-h1 .pin{width:8px;height:8px;border-radius:50%;background:var(--hv-red);box-shadow:0 0 0 4px rgba(220,38,38,.15);flex:none}
-.hx.hv p.hv-big{margin:0;color:var(--hv-ink);font:900 clamp(2.3rem,5.4vw,4.6rem)/1.02 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:-.04em}
-.hv-best{background:linear-gradient(90deg,var(--hv-red),var(--hv-org) 55%,#EAB308);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone;filter:drop-shadow(0 6px 16px rgba(249,115,22,.28))}
+.hx.hv p.hv-big{margin:0;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.5);font:900 clamp(2.3rem,5.4vw,4.6rem)/1.02 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:-.04em}
+.hv-best{text-shadow:none;background:linear-gradient(90deg,#F43F5E,var(--hv-org) 50%,#FACC15);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone;filter:drop-shadow(0 6px 16px rgba(249,115,22,.28))}
 .hv-caret{display:inline-block;width:.08em;height:.86em;margin-left:.06em;vertical-align:-.06em;background:var(--hv-org);border-radius:2px;box-shadow:0 0 12px var(--hv-org);animation:hvBlink .8s steps(1) infinite}
 .hv-big.done .hv-caret{animation:hvBlink .8s steps(1) 3,hvOut .2s 2.4s forwards}
 @keyframes hvBlink{50%{opacity:0}}@keyframes hvOut{to{opacity:0;width:0;margin:0}}
-.hv-make{display:inline-block;margin:14px 0 0;padding:6px 16px 8px;border-radius:10px;background:var(--hv-ink);color:#fff;font:700 clamp(1.5rem,2.8vw,2.1rem)/1 "Caveat Hero",Caveat,"Caveat Fallback",cursive;transform:rotate(-2deg);box-shadow:5px 5px 0 var(--hv-org)}
+.hv-make{display:inline-block;margin:14px 0 0;padding:6px 16px 8px;border-radius:10px;background:#fff;color:var(--hv-ink);font:700 clamp(1.5rem,2.8vw,2.1rem)/1 "Caveat Hero",Caveat,"Caveat Fallback",cursive;transform:rotate(-2deg);box-shadow:5px 5px 0 var(--hv-org)}
 .hv.js .hv-make{opacity:0;transform:rotate(-2deg) scale(.6)}
 .hv.js .hv-big.done+.hv-make{animation:hvStamp .45s cubic-bezier(.2,1.7,.4,1) .15s forwards}
 @keyframes hvStamp{to{opacity:1;transform:rotate(-2deg) scale(1)}}
-.hv-sub{margin:20px 0 22px;max-width:34em;font-size:clamp(1.02rem,1.5vw,1.15rem);line-height:1.55;color:#344054}
+.hv-sub{margin:20px 0 22px;max-width:34em;font-size:clamp(1.02rem,1.5vw,1.15rem);line-height:1.55;color:#D0D5DD}
 .hv .hx-cta{margin-bottom:16px}
+.hv .hx-ghost{border-color:#fff}
+.hx.hv .hx-trust,.hx.hv .hx-trust li{color:#E4E7EC}
+.hx.hv .hs-txt{color:#D0D5DD}
+.hx.hv .hx-seals img{background:#fff;border-radius:6px}
+.hx.hv .hv-demo{color:#98A2B3}
 .hv-log{background:#0B1220;color:#E6EDF6;border-radius:20px;padding:16px 16px 8px;box-shadow:12px 12px 0 var(--hv-org),0 30px 60px rgba(11,18,32,.25),inset 0 0 0 1px rgba(255,255,255,.06);display:flex;flex-direction:column;gap:10px;font-family:Inter,system-ui,sans-serif;position:relative;overflow:hidden}
 .hv-log::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
 .hv-log-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.82rem;color:#98A2B3;flex-wrap:wrap}
@@ -129,7 +139,7 @@
 .hv-feed .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
 .hv-feed small{color:#7D8BA3;font-variant-numeric:tabular-nums;font-size:.75rem}
 .hv-feed b{color:#fff}
-.hv-demo{margin:0;font-size:.72rem;color:#667085;text-align:right}
+.hv-demo{margin:22px 0 0;font-size:.72rem;color:#667085;text-align:right}
 @keyframes hvIn{from{opacity:0;transform:translateY(-14px) scale(.97)}to{opacity:1;transform:none}}
 @media (max-width:900px){.hv-grid{grid-template-columns:1fr;gap:26px}.hv{padding:22px 0 20px}.hv-feed{height:250px}}
 @media (prefers-reduced-motion:reduce){.hv *{animation:none!important}.hv.js .hv-make{opacity:1;transform:rotate(-2deg)}.hv-caret{display:none}}
@@ -186,10 +196,11 @@
 <main id="main">
 
 <section class="hx hv" aria-labelledby="h1">
+<picture class="hv-bg" aria-hidden="true"><source type="image/avif" srcset="/images/hero/hero-ai-hand-800.avif 800w, /images/hero/hero-ai-hand-1280.avif 1280w, /images/hero/hero-ai-hand-1920.avif 1920w" sizes="100vw"><source type="image/webp" srcset="/images/hero/hero-ai-hand-800.webp 800w, /images/hero/hero-ai-hand-1280.webp 1280w, /images/hero/hero-ai-hand-1920.webp 1920w" sizes="100vw"><img src="/images/hero/hero-ai-hand-1280.webp" alt="" width="1920" height="1280" fetchpriority="high" decoding="async"></picture>
 <div class="wrap hv-grid">
 <div class="hv-copy">
 <h1 id="h1" class="hv-h1"><span class="pin" aria-hidden="true"></span>Denver SEO that makes the phone ring.</h1>
-<p class="hv-big" aria-label="Your website should be your best employee."><span aria-hidden="true"><span class="hv-t1">Your website should be </span><span class="hv-best">your best employee.</span><span class="hv-caret"></span></span></p>
+<p class="hv-big"><span class="sr">Your website should be your best employee.</span><span aria-hidden="true"><span class="hv-t1">Your website should be </span><span class="hv-best">your best employee.</span><span class="hv-caret"></span></span></p>
 <p class="hv-make">We&rsquo;ll make it one.</p>
 <p class="hv-sub">It answers every call, replies to leads in seconds, sorts your inbox, posts for you and gets you found on Google, Maps and AI search. Day and night. No sick days.</p>
 <div class="hx-cta">

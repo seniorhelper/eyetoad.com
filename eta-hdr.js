@@ -89,6 +89,8 @@
      Three layered lines on a canvas, colored across the six brand colors, driven by a level (0..1)
      and a few moment modes. Runs at 30fps while idle, 60 while talking, and not at all off screen. */
   var BRAND=['#DC2626','#F97316','#FACC15','#16A34A','#2563EB','#7C3AED'];
+  /* idle motion waits for the first touch/scroll/key or 4s after load, so page load stays fast */
+  var started=false;
   function makeWave(canvas,small){
     var ctx=canvas.getContext('2d');if(!ctx)return null;
     var W=0,H=0,dpr=1,level=0,target=0,mode='idle',t0=performance.now(),raf=0,visible=true,last=0,grad=null,lean=0,leanT=0;
@@ -140,13 +142,16 @@
         if(i===0){ctx.shadowBlur=0;ctx.globalAlpha=.9;ctx.strokeStyle='#fff';ctx.lineWidth=small?1:1.8;ctx.stroke();}
       }
       ctx.globalAlpha=1;ctx.shadowBlur=0;
-      if(!reduced||talking)raf=requestAnimationFrame(frame);
+      if((!reduced||talking)&&(started||talking))raf=requestAnimationFrame(frame);
     }
     raf=requestAnimationFrame(frame);
-    return {set:function(v){target=Math.max(0,Math.min(1,+v||0));if(!raf)raf=requestAnimationFrame(frame);},mode:function(m){mode=m;if(!raf)raf=requestAnimationFrame(frame);},lean:function(v){leanT=v;if(!raf)raf=requestAnimationFrame(frame);}};
+    return {kick:function(){if(!raf)raf=requestAnimationFrame(frame);},set:function(v){target=Math.max(0,Math.min(1,+v||0));if(!raf)raf=requestAnimationFrame(frame);},mode:function(m){mode=m;if(!raf)raf=requestAnimationFrame(frame);},lean:function(v){leanT=v;if(!raf)raf=requestAnimationFrame(frame);}};
   }
   var mouth=document.getElementById('ehMouth');
   var waves=[].slice.call(document.querySelectorAll('.eh-wave')).map(function(c){return makeWave(c,c.closest('.eh-dock')!==null);}).filter(Boolean);
+  (function(){var evs=['pointerdown','keydown','scroll','touchstart'];function go(){if(started)return;started=true;evs.forEach(function(e){removeEventListener(e,go)});waves.forEach(function(w){w.kick();});}
+    evs.forEach(function(e){addEventListener(e,go,{passive:true,once:true})});
+    function later(){setTimeout(go,4000);}if(document.readyState==='complete')later();else addEventListener('load',later);})();
   function setLevel(v){waves.forEach(function(w){w.set(v);});}
   /* Toad's wave leans toward the mouse (desktop, pointer only) */
   if(mouth&&window.matchMedia&&matchMedia('(hover:hover)').matches&&!reduced){
@@ -244,7 +249,7 @@
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)closeChat();});
     if(mouth){
       mouth.removeAttribute('aria-hidden');mouth.setAttribute('role','button');mouth.tabIndex=0;
-      mouth.setAttribute('aria-label','Chat with our AI assistant');
+      mouth.setAttribute('aria-label','Tap the lips to hear Toad, our AI assistant');
       var voiceOK=false;B.ready().then(function(r){voiceOK=!!r.voice;});
       function lips(){
         markTapped();
@@ -263,7 +268,7 @@
     if(barToad){barToad.addEventListener('click',function(e){e.preventDefault();if(panel.hidden)openChat(barToad);else closeChat();});}
     var dock=document.querySelector('.eh-dock');
     if(dock){
-      dock.setAttribute('aria-label','Chat with our AI assistant');
+      dock.setAttribute('aria-label','Tap the lips to hear Toad, our AI assistant');
       dock.addEventListener('click',function(e){e.preventDefault();if(panel.hidden)openChat(dock);else closeChat();});
     }
     /* "Tap to hear me": opens the chat and starts voice from the tap */
