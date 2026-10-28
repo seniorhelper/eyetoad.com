@@ -105,7 +105,8 @@
       var t=(now-t0)/1000;
       level+=(target-level)*(mode==='shiver'?.6:.18);
       ctx.clearRect(0,0,W,H);
-      var mid=H/2,amp=(small?.34:.46)*H;
+      /* amp leaves room for the stroke and its glow so peaks never hit the canvas edge */
+      var mid=H/2,amp=Math.max(4,H/2-(small?4:8));
       if(mode==='pulse'){
         /* the dramatic moment: an equalizer burst */
         var n=small?12:28,gap=small?3:5,bw=(W-gap*(n-1))/n;
@@ -129,7 +130,8 @@
           if(lean)y+=Math.exp(-Math.pow((u2-(.5+lean*.4))*4,2))*Math.abs(lean)*.9*(i===0?1:.5);
           if(mode==='shiver')y+=(Math.random()-.5)*.55;
           if(mode==='think')y*=.5;
-          ctx.lineTo(x,mid+y*amp*env2);
+          /* tanh keeps loud speech, tongue and lean peaks inside ±amp instead of cutting off */
+          ctx.lineTo(x,mid+Math.tanh(y*1.3)*amp*env2);
         }
         ctx.strokeStyle=grad;ctx.lineCap='round';
         ctx.lineWidth=i===0?(small?2.6:5):(small?1.4:2.2);
