@@ -220,3 +220,20 @@
 .eh-mouth canvas{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%)}
 @media (min-width:1061px){.eh-top{padding-top:8px;padding-bottom:0}.eh-mouthline{height:84px}.eh-phone{margin-top:-4px}}
 @media (min-width:1061px) and (max-height:820px){.eh-logo img{width:300px}.eh-mouthline{height:76px}}
+/* site search button (opens /eta-search.js) + Business in a Box highlight, Oct 27 2026 */
+.eh-srch{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;border-radius:12px;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.1);color:#fff;cursor:pointer;transition:background .15s,transform .15s}
+.eh-srch:hover,.eh-srch:focus-visible{background:rgba(255,255,255,.24);transform:translateY(-1px)}
+.eh-srch svg{width:20px;height:20px}
+.eh-mini .eh-srch{width:40px;height:40px}
+.eh-nl[href="/business-in-a-box/"]{position:relative;background:linear-gradient(90deg,rgba(250,204,21,.22),rgba(249,115,22,.22));box-shadow:inset 0 0 0 1.5px rgba(250,204,21,.7)}
+.eh-nl[href="/business-in-a-box/"]:hover{background:linear-gradient(90deg,rgba(250,204,21,.36),rgba(249,115,22,.36))}
+@media (max-width:1320px) and (min-width:1061px){.eh-ul{gap:2px}.eh-nl{padding:10px 9px;font-size:14.5px}}
+@media (max-width:1180px) and (min-width:1061px){.eh-nl{padding:9px 7px;font-size:14px}.eh-navcta .eh-cta{padding:10px 11px;font-size:13.5px}}
+@media (max-width:700px){.eh-srch{width:40px;height:40px;border-radius:11px}.eh-srch svg{width:18px;height:18px}}
+@media (max-width:360px){.eh-srch{width:36px;height:36px}}
+@media (max-width:420px){.eh-top{gap:6px}.eh-logo img{width:204px}.eh-bbb img{width:90px}.eh-srch{width:36px;height:36px;border-radius:10px}}
+@media (max-width:360px){.eh-logo img{width:186px}.eh-bbb img{width:78px}.eh-srch{width:34px;height:34px}}
+.eh-chat-call{flex:none;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;background:#101828;color:#fff!important;font:500 14px/1.2 Outfit,system-ui,sans-serif;text-decoration:none!important;border-top:3px solid #DC2626}
+.eh-chat-call b{font-weight:800;color:#FACC15}
+.eh-chat-call svg{width:16px;height:16px;flex:none}
+.eh-chat-call:hover,.eh-chat-call:focus-visible{background:#1D2939}

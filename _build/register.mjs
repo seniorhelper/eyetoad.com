@@ -41,6 +41,8 @@ const PAGES = [
   { path: '/locations/pueblo-seo/', title: "Pueblo SEO | Local Search for Southern Colorado", line: 'Pueblo CO local SEO: Riverwalk, north side, Belmont, Pueblo West, Spanish-language content', prio: '0.7', lastmod: '2026-10-27' },
   // Denver SEO agencies guide added 2026-10-27
   { path: '/denver-seo-agencies/', title: 'Denver SEO Agencies: How to Compare Them (2026 Guide)', line: 'how to compare Denver SEO agencies: four staffing models, a 12-point scoring sheet, proposal reading, what the lists measure, reference-call script; published ranges only, no guarantees', prio: '0.9', lastmod: '2026-10-27' },
+  // Product design page added 2026-10-27
+  { path: '/product-design/', title: 'Product & Packaging Design | Denver | Eye To Ad Media', line: 'packaging, labels, brand identity, print, signage, vehicle wraps, NFC cards, web and app UI and ad creative; concepts on mockups, revisions, print-ready files and web assets; free in-browser Mockup Studio; quoted per project', prio: '0.7', lastmod: '2026-10-27' },
 ];
 
 const icon = (k, c) => ({

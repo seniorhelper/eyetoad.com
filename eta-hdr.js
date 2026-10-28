@@ -1,6 +1,6 @@
 /* Eye To Ad Media universal header (Oct 2026 v3): menus, phone sheet, compact bar on scroll,
    the waveform mouth (canvas) with its moments, and the AI assistant hookup.
-   Load with: <script src="/eta-hdr.js?v=7" defer></script> */
+   Load with: <script src="/eta-hdr.js?v=10" defer></script> */
 (function(){
   'use strict';
   var eh=document.getElementById('eh');
@@ -231,7 +231,7 @@
     var panel=document.createElement('div');
     panel.className='eh-chat';panel.id='ehChat';panel.hidden=true;
     panel.setAttribute('role','dialog');panel.setAttribute('aria-label','Chat with the Eye To Ad Media AI assistant');
-    panel.innerHTML='<button class="eh-chat-x" type="button" aria-label="Close chat">&times;</button><div class="eh-chat-body"></div>';
+    panel.innerHTML='<button class="eh-chat-x" type="button" aria-label="Close chat">&times;</button><div class="eh-chat-body"></div><a class="eh-chat-call" href="tel:18004818638"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>Rather talk to a person? <b>Call 1-800-481-8638</b></a>';
     document.body.appendChild(panel);
     var mounted=false,opener=null;
     function openChat(from){
@@ -307,4 +307,18 @@
   else document.addEventListener('eta:ready',function(e){hook(e.detail||window.ETABrain);});
   /* no brain on the page (or it failed to load): still greet once, silently */
   setTimeout(function(){if(!root.classList.contains('eh-ai')&&!greeted&&say){speakLine(GREETING,false);try{sessionStorage.setItem('ehGreeted','1');}catch(x){}}},2500);
+
+  /* ---------- site search: icon, "/" or Ctrl+K loads /eta-search.js on first use ---------- */
+  var srchP=null;
+  function search(q){
+    if(!srchP)srchP=new Promise(function(ok,no){var t=document.createElement('script');t.src='/eta-search.js?v=1';t.onload=ok;t.onerror=no;document.head.appendChild(t);});
+    srchP.then(function(){window.ETASearch.open(q);},function(){location.href='/services/'+(q?'?q='+encodeURIComponent(q):'');});
+  }
+  window.etaSearch=search;
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-eh-search]');if(b){e.preventDefault();search();}});
+  document.addEventListener('keydown',function(e){
+    var t=e.target,typing=t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
+    if((e.key==='/'&&!typing&&!e.ctrlKey&&!e.metaKey&&!e.altKey)||((e.ctrlKey||e.metaKey)&&(e.key==='k'||e.key==='K'))){e.preventDefault();search();}
+  });
+  ['pointerover','focusin'].forEach(function(ev){eh.addEventListener(ev,function f(e){if(e.target.closest&&e.target.closest('[data-eh-search]')){eh.removeEventListener(ev,f);var l=document.createElement('link');l.rel='prefetch';l.href='/search-index.json?v=1';document.head.appendChild(l);}});});
 })();

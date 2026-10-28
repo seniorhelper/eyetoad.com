@@ -1,13 +1,15 @@
+// NOTE 2026-10-27: /ai-seo-agency/index.html was hand-rebuilt (hero-v2 Inter hero, direct answer below hero, deliverables/measurement/pricing tables, 8-question FAQ, OfferCatalog schema).
+// Re-running newpage.mjs on this spec will REVERT that page to the old layout. Edit the HTML directly; only title/description/h1/date below were synced.
 // /ai-seo-agency/  targets: ai seo agency, ai seo company, ai search optimization agency, generative engine optimization agency, geo agency, aeo agency
 export default {
   path: '/ai-seo-agency/',
   prefix: 'aia',
-  date: '2026-10-19',
-  title: 'AI SEO Agency | Get Cited by AI Overviews, ChatGPT & AI Mode',
-  description: 'An AI SEO agency since 2012: we get businesses named in Google AI Overviews, AI Mode, ChatGPT and Perplexity, with published pricing, a free AI visibility check, and no guarantees.',
+  date: '2026-10-27',
+  title: 'AI SEO Agency | Get Named by ChatGPT & AI Overviews',
+  description: 'Denver AI SEO agency since 2012. We get businesses named in Google AI Overviews, AI Mode, ChatGPT and Perplexity. Clear prices, free AI visibility check.',
   crumbs: [['Services', 'https://eyetoad.com/services/']],
   eyebrow: 'AI SEO agency &middot; Denver HQ, clients worldwide &middot; Since 2012',
-  h1: 'The AI SEO agency that treats answer engines <em>as search, not magic.</em>',
+  h1: 'AI SEO agency. <em>Get named when buyers ask AI.</em>',
   kick: 'Google says it plainly: optimizing for AI search is still SEO. We do the parts that make a business quotable, then measure whether the phone rings.',
   sub: 'Eye To Ad Media is an AI SEO agency, a generative engine optimization agency, an answer engine optimization agency; the label changes every quarter, the work does not. We make a business easy for Google AI Overviews, AI Mode, ChatGPT, Perplexity, Gemini and Claude to find, trust and name, on top of the classic rankings and Google Maps work that still sends most of the calls. Founder-led, month to month, priced in the open.',
   cta2: ['Check your AI visibility free', '/ai-visibility-audit/'],
