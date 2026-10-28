@@ -123,7 +123,7 @@ for (const f of files) {
   else s = s.replace('</head>', style + '\n</head>');
   // header script
   // header script (bump HDR_V when eta-hdr.js changes) + the AI assistant (served from the eyetoad cPanel)
-  const HDR_V = 8, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
+  const HDR_V = 9, AI_TAG = '<script src="https://clients.eyetoad.com/ai/eta-ai.js" defer></script>';
   s = s.replace(/\/eta-hdr\.js\?v=\d+/g, '/eta-hdr.js?v=' + HDR_V);
   if (!s.includes('/eta-hdr.js')) {
     const tag = `<script src="/eta-hdr.js?v=${HDR_V}" defer></script>`;
