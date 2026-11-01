@@ -2,7 +2,7 @@
    Inlined into every page as <style id="eta-hdr"> by _build/apply-header.mjs. Everything is scoped to .eh-* */
 .eh,.eh-mini,.eh-dock,.eh-callbar{--eh-h:#1D4ED8;--eh-h2:#1E40AF;--eh-ink:#101828;--eh-cta:#FACC15;font-family:Outfit,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 .eh *,.eh-mini *,.eh-dock *,.eh-callbar *{box-sizing:border-box}
-.eh{position:relative;z-index:1000;background:var(--eh-h);color:#fff;overflow:hidden}
+.eh{position:relative;z-index:1000;background:var(--eh-h);color:#fff;overflow-x:clip;overflow-y:visible}
 .eh a,.eh-mini a,.eh-callbar a,.eh-dock{text-decoration:none}
 .eh ul,.eh-mini ul{list-style:none;margin:0;padding:0}
 .eh-wrap{max-width:1240px;margin:0 auto;padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
@@ -33,7 +33,7 @@
 .eh-ic::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #fff;opacity:0;animation:eh-ring 3.6s ease-out infinite}
 @keyframes eh-ring{0%,70%{transform:scale(.9);opacity:0}75%{opacity:.7}100%{transform:scale(1.35);opacity:0}}
 .eh-ct b{font:800 32px/1 Outfit,system-ui,sans-serif;letter-spacing:.01em;font-variant-numeric:tabular-nums;text-shadow:0 2px 10px rgba(0,0,0,.25)}
-.eh-nav{position:relative;z-index:2;background:rgba(0,0,0,.12)}
+.eh-nav{position:relative;z-index:6;background:rgba(0,0,0,.12)}
 .eh-ul{display:flex;justify-content:center;align-items:center;gap:4px;padding:4px 0!important;position:relative}
 .eh-ul>li{position:relative}
 .eh-ul>li.eh-svc{position:static}
@@ -184,7 +184,7 @@
   .eh-callbar{display:block}
   .eh-dock{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 }
-@media (max-width:420px){.eh-logo img{width:214px}.eh-bbb img{width:112px}}
+@media (max-width:460px){.eh-logo img{width:214px}.eh-bbb img{width:112px}}
 @media (max-width:360px){.eh-logo img{width:190px}.eh-ct b{font-size:23px}.eh-bbb img{width:92px}}
 @media (prefers-reduced-motion:reduce){.eh-sheen,.eh-ic::after,.eh-pupil,.eh-mouth::after{animation:none!important}.eh-mini-in,.eh-dock,.eh-callbar,.eh-brows,.eh-eyes,.eh-cheek,.eh-say{transition:none!important}}
 
@@ -231,9 +231,11 @@
 @media (max-width:1180px) and (min-width:1061px){.eh-nl{padding:9px 7px;font-size:14px}.eh-navcta .eh-cta{padding:10px 11px;font-size:13.5px}}
 @media (max-width:700px){.eh-srch{width:40px;height:40px;border-radius:11px}.eh-srch svg{width:18px;height:18px}}
 @media (max-width:360px){.eh-srch{width:36px;height:36px}}
-@media (max-width:420px){.eh-top{gap:6px}.eh-logo img{width:204px}.eh-bbb img{width:90px}.eh-srch{width:36px;height:36px;border-radius:10px}}
+@media (max-width:460px){.eh-top{gap:6px}.eh-logo img{width:204px}.eh-bbb img{width:90px}.eh-srch{width:36px;height:36px;border-radius:10px}}
 @media (max-width:360px){.eh-logo img{width:186px}.eh-bbb img{width:78px}.eh-srch{width:34px;height:34px}}
 .eh-chat-call{flex:none;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;background:#101828;color:#fff!important;font:500 14px/1.2 Outfit,system-ui,sans-serif;text-decoration:none!important;border-top:3px solid #DC2626}
 .eh-chat-call b{font-weight:800;color:#FACC15}
 .eh-chat-call svg{width:16px;height:16px;flex:none}
 .eh-chat-call:hover,.eh-chat-call:focus-visible{background:#1D2939}
+
+.eh-mega{max-height:calc(100vh - 190px);overflow-y:auto;overscroll-behavior:contain}
