@@ -239,3 +239,5 @@
 .eh-chat-call:hover,.eh-chat-call:focus-visible{background:#1D2939}
 
 .eh-mega{max-height:calc(100vh - 190px);overflow-y:auto;overscroll-behavior:contain}
+.eh-all .eh-dom{margin-left:auto;font-weight:500!important;color:#475467!important;font-size:13px}
+@media (max-width:1023px){.eh-all .eh-dom{display:none}}

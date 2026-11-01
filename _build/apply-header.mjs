@@ -51,8 +51,9 @@ const megaSrc = fs.readFileSync('_build/header/services-menu.html', 'utf8').trim
 
 const NAV = [
   ['/business-in-a-box/', 'Business in a Box'], ['/our-work/', 'Our Work'], ['/industries/', 'Industries'], ['/locations/', 'Locations'],
-  ['/denver-seo-pricing/', 'Pricing'], ['/about/', 'About'], ['/contact/', 'Contact'],
+  ['/denver-seo-pricing/', 'Pricing'], ['/about/', 'About'],
 ];
+const AI_MENU = '<a href="/ai-agents-for-business/">AI Agents for Business<small>Answers calls, follows up, books jobs</small></a><a href="/toad/">Toad: a talking AI for your site<small>A voice your visitors can talk to</small></a><a href="/ai-chatbot-for-business/">AI Chatbots</a><a href="/custom-business-dashboards/">Custom Dashboards</a><a href="/ai-visibility-audit/">Free AI Visibility Audit</a><a href="/free-ai-agent-plan/">Free AI Agent Plan</a>';
 const DOMAINS = `<a href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener">Domain Finder<small>buyweburl.com</small></a><a href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener">Premium Names<small>bestdomainsforbusiness.com</small></a><a href="https://www.buyweburl.com/products/cpanel" target="_blank" rel="nofollow noopener">Hosting<small>cPanel, WordPress and VPS plans</small></a>`;
 const call = cls => `<a class="eh-call${cls ? ' ' + cls : ''}" href="tel:18004818638" aria-label="Call 1-800-481-8638"><span class="eh-ic">${PHONE_SVG}</span><span class="eh-ct"><b>1-800-481-8638</b></span></a>`;
 const bbb = w => `<a class="eh-bbb" href="${BBB_URL}" target="_blank" rel="nofollow noopener" aria-label="BBB Accredited Business, A+ rating (opens BBB profile)"><img src="${BBB_IMG}" width="200" height="65" alt="BBB Accredited Business, A+ rating" decoding="async"${w ? ' loading="lazy"' : ''}></a>`;
@@ -71,13 +72,14 @@ ${bbb()}
 </div>
 <nav class="eh-nav" aria-label="Main navigation"><div class="eh-wrap"><ul class="eh-ul">
 <li class="eh-svc"><a class="eh-nl" href="/services/"${cur('/services/')}>Services</a><button class="eh-chev" type="button" data-eh-drop aria-expanded="false" aria-controls="ehSvc" aria-label="Show services menu">${CHEV}</button><div class="eh-drop eh-mega" id="ehSvc">${megaSrc}</div></li>
+<li><button class="eh-nl" type="button" data-eh-drop aria-expanded="false" aria-controls="ehAi">AI Agents ${CHEV}</button><div class="eh-drop" id="ehAi">${AI_MENU}</div></li>
 ${links.join('')}
-<li><button class="eh-nl" type="button" data-eh-drop aria-expanded="false" aria-controls="ehDom">Domains ${CHEV}</button><div class="eh-drop" id="ehDom">${DOMAINS}</div></li>
 <li class="eh-navcta"><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></li>
 </ul></div></nav>
 <nav class="eh-sheet" id="ehSheet" aria-label="Mobile menu" hidden><div class="eh-wrap">
 <ul>
 <li><button class="eh-acc" type="button" aria-expanded="false" aria-controls="ehSvcM">Services <span>Show all</span></button><div class="eh-accp" id="ehSvcM" hidden>${megaSrc}</div></li>
+<li><button class="eh-acc" type="button" aria-expanded="false" aria-controls="ehAiM">AI Agents <span>Show</span></button><div class="eh-accp" id="ehAiM" hidden>${AI_MENU}</div></li>
 <li><a href="/business-in-a-box/">Business in a Box</a></li><li><a href="/product-design/">Product Design</a></li><li><a href="/our-work/">Our Work</a></li><li><a href="/case-studies/">Case Studies</a></li><li><a href="/industries/">Industries</a></li><li><a href="/locations/">Locations</a></li><li><a href="/denver-seo-pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li>
 <li><button class="eh-acc" type="button" aria-expanded="false" aria-controls="ehDomM">Domains &amp; Hosting <span>Show</span></button><div class="eh-accp" id="ehDomM" hidden>${DOMAINS}</div></li>
 </ul><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></div></nav>
