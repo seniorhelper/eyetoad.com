@@ -129,8 +129,8 @@
 .eh-ai .eh-mouth:hover{background:rgba(255,255,255,.06)}
 
 /* bottom bar: phones and tablets, replaces the hamburger */
-.eh-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1003;background:#fff;border-top:1px solid #E4E7EC;box-shadow:0 -8px 24px rgba(16,24,40,.08);padding:6px max(6px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px));grid-template-columns:repeat(5,1fr);font-family:Outfit,system-ui,sans-serif}
-.eh-bar a,.eh-bar button{display:grid;justify-items:center;gap:3px;text-decoration:none;color:#344054!important;font:700 10.5px/1 Outfit,system-ui,sans-serif;background:none;border:0;padding:4px 2px;border-radius:10px;cursor:pointer}
+.eh-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1003;background:#fff;border-top:1px solid #E4E7EC;box-shadow:0 -8px 24px rgba(16,24,40,.08);padding:5px max(6px,env(safe-area-inset-right,0px)) max(5px,calc(env(safe-area-inset-bottom,0px) - 8px)) max(6px,env(safe-area-inset-left,0px));grid-template-columns:repeat(5,1fr);font-family:Outfit,system-ui,sans-serif}
+.eh-bar a,.eh-bar button{display:grid;justify-items:center;gap:3px;text-decoration:none;color:#344054!important;font:700 10.5px/1 Outfit,system-ui,sans-serif;background:none;border:0;padding:3px 2px 2px;border-radius:10px;cursor:pointer}
 .eh-bar svg{width:24px;height:24px;display:block}
 .eh-bar a[aria-current="page"],.eh-bar button[aria-expanded="true"]{background:#F2F4F7}
 .eh-bar .eh-bar-call{color:#D1001F!important}
