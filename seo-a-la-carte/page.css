@@ -5,7 +5,7 @@
 .ac-price{display:grid;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px}
 .ac-price-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px dashed rgba(255,255,255,.14);padding:8px 0;font-size:.98rem;color:#E2E8F0}
 .ac-price-row:last-child{border-bottom:0}
-.ac-price-row b{font-family:'Fraunces',Georgia,serif;font-size:1.25rem;color:#fff;white-space:nowrap}
+.ac-price-row b{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:1.25rem;color:#fff;white-space:nowrap}
 .ac-price-row.tot b{color:#FDBA74;font-size:1.6rem}
 .ac-price .k-chip{justify-self:start;margin-bottom:4px}
 .ac-price small{display:block;color:#94A3B8;font-size:.82rem;line-height:1.5}
@@ -59,7 +59,7 @@
 .ac-panel{position:sticky;top:128px;background:#fff;border:1.5px solid var(--ac-line);border-radius:18px;box-shadow:0 18px 46px rgba(16,24,40,.1);overflow:hidden}
 .ac-bar{display:none}
 .ac-body{padding:20px;max-height:calc(100vh - 148px);overflow:auto;overscroll-behavior:contain}
-.ac-body h3{font-family:'Fraunces',Georgia,serif;font-size:1.35rem;color:var(--ac-ink);margin:0 0 4px}
+.ac-body h3{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:1.35rem;color:var(--ac-ink);margin:0 0 4px}
 .ac-hint{font-size:.85rem;color:var(--ac-mut);margin:0 0 12px}
 .ac-drop{border:2px dashed #D0D5DD;border-radius:12px;padding:10px;min-height:96px;transition:border-color .15s,background .15s}
 .ac-drop.is-over{border-color:var(--ac-acc);background:#FFF7ED}
@@ -77,7 +77,7 @@
 .ac-rm svg{width:16px;height:16px}
 .ac-sum{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0 4px;padding-top:12px;border-top:1.5px solid var(--ac-line)}
 .ac-sum span{font-weight:700;color:#344054}
-.ac-sum b{font-family:'Fraunces',Georgia,serif;font-size:1.9rem;color:var(--ac-ink)}
+.ac-sum b{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:1.9rem;color:var(--ac-ink)}
 .ac-meter{height:6px;border-radius:6px;background:#F2F4F7;overflow:hidden;margin:6px 0 4px}
 .ac-meter i{display:block;height:100%;width:0;background:var(--ac-acc);transition:width .2s}
 .ac-meter.over i{background:#D92D20}
@@ -113,7 +113,7 @@ body.ac-sheet-open #irisw,body.ac-sheet-open #ir-stub{display:none!important}
 .ac-pay{width:100%;margin-top:18px}
 .ac-err{color:#B42318;font-size:.9rem;font-weight:600;margin:10px 0 0}
 .ac-recap{background:#fff;border:1.5px solid var(--ac-line);border-radius:16px;padding:20px}
-.ac-recap h3{font-family:'Fraunces',Georgia,serif;font-size:1.25rem;margin:0 0 10px;color:var(--ac-ink)}
+.ac-recap h3{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:1.25rem;margin:0 0 10px;color:var(--ac-ink)}
 .ac-recap ol{margin:0 0 10px;padding-left:20px;color:#344054;font-size:.92rem;line-height:1.6}
 .ac-recap .ac-sum{margin-top:6px}
 .ac-recap .ac-edit{font-size:.88rem;font-weight:700;color:var(--ac-blue);text-decoration:underline}

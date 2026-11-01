@@ -22,7 +22,7 @@ export default {
   capsule: 'Business in a Box is a partnership offer from Eye To Ad Media (Search Converts LLC): we design and code a website for your trade and city, run SEO, AI search optimization and AI agents on it every month, and send the calls and form leads to you. Instead of a flat retainer, you keep a negotiated percentage of the revenue the site produces, and that percentage moves with agreed performance targets. A live dashboard shows both sides the calls, leads, rankings and the share earned.',
   style: `.bib-facts dl{margin:0;display:grid;gap:8px}.bib-facts dl div{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid #EAECF0;font-size:.9rem}.bib-facts dt{font-weight:800;color:#101828}.bib-facts dd{margin:0;color:#475467}.bib-facts .k-chip{color:#9A3412}@media (max-width:600px){.bib-facts dl div{grid-template-columns:1fr}}
 @font-face{font-family:"Inter";font-style:normal;font-weight:800;font-display:optional;src:url(/fonts/inter-800.woff2) format("woff2")}
-.bib-hero h1,.k-h,.k-band h2{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.04em!important;line-height:1!important}
+.bib-hero h1,.k-h,.k-band h2{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.04em!important;line-height:1!important}
 .bib-hero h1{font-size:clamp(2.4rem,5.4vw,4.2rem)!important}
 .bib-hero h1 em,.k-h em{font-style:normal!important;color:#D1001F!important}
 .bib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}

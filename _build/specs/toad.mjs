@@ -82,7 +82,7 @@ export default {
   style: `.tt-facts dl{margin:0;display:grid;gap:8px}.tt-facts dl div{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid #EAECF0;font-size:.9rem}.tt-facts dt{font-weight:800;color:#101828}.tt-facts dd{margin:0;color:#475467}.tt-facts .k-chip{color:#9A3412}@media (max-width:600px){.tt-facts dl div{grid-template-columns:1fr}}
 @font-face{font-family:"Inter";font-style:normal;font-weight:800;font-display:optional;src:url(/fonts/inter-800.woff2) format("woff2")}
 :root{--k-hbg:#0B1220}
-main .k-hero h1,main .k-hero .k-kick,main h1,main h2,main h3,main h2.k-h,main .k-h3,main .k-band h2{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-weight:800;letter-spacing:-.035em}
+main .k-hero h1,main .k-hero .k-kick,main h1,main h2,main h3,main h2.k-h,main .k-h3,main .k-band h2{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:800;letter-spacing:-.035em}
 main .k-hero .k-kick{font-style:normal;font-weight:700;letter-spacing:-.015em}main h1{line-height:1.02}main h1 em,main h2 em{font-style:normal;color:#F97316}
 main,main p,main li,main dd,main dt,main .k-btn,main .k-chip{font-family:Outfit,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 .tt-hero{background:radial-gradient(900px 500px at 82% 12%,rgba(249,115,22,.26),transparent 60%),radial-gradient(600px 400px at 8% 96%,rgba(37,99,235,.26),transparent 60%),#0B1220}

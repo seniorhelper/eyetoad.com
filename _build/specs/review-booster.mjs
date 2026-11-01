@@ -98,7 +98,7 @@ ${BUY('REVIEW-M', 'Start Review Booster, $59/mo')}
   style: `:root{--k-hbg:#0B1220}.rvb-hero{background:radial-gradient(900px 500px at 82% 12%,rgba(234,179,8,.24),transparent 60%),radial-gradient(600px 400px at 8% 96%,rgba(249,115,22,.22),transparent 60%),#0B1220}
 .px-box{color:#101828}.px-opt{border:1.5px solid #E4E7EC;border-radius:14px;padding:16px;margin:0 0 12px;background:#fff}.px-hi{border-color:#F97316;box-shadow:0 10px 28px rgba(234,88,12,.14)}
 .px-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}.px-name{margin:0;font-weight:800;font-size:1.05rem;color:#101828}
-.px-price{margin:0;font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.9rem;color:#101828;line-height:1}.px-price small{font-family:system-ui,-apple-system,Roboto,Arial;font-size:.78rem;font-weight:600;color:#667085;margin-left:6px}
+.px-price{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:900;font-size:1.9rem;color:#101828;line-height:1}.px-price small{font-family:system-ui,-apple-system,Roboto,Arial;font-size:.78rem;font-weight:600;color:#667085;margin-left:6px}
 .px-list{margin:10px 0 14px;padding:0 0 0 20px;font-size:.92rem;line-height:1.6;color:#344054}.px-list li{margin:2px 0}
 .px-btn{width:100%;min-height:50px;font-size:.98rem;background:#C15205}.px-btn:focus-visible{outline:3px solid #2563EB;outline-offset:2px}
 .px-fine{margin:8px 0 0;font-size:.84rem;line-height:1.5;color:#475467}

@@ -130,29 +130,29 @@ export default {
 .bl-hero{background:#fff;color:#101828;padding:54px 0 36px;border-bottom:3px double #101828}
 .bl-hero .wrap{max-width:1100px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px 44px;align-items:end}
 .bl-hero .np-eyebrow{grid-column:1/-1;color:#0F766E;font-family:system-ui,-apple-system,Roboto,Arial,sans-serif;letter-spacing:.2em;border-bottom:1px solid #101828;padding-bottom:10px;margin:0 0 6px}
-.bl-hero h1{grid-column:1;color:#101828;font-family:"Fraunces",Fraunces Fallback,Georgia,serif;font-weight:900;font-size:clamp(2.1rem,5vw,3.9rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.bl-hero h1{grid-column:1;color:#101828;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:900;font-size:clamp(2.1rem,5vw,3.9rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
 .bl-meta{grid-column:1;color:#475467;font-family:system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;margin:0}
 .bl-lede{grid-column:2;grid-row:2/4;color:#1D2939;font-family:Georgia,"Times New Roman",Fraunces Fallback,serif;font-size:1.06rem;line-height:1.6;margin:0;border-left:3px solid #0F766E;padding-left:18px;position:relative}
 .bl-lede::before{content:"the short version";position:absolute;left:18px;top:-30px;font-family:"Caveat","Segoe Print","Bradley Hand",cursive;font-size:1.4rem;color:#0F766E;transform:rotate(-3deg)}
 .bl-body{font-family:Georgia,"Times New Roman",Fraunces Fallback,serif;font-size:1.1rem;line-height:1.7;color:#1D2939;max-width:800px;position:relative}
-.bl-body h2{font-family:"Fraunces",Fraunces Fallback,Georgia,serif;font-weight:900;font-size:1.75rem;color:#101828;margin:48px 0 14px;padding-top:14px;border-top:3px double #101828;letter-spacing:-.01em}
+.bl-body h2{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:900;font-size:1.75rem;color:#101828;margin:48px 0 14px;padding-top:14px;border-top:3px double #101828;letter-spacing:-.01em}
 .bl-body h2::before{counter-increment:mg;content:counter(mg,upper-roman) ".";color:#0F766E;margin-right:10px;font-size:.9em}
 .bl-body{counter-reset:mg}
 .bl-toc{background:#fff;border:0;border-top:1px solid #101828;border-bottom:1px solid #101828;border-radius:0;padding:14px 0}.bl-toc b{font-family:system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:#0F766E}.bl-toc li{font-size:.95rem}.bl-toc a{color:#101828}
 .bl-key{background:#F0FDFA;border-left:5px solid #0F766E;border-radius:0;font-size:1rem;line-height:1.65}.bl-key b{color:#0F766E}
 .mg-open{columns:2;column-gap:36px;column-rule:1px solid #E4E7EC;margin:0 0 10px}
 .mg-open p{break-inside:avoid}
-.mg-first::first-letter{font-family:"Fraunces",Fraunces Fallback,Georgia,serif;font-weight:900;font-size:4.2rem;line-height:.8;float:left;padding:6px 10px 0 0;color:#0F766E}
+.mg-first::first-letter{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:900;font-size:4.2rem;line-height:.8;float:left;padding:6px 10px 0 0;color:#0F766E}
 .mg-note{font-family:"Caveat","Segoe Print","Bradley Hand",cursive;font-size:1.35rem;line-height:1.3;color:#0F766E;background:transparent;margin:6px 0 18px;padding:8px 0 8px 14px;border-left:2px dashed #0F766E;transform:rotate(-.6deg)}
-.mg-tbl{overflow-x:auto;margin:20px 0 28px;border-top:3px double #101828;border-bottom:1px solid #101828}.mg-tbl table{width:100%;border-collapse:collapse;font-family:system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:.9rem;min-width:620px}.mg-tbl caption{caption-side:top;text-align:left;font-family:"Fraunces",Fraunces Fallback,Georgia,serif;font-weight:700;font-size:1rem;padding:12px 0 8px;color:#101828}.mg-tbl th{text-align:left;padding:10px 12px 10px 0;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#0F766E;border-bottom:1px solid #101828}.mg-tbl td{padding:11px 12px 11px 0;border-top:1px solid #E4E7EC;vertical-align:top;line-height:1.5;color:#1D2939}.mg-tbl td:first-child{font-weight:700;color:#101828}
+.mg-tbl{overflow-x:auto;margin:20px 0 28px;border-top:3px double #101828;border-bottom:1px solid #101828}.mg-tbl table{width:100%;border-collapse:collapse;font-family:system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:.9rem;min-width:620px}.mg-tbl caption{caption-side:top;text-align:left;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:700;font-size:1rem;padding:12px 0 8px;color:#101828}.mg-tbl th{text-align:left;padding:10px 12px 10px 0;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#0F766E;border-bottom:1px solid #101828}.mg-tbl td{padding:11px 12px 11px 0;border-top:1px solid #E4E7EC;vertical-align:top;line-height:1.5;color:#1D2939}.mg-tbl td:first-child{font-weight:700;color:#101828}
 .bl-body a{color:#0F766E;text-decoration-color:#99F6E4;text-underline-offset:3px}.bl-body a:hover{color:#115E59}
 .bl-cta{background:#101828;border-radius:0;border-top:6px solid #0F766E}.bl-cta h2{border:0;padding:0;color:#fff}.bl-cta h2::before{display:none}
 .np-btn{background:#0F766E;color:#fff;border-radius:0}.np-btn:hover{background:#115E59}
 .np-btn-ghost{background:#fff!important;color:#101828!important;border:2px solid #101828!important;border-radius:0}.np-btn-ghost:hover{background:#101828!important;color:#fff!important}
 .bl-faq h2::before,.bl-src h2::before{display:none}.bl-faq h2,.bl-src h2{border:0}
-.np-faq details{border:0;border-bottom:1px solid #E4E7EC;border-radius:0;background:transparent}.np-faq summary{padding:16px 0;font-family:"Fraunces",Fraunces Fallback,Georgia,serif;font-weight:700;font-size:1.04rem}.np-faq .a{padding:0 0 16px;font-size:1rem}
+.np-faq details{border:0;border-bottom:1px solid #E4E7EC;border-radius:0;background:transparent}.np-faq summary{padding:16px 0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:700;font-size:1.04rem}.np-faq .a{padding:0 0 16px;font-size:1rem}
 .bl-src{margin:40px 0 0;padding:16px 0 0;border-top:3px double #101828;background:transparent;border-radius:0}.bl-src h2{font-size:1.15rem;margin:0 0 10px;padding:0}.bl-src ol{margin:0;padding-left:20px;font-size:.88rem;color:#4B5563;font-family:system-ui,-apple-system,Roboto,Arial,sans-serif}.bl-src li{margin:0 0 6px;line-height:1.5}
-.np-more a{border-radius:0;border:1px solid #101828;font-family:"Fraunces",Fraunces Fallback,Georgia,serif}
+.np-more a{border-radius:0;border:1px solid #101828;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 @media(max-width:860px){.bl-hero .wrap{grid-template-columns:minmax(0,1fr)}.bl-hero h1,.bl-meta,.bl-lede{grid-column:1}.bl-lede{grid-row:auto;margin-top:34px}.mg-open{columns:1}}
 @media(max-width:640px){.bl-hero{padding:40px 0 30px}.mg-first::first-letter{font-size:3.4rem}.mg-note{font-size:1.2rem;transform:none}}`,
 };

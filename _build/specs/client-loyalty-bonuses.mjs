@@ -163,7 +163,7 @@ ${P('My AI Agent Army', 'https://www.myaiagentarmy.com/', 'Our AI agent workshop
 .lb-mt{margin-top:24px}
 .lb-who{margin:8px 0 18px;padding-left:22px;color:#344054;line-height:1.65;font-size:1.04rem}.lb-who li{margin:0 0 12px}.lb-who b{color:#101828}
 .lb-warn{background:#FEF3C7;border:2px solid #F59E0B;border-radius:16px;padding:20px 22px;margin-top:8px}
-.lb-warn p{margin:0;color:#78350F;line-height:1.6}.lb-warn .lb-warn-h{font-family:Fraunces,Fraunces Fallback,Georgia,serif;font-weight:900;font-size:1.35rem;color:#7C2D12;margin:0 0 6px}
+.lb-warn p{margin:0;color:#78350F;line-height:1.6}.lb-warn .lb-warn-h{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:900;font-size:1.35rem;color:#7C2D12;margin:0 0 6px}
 .lb-story{background:#fff;border:1.5px solid #E4E7EC;border-radius:18px;padding:26px;box-shadow:0 18px 44px rgba(16,24,40,.07)}
 .lb-story p{color:#344054;line-height:1.65;margin:0 0 12px}.lb-story a{color:#1D4ED8}
 .lb-fine{font-size:.84rem!important;line-height:1.5;color:#475467!important;margin:10px 0 0}.lb-fine a{color:#1D4ED8}
@@ -174,7 +174,7 @@ ${P('My AI Agent Army', 'https://www.myaiagentarmy.com/', 'Our AI agent workshop
 .lb-btn{margin-top:18px;width:100%;color:#fff}.lb-btn:disabled{opacity:.6;cursor:wait}
 .lb-agree{display:flex;gap:10px;align-items:flex-start;margin-top:16px;padding:12px 14px;background:#F9FAFB;border:1.5px solid #E4E7EC;border-radius:10px}.lb-agree input{width:22px!important;height:22px;flex:none;margin:1px 0 0;accent-color:#C2410C}.lb-agree label{margin:0!important;font-weight:600!important;line-height:1.45}.lb-agree a{color:#1D4ED8}
 .lb-btn:disabled{background:#98A2B3!important;box-shadow:none;cursor:not-allowed;transform:none}
-.lb-dom{margin-top:28px;background:linear-gradient(120deg,#EFF6FF,#F5F3FF);border:1.5px solid #C7D2FE;border-radius:18px;padding:24px 26px;max-width:90ch}.lb-dom p{margin:0 0 8px;color:#344054;line-height:1.65;font-size:1.04rem}.lb-dom b{color:#3730A3}.lb-dom .lb-dom-h{font-family:Fraunces,Fraunces Fallback,Georgia,serif;font-weight:900;font-size:1.5rem;color:#1E1B4B;margin:0 0 6px}
+.lb-dom{margin-top:28px;background:linear-gradient(120deg,#EFF6FF,#F5F3FF);border:1.5px solid #C7D2FE;border-radius:18px;padding:24px 26px;max-width:90ch}.lb-dom p{margin:0 0 8px;color:#344054;line-height:1.65;font-size:1.04rem}.lb-dom b{color:#3730A3}.lb-dom .lb-dom-h{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:900;font-size:1.5rem;color:#1E1B4B;margin:0 0 6px}
 .lb-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
 .lb-status{margin:12px 0 0;font-weight:700;font-size:.94rem;line-height:1.5}.lb-ok{color:#067647}.lb-warn.lb-status,.lb-status.lb-warn{background:none;border:0;padding:0;color:#B54708}.lb-err{color:#B42318}.lb-info{color:#475467}
 .lb-terms{background:#F9FAFB;border-top:1px solid #E4E7EC;padding:40px 0}

@@ -276,13 +276,13 @@ export default {
   capsule: 'Eye To Ad Media designs product packaging, labels, brand identities, print, signage, vehicle wraps, NFC business cards, web and app screens, and ad creative from Denver. You get concepts shown on realistic mockups, revisions, print-ready files your printer can run and web-ready images for your product pages. Every project is quoted after a short brief.',
   style: `@font-face{font-family:"Inter";font-style:normal;font-weight:800;font-display:optional;src:url(/fonts/inter-800.woff2) format("woff2")}
 .pd-hero{--k-acc:#FB923C}
-.pd-hero h1,.k-hero.pd-hero h1{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-weight:800;letter-spacing:-.04em;line-height:1.02;font-size:clamp(2.3rem,4.8vw,3.9rem);max-width:none;text-wrap:balance}
+.pd-hero h1,.k-hero.pd-hero h1{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:800;letter-spacing:-.04em;line-height:1.02;font-size:clamp(2.3rem,4.8vw,3.9rem);max-width:none;text-wrap:balance}
 .pd-g{display:block;background:linear-gradient(90deg,#F43F5E,#F97316 50%,#FACC15);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .k-hero.pd-hero .k-kick{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-style:normal;font-weight:500;font-size:clamp(1.05rem,1.6vw,1.25rem);line-height:1.5;color:#CBD5E1;max-width:44ch}
 .pd-hero .k-sub:empty{display:none}
 .pd-hero .k-btn-a{background:#C2410C}.pd-hero .k-btn-a:hover{background:#9A3412}
 .pd-hart{max-width:520px;width:100%;justify-self:end}.pd-hart svg{display:block;width:100%;height:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.45))}
-.k-h,.k-band h2{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.035em!important;line-height:1.04!important}
+.k-h,.k-band h2{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif!important;font-weight:800!important;letter-spacing:-.035em!important;line-height:1.04!important}
 .k-h em,h2.k-h em{font-style:normal;color:#C2410C}.k-sec-ink h2.k-h em{color:#FB923C}
 .k-band .k-btn-w{color:#9A3412}
 .pd-svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}

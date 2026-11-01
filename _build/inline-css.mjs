@@ -27,7 +27,7 @@ const FONTS = '<style id="eta-fonts">' + [
   ['Outfit', 400, 'outfit-400'], ['Outfit', 500, 'outfit-500'], ['Outfit', 600, 'outfit-600'],
   ['Outfit', 700, 'outfit-700'], ['Outfit', 800, 'outfit-800'],
 ].map(([f, w, file]) => `@font-face{font-family:"${f}";font-style:normal;font-weight:${w};font-display:optional;src:url(/fonts/${file}.woff2) format("woff2")}`).join('') +
-  '@font-face{font-family:Fraunces Fallback;src:local(Georgia),local(Gelasio),local(Liberation Serif),local(Times New Roman),local(Noto Serif);size-adjust:95.45%;ascent-override:102.46%;descent-override:26.72%;line-gap-override:0%}' +
+  '@font-face{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif Fallback;src:local(Georgia),local(Gelasio),local(Liberation Serif),local(Times New Roman),local(Noto Serif);size-adjust:95.45%;ascent-override:102.46%;descent-override:26.72%;line-gap-override:0%}' +
   '@font-face{font-family:Outfit Fallback;src:local(Arial),local(Liberation Sans),local(Helvetica Neue),local(Helvetica),local(Roboto);size-adjust:100.16%;ascent-override:99.84%;descent-override:25.96%;line-gap-override:0%}' +
   '</style>';
 
