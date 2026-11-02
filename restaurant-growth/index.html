@@ -63,6 +63,16 @@ h1,h2,h3{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-
 .btn-call{background:var(--call);color:#fff}.btn-call:hover{background:var(--callh)}
 .btn-cta{background:var(--cta);color:#fff}.btn-cta:hover{background:var(--ctah)}
 .btn-ghost{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.hoff{display:flex;gap:14px;align-items:center;margin:18px 0 4px;padding:12px;background:#fff;border:2px solid var(--ink);border-radius:12px;text-decoration:none;color:var(--ink);max-width:560px}
+.hoff:hover{transform:translateY(-1px)}
+.hoff .th{position:relative;flex:0 0 132px;height:76px;border-radius:8px;overflow:hidden;background:#1C1917}
+.hoff .th img{width:100%;height:100%;object-fit:cover;display:block}
+.hoff .th i{position:absolute;inset:0;margin:auto;width:34px;height:34px;border-radius:50%;background:var(--cta);display:flex;align-items:center;justify-content:center}
+.hoff .th i:after{content:"";margin-left:3px;border-left:12px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent}
+.hoff b{display:block;font-size:1.02rem;line-height:1.25}
+.hoff span.t{font-size:.93rem;line-height:1.35;color:#44403C}
+.hoff .bt{display:inline-block;margin-top:4px;background:#FFF4CC;padding:2px 8px;border-radius:6px;font-weight:700;font-size:.9rem;color:var(--ink)}
+@media(max-width:430px){.hoff .th{flex-basis:104px;height:64px}}
 body:not(.tap) .only-tap{display:none!important}
 body.tap .no-tap{display:none!important}
 
@@ -222,6 +232,10 @@ section{padding:46px 0}
         <a class="btn btn-cta" href="#start">Get my free analysis</a>
         <a class="btn btn-call" href="tel:18004818638">Call now</a>
       </div>
+      <a class="hoff" href="#vid">
+        <span class="th"><img src="/video-seo/videos/eyetoad-the-network-60s-v1.webp" alt="" width="132" height="76" loading="eager"><i></i></span>
+        <span><b>Watch: a TV-quality commercial for your restaurant</b><span class="t">Plus a free website and market analysis.</span><br><span class="bt no-tap">Open to bartering: trade meals for part of your marketing.</span><span class="bt only-tap">Tableside today: $1,000 + tonight's tab.</span></span>
+      </a>
       <div class="trust"><span><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <b>5.0</b> on 60 Google reviews</span><span><b>A+</b> BBB accredited</span><span>Since <b>2012</b></span></div>
     </div>
     <div class="viz" aria-hidden="true">
