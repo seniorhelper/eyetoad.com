@@ -51,7 +51,7 @@ const megaSrc = fs.readFileSync('_build/header/services-menu.html', 'utf8').trim
 
 const NAV = [
   ['/business-in-a-box/', 'Business in a Box'], ['/our-work/', 'Our Work'], ['/industries/', 'Industries'], ['/locations/', 'Locations'],
-  ['/denver-seo-pricing/', 'Pricing'], ['/about/', 'About'],
+  ['/seo-time-machine/', 'Time Machine'], ['/denver-seo-pricing/', 'Pricing'], ['/about/', 'About'],
 ];
 const AI_MENU = '<a href="/ai-agents-for-business/">AI Agents for Business<small>Answers calls, follows up, books jobs</small></a><a href="/toad/">Toad: a talking AI for your site<small>A voice your visitors can talk to</small></a><a href="/ai-chatbot-for-business/">AI Chatbots</a><a href="/custom-business-dashboards/">Custom Dashboards</a><a href="/ai-visibility-audit/">Free AI Visibility Audit</a><a href="/free-ai-agent-plan/">Free AI Agent Plan</a>';
 const DOMAINS = `<a href="https://www.buyweburl.com/" target="_blank" rel="nofollow noopener">Domain Finder<small>buyweburl.com</small></a><a href="https://bestdomainsforbusiness.com/" target="_blank" rel="nofollow noopener">Premium Names<small>bestdomainsforbusiness.com</small></a><a href="https://www.buyweburl.com/products/cpanel" target="_blank" rel="nofollow noopener">Hosting<small>cPanel, WordPress and VPS plans</small></a>`;
@@ -80,7 +80,7 @@ ${links.join('')}
 <ul>
 <li><button class="eh-acc" type="button" aria-expanded="false" aria-controls="ehSvcM">Services <span>Show all</span></button><div class="eh-accp" id="ehSvcM" hidden>${megaSrc}</div></li>
 <li><button class="eh-acc" type="button" aria-expanded="false" aria-controls="ehAiM">AI Agents <span>Show</span></button><div class="eh-accp" id="ehAiM" hidden>${AI_MENU}</div></li>
-<li><a href="/business-in-a-box/">Business in a Box</a></li><li><a href="/product-design/">Product Design</a></li><li><a href="/our-work/">Our Work</a></li><li><a href="/case-studies/">Case Studies</a></li><li><a href="/industries/">Industries</a></li><li><a href="/locations/">Locations</a></li><li><a href="/denver-seo-pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li>
+<li><a href="/business-in-a-box/">Business in a Box</a></li><li><a href="/product-design/">Product Design</a></li><li><a href="/our-work/">Our Work</a></li><li><a href="/case-studies/">Case Studies</a></li><li><a href="/industries/">Industries</a></li><li><a href="/locations/">Locations</a></li><li><a href="/seo-time-machine/">SEO Time Machine</a></li><li><a href="/denver-seo-pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li>
 <li><button class="eh-acc" type="button" aria-expanded="false" aria-controls="ehDomM">Domains &amp; Hosting <span>Show</span></button><div class="eh-accp" id="ehDomM" hidden>${DOMAINS}</div></li>
 </ul><a class="eh-cta" href="/free-seo-audit/">Get SEO Audit</a></div></nav>
 <div class="eh-wrap eh-phone">${call()}</div>
