@@ -1,4 +1,26 @@
 /* Eye To Ad Media — shared site behavior. Load with: <script src="/eta-site.js" defer></script> */
+/* Lead delivery: route every site form to the company lead server. */
+(function(){
+  if(window.__etaLeadRoute) return; window.__etaLeadRoute=1;
+  var LEAD='https://clients.eyetoad.com/lead/send.php';
+  var OLD=/^https?:\/\/(www\.)?formsubmit\.co\//i;
+  function old(u){ return typeof u==='string' && OLD.test(u); }
+  var f0=window.fetch;
+  if(f0){ window.fetch=function(input,init){
+    try{
+      var u=typeof input==='string'?input:(input&&input.url);
+      if(old(u)){ return (typeof input==='string')? f0.call(window,LEAD,init) : f0.call(window,new Request(LEAD,input),init); }
+    }catch(e){}
+    return f0.apply(window,arguments);
+  }; }
+  if(window.XMLHttpRequest){ var xo=XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open=function(m,u){ if(old(String(u))){ arguments[1]=LEAD; } return xo.apply(this,arguments); }; }
+  function fix(f){ try{ if(f&&f.tagName==='FORM'&&(old(f.getAttribute('action')||'')||old(f.action||''))) f.setAttribute('action',LEAD); }catch(e){} }
+  document.addEventListener('formdata',function(e){ fix(e.target); },true);
+  document.addEventListener('submit',function(e){ fix(e.target); });
+  var ps=HTMLFormElement.prototype.submit;
+  HTMLFormElement.prototype.submit=function(){ fix(this); return ps.apply(this,arguments); };
+})();
 (function(){
   'use strict';
   var A=['aW5mbw==','ZXlldG9hZC5jb20='];

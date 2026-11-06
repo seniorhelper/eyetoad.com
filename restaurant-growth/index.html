@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" media="print" onload="this.media='all'">
-<link rel="dns-prefetch" href="https://formsubmit.co">
+<link rel="dns-prefetch" href="https://clients.eyetoad.com">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -419,7 +419,7 @@ section{padding:46px 0}
     var data={Name:name,Restaurant:co,Phone:ph,Website:val('rgf-site').slice(0,200),Source:tap?'NFC tableside tap':'Organic visit',
       _subject:(tap?'TABLESIDE NFC lead':'Restaurant growth lead')+' — '+co.slice(0,60),_template:'table',_captcha:'false'};
     btn.disabled=true; btn.textContent='Sending...'; show('warn','Sending...');
-    fetch('https://formsubmit.co/ajax/'+to,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+    fetch('https://clients.eyetoad.com/lead/send.php',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
     .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {ok:r.ok,j:j};});})
     .then(function(x){
       if(x.ok&&x.j&&(x.j.success==='true'||x.j.success===true)){sent=true;btn.textContent='Sent';show('ok','<b>Got it.</b> Your analysis is underway. We\'ll call you within one business day.');}
