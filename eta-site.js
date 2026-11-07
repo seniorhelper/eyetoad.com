@@ -118,7 +118,7 @@
       if(!touched||Date.now()-t0<3500){say(form,'err','Please take a moment to fill in the form, then press send again.');return;}
       if(form.checkValidity&&!form.checkValidity()){if(form.reportValidity)form.reportValidity();return;}
       var tel=form.querySelector('input[type="tel"]');
-      if(tel&&tel.value.trim()&&tel.value.replace(/D/g,'').length<10){say(form,'err','Please enter a phone number with area code.');tel.focus();return;}
+      if(tel&&tel.value.trim()&&tel.value.replace(/\D/g,'').length<10){say(form,'err','Please enter a phone number with area code.');tel.focus();return;}
       var btn=form.querySelector('[type="submit"]');if(btn)btn.disabled=true;
       say(form,'wait','Sending your message...');
       var fd=new FormData(form);fd.delete('_next');fd.append('page_url',location.href);
