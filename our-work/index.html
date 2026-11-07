@@ -402,7 +402,7 @@ live.textContent='Showing '+shown+' project'+(shown===1?'':'s');
 if(scroll&&k!=='all'){setTop();var first=null;for(var i=0;i<items.length;i++){if(!items[i].classList.contains('owf-hide')){first=items[i];break}}if(first){var y=first.getBoundingClientRect().top+window.pageYOffset-nav.offsetHeight-(parseInt(nav.style.getPropertyValue('--owf-top'))||0)-12;window.scrollTo({top:Math.max(0,y),behavior:scroll==='now'?'auto':'smooth'})}}}
 for(var j=0;j<btns.length;j++)btns[j].addEventListener('click',function(){var k=this.getAttribute('data-f');history.replaceState(null,'',k==='all'?location.pathname+location.search:'#'+k);apply(k,true)});
 window.addEventListener('hashchange',function(){var h=location.hash.slice(1);if(keys.indexOf(h)>-1){apply(h,true);return}var el=h&&document.getElementById(h);if(el&&el.closest&&el.closest('.owf-hide')){apply('all',false);requestAnimationFrame(function(){el.scrollIntoView()})}});
-var h=location.hash.slice(1);if(keys.indexOf(h)>-1&&h!=='all'){apply(h,false);window.addEventListener('load',function(){apply(h,'now')})}
+var h=location.hash.slice(1);if(keys.indexOf(h)>-1&&h!=='all'){apply(h,false);var go=function(){setTimeout(function(){apply(h,'now')},60)};if(document.readyState==='complete')go();else window.addEventListener('load',go)}
 setTop();window.addEventListener('resize',setTop);window.addEventListener('scroll',setTop,{passive:true})})();
 </script>
 </body>
