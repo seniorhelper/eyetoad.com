@@ -322,3 +322,74 @@
   });
   ['pointerover','focusin'].forEach(function(ev){eh.addEventListener(ev,function f(e){if(e.target.closest&&e.target.closest('[data-eh-search]')){eh.removeEventListener(ev,f);var l=document.createElement('link');l.rel='prefetch';l.href='/search-index.json?v=1';document.head.appendChild(l);}});});
 })();
+
+/* ---------- Toad face v2 (Nov 9 2026): eyes always on, real-hair brows, side bubble,
+   rainbow roll when it starts, eyes switch off now and then. Eyes and wave mouth unchanged. ---------- */
+(function(){
+  var m=document.getElementById('ehMouth');if(!m)return;
+  var R=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var css=''+
+  /* face shows for the first ~8s, then switches off; it comes back only while Toad talks */
+  '#ehMouth.eh-face .eh-eyes,.eh-talk #ehMouth .eh-eyes{opacity:1;transform:none}'+
+  '#ehMouth .eh-eyes .eh-eye:nth-child(2){left:auto;right:4px}#ehMouth .eh-eyes .eh-eye:nth-child(2) .eh-pupil{animation-delay:.12s!important}'+
+  '#ehMouth .eh-brows{display:none!important}'+
+  '#ehMouth .eh-eye{transition:transform .32s cubic-bezier(.6,0,.4,1),opacity .3s}'+
+  '#ehMouth.eh-eoff .eh-eye{transform:scaleY(.06) scaleX(1.18)}'+
+  '#ehMouth.eh-egone .eh-eye{transform:scale(0);opacity:0}'+
+  '#ehMouth .eh-hb{position:absolute;left:-7%;right:-7%;bottom:80%;height:56%;pointer-events:none;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}'+
+  '#ehMouth .eh-hb svg{display:block;width:100%;height:100%;overflow:visible}'+
+  '.eh-talk #ehMouth .eh-hb,.eh-mo-brow #ehMouth .eh-hb,.eh-think #ehMouth .eh-hb,.eh-listen #ehMouth .eh-hb{transform:translateY(-5px)}'+
+  '.eh-think #ehMouth .eh-hb .hl{transform:rotate(-7deg)}'+
+  '#ehMouth .eh-hb .hl,#ehMouth .eh-hb .hr{transform-box:fill-box;transform-origin:center;transition:transform .35s}'+
+  '#ehMouth.eh-intro .eh-wave{animation:ehRainRoll 2.8s cubic-bezier(.45,0,.3,1) 1}'+
+  '@keyframes ehRainRoll{0%{transform:none;filter:none}18%{transform:scaleY(.12)}36%{transform:scaleY(-1);filter:hue-rotate(120deg) saturate(1.5)}58%{transform:scaleY(-1);filter:hue-rotate(240deg) saturate(1.6)}78%{transform:scaleY(1.15);filter:hue-rotate(330deg) saturate(1.4)}100%{transform:none;filter:none}}'+
+  /* bubble: small, beside and a little above the mouth on wide screens */
+  '#ehSay{width:240px;padding:10px 12px;font-size:13.5px;border-radius:12px}'+
+  '@media (min-width:1180px){#ehSay{left:calc(100% + 16px);top:-44px;transform:translateX(-6px)}#ehSay.on{transform:none}#ehSay::before{top:56px;left:-6px;margin-left:0}}'+
+  /* narrower screens: no room beside it, so it sits above the eyes instead of over the hero */
+  /* narrower screens: a tall, narrow bubble to the right of the eyes, tail pointing at the face */
+  '@media (max-width:1179px){#ehSay{left:auto;top:auto;right:calc((100% - 100vw)/2 + 8px);bottom:-20px;width:min(calc(50vw - 62px),230px);padding:8px 9px;font-size:12.5px;line-height:1.3;border-radius:12px;transform:translateX(6px)}#ehSay.on{transform:none}#ehSay::before{top:44%;left:-5px;margin-left:0;width:10px;height:10px}#ehSay .eh-x{width:22px;height:22px;top:4px;right:4px;font-size:15px}#ehSay .txt{padding-right:14px}#ehSay .eh-hear,#ehSay .eh-zip{margin-left:0;padding:7px 9px;font-size:11.5px}}'+
+  '@media (prefers-reduced-motion:reduce){#ehMouth.eh-intro .eh-wave{animation:none}#ehMouth .eh-eye{transition:none}}';
+  var st=document.createElement('style');st.id='eh-face2';st.textContent=css;document.head.appendChild(st);
+
+  /* bushy brows drawn hair by hair */
+  var eyes=m.querySelector('.eh-eyes');
+  if(eyes){
+    var NS='http://www.w3.org/2000/svg',hb=document.createElement('span');hb.className='eh-hb';hb.setAttribute('aria-hidden','true');
+    var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 130 30');svg.setAttribute('preserveAspectRatio','none');
+    var cols=['#1E120A','#2B1A0E','#3D2614','#4A2E18','#5C3A1E','#2F1D10'];
+    var seed=7;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+    [[8,52,1,'hl'],[78,122,-1,'hr']].forEach(function(b){
+      var g=document.createElementNS(NS,'g');g.setAttribute('class',b[3]);
+      for(var i=0;i<120;i++){
+        var t=rnd(),x=b[0]+(b[1]-b[0])*t,
+            /* arch, thicker toward the inner end like a real brow */
+            arch=Math.sin(Math.pow(b[2]>0?t:1-t,.8)*Math.PI)*9,inner=b[2]>0?t:1-t,
+            y=25-arch+(rnd()-.5)*(3+6*inner),
+            ang=(b[2]>0?-0.55:-2.59)+(b[2]>0?1:-1)*(t-.5)*0.7+(rnd()-.5)*0.45,
+            len=4+rnd()*6+inner*4;
+        var l=document.createElementNS(NS,'line');
+        l.setAttribute('x1',x.toFixed(1));l.setAttribute('y1',y.toFixed(1));
+        l.setAttribute('x2',(x+Math.cos(ang)*len).toFixed(1));l.setAttribute('y2',(y+Math.sin(ang)*len).toFixed(1));
+        l.setAttribute('stroke',cols[i%cols.length]);l.setAttribute('stroke-width',(.8+rnd()*1.3).toFixed(2));l.setAttribute('stroke-linecap','round');
+        if(i%5===0)l.setAttribute('stroke-opacity','.75');
+        g.appendChild(l);
+      }
+      svg.appendChild(g);
+    });
+    hb.appendChild(svg);eyes.appendChild(hb);
+  }
+
+  if(R)return;
+  /* attention getter when it starts: lip roll + rainbow sweep, same mouth design */
+  function intro(){m.classList.remove('eh-intro');void m.offsetWidth;m.classList.add('eh-intro');setTimeout(function(){m.classList.remove('eh-intro');},3000);}
+  setTimeout(intro,900);
+  /* face on at load, then the eyes switch off like an old TV and the face is gone by ~9s */
+  m.classList.add('eh-face');
+  setTimeout(function(){
+    m.classList.add('eh-eoff');
+    setTimeout(function(){m.classList.add('eh-egone');},330);
+    setTimeout(function(){m.classList.remove('eh-face');},700);
+    setTimeout(function(){m.classList.remove('eh-eoff','eh-egone');},1200);
+  },8000);
+})();
