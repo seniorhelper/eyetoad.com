@@ -143,6 +143,7 @@ mean we have a local office there.
 - [Home](https://eyetoad.com/): Eye To Ad Media, Denver SEO company since 2012
 - [Dream It Advertising Package](https://eyetoad.com/dream-it-advertising-package/): all-in-one marketing plan from $200/mo with website, AI agents, SEO, AIO, video and press
 - [EARTH SEO Match](https://eyetoad.com/match/): as seen on TV. Buy any EARTH movie ticket (presale $2.99) and send the receipt with an SEO order; Eye To Ad Media adds SEO service credit equal to 2x what is paid, so SEO work is triple the investment ($1,000 becomes $3,000). One per business, credit capped at $100,000 (reached at $50,000 paid), valid through January 1, 2027 11:59 p.m. Eastern. Not cash, not transferable. Order builder at /match/#order; machine-readable terms at https://eyetoad.com/match/offer.json
+- [SEO Packages](https://eyetoad.com/seo-packages/): SEO packages built from published prices, from a $100 one-time Fix-It task to $7,500/mo plus $750 once for multi-location (Starter $500/mo, Local Growth $2,000/mo, Market Leader $4,300/mo, Dominance $7,500/mo, Enterprise & Global custom); build-your-own campaign with realistic timing for each piece of work; Industry Lockdown lead sites on domains Eye To Ad Media owns; no ranking or result guarantees
 - [SEO Time Machine](https://eyetoad.com/seo-time-machine/): interactive planner showing an honest SEO arrival window by starting point, goal, market competition and monthly investment; a planning model, not a guarantee; à la carte SEO from $100 per task, VIP members save 25% on SEO, monthly plans custom-quoted
 - [Denver SEO Company](https://eyetoad.com/denver-seo-company/): primary commercial page - what the work is, process, pricing, proof, how to compare Denver SEO companies
 - [Denver SEO Agency](https://eyetoad.com/denver-seo-agency/): founder-led, no handoffs
@@ -430,6 +431,8 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Wheat Ridge SEO | Local SEO for Wheat Ridge, CO](https://eyetoad.com/locations/wheat-ridge-seo/)
 
 ## Blog
+- [Is My SEO Working? 9 Signs to Check Before Rankings Move](https://eyetoad.com/blog/is-my-seo-working/)
+- [Guaranteed SEO: Why It’s a Red Flag and What to Ask Instead](https://eyetoad.com/blog/guaranteed-seo-red-flag/)
 - [What We Learned Making Three 30-Second TV Spots (2026)](https://eyetoad.com/blog/local-tv-commercial-lessons/)
 - [Should Your Website Quote Prices Instantly? (2026)](https://eyetoad.com/blog/instant-quote-tools-service-business/)
 - [Does Video Help You Show Up in AI Search? (2026 Data)](https://eyetoad.com/blog/video-ai-search-local-business/)

@@ -259,7 +259,7 @@ export default {
   sections: [steps, builder, trust, terms],
   faqH2: 'EARTH SEO match questions',
   faq: FAQ,
-  related: [['SEO pricing', '/denver-seo-pricing/'], ['SEO &agrave; la carte', '/seo-a-la-carte/'], ['Dream It package', '/dream-it-advertising-package/'], ['Purchase terms', '/purchase-terms/'], ['Contact', '/contact/']],
+  related: [['SEO pricing', '/denver-seo-pricing/'], ['SEO &agrave; la carte', '/seo-a-la-carte/'], ['SEO packages', '/seo-packages/'], ['Dream It package', '/dream-it-advertising-package/'], ['Purchase terms', '/purchase-terms/'], ['Contact', '/contact/']],
   band: ['Ready to triple your SEO?', 'Build your order in two minutes, or call and tell us you have an EARTH ticket.', ['Build my order', '#order']],
   style: `@font-face{font-family:Unbounded;font-style:normal;font-weight:800;font-display:optional;src:url(/fonts/unbounded-800-sub.woff2) format("woff2")}
 :root{--mt-disp:Unbounded,"Arial Black","Segoe UI Black",Impact,system-ui,sans-serif;--mt-ink:#0B1220;--mt-gold:#FACC15}
