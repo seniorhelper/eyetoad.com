@@ -1,0 +1,44 @@
+{
+  "name": "The EARTH SEO Match",
+  "summary": "Buy any EARTH movie ticket and send the receipt with an SEO order. Eye To Ad Media adds SEO service credit equal to 2 times what you pay for SEO, so the SEO work is triple the investment.",
+  "version": "MATCH-2026-11-09",
+  "last_updated": "2026-11-09",
+  "url": "https://eyetoad.com/match/",
+  "order_url": "https://eyetoad.com/match/#order",
+  "offered_by": {
+    "legal_name": "Search Converts LLC",
+    "dba": "Eye To Ad Media",
+    "address": "1001 Bannock St, Suite 660, Denver, CO 80204",
+    "phone": "+1-800-481-8638",
+    "website": "https://eyetoad.com/"
+  },
+  "eligibility": {
+    "customer_type": "business",
+    "qualifying_purchase": "Any ticket to the EARTH movie",
+    "ticket_checkout_url": "https://buy.stripe.com/eVqdR8br7blt1PCfUv1B600",
+    "ticket_info_url": "https://www.theearthmovie.com/tickets/",
+    "proof": "Send the ticket receipt with the SEO order, or email it when ordering",
+    "limit": "One per business"
+  },
+  "benefit": {
+    "type": "SEO service credit",
+    "credit_formula": "credit = 2 x amount paid for SEO",
+    "total_seo_work_formula": "amount paid + credit = 3 x amount paid",
+    "examples_usd": [
+      { "paid": 100, "credit": 200, "seo_work": 300 },
+      { "paid": 1000, "credit": 2000, "seo_work": 3000 }
+    ],
+    "credit_cap_usd": 100000,
+    "cap_reached_at_paid_usd": 50000,
+    "usable_for": "SEO services from Eye To Ad Media only",
+    "cash_value": false,
+    "transferable": false,
+    "refundable": false
+  },
+  "valid_from": "2026-11-09",
+  "valid_through": "2027-01-01T23:59:00-05:00",
+  "early_end": "Ends early only with notice posted on https://eyetoad.com/match/; credit already earned is not affected",
+  "results_guarantee": false,
+  "climate_note": "1.5% of EARTH ticket revenue funds carbon removal through Stripe Climate.",
+  "how_to_order": "Build the order at https://eyetoad.com/match/#order and press 'Send to the eyetoad.com team', or call 1-800-481-8638. No payment is taken on the page; the team confirms scope and sends an invoice."
+}

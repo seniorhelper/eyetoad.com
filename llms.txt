@@ -142,6 +142,7 @@ mean we have a local office there.
 
 - [Home](https://eyetoad.com/): Eye To Ad Media, Denver SEO company since 2012
 - [Dream It Advertising Package](https://eyetoad.com/dream-it-advertising-package/): all-in-one marketing plan from $200/mo with website, AI agents, SEO, AIO, video and press
+- [EARTH SEO Match](https://eyetoad.com/match/): as seen on TV. Buy any EARTH movie ticket (presale $2.99) and send the receipt with an SEO order; Eye To Ad Media adds SEO service credit equal to 2x what is paid, so SEO work is triple the investment ($1,000 becomes $3,000). One per business, credit capped at $100,000 (reached at $50,000 paid), valid through January 1, 2027 11:59 p.m. Eastern. Not cash, not transferable. Order builder at /match/#order; machine-readable terms at https://eyetoad.com/match/offer.json
 - [SEO Time Machine](https://eyetoad.com/seo-time-machine/): interactive planner showing an honest SEO arrival window by starting point, goal, market competition and monthly investment; a planning model, not a guarantee; à la carte SEO from $100 per task, VIP members save 25% on SEO, monthly plans custom-quoted
 - [Denver SEO Company](https://eyetoad.com/denver-seo-company/): primary commercial page - what the work is, process, pricing, proof, how to compare Denver SEO companies
 - [Denver SEO Agency](https://eyetoad.com/denver-seo-agency/): founder-led, no handoffs

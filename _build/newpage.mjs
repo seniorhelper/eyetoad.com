@@ -33,6 +33,8 @@ if (isPost) {
 }
 // page style
 html = html.replace(/<style>[\s\S]*?<\/style>/, () => `<style>${spec.style || ''}</style>`);
+// optional extra head tags (font preload, alternate links)
+if (spec.headExtra) html = html.replace('</head>', () => spec.headExtra + '\n</head>');
 // visible breadcrumb (outside <main>)
 {
   const cur = `<li aria-current="page">${esc(text(spec.h1)).slice(0, 60)}</li>`;
@@ -61,6 +63,7 @@ html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
   const nodes = [...keep, page, bc];
   if (isPost) nodes.push({ '@type': 'BlogPosting', '@id': url + '#post', mainEntityOfPage: { '@type': 'WebPage', '@id': url }, url, headline: text(spec.h1), description: spec.description, datePublished: spec.date, dateModified: spec.date, inLanguage: 'en-US', author: { '@type': 'Person', '@id': 'https://eyetoad.com/#zach', name: 'Zach Wennstedt', url: 'https://eyetoad.com/about/' }, publisher: { '@id': 'https://eyetoad.com/#organization' }, image: 'https://eyetoad.com/images/images/denver-seo-services-hero.png', articleSection: spec.section || 'Strategy' });
   else if (spec.service) nodes.push({ '@type': 'Service', '@id': url + '#service', name: spec.service.name, serviceType: spec.service.types, alternateName: spec.service.alt, provider: { '@id': 'https://eyetoad.com/#organization' }, areaServed: spec.service.area || { '@type': 'Country', name: 'United States' }, url, ...(spec.service.offers ? { offers: spec.service.offers } : {}) });
+  if (spec.extraNodes) nodes.push(...spec.extraNodes);
   if (faq) nodes.push(faq);
   return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': nodes })}</script>`;
 });
@@ -80,7 +83,7 @@ function moneyMain(s) {
   const facts = s.facts ? `<div class="k-slider-wrap ${p}-facts" aria-label="${esc(s.factsLabel || 'At a glance')}">\n<div class="k-chip">${s.factsChip || 'At a glance'}</div>\n<dl>\n${s.facts.map((f) => `<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('\n')}\n</dl>\n</div>` : (s.asideHtml || '');
   return `<main id="main">
 
-<section class="k-hero ${p}-hero" aria-labelledby="${p}-h1">
+${s.heroHtml || `<section class="k-hero ${p}-hero" aria-labelledby="${p}-h1">
 <div class="wrap"><div class="k-hgrid">
 <div>
 <p class="eyebrow k-eyebrow">${s.eyebrow}</p>
@@ -92,7 +95,7 @@ function moneyMain(s) {
 </div>
 ${facts}
 </div></div>
-</section>
+</section>`}
 
 <section class="k-sec" aria-labelledby="${p}-h2a"><div class="wrap">
 <div class="k-capsule"><p><b>Direct answer:</b> ${s.capsule}</p></div>
