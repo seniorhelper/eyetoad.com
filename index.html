@@ -239,7 +239,40 @@ var E=[['📞','#2563EB','Answered a call at 9:42 pm','Booked Tue 10 am'],['⚡'
 var k=0,n=1184,clock=new Date();clock.setHours(21,40,0,0);
 function t(){clock=new Date(clock.getTime()+(60+Math.random()*240)*1000);return clock.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}
 function add(){var e=E[k++%E.length],li=document.createElement('li');li.innerHTML='<span class="ic" style="background:'+e[1]+'22;color:'+e[1]+'">'+e[0]+'</span><span><b>'+e[2]+'</b><br><small>'+e[3]+'</small></span><small>'+t()+'</small>';f.insertBefore(li,f.firstChild);while(f.children.length>6)f.removeChild(f.lastChild);n+=1+Math.floor(Math.random()*3);c.textContent=n.toLocaleString()}
-for(var q=0;q<5;q++)add();if(!R){var iv=setInterval(add,1100);if('IntersectionObserver' in window)new IntersectionObserver(function(x){clearInterval(iv);if(x[0].isIntersecting)iv=setInterval(add,1100)}).observe(f)}})();</script><section class="tm-embed" style="padding:56px 0;background:linear-gradient(180deg,#F5F3FF,#fff)" aria-label="SEO Time Machine"><div style="max-width:1160px;margin:0 auto;padding:0 20px"><p style="margin:0 0 6px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7C3AED">SEO Time Machine</p><h2 style="margin:0 0 10px">How fast do you want to win?</h2><p style="margin:0 0 18px;max-width:760px;color:#475467;font-size:17px;line-height:1.6">Burned by marketing before? So were we. Pick your goal and budget and see an honest arrival window, not a fantasy.</p><div data-tm="compact" data-goal="calls" data-comp="med" data-budget="1000"></div><script src="/time-machine.js?v=1" defer></script></div></section>
+for(var q=0;q<5;q++)add();if(!R){var iv=setInterval(add,1100);if('IntersectionObserver' in window)new IntersectionObserver(function(x){clearInterval(iv);if(x[0].isIntersecting)iv=setInterval(add,1100)}).observe(f)}})();</script><section class="tv-sec" id="toad-video" aria-labelledby="tv-h">
+<style>
+.tv-sec{padding:56px 16px;background:#0B0B14;color:#fff}
+.tv-in{max-width:960px;margin:0 auto}
+.tv-kick{margin:0 0 6px;font:800 .8rem/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#FDBA74}
+.tv-sec h2{margin:0 0 8px;font:900 clamp(1.65rem,3.5vw,2.4rem)/1.1 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#fff}
+.tv-sub{margin:0 0 22px;font:400 1.05rem/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#D0D5DD}
+.tv-box{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.tv-play,.tv-box video{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;margin:0;background:#000;display:block}
+.tv-play{cursor:pointer;color:#fff}
+.tv-play img{width:100%;height:100%;object-fit:cover;display:block}
+.tv-btn{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:#F97316;box-shadow:0 6px 24px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.tv-play:hover .tv-btn,.tv-play:focus-visible .tv-btn{transform:scale(1.08)}
+.tv-play:focus-visible{outline:4px solid #FDBA74;outline-offset:-4px}
+.tv-len{position:absolute;right:12px;bottom:12px;padding:4px 9px;border-radius:6px;background:rgba(0,0,0,.78);font:700 .85rem/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (max-width:600px){.tv-sec{padding:40px 16px}.tv-btn{width:64px;height:64px;margin:-32px 0 0 -32px}.tv-box{border-radius:12px}}
+@media (prefers-reduced-motion:reduce){.tv-btn{transition:none}}
+</style>
+<div class="tv-in">
+<p class="tv-kick">Watch &middot; 1:44</p>
+<h2 id="tv-h">Meet the TOAD</h2>
+<p class="tv-sub">The website that talks back. It answers calls, chases leads and gets you found, on a network we own and run.</p>
+<div class="tv-box">
+<button type="button" class="tv-play" aria-label="Play video: the TOAD commercial, 1 minute 44 seconds, with sound">
+<img src="/media/toad/toad-104-poster-1280.webp" srcset="/media/toad/toad-104-poster-640.webp 640w, /media/toad/toad-104-poster-1280.webp 1280w" sizes="(max-width:992px) 100vw, 960px" width="1280" height="720" alt="" loading="lazy" decoding="async">
+<span class="tv-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="38" height="38"><path fill="#fff" d="M8 5.5v13l11-6.5z"/></svg></span>
+<span class="tv-len" aria-hidden="true">1:44</span>
+</button>
+</div>
+</div>
+<script>(function(){var b=document.querySelector('#toad-video .tv-play');if(!b)return;b.addEventListener('click',function(){var M='/media/toad',c=navigator.connection,hd=(screen.width*(window.devicePixelRatio||1))>=1600&&!(c&&c.saveData),v=document.createElement('video');v.controls=true;v.playsInline=true;v.preload='none';v.poster=M+'/toad-104-poster-1280.webp';v.setAttribute('aria-label','TOAD commercial, 1 minute 44 seconds');v.src=M+'/toad-104-'+(hd?'1080':'720')+'.mp4';b.replaceWith(v);v.focus();var p=v.play();if(p&&p.catch)p.catch(function(){});},{once:true});})();</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Meet the TOAD: the website that talks back","description":"Eye To Ad Media's TOAD commercial: a talking website that answers calls, replies to leads and gets found on Google and AI search, built on a network we own and run. It also previews THE EARTH MOVIE presale, where 1.5% of ticket sales go to carbon removal through Stripe Climate.","thumbnailUrl":["https://eyetoad.com/media/toad/toad-104-thumb.jpg","https://eyetoad.com/media/toad/toad-104-poster-1280.webp"],"uploadDate":"2026-11-09","duration":"PT1M44S","contentUrl":"https://eyetoad.com/media/toad/toad-104-1080.mp4","publisher":{"@type":"Organization","name":"Eye To Ad Media","url":"https://eyetoad.com/"}}</script>
+</section>
+<section class="tm-embed" style="padding:56px 0;background:linear-gradient(180deg,#F5F3FF,#fff)" aria-label="SEO Time Machine"><div style="max-width:1160px;margin:0 auto;padding:0 20px"><p style="margin:0 0 6px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7C3AED">SEO Time Machine</p><h2 style="margin:0 0 10px">How fast do you want to win?</h2><p style="margin:0 0 18px;max-width:760px;color:#475467;font-size:17px;line-height:1.6">Burned by marketing before? So were we. Pick your goal and budget and see an honest arrival window, not a fantasy.</p><div data-tm="compact" data-goal="calls" data-comp="med" data-budget="1000"></div><script src="/time-machine.js?v=1" defer></script></div></section>
 <section class="bt" aria-labelledby="bt-h">
 <div class="wrap bt-grid">
 <div class="bt-copy">
