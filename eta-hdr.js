@@ -409,7 +409,7 @@
   if(bar){var ic=bar.querySelector('svg');if(ic){var f=document.createElement('span');f.className='eh-cface';f.setAttribute('aria-hidden','true');ic.replaceWith(f);
     var st=document.createElement('style');st.textContent='.eh-bar-toad .eh-cface{width:30px;height:30px;margin:-3px 0;display:block;background:url(/media/toad/toad-clay-face.webp) center/contain no-repeat}';document.head.appendChild(st);}}
   if(!document.querySelector('.eh-dock'))return;
-  function load(){var s=document.createElement('script');s.src='/toad-clay.js?v=2';s.async=true;document.body.appendChild(s);}
+  function load(){var s=document.createElement('script');s.src='/toad-clay.js?v=3';s.async=true;document.body.appendChild(s);}
   function idle(){(window.requestIdleCallback||function(f){setTimeout(f,300);})(load,{timeout:2500});}
   if(document.readyState==='complete')setTimeout(idle,400);else addEventListener('load',function(){setTimeout(idle,400);});
 })();
