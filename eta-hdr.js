@@ -401,67 +401,15 @@
   },8000);
 })();
 
-/* ---------- Clay Toad (Nov 10 2026): a claymation Toad replaces the docked lips bottom-right (desktop)
-   and the wave icon in the phone bar's Toad tab. The header lips stay as they are. One 24 KB sprite
-   (idle / blink / talk) loads only when he first shows. Clicks still open Toad's chat (handler above). ---------- */
+/* ---------- Clay Toad (Nov 10 2026): the claymation Toad bottom-right lives in /toad-clay.js, loaded only
+   after the page has finished loading (keeps LCP, TBT and CLS clean). The header lips stay as they are.
+   Here: just the phone bar's Toad tab icon (2 KB) so it never flashes the old wave. ---------- */
 (function(){
-  var dock=document.querySelector('.eh-dock'),bar=document.querySelector('.eh-bar-toad');
-  if(!dock&&!bar)return;
-  var root=document.documentElement,SP='/media/toad/toad-clay-sprite.webp',FACE='/media/toad/toad-clay-face.webp';
-  var hop='ehClayHop .55s cubic-bezier(.3,1.4,.5,1) 1';
-  var css=''+
-  '.eh-dock.eh-clay{background:none;padding:0;border-radius:50%;box-shadow:none;width:92px;height:92px;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(10px + env(safe-area-inset-bottom,0px))}'+
-  '.eh-dock.eh-clay canvas{position:absolute;width:1px;height:1px;opacity:0}'+
-  '.eh-clay::before{content:"";position:absolute;left:16%;right:16%;bottom:3%;height:11%;border-radius:50%;background:radial-gradient(closest-side,rgba(16,24,40,.4),rgba(16,24,40,0))}'+
-  '.eh-clay::after{content:"Ask Toad";position:absolute;right:100%;top:34%;margin-right:4px;white-space:nowrap;background:#fff;color:#101828;font:700 13px/1 Outfit,system-ui,sans-serif;padding:8px 11px;border-radius:999px;box-shadow:0 6px 18px rgba(16,24,40,.25);opacity:0;transform:translateX(8px);transition:opacity .2s,transform .25s;pointer-events:none}'+
-  '.eh-clay:hover::after,.eh-clay:focus-visible::after{opacity:1;transform:none}'+
-  '.eh-clay .eh-ct{position:absolute;inset:0;transform-origin:50% 92%;animation:ehClayBreathe 3.4s ease-in-out infinite}'+
-  '.eh-clay .eh-cs{position:absolute;inset:0;background:no-repeat 0 0/500% 100%;filter:drop-shadow(0 5px 6px rgba(16,24,40,.3))}'+
-  '.eh-clay .eh-cs.ld{background-image:url('+SP+')}'+
-  '.eh-clay.blink .eh-cs{background-position:25% 0}'+
-  '.eh-clay:hover .eh-cs,.eh-clay.m2 .eh-cs{background-position:50% 0}'+'.eh-clay.m1 .eh-cs{background-position:75% 0}'+'.eh-clay.m3 .eh-cs{background-position:100% 0}'+
-  '.eh-clay:hover .eh-ct,.eh-clay:focus-visible .eh-ct,.eh-clay.hop .eh-ct{animation:'+hop+'}'+
-  '.eh-clay:focus-visible{outline:3px solid #FACC15;outline-offset:2px}'+
-  '@keyframes ehClayBreathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.025,.97)}}'+
-  '@keyframes ehClayHop{0%{transform:none}20%{transform:scale(1.12,.84)}50%{transform:translateY(-14px) scale(.93,1.1)}75%{transform:scale(1.07,.93)}100%{transform:none}}'+
-  '.eh-bar-toad .eh-cface{width:30px;height:30px;margin:-3px 0;display:block;background:url('+FACE+') center/contain no-repeat}'+
-  '@media (prefers-reduced-motion:reduce){.eh-clay .eh-ct{animation:none!important}.eh-clay::after{transition:none}}';
-  var st=document.createElement('style');st.id='eh-clay';st.textContent=css;document.head.appendChild(st);
-
-  /* phone bar: clay face instead of the wave icon, same size slot */
-  if(bar){var ic=bar.querySelector('svg');if(ic){var f=document.createElement('span');f.className='eh-cface';f.setAttribute('aria-hidden','true');ic.replaceWith(f);}}
-  if(!dock)return;
-
-  dock.classList.add('eh-clay');
-  var ct=document.createElement('span'),cs=document.createElement('span');
-  ct.className='eh-ct';cs.className='eh-cs';ct.setAttribute('aria-hidden','true');ct.appendChild(cs);dock.appendChild(ct);
-  function load(){cs.classList.add('ld');}
-  if(root.classList.contains('eh-on'))load();
-  addEventListener('load',function(){setTimeout(function(){var l=document.createElement('link');l.rel='prefetch';l.href=SP;document.head.appendChild(l);},3000);});
-
-  /* blink now and then (sometimes twice) */
-  function blink(){if(!root.classList.contains('eh-talk')){dock.classList.add('blink');setTimeout(function(){dock.classList.remove('blink');},130);}}
-  (function loop(){setTimeout(function(){if(!document.hidden&&root.classList.contains('eh-on')){blink();if(Math.random()<.25)setTimeout(blink,260);}loop();},2600+Math.random()*3400);})();
-
-  /* tap: squash-and-hop (the existing click handler opens the chat) */
-  dock.addEventListener('pointerdown',function(){dock.classList.remove('hop');void dock.offsetWidth;dock.classList.add('hop');setTimeout(function(){dock.classList.remove('hop');},600);});
-
-  /* lip sync: the mouth follows Toad's live voice level (same 0..1 level that drives the header lips).
-     Frames: closed / half / open / "oh". Holds each shape >=80ms for a stop-motion feel.
-     If talking with no level coming in, it falls back to a simple flap. */
-  var cur=0,lastSet=0,lastLv=0,prevV=0,flap=0;
-  function shape(n){if(n===cur)return;var t=Date.now();if(t-lastSet<80)return;lastSet=t;cur=n;dock.classList.remove('m1','m2','m3');if(n)dock.classList.add('m'+n);}
-  window.ehClayLevel=function(v){
-    lastLv=Date.now();
-    var n=v<.07?0:v<.3?1:(v>prevV+.05&&v<.75&&Math.random()<.45?3:2);
-    prevV=v;shape(n);
-  };
-  function talk(on){
-    if(on&&!flap){flap=setInterval(function(){if(Date.now()-lastLv>300)shape([0,1,2,2,3,1][Math.floor(Math.random()*6)]);},140);}
-    else if(!on&&flap){clearInterval(flap);flap=0;lastSet=0;shape(0);}
-  }
-  new MutationObserver(function(){
-    if(root.classList.contains('eh-on'))load();
-    talk(root.classList.contains('eh-talk'));
-  }).observe(root,{attributes:true,attributeFilter:['class']});
+  var bar=document.querySelector('.eh-bar-toad');
+  if(bar){var ic=bar.querySelector('svg');if(ic){var f=document.createElement('span');f.className='eh-cface';f.setAttribute('aria-hidden','true');ic.replaceWith(f);
+    var st=document.createElement('style');st.textContent='.eh-bar-toad .eh-cface{width:30px;height:30px;margin:-3px 0;display:block;background:url(/media/toad/toad-clay-face.webp) center/contain no-repeat}';document.head.appendChild(st);}}
+  if(!document.querySelector('.eh-dock'))return;
+  function load(){var s=document.createElement('script');s.src='/toad-clay.js?v=2';s.async=true;document.body.appendChild(s);}
+  function idle(){(window.requestIdleCallback||function(f){setTimeout(f,300);})(load,{timeout:2500});}
+  if(document.readyState==='complete')setTimeout(idle,400);else addEventListener('load',function(){setTimeout(idle,400);});
 })();
