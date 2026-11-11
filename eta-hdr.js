@@ -152,7 +152,7 @@
   (function(){var evs=['pointerdown','keydown','scroll','touchstart'];function go(){if(started)return;started=true;evs.forEach(function(e){removeEventListener(e,go)});waves.forEach(function(w){w.kick();});}
     evs.forEach(function(e){addEventListener(e,go,{passive:true,once:true})});
     function later(){setTimeout(go,4000);}if(document.readyState==='complete')later();else addEventListener('load',later);})();
-  function setLevel(v){waves.forEach(function(w){w.set(v);});}
+  function setLevel(v){waves.forEach(function(w){w.set(v);});if(window.ehClayLevel)window.ehClayLevel(v);}
   /* Toad's wave leans toward the mouse (desktop, pointer only) */
   if(mouth&&window.matchMedia&&matchMedia('(hover:hover)').matches&&!reduced){
     eh.addEventListener('mousemove',function(e){var r=mouth.getBoundingClientRect();var u=(e.clientX-r.left)/r.width-.5;waves.forEach(function(w){w.lean(Math.max(-1,Math.min(1,u*2)));});});
@@ -416,10 +416,10 @@
   '.eh-clay::after{content:"Ask Toad";position:absolute;right:100%;top:34%;margin-right:4px;white-space:nowrap;background:#fff;color:#101828;font:700 13px/1 Outfit,system-ui,sans-serif;padding:8px 11px;border-radius:999px;box-shadow:0 6px 18px rgba(16,24,40,.25);opacity:0;transform:translateX(8px);transition:opacity .2s,transform .25s;pointer-events:none}'+
   '.eh-clay:hover::after,.eh-clay:focus-visible::after{opacity:1;transform:none}'+
   '.eh-clay .eh-ct{position:absolute;inset:0;transform-origin:50% 92%;animation:ehClayBreathe 3.4s ease-in-out infinite}'+
-  '.eh-clay .eh-cs{position:absolute;inset:0;background:no-repeat 0 0/300% 100%;filter:drop-shadow(0 5px 6px rgba(16,24,40,.3))}'+
+  '.eh-clay .eh-cs{position:absolute;inset:0;background:no-repeat 0 0/500% 100%;filter:drop-shadow(0 5px 6px rgba(16,24,40,.3))}'+
   '.eh-clay .eh-cs.ld{background-image:url('+SP+')}'+
-  '.eh-clay.blink .eh-cs{background-position:50% 0}'+
-  '.eh-clay:hover .eh-cs,.eh-clay.mo .eh-cs{background-position:100% 0}'+
+  '.eh-clay.blink .eh-cs{background-position:25% 0}'+
+  '.eh-clay:hover .eh-cs,.eh-clay.m2 .eh-cs{background-position:50% 0}'+'.eh-clay.m1 .eh-cs{background-position:75% 0}'+'.eh-clay.m3 .eh-cs{background-position:100% 0}'+
   '.eh-clay:hover .eh-ct,.eh-clay:focus-visible .eh-ct,.eh-clay.hop .eh-ct{animation:'+hop+'}'+
   '.eh-clay:focus-visible{outline:3px solid #FACC15;outline-offset:2px}'+
   '@keyframes ehClayBreathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.025,.97)}}'+
@@ -446,11 +446,19 @@
   /* tap: squash-and-hop (the existing click handler opens the chat) */
   dock.addEventListener('pointerdown',function(){dock.classList.remove('hop');void dock.offsetWidth;dock.classList.add('hop');setTimeout(function(){dock.classList.remove('hop');},600);});
 
-  /* mouth flaps while Toad is talking */
-  var flap=0;
+  /* lip sync: the mouth follows Toad's live voice level (same 0..1 level that drives the header lips).
+     Frames: closed / half / open / "oh". Holds each shape >=80ms for a stop-motion feel.
+     If talking with no level coming in, it falls back to a simple flap. */
+  var cur=0,lastSet=0,lastLv=0,prevV=0,flap=0;
+  function shape(n){if(n===cur)return;var t=Date.now();if(t-lastSet<80)return;lastSet=t;cur=n;dock.classList.remove('m1','m2','m3');if(n)dock.classList.add('m'+n);}
+  window.ehClayLevel=function(v){
+    lastLv=Date.now();
+    var n=v<.07?0:v<.3?1:(v>prevV+.05&&v<.75&&Math.random()<.45?3:2);
+    prevV=v;shape(n);
+  };
   function talk(on){
-    if(on&&!flap){flap=setInterval(function(){dock.classList.toggle('mo',Math.random()<.62);},130);}
-    else if(!on&&flap){clearInterval(flap);flap=0;dock.classList.remove('mo');}
+    if(on&&!flap){flap=setInterval(function(){if(Date.now()-lastLv>300)shape([0,1,2,2,3,1][Math.floor(Math.random()*6)]);},140);}
+    else if(!on&&flap){clearInterval(flap);flap=0;lastSet=0;shape(0);}
   }
   new MutationObserver(function(){
     if(root.classList.contains('eh-on'))load();
