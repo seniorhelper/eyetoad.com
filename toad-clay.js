@@ -186,7 +186,7 @@
   function finder(){
     ask('Let\'s find your fit. What do you want most?',[['More calls from Google','calls'],['Show up in AI answers','ai'],['A new website','web'],['All of it','all']],'goal',function(){
       ask('How many locations?',[['1','1'],['2 to 3','3'],['More than 3','many']],'loc',function(){
-        ask('Roughly what monthly budget feels right?',[['Under $300','lo'],['$300 to $1,000','mid'],['$1,000+','hi'],['Not sure','ns']],'bud',result);});});
+        ask('Roughly what monthly budget feels right?',[['Under $300','lo'],['$300 to $1,000','mid'],['$1,000 to $5,000','k'],['$5,000+','hi'],['Not sure','ns']],'bud',result);});});
   }
   function result(){
     var t,o=[];
@@ -195,9 +195,11 @@
     else if(A.bud==='lo'){t='Fix-It: $100 per task. One foundational fix at a time (tracking, forms, tappable phone), done in 24 to 72 hours. Stops the leaks first.';}
     else if(A.bud==='mid'){t='Starter: $500/month. One service or one area, done properly, with a plain-English report every month.';}
     else if(A.loc==='many'){t='Enterprise & Global: quoted to your market. Many markets, many keywords, AI agents and custom tools.';}
-    else if(A.loc==='3'&&A.bud==='hi'){t='Dominance: $7,500/month + $750 once. Up to three locations in the map pack, with AI answers checked and fixed up front.';}
+    else if(A.bud==='hi'){t='Dominance: $7,500/month + $750 once. Up to three locations in the map pack, with AI answers checked and fixed up front.';}
+    else if(A.bud==='k'&&(A.goal==='all'||A.loc==='3')){t='Market Leader: $4,300/month. Built for crowded categories (legal, medical, home services): more pages, aggressive map-pack work and conversion fixes.';}
     else {t='Local Growth: $2,000/month. Website SEO and your Google Business Profile worked together. A strong start for most local service businesses.';}
-    if(!o.length)o.push({t:'See the package',href:'/seo-packages/#packages',pri:1});
+    if(!o.length)o.push({t:'See the package',href:'/seo-packages/#packages',pri:1},{t:'Build my custom plan',href:'/seo-packages/#plan'});
+    o.push({t:'Free 15-min consult',href:'/seo-packages/#consult'});
     o.push({t:'Talk to a human expert',fn:human});
     say({ask:1,text:t+' Want a human expert to fine-tune it with you?',opts:o,ms:40000});
   }
