@@ -357,7 +357,7 @@
   /* narrower screens: no room beside it, so it sits above the eyes instead of over the hero */
   /* narrower screens: a tall, narrow bubble to the right of the eyes, tail pointing at the face */
   '@media (max-width:1179px){#ehSay{left:auto;top:auto;right:calc((100% - 100vw)/2 + 8px);bottom:-20px;width:min(calc(50vw - 62px),230px);padding:8px 9px;font-size:12.5px;line-height:1.3;border-radius:12px;transform:translateX(6px)}#ehSay.on{transform:none}#ehSay::before{top:44%;left:-5px;margin-left:0;width:10px;height:10px}#ehSay .eh-x{width:22px;height:22px;top:4px;right:4px;font-size:15px}#ehSay .txt{padding-right:14px}#ehSay .eh-hear,#ehSay .eh-zip{margin-left:0;padding:7px 9px;font-size:11.5px}}'+
-  '@media (max-width:1179px){#ehSay{left:50%;right:auto;top:calc(100% + 12px);bottom:auto;width:min(300px,calc(100vw - 24px));transform:translateX(-50%) translateY(-4px)}#ehSay.on{transform:translateX(-50%)}#ehSay::before{top:-5px;left:var(--ax,50%);margin-left:-5px}}'+
+  '@media (max-width:1179px){#ehSay{left:50%;right:auto;top:auto;bottom:calc(100% + 1px);width:min(400px,calc(100vw - 16px));padding:6px 30px 6px 10px;font-size:11.5px;line-height:1.25;transform:translateX(-50%) translateY(4px)}#ehSay.on{transform:translateX(-50%)}#ehSay::before{top:auto;bottom:-5px;left:var(--ax,50%);margin-left:-5px}#ehSay .eh-x{top:50%;margin-top:-11px}}'+
   '@media (prefers-reduced-motion:reduce){#ehMouth.eh-intro .eh-wave{animation:none}#ehMouth .eh-eye{transition:none}}';
   var st=document.createElement('style');st.id='eh-face2';st.textContent=css;document.head.appendChild(st);
 

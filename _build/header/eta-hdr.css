@@ -246,55 +246,6 @@
 /* live-only lines folded back into the source (were hand-added to pages) */
 .eh-mouthline{box-sizing:content-box;padding-top:46px}
 @media (max-width:700px){.eh-mouthline{padding-top:16px}}
-/* Nov 10 2026 compact header: one blue row (logo, BBB, phone, Toad's lips, search, audit button) + the nav row.
-   Was ~323px tall on a laptop and ~239px on a phone, which pushed H1s and hero buttons below the fold.
-   Now ~120px on desktop and ~118px on phones. Layout only (grid placement); the header HTML is unchanged. */
-@media (min-width:1061px){
-  .eh{display:grid;grid-template-columns:max(28px,calc((100% - 1184px)/2)) auto auto minmax(10px,1fr) auto 200px minmax(10px,1fr) auto max(28px,calc((100% - 1184px)/2));grid-template-rows:74px auto auto auto}
-  .eh-top,.eh-phone{display:contents}
-  .eh-logo{grid-column:2;grid-row:1;align-self:center;position:relative;z-index:2}
-  .eh-logo img{width:196px}
-  .eh-bbb{grid-column:3;grid-row:1;align-self:center;justify-self:start;margin-left:16px;position:relative;z-index:2}
-  .eh-bbb img{width:112px}
-  .eh-call{grid-column:5;grid-row:1;align-self:center;position:relative;z-index:2;padding:6px 10px;gap:10px}
-  .eh-ic{width:34px;height:34px}.eh-ic svg{width:17px;height:17px}
-  .eh-ct b{font-size:25px}
-  .eh-mouthline{grid-column:6;grid-row:1;height:74px;padding-top:0;box-sizing:border-box;place-items:center}
-  .eh-mouth{width:100%;min-width:0;max-width:none;height:38px;margin:0 0 6px}
-  .eh-cheek{width:40px;height:26px;margin-top:-13px}
-  .eh-brows{width:110px;margin-left:-55px;height:18px;bottom:calc(100% - 6px)}.eh-brows .st{width:34px;height:3px;top:8px}
-  .eh-eyes{width:84px;margin-left:-42px;height:30px;bottom:calc(100% - 8px)}.eh-eye{width:28px;height:28px}.eh-pupil{width:12px;height:12px;margin:-6px}
-  .eh-hint{bottom:-10px;font-size:10px}
-  .eh-act{grid-column:8;grid-row:1;align-self:center;position:relative;z-index:2}
-  .eh-act>.eh-cta{padding:12px 16px}
-  .eh-nav{grid-column:1/-1;grid-row:2}
-  .eh-sheet{grid-column:1/-1;grid-row:3}
-  .eh-ribbon{grid-column:1/-1;grid-row:4;height:4px}
-  .eh-nl{padding-top:8px;padding-bottom:8px}
-}
-@media (max-width:1060px){
-  .eh{display:grid;grid-template-columns:max(16px,env(safe-area-inset-left,0px)) minmax(0,1fr) auto auto max(16px,env(safe-area-inset-right,0px));grid-template-rows:auto auto auto auto;column-gap:10px}
-  .eh-top,.eh-phone{display:contents}
-  .eh-logo{grid-column:2;grid-row:1;align-self:center;padding-top:8px;position:relative;z-index:2}
-  .eh-logo img{width:200px}
-  .eh-bbb{grid-column:3;grid-row:1;align-self:center;justify-self:end;padding-top:2px;position:relative;z-index:2;margin-top:6px}
-  .eh-bbb img{width:96px}
-  .eh-act{grid-column:4;grid-row:1;align-self:center;padding-top:6px;position:relative;z-index:2}
-  .eh-call{grid-column:2;grid-row:2;justify-self:start;align-self:center;padding:4px 4px 4px 0;gap:9px;position:relative;z-index:2}
-  .eh-ic{width:32px;height:32px}.eh-ic svg{width:16px;height:16px}
-  .eh-ct b{font-size:22px}
-  .eh-mouthline{grid-column:3/5;grid-row:2;height:52px;padding-top:0;box-sizing:border-box;place-items:center;width:clamp(118px,30vw,260px);justify-self:end}
-  .eh-mouth{width:100%;min-width:0;max-width:none;height:34px;margin:0 0 6px}
-  .eh-cheek{width:30px;height:22px;margin-top:-11px}
-  .eh-brows{width:96px;margin-left:-48px;height:18px;bottom:calc(100% - 6px)}.eh-brows .st{width:30px;height:3px;top:8px}
-  .eh-eyes{width:76px;margin-left:-38px;height:28px;bottom:calc(100% - 8px)}.eh-eye{width:26px;height:26px}.eh-pupil{width:11px;height:11px;margin:-5.5px}
-  .eh-hint{bottom:-9px;font-size:9.5px;letter-spacing:.03em}
-  .eh-nav{grid-column:1/-1;grid-row:3}
-  .eh-sheet{grid-column:1/-1}
-  .eh-ribbon{grid-column:1/-1;grid-row:4;height:4px}
-}
-@media (max-width:460px){.eh-logo img{width:176px}.eh-bbb img{width:84px}.eh-ct b{font-size:20px}.eh-ic{width:30px;height:30px}.eh{column-gap:8px}}
-@media (max-width:360px){.eh-logo img{width:150px}.eh-bbb img{width:72px}.eh-ct b{font-size:18px}.eh-mouthline{width:96px}}
 /* short laptop screens (about 650-720px tall): tighter hero spacing so the H1 and first button land in the first screen */
 @media (min-width:1061px) and (max-height:720px){
   .k-hero{padding-top:30px!important;padding-bottom:36px!important}
