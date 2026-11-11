@@ -183,7 +183,7 @@
   moTimer=setTimeout(schedule,8000);
 
   /* ---------- first-visit greeting (Zach's line, shown once per visitor) ---------- */
-  var say=document.getElementById('ehSay');
+  var say=document.getElementById('ehSay');window.addEventListener('resize',function(){if(say&&say.classList.contains('on'))placeSay();});
   var sayTimer=0,sayRaf=0;
   function hideSay(){if(say){say.classList.remove('on');}cancelAnimationFrame(sayRaf);clearTimeout(sayTimer);if(!(window.ETABrain&&window.ETABrain.inVoice&&window.ETABrain.inVoice())){setLevel(0);root.classList.remove('eh-talk');}}
   function speakLine(text,withHear){
@@ -192,7 +192,7 @@
     box.innerHTML=words.map(function(w){return '<span class="w">'+w+'</span>';}).join(' ');
     var spans=[].slice.call(box.querySelectorAll('.w')),hear=say.querySelector('.eh-hear');
     hear.hidden=!withHear;var zb=say.querySelector('.eh-zip');if(zb)zb.hidden=true;var who=say.querySelector('.eh-who');if(who)who.remove();
-    say.classList.add('on');root.classList.add('eh-talk');
+    say.classList.add('on');placeSay();root.classList.add('eh-talk');
     moment('brow',1400);
     var sched=[],t=0;words.forEach(function(w){var d=110+48*w.replace(/[^\w]/g,'').length;sched.push([t,t+d]);t+=d+(/[.,?!:]$/.test(w)?230:45);});
     var total=t,t0=performance.now();
@@ -205,6 +205,7 @@
     say.querySelector('.eh-x').addEventListener('click',function(e){e.stopPropagation();hideSay();try{sessionStorage.setItem('ehGreeted','1');}catch(x){}});
     say.addEventListener('click',function(e){e.stopPropagation();});
   }
+  function placeSay(){if(!say)return;say.style.marginLeft='0px';say.style.setProperty('--ax','50%');var r=say.getBoundingClientRect(),vw=document.documentElement.clientWidth,pad=10,sh=0;if(r.right>vw-pad)sh=vw-pad-r.right;if(r.left+sh<pad)sh=pad-r.left;if(sh){say.style.marginLeft=sh+'px';say.style.setProperty('--ax','calc(50% - '+sh+'px)');}}
   function showBubble(text,kind,opts){
     if(!say)return;opts=opts||{};
     cancelAnimationFrame(sayRaf);clearTimeout(sayTimer);
@@ -213,7 +214,7 @@
     who.innerHTML='<span>Toad</span><span>'+(kind||'')+'</span>';
     say.querySelector('.eh-hear').hidden=!opts.hear;
     var zip=say.querySelector('.eh-zip');if(zip)zip.hidden=!opts.zip;
-    say.classList.add('on');
+    say.classList.add('on');placeSay();
     if(opts.ms)sayTimer=setTimeout(hideSay,opts.ms);
   }
   var tapped=false,zipped=false;try{tapped=!!sessionStorage.getItem('ehTapped');zipped=!!sessionStorage.getItem('ehZipped');}catch(x){}
@@ -356,6 +357,7 @@
   /* narrower screens: no room beside it, so it sits above the eyes instead of over the hero */
   /* narrower screens: a tall, narrow bubble to the right of the eyes, tail pointing at the face */
   '@media (max-width:1179px){#ehSay{left:auto;top:auto;right:calc((100% - 100vw)/2 + 8px);bottom:-20px;width:min(calc(50vw - 62px),230px);padding:8px 9px;font-size:12.5px;line-height:1.3;border-radius:12px;transform:translateX(6px)}#ehSay.on{transform:none}#ehSay::before{top:44%;left:-5px;margin-left:0;width:10px;height:10px}#ehSay .eh-x{width:22px;height:22px;top:4px;right:4px;font-size:15px}#ehSay .txt{padding-right:14px}#ehSay .eh-hear,#ehSay .eh-zip{margin-left:0;padding:7px 9px;font-size:11.5px}}'+
+  '@media (max-width:1179px){#ehSay{left:50%;right:auto;top:calc(100% + 12px);bottom:auto;width:min(300px,calc(100vw - 24px));transform:translateX(-50%) translateY(-4px)}#ehSay.on{transform:translateX(-50%)}#ehSay::before{top:-5px;left:var(--ax,50%);margin-left:-5px}}'+
   '@media (prefers-reduced-motion:reduce){#ehMouth.eh-intro .eh-wave{animation:none}#ehMouth .eh-eye{transition:none}}';
   var st=document.createElement('style');st.id='eh-face2';st.textContent=css;document.head.appendChild(st);
 
