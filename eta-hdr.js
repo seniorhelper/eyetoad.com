@@ -268,7 +268,7 @@
     if(barToad){barToad.addEventListener('click',function(e){e.preventDefault();if(panel.hidden)openChat(barToad);else closeChat();});}
     var dock=document.querySelector('.eh-dock');
     if(dock){
-      dock.setAttribute('aria-label','Tap the lips to hear Toad, our AI assistant');
+      dock.setAttribute('aria-label','Talk to Toad, our AI assistant');
       dock.addEventListener('click',function(e){e.preventDefault();if(panel.hidden)openChat(dock);else closeChat();});
     }
     /* "Tap to hear me": opens the chat and starts voice from the tap */
@@ -343,6 +343,13 @@
   '#ehMouth .eh-hb .hl,#ehMouth .eh-hb .hr{transform-box:fill-box;transform-origin:center;transition:transform .35s}'+
   '#ehMouth.eh-intro .eh-wave{animation:ehRainRoll 2.8s cubic-bezier(.45,0,.3,1) 1}'+
   '@keyframes ehRainRoll{0%{transform:none;filter:none}18%{transform:scaleY(.12)}36%{transform:scaleY(-1);filter:hue-rotate(120deg) saturate(1.5)}58%{transform:scaleY(-1);filter:hue-rotate(240deg) saturate(1.6)}78%{transform:scaleY(1.15);filter:hue-rotate(330deg) saturate(1.4)}100%{transform:none;filter:none}}'+
+  /* 3D eyeball roll on start (Nov 10): pupils roll round the eyeball, squashing at the rim (foreshortening)
+     while the glint stays put on top, so the eyes read as spheres. Runs twice while the face is on. */
+  '#ehMouth .eh-eye::before{z-index:2}'+
+  '#ehMouth .eh-eye::after{content:"";position:absolute;inset:0;border-radius:50%;z-index:3;pointer-events:none;background:radial-gradient(circle at 50% 42%,transparent 55%,rgba(40,50,70,.22) 100%)}'+
+  '#ehMouth.eh-face .eh-pupil{animation:ehRoll3d 2.4s cubic-bezier(.45,0,.4,1) .45s 2 both}'+
+  '#ehMouth.eh-face .eh-eyes .eh-eye:nth-child(2) .eh-pupil{animation-delay:.5s!important}'+
+  '@keyframes ehRoll3d{0%{transform:translate(0px,0px) rotate(180deg) scaleX(1) rotate(-180deg)}8%{transform:translate(-9.0px,0px) rotate(180deg) scaleX(0.7) rotate(-180deg)}16.8%{transform:translate(-6.4px,-6.4px) rotate(225deg) scaleX(0.7) rotate(-225deg)}25.5%{transform:translate(0px,-9.0px) rotate(270deg) scaleX(0.7) rotate(-270deg)}34.2%{transform:translate(6.4px,-6.4px) rotate(315deg) scaleX(0.7) rotate(-315deg)}43%{transform:translate(9.0px,0px) rotate(360deg) scaleX(0.7) rotate(-360deg)}51.8%{transform:translate(6.4px,6.4px) rotate(405deg) scaleX(0.7) rotate(-405deg)}60.5%{transform:translate(0px,9.0px) rotate(450deg) scaleX(0.7) rotate(-450deg)}69.2%{transform:translate(-6.4px,6.4px) rotate(495deg) scaleX(0.7) rotate(-495deg)}78%{transform:translate(-9.0px,0px) rotate(540deg) scaleX(0.7) rotate(-540deg)}90%{transform:translate(0px,0px) rotate(540deg) scaleX(1) rotate(-540deg)}100%{transform:translate(0px,0px) rotate(540deg) scaleX(1) rotate(-540deg)}}'+
   /* bubble: small, beside and a little above the mouth on wide screens */
   '#ehSay{width:240px;padding:10px 12px;font-size:13.5px;border-radius:12px}'+
   '@media (min-width:1180px){#ehSay{left:calc(100% + 16px);top:-44px;transform:translateX(-6px)}#ehSay.on{transform:none}#ehSay::before{top:56px;left:-6px;margin-left:0}}'+
@@ -392,4 +399,61 @@
     setTimeout(function(){m.classList.remove('eh-face');},700);
     setTimeout(function(){m.classList.remove('eh-eoff','eh-egone');},1200);
   },8000);
+})();
+
+/* ---------- Clay Toad (Nov 10 2026): a claymation Toad replaces the docked lips bottom-right (desktop)
+   and the wave icon in the phone bar's Toad tab. The header lips stay as they are. One 24 KB sprite
+   (idle / blink / talk) loads only when he first shows. Clicks still open Toad's chat (handler above). ---------- */
+(function(){
+  var dock=document.querySelector('.eh-dock'),bar=document.querySelector('.eh-bar-toad');
+  if(!dock&&!bar)return;
+  var root=document.documentElement,SP='/media/toad/toad-clay-sprite.webp',FACE='/media/toad/toad-clay-face.webp';
+  var hop='ehClayHop .55s cubic-bezier(.3,1.4,.5,1) 1';
+  var css=''+
+  '.eh-dock.eh-clay{background:none;padding:0;border-radius:50%;box-shadow:none;width:92px;height:92px;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(10px + env(safe-area-inset-bottom,0px))}'+
+  '.eh-dock.eh-clay canvas{position:absolute;width:1px;height:1px;opacity:0}'+
+  '.eh-clay::before{content:"";position:absolute;left:16%;right:16%;bottom:3%;height:11%;border-radius:50%;background:radial-gradient(closest-side,rgba(16,24,40,.4),rgba(16,24,40,0))}'+
+  '.eh-clay::after{content:"Ask Toad";position:absolute;right:100%;top:34%;margin-right:4px;white-space:nowrap;background:#fff;color:#101828;font:700 13px/1 Outfit,system-ui,sans-serif;padding:8px 11px;border-radius:999px;box-shadow:0 6px 18px rgba(16,24,40,.25);opacity:0;transform:translateX(8px);transition:opacity .2s,transform .25s;pointer-events:none}'+
+  '.eh-clay:hover::after,.eh-clay:focus-visible::after{opacity:1;transform:none}'+
+  '.eh-clay .eh-ct{position:absolute;inset:0;transform-origin:50% 92%;animation:ehClayBreathe 3.4s ease-in-out infinite}'+
+  '.eh-clay .eh-cs{position:absolute;inset:0;background:no-repeat 0 0/300% 100%;filter:drop-shadow(0 5px 6px rgba(16,24,40,.3))}'+
+  '.eh-clay .eh-cs.ld{background-image:url('+SP+')}'+
+  '.eh-clay.blink .eh-cs{background-position:50% 0}'+
+  '.eh-clay:hover .eh-cs,.eh-clay.mo .eh-cs{background-position:100% 0}'+
+  '.eh-clay:hover .eh-ct,.eh-clay:focus-visible .eh-ct,.eh-clay.hop .eh-ct{animation:'+hop+'}'+
+  '.eh-clay:focus-visible{outline:3px solid #FACC15;outline-offset:2px}'+
+  '@keyframes ehClayBreathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.025,.97)}}'+
+  '@keyframes ehClayHop{0%{transform:none}20%{transform:scale(1.12,.84)}50%{transform:translateY(-14px) scale(.93,1.1)}75%{transform:scale(1.07,.93)}100%{transform:none}}'+
+  '.eh-bar-toad .eh-cface{width:30px;height:30px;margin:-3px 0;display:block;background:url('+FACE+') center/contain no-repeat}'+
+  '@media (prefers-reduced-motion:reduce){.eh-clay .eh-ct{animation:none!important}.eh-clay::after{transition:none}}';
+  var st=document.createElement('style');st.id='eh-clay';st.textContent=css;document.head.appendChild(st);
+
+  /* phone bar: clay face instead of the wave icon, same size slot */
+  if(bar){var ic=bar.querySelector('svg');if(ic){var f=document.createElement('span');f.className='eh-cface';f.setAttribute('aria-hidden','true');ic.replaceWith(f);}}
+  if(!dock)return;
+
+  dock.classList.add('eh-clay');
+  var ct=document.createElement('span'),cs=document.createElement('span');
+  ct.className='eh-ct';cs.className='eh-cs';ct.setAttribute('aria-hidden','true');ct.appendChild(cs);dock.appendChild(ct);
+  function load(){cs.classList.add('ld');}
+  if(root.classList.contains('eh-on'))load();
+  addEventListener('load',function(){setTimeout(function(){var l=document.createElement('link');l.rel='prefetch';l.href=SP;document.head.appendChild(l);},3000);});
+
+  /* blink now and then (sometimes twice) */
+  function blink(){if(!root.classList.contains('eh-talk')){dock.classList.add('blink');setTimeout(function(){dock.classList.remove('blink');},130);}}
+  (function loop(){setTimeout(function(){if(!document.hidden&&root.classList.contains('eh-on')){blink();if(Math.random()<.25)setTimeout(blink,260);}loop();},2600+Math.random()*3400);})();
+
+  /* tap: squash-and-hop (the existing click handler opens the chat) */
+  dock.addEventListener('pointerdown',function(){dock.classList.remove('hop');void dock.offsetWidth;dock.classList.add('hop');setTimeout(function(){dock.classList.remove('hop');},600);});
+
+  /* mouth flaps while Toad is talking */
+  var flap=0;
+  function talk(on){
+    if(on&&!flap){flap=setInterval(function(){dock.classList.toggle('mo',Math.random()<.62);},130);}
+    else if(!on&&flap){clearInterval(flap);flap=0;dock.classList.remove('mo');}
+  }
+  new MutationObserver(function(){
+    if(root.classList.contains('eh-on'))load();
+    talk(root.classList.contains('eh-talk'));
+  }).observe(root,{attributes:true,attributeFilter:['class']});
 })();
