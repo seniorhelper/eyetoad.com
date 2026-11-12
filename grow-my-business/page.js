@@ -1565,8 +1565,8 @@ function handoffHTML(asked, soft){
   </form>`;
 }
 
-function ajaxURL(to){ return ['https:','','formsubmit.co','ajax',to].join('/'); }
-function plainURL(to){ return ['https:','','formsubmit.co',to].join('/'); }
+function ajaxURL(to){ return ('https://clients.eyetoad.com/lead/send.php#to='+(to)); }
+function plainURL(to){ return ('https://clients.eyetoad.com/lead/send.php#to='+(to)); }
 
 function postViaIframe(to, data){
   try{

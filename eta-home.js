@@ -130,8 +130,8 @@
 })();
 
 (function(){
-  var AJAX='https://formsubmit.co/ajax/';
-  var PLAIN='https://formsubmit.co/';
+  var AJAX='https://clients.eyetoad.com/lead/send.php#to=';
+  var PLAIN='https://clients.eyetoad.com/lead/send.php#to=';
   var PHONE='1-800-481-8638';
 
   function buildAction(form,ajax){
@@ -182,7 +182,7 @@
       body:toParams(data)
     }).then(function(r){
       if(!r.ok)return postViaIframe(form,data)?'unsure':'failed';
-      /* FormSubmit can answer 200 with success:false; only call it sent when it says so */
+      /* only call it sent when the lead server confirms */
       return r.json().then(function(j){return j&&(j.success===true||j.success==='true')?'sent':'failed';},function(){return 'unsure';});
     }).catch(function(){
       return postViaIframe(form,data)?'unsure':'failed';

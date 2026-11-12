@@ -191,8 +191,8 @@ var CALC_ITEMS = [
 })();
 
 (function(){
-  var AJAX='https://formsubmit.co/ajax/';
-  var PLAIN='https://formsubmit.co/';
+  var AJAX='https://clients.eyetoad.com/lead/send.php#to=';
+  var PLAIN='https://clients.eyetoad.com/lead/send.php#to=';
   var PHONE='1-800-481-8638';
 
   function buildAction(form,ajax){

@@ -145,7 +145,7 @@
   var sent=false;
 
   function show(kind,html){msg.className='fmsg on fmsg-'+kind;msg.innerHTML=html;}
-  function action(){return 'https://formsubmit.co/ajax/'+form.getAttribute('data-fs');}
+  function action(){return 'https://clients.eyetoad.com/lead/send.php#to='+form.getAttribute('data-fs');}
   function val(id){var e=document.getElementById(id);return e?e.value.trim():'';}
   function badName(v){return v.length<2||/[<>{}|\\]|https?:\/\//i.test(v);}
   function badPhone(v){return v.replace(/\D/g,'').length<10;}

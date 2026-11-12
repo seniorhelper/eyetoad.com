@@ -1171,25 +1171,18 @@ function boot(){
 (function(){
 /* ══════════════════════════════════════════════════════════════════════════
    IRIS v5.7 — Eye To Ad Media growth assistant
-   No API. No external calls except the FormSubmit lead POST.
+   No API. No external calls except the lead POST to the company lead server.
    ══════════════════════════════════════════════════════════════════════════ */
 'use strict';
 
 /* ─────────────── CONFIG — everything you'd ever change lives here ─────────────── */
 var CFG = {
   LEAD_EMAIL   : 'info' + String.fromCharCode(64) + 'eyetoad.com',   // ← flip to sales (at) eyetoad.com if you prefer (address assembled so scrapers cannot read it)
-  /* THE AJAX ENDPOINT is now the PRIMARY path — it is confirmed active for
-     info (at) eyetoad.com, and it is the only one that can tell us whether the
-     lead actually arrived. FS_POST (the regular endpoint, submitted through a
-     hidden iframe) is the FALLBACK, used only when the AJAX call fails.
-     >>> v5.2 fired BOTH on every send, which delivered every Iris lead to the
-     >>> inbox TWICE. Do not restore that. <<<
-     If you ever point this at a NEW address, submit once through the regular
-     endpoint first and approve FormSubmit's confirmation email — /ajax/ is
-     activated separately, and until it is, every send falls back to the
-     honest "could not confirm" state. */
-  FS_AJAX      : 'https://formsubmit.co/ajax/info' + String.fromCharCode(64) + 'eyetoad.com',
-  FS_POST      : 'https://formsubmit.co/info' + String.fromCharCode(64) + 'eyetoad.com',
+  /* The JSON call is the primary path because it confirms delivery; the plain
+     post (hidden iframe) is the fallback, used only when the JSON call fails.
+     Never fire both on one send — that delivers every lead twice. */
+  FS_AJAX      : 'https://clients.eyetoad.com/lead/send.php#to=info' + String.fromCharCode(64) + 'eyetoad.com',
+  FS_POST      : 'https://clients.eyetoad.com/lead/send.php#to=info' + String.fromCharCode(64) + 'eyetoad.com',
   PHONE_MAIN   : '1-800-481-8638',
   PHONE_LOCAL  : '(720) 249-6588',
   WHATSAPP_NUM : '17202496588',

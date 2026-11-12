@@ -133,7 +133,7 @@
     var data={Name:name,Company:co,Phone:ph,Email:email,Website:val('spf-site').slice(0,200),Notes:val('spf-msg').slice(0,1500),ToolResult:(window.__etaToolSummary||'').slice(0,400),
       _subject:'Speed and SEO review request — eyetoad.com',_template:'table',_captcha:'false'};
     btn.disabled=true; btn.textContent='Sending...'; show('warn','Sending your request...');
-    fetch('https://formsubmit.co/ajax/'+to,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+    fetch('https://clients.eyetoad.com/lead/send.php#to='+to,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
     .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {ok:r.ok,j:j};});})
     .then(function(x){
       if(x.ok&&x.j&&(x.j.success==='true'||x.j.success===true)){sent=true;btn.textContent='Sent';show('ok','<b>Got it.</b> We will review it and call you back within one business day. Need it sooner? Call <a href="tel:18004818638">1-800-481-8638</a>.');}

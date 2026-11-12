@@ -165,7 +165,7 @@
     var file=document.getElementById('ca-file').files[0];
     if(file&&file.size>5*1024*1024){e.preventDefault();say('That file is over 5 MB. Please attach a smaller PDF or Word file, or apply without one.');return;}
     if(!window.etaAddr){e.preventDefault();say('The form could not load fully. Please call 1-800-481-8638.');return;}
-    f.setAttribute('action','https://formsubmit.co/'+window.etaAddr());
+    f.setAttribute('action','https://clients.eyetoad.com/lead/send.php#to='+window.etaAddr());
     sent=true;btn.disabled=true;say('Sending your application...');
     var done=false;
     sink.addEventListener('load',function(){if(done)return;done=true;say('Your application was handed off for delivery. We cannot confirm receipt from this page, so if you do not hear from us within a week, please call 1-800-481-8638.');});

@@ -191,7 +191,7 @@
   var last=0;
   function show(m){err.textContent=m;err.style.display='block';}
 
-  function buildAction(to){ return ['https:','','formsubmit.co','ajax',to].join('/'); }
+  function buildAction(to){ return ('https://clients.eyetoad.com/lead/send.php#to='+(to)); }
 
   form.addEventListener('submit',function(e){
     e.preventDefault();

@@ -185,7 +185,7 @@
     btn.disabled=true; btn.textContent='Sending...';
     show('warn','Sending your request...');
 
-    fetch('https://formsubmit.co/ajax/'+to,{
+    fetch('https://clients.eyetoad.com/lead/send.php#to='+to,{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(data)

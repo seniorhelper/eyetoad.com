@@ -174,7 +174,7 @@
     fd.append('page_url',location.href);fd.append('_template','table');fd.append('_captcha','false');
     var ctl=null;try{ctl=new AbortController();}catch(e){}
     var timer=setTimeout(function(){if(ctl)ctl.abort();},9000);
-    return fetch('https://formsubmit.co/ajax/'+addr(),{method:'POST',headers:{'Accept':'application/json'},body:fd,signal:ctl?ctl.signal:undefined})
+    return fetch('https://clients.eyetoad.com/lead/send.php#to='+addr(),{method:'POST',headers:{'Accept':'application/json'},body:fd,signal:ctl?ctl.signal:undefined})
       .then(function(r){return r.json().then(function(j){return r.ok&&j&&String(j.success)==='true';},function(){return false;});})
       .catch(function(){return false;})
       .then(function(ok){clearTimeout(timer);return ok;});
@@ -261,7 +261,7 @@
       fd.append('order_id',order);fd.append('email',em);fd.append('website',web);fd.append('tasks',tasks);
       fd.append('task_count',String(n||''));fd.append('checkout_sku',SKU+(n?' x '+n:''));
       fd.append('page_url',location.origin+location.pathname);fd.append('_template','table');fd.append('_captcha','false');
-      fetch('https://formsubmit.co/ajax/'+addr(),{method:'POST',headers:{'Accept':'application/json'},body:fd})
+      fetch('https://clients.eyetoad.com/lead/send.php#to='+addr(),{method:'POST',headers:{'Accept':'application/json'},body:fd})
         .then(function(r){return r.json().then(function(j){return r.ok&&j&&String(j.success)==='true';},function(){return false;});})
         .catch(function(){return false;})
         .then(function(ok){

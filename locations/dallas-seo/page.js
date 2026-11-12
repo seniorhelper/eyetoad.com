@@ -97,8 +97,8 @@ function etaTo(form){
   }catch(e){ return ''; }
 }
 (function(){
-  var AJAX='https://formsubmit.co/ajax/';
-  var PLAIN='https://formsubmit.co/';
+  var AJAX='https://clients.eyetoad.com/lead/send.php#to=';
+  var PLAIN='https://clients.eyetoad.com/lead/send.php#to=';
   var PHONE='1-800-481-8638';
 
   function buildAction(form,ajax){
@@ -457,7 +457,7 @@ function etaTo(form){
     }
     var guard=setTimeout(function(){finish('unsure');},8000);
     try{
-      fetch('https://formsubmit.co/ajax/'+to,{method:'POST',
+      fetch('https://clients.eyetoad.com/lead/send.php#to='+to,{method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
       .then(function(r){return r.ok?r.json():null;})
       .then(function(j){clearTimeout(guard);finish(!j?'unsure':(j.success===true||j.success==='true')?'sent':'failed');})
@@ -500,7 +500,7 @@ function etaTo(form){
 
     var _to=etaTo(form);
     if(!_to){e.preventDefault();show('Something went wrong on our end. Please call 1-800-481-8638.');return;}
-    form.action=['https:','','formsubmit.co',_to].join('/');
+    form.action=('https://clients.eyetoad.com/lead/send.php#to='+(_to));
     last=now;
     btn.disabled=true;
     btn.textContent='Sending...';

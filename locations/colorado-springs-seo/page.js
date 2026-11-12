@@ -92,8 +92,8 @@
 })();
 
 (function(){
-  var AJAX='https://formsubmit.co/ajax/';
-  var PLAIN='https://formsubmit.co/';
+  var AJAX='https://clients.eyetoad.com/lead/send.php#to=';
+  var PLAIN='https://clients.eyetoad.com/lead/send.php#to=';
   var PHONE='1-800-481-8638';
 
   function buildAction(form,ajax){
@@ -493,7 +493,7 @@
     var email=document.getElementById('lf-email').value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){e.preventDefault();show('Please enter a valid email address.');return;}
 
-    form.action=['https:','','formsubmit.co',form.getAttribute('data-fs')||(window.etaAddr?window.etaAddr():'')].join('/');
+    form.action=('https://clients.eyetoad.com/lead/send.php#to='+(form.getAttribute('data-fs')||(window.etaAddr?window.etaAddr():'')));
     last=now;
     btn.disabled=true;
     btn.textContent='Sending...';

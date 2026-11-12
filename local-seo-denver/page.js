@@ -70,7 +70,7 @@
   function buildAction(form){
     var to=(form.getAttribute('data-u')||'info')+'@'+
            (form.getAttribute('data-d')||'eyetoad.com');
-    return ['https:','','formsubmit.co',to].join('/');
+    return ('https://clients.eyetoad.com/lead/send.php#to='+(to));
   }
 
   var form=document.getElementById('local-lead-form');

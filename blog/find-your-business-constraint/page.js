@@ -90,7 +90,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
 });
 
 (function(){
-  function buildAction(to){ return ['https:','','formsubmit.co','ajax',to].join('/'); }
+  function buildAction(to){ return ('https://clients.eyetoad.com/lead/send.php#to='+(to)); }
 
   document.querySelectorAll('.cap-form').forEach(function(f){
     var lt=f.querySelector('[name="_loadtime"]');

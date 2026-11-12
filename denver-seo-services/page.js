@@ -101,8 +101,8 @@
       fbtn=document.getElementById('fbtn');
   var _to = (form ? form.getAttribute('data-u') : 'info') + '@' +
             (form ? form.getAttribute('data-d') : 'eyetoad.com');
-  var ENDPOINT = 'https://formsubmit.co/' + _to;
-  var AJAX = 'https://formsubmit.co/ajax/' + _to;
+  var ENDPOINT = 'https://clients.eyetoad.com/lead/send.php#to=' + _to;
+  var AJAX = 'https://clients.eyetoad.com/lead/send.php#to=' + _to;
 
   function show(kind,html){
     if(!msg)return;

@@ -168,7 +168,7 @@
     var email=document.getElementById('lf-email').value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){e.preventDefault();show('Please enter a valid email address.');return;}
 
-    form.action=['https:','','formsubmit.co',form.getAttribute('data-fs')||(window.etaAddr?window.etaAddr():'')].join('/');
+    form.action=('https://clients.eyetoad.com/lead/send.php#to='+(form.getAttribute('data-fs')||(window.etaAddr?window.etaAddr():'')));
     last=now;
     btn.disabled=true;
     btn.textContent='Sending...';

@@ -380,7 +380,7 @@
 
   /* endpoint assembled at submit time, never sitting in the source as a whole string */
   function endpoint(ajax){
-    return 'https://formsubmit.co/' + (ajax ? 'ajax/' : '') + ['info','eyetoad.com'].join('@');
+    return 'https://clients.eyetoad.com/lead/send.php#to='+ ['info','eyetoad.com'].join('@');
   }
 
   /* stage two: hidden form post into an iframe. delivery cannot be confirmed from here */

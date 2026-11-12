@@ -124,7 +124,7 @@
       var fd=new FormData(form);fd.delete('_next');fd.append('page_url',location.href);
       if(!fd.get('_subject'))fd.append('_subject','New eyetoad.com lead — '+document.title);
       fd.append('_template','table');fd.append('_captcha','false');
-      fetch('https://formsubmit.co/ajax/'+addr(),{method:'POST',headers:{'Accept':'application/json'},body:fd})
+      fetch('https://clients.eyetoad.com/lead/send.php#to='+addr(),{method:'POST',headers:{'Accept':'application/json'},body:fd})
         .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};},function(){return {ok:r.ok,j:null};});})
         .then(function(res){
           if(res.ok&&res.j&&String(res.j.success)==='true'){say(form,'ok','Got it. A real person reads this and replies within one business day. Need us sooner? Call 1-800-481-8638.');form.reset();}

@@ -139,7 +139,7 @@
     btn.disabled=true; btn.textContent='Sending...';
     show('warn','Sending your request...');
 
-    fetch('https://formsubmit.co/ajax/'+form.getAttribute('data-fs'),{
+    fetch('https://clients.eyetoad.com/lead/send.php#to='+form.getAttribute('data-fs'),{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(data)
