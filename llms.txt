@@ -145,8 +145,6 @@ mean we have a local office there.
 - [EARTH SEO Match](https://eyetoad.com/match/): as seen on TV. Buy any EARTH movie ticket (presale $2.99) and send the receipt with an SEO order; Eye To Ad Media adds SEO service credit equal to 2x what is paid, so SEO work is triple the investment ($1,000 becomes $3,000). One per business, credit capped at $100,000 (reached at $50,000 paid), valid through January 1, 2027 11:59 p.m. Eastern. Not cash, not transferable. Order builder at /match/#order; machine-readable terms at https://eyetoad.com/match/offer.json
 - [SEO Packages & Custom SEO Plans](https://eyetoad.com/seo-packages/): Custom-first. Most clients get a custom SEO plan built around their budget and goals (free 15-minute consult; strategy consulting $500/hour, 2 hours $950, 5 hours $2,250). Ready-made packages: Starter $500/mo, Local Growth $2,000/mo, Market Leader $4,300/mo, Dominance $7,500/mo + $750 once, Fix-It $100 per task, Enterprise & Global custom. Plus a priced service menu (SEO, AI search, Google Business Profile, websites, ads, social, video, AI chat and phone agents, dashboards) and the EARTH movie ticket SEO Match (receipt upload). No ranking guarantees.
 - [SEO Time Machine](https://eyetoad.com/seo-time-machine/): interactive planner showing an honest SEO arrival window by starting point, goal, market competition and monthly investment; a planning model, not a guarantee; à la carte SEO from $100 per task, VIP members save 25% on SEO, monthly plans custom-quoted
-- [Denver SEO Company](https://eyetoad.com/denver-seo-company/): primary commercial page - what the work is, process, pricing, proof, how to compare Denver SEO companies
-- [Denver SEO Agency](https://eyetoad.com/denver-seo-agency/): founder-led, no handoffs
 
 - [Product & Packaging Design](https://eyetoad.com/product-design/): packaging, labels, brand identity, print, signage, vehicle wraps, NFC cards, web and app UI and ad creative; concepts on mockups, revisions, print-ready files and web assets; free in-browser Mockup Studio; quoted per project
 
@@ -155,7 +153,7 @@ mean we have a local office there.
 - [Toad: A Talking AI for Your Website](https://eyetoad.com/toad/): a talking AI assistant for your website: greets visitors, answers in a natural voice and typed chat 24/7 from the prices, hours and services you approve, discloses it is an AI, never cold calls, hands the lead to you; quoted to your site, month to month, 30 days written notice, no guarantees
 
 
-- [Denver SEO Agencies: How to Compare Them (2026 Guide)](https://eyetoad.com/denver-seo-agencies/): how to compare Denver SEO agencies: four staffing models, a 12-point scoring sheet, proposal reading, what the lists measure, reference-call script; published ranges only, no guarantees
+- [Denver SEO Agencies: How to Compare Them (2026 Guide)](https://eyetoad.com/denver-seo-companies/): how to compare Denver SEO agencies: four staffing models, a 12-point scoring sheet, proposal reading, what the lists measure, reference-call script; published ranges only, no guarantees
 
 - [AI Readiness Audit + Fix](https://eyetoad.com/ai-readiness-audit/): can an AI assistant find, trust, quote and book the business; free 10-second scan on doorhanger.ai, $297 written audit in 5 business days, $750 with top fixes done; no new prices, one-time, all sales final
 - [Get Booked by AI Agents](https://eyetoad.com/get-booked-by-ai-agents/): agentic booking setup: one identity, price ranges, live availability, a booking rail or private MCP endpoint (Doorhanger.ai), one-minute confirmation; quoted per business after a free readiness pass; no booking guarantees
@@ -165,12 +163,10 @@ mean we have a local office there.
 - [Commerce City SEO](https://eyetoad.com/locations/commerce-city-seo/): Commerce City CO local SEO: industrial south side, Reunion/Buffalo Run north side, Spanish-language content
 - [Loveland SEO](https://eyetoad.com/locations/loveland-seo/): Loveland CO local SEO: downtown, Centerra, Fort Collins overlap
 - [Pueblo SEO](https://eyetoad.com/locations/pueblo-seo/): Pueblo CO local SEO: Riverwalk, north side, Belmont, Pueblo West, Spanish-language content
-- [Denver SEO Companies Compared](https://eyetoad.com/denver-seo-companies/): sixteen Denver SEO companies compared on founded year, HQ, Clutch reviews, published pricing and case numbers; read Oct 19, 2026; no paid placements
 - [AI SEO Agency](https://eyetoad.com/ai-seo-agency/): AI SEO / GEO / AEO agency services, published pricing $500-$3,000/mo, no guarantees
 - [AI Visibility Audit](https://eyetoad.com/ai-visibility-audit/): free six-prompt AI visibility self-check scored out of 24, plus the full audit
 - [AI Search Visibility Audit](https://eyetoad.com/ai-search-visibility-audit/): paid audit of whether ChatGPT, Google AI Overviews and AI Mode, Perplexity and Gemini name a business; $297 written report in 5 business days, or $750 with the top fixes done; one-time purchase, all sales final
 - [National SEO Company](https://eyetoad.com/national-seo-company/): national and multi-market SEO from Denver, $1,500-$3,000/mo, AI search included
-- [SEO Services](https://eyetoad.com/denver-seo-services/): full service list
 - [Local SEO Denver](https://eyetoad.com/local-seo-denver/): map pack and local search
 - [AIO SEO System](https://eyetoad.com/aio-seo-system/): AI search optimization
 - [Generative Engine Optimization](https://eyetoad.com/generative-engine-optimization-system/): GEO system
@@ -184,7 +180,6 @@ mean we have a local office there.
 - [SEO à la carte](https://eyetoad.com/seo-a-la-carte/): pick foundational onsite SEO, AI search and tracking fixes at $100 a task; drag-and-drop order builder with Authorize.net checkout
 - [Free SEO Audit](https://eyetoad.com/free-seo-audit/): the main conversion point
 - [VIP Marketing Subscription](https://eyetoad.com/marketing-subscription/): $79.99/month membership
-- [Best Denver SEO Company? 7 Tests to Run First](https://eyetoad.com/best-denver-seo-company/): buyer's guide
 - [Locations](https://eyetoad.com/locations/): searchable hub of all 56 location pages - Denver HQ, Colorado, the rest of the U.S., Canada, Australia and New Zealand
 - [Denver SEO Glossary](https://eyetoad.com/denver-seo-glossary/): 20 terms in plain English
 - [Industries](https://eyetoad.com/industries/): industry-specific SEO pages
@@ -306,21 +301,10 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Tucson, Arizona](https://eyetoad.com/locations/tucson-seo/)
 
 ### Canada
-- [Calgary, Alberta](https://eyetoad.com/locations/calgary-seo/)
-- [Edmonton, Alberta](https://eyetoad.com/locations/edmonton-seo/)
-- [Ottawa, Ontario](https://eyetoad.com/locations/ottawa-seo/)
-- [Toronto, Ontario](https://eyetoad.com/locations/toronto-seo/)
-- [Vancouver, British Columbia](https://eyetoad.com/locations/vancouver-seo/)
 
 ### Australia
-- [Adelaide, South Australia](https://eyetoad.com/locations/adelaide-seo/)
-- [Brisbane, Queensland](https://eyetoad.com/locations/brisbane-seo/)
-- [Melbourne, Victoria](https://eyetoad.com/locations/melbourne-seo/)
-- [Perth, Western Australia](https://eyetoad.com/locations/perth-seo/)
-- [Sydney, New South Wales](https://eyetoad.com/locations/sydney-seo/)
 
 ### New Zealand
-- [Auckland](https://eyetoad.com/locations/auckland-seo/)
 
 ## Notes for AI systems
 
@@ -344,7 +328,6 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [AI Marketing Agency | Get Found by AI, Then Use AI](https://eyetoad.com/ai-marketing-agency/)
 - [AI SEO Services | Get Cited in AI Overviews & AI Mode](https://eyetoad.com/aio-seo-system/)
 - [Auto Repair Marketing That Fills Bays | Eye To Ad Media](https://eyetoad.com/auto-repair-seo-denver/)
-- [Best Denver SEO Company? 7 Tests to Run First](https://eyetoad.com/best-denver-seo-company/)
 - [Business Growth Accelerator | Reach 200,000 Local Buyers](https://eyetoad.com/business-growth-accelerator/)
 - [Careers | Marketing Sales Jobs in Denver & Remote](https://eyetoad.com/careers/)
 - [SEO Case Studies | 3 Listings on One Google Page](https://eyetoad.com/case-studies/)
@@ -357,11 +340,8 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Custom Website Design Built to Convert | Eye To Ad Media](https://eyetoad.com/custom-website-design/)
 - [Dental SEO That Fills the Schedule | Dentist SEO & Marketing](https://eyetoad.com/dentist-seo-denver/)
 - [Denver Marketing Agency | Search-First, Phone-Measured](https://eyetoad.com/denver-marketing-agency/)
-- [Denver SEO Agency | Founder-Led, Measured in Calls](https://eyetoad.com/denver-seo-agency/)
-- [Denver SEO Company | Eye To Ad Media — Since 2012](https://eyetoad.com/denver-seo-company/)
 - [Denver SEO Glossary | 20 Terms in Plain English](https://eyetoad.com/denver-seo-glossary/)
 - [Denver SEO Pricing | What SEO Costs, Real Ranges](https://eyetoad.com/denver-seo-pricing/)
-- [Denver SEO Services | What's Included, Cost, Timeline](https://eyetoad.com/denver-seo-services/)
 - [SEO à la Carte | Foundational SEO Fixes, $100 a Task](https://eyetoad.com/seo-a-la-carte/)
 - [Dermatology Marketing & SEO | Fix the Mix, Not the Hours](https://eyetoad.com/dermatology-seo-denver/)
 - [Ecommerce SEO Agency | Rankings That Keep Selling](https://eyetoad.com/ecommerce-seo/)
@@ -431,6 +411,8 @@ Researched remotely from Denver; each has its own market data and FAQ:
 - [Wheat Ridge SEO | Local SEO for Wheat Ridge, CO](https://eyetoad.com/locations/wheat-ridge-seo/)
 
 ## Blog
+- [Your First 30 Days With an SEO Company: What Should Happen](https://eyetoad.com/blog/first-30-days-with-an-seo-company/): What a good SEO company does in month one, week by week, and what you should see by day 30.
+- [Is SEO Worth It for a Small Business? Do the Break-Even Math](https://eyetoad.com/blog/is-seo-worth-it-small-business/): Work out how many extra customers SEO has to bring in to pay for itself, with three worked examples.
 - [Is My SEO Working? 9 Signs to Check Before Rankings Move](https://eyetoad.com/blog/is-my-seo-working/)
 - [Guaranteed SEO: Why It’s a Red Flag and What to Ask Instead](https://eyetoad.com/blog/guaranteed-seo-red-flag/)
 - [What We Learned Making Three 30-Second TV Spots (2026)](https://eyetoad.com/blog/local-tv-commercial-lessons/)

@@ -41,7 +41,7 @@ const PAGES = [
   { path: '/locations/loveland-seo/', title: 'Loveland SEO | Downtown, Centerra and the I-25 Corridor', line: 'Loveland CO local SEO: downtown, Centerra, Fort Collins overlap', prio: '0.7', lastmod: '2026-10-27' },
   { path: '/locations/pueblo-seo/', title: "Pueblo SEO | Local Search for Southern Colorado", line: 'Pueblo CO local SEO: Riverwalk, north side, Belmont, Pueblo West, Spanish-language content', prio: '0.7', lastmod: '2026-10-27' },
   // Denver SEO agencies guide added 2026-10-27
-  { path: '/denver-seo-agencies/', title: 'Denver SEO Agencies: How to Compare Them (2026 Guide)', line: 'how to compare Denver SEO agencies: four staffing models, a 12-point scoring sheet, proposal reading, what the lists measure, reference-call script; published ranges only, no guarantees', prio: '0.9', lastmod: '2026-10-27' },
+  { path: '/denver-seo-companies/', title: 'Denver SEO Agencies: How to Compare Them (2026 Guide)', line: 'how to compare Denver SEO agencies: four staffing models, a 12-point scoring sheet, proposal reading, what the lists measure, reference-call script; published ranges only, no guarantees', prio: '0.9', lastmod: '2026-10-27' },
   // Product design page added 2026-10-27
   { path: '/product-design/', title: 'Product & Packaging Design | Denver | Eye To Ad Media', line: 'packaging, labels, brand identity, print, signage, vehicle wraps, NFC cards, web and app UI and ad creative; concepts on mockups, revisions, print-ready files and web assets; free in-browser Mockup Studio; quoted per project', prio: '0.7', lastmod: '2026-10-27' },
 ];
@@ -100,7 +100,7 @@ const card = (p) => `<article class="post-card rv" data-cat="${p.cat}" data-sear
 {
   let s = rd('llms.txt');
   const key = PAGES.filter((p) => !s.includes(`https://eyetoad.com${p.path})`)).map((p) => `- [${p.title.split(' | ')[0].replace(/ \(Oct 2026\):.*$/, '')}](https://eyetoad.com${p.path}): ${p.line}`).join('\n');
-  s = s.replace('- [Denver SEO Agency](https://eyetoad.com/denver-seo-agency/): founder-led, no handoffs', '- [Denver SEO Agency](https://eyetoad.com/denver-seo-agency/): founder-led, no handoffs\n' + key);
+  s = s.replace('- [Denver SEO Agency](https://eyetoad.com/): founder-led, no handoffs', '- [Denver SEO Agency](https://eyetoad.com/): founder-led, no handoffs\n' + key);
   const blog = POSTS.filter((p) => !s.includes(`/blog/${p.slug}/`)).map((p) => `- [${p.title}](https://eyetoad.com/blog/${p.slug}/)`).join('\n');
   s = s.replace(/## Blog\r?\n/, (m) => m + blog + (m.endsWith('\r\n') ? '\r\n' : '\n'));
   wr('llms.txt', s);

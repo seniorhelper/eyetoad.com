@@ -1162,7 +1162,7 @@ KB.push(
  <p>Realistic expectations: meaningful movement in 3&ndash;6 months, substantial results in 6&ndash;12. Anyone promising page one in 30 days is either lying or bidding on your brand name in ads and calling it SEO.</p>
  <div class="callout">Honest framing, given we sell this: ads buy attention while you pay and stop the day you stop. SEO builds an asset that keeps producing. Most businesses that can afford both should run ads for cash flow now and SEO for cost per lead later.</div>`,
  links:[['Google Search Essentials','https://developers.google.com/search/docs/essentials','google.com'],
-        ['Denver SEO services','/denver-seo-services/','eyetoad.com'],
+        ['Denver SEO services','/','eyetoad.com'],
         ['Free marketing audit','/free-seo-audit/','eyetoad.com']],
  next:['ads-vs-seo','ai-search','market-budget','gbp']},
 

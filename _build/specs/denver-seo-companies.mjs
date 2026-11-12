@@ -17,7 +17,7 @@ const A = [
   ['Blennd', 'https://www.blennd.com/locations/colorado/denver-seo-agency/', '2014', 'Denver (3000 Lawrence St)', '4.8 from 6 reviews', '"Starting at $2,500/mo"; audits from $4,000', 'Western Colorado University, applications up 40%', 'One team across the whole digital footprint', '$1,000+', '6 to 9 in Denver'],
   ['Unframed Digital', 'https://www.unframeddigital.com/', '2020 (Clutch)', 'Denver and Los Angeles', 'No reviews yet', 'Not published', 'Unattributed aggregate only', 'AI SEO', 'Not listed', '2 to 9 (Clutch range)'],
   ['Solid Digital', 'https://www.soliddigital.com/', '2007', 'Chicago (Denver is one of four offices)', '4.9 from 41 reviews', 'Not published', 'None on the page', 'B2B websites', '$10,000+', '2 to 9 (Clutch range)'],
-  ['Eye To Ad Media (us)', '/denver-seo-company/', '2012', 'Denver (1001 Bannock St, Suite 660)', 'Profile exists, no reviews yet', '$500 to $3,000 per month; $100 build-your-own; VIP $79.99', 'Our own listings, checkable live: three results on one Google page', 'Founder-led SEO, Google Maps and AI search, measured in calls', '$5,000+ (stale; real minimum is $100)', 'Founder plus a small trained team'],
+  ['Eye To Ad Media (us)', '/', '2012', 'Denver (1001 Bannock St, Suite 660)', 'Profile exists, no reviews yet', '$500 to $3,000 per month; $100 build-your-own; VIP $79.99', 'Our own listings, checkable live: three results on one Google page', 'Founder-led SEO, Google Maps and AI search, measured in calls', '$5,000+ (stale; real minimum is $100)', 'Founder plus a small trained team'],
 ];
 
 const row = (r) => `<tr><td><a href="${r[1]}"${r[1].startsWith('http') ? ' rel="noopener" target="_blank"' : ''}>${r[0]}</a></td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td><td>${r[6]}</td></tr>`;
@@ -29,7 +29,7 @@ export default {
   date: '2026-10-19',
   title: 'Denver SEO Companies Compared (Oct 2026): 16 Agencies',
   description: 'Sixteen Denver SEO companies compared on founded year, HQ, Clutch reviews, published pricing and case-study numbers, read from their own sites in Oct 2026.',
-  crumbs: [['Denver SEO company', 'https://eyetoad.com/denver-seo-company/']],
+  crumbs: [['Denver SEO company', 'https://eyetoad.com/']],
   eyebrow: 'Denver SEO companies &middot; Independent comparison &middot; Read Oct 19, 2026',
   h1: 'Denver SEO companies, compared on the facts',
   kick: 'Sixteen agencies that show up for Denver SEO searches, including us, laid out on the same eight questions. No scores, no paid placements, no "best of."',
@@ -44,7 +44,7 @@ export default {
     ['Paid placements', 'None. Nobody can buy a row.'],
   ],
   factsChip: 'How this was built',
-  capsule: 'Denver SEO companies range from a six-person shop to a 160-person national agency with a Denver office. Of the sixteen compared here, six publish their SEO pricing, nine are headquartered in Denver itself, and Clutch review counts run from none to 147. Published monthly SEO prices in this group start at $500 (Eye To Ad Media) and $799 (Breakline) and run to $4,000 (BSM); most agencies quote privately. Use the table below to shortlist, then run the <a href="/best-denver-seo-company/">seven tests</a> before you sign anything.',
+  capsule: 'Denver SEO companies range from a six-person shop to a 160-person national agency with a Denver office. Of the sixteen compared here, six publish their SEO pricing, nine are headquartered in Denver itself, and Clutch review counts run from none to 147. Published monthly SEO prices in this group start at $500 (Eye To Ad Media) and $799 (Breakline) and run to $4,000 (BSM); most agencies quote privately. Use the table below to shortlist, then run the <a href="/denver-seo-companies/">seven tests</a> before you sign anything.',
   sections: [
     `<div class="k-chip">Why this page exists</div>
 <h2 class="k-h" id="dcs-h2a">The lists that rank for &ldquo;Denver SEO companies&rdquo; are not comparisons. <em>They are inventory.</em></h2>
@@ -96,8 +96,8 @@ ${A.map(row2).join('\n')}
 <div class="k-chip">Where we fit</div>
 <h2 class="k-h" id="dcs-h2e">Our row, read the way you should read <em>everyone&rsquo;s.</em></h2>
 <p class="k-p">Eye To Ad Media was founded in Denver in 2012 and is run by its founder with a small team he trained. We publish our prices ($500 to $3,000 a month for most Denver campaigns, $100 build-your-own, $79.99 VIP), we hold 60 Google reviews at 5.0, and the BBB lists our parent company, Search Converts LLC, as A+ accredited. Our proof is unusual in this group: the businesses we rank are partly our own, so you can search the terms yourself today rather than trust a screenshot. The <a href="/case-studies/">case studies</a> page tells you which terms.</p>
-<p class="k-p">What our row does not show: a Clutch review history (the profile exists and is empty, and the &ldquo;$5,000+&rdquo; minimum on it is stale), a large team, or a national footprint of offices. If you want those, several agencies above have them. If you want the person who sold you to be the person who builds it, that is the specific thing we offer, and the <a href="/denver-seo-agency/">agency page</a> explains how the work is organized.</p>
-<p class="k-p">Whoever you shortlist, the next step is the same: put them through the <a href="/best-denver-seo-company/">seven tests</a>, ask the <a href="/blog/how-to-choose-a-denver-seo-company/">nine questions</a>, and compare the answers in writing.</p>
+<p class="k-p">What our row does not show: a Clutch review history (the profile exists and is empty, and the &ldquo;$5,000+&rdquo; minimum on it is stale), a large team, or a national footprint of offices. If you want those, several agencies above have them. If you want the person who sold you to be the person who builds it, that is the specific thing we offer, and the <a href="/">agency page</a> explains how the work is organized.</p>
+<p class="k-p">Whoever you shortlist, the next step is the same: put them through the <a href="/denver-seo-companies/">seven tests</a>, ask the <a href="/blog/how-to-choose-a-denver-seo-company/">nine questions</a>, and compare the answers in writing.</p>
 </div></section>`,
   ],
   faqChip: 'Questions people ask',
@@ -109,8 +109,8 @@ ${A.map(row2).join('\n')}
     { q: 'What does a Denver SEO company typically cost?', a: 'Among the six agencies here that publish prices, ongoing SEO runs from $500 to $4,000 a month, with audits priced separately by some (Blennd from $4,000). Agencies that do not publish prices generally quote after a budget form; Clutch minimum project sizes in this group are $1,000 to $10,000. Our own ranges are on the Denver SEO pricing page.' },
     { q: 'Do you update this page?', a: 'Yes, when we re-read the sources. The date at the top is the read date for every figure. If you run one of these agencies and a fact is wrong, call the number in the header and we will check it and correct it.' },
   ],
-  related: [['Denver SEO company', '/denver-seo-company/'], ['Denver SEO agency', '/denver-seo-agency/'], ['Seven tests to run first', '/best-denver-seo-company/'], ['Denver SEO pricing', '/denver-seo-pricing/'], ['Case studies', '/case-studies/']],
-  band: ['Want our answers to the same eight questions, in writing?', 'Call and the founder will walk you through our row, what we would do first for your business, and roughly what it would cost. No form first.', ['See the seven tests', '/best-denver-seo-company/']],
+  related: [['Denver SEO company', '/'], ['Denver SEO agency', '/'], ['Seven tests to run first', '/denver-seo-companies/'], ['Denver SEO pricing', '/denver-seo-pricing/'], ['Case studies', '/case-studies/']],
+  band: ['Want our answers to the same eight questions, in writing?', 'Call and the founder will walk you through our row, what we would do first for your business, and roughly what it would cost. No form first.', ['See the seven tests', '/denver-seo-companies/']],
   service: null,
   style: `:root{--k-hbg:#0B1220}.dcs-hero{background:radial-gradient(900px 500px at 80% 15%,rgba(37,99,235,.28),transparent 60%),radial-gradient(600px 400px at 10% 95%,rgba(249,115,22,.22),transparent 60%),#0B1220}.dcs-facts dl{margin:0;display:grid;gap:8px}.dcs-facts dl div{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid #EAECF0;font-size:.9rem}.dcs-facts dt{font-weight:800;color:#101828}.dcs-facts dd{margin:0;color:#475467}.dcs-tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0;border:1px solid #E4E7EC;border-radius:14px;background:#fff}.dcs-tbl table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:860px}.dcs-tbl th{text-align:left;background:#F2F4F7;padding:10px 12px;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;position:sticky;top:0}.dcs-tbl td{padding:11px 12px;border-top:1px solid #EAECF0;vertical-align:top;line-height:1.5;color:#344054}.dcs-tbl td:first-child{font-weight:700;color:#101828;white-space:nowrap}.dcs-tbl tr:last-child td{background:#FFF7ED}.dcs-note{font-size:.88rem;color:#667085}.dcs-two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}.dcs-three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}.k-sec-ink .dcs-three .k-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15)}.k-sec-ink .dcs-three .k-card p,.k-sec-ink .dcs-three .k-card h3{color:#fff}@media(max-width:900px){.dcs-three,.dcs-two{grid-template-columns:1fr}.dcs-facts dl div{grid-template-columns:1fr}}`,
 };

@@ -99,7 +99,7 @@
      lead:'Competitive categories are won on topical depth and third-party corroboration, not on optimising a handful of pages harder.',
      body:'Expect a longer timeline and a larger budget than a single-location local business, because you are competing against organisations that have been investing for years. The compensating advantage is that competitive markets reward genuine depth, and most competitors go wide rather than deep.',
      order:['Build genuine topical depth around your core subject, not scattered posts','Earn links and corroboration from sources that actually matter in your category','Structure content so it can be extracted and quoted by AI systems, not just ranked','Measure by pipeline and qualified leads rather than aggregate traffic'],
-     links:[['/denver-seo-services/','Full service overview'],['/blog/ai-agents-choosing-business-vendors/','How AI agents shortlist vendors']]},
+     links:[['/','Full service overview'],['/blog/ai-agents-choosing-business-vendors/','How AI agents shortlist vendors']]},
 
     {k:'unsure',label:'Honestly, I am not sure',sub:'Something is not working and I cannot tell what',
      name:'Start by finding the constraint — it may not be SEO',

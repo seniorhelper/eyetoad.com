@@ -13,8 +13,8 @@ const text = (h) => String(h).replace(/<[^>]+>/g, '').replace(/&rsquo;/g, '’')
 const specPath = path.resolve(process.argv[2]);
 const spec = (await import('file://' + specPath)).default;
 const isPost = spec.type === 'post';
-const tpl = isPost ? 'blog/google-september-2026-spam-update/index.html' : 'denver-seo-company/index.html';
-const tplUrl = isPost ? 'https://eyetoad.com/blog/google-september-2026-spam-update/' : 'https://eyetoad.com/denver-seo-company/';
+const tpl = isPost ? 'blog/google-september-2026-spam-update/index.html' : '_build/money-page-template.html';
+const tplUrl = isPost ? 'https://eyetoad.com/blog/google-september-2026-spam-update/' : 'https://eyetoad.com/';
 const tplTitle = isPost ? 'Google September 2026 Spam Update: Local Business Checklist' : 'Denver SEO Company | Eye To Ad Media — Since 2012';
 const tplDesc = isPost ? "Google's September 2026 spam update ran from Sept 24 to Oct 8. What Google said, what it did not, and a checklist for local service business sites." : 'Denver SEO company since 2012: how we work, what it costs ($500–$3,000/mo), and how to compare Denver SEO companies before you hire one.';
 

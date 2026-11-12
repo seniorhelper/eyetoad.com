@@ -87,7 +87,7 @@ ${P('My AI Agent Army', 'https://www.myaiagentarmy.com/', 'Our AI agent workshop
 <div class="lb-grid">
 <div class="k-card"><h3 class="k-h3">Full-stack custom development</h3><p>Hand-coded websites, web apps, dashboards and integrations, from <a href="/custom-website-design/">custom sites</a> on our subscribe-to-own plans to large custom builds.</p></div>
 <div class="k-card"><h3 class="k-h3">AI agents that give you time back</h3><p><a href="/ai-agents-for-business/">AI agents</a> and <a href="/ai-chatbot-for-business/">sales-trained chatbots</a> that answer leads, handle follow-up and take repetitive tasks off your plate.</p></div>
-<div class="k-card"><h3 class="k-h3">Websites built to win customers</h3><p>Fast, clear sites built around how your buyers decide, with <a href="/denver-seo-company/">SEO</a> and <a href="/aio-seo-system/">AI search optimization</a> built in.</p></div>
+<div class="k-card"><h3 class="k-h3">Websites built to win customers</h3><p>Fast, clear sites built around how your buyers decide, with <a href="/">SEO</a> and <a href="/aio-seo-system/">AI search optimization</a> built in.</p></div>
 <div class="k-card"><h3 class="k-h3">Apps for phones</h3><p>We&rsquo;re an approved developer with the Apple Developer Program and Google Play, so we can build apps and publish them on the App Store and Google Play.</p></div>
 </div>
 <p class="k-p lb-mt">Founder-led since 2012, headquartered in Denver and growing businesses anywhere. Rated 5.0 from 60 Google reviews and A+ with the BBB. See <a href="/what-you-get/">what working with us looks like</a> or <a href="/our-work/">our work</a>.</p>
