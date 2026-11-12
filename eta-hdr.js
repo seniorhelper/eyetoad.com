@@ -354,10 +354,12 @@
   /* bubble: small, beside and a little above the mouth on wide screens */
   '#ehSay{width:240px;padding:10px 12px;font-size:13.5px;border-radius:12px}'+
   '@media (min-width:1180px){#ehSay{left:calc(100% + 16px);top:-44px;transform:translateX(-6px)}#ehSay.on{transform:none}#ehSay::before{top:56px;left:-6px;margin-left:0}}'+
-  /* narrower screens: no room beside it, so it sits above the eyes instead of over the hero */
-  /* narrower screens: a tall, narrow bubble to the right of the eyes, tail pointing at the face */
-  '@media (max-width:1179px){#ehSay{left:auto;top:auto;right:calc((100% - 100vw)/2 + 8px);bottom:-20px;width:min(calc(50vw - 62px),230px);padding:8px 9px;font-size:12.5px;line-height:1.3;border-radius:12px;transform:translateX(6px)}#ehSay.on{transform:none}#ehSay::before{top:44%;left:-5px;margin-left:0;width:10px;height:10px}#ehSay .eh-x{width:22px;height:22px;top:4px;right:4px;font-size:15px}#ehSay .txt{padding-right:14px}#ehSay .eh-hear,#ehSay .eh-zip{margin-left:0;padding:7px 9px;font-size:11.5px}}'+
-  '@media (max-width:1179px){#ehSay{left:50%;right:auto;top:auto;bottom:calc(100% + 1px);width:min(400px,calc(100vw - 16px));padding:6px 30px 6px 10px;font-size:11.5px;line-height:1.25;transform:translateX(-50%) translateY(4px)}#ehSay.on{transform:translateX(-50%)}#ehSay::before{top:auto;bottom:-5px;left:var(--ax,50%);margin-left:-5px}#ehSay .eh-x{top:50%;margin-top:-11px}}'+
+  /* narrower screens (Nov 11 2026): a rounded speech balloon parked at the right edge, beside the eyes,
+     below the phone number; tail points left at the face. Never above or over the eyes, number or hero. */
+  '@media (max-width:1179px){#ehSay{left:auto;right:calc((100% - 100vw)/2 + 6px);top:-46px;bottom:auto;width:min(calc(50vw - 56px),230px);padding:8px 10px 9px;font-size:11.5px;line-height:1.3;border-radius:20px 20px 20px 6px;transform:translateX(6px)}#ehSay.on{transform:none}#ehSay::before{top:30px;left:-5px;margin-left:0;width:10px;height:10px}#ehSay .eh-who{font-size:9.5px;margin-bottom:4px}#ehSay .eh-x{width:22px;height:22px;top:5px;right:5px;font-size:15px}#ehSay .txt{display:block;padding-right:16px}#ehSay .eh-hear,#ehSay .eh-zip{margin:7px 0 0;padding:7px 10px;font-size:11.5px}}'+
+  '@media (min-width:1180px){#ehSay .txt{display:block;padding-right:22px}}'+
+  '@media (max-width:400px){#ehSay{font-size:11px;line-height:1.24;padding:7px 8px 8px}#ehSay .eh-who{margin-bottom:3px}#ehSay .eh-hear,#ehSay .eh-zip{margin-top:5px;padding:6px 9px;font-size:11px}}'+
+  'header:has(#ehSay.on) .eh-hint,#ehMouth:has(#ehSay.on) .eh-hint{opacity:0!important}'+
   '@media (prefers-reduced-motion:reduce){#ehMouth.eh-intro .eh-wave{animation:none}#ehMouth .eh-eye{transition:none}}';
   var st=document.createElement('style');st.id='eh-face2';st.textContent=css;document.head.appendChild(st);
 
