@@ -789,6 +789,6 @@ if(typeof window.gtag==='function'){try{gtag('event','pricing_talk_click',{item:
 if(f)f.addEventListener('submit',function(){f.elements._subject.value='Pricing page: '+(w?w.value:'call me')+' ('+(f.elements.business.value||f.elements.name.value||'').slice(0,60)+')';});
 document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.sc-buy');if(b&&typeof window.gtag==='function'){try{gtag('event','sc_buy_click',{sku:b.getAttribute('data-sku'),qty:b.getAttribute('data-qty')||1,page:location.pathname})}catch(x){}}});
 })();</script>
-<script src="https://usabusinesssearch.com/secure-checkout/checkout.js" defer></script>
+<script data-fallback-action="https://clients.eyetoad.com/lead/send.php" src="https://usabusinesssearch.com/secure-checkout/checkout.js" defer></script>
 </body>
 </html>
